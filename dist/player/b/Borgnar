@@ -1,0 +1,126 @@
+#PLAYER
+Version      5
+Name         Borgnar~
+Sex          1
+Class        1
+Race         6
+Adjective    an ordinary male drow~
+Age          0 0 3 613
+Languages    1 1
+Level        5
+Played       3950
+Room         1553
+HpManaMove   53 43 112 112 65 40
+Gold         0
+Silver       0
+Copper       0
+Exp          6500
+Height          67
+Weight          111
+Act          570426952
+AffectedBy   512
+Position     113
+Style     2
+Practice     9
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    -500
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -685
+Resistant    3072
+Mentalstate  0
+Password     ff5562c32f0d18857bf132f7991d1a57c8acd879ede1f32ee6ae465e36d7ff91~
+Title         the Missionary~
+Flags        0
+PKills       0
+PDeaths      0
+MKills       0
+MDeaths      0
+IllegalPK    0
+Timezone     -1
+AttrPerm     14 12 14 13 15 14 13
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 
+Condition    0 12 46 10
+Site         24.247.179.13
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+IMCPerm      1
+IMCFlags     256
+End
+
+#OBJECT
+Vnum         1408
+WearLoc      26
+Level        1
+Values       10 1 6 2 -1 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         2330
+Level        1
+Values       1 1 0 0 0 0
+Values2      15 2
+End
+
+#OBJECT
+Vnum         2317
+Level        1
+Values       1 1 0 0 0 0
+Values2      4 2
+End
+
+#OBJECT
+Vnum         1563
+WearLoc      8
+Level        1
+Values       3 3 0 0 0 0
+Values2      3 2
+End
+
+#OBJECT
+Vnum         2288
+Level        1
+Values       2 2 0 0 0 0
+Values2      4 2
+End
+
+#OBJECT
+Vnum         1723
+WearLoc      3
+Level        1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2288
+WearLoc      5
+Level        1
+Values       1 1 0 0 0 0
+Values2      4 2
+End
+
+#OBJECT
+Vnum         1575
+WearLoc      27
+Level        1
+Values       3 3 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         1718
+WearLoc      6
+Level        1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#END

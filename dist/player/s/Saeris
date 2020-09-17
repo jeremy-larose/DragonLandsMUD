@@ -1,0 +1,865 @@
+#PLAYER
+Version      5
+Name         Saeris~
+Sex          1
+Class        0
+Multiclass 3 50
+Race         0
+Adjective    a handsome, fiery haired male human~
+Age          0 12 4 631
+Languages    -1 1
+Level        65
+Played       4471666
+Room         1200
+HpManaMove   340 320 1000 1000 1000 1000
+ClassValues  1 1
+BondedWeapon 121 0
+Gold         5111
+Silver       821
+Copper       396
+Exp          8000000
+Height          68
+Weight          149
+Act          1644172872&4
+Position     113
+Style     2
+Practice     128
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    1000
+Favor        98
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -14230
+Speechcolor  6
+Subclasses   0&64
+Mentalstate  -13
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Title         is a building machine~
+WizInvis     65
+RoomRange    5500 5599
+ObjRange     5500 5599
+MobRange     5500 5599
+Deity	     Qylaith~
+Flags        32803
+PKills       0
+PDeaths      0
+MKills       1779
+MDeaths      0
+IllegalPK    0
+Timezone     -1
+AttrPerm     15 18 18 18 18 16 14
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Condition    0 0 100 75
+Background    0
+Site         24.247.13.30
+Spell        100 'absolute immunity'
+Spell        100 'absorb health'
+Spell        100 'absorb mind'
+Spell        100 'absorb vitality'
+Tongue       100 'abyssal'
+Spell        100 'acid arrow'
+Spell        100 'acid blast'
+Spell        100 'acid breath'
+Spell        100 'acid shield'
+Spell        100 'acid splash'
+Spell        100 'acidshot'
+Proficiency  100 'acrobatics'
+Skill        100 'actionsurge'
+Spell        100 'aganazzars scorcher'
+Skill        100 'aggressive style'
+Spell        100 'aid'
+Spell        100 'air dragon song'
+Spell        100 'air walk'
+Spell        100 'alertness'
+Spell        100 'alter dreams'
+Spell        100 'angelskin'
+Proficiency  100 'animal handling'
+Spell        100 'animate dead'
+Spell        100 'antimagic shell'
+Spell        100 'apportation'
+Tongue       100 'aquan'
+Proficiency  100 'arcana'
+Spell        100 'arcane mark'
+Skill        100 'archery style'
+Spell        100 'armor of agathys'
+Spell        100 'arms of hadar'
+Spell        100 'astral body'
+Spell        100 'astral cord'
+Spell        100 'astral projection'
+Spell        100 'astral walk'
+Proficiency  100 'athletics'
+Spell        100 'aura of life'
+Spell        100 'aura of vitality'
+Tongue       100 'auran'
+Weapon       100 'axes'
+Skill        100 'backstab'
+Spell        100 'bane'
+Spell        100 'barkskin'
+Skill        100 'bash'
+Spell        100 'bears endurance'
+Spell        100 'beautiful distraction'
+Spell        100 'benediction'
+Spell        100 'benefic aura'
+Skill        100 'berserk'
+Skill        100 'berserk style'
+Spell        100 'bestow curse'
+Spell        100 'bestow greater curse'
+Spell        100 'bigbys crushing hand'
+Skill        100 'bite'
+Spell        100 'black breath'
+Spell        100 'black hand'
+Spell        100 'black lightning'
+Spell        100 'blade barrier'
+Spell        100 'blade ward'
+Spell        100 'blasphemy'
+Spell        100 'blazebane'
+Spell        100 'blazeward'
+Spell        100 'bless'
+Spell        100 'blight'
+Spell        100 'blindness'
+Skill        100 'blindsense'
+Skill        100 'bloodlet'
+Weapon       100 'blowguns'
+Weapon       100 'bludgeons'
+Weapon       100 'bows'
+Spell        100 'breath of winter'
+Skill        100 'brew'
+Spell        100 'brittleskin'
+Skill        100 'broach'
+Spell        100 'bulls strength'
+Spell        100 'burning hands'
+Spell        100 'call lightning'
+Spell        100 'catnap'
+Spell        100 'cats grace'
+Spell        100 'cause critical'
+Spell        100 'cause serious'
+Spell        100 'caustic fount'
+Spell        100 'caustic touch'
+Tongue       100 'celestial'
+Spell        100 'chain lightning'
+Spell        100 'change sex'
+Spell        100 'chaos mind'
+Spell        100 'charged beacon'
+Spell        100 'charm person'
+Spell        100 'chill touch'
+Skill        100 'circle'
+Spell        100 'claircognizance'
+Spell        100 'clairgustance'
+Spell        100 'clairvoyance'
+Skill        100 'claw'
+Skill        100 'cleave'
+Skill        100 'climb'
+Spell        100 'cloud of daggers'
+Weapon       100 'clubs'
+Spell        100 'colour spray'
+Spell        100 'combat mind'
+Spell        100 'comet'
+Skill        100 'command'
+Tongue       100 'common'
+Spell        100 'conjure air elemental'
+Spell        100 'conjure earth elemental'
+Spell        100 'conjure fey'
+Spell        100 'conjure fire elemental'
+Spell        100 'conjure water elemental'
+Spell        100 'consumptive power'
+Spell        100 'continual light'
+Spell        100 'control weather'
+Spell        100 'convincing voice'
+Skill        100 'cook'
+Spell        100 'create bonfire'
+Spell        100 'create food'
+Spell        100 'create spring'
+Spell        100 'create symbol'
+Spell        100 'create water'
+Weapon       100 'crossbows'
+Spell        100 'crushing despair'
+Spell        100 'crystal body'
+Spell        100 'crystal massage'
+Skill        100 'cuff'
+Spell        100 'cure critical wounds'
+Spell        100 'cure light wounds'
+Spell        100 'cure minor wounds'
+Spell        100 'cure moderate wounds'
+Spell        100 'cure serious'
+Spell        100 'cure serious wounds'
+Weapon       100 'daggers'
+Spell        100 'dampen defenses'
+Spell        100 'dancing lights'
+Spell        100 'darkvision'
+Weapon       100 'darts'
+Skill        100 'dash'
+Spell        100 'death ward'
+Proficiency  100 'deception'
+Tongue       100 'deep speech'
+Skill        100 'defense style'
+Skill        100 'defensive style'
+Spell        100 'dehydrate'
+Spell        100 'delayed blast fireball'
+Skill        100 'demonbite'
+Skill        100 'demonclaws'
+Spell        100 'demonic aura'
+Spell        100 'demonskin'
+Spell        100 'desecrate'
+Spell        100 'detect evil'
+Spell        100 'detect hidden'
+Spell        100 'detect hidden minds'
+Spell        100 'detect invis minds'
+Spell        100 'detect magic'
+Spell        100 'detect poison'
+Skill        100 'detrap'
+Spell        100 'diamond soul'
+Skill        100 'dig'
+Skill        100 'disarm'
+Spell        100 'disenchant weapon'
+Spell        100 'dispel evil'
+Spell        100 'dispel magic'
+Skill        100 'distract'
+Spell        100 'divination'
+Spell        100 'divinity'
+Skill        100 'dodge'
+Skill        100 'dominate'
+Spell        100 'doom'
+Skill        100 'doorbash'
+Tongue       100 'draconic'
+Skill        100 'drag'
+Spell        100 'dragonskin'
+Spell        100 'draw holy might'
+Spell        100 'dream'
+Spell        100 'drown'
+Tongue       100 'druidic'
+Skill        100 'dual wield'
+Skill        100 'dueling style'
+Tongue       100 'dwarven'
+Spell        100 'eagles splendor'
+Spell        100 'earth dragon song'
+Spell        100 'earthquake'
+Spell        100 'ego whip'
+Skill        100 'elbow'
+Spell        100 'eldritch blast'
+Spell        100 'eldritch sphere'
+Tongue       100 'elvish'
+Spell        100 'empathy'
+Spell        100 'empty body'
+Spell        100 'enchant weapon'
+Spell        100 'energizing massage'
+Spell        100 'energy drain'
+Spell        100 'energy healing'
+Skill        100 'enhanced damage'
+Spell        100 'enhanced rage'
+Spell        100 'ethereal fist'
+Spell        100 'ethereal funnel'
+Spell        100 'ethereal shield'
+Skill        100 'evade'
+Skill        100 'evasion'
+Skill        100 'evasive style'
+Spell        100 'execrate'
+Spell        100 'exorcism'
+Spell        100 'explosive arrow'
+Spell        100 'expurgation'
+Spell        100 'faerie dragon song'
+Spell        100 'faerie fire'
+Spell        100 'faerie fog'
+Spell        100 'fatigue'
+Spell        100 'fear'
+Spell        100 'feeblemind'
+Spell        100 'feebleness'
+Skill        100 'feed'
+Skill        100 'feint'
+Spell        100 'fetid cloud'
+Skill        100 'fifth attack'
+Spell        100 'find traps'
+Spell        100 'finger of death'
+Spell        100 'fire breath'
+Spell        100 'fire dragon song'
+Spell        100 'fire shield'
+Spell        100 'fire storm'
+Spell        100 'fireball'
+Spell        100 'firebolt'
+Spell        100 'firestrike'
+Spell        100 'flame blade'
+Spell        100 'flame spear'
+Spell        100 'flamestrike'
+Spell        100 'flaming slash'
+Spell        100 'flaming sphere'
+Spell        100 'flare'
+Spell        100 'flesh armor'
+Weapon       100 'flexible arms'
+Skill        100 'flipkick'
+Spell        100 'float'
+Spell        100 'fly'
+Skill        100 'forage'
+Spell        100 'forcefield'
+Spell        100 'fortify'
+Skill        100 'fourth attack'
+Spell        100 'foxs cunning'
+Spell        100 'freezing sphere'
+Spell        100 'friends'
+Spell        100 'frost breath'
+Spell        100 'frostbite'
+Spell        100 'galvanic whip'
+Spell        100 'gas breath'
+Spell        100 'gate'
+Spell        100 'ghost sound'
+Spell        100 'ghostwalk'
+Tongue       100 'giant'
+Spell        100 'giggleroot'
+Spell        100 'glyph of warding'
+Tongue       100 'gnomish'
+Skill        100 'goad'
+Tongue       100 'goblin'
+Spell        100 'goodberry'
+Skill        100 'gouge'
+Skill        100 'grapple'
+Skill        100 'grasp suspiria'
+Spell        100 'grease'
+Skill        100 'great weapon style'
+Spell        100 'greater heroism'
+Spell        100 'greater psychoblast'
+Spell        100 'greater shout'
+Skill        100 'grip'
+Spell        100 'grounding'
+Spell        100 'guidance'
+Spell        100 'guiding bolt'
+Weapon       100 'halberds'
+Tongue       100 'halfling'
+Weapon       100 'hammers'
+Spell        100 'harm'
+Skill        100 'headbutt'
+Spell        100 'heal'
+Spell        100 'healing word'
+Spell        100 'helical flow'
+Spell        100 'hellhound fire'
+Spell        100 'hellish rebuke'
+Spell        100 'heroes feast'
+Spell        100 'heroism'
+Spell        100 'hezekiahs cure'
+Spell        100 'hidden mind'
+Skill        100 'hide'
+Proficiency  100 'history'
+Skill        100 'hitall'
+Spell        100 'hive mind'
+Spell        100 'hold person'
+Skill        100 'holdbreath'
+Spell        100 'holy sanctity'
+Spell        100 'horrid wilting'
+Spell        100 'ice shield'
+Spell        100 'ice spear'
+Spell        100 'ice storm'
+Spell        100 'iceshard'
+Spell        100 'identify'
+Tongue       100 'ignan'
+Spell        100 'ill fortune'
+Skill        100 'improved critical'
+Spell        100 'incite courage'
+Spell        100 'incite fear'
+Spell        100 'incite fury'
+Spell        100 'indignation'
+Skill        100 'indomitable'
+Tongue       100 'infernal'
+Spell        100 'infernal calling'
+Spell        100 'inflict wounds'
+Spell        100 'inner warmth'
+Proficiency  100 'insight'
+Proficiency  100 'intimidation'
+Proficiency  100 'investigation'
+Spell        100 'investiture of flame'
+Spell        100 'investiture of ice'
+Spell        100 'investiture of stone'
+Spell        100 'investiture of wind'
+Spell        100 'invisibility'
+Spell        100 'iron body'
+Spell        100 'ironguts'
+Weapon       100 'javelins'
+Skill        100 'kick'
+Skill        100 'knee'
+Spell        100 'knock'
+Spell        100 'know alignment'
+Spell        100 'kobold keen'
+Weapon       100 'lances'
+Skill        100 'leap'
+Spell        100 'legend lore'
+Spell        100 'lethargy'
+Spell        100 'levitate'
+Spell        100 'levitation'
+Spell        100 'life transference'
+Spell        100 'light dragon song'
+Spell        100 'lightning bolt'
+Spell        100 'lightning breath'
+Spell        100 'lightning lure'
+Spell        100 'lightning shield'
+Spell        100 'lightning storm'
+Spell        100 'locate object'
+Weapon       100 'long blades'
+Weapon       100 'long swords'
+Spell        100 'longstrider'
+Weapon       100 'maces'
+Spell        100 'mage armor'
+Spell        100 'magic alarm'
+Spell        100 'magic jar'
+Spell        100 'magic missile'
+Tongue       100 'magical'
+Spell        100 'magnetic thrust'
+Spell        100 'major invocation'
+Spell        100 'malleable soul'
+Skill        100 'maneuver'
+Spell        100 'mass bears endurance'
+Spell        100 'mass bulls strength'
+Spell        100 'mass cats grace'
+Spell        100 'mass cure critical'
+Spell        100 'mass cure light'
+Spell        100 'mass cure moderate'
+Spell        100 'mass cure serious'
+Spell        100 'mass drown'
+Spell        100 'mass eagles splendor'
+Spell        100 'mass fly'
+Spell        100 'mass foxs cunning'
+Spell        100 'mass heal'
+Spell        100 'mass hidden mind'
+Spell        100 'mass inflict wounds'
+Spell        100 'mass invis'
+Spell        100 'mass mental fortress'
+Spell        100 'mass owls wisdom'
+Spell        100 'mass psychoblast'
+Spell        100 'mass telekinetic flight'
+Spell        100 'mass true seeing'
+Proficiency  100 'medicine'
+Skill        100 'meditate'
+Spell        100 'mediumship'
+Skill        100 'menace'
+Spell        100 'mental anguish'
+Spell        100 'mental blindness'
+Spell        100 'mental domination'
+Spell        100 'mental fortress'
+Spell        100 'mental paralysis'
+Spell        100 'mental possession'
+Spell        100 'meteor swarm'
+Spell        100 'midas touch'
+Spell        100 'mind blank'
+Spell        100 'mind fog'
+Spell        100 'mindlink'
+Spell        100 'minor invocation'
+Spell        100 'minor psychoblast'
+Weapon       100 'missile weapons'
+Skill        100 'mistform'
+Skill        100 'mistwalk'
+Spell        100 'molecular disruption'
+Spell        100 'moonbeam'
+Spell        100 'mordenkainens sword'
+Skill        100 'mount'
+Spell        100 'muscle massage'
+Spell        100 'mystic awareness'
+Proficiency  100 'nature'
+Spell        100 'necromantic touch'
+Spell        100 'necrotic burst'
+Spell        100 'necroticstrike'
+Weapon       100 'nets'
+Spell        100 'neutralize poison'
+Spell        100 'nightmare'
+Spell        100 'nostrum'
+Spell        100 'occular explosium'
+Skill        100 'occulutus visum'
+Spell        100 'oil massage'
+Tongue       100 'orc'
+Spell        100 'owls wisdom'
+Skill        100 'parry'
+Skill        100 'peek'
+Skill        100 'pelt'
+Spell        100 'pentagram'
+Proficiency  100 'perception'
+Spell        100 'perfect self'
+Proficiency  100 'performance'
+Proficiency  100 'persuasion'
+Spell        100 'pestilence'
+Skill        100 'pick lock'
+Spell        100 'pixie dust'
+Spell        100 'plague'
+Spell        100 'poison'
+Spell        100 'poison spray'
+Skill        100 'poison weapon'
+Spell        100 'poisonstrike'
+Spell        100 'polar ray'
+Spell        100 'polymorph'
+Skill        100 'pounce'
+Spell        100 'power word heal'
+Spell        100 'power word stun'
+Spell        100 'prayer of healing'
+Tongue       100 'primordial'
+Spell        100 'produce flame'
+Spell        100 'prophecy'
+Spell        100 'protection'
+Spell        100 'protection from poison'
+Skill        100 'protection style'
+Spell        100 'psionic armor'
+Spell        100 'psionic avatar'
+Spell        100 'psionic blast'
+Spell        100 'psychic darts'
+Spell        100 'psychic imprint'
+Spell        100 'psychic scream'
+Spell        100 'psychic slumber'
+Spell        100 'psychic steroid'
+Spell        100 'psychic surge'
+Spell        100 'psychic tracking'
+Spell        100 'psychic vampire'
+Spell        100 'psychoblast'
+Spell        100 'psychometry'
+Weapon       100 'pugilism'
+Skill        100 'pummel'
+Skill        100 'punch'
+Skill        100 'punt'
+Spell        100 'pure body'
+Skill        100 'push'
+Spell        100 'pyrokinesis'
+Spell        100 'quantum spike'
+Spell        100 'quivering palm'
+Spell        100 'radiant burst'
+Weapon       100 'rapiers'
+Spell        100 'ray of enfeeblement'
+Spell        100 'ray of exhaustion'
+Spell        100 'ray of frost'
+Spell        100 'ray of sickness'
+Spell        100 'razorbait'
+Spell        100 'read aura'
+Spell        100 'recharge'
+Spell        100 'refreshing vitality'
+Proficiency  100 'religion'
+Skill        100 'remarkable athlete'
+Spell        100 'remote viewing'
+Spell        100 'remove blindness'
+Spell        100 'remove curse'
+Spell        100 'remove invis'
+Spell        100 'remove poison'
+Spell        100 'remove trap'
+Skill        100 'rescue'
+Spell        100 'resilience'
+Spell        100 'resist acid'
+Spell        100 'resist cold'
+Spell        100 'resist electricity'
+Spell        100 'resist fire'
+Spell        100 'resist force'
+Spell        100 'resist poison'
+Spell        100 'resist psychic'
+Spell        100 'resist radiant'
+Spell        100 'resist thunder'
+Spell        100 'restoration'
+Spell        100 'restore mana'
+Spell        100 'retrocognition'
+Spell        100 'reveal'
+Skill        100 'riposte'
+Skill        100 'roundhouse'
+Spell        100 'sacral divinity'
+Spell        100 'sacred flame'
+Spell        100 'sanctuary'
+Spell        100 'sand of Hades'
+Skill        100 'scan'
+Weapon       100 'scimitars'
+Spell        100 'scorching surge'
+Skill        100 'scribe'
+Spell        100 'scry'
+Skill        100 'search'
+Skill        100 'second attack'
+Spell        100 'second sight'
+Skill        100 'second wind'
+Skill        100 'secondwind'
+Spell        100 'sedate brain'
+Spell        100 'seduction'
+Spell        100 'see invisibility'
+Spell        100 'shadow dragon song'
+Spell        100 'shadowform'
+Spell        100 'shield'
+Spell        100 'shield of faith'
+Spell        100 'shillelagh'
+Spell        100 'shocking grasp'
+Weapon       100 'short blades'
+Weapon       100 'short swords'
+Skill        100 'shoulder'
+Spell        100 'shout'
+Skill        100 'shove'
+Spell        100 'sickening radiance'
+Weapon       100 'sickles'
+Skill        100 'sidekick'
+Spell        100 'sleep'
+Spell        100 'sleepy mind'
+Spell        100 'sleet storm'
+Proficiency  100 'sleight of hand'
+Skill        100 'slice'
+Weapon       100 'slings'
+Spell        100 'slink'
+Skill        100 'sneak'
+Spell        100 'snowball swarm'
+Spell        100 'solar flight'
+Spell        100 'solomonic invocation'
+Spell        100 'soothing presence'
+Spell        100 'soul knife'
+Spell        100 'soul petrification'
+Spell        100 'soul shard'
+Weapon       100 'spears'
+Spell        100 'spectral form'
+Spell        100 'spectral furor'
+Skill        100 'spinkick'
+Spell        100 'spiral blast'
+Spell        100 'spirit attack'
+Spell        100 'spirit guardians'
+Spell        100 'spiritual wrath'
+Skill        100 'spurn'
+Skill        100 'stabilize'
+Skill        100 'standard style'
+Weapon       100 'staves'
+Skill        100 'steal'
+Proficiency  100 'stealth'
+Spell        100 'still mind'
+Skill        100 'sting'
+Spell        100 'stone body'
+Spell        100 'stoneskin'
+Skill        100 'strike'
+Skill        100 'strokeofluck'
+Skill        100 'study'
+Skill        100 'stun'
+Spell        100 'stunning strike'
+Spell        100 'summon'
+Spell        100 'summon demon'
+Spell        100 'summon greater demon'
+Spell        100 'summon lesser demon'
+Spell        100 'summon treant'
+Spell        100 'sunburst'
+Skill        100 'superior critical'
+Proficiency  100 'survival'
+Skill        100 'survivor'
+Skill        100 'swat'
+Skill        100 'swipe'
+Spell        100 'sword burst'
+Spell        100 'swordbait'
+Tongue       100 'sylvan'
+Spell        100 'synaptic static'
+Skill        100 'tail'
+Weapon       100 'talonous arms'
+Spell        100 'telekinetic disarm'
+Spell        100 'telekinetic flight'
+Spell        100 'telekinetic parry'
+Spell        100 'telekinetic shield'
+Spell        100 'telekinetic smash'
+Spell        100 'telekinetic storm'
+Spell        100 'telekinetic thrust'
+Spell        100 'telekinetic toss'
+Spell        100 'telepathic rapport'
+Spell        100 'teleport'
+Spell        100 'teleport object'
+Spell        100 'teleportation circle'
+Skill        100 'tend'
+Spell        100 'tensers floating disk'
+Skill        100 'tentaclefling'
+Tongue       100 'terran'
+Tongue       100 'thieves cant'
+Skill        100 'third attack'
+Spell        100 'thorn whip'
+Spell        100 'thunderclap'
+Spell        100 'thunderstrike'
+Spell        100 'thunderwave'
+Spell        100 'toll the dead'
+Spell        100 'torrent'
+Spell        100 'touch of idiocy'
+Skill        100 'track'
+Skill        100 'trance'
+Spell        100 'tranquility'
+Spell        100 'transmutation'
+Spell        100 'transport via plants'
+Spell        100 'tree stride'
+Skill        100 'trip'
+Tongue       100 'troll'
+Spell        100 'trollish visage'
+Skill        100 'trollregen'
+Spell        100 'true seeing'
+Spell        100 'true strike'
+Spell        100 'tsunami'
+Skill        100 'tumble'
+Skill        100 'twisterkick'
+Skill        100 'two weapon style'
+Spell        100 'ultimate vision'
+Skill        100 'uncanny dodge'
+Tongue       100 'undercommon'
+Spell        100 'unknown'
+Spell        100 'unravel defense'
+Spell        100 'uplift'
+Skill        100 'uppercut'
+Spell        100 'valiance'
+Spell        100 'vampiric touch'
+Skill        100 'vault'
+Skill        100 'veiled steps'
+Spell        100 'venomous touch'
+Spell        100 'venomshield'
+Spell        100 'venomshot'
+Spell        100 'ventriloquism'
+Spell        100 'vicious mockery'
+Skill        100 'vomica pravus'
+Spell        100 'water breathing'
+Spell        100 'water dragon song'
+Spell        100 'waves of exhaustion'
+Spell        100 'weaken'
+Spell        100 'weapon immunity'
+Weapon       100 'whips'
+Spell        100 'wind bomb'
+Spell        100 'wind dart'
+Spell        100 'wind walk'
+Spell        100 'wine invocation'
+Spell        100 'winter mist'
+Spell        100 'word of radiance'
+Spell        100 'word of recall'
+Spell        100 'zidros Wrath'
+Killed       3700 2
+Killed       2351 1
+Killed       2352 1
+Killed       2355 1
+Killed       5416 1
+Killed       5415 1
+Killed       5419 1
+Killed       5417 1
+Killed       5498 4
+Killed       5499 4
+Killed       5096 5
+Killed       5095 1
+Killed       5094 3
+Killed       5093 5
+Killed       5098 4
+Killed       5097 10
+Killed       5092 7
+Killed       1418 1
+Killed       1318 5
+Killed       3552 1
+Killed       5021 1
+Killed       5015 1
+Killed       996 3
+Killed       66 2
+Killed       67 3
+Coordinates	-1 -1 -1 0
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 7 7 9 10 14 15 7 7 11 7 7 7 13 7 7 2 6 7 7 12 7 7 7 9 7 15 13 7 7 11 7 7 3 12 9 7 7 10 2 2 3 7 9 7 2 9 12 9 6 11 13 2 13 15 12 12 12 10 7 10 10 11 8 10 13 2 6 9 15 12 2 6 1 9 2 10 7 10 15 10 10 10 10 
+Qbit        3450 &GYou are learning Herbology from Hazel of the Whispering Mountains.&w~
+Qbit        3451 &GBring some bubbleweed to Hazel of the Whispering Mountains.~
+Qbit        2501 &WYou are officially enrolled at the &RNe&Yw D&zark&Whave&zn C&Yolle&Rge&W of Adventuring.~
+Qbit        2503 &YYou are a student resident of the Wands Dormitory.&w~
+Qbit        2506 &WYour first course is with Professor Opal. Check your textbook for the schedule.&w~
+Qbit        3501 &gYou freed Dennig the ranger from a hill giant cage.&w~
+Qbit        4500 &wYou are helping a Qylain Crusader tell people to leave the Oldgate Cemetary at night.&w~
+Qbit        4502 &GYou used a Qylain scroll to close a Necromancer's portal in the Oldgate Cemetary.&w~
+Qbit        4503 &wYou were rewarded by a Qylain Crusader for her fight against the undead.&w~
+Qbit        2201 &YYou helped Quisti, a Seedling hunter, stop a Troll Chieftain in the Troll Marsh.&w~
+Qbit        2202 &gYou are a &GTrue Friend&g to the Seedlings of the Great Prairie.&w~
+Qbit        3025 &zYou were rewarded by a hooded figure for helping destroy the village of Friswood.&w~
+Qbit        3023 &zYou were successful and had Sister Josephine burned at the stake in Friswood.&w~
+Qbit        3060 &GUntil the end of time Nanette Riverton of Friswood will think you're an evil Witch.&w~
+Qbit        3106 &OYou solved a murder and stopped a Sahuagin invasion in the Oldgate sewers.&w~
+Qbit        3301 &PYou learned about your unique fey heritage from Elder Nyzra.&w~
+Qbit        3300 &PYou have learned to enter fairy pocket planes using your unique heritage (FEYHOME/FEYEXIT).&w~
+Qbit        4550 &WA gypsy man has asked you to save his wife from some large spiders.&w~
+Qbit        904 &RNewbie: You learned about the history of the planes (HELP AERIX).&w~
+Qbit        905 &RNewbie: You learned about descriptions (HELP DESC).&w~
+Qbit        907 &RNewbie: You learned about alignments (HELP ALIGNMENT).&w~
+Qbit        908 &RNewbie: You learned about weapons and weapon types (HELP WEAPONS).&w~
+Qbit        909 &RNewbie: You learned about tools and tool kits (HELP TOOLKITS).&w~
+Qbit        910 &RNewbie: You learned about banking (HELP BANKING).&w~
+Qbit        911 &RNewbie: You learned about armor and armor types (HELP ARMOR).&w~
+Qbit        912 &RNewbie: You learned how to practice new spell/skills/languages (HELP PRACTICE).&w~
+Qbit        913 &RNewbie: You learned how to use an Inn (HELP INN).&w~
+Qbit        914 &RNewbie: You learned about deities and the benefits of faith (HELP DEITIES).&w~
+Qbit        901 &RNewbie: You helped a treasure hunter and were rewarded for aiding her.&w~
+Qbit        902 &RNewbie: You learned about fighting and spells from a wise wizard.&w~
+Qbit        4803 &wYou helped a worried mother put her deceased son to rest.&w~
+Qbit        5000 &zYou discovered a cache of treasure in the Meridan Sewers.&w~
+Qbit        1547 &OYou are finding snakeskins for "Lady" Meersha in the sewers for money.~
+Qbit        4000 &PMiss Toni has foreseen you discovering a wondrous buried library!&w~
+Qbit        4001 &PShe mentioned you should seek out a library and inquire about the buried library.&w~
+Qbit        4003 &wProfessor Vurto has given you a notebook about his search for Llekwyn the missing library.&w~
+Qbit        4004 &wIf you find the library bring a book by Fousa back to Professor Vurto.&w~
+Qbit        5096 &RYou defeated all of the gladiators at the Blazing Sword Gladiator Pit.&w~
+Qbit        5398 &GYou are allowed to enter the Meridan New Adventurer's School.&w~
+Qbit        5399 &GYour hometown is the "Northern Jewel" known as Meridan.&w~
+Qbit        5003 &GYou have become a member of the Meridan Royal Court.&w~
+Qbit        5410 &GYou purchased a ticket to the Meridan Circus.~
+Qbit        5499 &PYou stopped "Queen" Ortheya from destroying the Meridan Circus.&w~
+Qbit        5407 &GYou beat all of the attribute tests at the Meridan Circus.&w~
+Qbit        5446 &GYou completed a game of riddles at the Meridan Circus.&w~
+Qbit        5441 &gYou completed a game of riddles at the Meridan Circus.&w~
+Qbit        5412 &GYou won a guessing game at the Meridan Circus.&w~
+Qbit        5413 &GYou won a guessing game at the Meridan Circus.&w~
+Qbit        5431 &GYou won a sage's question game at the Meridan Circus.&w~
+Qbit        2350 &GYou have learned various forms of Druidcraft (See HELP DRUIDCRAFT).&w~
+Qbit        4600 &WYou defeated Irsylx the Ancient White Dragon in the Ice Witch's Tower.&w~
+Qbit        5699 &zYou know how to perform the ancient art of Alchemy.~
+Qbit        5650 &wYou have been tasked to stop an undead threat in Darkhold.&w~
+End
+
+#OBJECT
+Vnum         861
+WearLoc      8
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         853
+WearLoc      1
+Level        1
+Coords	-1 -1 -1
+Values2      0 2
+End
+
+#OBJECT
+Vnum         1850
+WearLoc      5
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         4099
+WearLoc      7
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         1233
+WearLoc      3
+Level        1
+Coords	-1 -1 -1
+Values       100 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         156
+WearLoc      13
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         5430
+WearLoc      24
+Level        1
+Coords	-1 -1 -1
+Values2      0 2
+End
+
+#OBJECT
+Vnum         5440
+WearLoc      4
+Level        1
+Coords	-1 -1 -1
+Values       3 0 0 0 0 0
+Values2      0 2
+End
+
+#END

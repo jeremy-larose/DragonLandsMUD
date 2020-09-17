@@ -1,0 +1,307 @@
+Name          Monk~
+Class         9
+SavingStatOne 1
+SavingStatTwo 2
+SpellModStat  4
+Weapon        0
+Guild         0
+Skilladept    0
+Thac0         0
+Thac32        0
+Hpmin         1
+Hpmax         8
+Mana          1
+Expbase       1000
+Affected      0
+Resist	       0
+Suscept	    0
+CasterType    3
+Subclasses    0
+Skill 'abyssal' 1 95 0
+Skill 'acrobatics' 1 95 0
+Skill 'animal handling' 1 95 0
+Skill 'aquan' 1 95 0
+Skill 'arcana' 1 95 0
+Skill 'athletics' 1 95 0
+Skill 'auran' 1 95 0
+Skill 'axes' 1 95 0
+Skill 'bows' 1 95 0
+Skill 'breath of winter' 35 95 26
+Skill 'celestial' 1 95 0
+Skill 'climb' 1 95 0
+Skill 'clubs' 1 95 0
+Skill 'common' 1 95 0
+Skill 'cook' 1 95 0
+Skill 'crossbows' 1 95 0
+Skill 'daggers' 1 95 0
+Skill 'darts' 1 95 0
+Skill 'dash' 1 95 0
+Skill 'deception' 1 95 0
+Skill 'deep speech' 1 95 0
+Skill 'diamond soul' 28 95 26
+Skill 'dig' 1 95 0
+Skill 'draconic' 1 95 0
+Skill 'drag' 1 95 0
+Skill 'dual wield' 1 95 0
+Skill 'dwarven' 1 95 0
+Skill 'elvish' 1 95 0
+Skill 'empty body' 38 95 26
+Skill 'flipkick' 25 95 26
+Skill 'forage' 1 95 0
+Skill 'giant' 1 95 26
+Skill 'gnomish' 1 95 0
+Skill 'goblin' 1 95 0
+Skill 'grapple' 1 95 0
+Skill 'halfling' 1 95 0
+Skill 'hammers' 1 95 0
+Skill 'headbutt' 1 95 0
+Skill 'hide' 1 95 0
+Skill 'history' 1 95 0
+Skill 'holdbreath' 1 95 0
+Skill 'ignan' 1 95 0
+Skill 'infernal' 1 95 0
+Skill 'insight' 1 95 0
+Skill 'intimidation' 1 95 0
+Skill 'investigation' 1 95 0
+Skill 'javelins' 1 95 0
+Skill 'kick' 1 95 0
+Skill 'maces' 1 95 0
+Skill 'medicine' 1 95 0
+Skill 'meditate' 5 95 0
+Skill 'mount' 1 95 0
+Skill 'nature' 1 95 0
+Skill 'orc' 1 95 0
+Skill 'perception' 1 95 0
+Skill 'perfect self' 50 95 26
+Skill 'performance' 1 95 0
+Skill 'persuasion' 1 95 0
+Skill 'primordial' 1 95 0
+Skill 'punch' 1 95 0
+Skill 'pure body' 9 95 26
+Skill 'quivering palm' 40 95 26
+Skill 'religion' 1 95 0
+Skill 'rescue' 1 95 0
+Skill 'scan' 1 95 0
+Skill 'search' 1 95 0
+Skill 'short swords' 1 95 0
+Skill 'shove' 1 95 0
+Skill 'sickles' 1 95 0
+Skill 'sidekick' 10 95 26
+Skill 'sleight of hand' 1 95 0
+Skill 'slice' 1 95 0
+Skill 'slings' 1 95 0
+Skill 'sneak' 1 95 0
+Skill 'spinkick' 15 95 0
+Skill 'stabilize' 1 95 0
+Skill 'staves' 1 95 0
+Skill 'stealth' 1 95 0
+Skill 'still mind' 14 95 26
+Skill 'stunning strike' 15 95 26
+Skill 'survival' 1 95 0
+Skill 'sylvan' 1 95 0
+Skill 'terran' 1 95 0
+Skill 'tranquility' 12 95 26
+Skill 'troll' 1 95 0
+Skill 'twisterkick' 30 95 26
+Skill 'undercommon' 1 95 0
+Skill 'veiled steps' 10 95 0
+Skill 'whips' 1 95 0
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+(null)~
+(null)~
+End

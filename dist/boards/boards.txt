@@ -1,0 +1,589 @@
+Filename          immortal.brd~
+Vnum              1200
+Min_read_level    60
+Min_post_level    60
+Min_remove_level  65
+Max_posts         100
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      0
+OCopymessg	   $n extracts a portion of the Godfire and absorbs it.~
+OListmessg	   $n looks deeply into the Godfire, as if reading it...~
+OPostmessg	   $n creates a ball of divine fire and casts it into the Godfire.~
+OReadmessg	   $n looks deeply into the Godfire...~
+ORemovemessg      $n extracts a portion of the Godfire and lets it dissipate quickly.~
+OTakemessg	   $n extracts a portion of the Godfire and absorbs it.~
+Postmessg	   You cast a ball of divine fire into the Godfire.~
+End
+Filename          highgod.brd~
+Vnum              1201
+Min_read_level    54
+Min_post_level    52
+Min_remove_level  59
+Max_posts         50
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      0
+End
+Filename          seikyr.brd~
+Vnum              1203
+Min_read_level    51
+Min_post_level    0
+Min_remove_level  65
+Max_posts         50
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OListmessg	   $n peers into the swirling madness...~
+OPostmessg	   $n throws a note to the whirlwind as it catches it like a pet.~
+OReadmessg	   $n forces a whirlwind to remain still as $e reads something.~
+ORemovemessg      $n takes a note out of a whirlwind, which looks disgusted at $n.~
+Postmessg	   You throw a note to the whirlwind as it catches it like a pet.~
+End
+Filename          beltane.brd~
+Vnum              1206
+Min_read_level    51
+Min_post_level    51
+Min_remove_level  65
+Max_posts         100
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   &R$n hol&Yds a f&Grui&Bt a&Pnd &pmag&Pical&Bly mak&Ges tw&Yo of t&Rhem.~
+OListmessg	   &R$n ru&Ymma&Gges &Bthro&Pugh t&phe tr&Pee, &Blooki&Gng for &Ysomethin&Rg juicy.~
+OPostmessg	   &R$n re&Yleases some of &G$s &Bene&Prg&py, c&Pre&Bati&Gng a n&Yew fru&Rit.&W~
+OReadmessg	   &R$n lo&Yoks a&Gt a l&Bow h&Pangi&png f&Pru&Bit v&Ger&Yy caref&Rully.~
+ORemovemessg      &R$n ta&Ykes a &Gfrui&Bt fr&Pom t&Phe t&Pree &Band &Gdev&Your&Rs it.~
+OTakemessg	   &R$n t&Yake&Gs on&Be of &Pthe &pfrui&Pts&B fo&Gr &Ylat&Rer.~
+Postmessg	   &RYou re&Ylease s&Gome of yo&Bur ene&Prg&py, c&Pre&Bati&Gng a n&Yew fru&Rit.&W~
+End
+Filename          newdarkhavenmail.brd~
+Vnum              1659
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  1
+Max_posts         999
+Type 	           1
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OListmessg	   $n looks inside $s mail box to see if $e has any mail.~
+OPostmessg	   $n gives $s letter to the employee who sends it out for $m.~
+OReadmessg	   $n opens $s mail box and reviews the mail received.~
+ORemovemessg      $n removes some mail from $s mail box.~
+OTakemessg	   $n removes some mail from $s mail box.~
+Postmessg	   You give your letter to the employee who sends it out for you.~
+End
+Filename          newdarkhaven.brd~
+Vnum              1500
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      50
+OCopymessg	   $n copies a piece of paper from the city noteboard.~
+OListmessg	   $n reviews the city noteboard looking for new postings.~
+OPostmessg	   $n places a piece of paper on the city noteboard.~
+OReadmessg	   $n reviews the noteboard before reading one of the postings.~
+ORemovemessg      $n removes a piece of paper from the noteboard.~
+OTakemessg	   $n removes a piece of paper from the noteboard.~
+Postmessg	   You place your note on the board in noticeable spot.~
+End
+Filename          wizard.brd~
+Vnum              2200
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   &CThe noteboard shimmers brightly as $n makes a copy of a note.~
+OListmessg	   &CThe noteboard shimmers as $n looks over the various notes on it.~
+OPostmessg	   &CThe noteboard shimmers for a moment as $n posts a note on it.&w~
+OReadmessg	   &CThe noteboard shimmers for a moment as $n reads a note.&w~
+ORemovemessg      &cThe noteboard darkens for a moment as $n removes a note.&w~
+OTakemessg	   &cThe noteboard darkens for a moment as $n takes a note from it.~
+Postmessg	   &CThe noteboard shimmers for a moment as you post your note.~
+End
+Filename          mystic.brd~
+Vnum              2207
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &PThe grimoire glows brightly for a moment as $n makes a copy of a page.&w~
+OListmessg	   &P$n opens the grimoire and thumbs through a few pages.&w~
+OPostmessg	   &PThe grimoire glows brightly as $n adds a note to it.&w~
+OReadmessg	   &PThe grimoire glows for a moment as $n reads a page.&w~
+ORemovemessg      &pThe grimoire dims for a moment as $n removes a page.&w~
+OTakemessg	   &pThe grimoire dims for a moment as $n takes a page.&w~
+Postmessg	   &PThe grimoire glows brightly as you add a note to it.&w~
+End
+Filename          rogue.brd~
+Vnum              2206
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   &z$n copies a piece of paper on an old noteboard.&w~
+OListmessg	   &z$n looks over various pieces of paper on an old noteboard.&w~
+OPostmessg	   &z$n posts a piece of paper on an old noteboard.&w~
+OReadmessg	   &z$n reads a piece of paper on an old noteboard.&w~
+ORemovemessg      &z$n removes a piece of paper from an old noteboard.&w~
+OTakemessg	   &z$n removes a piece of paper from an old noteboard.&w~
+Postmessg	   &zYou post a piece of paper on the old noteboard.&w~
+End
+Filename          monk.brd~
+Vnum              2293
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   &O$n makes a copy of a note on the old statue.&w~
+OListmessg	   &O$n looks over the various notes on the old statue.&w~
+OPostmessg	   &O$n sticks a note on the old statue.&w~
+OReadmessg	   &O$n reads a note on the old statue.&w~
+ORemovemessg      &O$n removes a note from the old statue.&w~
+OTakemessg	   &O$n takes a note from the old statue.&w~
+Postmessg	   &OYou stick your note on the old statue.&w~
+End
+Filename          ranger.brd~
+Vnum              2301
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   &O$n copies a note on the rough looking noteboard.&w~
+OListmessg	   &O$n looks over all of the notes on the rough looking noteboard.&w~
+OPostmessg	   &O$n places a note on the rough looking board.&w~
+OReadmessg	   &O$n reads a note on the rough looking board.&w~
+ORemovemessg      &O$n removes a note from the rough looking board.&w~
+OTakemessg	   &O$n takes a note from the rough looking board.&w~
+Postmessg	   &OYou place a note on the rough looking board.&w~
+End
+Filename          adventurer.brd~
+Vnum              2399
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &O$n makes a copy of a note posted on the guild noteboard.&w~
+OListmessg	   &O$n looks over the various notes on the guild noteboard.&w~
+OPostmessg	   &O$n tacks a note onto the noteboard by the fireplace.&w~
+OReadmessg	   &O$n reads a note on the guild noteboard.&w~
+ORemovemessg      &O$n removes a note from the guild noteboard.&w~
+OTakemessg	   &O$n takes a note from the guild noteboard.&w~
+Postmessg	   &OYou tack your note on the board for all to see.&w~
+End
+Filename          druid.brd~
+Vnum              2351
+Min_read_level    1
+Min_post_level    2
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        druid~
+Post_group        druid~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   $n makes a copy of a sigil on the wooden board.~
+OListmessg	   $n reviews all of the sigils on the wooden board.~
+OPostmessg	   $n transforms $s note into a sigil and etches it on the board.~
+OReadmessg	   $n touches a specific sigil and closes $s eyes.~
+ORemovemessg      $n touches a sigil on the board and it vanishes!~
+OTakemessg	   $n touches a sigil and it becomes a note in $s hand.~
+Postmessg	   You transform your note into a sigil and etch it on the board.~
+End
+Filename          paladin.brd~
+Vnum              2388
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   &YThe golden noteboard glows for moment as $n makes a copy of a note.&w~
+OListmessg	   &Y$n looks over all of the notes on the golden noteboard.&w~
+OPostmessg	   &YThe noteboard glows as $n posts $s note on it.&w~
+OReadmessg	   &Y$n reads a note on the golden noteboard.&w~
+ORemovemessg      &OThe golden noteboard dims a bit as $n removes a note.&w~
+OTakemessg	   &OThe golden noteboard dims a bit as $n takes a note.&w~
+Postmessg	   &YThe noteboard glows for a moment as you post a note.&w~
+End
+Filename          fighter.brd~
+Vnum              2387
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &O$n makes a copy of a note posted on the old leather noteboard.&w~
+OListmessg	   &O$n looks over the various notes on the old leather noteboard.&w~
+OPostmessg	   &O$n pins $s note to the old leather noteboard.&w~
+OReadmessg	   &O$n reads a note on the old leather noteboard.&w~
+ORemovemessg      &O$n removes a note from the old leather noteboard.&w~
+OTakemessg	   &O$n takes a note from the old leather noteboard.&w~
+Postmessg	   &OYou pin your note to the old leather noteboard.&w~
+End
+Filename          barbarian.brd~
+Vnum              2386
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &O$n makes a copy of a note posted on the old leather noteboard.&w~
+OListmessg	   &O$n looks over the various notes on the old leather noteboard.&w~
+OPostmessg	   &O$n pins $s note to the old leather noteboard.&w~
+OReadmessg	   &O$n reads a note on the old leather noteboard.&w~
+ORemovemessg      &O$n removes a note from the old leather noteboard.&w~
+OTakemessg	   &O$n takes a note from the old leather noteboard.&w~
+Postmessg	   &OYou pin your note to the old leather noteboard.&w~
+End
+Filename          artificer.brd~
+Vnum              2310
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &W$n makes a copy of a note on the noteboard for $mself.&w~
+OListmessg	   &W$n reviews all of the notes on the noteboard.&w~
+OPostmessg	   &W$n places a note on the noteboard.&w~
+OReadmessg	   &W$n reviews a note on the noteboard with interest.&w~
+ORemovemessg      &W$n removes a note from the noteboard.&w~
+OTakemessg	   &W$n takes a note from the noteboard.&w~
+Postmessg	   &WYou place your note on the noteboard.&w~
+End
+Filename          sorcerer.brd~
+Vnum              2385
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &P$n copies a rune located on the glowing ball of energy.&w~
+OListmessg	   &P$n reviews all of the runes on the glowing ball of energy.&w~
+OPostmessg	   &P$n's note turns into a rune on the glowing ball of energy.&w~
+OReadmessg	   &P$n reviews a rune on the glowing ball of energy.&w~
+ORemovemessg      &P$n removes a rune from the glowing ball of energy!&w~
+OTakemessg	   &P$n takes a runes from the glowing ball of energy!&w~
+Postmessg	   &PYour note turns into a rune on the glowing ball of energy.&w~
+End
+Filename          warlock.brd~
+Vnum              2384
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &p$n copies a note out of the grimoire.&w~
+OListmessg	   &p$n thumbs through a grimoire reviewing various notes.&w~
+OPostmessg	   &p$n adds a note inside the glowing grimoire.&w~
+OReadmessg	   &p$n reads a page in the glowing grimoire.&w~
+ORemovemessg      &p$n takes a page out of the grimoire.&w~
+OTakemessg	   &p$n takes a page out of the grimoire.&w~
+Postmessg	   &pYou add your note inside the glowing grimoire.&w~
+End
+Filename          oath.brd~
+Vnum              2383
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &z$n makes a copy of a note on the noteboard made from bones.&w~
+OListmessg	   &z$n reviews the messages on the noteboard made from bones.&w~
+OPostmessg	   &z$n posts a note on the noteboard made from bones.&w~
+OReadmessg	   &z$n reads something on the noteboard made from bones.&w~
+ORemovemessg      &z$n removes a note from the noteboard made from bones.&w~
+OTakemessg	   &z$n takes a note from the noteboard made from bones.&w~
+Postmessg	   &zYou post a note on the noteboard made from bones.&w~
+End
+Filename          bard.brd~
+Vnum              2382
+Min_read_level    1
+Min_post_level    5
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      5
+OCopymessg	   &Y$n copies a note on the golden noteboard.&w~
+OListmessg	   &Y$n reviews all of the notes on the golden noteboard.&w~
+OPostmessg	   &YA song plays as $n posts a note on the noteboard.&w~
+OReadmessg	   &Y$n reads a note on the golden noteboard.&w~
+ORemovemessg      &Y$n removes a note from the golden noteboard.&w~
+OTakemessg	   &Y$n takes a note from the golden noteboard.&w~
+Postmessg	   &YA noteboard plays a song as you post your note.&w~
+End
+Filename          oldgate.brd~
+Vnum              4045
+Min_read_level    0
+Min_post_level    0
+Min_remove_level  51
+Max_posts         100
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   $n makes a copy of one of the notes on the general news board.~
+OListmessg	   $n browses over the notes on the general news board.~
+OPostmessg	   $n tacks a note onto the general news board.~
+OReadmessg	   $n takes a look at a note on the general news board.~
+ORemovemessg      $n removes a note off of the general news board.~
+OTakemessg	   $n takes a note off of the general news board.~
+Postmessg	   You tack your note onto the general news board.~
+End
+Filename          oldgatemail.brd~
+Vnum              4054
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  0
+Max_posts         999
+Type 	           1
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OListmessg	   $n looks inside $s mail box to see if $e has any mail.~
+OPostmessg	   $n gives a letter to the employee who sends it out for $m.~
+OReadmessg	   $n opens $s mail box and reviews the mail received.~
+ORemovemessg      $n removes some mail from $s mail box.~
+OTakemessg	   $n removes some mail from $s mail box.~
+Postmessg	   You give your letter to the employee who sends it out for you.~
+End
+Filename          jeridon.brd~
+Vnum              1945
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  50
+Max_posts         100
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      50
+OCopymessg	   &g$n makes a copy of a note on the note board.&w~
+OListmessg	   &g$n looks over the notes on the wooden note board.&w~
+OPostmessg	   &g$n places a note on the wooden note board.&w~
+OReadmessg	   &g$n reads a note on the wooden note board.&w~
+ORemovemessg      &g$n removes a note on the wooden note board.&w~
+OTakemessg	   &g$n takes a note from the wooden note board.&w~
+Postmessg	   &gYou place your note on the board for all to see.&w~
+End
+Filename          temosmail.brd~
+Vnum              2686
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  1
+Max_posts         0
+Type 	           1
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OListmessg	   $n looks inside $s mail box to see if $e has any mail.~
+OPostmessg	   $n gives $s letter to the employee who mails it out for $m.~
+OReadmessg	   $n opens $s mail box and reviews any mail received.~
+ORemovemessg      $n removes some mail from $s mail box.~
+OTakemessg	   $n removes some mail from $s mail box.~
+Postmessg	   You give your letter to the employee who sends it out for you.~
+End
+Filename          temos.brd~
+Vnum              2687
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      50
+OCopymessg	   $n copies a piece of paper from the village noteboard.~
+OListmessg	   $n reviews the village noteboard for new postings.~
+OPostmessg	   $n places a piece of paper on the village noteboard.~
+OReadmessg	   $n reviews the noteboard before reading one of the postings.~
+ORemovemessg      $n removes a piece of paper from the noteboard.~
+OTakemessg	   $n removes a piece of paper from the noteboard.~
+Postmessg	   You place your note on the board in a noticeable spot.~
+End
+Filename          meridan.brd~
+Vnum              5399
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  50
+Max_posts         200
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OCopymessg	   $n copies a piece of paper from the city board.~
+OListmessg	   $n reviews the board for any new postings.~
+OPostmessg	   $n places a piece of paper on the city board.~
+OReadmessg	   $n reviews the board before reading one of the postings.~
+ORemovemessg      $n remove a piece of paper from the board.~
+OTakemessg	   $n removes a piece of paper from the board.~
+Postmessg	   You place your note on the board in a noticeable spot.~
+End
+Filename          meridanmail.brd~
+Vnum              5035
+Min_read_level    1
+Min_post_level    1
+Min_remove_level  1
+Max_posts         999
+Type 	           1
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+OListmessg	   $n looks inside $s mail box to see if $e has any mail.~
+OPostmessg	   $n gives $s letter to the employee who sends it out for $m.~
+OReadmessg	   $n opens $s mail box and reviews the mail received.~
+ORemovemessg      $n remove some mail from $s mail box.~
+OTakemessg	   $n removes some mail from $s mail box.~
+Postmessg	   You give your letter to the employee who sends it out for you.~
+End
+Filename          druid.brd~
+Vnum              0
+Min_read_level    0
+Min_post_level    0
+Min_remove_level  0
+Max_posts         0
+Type 	           0
+Read_group        ~
+Post_group        ~
+Extra_readers     ~
+Extra_removers    ~
+Extra_ballots     ~
+Ballot_level      51
+End

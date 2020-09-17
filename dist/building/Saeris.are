@@ -1,0 +1,3017 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         {PROTO} Saeris's area in progress~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+Flags        prototype~
+#ENDAREADATA
+
+#MOBILE
+Vnum       5500
+Keywords   male dreamer template~
+Short      &ca dreamer&w~
+Long       &cA man is here dreaming.&w
+~
+Desc       &cThe soft silhouette of a man is here while he dreams this entire
+scenario. He moves about like an actor in a scene as he experiences
+the dream as if it were real life.
+~
+Lore       &cYou see a man go to bed and awaken in a completely different place...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel prototype~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 14
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       5501
+Keywords   female dreamer template~
+Short      &ca dreamer&w~
+Long       &cA woman is here dreaming.&w
+~
+Desc       &cThe soft silhouette of a woman is here while she dreams this entire
+scenario. She moves about like an actress in a scene as she experiences
+the dream as if it were real life.&w
+~
+Lore       &cYou see a woman got to bed and awaken in a completely different place...&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel prototype~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 13
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       5502
+Keywords   man male dreamer arguing~
+Short      &ca male dreamer&w~
+Long       &cA man is here fighting with his "wife" over some daily chores.
+~
+Desc       &cThe soft silhouette of a man is here while he dreams this entire
+scenario. He moves about like an actor in a scene as he experiences
+the dream as if it were real life.
+~
+Lore       &cYou see a man go to bed and awaken in a completely different place...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel prototype~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 14
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if mobinroom(5503) == 1
+scowl woman
+sayto woman You were late again to get the eggs out of the hatch!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   if mobinroom(5503) == 1
+sigh woman
+sayto woman Did you finish the laundry yet? Cook dinner? Feed the chickens?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote picks up some mud and throws it at his "wife" who dodges it.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   glare $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   15~
+Comlist   scowl female
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p wakedreamer~
+Comlist   If wisdom($n) >= 18
+Mea $n You walk up to the dreamer and shake them as you try to
+Mea $n force them to awaken on the other side. Their outline suddenly
+Mea $n blurs and they slowly vanish before your very eyes!
+mer $n $n and a dreamer slowly disappear from sight!
+Mpsleep 2
+Mea $n Suddenly the terrain around you shifts!
+Mptransfer $n 5504
+Mpgoto 5599
+Else
+Mea $n You fail to wake up the dreamer and suddenly the terrain around you
+Mea $n shifts quickly and you are somewhere else completely!
+Mer $n $n tries to wake up a dreamer, but suddenly vanishes from sight!
+Mpscatter $n 5504 5524
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate dreamer~
+Comlist   if investigation($n) >= 16
+if arcana($n) >= 14
+mea $n Perhaps you can end this dream if you simply wake up the
+mea $n dreamer by doing WAKEDREAMER...
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5503
+Keywords   woman female angry wife arguing~
+Short      &can angry wife&w~
+Long       &cAn angry wife is here fighting with her "husband" over chores.&w
+~
+Desc       &cThis woman is here arguing with her husband over chores and daily
+life. She is wearing a simple cotton dress and a white bonnet.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel prototype~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 13
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if mobinroom(5502) == 1
+sayto man You take too long to plow the fields! We're going to starve!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   if mobinroom(5502) == 1
+slap man
+sayto man I should have never married you! You are a sloth!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote throws eggs at her "husband" and hits him on the shoulder.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   snarl $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if mobinroom(5502) == 0
+mpmset female long &cA woman is here sweeping around the porch of a house.&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   15~
+Comlist   glare man
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5504
+Keywords   man male dreamer boat fishing~
+Short      &ca dreamer&w~
+Long       &cA man on a rickety looking wooden boat is here fishing.&w
+~
+Desc       &cThe soft silhouette of a man is here while he dreams this entire
+scenario. He moves about like an actor in a scene as he experiences
+the dream as if it were real life.
+~
+Lore       &cYou see a man go to bed and awaken in a completely different place...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea prototype~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 14
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+smile $n
+sayto $n Great day for fishing, huh?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote whistles a little tune as he fishes here from his boat.
+mpasound &cYou hear whistling coming from down the river.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   say Noooo!!!! NOOOOOOO!!!!!!!!!
+mpasound &RYou hear yelling coming from down the river.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p wakedreamer~
+Comlist   If wisdom($n) >= 18
+Mea $n You walk up to the dreamer and shake them as you try to
+Mea $n force them to awaken on the other side. Their outline suddenly
+Mea $n blurs and they slowly vanish before your very eyes!
+Mer $n &w$n&w shakes a dreamer until they slowly disappear from sight!
+Mpsleep 2
+Mea $n &wSuddenly the terrain around you shifts!
+Mptransfer $n 5506
+Mpgoto 5599
+Else
+Mea $n You fail to wake up the dreamer and suddenly the terrain around you
+Mea $n shifts quickly and you are somewhere else completely!
+Mer $n $n tries to wake up a dreamer, but suddenly vanishes from sight!
+Mpscatter $n 5506 5524
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate dreamer~
+Comlist   if investigation($n) >= 16
+if arcana($n) >= 14
+mea $n Perhaps you can end this dream if you simply wake up the
+mea $n dreamer by doing WAKEDREAMER...
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5505
+Keywords   water weird large ~
+Short      &Ca large water weird&w~
+Long       &CSome water is here moving independently from the rest of the river.&w
+~
+Desc       &CThe creature before you is made entirely of river water and often
+holds a shape similar to a snake with spikes along its back. It swims
+almost invisibly in the river as it hunts.&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea running prototype~
+Affected   infrared sneak hide aqua_breath~
+Stats1     0 1 10 0 10 0 0 0 0 0
+Stats2     10 10 45
+Stats3     3 6 5
+Stats4     3 0 2 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Resist     fire nonmagic~
+Immune     poison sleep charm paralysis psychic~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   25~
+Comlist   if mobinroom(5504) == 1
+mpecho &CA small patch of the river begins to swirl before a creature
+mpecho &Clashes out and attacks the man on a boat!
+k dreamer
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5506
+Keywords   female dreamer falcon soaring sky~
+Short      &ca dreamer&w~
+Long       &cA female falcon is majestically soaring the clear skies here.&w
+~
+Desc       &cThe soft silhouette of a woman is here while she dreams this entire
+scenario. She moves about like an actress in a scene as she experiences
+the dream as if it were real life.&w
+~
+Lore       &cYou see a woman got to bed and awaken in a completely different place...&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea prototype~
+Affected   flying truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 13
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   4~
+Comlist   emote flies around in beautiful patterns here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p wakedreamer~
+Comlist   If wisdom($n) >= 18
+Mea $n You walk up to the dreamer and shake them as you try to
+Mea $n force them to awaken on the other side. Their outline suddenly
+Mea $n blurs and they slowly vanish before your very eyes!
+mer $n $n and a dreamer slowly disappear from sight!
+Mpsleep 2
+Mea $n Suddenly the terrain around you shifts!
+Mptransfer $n 5512
+Mpgoto 5599
+Else
+Mea $n You fail to wake up the dreamer and suddenly the terrain around you
+Mea $n shifts quickly and you are somewhere else completely!
+Mer $n $n tries to wake up a dreamer, but suddenly vanishes from sight!
+mpscatter $n 5512 5551
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate dreamer~
+Comlist   if investigation($n) >= 16
+if arcana($n) >= 14
+mea $n Perhaps you can end this dream if you simply wake up the
+mea $n dreamer by doing WAKEDREAMER...
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5507
+Keywords   giant spider purple dark hunting~
+Short      &pa giant spider&w~
+Long       &pA giant dark purple spider is here hunting for prey.&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive prototype~
+Affected   detect_hidden infrared sneak hide~
+Stats1     -1000 1 12 0 10 0 0 0 0 0
+Stats2     7 15 50
+Stats3     2 8 5
+Stats4     3 1 2 0 0 0 8
+Attribs    16 5 10 18 14 2 10
+Saves      0 0 0 0 0 0
+Immune     blunt poison sleep charm psychic~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5508
+Keywords   young dreamer little boy web screaming~
+Short      &ca young dreamer&w~
+Long       &cA little boy is here screaming as he struggles against a web.&w
+~
+Desc       &cThe soft silhouette of a child is here while he dreams this entire
+scenario. He moves about like an actor in a scene as he experiences
+the dream as if it were real life.
+~
+Lore       &cYou see a young child go to bed warily as he wonders if he will 
+have a nightmare or not as he is tucked in...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel prototype~
+Affected   truesight~
+Stats1     500 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 14
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote struggles against the web he is stuck on.
+say HELP! H-HELP M-M-M-MEEEE!!!
+mpasound &cYou hear the voice of a child crying for help nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+else
+emote screams as he sees the spider and struggles against some webbing.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p wakedreamer~
+Comlist   If wisdom($n) >= 18
+Mea $n You walk up to the dreamer and shake them as you try to
+Mea $n force them to awaken on the other side. Their outline suddenly
+Mea $n blurs and they slowly vanish before your very eyes!
+Mer $n &w$n&w shakes a dreamer until they slowly disappear from sight!
+Mpsleep 2
+Mea $n &wSuddenly the terrain around you shifts!
+Mptransfer $n 5512
+Mpgoto 5599
+Else
+Mea $n You fail to wake up the dreamer and suddenly the terrain around you
+Mea $n shifts quickly and you are somewhere else completely!
+Mer $n $n tries to wake up a dreamer, but suddenly vanishes from sight!
+Mpscatter $n 5506 5524
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate dreamer~
+Comlist   if investigation($n) >= 16
+if arcana($n) >= 14
+mea $n Perhaps you can end this dream if you simply wake up the
+mea $n dreamer by doing WAKEDREAMER...
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5509
+Keywords   female dreamer queen ~
+Short      &ca female dreamer&w~
+Long       &cA queen is here barking out orders to her servants.&w
+~
+Desc       &cThe soft silhouette of a woman is here while she dreams this entire
+scenario. She moves about like an actress in a scene as she experiences
+the dream as if it were real life.&w
+~
+Lore       &cYou see a woman got to bed and awaken in a completely different place...&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel prototype~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 13
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if mobinroom(5510) == 1
+sayto servant Hath thou washed my linens? Cleaned my chamberpot?!
+mpforce servant sigh
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   if mobinroom(5510) == 1
+glare servant
+sayto servant I need my bath drawn! You know the temperature I desire!
+mpforce servant sayto $n Yes my Queen...
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p wakedreamer~
+Comlist   If wisdom($n) >= 18
+Mea $n You walk up to the dreamer and shake them as you try to
+Mea $n force them to awaken on the other side. Their outline suddenly
+Mea $n blurs and they slowly vanish before your very eyes!
+Mer $n &w$n&w shakes a dreamer until they slowly disappear from sight!
+Mpsleep 2
+Mea $n &wSuddenly the terrain around you shifts!
+Mptransfer $n 5508
+Mpgoto 5599
+Else
+Mea $n You fail to wake up the dreamer and suddenly the terrain around you
+Mea $n shifts quickly and you are somewhere else completely!
+Mer $n $n tries to wake up a dreamer, but suddenly vanishes from sight!
+Mpscatter $n 5506 5524
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate dreamer~
+Comlist   if investigation($n) >= 16
+if arcana($n) >= 14
+mea $n Perhaps you can end this dream if you simply wake up the
+mea $n dreamer by doing WAKEDREAMER...
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   15~
+Comlist   if mobinroom(5511) == 1
+glare maid
+sayto maid Where is the dress you were supposed to clean and hem?!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   if mobinroom(5511) == 1
+sigh maid
+sayto $n I demand to know where my polished shoes are!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   13~
+Comlist   if mobinroom(5511) == 1
+emote slams a hand on her throne and screams.
+sayto maid I DEMAND YOU DUST THIS ROOM! IT IS FILTHY! CLEAN NOW!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   8~
+Comlist   if mobinroom(5511) == 1
+sayto maid I demand some food from the kitchen! I am hungry!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if mobinroom(5510) == 1
+sayto servant I demand more candles in this throne room!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   if mobinroom(5512) == 1
+sayto jester Tell me a joke!
+mpsleep 2
+mpforce jester sayto queen W-well h-h-how about...
+sayto jester Nevermind fool!
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5510
+Keywords   stressed out servant castle~
+Short      &wa servant&w~
+Long       &wA stressed out servant is here trying to serve his needy queen.&w
+~
+Desc       &wThis servant seems very stressed out and he runs around the
+castle trying to fulfill his queen's needs.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea prototype~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 7
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if mobinroom(5509) == 1
+emote grumbles about something to himself.
+mpsleep 2
+mpforce queen glare servant
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if mobinroom(5509) == 0
+emote does some of his chores here and grumbles the entire time.
+say Stupid Queen. Do this. Do that. Someone should poison her.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5511
+Keywords   stressed out servant castle maid~
+Short      &Wa maid&w~
+Long       &WA stressed out maid is here trying to complete all of her duties.&w
+~
+Desc       &WThis maid seems very stressed out and she runs around the castle trying
+to fulfill her queen's needs.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea prototype~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if mobinroom(5509) == 0
+emote wipes some tears from her eyes as she cleans here.
+say She is just so dreadful.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   if mobinroom(5509) == 1
+emote wipes her eyes briefly and sniffles for a moment.
+mpsleep 2
+mpforce dreamer glare maid
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5512
+Keywords   jester sad looking female~
+Short      &Pa jester&w~
+Long       &PA sad looking female jester is here trying to entertain the court.&w
+~
+Desc       &PThis jester looks very sad as she tries to entertain the court and
+a very needy queen. She is dressed in a bright pink outfit that is
+quite garish looking.
+~
+Race       human~
+Class      bard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea prototype~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 13
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if mobinroom(5509) == 0
+emote finds a spot here to hide her face and sobs for a few moments.
+say No o-one likes my jokes... I don't want to die like the last jester...
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5513
+Keywords   harpy flying female humanoid bird wings~
+Short      &Oa harpy&w~
+Long       &OA humanoid woman with human wings is here flying around.&w
+~
+Desc       &OThis woman has legs that resemble the bottom half of an
+eagle while from her back sprout two large wings. Her hands
+and feet have long talons where toes and fingers would be.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea prototype~
+Affected   infrared~
+Stats1     -1000 1 9 0 14 0 0 0 0 0
+Stats2     9 9 20
+Stats3     2 4 5
+Stats4     2 10 2 0 0 0 6
+Attribs    14 8 10 16 12 14 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   25~
+Comlist   if mobinroom(5506) == 1
+k falcon
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   mpgoto 5511
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   mpgoto 5599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5598
+Keywords   astral walker humanoid form figure swirling energy astral12~
+Short      &Pan astral walker&w~
+Long       &PA humanoid form made of swirling energy is here traveling about.&w
+~
+Desc       &PThis humanoid seems to be made purely of some sort of
+energy. You can tell that it has legs, arms, and other
+humanoid features. You cannot tell its gender and it moves
+about in a very fluid way.
+~
+Lore       &PYou see an obscurred person begin to meditate in a room full of
+lit candles and incense...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel prototype~
+Affected   truesight~
+Stats1     0 1 10 0 10 0 0 0 0 0
+Stats2     8 10 10
+Stats3     2 8 2
+Stats4     2 0 2 0 0 0 13
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     sleep charm psychic~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   15~
+Comlist   mpecho &PThe humanoid form stops floating as it slowly starts to disappear...
+mpscatter astral12 5502 5564 
+mpecho &PA humanoid form starts to materialize here from somewhere else...&w
+silent stand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &PThe humanoid form floats about here as it observes its surroundings.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5599
+Keywords   dream spirit energy~
+Short      &ca dream spirit&w~
+Long       &cA spirit made of dream energy is here.&w
+~
+Desc       &cThis spirit is made of energy and has a humanoid like shape to it.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel secretive mobinvis pacifist prototype~
+Affected   invisible infrared flying truesight~
+Stats1     0 51 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     3 3 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     5500
+Keywords long strand spider spidery silver silvery web sweb3283~
+Type     treasure~
+Short    &wa strand of spider's web&w~
+Long     &wA long silvery strand of a spider's web can be seen here.~
+Flags    invis magic prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    web~
+ExDesc       &wThis webbing is invisible to the normal eye and seems to be a long
+strand that connects with somewhere else. The strand looks thick and
+sticky to the touch.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if investigation($n) >= 16
+mea $n &wYou notice that the strand of webbing here seems to go off
+mea $n &wfurther into the landscape. Perhaps you can PULLWEB to see
+mea $n &wwhat happens...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5501
+Keywords buried long strand spider web silvery sweb3283~
+Type     treasure~
+Short    &wa strand of spider's web&w~
+Long     &wA long silvery strand of a spider's web can be seen here.~
+Flags    invis magic buried prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    web~
+ExDesc       &wThis webbing is invisible to the normal eye and seems to be a long
+strand that connects with somewhere else. The strand looks thick and
+sticky to the touch.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5502
+Keywords small wooden boat~
+Type     boat~
+Short    &Oa small wooden boat&w~
+Long     &OA small wooden boat has been left here.&w~
+Flags    inventory prototype~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    10 45 90 0 4 1 0
+#EXDESC
+ExDescKey    boat~
+ExDesc       &OThis boat is only big enough to carry one to two people on it. It
+has been made from carved wood and seems very stable.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5503
+Keywords fishing pole~
+Type     weapon~
+Short    &Oa fishing pole&w~
+Long     &OA fishing pole has been left here.&w~
+Flags    inventory organic prototype versatile~
+WFlags   take onehand twohand~
+Values   12 1 4 2 15 0
+Values2  0 2
+Stats    2 5 0 1 0 0 0
+#EXDESC
+ExDescKey    fishing~
+ExDesc       &OThis is a fairly sturdy fishing pole that can help someone
+fish for their dinner. You need to set a lure first before
+you can use the pole (INVESTIGATE POLE).
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    pole~
+ExDesc       &OThis is a fairly sturdy fishing pole that can help someone
+fish for their dinner. You need to set a lure first before
+you can use the pole (INVESTIGATE POLE).
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5504
+Keywords long strand spider silver silvery web sweb3283~
+Type     treasure~
+Short    &wa strand of spider's web&w~
+Long     &wA silvery strand of a spider's web is here sticking out of a tiny cloud.&w~
+Flags    invis magic prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    web~
+ExDesc       &wThis webbing is invisible to the normal eye and seems to be a long
+strand that connects with somewhere else. The strand looks thick and
+sticky to the touch.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5505
+Keywords long strand spider silver silvery web sweb3283~
+Type     treasure~
+Short    &wa strand of spider's web&w~
+Long     &wA silvery strand of a spider's web is here sticking out of a book.&w~
+Flags    invis magic prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    web~
+ExDesc       &wThis webbing is invisible to the normal eye and seems to be a long
+strand that connects with somewhere else. The strand looks thick and
+sticky to the touch.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5599
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Flags    prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     5500
+Name     A Small Forest Path~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    5501
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5501
+Name     Before a Massive Tree~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    5500
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5502
+Name     &OA Large Crop Field&w~
+Sector   field~
+Flags    nosummon noastral prototype~
+Stats    0 0 0 0 12 0
+Perdesc  &OThe field here has been recently plowed and seeds have been buried.
+~
+#EXIT
+Direction north~
+ToRoom    5503
+#ENDEXIT
+
+Reset O 0 5501 1 5502
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if insight($n) >= 18
+mpsleep 2
+mea $n &OYou notice that some earth has been disturbed here recently.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   If ovnumroom(5501) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the spider's silvery webbing on a nearby tree
+mea $n &wand you feel yourself pulled far from where you stood last...
+mptransfer $n 5508
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the spider's silvery webbing on a nearby tree
+mea $n &wand you feel yourself pulled far from where you stood last...
+mpscatter $n 5504 5565
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5501) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5503
+Name     &OBefore a Farmhouse&w~
+Sector   field~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5502
+#ENDEXIT
+
+Reset M 0 5503 1 5503
+Reset M 0 5502 1 5503
+#ENDROOM
+
+#ROOM
+Vnum     5504
+Name     &cA Calm River&w~
+Sector   water_noswim~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5505
+#ENDEXIT
+
+Reset M 0 5504 1 5504
+  Reset G 0 5502 1
+  Reset E 0 5503 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5505
+Name     &cA Calm River&w~
+Sector   water_noswim~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5504
+#ENDEXIT
+
+Reset M 0 5505 1 5505
+#ENDROOM
+
+#ROOM
+Vnum     5506
+Name     &WInside a Castle&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5507
+#ENDEXIT
+
+Reset M 0 5512 1 5506
+#ENDROOM
+
+#ROOM
+Vnum     5507
+Name     &WBefore a Throne&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5506
+#ENDEXIT
+
+Reset M 0 5509 1 5507
+Reset M 0 5510 1 5507
+Reset M 0 5511 1 5507
+#ENDROOM
+
+#ROOM
+Vnum     5508
+Name     &zA Large Spider's Web&w~
+Sector   underground~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5509
+#ENDEXIT
+
+Reset M 0 5508 1 5508
+#ENDROOM
+
+#ROOM
+Vnum     5509
+Name     &zA Large Spider's Web&w~
+Sector   underground~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5508
+#ENDEXIT
+
+Reset M 0 5507 1 5509
+Reset O 0 5500 1 5509
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   if ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon a loose strange of silvery spider's webbing
+mea $n and you feel yourself pulled far from where you stood last...
+mptransfer $n 5510
+Mppurge sweb3283
+else
+mea $n &wYou pull upon a loose strange of silvery spider's webbing
+mea $n and you feel yourself pulled far from where you stood last...
+mpscatter $n 5504 5564
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5510
+Name     &CA Clear Sky&w~
+Sector   city~
+Flags    nosummon noastral nofloor prototype~
+#EXIT
+Direction down~
+ToRoom    5511
+#ENDEXIT
+
+Reset M 0 5506 1 5510
+#ENDROOM
+
+#ROOM
+Vnum     5511
+Name     &CA Clear Sky&w~
+Sector   city~
+Flags    nosummon noastral nofloor prototype~
+#EXIT
+Direction up~
+ToRoom    5510
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5553
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 5504 1 5511
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   if ovnumroom(5504) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the spider's silvery webbing on a nearby cloud
+mea $n &wand you feel yourself pulled far from where you stood last...
+mptransfer $n 5533
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the spider's silvery webbing on a nearby cloud
+mea $n &wand you feel yourself pulled far from where you stood last...
+mpscatter $n 5504 5564
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5501) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5512
+Name     &RA Pirate Ship&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5513
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5513
+Name     &RA Pirate Ship&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5512
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5514
+Name     &PA Fairy Forest&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction northeast~
+ToRoom    5515
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5515
+Name     &PA Fairy Forest&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction southwest~
+ToRoom    5514
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5517
+Name     &bDeep under the Sea&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction down~
+ToRoom    5518
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5518
+Name     &bDeep under the Sea&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction up~
+ToRoom    5517
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5519
+Name     &OClimbing an Erupting Volcano&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction up~
+ToRoom    5520
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5520
+Name     &OClimbing an Erupting Volcano&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction down~
+ToRoom    5519
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5521
+Name     &pA Large Library&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5522
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5522
+Name     &pA Large Library&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5521
+#ENDEXIT
+
+Reset O 0 5505 1 5522
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   if ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the spider's silvery webbing sticking out
+mea $n &wof a book and you feel yourself pulled far from where 
+Mea $n &wyou stood last...
+mptransfer $n 5529
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the spider's silvery webbing sticking out
+mea $n &wof a book and you feel yourself pulled far from where 
+Mea $n &wyou stood last...
+mpscatter $n 5517 5565
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5523
+Name     &gA Stinky Marsh&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5524
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5524
+Name     &gA Stinky Marsh&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5523
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5525
+Name     &RA War Field&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5526
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5526
+Name     &RA War Field&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5525
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5527
+Name     &GInside a Metal Cage&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5528
+Name     &GA Hill Giant Village&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5527
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5529
+Name     &RInside a Burning House&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5530
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5530
+Name     &RInside a Burning House&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5529
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   If ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the spider's silvery webbing hanging out
+mea $n &wfrom a broken window and you feel yourself pulled far 
+Mea $n &wfrom where you stood last...
+mptransfer $n 5535
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the spider's silvery webbing hanging out
+mea $n &wfrom a broken window and you feel yourself pulled far 
+Mea $n &wfrom where you stood last...
+mpscatter $n 5517 5563
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5531
+Name     &zA Burning Pyre&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5532
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5532
+Name     &zA Witch Hunt&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5531
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5533
+Name     &YA Hot Desert&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5534
+#ENDEXIT
+
+Reset O 0 5501 1 5533
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5501) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   If ovnumroom(5501) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the silvery webbing sticking out from the sand
+mea $n &wand you feel yourself pulled far from where you stood last...
+mptransfer $n 5539
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the silvery webbing sticking out from the sand
+mea $n &wand you feel yourself pulled far from where you stood last...
+mpscatter $n 5504 5564
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5534
+Name     &YA Hot Desert&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5533
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5535
+Name     &wInside Ancient Ruins&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5536
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5536
+Name     &wInside Ancient Ruins&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5535
+#ENDEXIT
+
+Reset O 0 5500 1 5536
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   If ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the spider's silvery webbing wrapped around
+mea $n &wa broken marble statue and you feel yourself pulled far 
+Mea $n &wfrom where you stood last...
+mptransfer $n 5545
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the spider's silvery webbing wrapped around
+mea $n &wa broken marble statue and you feel yourself pulled far 
+Mea $n &wfrom where you stood last...
+mpscatter $n 5502 5562
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5537
+Name     &BA Stormy Sea&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5538
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5538
+Name     &BA Shipwreck&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5537
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5539
+Name     &WA Wedding Chapel&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5540
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5540
+Name     &WBefore the Altar&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5539
+#ENDEXIT
+
+Reset O 0 5500 1 5540
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   if ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the silvery web wrapped around an altar
+mea $n &wand you feel yourself pulled far from where you stood last...
+mptransfer $n 5555
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the silver web wrapped around an altar
+mea $n &wand you feel yourself pulled far from where you stood last...
+mpscatter $n 5504 5564
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5541
+Name     &RA Hellish Landscape&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5542
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5542
+Name     &RA Hellish Landscape&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5541
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5543
+Name     &zA Graveyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5544
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5544
+Name     &zA Graveyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5543
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5545
+Name     &YA Joyous Celebration&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5546
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5546
+Name     &YA Joyous Celebration&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5545
+#ENDEXIT
+
+Reset O 0 5500 1 5546
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   If ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the spider's silvery webbing peeking from
+mea $n &wunder a wooden table and you feel yourself pulled far 
+Mea $n &wfrom where you stood last...
+mptransfer $n 5561
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the spider's silvery webbing peeking from
+mea $n &wunder a wooden table and you feel yourself pulled far 
+Mea $n &wfrom where you stood last...
+mpscatter $n 5502 5565
+Mppurge sweb3283
+Endif
+Else
+Mea $n &wThere is no such thing here.
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5547
+Name     &RA Lava Pit&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction down~
+ToRoom    5548
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5548
+Name     &RInside Lava&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction up~
+ToRoom    5547
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5549
+Name     &pA Wizard's Study&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5550
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5550
+Name     &pA Wizard's Study&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5549
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5551
+Name     &zA Dark Crypt&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5552
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5552
+Name     &zA Dark Crypt&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5551
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5553
+Name     &gA Foggy Forest&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction northeast~
+ToRoom    5554
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5554
+Name     &gA Foggy Forest&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction southwest~
+ToRoom    5553
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5555
+Name     &OA Rowdy Tavern&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5556
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5556
+Name     &OA Rowdy Tavern&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5555
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   if ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the silvery web hanging from a rafter
+mea $n &wand you feel yourself pulled far from where you stood last...
+mptransfer $n 5565
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the silvery web hanging from a rafter
+mea $n &wand you feel yourself pulled far from where you stood last...
+mpscatter $n 5504 5564
+Mppurge sweb3283
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5557
+Name     &WA Hycrian Missionary&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5558
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5558
+Name     &WA Hycrian Missionary&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5557
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5559
+Name     &PA Festive Dancehall&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5560
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5560
+Name     &PA Festive Dancehall&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5559
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5561
+Name     &rA Dungeon&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5562
+#ENDEXIT
+
+Reset O 0 5500 1 5561
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   If ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the spider's silvery webbing wrapped around
+mea $n &wa metal pole and you feel yourself pulled far from where 
+Mea $n &wyou stood last...
+mptransfer $n 5565
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the spider's silvery webbing wrapped around
+mea $n &wa metal pole and you feel yourself pulled far from where 
+Mea $n &wyou stood last...
+mpscatter $n 5502 5565
+Mppurge sweb3283
+Endif
+Else
+Mea $n &wThere is no such thing here.
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5562
+Name     &rA Dungeon&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5561
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5563
+Name     &cA Flooding Village&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5564
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5564
+Name     &cA Flooding Village&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5563
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5565
+Name     &zA Dark and Stormy Night&w~
+Sector   field~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5566
+Name     &zA Dark and Stormy Night&w~
+Sector   field~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5565
+#ENDEXIT
+
+Reset O 0 5500 1 5566
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullweb~
+Comlist   if ovnumroom(5500) == 1
+if survival($n) >= 15
+mea $n &wYou pull upon the silvery web attached to a nearby tree
+mea $n &wbranch and a path suddenly materializes to the north! You
+Mea $n &whear the sounds of violent wind ahead and you catch the 
+Mea $n &wglimpse of a massive cyclone... 
+Mpopenpassage 5566 5567 0
+mpat 5567 mpopenpassage 5567 5566 2
+mer $n &w$n&w pulls something a a path to the north appears!&w
+Mppurge sweb3283
+else
+mea $n &wYou pull upon the silvery web hanging from a nearby tree
+mea $n &wbranch and you feel yourself pulled far from where you 
+Mea $n &wstood last...
+mpscatter $n 5504 5564
+Mppurge sweb3283
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate web~
+Comlist   if ovnumroom(5500) == 1
+if investigation($n) >= 14
+mea $n The way the strand of spider's web is presented it looks like
+mea $n it can be pulled. Perhaps you just need to PULLWEB to see what
+mea $n happens...
+else
+mea $n You fail to find anything else.
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5567
+Name     &WBefore a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5568
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5568
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5569
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5575
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5577
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5576
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5569
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5570
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5568
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5570
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5571
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5569
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5577
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5571
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5570
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5572
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5577
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5572
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5571
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5573
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5577
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5576
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5573
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5572
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5574
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5576
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5574
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5573
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5576
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5575
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5575
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5574
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5568
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5576
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5576
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5577
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5574
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5572
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5573
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5568
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5575
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5577
+Name     &WInside a Swirling Tornado&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5570
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5576
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5571
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5572
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5568
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5578
+Name     &wA Cobblestone Road&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5579
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5579
+Name     &wBefore a Castle Gatehouse&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5578
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5580
+Name     &wA Courtyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5582
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5586
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5581
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5581
+Name     &wA Courtyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5580
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5583
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5582
+Name     &wA Courtyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5585
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5580
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5583
+Name     &wA Courtyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5581
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5584
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5584
+Name     &wA Courtyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5586
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5585
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5587
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5583
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5585
+Name     &wA Courtyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5582
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5584
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5586
+Name     &wA Courtyard&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5580
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5584
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5587
+Name     &wBefore the Castle Entrance&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5584
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5588
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5588
+Name     &wA Grand Hallway&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5587
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5589
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5589
+Name     &wA Grand Hallway&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5590
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5588
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5590
+Name     &wBefore a Grand Staircase&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5589
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5593
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5591
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5591
+Name     &wA Dungeon&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5592
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5590
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5592
+Name     &wA Dungeon&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5591
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5593
+Name     &wA Grand Hallway&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5594
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5590
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5594
+Name     &wA Grand Hallway&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5595
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5596
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5597
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5593
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5595
+Name     &wA Destroyed Bed Chamber&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction south~
+ToRoom    5594
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5596
+Name     &wA Grand Hallway&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction east~
+ToRoom    5598
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5594
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5597
+Name     &wA Destroyed Library&w~
+Sector   city~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction north~
+ToRoom    5594
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5598
+Name     &wA Throne Room&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+#EXIT
+Direction west~
+ToRoom    5596
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5599
+Name     &RDREAMPLANE MOB HIDEAWAY&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate prototype~
+Desc     You do not belong in here. Please leave via the down exit or contact
+an admin. Thank you! :)
+~
+#EXIT
+Direction down~
+ToRoom    5500
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 5599 1 5599
+Reset M 0 5513 1 5599
+Reset M 0 5598 1 5599
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

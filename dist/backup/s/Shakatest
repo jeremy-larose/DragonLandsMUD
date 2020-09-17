@@ -1,0 +1,162 @@
+#PLAYER
+Version      5
+Name         Shakatest~
+Sex          1
+Class        3
+Race         0
+Adjective    a handsome, brown-haired male human~
+Age          0 28 2 607
+Languages    1 1
+Level        45
+Played       128099
+Room         1203
+HpManaMove   602 602 100 100 487 487
+Gold         98
+Silver       0
+Copper       0
+Exp          2855070
+Height          61
+Weight          141
+Act          1644168776&4
+Position     113
+Style     2
+Practice     45
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    1000
+Favor        88
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -4150
+Subclasses   0&16
+Mentalstate  -1
+Password     4a61f7541578d5a341d52753f48da1ffdc1cc537150734f59996b35dcd6e7448~
+Title         the Not set.~
+Prompt       <&R%h&W/&R%HHP &G%v&W/&G%VMV&W>~
+FPrompt	     <&R%h&W/&R%HHP &G%v&W/&G%VMV&W>~
+Deity	     Crisma~
+Flags        32768
+PKills       0
+PDeaths      0
+MKills       48
+MDeaths      6
+IllegalPK    0
+Timezone     -1
+AttrPerm     20 14 12 20 24 12 12
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Condition    0 0 19 45
+Background    0
+Greeted        Shakalin~
+Prepped       'cats grace' 1 -1
+Prepped       'fly' 1 -1
+Prepped       'grease' 1 -1
+Prepped       'comet' 1 -1
+Prepped       'fireball' 1 -1
+Prepped       'finger of death' 1 -1
+Prepped       'thunderwave' 1 -1
+Cooldown        'secondwind' 1 1 -1
+Cooldown        'actionsurge' 2 2 -1
+Site         24.247.179.13
+Skill        95 'actionsurge'
+Skill        95 'archery style'
+Weapon       95 'axes'
+Weapon       95 'blowguns'
+Weapon       95 'bows'
+Weapon       95 'crossbows'
+Weapon       95 'daggers'
+Weapon       95 'darts'
+Skill        95 'defense style'
+Skill        95 'dueling style'
+Skill        95 'fourth attack'
+Skill        95 'great weapon style'
+Weapon       95 'halberds'
+Weapon       95 'hammers'
+Skill        95 'improved critical'
+Skill        95 'indomitable'
+Weapon       95 'javelins'
+Weapon       95 'lances'
+Weapon       95 'long swords'
+Weapon       95 'maces'
+Weapon       95 'nets'
+Skill        95 'protection style'
+Weapon       95 'rapiers'
+Skill        95 'remarkable athlete'
+Weapon       95 'scimitars'
+Skill        95 'second attack'
+Skill        95 'second wind'
+Skill        95 'secondwind'
+Weapon       95 'short swords'
+Weapon       95 'sickles'
+Weapon       95 'slings'
+Weapon       95 'spears'
+Weapon       95 'staves'
+Skill        95 'superior critical'
+Skill        95 'survivor'
+Skill        95 'third attack'
+Skill        95 'two weapon style'
+Weapon       95 'whips'
+Killed       2508 1
+Killed       1201 8
+Killed       1000 1
+Killed       1416 1
+Killed       1403 3
+Killed       1401 1
+Killed       1400 3
+Killed       1405 6
+Killed       1016 1
+Killed       1003 2
+Killed       1005 15
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+Qbit        1405 You are helping a ranger clear a marsh of aggressive bullywugs.~
+Qbit        1400 A pixie in a marsh is asking you for some assistance finding her crown.~
+Qbit        1403 You gave a merchant peace after finding his daughter's body.~
+IMCPerm      2
+IMCFlags     256
+End
+
+#OBJECT
+Vnum         1011
+WearLoc      26
+Level        1
+Values       5 1 6 3 -1 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         149
+WearLoc      5
+Level        1
+Values       1 1 0 50 0 0
+Values2      15 2
+End
+
+#OBJECT
+Vnum         138
+Level        1
+Values       1 1 0 0 0 0
+Values2      2 2
+End
+
+#OBJECT
+Vnum         1011
+Level        1
+Values       5 1 6 3 2 0
+Values2      0 2
+End
+
+#OBJECT
+Name         crude stone blade sharpened piece rename~
+ShortDescr   a stone offhand blade~
+Vnum         1011
+WearLoc      27
+Level        1
+Values       5 1 6 3 -1 0
+Values2      0 2
+End
+
+#END

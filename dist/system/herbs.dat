@@ -1,0 +1,313 @@
+#HERB
+Name         giggleroot~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Rounds       5
+Code         spell_smaug
+Dammsg       smoke~
+Hitvict      &PYou feel lightheaded for a few moments...&w~
+Hitroom      &PAn odd smell wafts past your nose...&w~
+Affect       '' 58 '1d20' -1
+Affect       '' 59 '1d20' -1
+End
+
+#HERB
+Name         black queen~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Slot         1
+Rounds       5
+Code         spell_smaug
+Dammsg       smoke~
+Hitvict      &zYou start to cough and choke!&w~
+Affect       '' 13 '-(1d10)' -1
+End
+
+#HERB
+Name         rangers heart~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       106
+Slot         2
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Hitvict      &YYou feel sparkling warmth flow through your limbs.&w~
+Affect       '' 14 '1d20' -1
+End
+
+#HERB
+Name         windwort~
+Type         Herb
+Info         0
+Flags        1024
+Target       3
+Minpos       106
+Slot         3
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Wearoff      You abruptly start to lower back to the ground!~
+Hitvict      &CThe acrid taste of the smoke overwhelms your senses and you start to float!&w~
+Affect       '' 59 '1d5' -1
+Affect       '1d30' 26 '21' 21
+End
+
+#HERB
+Name         swampeye~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Slot         4
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Hitvict      &gYou feel a flow of warmth move through your body...&w~
+Affect       '' 13 '1d20' -1
+End
+
+#HERB
+Name         arcanabloom~
+Type         Herb
+Info         0
+Flags        1024
+Target       3
+Minpos       113
+Slot         5
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Wearoff      Everything about you takes on it's normal drab tone.~
+Hitvict      &PYour eyesight twists and turns suddenly...&w~
+Affect       '1d25' 26 '22' 22
+Affect       '' 59 '1d5' -1
+End
+
+#HERB
+Name         tobacco~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Slot         6
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Hitvict      &gYou feel a soothing sensation run through your body...&w~
+Affect       '' 14 '1d5' -1
+End
+
+#HERB
+Name         pipeweed~
+Type         Herb
+Info         0
+Flags        0
+Minpos       113
+Slot         7
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Hitvict      &gYou feel some of your minor aches fade away...&w~
+Affect       '' 1013 '1d5' -1
+End
+
+#HERB
+Name         bubbleweed~
+Type         Herb
+Info         0
+Flags        1024
+Target       3
+Minpos       113
+Slot         8
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Wearoff      &WYour lungs return to their normal state...&w~
+Hitvict      &WYou feel your lungs expand as you inhale some of the smoke.&w~
+Affect       '1d50' 26 '0' 31
+End
+
+#HERB
+Name         frostweed~
+Type         Herb
+Info         0
+Flags        1024
+Target       3
+Minpos       113
+Slot         9
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Wearoff      &RYou feel the effect of the frostweed wearing off...&w~
+Hitvict      &RYou feel an intense warmth fill your body suddenly...&w~
+Affect       '1d75' 27 '1' -1
+End
+
+#HERB
+Name         thieves bane~
+Type         Herb
+Info         0
+Flags        1024
+Target       3
+Minpos       113
+Slot         10
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Wearoff      Your vision blurs before returning to normal...~
+Hitvict      &wEverything around you suddenly looks brighter...&w~
+Affect       '1d5' 26 '5' 5
+End
+
+#HERB
+Name         astral carrot~
+Type         Herb
+Info         0
+Flags        1024
+Target       3
+Minpos       113
+Slot         11
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Wearoff      Your vision returns to normal suddenly!~
+Hitvict      &PYour vision suddenly seems much clearer with everything highlighted in glowing white!&w~
+Affect       '1d10' 26 '3' 3
+End
+
+#HERB
+Name         nightbloom~
+Type         Herb
+Info         0
+Flags        1024
+Target       3
+Minpos       113
+Slot         12
+Rounds       5
+Code         spell_smaug
+Dammsg       ~
+Wearoff      You lose your ability to see in the dark suddenly!~
+Hitvict      &rYour vision adjusts and you can suddenly see in the dark...&w~
+Affect       '1d30' 26 '9' 9
+End
+
+#HERB
+Name         desert prince~
+Type         Herb
+Info         0
+Flags        0
+Target       2
+Minpos       113
+Slot         13
+Rounds       6
+Code         spell_smaug
+Dammsg       ~
+Wearoff      &CYou feel the effect of the desert prince wearing off...&w~
+Hitvict      &CYou feel an intense coolness fill your body suddenly...&w~
+Affect       '1d20' 27 '0' -1
+End
+
+#HERB
+Name         snake nest~
+Type         Herb
+Info         0
+Flags        0
+Target       2
+Minpos       113
+Slot         14
+Rounds       7
+Code         spell_smaug
+Dammsg       ~
+Wearoff      &gYou feel the protection of the snake nest herb wearing off...&w~
+Hitvict      &gYou feel your veins harden as you inhale some snake nest smoke.&w~
+Affect       '1d20' 27 '8' -1
+End
+
+#HERB
+Name         sand lily~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Slot         15
+Rounds       7
+Code         spell_smaug
+Dammsg       ~
+Hitvict      &WYou feel your pain slightly dissipate...&w~
+Affect       '' 13 '1d20' -1
+End
+
+#HERB
+Name         soldiers helm~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Slot         16
+Rounds       6
+Code         spell_smaug
+Dammsg       ~
+Hitvict      &gYou feel your aching limbs become refreshed suddenly!~
+Affect       '' 14 '1d20' -1
+End
+
+#HERB
+Name         golems heart~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Slot         17
+Rounds       6
+Code         spell_smaug
+Dammsg       ~
+Wearoff      &zYou feel the golem's heart herb start to wear off...&w~
+Affect       '1d10' 81 '12' -1
+End
+
+#HERB
+Name         witch grass~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Slot         18
+Rounds       7
+Code         spell_smaug
+Dammsg       ~
+Wearoff      &BThe blue outlines disappear from your vision suddenly.&w~
+Hitvict      &BSuddenly things around you that are magical are outlined in blue light!&w~
+Affect       '1d10' 26 '4' 4
+End
+
+#HERB
+Name         kingsfoil~
+Type         Herb
+Info         0
+Flags        0
+Target       3
+Minpos       113
+Slot         19
+Rounds       7
+Code         spell_smaug
+Dammsg       ~
+Wearoff      &gYou feel the effects of the kingsfoil herb wearing off...&w~
+Hitvict      &gYou feel a rippling surge of energy enter your limbs!&w~
+Affect       '1d20' 18 '1d2' -1
+End
+
+#END

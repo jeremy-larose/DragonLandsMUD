@@ -1,0 +1,2648 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Darkhold Village Crypt~
+Author       Beltane~
+WeatherX     0
+WeatherY     0
+Ranges       15 30 0 0
+Economy      0 2560200
+ResetMsg     &wYou hear moaning coming from somewhere nearby.&w~
+Lore         &zYou see a group of people dressed all in black as they move quickly
+through the crypts. You hear chanting and an explosive sound before
+your vision returns to normal...&w
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       5700
+Keywords   mummy walking corpse wrapped fabric humanoid~
+Short      &Wa mummy&w~
+Long       &WA humanoid corpse wrapped in fabric is here lurking.&w
+~
+Desc       &WThis humanoid corpse is wrapped in layers of fabric and has escaped
+death and its crypt. It moves about here slowly as it seems to be
+looking for something.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -800 1 6 0 12 0 0 0 0 0
+Stats2     9 8 18
+Stats3     2 6 3
+Stats4     2 13 2 0 0 0 6
+Attribs    16 6 10 8 15 12 10
+Saves      0 0 0 0 0 0
+Resist     nonmagic~
+Immune     poison necrotic charm paralysis~
+Suscept    fire~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &wYou hear moaning coming from somewhere nearby.&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5701
+Keywords   wraith smoky creature dark smoke~
+Short      &za wraith&w~
+Long       &zA creature made of dark looking smoke is here floating about.&w
+~
+Desc       &zThe creature before you is made of rolling black smoke and has 
+a distinctly humanoid silhouette at most times.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea noassist~
+Affected   infrared flying truesight~
+Stats1     -500 20 8 0 10 0 0 0 0 0
+Stats2     9 8 27
+Stats3     4 8 3
+Stats4     2 13 1 0 0 0 6
+Attribs    6 12 14 16 16 15 9
+Saves      0 0 0 0 0 0
+Resist     fire cold lightning acid nonmagic thunder~
+Immune     poison necrotic sleep charm paralysis~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5702
+Keywords   skeleton tattered armor scraps ~
+Short      &za skeleton&w~
+Long       &zA skeleton dressed in tattered armor scraps is wandering around here.&w
+~
+Desc       &zThis is the skeletal remains of a humanoid that was laid to rest
+here. It is dressed in what is left of its armor as it lurks around
+here.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -800 15 5 0 11 0 0 0 0 0
+Stats2     4 9 10
+Stats3     1 4 1
+Stats4     2 13 1 0 0 0 6
+Attribs    10 6 10 14 15 12 5
+Saves      0 0 0 0 0 0
+Immune     poison sleep charm~
+Suscept    blunt~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &zYou hear the sound of bones rubbing together nearby.&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5703
+Keywords   cultist humanoid dressed black clothing~
+Short      &za cultist&w~
+Long       &zA humanoid dressed in black clothing is here standing guard.&w
+~
+Desc       &zThis humanoid figure is dressed in head to toe black included a black
+cowl around their face. The emblem of a skull that seems to be laughing
+has been embroidered on the front of their clothing.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   detect_hidden infrared~
+Stats1     -950 20 7 0 14 0 0 5 10 0
+Stats2     5 10 25
+Stats3     1 2 1
+Stats4     2 0 2 0 0 0 8
+Attribs    14 7 10 18 12 10 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Resist     nonmagic~
+Immune     sleep charm paralysis psychic~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+say For the Laughing Skull!
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5704
+Keywords   cultist wizard dressed black robe clothing humanoid~
+Short      &za cultist wizard&w~
+Long       &zA humanoid dressed in a black robe is here standing guard.&w
+~
+Desc       &zThis humanoid figure is dressed in a flowing black robe and a black
+cowl that obscures their face. The emblem of a skull that seems to be
+laughing has been embroidered on the front of their clothing.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   detect_hidden infrared truesight~
+Stats1     -1000 25 7 0 14 0 1 5 10 0
+Stats2     6 10 25
+Stats3     1 2 1
+Stats4     2 0 2 0 0 0 8
+Attribs    9 18 12 18 10 12 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Resist     nonmagic~
+Immune     sleep charm paralysis psychic~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+say Purify the heretics! For the Laughing Skull!!!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'chill touch' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'vampiric touch' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   c 'firebolt' $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5705
+Keywords   zombie decaying humanoid~
+Short      &za zombie&w~
+Long       &zThe decaying remains of a humanoid is here stalking about.&w
+~
+Desc       &zThis humanoid is here slowly moving about as parts of it are decaying
+and falling off. It is hard to distinguish their gender or features since
+much of it has peeled away.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive~
+Affected   infrared~
+Stats1     -1000 15 4 0 10 0 0 0 0 0
+Stats2     3 10 9
+Stats3     1 6 1
+Stats4     2 13 1 0 0 0 6
+Attribs    13 3 6 6 16 3 13
+Saves      0 0 0 0 0 0
+Immune     poison sleep charm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5799
+Keywords   priest cult hooded man robe~
+Short      &za cult priest&w~
+Long       &zA man in a black robe and hooded cloak is here chanting.&w
+~
+Desc       &zThis man is dressed in a black robe and a cloak with a hood up. The
+hood obscures his face and protects it from being identified. The
+symbol of a skull that seems to be laughing is embroidered on the
+front of their clothing.
+~
+Lore       &zYou see this man leading a small group of fellow cultists as they
+infiltrate the mausoleum and make their way here. Along the way they
+raise the dead to block people from trying to stop their efforts...
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared truesight~
+Stats1     -900 26 10 0 14 0 10 20 40 0
+Stats2     9 10 25
+Stats3     1 2 1
+Stats4     2 0 1 0 0 0 8
+Attribs    9 19 14 16 10 9 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Resist     nonmagic~
+Immune     necrotic sleep charm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote chants as he lays his gloved hands upon a destroyed altar.
+mpasound &zYou hear chanting coming from somewhere nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure moderate wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'inflict wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   c 'dispel magic' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   c 'spirit guardians'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 5652
+if hasqbit($n) != 5651
+if hasqbit($n) == 5650
+sneer
+sayto $n So they sent you down to confront me, hmmm? Blasphemers!
+sayto $n All of them! The only way is through the Laughing Skull
+sayto $n and his divine benevolence! One that his true followers
+sayto $n will revive and set him back on his rightful path of
+sayto $n dominance!
+mpsleep 2
+sayto $n The first group failed and now you shall too..
+emote claps his hands and two cultists arrive.
+mpsleep 2
+sayto $n Farewell, fool.
+mpmload 5703
+mpmload 5703
+c 'firebolt' $n
+else
+sneer
+emote touches his amulet and disappears suddenly!
+mpgoto 5799
+endif
+else
+sneer
+emote touches his amulet and disappears suddenly!
+mpgoto 5799
+endif
+else
+sneer
+emote touches his amulet and disappears suddenly!
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5652
+if hasqbit($n) != 5651
+if hasqbit($n) == 5650
+say Nooooo!! M'Lord I have f-f-failed you!!!!!!!
+mea $n &zYou notice an amulet in the man's possession fall to the ground.
+mpoload 5703 1
+silent drop amulet
+mpqset $n 5650
+mpqset $n 5651
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     5700
+Keywords black handled longsword long sword~
+Type     weapon~
+Short    &za black handled longsword&w~
+Long     &zA black handled longsword has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   1 1 8 1 1 0
+Values2  0 2
+Stats    1 0 2 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5701
+Keywords black quarterstaff quarter staff simple~
+Type     weapon~
+Short    &za black quarterstaff&w~
+Long     &zA black colored quarterstaff has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 2
+Stats    4 0 5 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5702
+Keywords amulet laughing skull symbol chain holysymbol~
+Type     armor~
+Short    &zan amulet of a laughing skull&w~
+Long     &zAn amulet on a chain depicting a laughing skull has been left here.&w~
+Lore   &zYou see a man leave a cave as he walks out and joins a group of
+cultists before they use magic to enter a portal...
+~
+Flags    evil magic inventory~
+WFlags   take neck onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 4
+#ENDOBJECT
+
+#OBJECT
+Vnum     5703
+Keywords amulet laughing skull symbol chain~
+Type     armor~
+Short    &zan amulet of a laughing skull&w~
+Long     &zAn amulet on a chain depicting a laughing skull has been left here.&w~
+Lore   &zYou see a man leave a cave as he walks out and joins a group of
+cultists before they use magic to enter a portal...
+~
+Flags    evil magic inventory~
+WFlags   take neck onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5704
+Keywords corpse human man dressed armor adventurer~
+Type     trash~
+Short    &rthe corpse of an adventurer&w~
+Long     &rThe corpse of a human man dressed in armor has been left here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    corpse~
+ExDesc       &rThis is a fresh corpse of a human man wearing some light armor. He
+was recently killed by something and his body was left here to rot.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5705
+Keywords golden casket etched runes~
+Type     trash~
+Short    &Ya golden casket&w~
+Long     &YA large golden casket etched in various runes is here in the middle of the tomb.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    casket~
+ExDesc       &YThe casket is made of gold and is etched in various runes meant to
+protect the contents inside the casket.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5706
+Keywords odd floor tile entrance fire blast crypt trap~
+Type     trap~
+Short    &wan odd floor tile&w~
+Long     &wAn odd looking floor tile has been set with a trap many centuries ago.~
+Values   1 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5799
+Keywords ruined altar laughing skull black stone~
+Type     container~
+Short    &za ruined altar&w~
+Long     &zA ruined altar with the etched emblem of a laughing skull is here.&w~
+Flags    evil magic~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    500 0 0 0 0 0 0
+#EXDESC
+ExDescKey    altar~
+ExDesc       &zThis altar is made of a giant slab of black stone. Parts of it are
+ruined by part of the ceiling falling down upon it. The top of the altar
+is carved so that things can be put in it slightly.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum     5700
+Name     Inside a Large Mausoleum~
+Sector   indoors~
+Desc     &WThe interior of this mausoleum is well maintained with barely any
+dust or dirt to be found anywhere. This entrance is framed by statues
+of spectral figures creating an archway above. The entrance is small
+and leads out into a main portion just ahead to the east of here.
+~
+#EXIT
+Direction east~
+ToRoom    5701
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5651
+Keywords  'mausoleum doors'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset D 0 5700 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5701
+Name     A Large Hall~
+Sector   indoors~
+Desc     &WThis is the main portion of the upper part of the mausoleum. Statues
+of Qylaith in different stages of mourning can be seen at each corner
+of the square shaped room. The floor is an intricate mosaic of white
+and grey tiles that spiral to a point in the center of the space. A 
+large glass ceiling allows a lot of filtered light to penetrate this
+interior and adds a soft illumination. A staircase leading down into
+the crypts can be seen to the east of here while two small shrines
+can be found to the north and south.
+~
+#EXIT
+Direction north~
+ToRoom    5702
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5704
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5703
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5700
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5702
+Name     A Small Shrine~
+Sector   indoors~
+Desc     &WThis is a small shrine dedicated to the children lost before they
+could become adults. A statue of Qylaith guiding some young children
+into the Underworld can be found on the northern wall. The statue also
+shows the goddess holding a few newborns and almost showing emotion
+on her normally stoic face. Some flowers have been recently placed
+here by mourning parents in honor of the goddess watching over the
+passed soul.
+~
+#EXIT
+Direction south~
+ToRoom    5701
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5703
+Name     A Small Shrine~
+Sector   indoors~
+Desc     &WThis is a small shrine dedicated to the warriors and soldiers that
+have fallen across the realm. A statue of Qylaith is here leading the
+men and women to the underworld as she flies above with a flag of
+victory in her hands. Different trinkets and offerings have been placed
+here by those in mourning of the fallen.
+~
+#EXIT
+Direction north~
+ToRoom    5701
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5704
+Name     Before a Stone Staircase~
+Sector   indoors~
+Desc     &WThe staircase here leads downward into the crypts below. The staircase
+has been constructed of white marble and is quite sturdy. Torches align
+the walls of the staircase to help those going down with being able to
+see correctly. The staircase is set in a spiral as it winds downward
+into the crypts.
+~
+#EXIT
+Direction west~
+ToRoom    5701
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5705
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5705
+Name     A Stone Stairwell~
+Sector   indoors~
+Desc     &WThis stairwell is made made of white marble and etchings of Qylaith
+and her underworld can be found along the walls. Torches also can be
+found on the walls as they provide light to those heading up or down
+here. The stairs are ample and allow anyone to move easily without a
+chance of falling.
+~
+#EXIT
+Direction up~
+ToRoom    5704
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5706
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5706
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     &WThe walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here while a staircase leading back up can be found nearby.
+~
+#EXIT
+Direction west~
+ToRoom    5707
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5705
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5707
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east. To the far east one can see the makings
+of a staircase leading up.
+~
+#EXIT
+Direction east~
+ToRoom    5706
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5708
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5708
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east.
+~
+#EXIT
+Direction east~
+ToRoom    5707
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5709
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5709
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east.
+~
+#EXIT
+Direction east~
+ToRoom    5708
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5710
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5710
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east.
+~
+#EXIT
+Direction east~
+ToRoom    5709
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5711
+#ENDEXIT
+
+Reset M 0 5702 1 5710
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5711
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east.
+~
+#EXIT
+Direction east~
+ToRoom    5710
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5712
+#ENDEXIT
+
+Reset M 0 5700 4 5711
+#ENDROOM
+
+#ROOM
+Vnum     5712
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east. A corner can be seen to the far
+west as it heads deeper into the crypt.
+~
+#EXIT
+Direction east~
+ToRoom    5711
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5713
+#ENDEXIT
+
+Reset M 0 5702 2 5712
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5713
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the east and also to the south as it rounds a corner.
+~
+#EXIT
+Direction east~
+ToRoom    5712
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5714
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5714
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the north as well as to the east as it rounds a sharp corner.
+~
+#EXIT
+Direction north~
+ToRoom    5713
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5715
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5715
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east. A corner in the hallway can be
+seen to the far west from here.
+~
+#EXIT
+Direction east~
+ToRoom    5716
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5714
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5716
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east.
+~
+#EXIT
+Direction east~
+ToRoom    5717
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5715
+#ENDEXIT
+
+Reset M 0 5702 3 5716
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5717
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east. Two statues can be seen to the
+nearby east as they outline the entrance of a tomb.
+~
+#EXIT
+Direction east~
+ToRoom    5718
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5716
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5718
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east. Two statues can be seen on each
+side of a door to the south. The door leads into a small tomb of someone
+buried here. The statues depict two spectral maidens that seem to be
+rendered as if they were dancing.
+~
+#EXIT
+Direction east~
+ToRoom    5719
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5770
+Keywords  'crypt door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5717
+#ENDEXIT
+
+Reset D 0 5718 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5719
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east.
+~
+#EXIT
+Direction east~
+ToRoom    5720
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5718
+#ENDEXIT
+
+Reset M 0 5702 4 5719
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5720
+Name     A Crypt Hallway~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here as well as the east. A staircase leading down into the
+deepest parts of the crypt can be seen coming to the east of here.
+~
+#EXIT
+Direction east~
+ToRoom    5721
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5719
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5721
+Name     Before a Stone Staircase~
+Sector   indoors~
+Desc     The walls of this crypt are lined with lit torches that never seem
+to run out. The walls are etched with the names of who are buried here
+along with renderings of Qylaith guiding the dead to the underworld. A
+few statues can be found of spectral looking spirits floating above
+their corpse and heading to the goddess. The hallway here continues to
+the west of here while a staircase to the east leads down into the
+deepest part of the crypt.
+~
+#EXIT
+Direction west~
+ToRoom    5720
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5722
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5722
+Name     A Stone Stairwell~
+Sector   indoors~
+Desc     This stairwell is made from crudely carved stone as much of the
+refinement in craftsmanship in the first level of the crypt fade
+away. This part of the crypt feels much older and there is less torches
+in this part. The stairs are cut unevenly and traveling upon them
+is not as easy.
+~
+#EXIT
+Direction up~
+ToRoom    5721
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5723
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5723
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. There are prominently more
+statues of spectral spirits or Qylaith along the walls here, which have
+been carved with less finesse than previously seen. Much of the statues
+are covered in dust and spider webs due to the lack of visitors in this
+part of the crypt. The underground hallway continues to the east from here
+as it goes deeper into the lower crypt.
+~
+#EXIT
+Direction west~
+ToRoom    5724
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5722
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5724
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here. A stone staircase can
+be seen to the far east as it leads back up to a higher level of the crypt.
+~
+#EXIT
+Direction east~
+ToRoom    5723
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5725
+#ENDEXIT
+
+Reset M 0 5702 5 5724
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5725
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here. 
+~
+#EXIT
+Direction east~
+ToRoom    5724
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5726
+#ENDEXIT
+
+Reset M 0 5700 5 5725
+#ENDROOM
+
+#ROOM
+Vnum     5726
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5725
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5727
+#ENDEXIT
+
+Reset O 0 5704 1 5726
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate corpse~
+Comlist   if ovnumroom(5704) == 1
+if investigation($n) >= 14
+mea $n You see that the corpse was tossed all about this part of the
+mea $n hallway before being slammed against the south facing wall.
+mea $n His heart has been ripped out of his chest and his eyes have
+mea $n been removed. His face is contorted in pain and there is blood
+mea $n all over the ground here.
+mer $n $n starts examining the corpse and surroundings here.
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5727
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here. A doorway leading
+into a small tomb can be seen to the south of here, which is framed
+with two statues of dancing spectral maidens.
+~
+#EXIT
+Direction east~
+ToRoom    5726
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5761
+Keywords  'crypt door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5728
+#ENDEXIT
+
+Reset D 0 5727 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5728
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5727
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5729
+#ENDEXIT
+
+Reset M 0 5702 6 5728
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5729
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here. A doorway leading
+into a small tomb can be seen to the south of here, which is framed
+with two statues of dancing spectral maidens.
+~
+#EXIT
+Direction east~
+ToRoom    5728
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5769
+Keywords  'crypt door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5730
+#ENDEXIT
+
+Reset D 0 5729 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5730
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5729
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5731
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5731
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the south and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5730
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5732
+#ENDEXIT
+
+Reset M 0 5702 7 5731
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5732
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here. A doorway leading
+into a small tomb can be seen to the east of here, which is framed
+with two statues of dancing spectral maidens.
+~
+#EXIT
+Direction north~
+ToRoom    5731
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5733
+Keywords  'tomb door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5734
+#ENDEXIT
+
+Reset D 0 5732 1 1
+#ENDROOM
+
+#ROOM
+Vnum     5733
+Name     A Small Tomb~
+Sector   indoors~
+Desc     This is a small tomb that belonged to someone who could afford
+such a burial space. Several of the pots and urns surrounding a stone
+casket have been destroyed or decayed over the centuries. Signs that
+grave robbers or someone sneaking about here is evident with footsteps
+visible in the dust on the floor here. The corners of the tomb are also
+thick with spider webs.
+~
+#EXIT
+Direction west~
+ToRoom    5732
+Keywords  'tomb door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5705 4 5733
+Reset D 0 5733 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5734
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    5732
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5735
+#ENDEXIT
+
+Reset M 0 5700 6 5734
+#ENDROOM
+
+#ROOM
+Vnum     5735
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    5734
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5736
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5736
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5737
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5735
+#ENDEXIT
+
+Reset M 0 5702 8 5736
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5737
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here. A doorway leading
+into a small tomb can be seen to the north of here, which is framed
+with two statues of dancing spectral maidens.
+~
+#EXIT
+Direction north~
+ToRoom    5738
+Keywords  'tomb door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5739
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5736
+#ENDEXIT
+
+Reset D 0 5737 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5738
+Name     A Small Tomb~
+Sector   indoors~
+Desc     This is a small tomb that belonged to someone who could afford
+such a burial space. Several of the pots and urns surrounding a stone
+casket have been destroyed or decayed over the centuries. Signs that
+grave robbers or someone sneaking about here is evident with footsteps
+visible in the dust on the floor here. The corners of the tomb are also
+thick with spider webs.
+~
+#EXIT
+Direction south~
+ToRoom    5737
+Keywords  'tomb door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5705 5 5738
+Reset D 0 5738 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5739
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5740
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5737
+#ENDEXIT
+
+Reset M 0 5700 7 5739
+#ENDROOM
+
+#ROOM
+Vnum     5740
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5741
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5739
+#ENDEXIT
+
+Reset M 0 5701 2 5740
+#ENDROOM
+
+#ROOM
+Vnum     5741
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here. A doorway leading
+into a small tomb can be seen to the north of here, which is framed
+with two statues of dancing spectral maidens.
+~
+#EXIT
+Direction north~
+ToRoom    5762
+Keywords  'tomb door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5742
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5740
+#ENDEXIT
+
+Reset D 0 5741 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5742
+Name     An Underground Hallway~
+Sector   indoors~
+Desc     The walls of this part of the crypt as less refined and there are fewer
+torches to be seen along the walls here. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallways continues to the west and east from here. The torches further
+down the hallway to the east have long gone out and it is pitch dark
+going further.
+~
+#EXIT
+Direction east~
+ToRoom    5743
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5741
+#ENDEXIT
+
+Reset M 0 5702 9 5742
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5743
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5744
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5742
+#ENDEXIT
+
+Reset M 0 5700 8 5743
+#ENDROOM
+
+#ROOM
+Vnum     5744
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and north from here.
+~
+#EXIT
+Direction north~
+ToRoom    5745
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5743
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5745
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and south from here.
+~
+#EXIT
+Direction south~
+ToRoom    5744
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5746
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5746
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    5747
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5745
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5747
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here. A large entrance to
+a grand tomb can be seen to the west. The doorway is framed by spectral
+dancers wielding various missile weapons. The door of the tomb itself
+is made from solid gold and shimmers whenever a light source is near.
+~
+#EXIT
+Direction north~
+ToRoom    5748
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5746
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5763
+Keywords  'golden doors'~
+Flags     isdoor closed locked nomob~
+#ENDEXIT
+
+Reset D 0 5747 3 2
+#ENDROOM
+
+#ROOM
+Vnum     5748
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the south and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5749
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5747
+#ENDEXIT
+
+Reset O 0 5704 1 5748
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate corpse~
+Comlist   if ovnumroom(5704) == 1
+if investigation($n) >= 14
+mea $n You see that the corpse was slammed against a north facing
+Mea $n wall where he was savagely attacked. His entire torso has been
+Mea $n ripped open and organs removed.. possibly devoured. Blood can
+Mea $n be found all over the ground here and smeared on some of the
+Mea $n walls here.
+mer $n $n starts examining the corpse and surroundings here.
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5749
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    5750
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5748
+#ENDEXIT
+
+Reset M 0 5700 9 5749
+#ENDROOM
+
+#ROOM
+Vnum     5750
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and north from here.
+~
+#EXIT
+Direction north~
+ToRoom    5751
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5749
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5751
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction north~
+ToRoom    5752
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5750
+#ENDEXIT
+
+Reset M 0 5702 11 5751
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5752
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the east and south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction east~
+ToRoom    5753
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5751
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5753
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and west from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction north~
+ToRoom    5754
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5752
+#ENDEXIT
+
+Reset M 0 5700 10 5753
+#ENDROOM
+
+#ROOM
+Vnum     5754
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction north~
+ToRoom    5755
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5753
+#ENDEXIT
+
+Reset M 0 5701 1 5754
+#ENDROOM
+
+#ROOM
+Vnum     5755
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction north~
+ToRoom    5756
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5754
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5756
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the west and south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction south~
+ToRoom    5755
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5757
+#ENDEXIT
+
+Reset M 0 5700 11 5756
+#ENDROOM
+
+#ROOM
+Vnum     5757
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and east from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction north~
+ToRoom    5758
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5756
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5758
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction north~
+ToRoom    5759
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5757
+#ENDEXIT
+
+Reset O 0 5704 1 5758
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate corpse~
+Comlist   if ovnumroom(5704) == 1
+if investigation($n) >= 14
+mea $n You see that the corpse was dragged here based
+Mea $n on the blood trail that leads here. This corpse was
+Mea $n not savaged like the others, but was stabbed and
+Mea $n cut till he died. His neck was cut probably as a last
+Mea $n measure to ensure he was dead.
+mer $n $n starts examining the corpse and surroundings here.
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5759
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues to the north and south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+#EXIT
+Direction north~
+ToRoom    5760
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5758
+#ENDEXIT
+
+Reset M 0 5700 12 5759
+#ENDROOM
+
+#ROOM
+Vnum     5760
+Name     An Underground Hallway~
+Sector   indoors~
+Flags    dark~
+Stats    0 0 0 0 16 0
+Desc     The walls of this part of the crypt as less refined and the torches here
+have gone dark many centuries ago. This part of the crypt is not
+as visited as the level above since many of the mourners of those that
+are buried here have also passed long ago. Statues covered in spider
+webs and dust can be found along the walls here. The underground 
+hallway continues back to the south from here. The walls of this
+part of the crypt are becoming even less refined and more cavern like.
+~
+Perdesc  &zYou spot a recently dug hole in the ground here leading down.
+~
+#EXIT
+Direction south~
+ToRoom    5759
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5771
+Flags     climb hidden nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate hole~
+Comlist   if investigation($n) >= 15
+mea $n You see that the hole was dug by hand and also with the usage
+mea $n of magic to make the process quicker. A slope helps one climb
+mea $n down and up as it heads deep underground into a cavern.
+mer $n $n inspects a large hole in the ground here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5761
+Name     A Small Tomb~
+Sector   indoors~
+Desc     This is a small tomb that belonged to someone who could afford
+such a burial space. Several of the pots and urns surrounding a stone
+casket have been destroyed or decayed over the centuries. Signs that
+grave robbers or someone sneaking about here is evident with footsteps
+visible in the dust on the floor here. The corners of the tomb are also
+thick with spider webs.
+~
+#EXIT
+Direction north~
+ToRoom    5727
+Keywords  'crypt door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5705 2 5761
+Reset D 0 5761 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5762
+Name     A Small Tomb~
+Sector   indoors~
+Desc     This is a small tomb that belonged to someone who could afford
+such a burial space. Several of the pots and urns surrounding a stone
+casket have been destroyed or decayed over the centuries. Signs that
+grave robbers or someone sneaking about here is evident with footsteps
+visible in the dust on the floor here. The corners of the tomb are also
+thick with spider webs.
+~
+#EXIT
+Direction south~
+ToRoom    5741
+Keywords  'tomb door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5705 6 5762
+Reset D 0 5762 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5763
+Name     &YInside a Large Crypt&w~
+Sector   indoors~
+Stats    0 0 0 0 15 0
+Desc     This crypt is outlined completely in solid gold from the wall etchings
+to the tiles on the floor. The walls are covered in murals of a man
+learning how to use various missile weapons and developing his
+skills. The tiles on the floor are shaped like leaves and are all
+etched in gold as they are laid in an interesting pattern. The golden
+crypt continues to the west as it heads towards a burial chamber.
+~
+Perdesc  &wYou notice something odd about some of the flooring tiles here.
+~
+#EXIT
+Direction east~
+ToRoom    5747
+Keywords  'golden doors'~
+Flags     isdoor closed locked nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5764
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 5706 1 5763
+Reset D 0 5763 1 2
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   if ovnumroom(5706) == 1
+if isaffected($n) == detect_traps
+mpsleep 2
+mea $n You stop as you enter this space when you notice a trap attached
+mea $n to several of the flooring tiles here. Any sort of passage could
+mea $n set the trap off at any time.
+else
+mea $n &RAs you enter you step a floor tile that moves slightly as
+mea $n &Ryou walk on it. Suddenly from above a blast of flames shoots
+mea $n &Rdown and engulfs you! You scream as the flames burn you!
+mer $n &RAs &R$n&R enters the crypt $e steps on something on the floor
+mer $n &Rand a blast of flame strikes $m from somewhere above!
+mpdamage $n 1 50
+mpasound &RYou hear someone scream as a flash of fire happens nearby!&w
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5764
+Name     &YInside a Large Crypt&w~
+Sector   indoors~
+Desc     This crypt is outlined completely in solid gold from the wall etchings
+to the tiles on the floor. The walls are covered in murals of a man
+preparing to do a final battle with a very dark looking humanoid
+foe. The tiles on the floor are shaped like leaves and are all
+etched in gold as they are laid in an interesting pattern. The golden
+crypt continues to the west as it heads towards a burial chamber.
+~
+#EXIT
+Direction east~
+ToRoom    5763
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5765
+#ENDEXIT
+
+Reset M 0 5702 10 5764
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5765
+Name     &YA Central Chamber&w~
+Sector   indoors~
+Desc     This chamber is outlined and decorated with solid gold much like the
+hallway to the east and adjoining rooms. In the center of the chamber
+is a clear crystal case with a selection of missile weapons being
+put on display. The walls all about this chamber show more of the
+story of a man leading soldiers into battle, to the founding of a
+village and the building of a wall, and eventually the man's death
+at a very old age. Three chambers can be found to the north, west,
+and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    5767
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5764
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5768
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5766
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 5701 4 5765
+#ENDROOM
+
+#ROOM
+Vnum     5766
+Name     &YA Large Tomb&w~
+Sector   indoors~
+Desc     The tomb here is very elaborate with golden statues of various
+wildlife seeming to protect the casket here. The ceiling is domed
+and contains a mural of a man getting ready to fire a golden arrow
+at a figure of deep darkness. The leaf floor tiles are used here to
+create intricate paths around the casket. Over time the urns and pottery
+here have succumbed to age and crumbled into various pieces.
+~
+#EXIT
+Direction east~
+ToRoom    5765
+#ENDEXIT
+
+Reset O 0 5705 1 5766
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate casket~
+Comlist   if ovnumroom(5705) == 1
+if investigation($n) >= 15
+mea $n You investigate the casket and discover a plaque that indicates
+mea $n this is the final burial location of the hero Tormug Darkhold.
+mer $n $n investigates the casket.
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5767
+Name     &YA Small Shrine&w~
+Sector   indoors~
+Desc     The altar here is dedicated to the reclusive forest deity known as
+Cerunon. Various objects dedicated to the god are placed on a small
+altar here such as animal pelts, antlers, and dried herbs. A statue
+of a man being led by a horned looking figure has been placed next
+to the altar and at one point candles were burnt next to it.
+~
+#EXIT
+Direction south~
+ToRoom    5765
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5768
+Name     &YBefore an Inscribed Golden Wall&w~
+Sector   indoors~
+Desc     The wall at the southern end of this small chamber is made completely
+of gold and there are large words etched into it. Golden arrows have
+been used decoratively around the wall and to highlight passages. The
+flooring here consists of tiles that are cut to resemble various
+animals and laid in an interesting pattern on the floor.
+~
+#EXIT
+Direction north~
+ToRoom    5765
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate wall~
+Comlist   if investigation($n) >= 12
+mea $n You find written in the common tongue the following words:
+mpsleep 3
+mea $n &YThe land was deep in danger when I answered the call
+mpsleep 2
+mea $n &YI sacrificed all that I had to ensure it would be safe
+mpsleep 2
+mea $n &YWhen the time comes will you answer such a call?
+mpsleep 2
+mea $n &YWill you sacrifice everything to save what you hold dear?
+mpsleep 2
+mea $n &YI pray that the answer to such is yes.
+mer $n $n looks at the words carved into the golden wall here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5769
+Name     A Small Tomb~
+Sector   indoors~
+Desc     This is a small tomb that belonged to someone who could afford
+such a burial space. Several of the pots and urns surrounding a stone
+casket have been destroyed or decayed over the centuries. Signs that
+grave robbers or someone sneaking about here is evident with footsteps
+visible in the dust on the floor here. The corners of the tomb are also
+thick with spider webs.
+~
+#EXIT
+Direction north~
+ToRoom    5729
+Keywords  'crypt door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5705 3 5769
+Reset D 0 5769 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5770
+Name     A Small Tomb~
+Sector   indoors~
+Desc     &WThis is a small tomb that belonged to someone who could afford
+such a burial space. Several of the pots and urns surrounding a stone
+casket have been destroyed or decayed over the centuries. Signs that
+grave robbers or someone sneaking about here is evident with footsteps
+visible in the dust on the floor here.
+~
+#EXIT
+Direction north~
+ToRoom    5718
+Keywords  'crypt door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5705 1 5770
+Reset D 0 5770 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5771
+Name     A Small Cavern~
+Sector   underground~
+Desc     This cavern was recently dug up by hand and through the use of magic.
+There are odd scorch marks that help provide evidence that magic was
+indeed used to help open this cavern up quickly. Debris and rubble
+can be found along the cavern floor as a path leads to the south
+towards what appears to be a structure of some sort. Torches have
+been recently lit and placed along the walls of the cavern to
+provide light to those that travel here. There is also a slope leading
+up towards the hole that was opened to allow access to this cavern.
+~
+#EXIT
+Direction south~
+ToRoom    5772
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5760
+Flags     climb nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate cavern~
+Comlist   if investigation($n) >= 15
+mea $n You notice that this cavern was dug by hand and fairly quickly.
+mea $n The walls are rough and various roots stick out. You also notice
+mea $n a faint trail of blood as it heads south further into the cavern.
+mer $n $n begins to inspect this part of the cavern.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5772
+Name     A Small Cavern~
+Sector   underground~
+Desc     This cavern was recently dug up by hand and through the use of magic.
+There are odd scorch marks that help provide evidence that magic was
+indeed used to help open this cavern up quickly. Debris and rubble
+can be found along the cavern floor as a path leads to the south
+towards what appears to be a structure of some sort. Torches have
+been recently lit and placed along the walls of the cavern to
+provide light to those that travel here.
+~
+#EXIT
+Direction north~
+ToRoom    5771
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5773
+#ENDEXIT
+
+Reset M 0 5703 2 5772
+  Reset E 0 5700 1 28
+Reset M 0 5703 2 5772
+  Reset E 0 5700 1 28
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate cavern~
+Comlist   If investigation($n) >= 15
+mea $n You notice that this cavern was dug by hand and fairly quickly.
+mea $n The walls are rough and various roots stick out. You also notice
+mea $n a faint trail of blood as it heads south further into the cavern.
+mer $n $n begins to inspect this part of the cavern.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5773
+Name     Before a Buried Temple~
+Sector   underground~
+Desc     Ahead to the south is a large structure made of polished black stone.
+It appears that the structure was once very ornate and well designed
+until it was submerged here for some unknown reason. The emblem of a
+laughing skull can be seen above the doorway leading into the ruined
+structure. Several pillars that once outlined the front have crumbled
+and fallen into large piles of rubble.
+~
+#EXIT
+Direction north~
+ToRoom    5772
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5774
+#ENDEXIT
+
+Reset M 0 5703 4 5773
+  Reset E 0 5700 1 28
+Reset M 0 5703 4 5773
+  Reset E 0 5700 1 28
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate temple~
+Comlist   If investigation($n) >= 15
+mea $n Before you is an unearthed temple that seems to have
+Mea $n been buried by some force many centuries ago. The temple
+Mea $n seems to be constructed with black stone and the symbol
+Mea $n of a laughing skull is quite prevalent around the entrance of
+Mea $n of the temple. You also notice a faint trail of blood as it
+Mea $n heads south further into the ancient looking temple.
+mer $n $n begins to inspect the area around here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5774
+Name     Inside a Buried Temple~
+Sector   indoors~
+Desc     The structure here once served as a temple for some fallen deity. It
+is apparent that at some point some force drove this temple deep into
+the ground here. All over the walls and floor are made from the same
+polished black stone. Some of the flooring has crumbled away and large
+pillars have crashed down into large piles of rubble. A small path
+continues to the south end of the temple where there is a large,
+ancient looking altar. 
+~
+#EXIT
+Direction north~
+ToRoom    5773
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5775
+#ENDEXIT
+
+Reset M 0 5703 6 5774
+  Reset E 0 5700 1 28
+Reset M 0 5703 6 5774
+  Reset E 0 5700 1 28
+Reset M 0 5704 1 5774
+  Reset E 0 5701 1 28
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate temple~
+Comlist   If investigation($n) >= 15
+mea $n The temple here is quite old looking and much of it
+Mea $n was destroyed when it was forcibly submerged into
+Mea $n the ground here. Much of the decor lies in ruin on the
+Mea $n the black stone floor. A trail of blood continues here to
+Mea $n the south at what appears to be a large altar.
+mer $n $n begins to inspect the area around here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5775
+Name     Before a Destroyed Altar~
+Sector   indoors~
+Desc     This was once the altar space of the temple where offerings were
+made upon an altar of black stone. A statue of a deity stands behind
+the altar, but the head has been knocked off and smashed at some
+point. The walls and altar are etched with odd looking sigils and runes
+that have been recently re-painted over with fresh blood. Two pits on
+either side of the altar were once used as large fire pits for a very
+grandiose effect a long time ago.
+~
+#EXIT
+Direction north~
+ToRoom    5774
+#ENDEXIT
+
+Reset M 0 5799 1 5775
+Reset O 0 5799 1 5775
+Reset O 0 5704 1 5775
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate altar~
+Comlist   if investigation($n) >= 15
+mea $n You notice that the altar has had the runes and sigils on it
+mea $n re-traced with fresh blood recently.
+mer $n $n begins to inspect the altar here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate corpse~
+Comlist   if ovnumroom(5704) == 1
+if investigation($n) >= 14
+mea $n This adventurer met his last stand not here as a blood
+Mea $n trail reveals his body was dragged here. His body has
+Mea $n been cut and sliced till he died and his neck cut. The
+Mea $n corpse has been put up against the side of the altar and
+Mea $n some of his blood has been used to repaint some of
+Mea $n the runes on the dark altar.
+mer $n $n starts examining the corpse and surroundings here.
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5799
+Name     &RDARKHOLD CRYPT MOB HIDEAWAY&w~
+Sector   city~
+Flags    nomagic safe nosummon noastral~
+Desc     You should not be in here. Please use the exit to leave or seek out
+an admin to help you. Thank you! :)
+~
+#EXIT
+Direction down~
+ToRoom    5723
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

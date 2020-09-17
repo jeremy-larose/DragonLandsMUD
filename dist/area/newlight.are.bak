@@ -1,0 +1,2475 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Haunted Lighthouse~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 10 0 0
+Economy      0 203150
+ResetMsg     &CYou hear the crashing of waves nearby...&w~
+Lore         v¦Å¿&CYou see the beach before the lighthouse light up with a wild purple
+light before the water begins to boil. The house next to the lighthouse
+bursts into flames suddenly and you see in the distance a large wooden
+ship explode as a wave of purple light hits it...
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2700
+Keywords   ghost apparition ghostly male~
+Short      &Wa ghost&w~
+Long       &WA ghostly apparition is here trying to dig in the sand as he looks for something.&w
+~
+Desc       &WThis ghost appears to be a young human male about the age of
+twenty. He is dressed in tattered robes that appear to have once
+been a deep blue shade. His eyes are now dark black portals and his
+hair is a wild shade of white that whips about with some unseen
+wind. He looks to be in some sort of distress.
+~
+Lore       &WYou see a young man dressed in robes falling from a ship that is
+caught in a whirlwind of magical energies. You hear the creaking of
+the boat as it snaps under the impact of a magical wave striking its
+side. The wizard falls into water and swim up to watch in horror
+as reality itself seems to twist in on itself. The water begins to
+boil and you hear the young man screaming before all goes black...
+~
+Race       undead~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_hidden truesight~
+Stats1     800 1 0 0 15 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 6 4
+Stats4     2 13 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Resist     lightning pierce slash magic psychic thunder~
+Immune     blunt acid poison necrotic charm nonmagic~
+Suscept    radiant~
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   mpgoto 2760
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2799
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote digs around frantically in the sand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   emote continues digging frantically
+say Oh m-master! I am so sorry for taking one! I will find it!!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate ghost~
+Comlist   if investigation($n) >= 18
+mea $n &WYou notice the ghost has on a necklace of a lion holding a
+mea $n &Wstar. The ghost hides necklace from view when he notices you
+mea $n &Wlooking at it...&w
+else
+mea $n &wYou fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2700
+mpqset $n 2700
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   soronys~
+Comlist   if hasqbit($n) != 2701
+if hasqbit($n) == 2700
+if persuasion($n) >= 15
+gasp
+mpsleep 3
+sayto $n Don't tell m-master I was trying to steal a key to the tower!
+sayto $n I was going to return it after I learned it was a trick!!!
+mpsleep 3
+mpecho &WThe ghost begins to sob and dig harder as he fades away...
+mpqset $n 2701
+mpqset $n 2700
+mpgoto 2799
+else
+mea $n &WThe ghost seems to listen, but ignores you while continuining to dig..
+endif
+else
+sayto $n You went and told him didn't you?!
+mpsleep 3
+emote continues digging wildly in the sand to no avail...
+endif
+else
+emote continues to dig frantically as if looking for something in the sand
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p looking~
+Comlist   if hasqbit($n) == 2701
+if persuasion($n) >= 18
+emote digs wildly despite not moving any sand
+mpsleep 3
+say Oh the k-key! Why did I ever try to give the key to that Pirate?!
+mpsleep 3
+say Ohhh-hh-h it must be lost on this cursed beach! The water! It b-burns!
+mpsleep 3
+mpecho &WThe ghost begins clawing at his skin as he begins to fade away...
+mpqset $n 2702
+mpqset $n 2701
+mpgoto 2799
+else
+emote continues digging despite not moving any sand
+endif
+else
+emote continues digging despite not moving any sand
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 2703
+if ovnuminv(2152) == 1
+emote stares blankly at it somehow holds the key
+mpsleep 3
+sayto $n Oh t-thank you!! You must t-take this to the master and perhaps
+sayto $n he will f-forgive me for my transgressions. Protect this from
+sayto $n from the pirates! They're hoping to get into the tower and
+sayto $n steal master's trinkets.
+mpqset $n 2704
+mpqset $n 2703
+give key $n
+mpadvance $n 100
+mpsleep 5
+mpecho &WThe ghost begins to fade away with a brief smile on his face...
+mpgoto 2799
+else
+silent drop all
+emote stares blankly as the object floats through him to fall on the sand
+endif
+else
+silent drop all
+emote stares blankly as the object floats through him to fall on the sand
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2701
+Keywords   skeletal pirate remains~
+Short      &wa pirate skeleton&w~
+Long       &wThe skeletal remains of a pirate is here wandering around.&w
+~
+Desc       &wThis skeleton is dressed in tattered clothing as it stumbles about
+looking for something.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -500 1 3 0 13 0 0 1 5 0
+Stats2     2 9 12
+Stats3     1 4 1
+Stats4     2 13 1 0 0 0 6
+Attribs    10 6 8 14 15 5 13
+Saves      0 0 0 0 0 0
+Immune     poison sleep charm~
+Suscept    blunt~
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 2748
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2799
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2702
+Keywords   skeletal pirate warrior~
+Short      &ra pirate skeleton&w~
+Long       &rThe skeletal remains of a pirate warrior is here wandering around.&w
+~
+Desc       &rThis skeleton is dressed in tattered cloth clothing as it stumbles
+about looking for something.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -800 10 4 0 13 0 0 1 5 0
+Stats2     3 9 18
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    12 6 8 14 15 5 13
+Saves      0 0 0 0 0 0
+Immune     poison charm~
+Suscept    blunt~
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpgoto 2721
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2799
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2703
+Keywords   skeletal pirate captain remains~
+Short      &Ra pirate captain&w~
+Long       &RThe skeletal remains of the pirate captain is here watching the sea.
+~
+Desc       &RBefore you is the animated skeleton of the pirate captain. It is dressed
+in the remnants of a frilly coat, thigh high boots, and it still has
+a few long reddish curls attached to its head. The pirate captain
+moves gracefully here at the top of the lighthouse.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 4 0 14 0 1 1 5 0
+Stats2     3 4 15
+Stats3     1 4 2
+Stats4     2 13 2 0 0 0 6
+Attribs    12 6 8 16 15 5 13
+Saves      0 0 0 0 0 0
+Resist     nonmagic~
+Immune     poison sleep charm~
+Suscept    blunt~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2752
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2799
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2704
+Keywords   malevolent ghost pirate~
+Short      &Wa malevolent ghost&w~
+Long       &WAn angry looking ghost is here lurking about.&w
+~
+Desc       &WThis ghost is very angry looking and seems to be lurking about trying
+to find something to destroy. Its visage is twisted with negative
+emotion as it floats about.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared flying pass_door~
+Stats1     -1000 1 5 0 13 0 0 0 0 0
+Stats2     2 8 10
+Stats3     4 6 3
+Stats4     2 13 1 0 0 0 6
+Attribs    7 10 12 13 10 17 13
+Saves      0 0 0 0 0 0
+Resist     fire lightning blunt pierce slash acid nonmagic thunder~
+Immune     cold poison necrotic charm paralysis~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2703
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2799
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2705
+Keywords   nereid fey beautiful woman~
+Short      &Pa nereid&w~
+Long       &PA beautiful woman is here walking around singing to herself softly.&w
+~
+Desc       &PThis beautiful woman has long greenish brown hair with slightly
+blue skin. She is dressed in some sort of algae based dress as she
+wanders about singing to herself. Upon closer inspection you see
+webbing in between each finger and her toes.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea~
+Affected   infrared aqua_breath~
+Stats1     -300 1 5 0 13 0 0 0 0 0
+Stats2     8 8 8
+Stats3     1 6 3
+Stats4     2 6 1 0 0 0 6
+Attribs    10 13 14 17 12 16 13
+Saves      0 0 0 0 0 0
+Resist     nonmagic paralysis~
+Immune     poison sleep charm psychic~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'charm person' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   55~
+Comlist   mea $n &CThe nereid waves a hand and you feel your lungs fill with water!
+mer $n &C$n begins to choke on water as a nereid waves a hand at $m!
+mpdamage $n 1 12
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2759
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpgoto 2798
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2706
+Keywords   seagull~
+Short      &wa seagull&w~
+Long       &wA seagull is here looking around for something to eat.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared flying~
+Stats1     0 1 0 0 9 0 0 0 0 0
+Stats2     1 3 0
+Stats3     1 1 1
+Stats4     2 1 1 0 0 0 6
+Attribs    2 9 10 15 5 9 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 2704 1
+mpoload 2704 1
+silent drop all
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2706
+emote flies in from above and begins wandering about
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote squawks suddenly as it looks around
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpecho &wThe seagull flaps its wings and flies off as night approaches
+mpgoto 2798
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2707
+Keywords   crab beach wandering~
+Short      &Ra small crab&w~
+Long       &RA small crab wanders about the beach here.&w
+~
+Race       fish~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 3 0
+Stats3     1 2 0
+Stats4     2 1 1 0 0 0 6
+Attribs    2 5 6 4 7 6 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2765
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   mpgoto 2798
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2799
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     2700
+Keywords first obj~
+Type     trash~
+Short    a newly created first obj~
+Long     Some god dropped a newly created first obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2701
+Keywords shortsword sword~
+Type     weapon~
+Short    a shortsword~
+Long     A shortsword has been left here.~
+Flags    inventory finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 2
+Stats    2 10 1 1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2702
+Keywords longsword sword~
+Type     weapon~
+Short    a longsword~
+Long     A longsword has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 1 0
+Values2  0 2
+Stats    3 15 1 1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2703
+Keywords dagger slim~
+Type     weapon~
+Short    a slim dagger~
+Long     A dagger has been left here.~
+Flags    inventory finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2704
+Keywords feather seagull~
+Type     trash~
+Short    &wa seagull feather&w~
+Long     &wA seagull feather has been left here.&w~
+WFlags   take onehand~
+Values   7 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2705
+Keywords sand handful beach~
+Type     trash~
+Short    &Ya handful of beach sand&w~
+Long     &YA handful of beach sand has been left here.&w~
+Flags    buried~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2706
+Keywords small pearl~
+Type     trash~
+Short    &Wa small pearl&w~
+Long     &WA small pearl has been left here.&w~
+Flags    buried~
+WFlags   take onehand~
+Values   15 0 0 0 0 0
+Values2  0 2
+Stats    1 0 3 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2707
+Keywords iridescent seashell small~
+Type     trash~
+Short    &Wa small &wi&Wr&Pi&wd&We&ps&Wc&we&Pn&wt&W seashell&w~
+Long     &WA small iridescent seashell has been left here.&w~
+Flags    buried~
+WFlags   take onehand~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    1 9 5 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2708
+Keywords petrified wood small piece~
+Type     trash~
+Short    &za small piece of petrified wood&w~
+Long     &zA small piece of petrified wood has been left here.&w~
+Flags    buried~
+WFlags   take onehand~
+Values   30 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2709
+Keywords sand handful beach lore~
+Type     trash~
+Short    &Ya handful of beach sand&w~
+Long     &YA handful of beach sand has been left here.&w~
+Lore   &PYour eyes widened as you see in your vision a wave of pure magical
+energy assault this shoreline. A large home run by the lighthouse
+keeper is struck and bursts into flames. You hear the screams of
+the occupants inside as someone rushes outside while covered
+in flames that seem to resist being rolled away. The man dies
+as the flames consume his body and leaves no trace as the wave
+rolls across the beach...&w
+~
+Flags    magic buried~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2799
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2700
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     A forest can be seen to the south, which is large and seems to encompass
+a great deal of the land here. This is a grassy path that winds through
+some sandy soil. Long grasses have found a way to grow in this terrain
+and occasionally a patch of wild flowers can be seen. To the north the
+path here heads up a large sand dune.
+~
+#EXIT
+Direction north~
+ToRoom    2701
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      532
+MapY      740
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2701
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     A forest can be seen to the far south, which is large and seems to encompass
+a great deal of the land here. This is a grassy path that winds through
+some sandy soil. Long grasses have found a way to grow in this terrain
+and occasionally a patch of wild flowers can be seen. To the north the
+the crest of a large sand dune can be seen. From this view you see
+a large white tower emerging from the forest near the center.
+~
+#EXIT
+Direction north~
+ToRoom    2702
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2700
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2702
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     This is the top of a large sand dune and the view is spectacular. To the
+south is a large forest that is quite large. The makings of a city
+can be found in the center of this forest with a large white tower
+standing high above the forest. A lighthouse lies to the far north from
+here and to the east, west, and north lies a view of the sea.
+~
+#EXIT
+Direction east~
+ToRoom    2705
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2701
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2703
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2703
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     The dune here is made from a combination of sand and long grasses
+that dance in the breeze. The smell of salt water is prevalent all around
+these dunes. A small but faintly noticeable trail goes back to the east and 
+to the west from here. The makings of a lighthouse can be detected to the
+north.
+~
+#EXIT
+Direction east~
+ToRoom    2702
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2704
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2704
+Name     &GGrassy Dunes&w~
+Sector   field~
+Flags    nomob~
+Desc     The dune here is made from a combination of sand and long grasses
+that dance in the breeze. The smell of salt water is prevalent all around
+these dunes. A small but faintly noticeable trail goes back to the east and 
+and the trail ends here at a patch of wild long grasses. The crash of
+waves can be heard nearby.
+~
+#EXIT
+Direction north~
+ToRoom    2753
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2703
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2702
+if perception($n) >= 15
+mea $n &GYou notice a faded path to the north that is partially hidden.
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2705
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     This is the top of a large sand dane and the view is spectacular. To the
+south is a large forest that is quite large. The makings of a city
+can be found in the center of this forest with a large white tower
+standing high above the forest. The top of a lighthouse can be
+seen to the north, which is slightly obscurred by another dune.
+~
+#EXIT
+Direction east~
+ToRoom    2706
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2702
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2706
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     The dune here is starting to decline towards the base ofa well traveled
+trail leading to the north. The dune picks up again to the east as it
+rises like a wave of sandy earth. You can barely see a forest to the south
+as some dunes have begun to obscure it. To the north from here the views
+of a large beach are fantastic.
+~
+#EXIT
+Direction north~
+ToRoom    2716
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2707
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2705
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2707
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     This dune is starting to rise again like a wave and the view from
+here allows one to see a forest to the south and a large lighthouse
+to the northeast from here. Long grasses that reside here dance in the
+breeze and greet those that travel here. The crash of waves can be heard
+to the north.
+~
+#EXIT
+Direction east~
+ToRoom    2708
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2706
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2708
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     This is the top of a rather large dune, which almost allows someone
+on top of it to achieve a panoramic view of the lands. To the north
+is the sea with a sandy beach bordering it. A large lighthouse is
+stationed towards the northeast, but it appears run down. A massive
+forest can be seen to the south and a city appears to grow in
+the middle of it. The path along this dune continues to the south as
+it crawls downwards or to the west.
+~
+#EXIT
+Direction south~
+ToRoom    2709
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2707
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2709
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     The dune is beginning to descend here towards a grassy path towards
+the southeast. The top of the dune can be seen towards the north. The
+path to the southeast leads towards a long expanse of sandy beach,
+which is looks smooth and inviting.
+~
+#EXIT
+Direction north~
+ToRoom    2708
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2710
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2710
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     The dune is beginning to descend here towards a grassy path towards
+the south. The top of the dune can be seen towards the northwest. The
+path to the south leads towards a long expanse of sandy beach,
+which is looks smooth and inviting.
+~
+#EXIT
+Direction south~
+ToRoom    2711
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2709
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2711
+Name     &GA Path&w~
+Sector   field~
+Desc     This path is heavily bordered by long grasses, which is their last
+stand before the path opens out upon a large beach and the sea. The
+crash of waves can be heard quite frequently from here and the
+sandy beach looks very inviting. The waters of the sea are a soft
+gradient ranging from lightest blue to deep teal.
+~
+#EXIT
+Direction north~
+ToRoom    2710
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2712
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2712
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern. A small grassy path leading to
+some large dunes can be found towards the west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2713
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      554
+MapY      760
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2711
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 2705 1 2712
+#ENDROOM
+
+#ROOM
+Vnum     2713
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2714
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2712
+#ENDEXIT
+
+Reset O 0 2705 2 2713
+#ENDROOM
+
+#ROOM
+Vnum     2714
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2715
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2713
+#ENDEXIT
+
+Reset O 0 2705 4 2714
+#ENDROOM
+
+#ROOM
+Vnum     2715
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2765
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2714
+#ENDEXIT
+
+Reset O 0 2705 10 2715
+Reset O 0 2707 1 2715
+#ENDROOM
+
+#ROOM
+Vnum     2716
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     This sandy path leads down from the top of a large dune located towards
+the south from here. The side of this dune shows patches of sand
+and wild long grasses or wildflowers. A large lighthouse can be seen
+from here towards the northwest. The beach situated around the lighthouse
+is long and goes to the west and east along the borders of the sea.
+~
+#EXIT
+Direction north~
+ToRoom    2717
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2706
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2717
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     This sandy path leads down from the top of a large dune located towards
+the far south from here. The side of this dune shows patches of sand
+and wild long grasses or wildflowers. A large lighthouse can be seen
+from here towards the northwest. The beach situated around the lighthouse
+is long and goes to the west and east along the borders of the sea.
+~
+#EXIT
+Direction north~
+ToRoom    2718
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2716
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2718
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. A large lighthouse can be seen to the northwest from here,
+which is constantly slapped by the waves of the ocean. A path leading
+up the sand dunes to the south can be found here. Long grasses
+grow on the unstable soil and partially obscure parts of the path.
+~
+#EXIT
+Direction east~
+ToRoom    2723
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2717
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2719
+#ENDEXIT
+
+Reset O 0 2705 6 2718
+#ENDROOM
+
+#ROOM
+Vnum     2719
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. A large lighthouse can be seen to the north from here,
+which is constantly slapped by the waves of the ocean. A small
+path leads towards the lighthouse from here.
+~
+#EXIT
+Direction north~
+ToRoom    2720
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2718
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2721
+#ENDEXIT
+
+Reset O 0 2705 10 2719
+#ENDROOM
+
+#ROOM
+Vnum     2720
+Name     &YA Sandy Path&w~
+Sector   city~
+Desc     This sandy path leads towards the large lighthouse that looms over this
+part of the beach. The sand is covering parts of what appears are remnants
+of buildings and walls that used to be located near the lighthouse. A
+structure that resembles a home can be seen to the west, which has
+been taken over by the wind, sand, and vegetation. The lighthouse to
+the north appears to be also run down and abandoned as well.
+~
+#EXIT
+Direction south~
+ToRoom    2719
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2724
+#ENDEXIT
+
+Reset O 0 2705 3 2720
+Reset O 0 2709 1 2720
+#ENDROOM
+
+#ROOM
+Vnum     2721
+Name     &YA Sandy Beach~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. A large lighthouse can be seen to the northeast from here,
+which is constantly slapped by the waves of the ocean.
+~
+#EXIT
+Direction east~
+ToRoom    2719
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2722
+#ENDEXIT
+
+Reset O 0 2705 2 2721
+#ENDROOM
+
+#ROOM
+Vnum     2722
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. A large lighthouse can be seen to the northeast from here,
+which is constantly slapped by the waves of the ocean.
+~
+#EXIT
+Direction east~
+ToRoom    2721
+#ENDEXIT
+
+Reset O 0 2705 5 2722
+#ENDROOM
+
+#ROOM
+Vnum     2723
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. A large lighthouse can be seen to the northwest from here,
+which is constantly slapped by the waves of the ocean.
+~
+#EXIT
+Direction east~
+ToRoom    2756
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2718
+#ENDEXIT
+
+Reset O 0 2705 3 2723
+#ENDROOM
+
+#ROOM
+Vnum     2724
+Name     &YA Sandy Courtyard&w~
+Sector   city~
+Desc     The sand here has engulfed what appears to have been a small courtyard.
+The remnants of a small fountain have been absorbed by the sand and
+a small stone angel that is missing a wing is all that remains of
+the original fountain. Stone walls have been overrun with wild ivy
+and the sand that is pouring over it. The path leads to the north
+where the lighthouse entrance is located and to the south where
+the main beach can be found.
+~
+#EXIT
+Direction north~
+ToRoom    2725
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      535
+MapY      735
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2720
+#ENDEXIT
+
+Reset O 0 2705 3 2724
+#ENDROOM
+
+#ROOM
+Vnum     2725
+Name     Before the Lighthouse Door~
+Sector   city~
+Desc     To the north is the front entrance of the large northern beach lighthouse.
+The maintenance on the lighthouse has been lacking for many years and it
+is surprising that the lighthouse still stands to this day. Holes
+in the walls allow people to peek inside and few dare to enter it
+or even climb to the top. The door to the lighthouse is made from
+rotting wood and appears to have once been a bright cherry red in
+color.
+~
+#EXIT
+Direction north~
+ToRoom    2726
+Keywords  'lighthouse door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2724
+#ENDEXIT
+
+Reset D 0 2725 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2726
+Name     &wInside the First Floor&w~
+Sector   indoors~
+Desc     This is the first floor of an abandoned lighthouse. There are several
+holes in the wall that allow someone to look outside like a window.
+A staircase leading up can be seen to the north of here. The ceiling
+has several holes in it from time and lack of maintenance over
+the years. The sounds of the sea can be heard as several waves
+crash against the side of the lighthouse. The entrance to the
+lighthouse can be seen to the south.
+~
+#EXIT
+Direction north~
+ToRoom    2727
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2731
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2725
+Keywords  'lighthouse door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2729
+#ENDEXIT
+
+Reset D 0 2726 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2727
+Name     &wInside the First Floor~
+Sector   indoors~
+Desc     This is the first floor of an abandoned lighthouse. There are several
+holes in the wall that allow someone to look outside like a window. A
+rickety looking wooden staircase is here leading up to the next
+floor of the lighthouse. The stairs seem to be stable despite the
+lack of repair done on the lighthouse. The sounds of the sea can
+be heard as several waves crash against the side of the lighthouse.
+~
+#EXIT
+Direction east~
+ToRoom    2730
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2726
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2728
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2732
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2728
+Name     &wInside the First Floor~
+Sector   indoors~
+Desc     This is the first floor of an abandoned lighthouse. There are several
+holes in the wall that allow someone to look outside like a window.
+A staircase leading up can be seen to the east of here. The ceiling
+has several holes in it from time and lack of maintenance over
+the years. The sounds of the sea can be heard as several waves
+crash against the side of the lighthouse. A large hole where a
+window once was allows a view of the open sea on the north
+wall.
+~
+#EXIT
+Direction east~
+ToRoom    2727
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2729
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2729
+Name     &wInside the First Floor~
+Sector   indoors~
+Desc     This is the first floor of an abandoned lighthouse. There are several
+holes in the wall that allow someone to look outside like a window.
+A staircase leading up can be seen to the northeast of here. The ceiling
+has several holes in it from time and lack of maintenance over
+the years. The sounds of the sea can be heard as several waves
+crash against the side of the lighthouse. A few cups and other dishes
+are here on the floor. They have been broken into several pieces and
+forgotten about.
+~
+#EXIT
+Direction north~
+ToRoom    2728
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2726
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2730
+Name     &wInside the First Floor~
+Sector   indoors~
+Desc     This is the first floor of an abandoned lighthouse. There are several
+holes in the wall that allow someone to look outside like a window.
+A staircase leading up can be seen to the west of here. The ceiling
+has several holes in it from time and lack of maintenance over
+the years. The sounds of the sea can be heard as several waves
+crash against the side of the lighthouse. A table that has slowly
+decayed into tiny pieces rests against the eastern wall here.
+~
+#EXIT
+Direction south~
+ToRoom    2731
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2727
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2731
+Name     &wInside the First Floor~
+Sector   indoors~
+Desc     This is the first floor of an abandoned lighthouse. There are several
+holes in the wall that allow someone to look outside like a window.
+A staircase leading up can be seen to the northwest of here. The ceiling
+has several holes in it from time and lack of maintenance over
+the years. The sounds of the sea can be heard as several waves
+crash against the side of the lighthouse. The remnants of a painting
+that once hung on the wall here lies crumbling to pieces on the
+ground. 
+~
+#EXIT
+Direction north~
+ToRoom    2730
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2726
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2732
+Name     &wInside the Second Floor~
+Sector   indoors~
+Desc     This is the second floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the east of here while another
+is located here leading back down to the first level.
+~
+#EXIT
+Direction east~
+ToRoom    2733
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2737
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2727
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2733
+Name     &wInside the Second Floor~
+Sector   indoors~
+Desc     This is the second floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor is located here while another leading back to
+the first level is towards the west.
+~
+#EXIT
+Direction east~
+ToRoom    2734
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2736
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2732
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2738
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2734
+Name     &wInside the Second Floor~
+Sector   indoors~
+Desc     This is the second floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the east of here. A large hole
+in the east wall gives a view of the beach and sea nearby.
+~
+#EXIT
+Direction east~
+ToRoom    2757
+Flags     secret hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2735
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2733
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2735
+Name     &wInside the Second Floor~
+Sector   indoors~
+Desc     This is the second floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be see to the northwest of here.
+~
+#EXIT
+Direction north~
+ToRoom    2734
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2736
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2736
+Name     &wInside the Second Floor&w~
+Sector   indoors~
+Desc     This is the second floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor is located to the north. A small glass lantern
+lies on the floor here, which has been broken into several pieces.
+~
+#EXIT
+Direction north~
+ToRoom    2733
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2735
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2737
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate lantern~
+Comlist   if investigation($n) >= 15
+mea $n You determine that the lantern is not very old and was recently
+mea $n broken from falling from someone's hand or dropped.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2737
+Name     &wInside the Second Floor~
+Sector   indoors~
+Desc     This is the second floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the northeast of here while
+another leading down to the first floor is directly north of here.
+~
+#EXIT
+Direction north~
+ToRoom    2732
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2736
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2738
+Name     &wInside the Third Floor~
+Sector   indoors~
+Desc     This is the third floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the east while another leading back
+to the second floor is here. There are several pieces of debris
+scattered all over here.
+~
+#EXIT
+Direction east~
+ToRoom    2739
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2743
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2733
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2739
+Name     &wInside the Third Floor&w~
+Sector   indoors~
+Desc     This is the third floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the east while another leading back
+to the second floor is to the east. The floorboards here feel weak
+and unstable with several large holes in various spots giving a 
+view of the floor below.
+~
+#EXIT
+Direction east~
+ToRoom    2740
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2742
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2738
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2740
+Name     &wInside the Third Floor&w~
+Sector   indoors~
+Desc     This is the third floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the far east while another leading
+back to the second floor is to the far west. Part of the corner of
+the room here is missing and gives a view of the floor below.
+~
+#EXIT
+Direction south~
+ToRoom    2741
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2739
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2744
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2741
+Name     &wInside the Third Floor&w~
+Sector   indoors~
+Desc     This is the third floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the northeast. The floorboards here
+are very weak and seem ready to fall to the floor below.
+~
+#EXIT
+Direction north~
+ToRoom    2740
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2742
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   is isaffected($n) != flying
+if acrobatics($n) < 15
+mea $n You step on part of the floor and it caves in under your weight...
+mea $n You fall through the floor and land on the level below!
+mer $n $n steps on a section of flooring and falls through suddenly!
+silent mptransfer $n 2735
+mpat 2735 mer $n $n hits the ground here suddenly from above!
+mpat 2735 mpdamage $n 2 10
+else
+mea $n You manage to step over a weak floorboard.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2742
+Name     &wInside the Third Floor&w~
+Sector   indoors~
+Desc     This is the third floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the northeast while another leading
+back to the second floor can be seen to the northwest. 
+~
+#EXIT
+Direction north~
+ToRoom    2739
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2741
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2743
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2743
+Name     &wInside the Third Floor&w~
+Sector   indoors~
+Desc     This is the third floor of an abandoned lighthouse. The floors here
+are quite destroyed looking and weak in several spots. This appears
+to have been abandoned a long time ago due to some event. Several
+holes have been made in the walls and the ceiling, which give amazing
+views of the sea that surrounds the lighthouse. A staircase leading
+to the next floor can be seen to the far east of the room while another
+leading back to the second floor is to the north. There are several
+pieces of debris scattered all over here.
+~
+#EXIT
+Direction north~
+ToRoom    2738
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2742
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2744
+Name     &wInside the Fourth Floor&w~
+Sector   indoors~
+Desc     The fourth floor of this lighthouse is much smaller than the previous
+floor and there is debris scattered everywhere. A few large holes
+have been punched through the walls of the lighthouse by some force,
+which create open windows to the landscape surrounding the lighthouse.
+A view of the beaches, dunes, and sea can be found here via the holes
+in the walls. A staircase leading back to the third floor is here. A
+staircase leading to the next floor can be seen to the northeast
+from here.
+~
+#EXIT
+Direction north~
+ToRoom    2745
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2747
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2740
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2745
+Name     &wInside the Fourth Floor&w~
+Sector   indoors~
+Desc     The fourth floor of this lighthouse is much smaller than the previous
+floor and there is debris scattered everywhere. A few large holes
+have been punched through the walls of the lighthouse by some force,
+which create open windows to the landscape surrounding the lighthouse.
+A view of the beaches, dunes, and sea can be found here via the holes
+in the walls. A staircase leading back to the third floor is located to
+the south while one leading up to the next floor is to the east.
+from here.
+~
+#EXIT
+Direction east~
+ToRoom    2746
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2744
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2746
+Name     &wInside the Fourth Floor&w~
+Sector   indoors~
+Desc     The fourth floor of this lighthouse is much smaller than the previous
+floor and there is debris scattered everywhere. A few large holes
+have been punched through the walls of the lighthouse by some force,
+which create open windows to the landscape surrounding the lighthouse.
+A view of the beaches, dunes, and sea can be found here via the holes
+in the walls. A staircase leading back to the third floor is located
+to the southwest while a staircase leading up is here.
+from here.
+~
+#EXIT
+Direction south~
+ToRoom    2747
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2745
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2748
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2747
+Name     &wInside the Fourth Floor&w~
+Sector   indoors~
+Desc     The fourth floor of this lighthouse is much smaller than the previous
+floor and there is debris scattered everywhere. A few large holes
+have been punched through the walls of the lighthouse by some force,
+which create open windows to the landscape surrounding the lighthouse.
+A view of the beaches, dunes, and sea can be found here via the holes
+in the walls. A staircase leading back to the third floor is here to the
+west. A staircase leading to the next floor can be seen to the north. Large
+chunks of stone is scattered here forming piles.
+~
+#EXIT
+Direction north~
+ToRoom    2746
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2744
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2748
+Name     &wInside the Fifth Floor&w~
+Sector   indoors~
+Desc     The floor here is a large circular room that was once surrounded by
+windows. Due to the destruction and abandonment of the lighthouse all
+of the windows are now pieces of glass on the floor here. The views
+from this part of the lighthouse are incredible. You can see a
+large forest to the south, the sea, beaches, dunes, and the 
+makings of a city to the south inside the forest. A staircase here
+leads down to the previous floor below.
+~
+#EXIT
+Direction north~
+ToRoom    2751
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2749
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2746
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2749
+Name     &wInside the Fifth Floor&w~
+Sector   indoors~
+Desc     The floor here is a large circular room that was once surrounded by
+windows. Due to the destruction and abandonment of the lighthouse all
+of the windows are now pieces of glass on the floor here. The views
+from this part of the lighthouse are incredible. You can see a
+large forest to the south, the sea, beaches, dunes, and the 
+makings of a city to the south inside the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2750
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2748
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2750
+Name     &wInside the Fifth Floor&w~
+Sector   indoors~
+Desc     The floor here is a large circular room that was once surrounded by
+windows. Due to the destruction and abandonment of the lighthouse all
+of the windows are now pieces of glass on the floor here. The views
+from this part of the lighthouse are incredible. You can see a
+large forest to the south, the sea, beaches, dunes, and the 
+makings of a city to the south inside the forest.
+~
+#EXIT
+Direction south~
+ToRoom    2749
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2751
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2751
+Name     &wInside the Fifth Floor&w~
+Sector   indoors~
+Desc     The floor here is a large circular room that was once surrounded by
+windows. Due to the destruction and abandonment of the lighthouse all
+of the windows are now pieces of glass on the floor here. The views
+from this part of the lighthouse are incredible. You can see a
+large forest to the south, the sea, beaches, dunes, and the 
+makings of a city to the south inside the forest. A metal staircase
+here leads up to the highest point of the lighthouse.
+~
+#EXIT
+Direction east~
+ToRoom    2750
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2748
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2752
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2752
+Name     &wThe Top of the Lighthouse&w~
+Sector   city~
+Desc     This is the highest point of the lighthouse where there was once
+light source that would be reflected out to warn ships. The light
+source is no longer here and there is debris all over this tiny
+space. The glass here is more intact than in previous parts of 
+the lighthouse except with the north facing windows, which have
+been blown out by something. The view of the lands is impressive
+here and one can see various parts from a large forest to the
+long beaches nearby.
+~
+#EXIT
+Direction down~
+ToRoom    2751
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2753
+Name     &GGrassy Dunes&w~
+Sector   field~
+Desc     This is a barely visible trail that leads towards a small hidden
+beach to the north. The long grass that grows wildly on the dunes
+is very thick here, which makes it hard to see the trail's direction.
+A small private beach lies to the north at the bottom of this dune, which
+shines brightly under the sun or moon with its crystal clear waters.
+~
+#EXIT
+Direction north~
+ToRoom    2754
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2704
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2754
+Name     &YA Small Beach&w~
+Sector   city~
+Desc     The beach here is relatively small and is part of a small cove that 
+the sea has carved out over time. The sand is not very smooth and large
+rocks emerge from the sand like blunt teeth. Some trees have found
+stable footing and grow here along the edges of the beach. This is
+a very peaceful beach that not many seem to frequent.
+~
+#EXIT
+Direction south~
+ToRoom    2753
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2755
+#ENDEXIT
+
+Reset O 0 2705 12 2754
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumhere(2152) == 0
+if hasqbit($n) == 2702
+mpoload 2152 1
+drop key
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p dig uncovered~
+Comlist   if hasqbit($n) == 2702
+mpqset $n 2703
+mpqset $n 2702
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2755
+Name     &YA Small Beach&w~
+Sector   city~
+Desc     The beach here is relatively small and is part of a small cove that 
+the sea has carved out over time. The sand is not very smooth and large
+rocks emerge from the sand like blunt teeth. Some trees have found
+stable footing and grow here along the edges of the beach. This is
+a very peaceful beach that not many seem to frequent.
+~
+#EXIT
+Direction east~
+ToRoom    2754
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      509
+MapY      745
+#ENDEXIT
+
+Reset O 0 2705 9 2755
+#ENDROOM
+
+#ROOM
+Vnum     2756
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. A large lighthouse can be seen to the northwest from here,
+which is constantly slapped by the waves of the ocean.
+~
+#EXIT
+Direction east~
+ToRoom    2757
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2723
+#ENDEXIT
+
+Reset O 0 2705 6 2756
+#ENDROOM
+
+#ROOM
+Vnum     2757
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction east~
+ToRoom    2758
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2756
+#ENDEXIT
+
+Reset O 0 2705 1 2757
+#ENDROOM
+
+#ROOM
+Vnum     2758
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction east~
+ToRoom    2759
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2757
+#ENDEXIT
+
+Reset O 0 2705 3 2758
+Reset O 0 2706 1 2758
+#ENDROOM
+
+#ROOM
+Vnum     2759
+Name     &YA Sandy Beach~
+Sector   city~
+Desc     This is a long beach that runs along the east and west. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern. The beach turns to the south here
+and seems to stretch on forever.
+~
+#EXIT
+Direction south~
+ToRoom    2760
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2758
+#ENDEXIT
+
+Reset O 0 2705 7 2759
+#ENDROOM
+
+#ROOM
+Vnum     2760
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2759
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2761
+#ENDEXIT
+
+Reset O 0 2705 12 2760
+Reset O 0 2707 1 2760
+#ENDROOM
+
+#ROOM
+Vnum     2761
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2760
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2762
+#ENDEXIT
+
+Reset O 0 2705 3 2761
+#ENDROOM
+
+#ROOM
+Vnum     2762
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2761
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2763
+#ENDEXIT
+
+Reset O 0 2705 6 2762
+#ENDROOM
+
+#ROOM
+Vnum     2763
+Name     &YA Sandy Beach~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2762
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2764
+#ENDEXIT
+
+Reset O 0 2705 5 2763
+Reset O 0 2706 1 2763
+#ENDROOM
+
+#ROOM
+Vnum     2764
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2763
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2765
+#ENDEXIT
+
+Reset O 0 2705 2 2764
+Reset O 0 2708 1 2764
+#ENDROOM
+
+#ROOM
+Vnum     2765
+Name     &YA Sandy Beach~
+Sector   city~
+Desc     This is a long beach that runs along the north and south. A great sea
+lies ahead and continues on for some time as there is no other land
+in sight. The beach is quite smooth and is speckled with shells and
+other things returned to the ground from the sea. Waves crash
+along the beach in a rhythmic pattern.
+~
+#EXIT
+Direction north~
+ToRoom    2764
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2715
+#ENDEXIT
+
+Reset O 0 2705 16 2765
+#ENDROOM
+
+#ROOM
+Vnum     2798
+Name     &RDAYTIME MOB HIDEOUT&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall noastral~
+Desc     You should not be in here. Please contact the admin team to get
+out. Thank you!
+~
+Reset M 0 2706 3 2798
+Reset M 0 2706 3 2798
+Reset M 0 2706 3 2798
+Reset M 0 2705 1 2798
+Reset M 0 2707 1 2798
+#ENDROOM
+
+#ROOM
+Vnum     2799
+Name     &RNIGHT TIME MOB HIDEOUT&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall noastral~
+Desc     You should not be in here. Please contact the admin team to get
+out. Thank you!
+~
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2702 4 2799
+  Reset E 0 2702 1 26
+Reset M 0 2702 4 2799
+  Reset E 0 2702 1 26
+Reset M 0 2702 4 2799
+  Reset E 0 2702 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2701 10 2799
+  Reset E 0 2701 1 26
+Reset M 0 2702 4 2799
+  Reset E 0 2702 1 26
+Reset M 0 2704 1 2799
+Reset M 0 2700 1 2799
+Reset M 0 2703 1 2799
+  Reset E 0 2702 1 26
+  Reset E 0 2703 1 27
+#ENDROOM
+
+#ENDAREA

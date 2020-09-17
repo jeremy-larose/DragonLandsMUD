@@ -1,0 +1,384 @@
+Name          Druid~
+Class         7
+SavingStatOne 3
+SavingStatTwo 4
+SpellModStat  4
+Weapon        10315
+Guild         3037
+Skilladept    95
+Thac0         18
+Thac32        7
+Hpmin         1
+Hpmax         8
+Mana          1
+Expbase       1350
+Affected      0
+Resist	       0
+Suscept	    0
+CasterType    0
+Subclasses    0
+Skill 'acid shield' 18 95 5
+Skill 'acrobatics' 1 95 0
+Skill 'air walk' 14 95 4
+Skill 'animal handling' 1 95 0
+Skill 'aquan' 1 95 0
+Skill 'arcana' 1 95 0
+Skill 'athletics' 1 95 0
+Skill 'auran' 1 95 0
+Skill 'barkskin' 6 95 2
+Skill 'bears endurance' 6 95 2
+Skill 'blight' 14 95 4
+Skill 'brew' 1 95 0
+Skill 'brittleskin' 6 95 2
+Skill 'bulls strength' 6 95 2
+Skill 'call lightning' 10 95 3
+Skill 'cats grace' 6 95 2
+Skill 'celestial' 1 95 0
+Skill 'change sex' 6 95 2
+Skill 'charm person' 1 95 1
+Skill 'climb' 1 95 0
+Skill 'clubs' 1 95 0
+Skill 'common' 1 95 0
+Skill 'conjure air elemental' 18 95 5
+Skill 'conjure earth elemental' 18 95 5
+Skill 'conjure fey' 22 95 6
+Skill 'conjure fire elemental' 18 95 5
+Skill 'conjure water elemental' 18 95 5
+Skill 'control weather' 30 95 8
+Skill 'cook' 1 95 0
+Skill 'create bonfire' 1 95 0
+Skill 'create water' 1 95 1
+Skill 'cure critical wounds' 14 95 4
+Skill 'cure light wounds' 1 95 1
+Skill 'cure minor wounds' 1 95 0
+Skill 'cure moderate wounds' 6 95 2
+Skill 'cure serious wounds' 10 95 3
+Skill 'daggers' 1 95 0
+Skill 'darkvision' 6 95 2
+Skill 'darts' 1 95 0
+Skill 'dash' 1 95 0
+Skill 'deception' 1 95 0
+Skill 'deep speech' 1 95 0
+Skill 'detect magic' 1 95 1
+Skill 'dig' 1 95 0
+Skill 'dispel magic' 10 95 3
+Skill 'draconic' 1 95 0
+Skill 'drag' 1 95 0
+Skill 'drown' 22 95 6
+Skill 'druidic' 1 95 0
+Skill 'dwarven' 1 95 0
+Skill 'eagles splendor' 6 95 2
+Skill 'earthquake' 30 95 8
+Skill 'elvish' 1 95 0
+Skill 'explosive arrow' 6 95 2
+Skill 'faerie fire' 1 95 1
+Skill 'feeblemind' 30 95 8
+Skill 'find traps' 6 95 2
+Skill 'fire shield' 18 95 5
+Skill 'fire storm' 26 95 7
+Skill 'flame blade' 6 95 2
+Skill 'flame spear' 10 95 3
+Skill 'flaming sphere' 6 95 2
+Skill 'forage' 1 95 0
+Skill 'foxs cunning' 6 95 2
+Skill 'giant' 1 95 26
+Skill 'gnomish' 1 95 0
+Skill 'goblin' 1 95 0
+Skill 'goodberry' 1 95 1
+Skill 'grapple' 1 95 0
+Skill 'halfling' 1 95 0
+Skill 'headbutt' 1 95 0
+Skill 'heal' 22 95 6
+Skill 'healing word' 1 95 1
+Skill 'hide' 1 95 0
+Skill 'history' 1 95 0
+Skill 'hold person' 6 95 2
+Skill 'holdbreath' 1 95 0
+Skill 'ice shield' 18 95 5
+Skill 'ice spear' 10 95 3
+Skill 'ice storm' 14 95 4
+Skill 'ignan' 1 95 0
+Skill 'infernal' 1 95 0
+Skill 'insight' 1 95 0
+Skill 'intimidation' 1 95 0
+Skill 'investigation' 1 95 0
+Skill 'investiture of flame' 22 95 6
+Skill 'investiture of ice' 22 95 6
+Skill 'investiture of stone' 22 95 6
+Skill 'investiture of wind' 22 95 6
+Skill 'javelins' 1 95 0
+Skill 'kick' 1 95 0
+Skill 'lightning shield' 18 95 5
+Skill 'locate object' 6 95 2
+Skill 'longstrider' 1 95 1
+Skill 'maces' 1 95 0
+Skill 'magical' 1 95 0
+Skill 'mass bears endurance' 22 95 6
+Skill 'mass bulls strength' 22 95 6
+Skill 'mass cats grace' 22 95 6
+Skill 'mass cure critical' 34 95 9
+Skill 'mass cure light' 22 95 6
+Skill 'mass cure moderate' 26 95 7
+Skill 'mass cure serious' 30 95 8
+Skill 'mass drown' 34 95 9
+Skill 'mass eagles splendor' 22 95 6
+Skill 'mass foxs cunning' 22 95 6
+Skill 'mass owls wisdom' 22 95 6
+Skill 'medicine' 1 95 0
+Skill 'moonbeam' 6 95 2
+Skill 'mount' 1 95 0
+Skill 'nature' 1 95 0
+Skill 'neutralize poison' 10 95 3
+Skill 'orc' 1 95 0
+Skill 'owls wisdom' 6 95 2
+Skill 'perception' 1 95 0
+Skill 'performance' 1 95 0
+Skill 'persuasion' 1 95 0
+Skill 'poison' 10 95 3
+Skill 'poison spray' 1 95 0
+Skill 'polymorph' 14 95 4
+Skill 'primordial' 1 95 0
+Skill 'produce flame' 1 95 0
+Skill 'protection from poison' 6 95 2
+Skill 'punch' 1 95 0
+Skill 'refreshing vitality' 1 95 1
+Skill 'religion' 1 95 0
+Skill 'rescue' 1 95 0
+Skill 'scan' 1 95 0
+Skill 'scimitars' 1 95 0
+Skill 'scribe' 1 95 0
+Skill 'scry' 18 95 5
+Skill 'search' 1 95 0
+Skill 'shillelagh' 1 95 0
+Skill 'shove' 1 95 0
+Skill 'sickles' 1 95 0
+Skill 'sleet storm' 10 95 3
+Skill 'sleight of hand' 1 95 0
+Skill 'slice' 1 95 0
+Skill 'slings' 1 95 0
+Skill 'sneak' 1 95 0
+Skill 'spears' 1 95 0
+Skill 'stabilize' 1 95 0
+Skill 'staves' 1 95 0
+Skill 'stealth' 1 95 0
+Skill 'stoneskin' 14 95 4
+Skill 'summon legendary feast' 22 95 6
+Skill 'summon treant' 26 95 7
+Skill 'sunburst' 30 95 8
+Skill 'survival' 1 95 0
+Skill 'sylvan' 1 95 0
+Skill 'terran' 1 95 0
+Skill 'thorn whip' 1 95 0
+Skill 'thunderclap' 1 95 0
+Skill 'thunderstrike' 18 95 5
+Skill 'thunderwave' 1 95 1
+Skill 'transport via plants' 22 95 6
+Skill 'tree stride' 18 95 5
+Skill 'troll' 1 95 0
+Skill 'true seeing' 26 95 7
+Skill 'tsunami' 30 95 8
+Skill 'undercommon' 1 95 0
+Skill 'water breathing' 10 95 3
+Skill 'wind bomb' 10 95 3
+Skill 'wind dart' 1 95 0
+Skill 'wind walk' 26 95 7
+Skill 'word of recall' 30 95 8
+Title
+Man~
+Woman~
+Title
+Believer~
+Believer~
+Title
+Attendant~
+Attendant~
+Title
+Acolyte~
+Acolyte~
+Title
+Novice~
+Novice~
+Title
+Missionary~
+Missionary~
+Title
+Adept~
+Adept~
+Title
+Deacon~
+Deaconess~
+Title
+Vicar~
+Vicaress~
+Title
+Priest~
+Priestess~
+Title
+Minister~
+Lady Minister~
+Title
+Canon~
+Canon~
+Title
+Levite~
+Levitess~
+Title
+Curate~
+Curess~
+Title
+Monk~
+Nun~
+Title
+Healer~
+Healess~
+Title
+Chaplain~
+Chaplain~
+Title
+Expositor~
+Expositress~
+Title
+Bishop~
+Bishop~
+Title
+Arch Druid~
+Arch Druidess~
+Title
+Patriarch~
+Matriarch~
+Title
+Elder Druid~
+Elder Druidess~
+Title
+Grand Druid~
+Grand Druidess~
+Title
+Great Druid~
+Great Druidess~
+Title
+Demon Killer~
+Demon Killer~
+Title
+Greater Demon Killer~
+Greater Demon Killer~
+Title
+Druid of the Sea~
+Druidess of the Sea~
+Title
+Druid of the Earth~
+Druidess of the Earth~
+Title
+Druid of the Air~
+Druidess of the Air~
+Title
+Druid of the Ether~
+Druidess of the Ether~
+Title
+Druid of the Heavens~
+Druidess of the Heavens~
+Title
+High Druid of the Sea~
+High Druidess of the Sea~
+Title
+High Druid of the Earth~
+High Druidess of the Earth~
+Title
+High Druid of the Air~
+High Druidess of the Air~
+Title
+High Druid of the Ether~
+High Druidess of the Ether~
+Title
+High Druid of the Heavens~
+High Druidess of the Heavens~
+Title
+Saviour of the Sea~
+Saviour of the Sea~
+Title
+Saviour of the Earth~
+Saviour of the Earth~
+Title
+Saviour of the Air~
+Saviour of the Air~
+Title
+Saviour of the Ether~
+Saviour of the Ether~
+Title
+Saviour of the Void~
+Saviour of the Void~
+Title
+Supreme Druid of Virtue~
+Supreme Druidess of Virtue~
+Title
+Supreme Druid of Humility~
+Supreme Druidess of Humility~
+Title
+Supreme Druid of Light~
+Supreme Druidess of Light~
+Title
+Supreme Druid of Power~
+Supreme Druidess of Power~
+Title
+Avatar of an Immortal~
+Avatar of an Immortal~
+Title
+Avatar of a Deity~
+Avatar of a Deity~
+Title
+Avatar of a Supremity~
+Avatar of a Supremity~
+Title
+Avatar of an Implementor~
+Avatar of an Implementor~
+Title
+Master of all Divinity~
+Mistress of all Divinity~
+Title
+Avatar~
+Avatar~
+Title
+Neophyte~
+Neophyte~
+Title
+Acolyte~
+Acolyte~
+Title
+Creator~
+Creator~
+Title
+Savior~
+Savior~
+Title
+Demi God~
+Demi Goddess~
+Title
+Immortal~
+Immortal~
+Title
+Lesser God~
+Lesser Goddess~
+Title
+God~
+Goddess~
+Title
+Greater God~
+Greater Goddess~
+Title
+Ascendant God~
+Acendant Goddess~
+Title
+Exalted God~
+Exalted Goddess~
+Title
+Ancient One~
+Ancient One~
+Title
+Eternal One~
+Eternal One~
+Title
+Infinite One~
+Infinite One~
+Title
+Supreme Entity~
+Supreme Entity~
+End

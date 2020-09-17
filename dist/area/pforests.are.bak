@@ -1,0 +1,5730 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Great Parinath Forest Range~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+Economy      0 31460290
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       6000
+Keywords   white tail deer pdeer animal~
+Short      &Oa white tail deer&w~
+Long       &OA white tail deer with large antlers is here.&w
+~
+Desc       &OThis deer stag has a lovely rack of antlers on his head and a soft
+looking pelt. He has dark eyes and is constantly looking for danger.
+~
+Race       mammal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   sneak~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     2 1 1 0 0 0 3
+Attribs    11 2 14 16 11 12 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2006 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote scratches his antlers against the side of a tree.
+mpasound &gYou hear something raking against a tree nearby.&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6001
+Keywords   small bird forest pbird animal~
+Short      a small bird~
+Long       A small bird is here flying around the forest.
+~
+Desc       This small bird is brown and black in coloring with a tiny beak
+and graceful wings.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared flying~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 2 1
+Stats3     1 2 0
+Stats4     0 1 1 0 0 0 3
+Attribs    2 8 12 18 5 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2159 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &wYou hear the sound of a bird singing nearby.
+mpecho &wA small bird sings a little song from a branch nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6002
+Keywords   brown bear pbear animal~
+Short      &Oa brown bear&w~
+Long       &OA brown bear is here wandering around the forest foraging for food.&w
+~
+Desc       &OThis bear is quite large and moves about the forest slowly. He seems
+to be seeking food or something else to do.
+~
+Race       mammal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 3 0 13 0 0 0 0 0
+Stats2     3 8 6
+Stats3     2 4 2
+Stats4     2 1 2 0 0 0 3
+Attribs    14 9 12 10 18 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   growl
+k $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6003
+Keywords   small red fox pfox animal~
+Short      &Ra small red fox&w~
+Long       &RA small red fox is here hunting around the forest.&w
+~
+Desc       &RThis female fox has a beautiful coat of fiery copper red fur. She
+darts about the forest as she hunts for her next meal.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   detect_hidden sneak hide~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 0
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 3
+Attribs    9 10 12 18 9 18 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 6011
+k rabbit
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6004
+Keywords   white tailed doe pdoe animal~
+Short      &Oa white tailed doe&w~
+Long       &OA white tailed doe is here wandering about the forest.&w
+~
+Desc       &OThis doe is quite beautiful with her speckled brown coat and deep
+dark eyes. Her tail has an underside that is white and swishes about
+as she walks around here.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   infrared sneak~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 6 1
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 6
+Attribs    12 8 10 16 14 12 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6005
+Keywords   turkey large pturkey animal~
+Short      &Oa turkey&w~
+Long       &OA large turkey is here pecking away at the ground as it wanders.&w
+~
+Desc       &OThis is a large, fat looking turkey with lots of feathers. He makes
+interesting noises as he wanders about here.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 9 1
+Stats3     1 1 0
+Stats4     2 0 1 0 0 0 6
+Attribs    6 4 10 12 16 9 12
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 6000 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &OYou hear the gobbling sound of a turkey nearby.&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6006
+Keywords   brown squirrel psquirrel animal~
+Short      &Oa brown squirrel&w~
+Long       &OA tiny brown squirrel is running around the forest here.&w
+~
+Desc       &OThis squirrel seems happy to play about the forest here.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 1 1
+Stats3     1 1 0
+Stats4     0 0 1 0 0 0 6
+Attribs    4 10 10 14 9 12 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &gYou hear something rustling above in the trees.&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6007
+Keywords   owlbear large feathered bear beast powlbear monster~
+Short      &Oan owlbear&w~
+Long       &OA feathered looking bear is here prowling about the forest.&w
+~
+Desc       &OThis monster is shaped like a bear, but has the head of a huge
+owl. It has razor sharp claws and beak, which is uses to shred
+apart whatever it finds to eat.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     0 1 6 0 12 0 0 0 0 0
+Stats2     7 10 21
+Stats3     1 10 5
+Stats4     3 10 2 0 0 0 3
+Attribs    20 3 12 12 17 7 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   k $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpgoto 6197
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   If isfight($i)
+Else
+Mpgoto 6197
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6008
+Keywords   badger black white head animal~
+Short      &za badger&w~
+Long       &zAn animal with black and white markings on its head is here.&w
+~
+Desc       &zUpon first glance some might think this to be a skunk. This badger
+has kind looking eyes and the distinctive white and black markings
+around her face. 
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 1 1
+Stats3     0 0 0
+Stats4     0 1 1 0 0 0 6
+Attribs    4 2 12 11 12 5 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6009
+Keywords   bat small black animal~
+Short      &za small black bat&w~
+Long       &zA small black bat is here flying around.&w
+~
+Desc       &zThis small bat is a deep black color that helps it hide during the
+night as it hunts for food.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running~
+Affected   infrared flying~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 3 0
+Stats3     1 1 0
+Stats4     2 1 1 0 0 0 6
+Attribs    2 2 12 15 8 4 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1684 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   24~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   If isfight($i)
+Else
+mpgoto 6198
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6010
+Keywords   wolf grey colored hunting animal~
+Short      &wa wolf&w~
+Long       &wA grey colored wolf is here hunting around the forest.&w
+~
+Desc       &zThis wolf has a dark charcoal colored pelt and almost yellow colored
+eyes. It has sharp teeth and it is currently hunting here.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 11 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     2 1 1 0 0 0 3
+Attribs    12 3 12 15 12 6 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   75~
+Comlist   k $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   snarl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6011
+Keywords   small wild rabbit animal~
+Short      &Oa wild rabbit&w~
+Long       &OA small wild rabbit is here nibbling on some weeds.&w
+~
+Desc       &OThis tiny rabbit is here eating various weeds and grass. She has
+a speckled coat of greys and browns.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running~
+Affected   sneak hide~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 3 1
+Stats3     1 0 0
+Stats4     2 1 1 0 0 0 6
+Attribs    2 5 10 20 8 12 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   If isfight($i)
+Else
+Mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6020
+Keywords   giant wolf spider speckled~
+Short      &za giant s&wp&Oe&wc&zk&wl&Oe&zd wolf spider&w~
+Long       &zA giant speckled wolf spider is here hunting for prey.&w
+~
+Desc       &zThis spider is quite large and has a speckled colored body, which
+helps it hide in the forest. 
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak hide~
+Stats1     0 1 4 0 10 0 0 0 0 0
+Stats2     2 8 10
+Stats3     1 6 2
+Stats4     3 1 2 0 0 0 6
+Attribs    12 4 14 16 13 5 10
+Saves      0 0 0 0 0 0
+Attacks    poison~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   k $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   If isfight($i)
+Else
+Mpgoto 6197
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6021
+Keywords   giant viper snake cobalt~
+Short      &Ba giant cobalt viper&w~
+Long       &BA giant viper is here slithering through the forest.&w
+~
+Desc       &BThis giant snake has black and yellow scales and is about the size
+of a large horse. It's fangs glisten with the poison it is able to
+deliver to its foes.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak hide~
+Stats1     0 1 5 0 11 0 0 0 0 0
+Stats2     10 10 20
+Stats3     2 6 4
+Stats4     2 1 1 0 0 0 6
+Attribs    14 3 12 18 13 10 10
+Saves      0 0 0 0 0 0
+Attacks    poison~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   k $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpedit 6021 add time 20
+If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   If isfight($i)
+Else
+Mpgoto 6197
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6022
+Keywords   giant black vampire bat~
+Short      &ra giant vampire bat&w~
+Long       &rA giant black bat with blood stained fangs is flying about here.&w
+~
+Desc       &rThis black bat is about the size of a horse with black fur. Its muzzle
+is caked in blood as well as its giant fangs.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak flying~
+Stats1     0 1 5 0 10 0 0 0 0 0
+Stats2     8 10 16
+Stats3     2 8 4
+Stats4     3 1 1 0 0 0 6
+Attribs    16 2 12 16 14 6 9
+Saves      0 0 0 0 0 0
+Attacks    feed~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   If isfight($i)
+Else
+Mpgoto 6197
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6023
+Keywords   ogre giant wandering forest ~
+Short      &Oan ogre&w~
+Long       &OA giant ogre is here wandering about the forest.&w
+~
+Desc       &OThis ogre is quite large and stands well over seven feet in height.
+He is rippled with muscle and he wears a roughly crafted set 
+of armor made from animal hides.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 10 0 0 12 0 0 0 2 0
+Stats2     7 10 21
+Stats3     1 10 2
+Stats4     2 8 1 0 0 0 6
+Attribs    19 5 7 8 16 7 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+roar
+k $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpgoto 6197
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+K logger
+Else
+Endif
+Else
+K logger
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6024
+Keywords   nature spirit nymph herb planter hplanter1~
+Short      &Ga nymph&w~
+Long       &GA nature spirit is here helping plants grow around the forest.&w
+~
+Desc       &GThis beautiful nymph is here planting herbs and helping them grow
+about the forest. She seems to be made entirely out of plants and
+moves about quickly as she does her work.
+~
+Race       magical~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc secretive pacifist~
+Affected   invisible detect_hidden infrared truesight~
+Stats1     0 51 0 0 10 0 0 0 0 0
+Stats2     1 20 25
+Stats3     1 4 2
+Stats4     2 6 1 0 0 0 6
+Attribs    12 18 18 19 9 20 16
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If ovnumroom(6004) == 1
+If ovnumroom(603) != 1
+Mpoload 603 1
+Silent drop ranger
+Else
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   75~
+Comlist   If ovnumroom(6003) == 1
+if ovnumroom(612) != 1
+mpoload 612 1
+Silent drop night
+Else
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   If ovnumroom(6002) == 1
+If ovnumroom(602) != 1
+Mpoload 602 1
+Silent drop queen
+Else
+endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   95~
+Comlist   If ovnumroom(6001) == 1
+If ovnumroom(601) != 1
+Mpoload 601 1
+Silent drop giggle
+Else
+endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpscatter self 6000 6120
+silent stand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpscatter self 6000 6120
+silent stand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpscatter self 6000 6120
+silent stand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   mpscatter self 6000 6120
+silent stand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   mpscatter self 6000 6120
+silent stand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 6199
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+mpscatter self 6000 6120
+silent stand
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6025
+Keywords   owl brown white small animal~
+Short      &Oan owl&w~
+Long       &OA brown and white owl is here perched on a branch.&w
+~
+Desc       &OThis owl is quite handsome with his white and grey feathers. He can
+be usually found on a high branch surveying everything.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_hidden infrared flying~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 6 1
+Stats3     1 4 0
+Stats4     2 1 1 0 0 0 6
+Attribs    9 12 12 14 9 12 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 6005 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &OYou hear the sounds of an owl hooting nearby.&w
+mpecho &OAn owl on a nearby branch starts hooting for a few moments.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   If isfight($i)
+Else
+mpgoto 6199
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 6028
+k mouse
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6026
+Keywords   name gibberling small lurking beast hunchback~
+Short      &Oa gibberling&w~
+Long       &OA small hunchback beast is here lurking about.&w
+~
+Desc       &OThis small beast has oily looking fur, long claws, and razor sharp
+looking teeth as it hunts here. 
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -200 1 0 0 10 0 0 0 0 0
+Stats2     2 6 0
+Stats3     1 4 0
+Stats4     1 9 1 0 0 0 3
+Attribs    9 7 7 14 11 7 9
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   If isfight($i)
+Else
+mpgoto 6197
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   k $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+K logger
+Else
+Endif
+Else
+K logger
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6027
+Keywords   hawk brown black small~
+Short      &za hawk&w~
+Long       &zA brown and black hawk is here hunting around the forest.&w
+~
+Desc       &zThis hawk has brown and black feathers, which helps him while he
+hunts for food.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_hidden infrared flying~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 8 1
+Stats3     1 2 0
+Stats4     2 1 1 0 0 0 6
+Attribs    8 9 10 18 10 9 12
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 6006 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if number($n) == 6001
+k pbird
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 6028
+k mouse
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   If isfight($i)
+Else
+Mpscatter self 6000 6120
+Silent stand
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   If isfight($i)
+Else
+Mpgoto 6198
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &zYou hear the sound of a hawk nearby.
+mpecho &zA hawk screeches from a branch of a tree nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6028
+Keywords   small forest mouse grey pmouse animal~
+Short      &wa small mouse&w~
+Long       &wA small mouse is here scurrying about the forest.&w
+~
+Desc       &wThis little mouse has soft looking grey fur and a pink nose as it
+scurries around here looking for food.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea~
+Affected   sneak hide~
+Stats1     0 1 0 0 12 0 0 0 0 0
+Stats2     1 2 0
+Stats3     1 1 0
+Stats4     0 1 1 0 0 0 6
+Attribs    2 3 8 19 2 7 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Else
+Endif
+Else
+Emote suddenly grows rabid as its eyes turn black with fury!
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6029
+Keywords   logger drostari human man chopping wood~
+Short      &Oa logger&w~
+Long       &OA human man is here chopping some wood into smaller pieces.&w
+~
+Desc       &OThis human man is covered in dirt and grime as he works to chop down
+part of the forest here with his axe.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     0 1 1 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 3
+Attribs    12 8 9 16 18 9 9
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &OA logger quickly chops up some wood with his axe here.
+mpasound &OYou hear the sounds of wood being chopped nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+wake
+emote wakes up and heads off to start his work.
+silent stand
+mpgoto 6107
+emote arrives and begins to chop some wood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   if isfight($i)
+else
+emote finishes his work and heads to the camp to rest.
+mpgoto 6179
+emote arrives and falls asleep on his cot.
+silent sleep
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   say Back!! Get away from me!! HELP!!!!!!!!
+mpasound &RYou hear screaming coming from somewhere nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6030
+Keywords   logger drostari human man chopping wood~
+Short      &Oa logger&w~
+Long       &OA human man is here chopping some wood into smaller pieces.&w
+~
+Desc       &OThis human man is covered in dirt and grime as he works to chop down
+part of the forest here with his axe.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     0 1 1 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 3
+Attribs    12 8 9 16 18 9 9
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpecho &OA logger quickly chops up some wood with his axe here.
+mpasound &OYou hear the sounds of wood being chopped nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   If isfight($i)
+Else
+wake
+emote wakes up and heads off to start his work.
+silent stand
+mpgoto 6109
+emote arrives and begins to chop some wood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   if isfight($i)
+else
+emote finishes his work and heads to the camp to rest.
+mpgoto 6179
+emote arrives and falls asleep on his cot.
+silent sleep
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   say Noooooo!!!! HELP!!! HELP MEEEEEE!!!!!!
+mpasound &RYou hear screaming coming from somewhere nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6031
+Keywords   logger boss pboss halforc half orc paperwork~
+Short      &Oa logging boss&w~
+Long       &OA half-orc man is here reviewing some paperwork at a makeshift desk.&w
+~
+Desc       &OThis half-orc man is dressed in simple clothing along with some
+leather armor on top. He has many scars on his face and wherever
+visible skin is showing. He sits at a desk where he reviews many
+papers that were delivered to him.
+~
+Race       half-orc~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     -600 25 5 0 13 0 0 0 2 0
+Stats2     4 5 10
+Stats3     1 3 1
+Stats4     2 0 1 0 0 0 2
+Attribs    19 9 10 12 18 9 9
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if mobinarea(6032) == 1
+if hasqbit($n) != 6000
+if hasqbit($n) != 6001
+if hasqbit($n) != 6002
+if hasqbit($n) != 6005
+if hasqbit($n) != 6004
+if hasqbit($n) != 6003
+eye
+sayto $n Hello there.. you seem like a strong type. Are
+sayto $n you &Ginterested&g in stopping an evil menace to society?
+else
+eye
+sayto $n Did you find her and stop her?
+endif
+Else
+Sayto $n Is her reign of terror finally over? My poor men are
+Sayto $n barely getting their work done thanks to her!
+Endif
+Else
+Smile $n
+Sayto $n Thank you again for helping with that nuisance of ours.
+Endif
+else
+scowl $n
+sayto $n You are aligned with that witch! Get out!!!
+mea $n The logging boss grabs you and throws you out!
+mer $n The logging boss grabs $n and throws $m out!
+silent mpforce $n s
+endif
+else
+scowl $n
+sayto $n You are aligned with that witch! Get out!!!
+mea $n The logging boss grabs you and throws you out!
+mer $n The logging boss grabs $n and throws $m out!
+silent mpforce $n s
+endif
+else
+Eye $n
+Sayto $n Can I help you with something?
+Endif
+else
+emote shuffles some paperwork and grumbles to himself.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 6000
+if ovnuminv(6009) == 1
+if persuasion($n) >= 15
+mpqset $n 6000
+mpqset $n 6001
+eye
+sayto $n I wasn't expecting a delivery for some time.. It must
+sayto $n be from my boss. Rather fancy wrapping for him...
+mpsleep 2
+emote starts to unwrap the box and opens it.
+mpsleep 2
+mpecho &rA horrific endless swarm of wasps erupts from the box and
+mpecho &rbegins to sting and attack the half-orc man as he screams!
+mpasound &RYou hear the sounds of screaming coming from nearby.&w
+mpsleep 2
+mpecho &rThe half-orc man suddenly falls over his makeshift desk
+mpecho &rdead as the wasps burst out of the tent and fly off.
+mpoload 6010
+mposet bosscorpse timer 20
+mpgoto 6199
+mpjunk wbox
+else
+eye
+sayto $n I wasn't expecting a delivery for some time... it says it's
+sayto $n from my boss... wait...
+peer $n
+sayto $n This is a trap! You are working with that foul witch!!
+mpjunk box
+wield greataxe
+sayto $n How dare you try to kill me!! I will end you myself!!
+mpmset boss flags pacifist
+punch $n
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 6000
+mpqset $n 6000
+mpqset $n 6001
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p interested~
+Comlist   if mobinarea(6032) == 1
+if hasqbit($n) != 6000
+if hasqbit($n) != 6001
+if hasqbit($n) != 6002
+if hasqbit($n) != 6005
+if hasqbit($n) != 6004
+if hasqbit($n) != 6003
+Nod $n
+Sayto $n Recently our camp has been attacked by nature! It
+Sayto $n seems all of the animals want to kill us and swarms
+Sayto $n of wasps attack us daily here at the camp. I had a
+Sayto $n wizardly friend put some protections on my tent to
+Sayto $n keep the darkness away.
+Mpsleep 2
+Sayto $n One of my men spotted a dark robbed woman nearby
+Sayto $n and we think it is one of the Shadow Druids trying to
+Sayto $n stop us! We have a permit to do this work by the Kingdom
+Sayto $n of Drostar. I want you to stop her by any means
+Sayto $n necessary. Report back to me once she is dealt with.
+mpqset $n 6003
+else
+eye
+sayto $n Did you find her and stop her?
+endif
+Else
+sayto $n Did you deal with her yet?
+Endif
+Endif
+else
+scowl $n
+sayto $n You are aligned with that witch! Get out!!!
+mea $n The logging boss grabs you and throws you out!
+mer $n The logging boss grabs $n and throws $m out!
+silent mpforce $n s
+endif
+else
+scowl $n
+sayto $n You are aligned with that witch! Get out!!!
+mea $n The logging boss grabs you and throws you out!
+mer $n The logging boss grabs $n and throws $m out!
+silent mpforce $n s
+endif
+else
+Eye $n
+Sayto $n Can I help you with something?
+Endif
+else
+eye
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   If hasqbit($n) == 6004
+Clap $n
+Sayto $n Well done! Here is a reward for your services
+sayto $n and thank you again.
+Mpmset pboss gold 25
+Give 25 gold $n
+Mpadvance $n 2000
+sayto $n If you like I hear one of our larger camps
+sayto $n to the north is dealing with these pests.
+Sayto $n They could use your help.
+Mpqset $n 6004
+Mpqset $n 6005
+Else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   bash
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   close s
+emote goes over to his cot and falls asleep.
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   silent wake
+emote wakes up and begins getting ready for his day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   open s
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6032
+Keywords   shadow druid half elf half-elf female dark robe sdruid6000~
+Short      &za shadow druid&w~
+Long       &zA female half-elf in a dark robe is here chanting something softly.&w
+~
+Desc       &zThis half-elf woman is dressed in simple black robes with the hood
+up to obscure much of her face. Her hair is also a deep shade of black
+and her skin is very fair. She seems very occupied with casting some
+sort of spell.
+~
+Race       half-elf~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   infrared~
+Stats1     -700 25 5 0 15 0 2 10 10 0
+Stats2     6 8 15
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 2
+Attribs    8 14 18 12 10 13 13
+Saves      0 0 0 0 0 0
+Resist     psychic~
+Immune     sleep charm~
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   if mobinarea(6044) != 1
+mpat 6181 mpecho &rThere is a sudden popping sound and then buzzing is heard.&w
+mpat 6181 mpmload 6044
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 6005
+if hasqbit($n) != 6004
+if hasqbit($n) != 6003
+if hasqbit($n) != 6002
+if hasqbit($n) != 6001
+if hasqbit($n) != 6000
+whisper $n Can you help me? I need some help taking down the loggers
+whisper $n nearby... let me know if you are &Rinterested&W.&w
+else
+whisper $n Have you killed the logging boss yet with my present?
+endif
+else
+whisper $n Well? Is it done?
+endif
+else
+mea $n &zA Shadow Druid winks at you.
+endif
+else
+peer $n
+vis
+sayto $n So he hired you to kill me, hmmm?
+laugh
+mpmset sdruid6000 flags pacifist
+sayto $n I will not go done easily.. or alone!
+mpecho &rThe Shadow Druid chants quickly and a popping sound is heard.&w
+mpmload 6044
+sayto $n Now die for your treachery against nature!!!
+c 'chill touch' $n
+silent mpforce swarm k $n
+endif
+else
+sigh $n
+mea $n &zThe Shadow Druid slowly dissipates as she completes her spell!&w
+mpgoto 5499
+endif
+else
+sigh $n
+mea $n &zThe Shadow Druid slowly dissipates as she completes her spell!&w
+mpgoto 5499
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p interested~
+Comlist   if hasqbit ($n) != 6005
+if hasqbit ($n) != 6004
+if hasqbit ($n) != 6003
+if hasqbit ($n) != 6002
+if hasqbit ($n) != 6001
+if hasqbit ($n) != 6000
+nod $n
+whisper $n I need you to gift him this present and tell him it is from
+whisper $n his boss back in Drostar. The present will do all the
+whisper $n work for you.. do not open it or it will kill you.
+mpoload 6009 1
+mpqset $n 6000
+mea $n &zThe Shadow Druid hands you a sealed red colored box.&w
+silent give wpresent $n
+whisper $n Return here and let me know if he was killed.
+else
+whisper $n Did you do what I asked?
+endif
+else
+whisper $n Is he dead?
+endif
+else
+endif
+else
+snarl $n
+sayto $n Fool! I am no idiot! He has sent you to kill me!
+mpmload 6044
+sayto $n My little friends will deal with you! Farewell!
+mea $n &zThe Shadow Druid dissipates as she completes her spell.&w
+mpgoto 5499
+endif
+else
+snarl $n
+sayto $n Fool! I am no idiot! He has sent you to kill me!
+mpmload 6044
+sayto $n My little friends will deal with you! Farewell!
+mea $n &zThe Shadow Druid dissipates as she completes her spell.&w
+mpgoto 5499
+endif
+else
+snarl $n
+sayto $n Fool! I am no idiot! He has sent you to kill me!
+mpmload 6044
+sayto $n My little friends will deal with you! Farewell!
+mea $n &zThe Shadow Druid dissipates as she completes her spell.
+mpgoto 5499
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 6001
+nod
+whisper $n You have done well. Here is your reward...
+mpmset sdruid6000 gold 25
+give 25 gold $n
+mpadvance $n 2000
+whisper $n We are always looking for help. Seek out my brothers
+whisper $n and sisters near a large logging site to the north of here.
+mpqset $n 6001
+mpqset $n 6002
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 6003
+mpqset $n 6003
+mpqset $n 6004
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'ray of frost'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if mobinroom(6044) == 1
+emote waves a hand and disperses the swarm of wasps.
+mppurge swarm
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote chants softly as she closes her eyes to concentrate.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpecho &zA Shadow Druid finishes a spell and dissipates away.
+mpgoto 6197
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 6120
+mpecho &zA figure emerges from the shadows nearby.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6033
+Keywords   logger drostari human man resting campfire~
+Short      &Oa logger&w~
+Long       &OA human man is here resting by a campfire.&w
+~
+Desc       &OThis human man is covered in dirt and grime as he takes
+a break by the fire to rest his weary bones.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     0 1 1 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 3
+Attribs    12 8 9 16 18 9 9
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   say Help!!! HELP MEEEEEEE!!!!!!!
+mpasound &RYou hear screaming coming from somewhere nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   wake
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6044
+Keywords   swarm wasps large conjured swarm989~
+Short      &ra swarm of wasps&w~
+Long       &rA large swarm of wasps has been magically conjured here.&w
+~
+Desc       &rThis is a swarm of very angry wasps that seek out any target to attack.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive~
+Affected   infrared flying~
+Stats1     0 1 0 0 11 0 0 0 0 0
+Stats2     3 8 20
+Stats3     2 8 0
+Stats4     0 1 1 0 0 0 6
+Attribs    3 1 7 13 10 1 13
+Saves      0 0 0 0 0 0
+Resist     blunt nonmagic~
+Immune     sleep charm paralysis~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   if hps($i) < 20
+mpmset self long &rA small swarm of wasps has been magically conjured here.&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If mobinarea(6032) == 1
+If mobinroom(6033) != 1
+If mobinroom(6030) != 1
+If mobinroom(6029) == 1
+K logger
+Else
+Endif
+Else
+K logger
+Endif
+Else
+K logger
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   k $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6199
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     6000
+Keywords large turkey feather~
+Type     trash~
+Short    &Oa large turkey feather&w~
+Long     &OA large turkey feather has been left here.&w~
+WFlags   take onehand~
+Values   15 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6001
+Keywords herb seed roots plant giggleroot broot1~
+Type     trash~
+Short    &gsome plant roots&w~
+Long     &gSome plant roots have been unearthed here.&w~
+Flags    organic buried~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6002
+Keywords herb seed roots blackqueen qroot2~
+Type     trash~
+Short    &gsome plant roots&w~
+Long     &gSome plant roots have been unearthed here.&w~
+Flags    organic buried~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6003
+Keywords herb seed roots plant nightbloom nroot3~
+Type     trash~
+Short    &gsome plant roots&w~
+Long     &gSome plant roots have been unearthed here.&w~
+Flags    organic buried~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6004
+Keywords herb seed roots plant rangersheart rroot4~
+Type     trash~
+Short    &gsome plant roots&w~
+Long     &gSome plant roots have been unearthed here.&w~
+Flags    organic buried~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6005
+Keywords owl feather brown white~
+Type     trash~
+Short    &Oan owl feather&w~
+Long     &OA feather from an owl has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6006
+Keywords hawk feather black brown~
+Type     trash~
+Short    &za hawk feather&w~
+Long     &zA feather from a black and brown hawk has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6007
+Keywords woodsman axe~
+Type     weapon~
+Short    &ga woodsman's axe&w~
+Long     &gA woodsman's axe has been left here.&w~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 4 1 13 0
+Values2  0 2
+Stats    2 5 1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6008
+Keywords large campfire fire~
+Type     fire~
+Short    &Ra large campfire&w~
+Long     &RA large campfire has been set here inside a hole in the ground.&w~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6009
+Keywords sealed red colored box shadow druid wpresent~
+Type     trash~
+Short    &Ra sealed red box&w~
+Long     &RA sealed red box has been left here.&w~
+Flags    inventory~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate box~
+Comlist   if investigation($n) >= 12
+mea $n You can open the box by ripping the red wrapping paper
+mea $n and simply OPENBOX to see what is inside.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p openbox~
+Comlist   if carryingvnum($n) == 6009
+mea $n &rAs you open the box you hear the buzzing of wasps. Once it is
+mea $n &ropened all of the wasps inside begin to sting you and crawl inside
+mea $n &ryour mouth as you scream in pain!!!
+mer $n &rAs &r$n&r opens a red box $e is attacked by an endless swarm of
+mer $n &rangry wasps that sting and crawl inside $s screaming mouth!
+mpasound &rYou hear the sounds of screaming and buzzing nearby.&w
+mpdamage $n 900 10000
+else
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     6010
+Keywords bosscorpse corpse half orc half-orc man male desk~
+Type     trash~
+Short    &ra corpse&w~
+Long     &rThe bloodied corpse of a half-orc man is here over a desk.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    250 0 0 0 0 0 0
+#EXDESC
+ExDescKey    corpse~
+ExDesc       &rThis corpse has been stung and attacked by what appears to be
+a large swarm of wasps. His face is contorted in a scream and there
+are dead wasps all inside his mouth and what is left of his eyes.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     6011
+Keywords scimitar martial weapon black~
+Type     weapon~
+Short    &za black scimitar&w~
+Long     &zA black colored scimitar has been left here.&w~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 1 4 0
+Values2  0 2
+Stats    3 5 2 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6199
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     6000
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6001
+#ENDEXIT
+
+Reset O 0 2355 1 6000
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &YYou hear the sound of bees buzzing about nearby.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     6001
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6003
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6000
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6002
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6002
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6004
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6001
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6003
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6009
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6010
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6001
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6004
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6002
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6005
+#ENDEXIT
+
+Reset O 0 6002 1 6004
+#ENDROOM
+
+#ROOM
+Vnum     6005
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6006
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6004
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    6007
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6007
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6008
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    6006
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6008
+Name     A Small Clearing~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6007
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      421
+MapY      699
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6009
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6003
+#ENDEXIT
+
+Reset O 0 6004 1 6009
+#ENDROOM
+
+#ROOM
+Vnum     6010
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6003
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6011
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6011
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6012
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6010
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6012
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6013
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6011
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6013
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6012
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6014
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6014
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6013
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6015
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6016
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      368
+MapY      722
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6016
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6017
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6017
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6018
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6016
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6018
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6017
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6019
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6019
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6020
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6018
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6020
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6021
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6022
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6019
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6021
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6020
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6178
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6022
+Name     A Small Forest Glade~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6020
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6024
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6023
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6023
+Name     A Small Forest Glade~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6022
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6025
+#ENDEXIT
+
+Reset O 0 6004 1 6023
+#ENDROOM
+
+#ROOM
+Vnum     6024
+Name     A Small Forest Glade~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6022
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6025
+#ENDEXIT
+
+Reset O 0 6004 1 6024
+#ENDROOM
+
+#ROOM
+Vnum     6025
+Name     A Small Forest Glade~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6023
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6024
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6026
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6027
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      324
+MapY      729
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6027
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6026
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    6029
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    6028
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6028
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6030
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    6027
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6029
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6032
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    6027
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6030
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6028
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6031
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6031
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6030
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6035
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6032
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6029
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6033
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6033
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6032
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    6036
+#ENDEXIT
+
+Reset O 0 6003 1 6033
+#ENDROOM
+
+#ROOM
+Vnum     6034
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6033
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6035
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6036
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6031
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6036
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6035
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    6033
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6037
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6038
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      309
+MapY      783
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6038
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6039
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6037
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6039
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6040
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6038
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6040
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6041
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6043
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6039
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6041
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6051
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6042
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6040
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6042
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6041
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6043
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6044
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6040
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6044
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6043
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6045
+#ENDEXIT
+
+Reset O 0 6001 1 6044
+#ENDROOM
+
+#ROOM
+Vnum     6045
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6050
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6046
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6046
+Name     A Small Clearing~
+Sector   field~
+#EXIT
+Direction west~
+ToRoom    6045
+#ENDEXIT
+
+Reset O 0 2355 1 6046
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &YYou hear the sound of bees buzzing about nearby.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     6047
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6048
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6048
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6047
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6049
+#ENDEXIT
+
+Reset O 0 6003 1 6048
+#ENDROOM
+
+#ROOM
+Vnum     6049
+Name     Deep in a Forest~
+Sector   forest~
+Stats    0 0 0 0 18 0
+Perdesc  &gYou spot a secret looking trail leading to the north from here.&w
+~
+#EXIT
+Direction north~
+ToRoom    6196
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6048
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6050
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6049
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6045
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6051
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6041
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6052
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6052
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6051
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6053
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6054
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      199
+MapY      778
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6054
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6053
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6055
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6056
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6055
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6054
+#ENDEXIT
+
+Reset O 0 6001 1 6055
+#ENDROOM
+
+#ROOM
+Vnum     6056
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6054
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6057
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6057
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6056
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6058
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6057
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6059
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6058
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6060
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6059
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6061
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6062
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6062
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6064
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6068
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6063
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6063
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6062
+#ENDEXIT
+
+Reset O 0 6002 1 6063
+#ENDROOM
+
+#ROOM
+Vnum     6064
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6065
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6062
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6065
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6066
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6067
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6064
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6066
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6065
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6067
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6065
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6068
+Name     A Small Clearing~
+Sector   field~
+#EXIT
+Direction west~
+ToRoom    6062
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6069
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6070
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      248
+MapY      747
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6070
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6071
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6069
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6071
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6070
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6079
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6072
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6072
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6071
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6073
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6073
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6072
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6074
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6074
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6075
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6080
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6073
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6075
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6076
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6074
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6076
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6077
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6075
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6077
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6076
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6078
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6078
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6077
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6079
+#ENDEXIT
+
+Reset O 0 6004 1 6078
+#ENDROOM
+
+#ROOM
+Vnum     6079
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6078
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6071
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6080
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6074
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6081
+#ENDEXIT
+
+Reset O 0 6002 1 6080
+#ENDROOM
+
+#ROOM
+Vnum     6081
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6082
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6080
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6082
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6081
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6083
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6084
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6083
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6084
+Name     A Small Clearing~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6085
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      118
+MapY      721
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6086
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6086
+Name     A Small Glade~
+Sector   field~
+#EXIT
+Direction south~
+ToRoom    6087
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6085
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6087
+Name     A Small Glade~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6086
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6089
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6090
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6088
+#ENDEXIT
+
+Reset O 0 6004 1 6087
+#ENDROOM
+
+#ROOM
+Vnum     6088
+Name     A Small Glade~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6087
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6089
+Name     A Small Glade~
+Sector   field~
+#EXIT
+Direction west~
+ToRoom    6087
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6090
+Name     A Small Glade~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6087
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6091
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6092
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6092
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6093
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6094
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6095
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6091
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6093
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      126
+MapY      640
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6092
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6094
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6092
+#ENDEXIT
+
+Reset O 0 6003 1 6094
+#ENDROOM
+
+#ROOM
+Vnum     6095
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6092
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6096
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6096
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6095
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6097
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6097
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6096
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6098
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6103
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6098
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6099
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6097
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6099
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6098
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6100
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6100
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6099
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6101
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6102
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6100
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6102
+Name     Deep in a Forest~
+Sector   forest~
+Stats    0 0 0 0 18 0
+Perdesc  &gYou spot a secret looking trail leading to the north from here.&w
+~
+#EXIT
+Direction north~
+ToRoom    6187
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6101
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6103
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6097
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6104
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6104
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6103
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6105
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6106
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6105
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction west~
+ToRoom    6104
+#ENDEXIT
+
+Reset O 0 6003 1 6105
+#ENDROOM
+
+#ROOM
+Vnum     6106
+Name     A Small Clearing~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6104
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6107
+Name     A Logging Field~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6108
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6110
+#ENDEXIT
+
+Reset M 0 6029 1 6107
+  Reset E 0 6007 1 28
+Reset O 0 2014 3 6107
+#ENDROOM
+
+#ROOM
+Vnum     6108
+Name     A Logging Field~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6112
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6109
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6107
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6109
+Name     A Logging Field~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6108
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6110
+#ENDEXIT
+
+Reset M 0 6030 1 6109
+  Reset E 0 6007 1 28
+Reset O 0 2014 2 6109
+#ENDROOM
+
+#ROOM
+Vnum     6110
+Name     A Logging Field~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6107
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6111
+Name     A Logging Field~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6112
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6113
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6112
+Name     A Logging Field~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6182
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6108
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6113
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6114
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6114
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6113
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6115
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6115
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6114
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6116
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6117
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6116
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    6118
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6115
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6117
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6120
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6115
+#ENDEXIT
+
+Reset O 0 6002 1 6117
+#ENDROOM
+
+#ROOM
+Vnum     6118
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6116
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6119
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6119
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6118
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      105
+MapY      527
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6120
+Name     Deep in a Forest~
+Sector   forest~
+Stats    0 0 0 0 14 0
+Perdesc  &gSome of the foliage has been parted to the north like a window.
+~
+#EXIT
+Direction north~
+ToRoom    6109
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6117
+#ENDEXIT
+
+Reset M 0 6032 1 6120
+  Reset E 0 6011 1 26
+#ENDROOM
+
+#ROOM
+Vnum     6178
+Name     A Small Glade~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6021
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 1670 1 6178
+#ENDROOM
+
+#ROOM
+Vnum     6179
+Name     Inside a Tent~
+Sector   indoors~
+Flags    nomob~
+#EXIT
+Direction north~
+ToRoom    6182
+Keywords  'tent door'~
+Flags     isdoor~
+#ENDEXIT
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   if mobinroom(6044) == 1
+mpecho &rThe swarm of wasps flies off suddenly...
+mppurge swarm
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     6180
+Name     Inside a Large Tent~
+Sector   indoors~
+Flags    nomob nomagic nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    6181
+Keywords  'tent door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 6031 1 6180
+  Reset G 0 117 1
+Reset D 0 6180 2 0
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 3
+Mea $n &BYou see glowing protective sigils on the walls here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     6181
+Name     A Logging Camp~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    6180
+Keywords  'tent door'~
+Flags     isdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6182
+#ENDEXIT
+
+Reset M 0 6033 2 6181
+Reset O 0 6008 1 6181
+Reset D 0 6181 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   if mobinroom(6044) == 1
+mpecho &rThe swarm of wasps flies off suddenly...
+mppurge swarm
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     6182
+Name     A Logging Camp~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    6181
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6179
+Keywords  'tent door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6112
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 6033 2 6182
+Reset O 0 6008 1 6182
+Reset D 0 6182 2 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   if mobinroom(6044) == 1
+mppurge swarm
+mpecho &rThe swarm of wasps flies off suddenly...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     6183
+Name     Inside a Tent~
+Sector   indoors~
+#EXIT
+Direction west~
+ToRoom    6188
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6184
+Name     Inside a Tent~
+Sector   indoors~
+#EXIT
+Direction east~
+ToRoom    6188
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6185
+Name     Inside a Tent~
+Sector   indoors~
+#EXIT
+Direction east~
+ToRoom    6187
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6186
+Name     Inside a Tent~
+Sector   indoors~
+#EXIT
+Direction west~
+ToRoom    6187
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6187
+Name     Inside a Camp~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6188
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6186
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6102
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6185
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6188
+Name     Inside a Camp~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6189
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6183
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6187
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6184
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6189
+Name     Inside a Camp~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      126
+MapY      640
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6188
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6190
+Name     Inside a Tent~
+Sector   indoors~
+#EXIT
+Direction south~
+ToRoom    6195
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6191
+Name     Inside a Tent~
+Sector   indoors~
+#EXIT
+Direction north~
+ToRoom    6194
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6192
+Name     Inside a Tent~
+Sector   indoors~
+#EXIT
+Direction south~
+ToRoom    6193
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6193
+Name     Inside a Camp~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6192
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6194
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6194
+Name     Inside a Camp~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6193
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6191
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6195
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6195
+Name     Inside a Camp~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    6190
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6194
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6196
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6196
+Name     Inside a Camp~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    6195
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6049
+Flags     hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6197
+Name     &RPARINATH FOREST/WILDERNESS ENCOUNTER MOB HIDEAWAY&w~
+Sector   city~
+Flags    nomob nomagic safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    6000
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 6020 1 6197
+Reset M 0 6021 1 6197
+Reset M 0 6022 1 6197
+Reset M 0 6007 1 6197
+Reset M 0 6023 1 6197
+  Reset E 0 3500 1 28
+Reset M 0 6026 1 6197
+#ENDROOM
+
+#ROOM
+Vnum     6198
+Name     &RPARINATH FOREST/WILDERNESS NIGHT TIME MOB HIDEAWAY&w~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    6199
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 6028 2 6198
+Reset M 0 6027 1 6198
+Reset M 0 6025 1 6198
+Reset M 0 6009 2 6198
+Reset M 0 6009 2 6198
+Reset M 0 6028 2 6198
+#ENDROOM
+
+#ROOM
+Vnum     6199
+Name     &RPARINATH FOREST/WILDERNESS DAYTIME MOB HIDEAWAY&w~
+Sector   indoors~
+Flags    nomob nomagic safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    6000
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 6000 2 6199
+Reset M 0 6002 1 6199
+Reset M 0 6003 1 6199
+Reset M 0 6004 2 6199
+Reset M 0 6010 1 6199
+Reset M 0 6011 1 6199
+Reset M 0 6001 4 6199
+Reset M 0 6000 2 6199
+Reset M 0 6001 4 6199
+Reset M 0 6001 4 6199
+Reset M 0 6001 4 6199
+Reset M 0 6004 2 6199
+Reset M 0 6008 1 6199
+Reset M 0 6005 1 6199
+Reset M 0 6006 2 6199
+Reset M 0 6006 2 6199
+Reset M 0 6024 1 6199
+#ENDROOM
+
+#ENDAREA

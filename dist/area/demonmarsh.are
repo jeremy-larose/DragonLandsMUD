@@ -1,0 +1,3222 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Demon Marsh~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       35 50 0 0
+Economy      0 2450000
+ResetMsg     &rYou feel something is watching you...&w~
+Lore         &RYour vision clears to witness a large group of Druids driving back
+the Demonlord and what is left of his army to this place. The Druids
+are chanting loudly and gathering energy before there is an explosion
+of magical energy. When the explosion is over all of the Druids lay 
+dead and the demons are sealed here...&w
+~
+ResetFreq    20
+#ENDAREADATA
+
+#MOBILE
+Vnum       3600
+Keywords   corrupted human black guard~
+Short      &za corrupted human&w~
+Long       &zA human with black eyes is here hunting for prey.&w
+~
+Desc       &zThis human has extremely pale skin and thinning black hair. Its
+eyes are completely black and devoid of emotion. It is dressed in tattered
+leather armor and moves about hunting for prey.&w
+~
+Lore       &zYou see a human being forced to drink a demon's blood by a group
+of black robed individuals. Once the blood is drank the human's
+eyes turn black and a demonic scream erupts from its mouth...&w
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 9 0 17 0 0 0 0 0
+Stats2     10 10 75
+Stats3     0 0 0
+Stats4     2 7 2 0 0 0 6
+Attribs    18 12 14 12 18 10 10
+Saves      0 0 0 0 0 0
+Immune     poison necrotic sleep charm nonmagic~
+Attacks    stun feed~
+Defenses   parry dodge disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3601
+Keywords   corrupted elf black guard~
+Short      &za corrupted elf&w~
+Long       &zAn elf with black eyes is here hunting for prey.&w
+~
+Desc       &zThis elf has extremely pale skin and thinning black hair. Its
+eyes are completely black and devoid of emotion. It is dressed in
+tattered leather armor and moves about quickly looking for prey.&w
+~
+Lore       &zYou see a elf being forced to drink a demon's blood by a group
+of black robed individuals. Once the blood is drank the elf's
+eyes turn black and a demonic scream erupts from its mouth...&w
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea running~
+Affected   detect_hidden infrared truesight~
+Stats1     -1000 1 9 0 16 0 0 0 0 0
+Stats2     10 10 75
+Stats3     0 0 0
+Stats4     2 7 2 0 0 0 6
+Attribs    18 12 14 18 18 10 10
+Saves      0 0 0 0 0 0
+Immune     poison necrotic sleep charm nonmagic~
+Attacks    feed curse~
+Defenses   parry dodge disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3602
+Keywords   corrupted dwarf black guard~
+Short      &za corrupted dwarf&w~
+Long       &zA dwarf with black eyes is here hunting for prey.&w
+~
+Desc       &zThis dwarf has extremely pale skin and thinning black hair. Its
+eyes are completely black and devoid of emotion. It is dressed in
+tattered leather armor and moves about quickly looking for prey.&w
+~
+Lore       &zYou see a dwarf being forced to drink a demon's blood by a group
+of black robed individuals. Once the blood is drank the dwarf's
+eyes turn black and a demonic scream erupts from its mouth...&w
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 9 0 14 0 0 0 0 0
+Stats2     10 10 75
+Stats3     0 0 0
+Stats4     2 0 2 0 0 0 6
+Attribs    20 12 14 18 20 10 10
+Saves      0 0 0 0 0 0
+Immune     poison necrotic sleep charm nonmagic paralysis~
+Attacks    stun feed~
+Defenses   parry dodge disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3603
+Keywords   corrupted halfling black guard~
+Short      &za corrupted halfling&w~
+Long       &zA halfling with black eyes is here hunting for prey.&w
+~
+Desc       &zThis halfling has extremely pale skin and thinning black hair. Its
+eyes are completely black and devoid of emotion. It is dressed in
+tattered leather armor and moves about quickly looking for prey.&w
+~
+Lore       &zYou see a halfling being forced to drink a demon's blood by a group
+of black robes individuals. Once the blood is drank the halfling's
+eyes turn black and a demonic scream erupts from its mouth...&w
+~
+Race       undead~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak hide~
+Stats1     -1000 1 9 0 14 0 0 0 0 0
+Stats2     10 10 75
+Stats3     0 0 0
+Stats4     2 7 2 0 0 0 6
+Attribs    20 12 14 18 20 10 10
+Saves      0 0 0 0 0 0
+Immune     poison necrotic sleep charm nonmagic paralysis~
+Attacks    feed~
+Defenses   parry dodge disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3604
+Keywords   corrupted gnome black guard~
+Short      &za corrupted gnome&w~
+Long       &zA gnome with black eyes is here hunting for prey.&w
+~
+Desc       &zThis gnome has extremely pale skin and thinning black hair. Its
+eyes are completely black and devoid of emotion. It is dressed in
+tattered leather armor and moves about quickly looking for prey.&w
+~
+Lore       &zYou see a gnome being forced to drink a demon's blood by a group
+of black robed individuals. Once the blood is drank the gnome's
+eyes turn black and a demonic scream erupts from its mouth...&w
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   detect_hidden infrared truesight~
+Stats1     -1000 1 9 0 14 0 0 0 0 0
+Stats2     10 10 75
+Stats3     0 0 0
+Stats4     2 7 2 0 0 0 6
+Attribs    20 12 14 18 20 10 10
+Saves      0 0 0 0 0 0
+Resist     magic~
+Immune     poison necrotic sleep charm nonmagic psychic~
+Attacks    feed~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'vampiric touch' 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3605
+Keywords   vrock demonic bird humanoid harpy~
+Short      &ca vrock&w~
+Long       &cA demonic looking humanoid with feathery wings is here.&w
+~
+Desc       &cThis demonic looking humanoid has the body of a human except its skin
+is leathery looking. It has a huge beak and sharp talons that it uses
+to fight with. On its back are large black feathery wings that allow
+it to fly about as it hunts.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea running~
+Affected   infrared flying~
+Stats1     -1000 30 10 0 13 0 0 0 0 0
+Stats2     11 10 50
+Stats3     2 10 5
+Stats4     2 0 2 0 0 0 6
+Attribs    17 8 12 15 18 9 12
+Saves      0 0 0 0 0 0
+Resist     fire cold lightning nonmagic~
+Immune     poison sleep charm~
+Attacks    claws~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'thunderwave'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3606
+Keywords   maurezhi ghoul looking demon~
+Short      &pa maurezhi&w~
+Long       &pA ghoulish looking fiend is here lurking about the swamp.&w
+~
+Desc       &pThis fiend looks like a ghoul upon first glance, but after closer
+inspection one can tell the difference. Some of these differences
+range from a long tri-pronged tongue to oversized features.&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   detect_magic detect_hidden infrared~
+Stats1     -1000 1 14 0 14 0 0 0 0 0
+Stats2     12 8 80
+Stats3     4 8 5
+Stats4     2 7 2 0 0 0 6
+Attribs    18 14 16 16 18 17 14
+Saves      0 0 0 0 0 0
+Speaks     abyssal~
+Speaking   abyssal~
+Resist     necrotic nonmagic~
+Immune     cold poison sleep charm magic paralysis~
+Attacks    bite~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'vampiric touch'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3607
+Keywords   draegloth silver grey demon long talons~
+Short      &wa draegloth&w~
+Long       &wA silver and grey demon with extremely long talons is here.&w
+~
+Desc       &wThis creature stands about as tall as a halfling and is dense with
+thick muscle. It has four arms that have extremely long sharp talons
+attached. The creature has a long mane of thick coarse looking white
+fur and it moves about the Demon Marsh with incredible speed.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea running~
+Affected   detect_hidden infrared~
+Stats1     -1000 1 8 0 10 0 0 0 0 0
+Stats2     9 10 30
+Stats3     1 4 4
+Stats4     1 7 4 0 0 0 6
+Attribs    18 6 10 20 16 8 12
+Saves      0 0 0 0 0 0
+Resist     fire nonmagic~
+Immune     sleep charm psychic~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3608
+Keywords   balor huge demon fiery glowing eyes bat wings~
+Short      &Ra balor&w~
+Long       &RA huge fiery demon with glowing eyes and large bat like wings is here.&w
+~
+Desc       &RThe demon before you is huge as it stands well over a story in height.
+It resembles a minotaur with horns and muscle mass, but it has two large
+bat like wings. It is scantily clad in a mixture of chains, bones, and
+metal armor. Its eyes glow with fiery energy and it wields two impressive
+weapons made from magical energy.&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared flying truesight~
+Stats1     -1000 40 22 0 17 0 0 0 0 0
+Stats2     21 12 130
+Stats3     2 10 5
+Stats4     4 7 2 0 0 0 6
+Attribs    26 20 16 15 22 22 20
+Saves      0 0 0 0 0 0
+Resist     cold lightning nonmagic~
+Immune     fire poison sleep charm~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3616 1
+mpoload 3616 1
+if acrobatics($n) >= 20
+mpecho &RAs the balor dies it explodes with a huge blast of fire!
+mea $n &RYou are partially struck by the explosion and are knocked down!
+mer $n &R$n is struck is part of the explosion and is knocked down!
+silent mpforce $n sit
+mpdamage $n 10 3
+else
+mea $n &RAs the balor dies it explodes with a huge blast of fire!
+mea $n &RYou are struck with the full blast of the fiery explosion!
+mer $n &R$n is struck with the full fiery blast and is knocked down!&w
+silent mpforce $n sit
+mpdamage $n 20 6
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mea $n &RThe balor releases a fiery wave that strikes everything near it!
+mpdamage $n 3 6
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpasound &YYou hear the crackle of lightning coming from somewhere...&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3696
+Keywords   shadow demon general Xukrul~
+Short      &zXukrul&w~
+Long       &zA large shadow demon is here guarding the platform.&w
+~
+Desc       &zThis demon consists of solid and nonsolid shadowy material. It hides
+here on this platform as it awaits intruders. It has long horns, sharp
+looking fangs, and long talons that it uses to shred the flesh of its
+victims. 
+~
+Lore       &zYou see the shadow demon feasting on the bodies of some soldiers it
+has killed before a group of druids blast it with their magics. They
+force the demon back further and further from the battle...&w
+~
+Race       magical~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Affected   sneak hide truesight~
+Stats1     -1000 1 16 0 15 0 0 0 0 0
+Stats2     15 10 150
+Stats3     2 10 5
+Stats4     2 7 3 0 0 0 6
+Attribs    14 19 19 20 16 10 15
+Saves      0 0 0 0 0 0
+Resist     fire acid necrotic nonmagic thunder~
+Immune     acid poison sleep charm paralysis~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'vampiric touch'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   c 'finger of death'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   c 'dispel magic'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpecho &zThe shadow demon releases a dark essence that flies towards
+mpecho &zthe northern rock wall. It quickly outlines a doorway and in
+mpecho &zmere moments an actual doorway appears where the shadowy
+mpecho &zessence once was...&w
+mpopenpassage 3694 3695 0
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3697
+Keywords   nalfeshnee general demon Gurvu~
+Short      &rGurvu&w~
+Long       &rA nalfeshnee dressed in spiked armor is here guarding the platform.&w
+~
+Desc       &rThis demon general resembles an Orc, but in larger scale with long
+talons and tusks. A pair of black feathery wings grows from his back
+and his black spiked armor has been crafted to not hinder his flight.
+His lower portion of his body resembles that of a satyr with cloven
+hooves.
+~
+Lore       &rYou see the demon general uses its magical powers to create fear
+in armies as it flies over them. Suddenly a blast of magical drove the
+demon general from the skies and pushed him far from the nearby army...&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Affected   flying truesight~
+Stats1     -1000 40 16 0 17 0 0 0 0 0
+Stats2     16 10 150
+Stats3     3 6 5
+Stats4     2 7 3 0 0 0 6
+Attribs    22 19 12 12 22 14 16
+Saves      0 0 0 0 0 0
+Resist     fire cold lightning nonmagic magic~
+Immune     poison charm~
+Attacks    bite claws~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'color spray'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpecho &RThe nalfeshnee general's blood moves towards a rock wall in a
+mpecho &Rsteady stream. Once it touches the wall it quickly moves up
+mpecho &Rthe wall as it outlines a doorway. In mere moments a doorway
+mpecho &Rappears where the blood outlined one. The blood slowly drips
+mpecho &Rslowly from the upper edge of the door like rain...&w
+mpopenpassage 3690 3691 2
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'cure critical wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   c 'horrid wilting'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'vampiric touch'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3698
+Keywords   marilith general demon Zythiken~
+Short      &RZythiken&w~
+Long       &RA marilith dressed in spiked armor is here guarding the platform.&w
+~
+Desc       &RThe demon before you serves as one of the Demonlord's generals and 
+was gifted to him as a slave. The demon has the upper torso of a 
+gorgeous woman and the lower have a large snake. The demon is dressed
+in spiked armor that has holes for each of her six arms to move about
+easily. Each hand is armed with a curved, black longsword. She guards
+this platform and anyone that intrudes here.&w
+~
+Lore       &RYou see this marilith attacking an army of elves and humans as they
+seek to stop the Demonlord. Before she can kill a soldier a wave of
+magical energy pushes her back. She looks to see a group of Druids
+descending upon her and using their magics to force her back...&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   truesight~
+Stats1     -1000 1 19 0 13 0 0 0 0 0
+Stats2     18 10 120
+Stats3     0 0 0
+Stats4     3 7 7 0 0 0 6
+Attribs    19 19 18 22 20 22 16
+Saves      0 0 0 0 0 0
+Resist     fire cold lightning nonmagic~
+Immune     poison charm~
+Attacks    tail~
+Defenses   parry~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpecho &RThe marilith general's blood moves towards a rock wall in a
+mpecho &Rsteady stream. Once it touches the wall it quickly moves up
+mpecho &Rthe wall as it outlines a doorway. In mere moments a doorway
+mpecho &Rappears where the blood outlined one. The blood slowly drips
+mpecho &Rslowly from the upper edge of the door like rain...&w
+mpopenpassage 3686 3687 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3699
+Keywords   demonlord fallen empyrean black armor~
+Short      &zthe Demonlord&w~
+Long       &zA huge empyrean dressed in black armor is here seated on a throne made of stone.&w
+~
+Desc       &zThe empyrean before you is dressed in sinister looking black armor and
+seems ready for battle at any time. He wields a dark maul and keeps his
+face covered with a black helmet. All that peek from the darkness of the
+helmet is a set of fiery eyes that glow a bright crimson red.&w
+~
+Lore       &zYou see a young empyrean walking into a garden before it is engulfed
+in dark energy. He screams before disappearing into the darkness...&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   truesight fireshield~
+Stats1     -1000 1 26 0 22 0 200 0 0 0
+Stats2     19 12 250
+Stats3     0 0 0
+Stats4     2 2 2 0 0 0 6
+Attribs    30 21 22 21 30 27 20
+Saves      0 0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Resist     magic radiant~
+Immune     poison necrotic sleep charm nonmagic paralysis~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mpsleep 2
+mea $n &zThe figure in black armor chuckles darkly from behind his helm.
+mpsleep 3
+mea $n &zYou suddenly hear a dark, deep masculine voice in your mind
+mea $n &zthat speaks: &w"Greetings fool. I see you managed to defeat my
+mea $n &wgenerals and have come here to die. Your soul will join my
+mea $n &wcollection and once I have enough I will be free of this prison
+mea $n &wand I will take the realms by blood and fire!"
+mpsleep 3
+mea $n &zThe Demonlord swings his maul and nods his helmed head at you.&w
+mpsleep 3
+mea $n &zThe voice returns to your mind as it says: &w"Now.. let us
+mea $n &wsee what you are truly made of... I await your strike."
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   c heal
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'vampiric touch'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'lightning bolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   c 'chain lightning'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     3600
+Keywords statue ancient druid female druid323~
+Type     container~
+Short    &Oa statue of a druid&w~
+Long     &OA statue of a female druid is here in the middle of the field.&w~
+Flags    magic~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    9000 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3601
+Keywords water blue rune small tablet druidic symbol~
+Type     rune~
+Short    &Ba small blue druidic tablet&w~
+Long     &BA small blue stone tablet covered in druidic symbols has been left here.&w~
+Lore   &BYou see a massive group of druids in a large stone chamber chanting over the
+tablet as glowing water is poured on top of it...&w
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    3 0 0 0 0 1 0
+#EXDESC
+ExDescKey    tablet~
+ExDesc       &BThe tablet is carved from stone and has been painted blue. Druidic
+symbols for water and the direction of west have been carved into the
+tablet.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3602
+Keywords earth rune small tablet druidic symbol green~
+Type     rune~
+Short    &Ga small green druidic tablet&w~
+Long     &GA small green stone tablet covered in druidic symbols has been left here.&w~
+Lore   &GYou see a massive group of druids in a large stone chamber chanting over
+the tablet as it is submerged into a large metal urn full of glowing soil...&w
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    3 0 0 0 0 1 0
+#EXDESC
+ExDescKey    tablet~
+ExDesc       &GThe tablet is carved from stone and has been painted green. Druidic
+symbols for earth and the direction of north have been carved into the
+tablet.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3603
+Keywords air rune small tablet druidic symbol yellow~
+Type     rune~
+Short    &Ya small yellow druidic tablet&w~
+Long     &YA small yellow stone tablet covered in druidic symbols has been left here.&w~
+Lore   &YYou see a massive group of druids in a large stone chamber chanting over
+the tablet as it is passed through glowing smoke...&w
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    3 0 0 0 0 1 0
+#EXDESC
+ExDescKey    tablet~
+ExDesc       &YThe tablet is carved from stone and has been painted yellow. Druidic
+symbols for air and the direction of east have been carved into the
+tablet.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3604
+Keywords fire rune small tablet druidic symbol red~
+Type     rune~
+Short    &Ra small red druidic tablet&w~
+Long     &RA small red stone tablet covered in druidic symbols has been left here.&w~
+Lore   &RYou see a massive group of druids in a large stone chamber chanting over
+the tablet as it is placed in a small glowing bonfire...&w
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    3 0 0 0 0 1 0
+#EXDESC
+ExDescKey    tablet~
+ExDesc       &RThe tablet is carved from stone and has been painted red. Druidic
+symbols for fire and the direction of south have been carved into the
+tablet.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3605
+Keywords glowing green orb green323~
+Type     rune~
+Short    &Ga glowing green orb&w~
+Long     &GA glowing orb of green energy is here hovering over the statue.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    orb~
+ExDesc       &GThis orb is made of crackling, swirling green energy that floats over
+the statue of the ancient female druid.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3606
+Keywords glowing green yellow orb swirling yellow323~
+Type     rune~
+Short    &Ga glowi&Yng g&Green a&Ynd ye&Gllo&Yw orb&w~
+Long     &GA glowin&Yg orb of swirl&Ging green a&Ynd yello&Gw energ&Yy is h&Gere hove&Yring ov&Ger th&Ye stat&Gue.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#EXDESC
+ExDescKey    orb~
+ExDesc       &YThis orb is make of crackling, swirling yellow and green energy that
+&Gfloats over the statue of the ancient female druid.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3607
+Keywords glowing multicolored orb swirling red323~
+Type     rune~
+Short    &Ga mu&Yltic&Rolo&Yred g&Glow&Ying o&Rrb&w~
+Long     &GA mu&Yltic&Rolo&Yred g&Glow&Ying o&Rrb i&Ys her&Ge ho&Yveri&Rng o&Yver t&Ghe st&Yat&Rue.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#EXDESC
+ExDescKey    orb~
+ExDesc       &YThis orb is made of crackling, swirling green, yellow, and red energy
+&Gthat floats over the statue of the ancient female druid. The energy
+&Rmoves in quick patterns and the collision of the energies creates a
+crackling sound.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3608
+Keywords glowing multicolored orb swirling blue323~
+Type     rune~
+Short    &Ga m&Yult&Rico&Blored &Rglo&Ywin&Gg orb&w~
+Long     &GA multi&Ycolor&Red gl&Bowin&Rg or&Yb of s&Gwir&Yling e&Rnerg&By is h&Rere ho&Yveri&Gng o&Yve&Rr t&Bhe s&Rta&Ytu&Ge.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#EXDESC
+ExDescKey    orb~
+ExDesc       &YThis orb is made of crackling, swirling energy that comes in green,
+&Gyellow, red, and blue. The energy moves in quick patterns and the collision
+&Rof the energies creates a distinct crackling sound. The orb hovers over
+&Bthe statue of the ancient druid as it awaits something...&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3609
+Keywords longsword~
+Type     weapon~
+Short    &za longsword&w~
+Long     A longsword has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 1 0
+Values2  0 2
+Stats    3 15 1 1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3610
+Keywords spear~
+Type     weapon~
+Short    &za spear&w~
+Long     A simple spear has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3611
+Keywords battleaxe~
+Type     weapon~
+Short    &za battleaxe&w~
+Long     A battleaxe has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 13 0
+Values2  0 2
+Stats    4 10 1 1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3612
+Keywords dagger~
+Type     weapon~
+Short    &za dagger&w~
+Long     A dagger has been left here.~
+Flags    inventory finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3613
+Keywords mace~
+Type     weapon~
+Short    &za mace&w~
+Long     A mace has been left here.~
+Flags    inventory~
+WFlags   take onehand~
+Values   12 1 6 2 8 0
+Values2  0 2
+Stats    4 5 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3614
+Keywords balor longsword lightning~
+Type     weapon~
+Short    &Ya lightning longsword&w~
+Long     &YA longsword made from actual lighting is here crackling loudly.&w~
+Flags    magic inventory versatile~
+WFlags   onehand twohand~
+Values   12 3 8 1 1 0
+Values2  0 4
+Stats    3 15 1 1 1 1 0
+Affect       -1 -1 8 19 0
+Affect       -1 -1 30 30 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3615
+Keywords balor whip fire~
+Type     weapon~
+Short    &Ra fire whip&w~
+Long     &RA whip made from actual fire lies here burning into the ground.&w~
+Flags    magic inventory finesse~
+WFlags   onehand~
+Values   12 2 6 1 6 0
+Values2  0 4
+Stats    3 2 0 1 0 1 0
+Affect       -1 -1 8 19 0
+Affect       -1 -1 -1 30 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3616
+Keywords huge horn demon balor~
+Type     trash~
+Short    &Ra balor's horn&w~
+Long     &RThe huge horn of a demon has been left here.&w~
+Flags    evil magic~
+WFlags   take onehand~
+Values   30 0 0 0 0 0
+Values2  0 4
+Stats    20 300 0 0 30 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3696
+Keywords black longsword curved~
+Type     weapon~
+Short    &za black curved longsword&w~
+Long     &zA black longsword with a curved blade has been left here.&w~
+Lore   &zYour scrying reveals this to be a Longsword +1 and was forged in a
+place of hellish flames...&w
+~
+Flags    loyal evil magic antigood antineutral nolocate versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 1 0
+Values2  0 2
+Stats    3 200 1 1 20 1 0
+Affect       -1 -1 1 19 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3697
+Keywords horned sinister looking black helmet~
+Type     armor~
+Short    &za sinister looking horned black helmet&w~
+Long     &zA sinister looking horned black helmet is floating above the ground here.&w~
+Lore   &zYour scrying reveals this helm to be part of the armor crafted for
+the Demonlord by a deity for his attempt to take over the realms...&w
+~
+Flags    evil magic antigood antineutral nolocate~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  15 2
+Stats    1 1000 0 0 100 1 0
+Affect       -1 -1 2048 27 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3698
+Keywords black sinister looking plate armor~
+Type     armor~
+Short    &zsinister looking black plate armor&w~
+Long     &zA set of sinister looking black plate armor floats above the ground here.&w~
+Lore   &zYour scrying reveals this to be the armor of the Demonlord. It was 
+crafted by a deity for the Demonlord to use while he attempted to take
+over the realms...&w
+~
+Flags    evil magic antigood antineutral nolocate~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  15 2
+Stats    65 2000 150 1 200 0 0
+Affect       -1 -1 5 22 0
+Affect       -1 -1 5 14 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3699
+Keywords demonfang black maul spiked~
+Type     weapon~
+Short    &za spiked black maul&w~
+Long     &zA spiked black maul is floating above the ground here.&w~
+Lore   &zYour scrying reveals this maul to be "Demonfang," which was crafted
+by a deity for the Demonlord to use in his attempt to take over the
+realms...&w
+~
+Flags    loyal evil magic antigood antineutral nolocate heavy~
+WFlags   take twohand~
+Values   12 2 8 2 8 0
+Values2  0 2
+Stats    10 800 0 0 80 1 0
+Affect       -1 -1 2 19 0
+Affect       -1 -1 2 18 0
+#EXDESC
+ExDescKey    maul~
+ExDesc       &zThis maul has been crafted with a long pommel wrapped in black leather.
+The head of the maul is pure black stone that has been polished till it
+looks like hematite. The surface of the maul has been punctured with
+long spikes that resemble fangs. The maul itself seems to always smell
+like fresh blood...&w
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n &zYou feel an incredible wave of pure evil wrap itself around you
+mea $n &zas you wield the maul...&w
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#ROOM
+Vnum     3600
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark nomob nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3601
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      496
+MapY      589
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3601
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3602
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3604
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3600
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3602
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3603
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3601
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3603
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction south~
+ToRoom    3604
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3602
+#ENDEXIT
+
+Reset M 0 3602 6 3603
+  Reset E 0 3611 1 26
+Reset M 0 3600 20 3603
+  Reset E 0 3611 1 26
+Reset O 0 978 1 3603
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   if ovnumroom(978) == 1
+mppurge ncluster
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   if ovnumroom(978) == 0
+mpoload 978 1
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3604
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3603
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3605
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3601
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3605
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3606
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3604
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3606
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3607
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3605
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3607
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3608
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3606
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3608
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3613
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3609
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3607
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3609
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3612
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3610
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3608
+#ENDEXIT
+
+Reset M 0 3600 2 3609
+  Reset E 0 3610 1 26
+Reset M 0 3601 2 3609
+  Reset E 0 3609 1 26
+Reset M 0 3602 2 3609
+  Reset E 0 3611 1 26
+Reset M 0 3603 2 3609
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+Reset M 0 3604 2 3609
+  Reset E 0 3613 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3610
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3611
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3609
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3611
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3614
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3610
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3612
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3612
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3611
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3609
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3613
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3613
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3612
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3608
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3614
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3615
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3611
+#ENDEXIT
+
+Reset M 0 3600 5 3614
+  Reset E 0 3613 1 26
+Reset M 0 3600 5 3614
+  Reset E 0 3611 1 26
+Reset M 0 3600 5 3614
+  Reset E 0 3610 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3615
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction south~
+ToRoom    3614
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3616
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3616
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3617
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3615
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3617
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3618
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3616
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3618
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3619
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3617
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3619
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3622
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3620
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3618
+#ENDEXIT
+
+Reset M 0 3605 2 3619
+Reset M 0 3605 2 3619
+#ENDROOM
+
+#ROOM
+Vnum     3620
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3621
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3619
+#ENDEXIT
+
+Reset M 0 3601 4 3620
+  Reset E 0 3609 1 26
+Reset M 0 3601 4 3620
+  Reset E 0 3613 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3621
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction south~
+ToRoom    3620
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3622
+#ENDEXIT
+
+Reset M 0 3602 3 3621
+  Reset E 0 3611 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3622
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3621
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3619
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3623
+#ENDEXIT
+
+Reset M 0 3600 7 3622
+  Reset E 0 3609 1 26
+Reset M 0 3600 7 3622
+  Reset E 0 3610 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3623
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3622
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3624
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3624
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3625
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3623
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3625
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction south~
+ToRoom    3624
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3626
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3626
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3625
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3627
+#ENDEXIT
+
+Reset M 0 3607 3 3626
+#ENDROOM
+
+#ROOM
+Vnum     3627
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction east~
+ToRoom    3626
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3628
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3628
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3627
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3629
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3629
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3630
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3628
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3630
+Name     &zA Corrup&gted For&cest&w~
+Sector   forest~
+Flags    dark noastral~
+#EXIT
+Direction north~
+ToRoom    3631
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3629
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3631
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3632
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3630
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3632
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3633
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3631
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3633
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3636
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3634
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3632
+#ENDEXIT
+
+Reset M 0 3605 4 3633
+Reset M 0 3605 4 3633
+#ENDROOM
+
+#ROOM
+Vnum     3634
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3635
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3633
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3635
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3637
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3634
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3636
+#ENDEXIT
+
+Reset M 0 3607 2 3635
+Reset M 0 3607 2 3635
+#ENDROOM
+
+#ROOM
+Vnum     3636
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3635
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3633
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3637
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3638
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3635
+#ENDEXIT
+
+Reset M 0 3600 10 3637
+  Reset E 0 3612 1 26
+Reset M 0 3600 10 3637
+  Reset E 0 3609 1 26
+Reset M 0 3600 10 3637
+  Reset E 0 3610 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3638
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3639
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3637
+#ENDEXIT
+
+Reset M 0 3604 4 3638
+  Reset E 0 3613 1 26
+Reset M 0 3600 13 3638
+  Reset E 0 3609 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3639
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3643
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3640
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3638
+#ENDEXIT
+
+Reset M 0 3607 10 3639
+#ENDROOM
+
+#ROOM
+Vnum     3640
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3641
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3639
+#ENDEXIT
+
+Reset M 0 3603 4 3640
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+Reset M 0 3604 4 3640
+  Reset E 0 3613 1 26
+Reset M 0 3602 4 3640
+  Reset E 0 3611 1 26
+Reset M 0 3603 4 3640
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+#ENDROOM
+
+#ROOM
+Vnum     3641
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3642
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3640
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3643
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3642
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3644
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3641
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3643
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3641
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3639
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3644
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3645
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3642
+#ENDEXIT
+
+Reset M 0 3600 13 3644
+  Reset E 0 3609 1 26
+Reset M 0 3601 5 3644
+  Reset E 0 3610 1 26
+Reset M 0 3600 13 3644
+  Reset E 0 3610 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3645
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3646
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3644
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3646
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3650
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3648
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3645
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3647
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3647
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3649
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3646
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3648
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3651
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3646
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3649
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3650
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3647
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3650
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3653
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3651
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3646
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3649
+#ENDEXIT
+
+Reset M 0 3606 2 3650
+Reset M 0 3606 2 3650
+#ENDROOM
+
+#ROOM
+Vnum     3651
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3652
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3648
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3650
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3652
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3654
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3651
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3653
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3653
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3652
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3650
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3654
+Name     &OA F&getid Mar&Osh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3655
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3652
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3655
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    nomob noastral~
+Desc     safe spot
+~
+#EXIT
+Direction north~
+ToRoom    3656
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3654
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3656
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3657
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3659
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3655
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3657
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3658
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3656
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3658
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3661
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3659
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3657
+#ENDEXIT
+
+Reset M 0 3607 5 3658
+Reset M 0 3607 5 3658
+#ENDROOM
+
+#ROOM
+Vnum     3659
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3658
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3660
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3656
+#ENDEXIT
+
+Reset M 0 3606 5 3659
+Reset M 0 3606 5 3659
+Reset M 0 3606 5 3659
+#ENDROOM
+
+#ROOM
+Vnum     3660
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3661
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3659
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3661
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3662
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3660
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3658
+#ENDEXIT
+
+Reset M 0 3606 7 3661
+Reset M 0 3606 7 3661
+Reset M 0 3607 6 3661
+#ENDROOM
+
+#ROOM
+Vnum     3662
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction west~
+ToRoom    3661
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3663
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3663
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction south~
+ToRoom    3664
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3662
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3664
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3663
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3665
+#ENDEXIT
+
+Reset M 0 3600 19 3664
+  Reset E 0 3609 1 26
+Reset M 0 3600 19 3664
+  Reset E 0 3609 1 26
+Reset M 0 3600 19 3664
+  Reset E 0 3609 1 26
+Reset M 0 3601 8 3664
+  Reset E 0 3610 1 26
+Reset M 0 3601 8 3664
+  Reset E 0 3610 1 26
+Reset M 0 3603 7 3664
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+Reset M 0 3602 5 3664
+  Reset E 0 3611 1 28
+Reset M 0 3604 5 3664
+  Reset E 0 3613 1 26
+Reset M 0 3603 7 3664
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+Reset M 0 3600 19 3664
+  Reset E 0 3611 1 28
+Reset M 0 3600 19 3664
+  Reset E 0 3611 1 28
+Reset M 0 3600 19 3664
+  Reset E 0 3610 1 28
+Reset M 0 3601 8 3664
+  Reset E 0 3609 1 26
+  Reset E 0 3609 1 27
+Reset M 0 3603 7 3664
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+#ENDROOM
+
+#ROOM
+Vnum     3665
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3664
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3667
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3669
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3666
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3666
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3665
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3668
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3667
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction south~
+ToRoom    3670
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3665
+#ENDEXIT
+
+Reset M 0 3605 5 3667
+#ENDROOM
+
+#ROOM
+Vnum     3668
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3666
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3669
+#ENDEXIT
+
+Reset M 0 3606 9 3668
+Reset M 0 3606 9 3668
+#ENDROOM
+
+#ROOM
+Vnum     3669
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3665
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3670
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3668
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3670
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3667
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3671
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3669
+#ENDEXIT
+
+Reset M 0 3607 8 3670
+Reset M 0 3607 8 3670
+#ENDROOM
+
+#ROOM
+Vnum     3671
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3672
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3670
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3672
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction east~
+ToRoom    3673
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3671
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3673
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3676
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3674
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3672
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3674
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3675
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3673
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3675
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction south~
+ToRoom    3674
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3676
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3676
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3677
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3675
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3673
+#ENDEXIT
+
+Reset M 0 3600 20 3676
+  Reset E 0 3611 1 26
+Reset M 0 3604 6 3676
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+Reset M 0 3602 6 3676
+  Reset E 0 3611 1 28
+Reset M 0 3601 9 3676
+  Reset E 0 3610 1 28
+Reset M 0 3603 8 3676
+  Reset E 0 3612 1 26
+  Reset E 0 3612 1 27
+Reset M 0 3605 6 3676
+Reset M 0 3607 9 3676
+Reset M 0 3606 10 3676
+#ENDROOM
+
+#ROOM
+Vnum     3677
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    nomob noastral~
+Desc     safe spot
+~
+#EXIT
+Direction north~
+ToRoom    3678
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3676
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3678
+Name     &gA F&Oetid Mar&gsh&w~
+Sector   swamp~
+Flags    noastral~
+#EXIT
+Direction north~
+ToRoom    3679
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3677
+#ENDEXIT
+
+Reset M 0 3608 1 3678
+  Reset E 0 3614 1 26
+  Reset E 0 3615 1 27
+#ENDROOM
+
+#ROOM
+Vnum     3679
+Name     &GA Small Field&w~
+Sector   city~
+Flags    nomob noastral~
+#EXIT
+Direction north~
+ToRoom    3680
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3678
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3682
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3681
+#ENDEXIT
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   if class($n) == druid
+if ovnumroom(3604) == 1
+if hasqbit($n) == 3601
+mpecho &RAs the tablet touches the ground an orb of glowing red energy
+mpecho &Rerupts from the tablet and flies north!
+mpsleep 3
+mea $n &wSuddenly you feel a force take over your body as you begin to speak...
+mer $n &W$n suddenly begins to glow before $e speaks...
+mpforce $n say &RBy the power of fire shall the seal be undone!&w
+mpat 3680 mpoload 3607
+mpat 3680 mppurge yellow323
+mpat 3680 mpecho &RA glowing orb flies in from the south and collides with
+mpat 3680 mpecho &Rthe multicolored orb! Their energies crackle loudly for
+mpat 3680 mpecho &Ra few moments before swirling together peacefully...
+mpat 3680 mpasound &RYou hear the crackle of energy come from somewhere...&w
+mpqset $n 3601
+mpqset $n 3602
+else
+endif
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3680
+Name     &GA Small Field&w~
+Sector   city~
+Flags    nomob noastral~
+#EXIT
+Direction north~
+ToRoom    3683
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3682
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3679
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3681
+#ENDEXIT
+
+Reset O 0 3600 1 3680
+  Reset P 0 3604 1 3600
+  Reset P 0 3603 1 3600
+  Reset P 0 3602 1 3600
+  Reset P 0 3601 1 3600
+#EXDESC
+ExDescKey    statue~
+ExDesc       &OThe statue in the middle of the field depicts an older looking female
+druid with her arm reaching towards the sky. Her face looks peaceful and
+as if she is casting a spell as her robes are depicted as being whipped
+about by wind and magic. A small pouch on the statue looks like it could
+contain objects. A medallion of a wheel with four spokes is worn by the
+statue with the symbol of an element found at the end of each spoke.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate statue~
+Comlist   if investigation($n) >= 18
+mea $n You discover that the pouch in the statue stores objects and that
+mea $n you can peek inside or possibly remove anything there...&w
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate medallion~
+Comlist   if investigation($n) >= 16
+if class($n) == druid
+mea $n You decipher that the medallion is depicting the wheel of the year
+mea $n and each element is at a corresponding point. At the northern point
+mea $n is the element of earth, following with air at the east, fire at
+mea $n the south, and water ending at the west.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 3603
+mpsleep 3
+mpecho &WThe glowing, multicolored orb begins to glow brightly above
+mpecho &Wbefore slamming down upon the statue. There is a blinding
+mpecho &Wflash before you realize the statue has been replaced with
+mpecho &Wa stairway leading down into a dark cavern below...
+mppurge druid323
+mppurge blue323
+mpopenpassage 3680 3684 5
+mpqset $n 3603
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3681
+Name     &GA Small Field&w~
+Sector   city~
+Flags    nomob noastral~
+#EXIT
+Direction east~
+ToRoom    3680
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3683
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3679
+#ENDEXIT
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   if class($n) == druid
+if ovnumroom(3601) == 1
+if hasqbit($n) == 3602
+mpecho &BAs the tablet touches the ground an orb of glowing blue energy
+mpecho &Berupts from the tablet and flies east!
+mpsleep 3
+mea $n &wSuddenly you feel a force take over your body as you begin to speak...
+mer $n &W$n suddenly begins to glow before $e speaks...
+mpforce $n say &BBy the power of water shall the seal be undone!&w
+mpat 3680 mpoload 3608
+mpat 3680 mppurge red323
+mpat 3680 mpecho &BA glowing orb flies in from the west and collides with
+mpat 3680 mpecho &Bthe multicolored orb! Their energies crackle loudly for
+mpat 3680 mpecho &Ba few moments before swirling together peacefully...
+mpat 3680 mpasound &BYou hear the crackle of energy come from somewhere...&w
+mpqset $n 3602
+mpqset $n 3603
+else
+endif
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3682
+Name     &GA Small Field&w~
+Sector   city~
+Flags    nomob noastral~
+#EXIT
+Direction west~
+ToRoom    3680
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3683
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3679
+#ENDEXIT
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   if class($n) == druid
+if ovnumroom(3603) == 1
+if hasqbit($n) == 3600
+mpecho &YAs the tablet touches the ground an orb of glowing yellow energy
+mpecho &Yerupts from the tablet and flies west!&w
+mpsleep 3
+mea $n &wSuddenly you feel a force take over your body as you begin to speak...
+mer $n &W$n suddenly begins to glow before $e speaks...
+mpforce $n say &YBy the power of air shall the seal be undone!&w
+mpat 3680 mpoload 3606
+mpat 3680 mppurge green323
+mpat 3680 mpecho &YA glowing orb flies in from the east and collides with
+mpat 3680 mpecho &Ythe green orb! Their energies crackle loudly for a few
+mpat 3680 mpecho &Ymoments before swirling together peacefully...
+mpat 3680 mpasound &YYou hear the crackle of energy come from somewhere...&w
+mpqset $n 3600
+mpqset $n 3601
+else
+endif
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3683
+Name     &GA Small Field&w~
+Sector   city~
+Flags    nomob noastral~
+#EXIT
+Direction south~
+ToRoom    3680
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3682
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3681
+#ENDEXIT
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   if class($n) == druid
+if ovnumroom(3602) == 1
+if hasqbit($n) != 3600
+mpecho &GAs the tablet touches the ground an orb of glowing blue energy
+mpecho &Gerupts from the tablet and flies south!
+mpsleep 3
+mea $n &wSuddenly you feel a force take over your body as you begin to speak...
+mer $n &W$n suddenly begins to glow before $e speaks...
+mpforce $n say &GBy the power of earth shall the seal be undone!&w
+mpat 3680 mpoload 3605
+mpat 3680 mpecho &GA glowing orb flies in from the north and crackles loudly
+mpat 3680 mpecho &Gfor a few moments...&w
+mpat 3680 mpasound &GYou hear the crackle of energy come from somewhere...&w
+mpqset $n 3600
+else
+endif
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3684
+Name     &zA Stone Staircase&w~
+Sector   indoors~
+#EXIT
+Direction up~
+ToRoom    3680
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3685
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3685
+Name     &zBefore a Submerged Fortress&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction south~
+ToRoom    3686
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3684
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3686
+Name     &zA Stone Platform&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction north~
+ToRoom    3685
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3687
+Flags     passage~
+#ENDEXIT
+
+Reset M 0 3698 1 3686
+  Reset E 0 3696 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3687
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction east~
+ToRoom    3688
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3686
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3688
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction east~
+ToRoom    3689
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3687
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3689
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction south~
+ToRoom    3690
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3688
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3690
+Name     &zA Stone Platform&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction north~
+ToRoom    3689
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3691
+Flags     passage~
+#ENDEXIT
+
+Reset M 0 3697 1 3690
+#ENDROOM
+
+#ROOM
+Vnum     3691
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction north~
+ToRoom    3690
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3692
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3692
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction east~
+ToRoom    3693
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3691
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3693
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction east~
+ToRoom    3694
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3692
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3694
+Name     &zA Stone Platform&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction north~
+ToRoom    3695
+Flags     passage~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3693
+#ENDEXIT
+
+Reset M 0 3696 1 3694
+#ENDROOM
+
+#ROOM
+Vnum     3695
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction north~
+ToRoom    3696
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3694
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3696
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction east~
+ToRoom    3697
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3695
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3697
+Name     &zA Large Hallway&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction east~
+ToRoom    3698
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3696
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3698
+Name     &zA Large Throne Room&w~
+Sector   indoors~
+Flags    nomob noastral~
+#EXIT
+Direction west~
+ToRoom    3697
+#ENDEXIT
+
+Reset M 0 3699 1 3698
+  Reset E 0 3698 1 5
+  Reset E 0 3697 1 6
+#ENDROOM
+
+#ROOM
+Vnum     3699
+Name     &RDemon Marsh Mob Storage&w~
+Sector   city~
+Flags    nomob nomagic safe norecall noastral nosupplicate~
+Desc     You clearly do not belong here. Please contact a member of the admin
+staff in order to get out. Thank you!
+~
+#ENDROOM
+
+#ENDAREA

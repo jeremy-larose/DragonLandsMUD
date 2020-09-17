@@ -1,0 +1,122 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Aerix: The Material Plane~
+Author       Seikyr/Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+Economy      0 31250000
+ResetMsg     You feel a faint breeze waft past you...~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       30000
+Keywords   first mob~
+Short      a newly created first mob~
+Long       Some god abandoned a newly created first mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       30099
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     30000
+Keywords first obj~
+Type     trash~
+Short    a newly created first obj~
+Long     Some god dropped a newly created first obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     30099
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     30000
+Name     Somewhere on the Continent of C1~
+Sector   city~
+Flags    map~
+Desc     If you can read this description online, then something REALLY
+bad has happened. Please contact the admin staff ASAP and use
+the downward exit to return to the game.
+
+You should be seeing the ASCII color map of the continent instead
+of this description.
+ 
+~
+#EXIT
+Direction north~
+ToRoom    6119
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1550
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30099
+Name     The C1 Portal~
+Sector   city~
+Flags    nomob~
+Desc     The shimmering green light of the portal is almost blinding, yet below
+you the view of Continent 1 is completely unobstructed and breathtaking
+to behold.
+~
+#ENDROOM
+
+#ENDAREA

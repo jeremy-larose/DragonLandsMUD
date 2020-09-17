@@ -1,0 +1,312 @@
+Name          Ranger~
+Class         5
+SavingStatOne 1
+SavingStatTwo 2
+SpellModStat  4
+Weapon        10313
+Guild         3039
+Skilladept    90
+Thac0         18
+Thac32        6
+Hpmin         1
+Hpmax         10
+Mana          1
+Expbase       1125
+Affected      0
+Resist	       0
+Suscept	    0
+CasterType    0
+Subclasses    0
+Skill 'acrobatics' 1 95 0
+Skill 'animal handling' 1 95 0
+Skill 'aquan' 1 95 0
+Skill 'arcana' 1 95 0
+Skill 'athletics' 1 95 0
+Skill 'auran' 1 95 0
+Skill 'axes' 1 95 0
+Skill 'barkskin' 6 95 2
+Skill 'blowguns' 1 95 0
+Skill 'bows' 1 95 0
+Skill 'celestial' 1 95 0
+Skill 'climb' 1 95 0
+Skill 'clubs' 1 95 0
+Skill 'cook' 1 95 0
+Skill 'crossbows' 1 95 0
+Skill 'cure light wounds' 1 95 1
+Skill 'daggers' 1 95 0
+Skill 'darkvision' 6 95 2
+Skill 'darts' 1 95 0
+Skill 'dash' 1 95 0
+Skill 'deception' 1 95 0
+Skill 'deep speech' 1 95 0
+Skill 'detect magic' 1 95 1
+Skill 'detect poison' 1 95 1
+Skill 'dig' 1 95 0
+Skill 'doorbash' 1 95 0
+Skill 'draconic' 1 95 0
+Skill 'drag' 1 95 0
+Skill 'elvish' 1 95 0
+Skill 'find traps' 6 95 2
+Skill 'fletch' 2 95 0
+Skill 'forage' 1 95 0
+Skill 'giant' 1 95 26
+Skill 'gnomish' 1 95 0
+Skill 'goblin' 1 95 0
+Skill 'goodberry' 1 95 1
+Skill 'grapple' 1 95 0
+Skill 'grip' 1 95 0
+Skill 'halberds' 1 95 0
+Skill 'halfling' 1 95 0
+Skill 'hammers' 1 95 0
+Skill 'headbutt' 1 95 0
+Skill 'hide' 1 95 0
+Skill 'history' 1 95 0
+Skill 'holdbreath' 1 95 0
+Skill 'ignan' 1 95 0
+Skill 'infernal' 1 95 0
+Skill 'insight' 1 95 0
+Skill 'intimidation' 1 95 0
+Skill 'investigation' 1 95 0
+Skill 'javelins' 1 95 0
+Skill 'kick' 1 95 0
+Skill 'locate object' 6 95 2
+Skill 'long swords' 1 95 0
+Skill 'longstrider' 1 95 1
+Skill 'maces' 1 95 0
+Skill 'magical' 1 95 0
+Skill 'medicine' 1 95 0
+Skill 'mount' 1 95 0
+Skill 'nature' 1 95 0
+Skill 'nets' 1 95 0
+Skill 'orc' 1 95 0
+Skill 'perception' 1 95 0
+Skill 'performance' 1 95 0
+Skill 'persuasion' 1 95 0
+Skill 'primordial' 1 95 0
+Skill 'protection from poison' 6 95 2
+Skill 'punch' 1 95 0
+Skill 'rapiers' 1 95 0
+Skill 'religion' 1 95 0
+Skill 'rescue' 1 95 0
+Skill 'scan' 1 95 0
+Skill 'scimitars' 1 95 0
+Skill 'search' 1 95 0
+Skill 'short swords' 1 95 0
+Skill 'shove' 1 95 0
+Skill 'sickles' 1 95 0
+Skill 'sleight of hand' 1 95 0
+Skill 'slice' 1 95 0
+Skill 'slings' 1 95 0
+Skill 'sneak' 1 95 0
+Skill 'spears' 1 95 0
+Skill 'stabilize' 1 95 0
+Skill 'staves' 1 95 0
+Skill 'stealth' 1 95 0
+Skill 'stoneskin' 14 95 4
+Skill 'survival' 1 95 0
+Skill 'sylvan' 1 95 0
+Skill 'terran' 1 95 0
+Skill 'track' 1 95 0
+Skill 'troll' 1 95 0
+Skill 'undercommon' 1 95 0
+Skill 'water breathing' 10 95 3
+Skill 'whips' 1 95 0
+Title
+Man~
+Woman~
+Title
+Runner~
+Runner~
+Title
+Strider~
+Strider~
+Title
+Scout~
+Scout~
+Title
+Scout Master~
+Scout Master~
+Title
+Courser~
+Courser~
+Title
+Tracker~
+Tracker~
+Title
+Guide~
+Guidess~
+Title
+Pathfinder~
+Pathfinder~
+Title
+Explorer~
+Explorer~
+Title
+Hunter~
+Huntess~
+Title
+Beastmaster~
+Beastmistress~
+Title
+Falconer~
+Falconess~
+Title
+Feralan~
+Feralan~
+Title
+Guardian~
+Guardian~
+Title
+Justifier~
+Justifier~
+Title
+Stalker~
+Stalker~
+Title
+Warden~
+Warden~
+Title
+Herbalist~
+Herbalist~
+Title
+Enviromentalist~
+Enviromentalist~
+Title
+Journeyman~
+Journeywoman~
+Title
+Traveller~
+Traveller~
+Title
+Wanderer~
+Wanderer~
+Title
+Ranger Squire~
+Ranger Squiress~
+Title
+Ranger Knight~
+Ranger Knight~
+Title
+Ranger Lord~
+Ranger Lady~
+Title
+Goblin Slayer~
+Goblin Slayer~
+Title
+Gnoll Slayer~
+Gnoll Slayer~
+Title
+Ogre Slayer~
+Ogre Slayer~
+Title
+Minotaur Slayer~
+Minotaur Slayer~
+Title
+Giant Slayer~
+Giant Slayer~
+Title
+Skylord~
+Skylady~
+Title
+Waterlord~
+Waterlady~
+Title
+Treelord~
+Treelady~
+Title
+Friend of Dryads~
+Friend of Dryads~
+Title
+Friend of Pixies~
+Friend of Pixies~
+Title
+Friend of Elves~
+Friend of Elves~
+Title
+Swamp Master~
+Swamp Mistress~
+Title
+Desert Master~
+Desert Mistress~
+Title
+Mountain Master~
+Mountain Mistress~
+Title
+Forest Master~
+Forest Mistress~
+Title
+Defender of Plants~
+Defender of Plants~
+Title
+Defender of Animals~
+Defender of Animals~
+Title
+Defender of the Earth~
+Defender of the Earth~
+Title
+Defender of Nature~
+Defender of Nature~
+Title
+Defender of the Realms~
+Defender of the Realms~
+Title
+Lord of the Plants~
+Lady of the Plants~
+Title
+Lord of the Animals~
+Lady of the Animals~
+Title
+Lord of the Earth~
+Lady of the Earth~
+Title
+Lord of Nature~
+Lady of Nature~
+Title
+Avatar~
+Avatar~
+Title
+Neophyte~
+Neophyte~
+Title
+Acolyte~
+Acolyte~
+Title
+Creator~
+Creator~
+Title
+Savior~
+Savior~
+Title
+Demi God~
+Demi Goddess~
+Title
+Immortal~
+Immortal~
+Title
+Lesser God~
+Lesser Goddess~
+Title
+God~
+Goddess~
+Title
+Greater God~
+Greater Goddess~
+Title
+Ascendant God~
+Acendant Goddess~
+Title
+Exalted God~
+Exalted Goddess~
+Title
+Ancient One~
+Ancient One~
+Title
+Eternal One~
+Eternal One~
+Title
+Infinite One~
+Infinite One~
+Title
+Supreme Entity~
+Supreme Entity~
+End

@@ -1,0 +1,3833 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Parinath Forest Bandits~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       20 30 0 0
+Economy      0 32530920
+ResetMsg     &gYou hear rustling somewhere deep in the forest.&w~
+ResetFreq    10
+#ENDAREADATA
+
+#MOBILE
+Vnum       3200
+Keywords   forest bandit parinath scout strong looking human man~
+Short      &ga bandit scout&w~
+Long       &gA human man is here hiding in the thick forest foliage.&w
+~
+Desc       &gThis human man is dressed in leather armor that has been dyed to match
+the forest to help him hide. He has a rough looking appearance from
+his scraggly looking beard and hair to his dirty face.&w
+~
+Race       human~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared sneak hide~
+Stats1     -600 20 7 0 12 0 1 5 20 0
+Stats2     5 25 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    16 12 14 18 16 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Attacks    kick~
+Defenses   dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) != 3200
+k $n
+else
+whisper $n You need to speak to Zhotas in the camp to the north of here.
+endif
+else
+mea $n &gA bandit scout salutes you before hiding again.
+endif
+else
+mea $n &gA bandit scout appears and attacks you for your betrayal!&w
+k $n
+endif
+else
+k $n
+endif
+else
+k $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and your
+mea $n invitation to join the Parinath Bandits is revoked!&w
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3201
+Keywords   forest bandit parinath guard wandering strong looking human man~
+Short      &ga bandit guard&w~
+Long       &gA man is here walking around the large campground.&w
+~
+Desc       &gThis human man is dressed in leather armor that has been dyed to match
+the forest to help him hide. He has a rough looking appearance from
+his dirty face to his clothing.
+~
+Race       human~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared sneak~
+Stats1     -600 20 8 0 12 0 1 5 20 0
+Stats2     8 10 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    18 12 14 18 16 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Attacks    kick~
+Defenses   dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) != 3200
+k $n
+else
+whisper $n You need to speak to Zhotas. He is waiting for you.
+endif
+else
+mea $n &gA bandit guard salutes you before returning to his patrol.&w
+endif
+else
+mea $n &gA bandit guard attacks you for your betrayal!
+k $n
+endif
+else
+k $n
+endif
+else
+k $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!&w
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and your
+mea $n &Rinvitation to join the Parinath Bandits is revoked!&w
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3202
+Keywords   forest bandit parinath wizard woman female spellbook~
+Short      &ga bandit wizard&w~
+Long       &gA woman in a tattered robe is here reading from a spellbook.&w
+~
+Desc       &gThis human woman is dressed in a robe that is tattered at the
+hem and covered in stains from dirt and possibly blood. Her hair
+has been tightly wrapped into a greasy bun at the back of her
+head as she reads her spellbook here.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden~
+Stats1     -800 30 9 0 13 0 2 5 20 0
+Stats2     7 10 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    18 12 14 18 16 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     sleep charm paralysis~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   mpoload 1901 1
+c 'stoneskin'
+mpjunk rock
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpoload 2980 1
+c 'fire shield'
+mpjunk sulfur
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'vampiric touch'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) != 3200
+c 'firebolt' $n
+else
+whisper $n You need to speak to Zhotas.
+endif
+else
+mea $n &gA bandit wizard nods her head at you.&w
+endif
+else
+mea $n &gA bandit wizard attacks you for your betrayal!
+c 'firebolt' $n
+endif
+else
+c 'firebolt' $n
+endif
+else
+c 'firebolt' $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and your
+mea $n &Rinvitation to join the Parinath Bandits is revoked!
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'firebolt'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3203
+Keywords   forest bandit parinath resting human man cot~
+Short      &ga bandit&w~
+Long       &gA strong looking human man is here resting peacefully on a cot.&w
+~
+Desc       &gThis human man is dressed in leather armor that has been dyed to match
+the forest to help him hide. He has a rough looking appearance from
+his dirty face to his clothing. He is resting peacefully on a cot
+here in this tent.
+~
+Race       human~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Stats1     -600 20 8 0 12 0 0 20 25 0
+Stats2     8 10 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    18 12 14 18 16 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Attacks    kick~
+Defenses   dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) != 3200
+k $n
+else
+snore
+endif
+else
+snore
+endif
+else
+mea $n &gThe bandit snaps awake and attacks you for your betrayal!&w
+k $n
+endif
+else
+k $n
+endif
+else
+k $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and your
+mea $n &Rinvitation to join the Parinath Bandits is revoked!
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3204
+Keywords   forest bandit parinath log sharpens blade human man~
+Short      &ga bandit&w~
+Long       &gA human man is here seated on a log as he sharpens his blade.&w
+~
+Desc       &gThis human man is dressed in leather armor that has been dyed to match
+the forest to help him hide. He has a rough looking appearance from
+his dirty face to his clothing. He is seated on a log here as he
+sharpens his favorite weapon.
+~
+Race       human~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     -800 20 8 0 12 0 0 5 10 0
+Stats2     8 10 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    18 12 14 18 16 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Attacks    kick~
+Defenses   dodge disarm~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and your
+mea $n &Rinvitation to join the Parinath Bandits is revoked!
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) != 3200
+k $n
+else
+emote sharpens his blade and whistles a little song.
+endif
+else
+mea $n &gA bandit nods his head at you.
+endif
+else
+mea $n &gA bandit attacks you for your betrayal!
+k $n
+endif
+else
+k $n
+endif
+else
+k $n
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3205
+Keywords   forest bandit parinath cleric cythian dark robe human man~
+Short      &za bandit cleric&w~
+Long       &zA human man in a dark robe is here treating some of the wounded.
+~
+Desc       &zThis human man is dressed in a long black robe that is embroidered
+with a swift looking black fox with blue eyes. He is here treating
+the camp's wounded and offering aid to those that come here.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared~
+Stats1     -800 20 9 0 12 0 0 5 10 0
+Stats2     9 10 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    14 12 18 18 12 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and your
+mea $n &Rinvitation to join the Parinath Bandits is revoked!
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if deity($n) != cyth
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) != 3200
+k $n
+else
+whisper $n Speak to Zhotas first.
+endif
+else
+sayto $n If you need any &Whealing&w just say so.
+endif
+else
+mea $n &gA bandit cleric attacks you for your betrayal!
+k $n
+endif
+else
+k $n
+endif
+else
+k $n
+endif
+else
+bow $n
+sayto $n Greetings young fox. How can I help you?
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   mpoload 2980 1
+c 'flamestrike'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'cure critical wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'bestow curse'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   c 'hold person'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p healing~
+Comlist   if hasqbit($n) == 3201
+nod
+c 'cure moderate wounds' $n
+else
+peer $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3206
+Keywords   forest bandit parinath ralph foxmoon bandit red haired human man scarred face~
+Short      &GRalph Foxmoon&w~
+Long       &GA red haired man with a scarred face is here sharpening his blade.&w
+~
+Desc       &zThis human man is dressed in sleek looking black studded armor as he
+sharpens his weapon. His hair is a wild shade of red, which he tries
+to keep hidden with his hood. This man's face is heavily scarred
+as he took some hits from a sharp weapon at some time.&w
+~
+Lore       &zYou see a young man with wild red hair as he tries to run from
+the guards of a golden city. He is taken down as he runs into the slash
+of a guard's blade...&w
+~
+Race       human~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared~
+Stats1     -900 20 9 0 13 0 2 20 25 0
+Stats2     9 10 30
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    18 12 14 18 16 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     sleep charm~
+Defenses   parry dodge disarm~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and
+mea $n &Ryour invitation to join the Parinath Bandits is revoked!
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) == 3200
+sayto $n Speak to the boss first. He's waiting.
+Else
+Hide
+Sneak
+K $n
+endif
+else
+nod $n
+endif
+else
+sneak
+hide
+k $n
+endif
+else
+Sneak
+Hide
+K $n
+endif
+else
+k $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3207
+Keywords   Lord Ronias Mythast young noble looking human man~
+Short      &YLord Ronias Mythast&w~
+Long       &YA noble looking young man is here seated by a large caravan.&w
+~
+Desc       &YThis young noble is quite handsome and is dressed in the latest
+fashions from the city. His long brown hair has been pulled back
+into a short pony tail at the base of his head. He has a
+condescending look on his face at all times.&w
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     300 1 0 0 10 0 0 0 2 0
+Stats2     2 10 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 12 12 16 12 15 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     sleep charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpsleep 5
+emote stands up and enters the caravan for the night.
+mpgoto 3271
+emote arrives and crawls into his bed for the evening.
+mpsleep 2
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   wake
+emote wakes up and heads outside for some fresh air.
+mpgoto 3204 
+mpsleep 3
+emote emerges from the caravan and takes a seat next to it.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3205
+if hasqbit($n) != 3204
+if hasqbit($n) == 3202
+if hasqbit($n) == 3203
+mpat 3272 mpgift 200 252
+mpat 3272 mpgift 200 252
+mpat 3272 mpgift 200 252
+mpat 3272 mpgift 200 252
+mpat 3272 mpgift 200 252
+silent mpat 3272 drop all
+mpat 3272 mpgift 300 346
+mpat 3272 mpgift 300 346
+mpat 3272 mpgift 300 346
+silent mpat 3272 drop all
+mpat 3272 mpgift 300 346
+silent mpat 3272 drop all
+mpoload 3208 1
+mpoload 3211 1
+mpqset $n 3202
+mpqset $n 3203 
+mpqset $n 3204
+else
+endif
+else
+endif
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3202
+if hasqbit($n) != 3201
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+emote holds up a hand for his guards to settle down.
+sayto $n Greetings! I am in need of some aid and you look
+sayto $n like you could be the one I need! Would you like
+sayto $n to hear what I have to propose first?
+else
+sayto $n Were you able to retrieve my letters yet?
+endif
+else
+smile $n
+sayto $n Thank you again. You helped save our future trade routes!
+endif
+else
+say Bandit scum!!!
+endif
+else
+say Bandit scum!!!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 3202
+if hasqbit($n) != 3201
+if hasqbit($n) != 3211
+nod $n
+sayto $n We were on the old road when we were attacked by some
+sayto $n bandits that live in the woods near here. They stole
+sayto $n some important letters from me and I need them retrieved
+sayto $n as soon as possible. Those letters hold the ideas for
+sayto $n adding some trade routes between Parinath and Meridan. It
+sayto $n is important that we get them back quickly!
+mpsleep 2
+sayto $n Will you &Whelp&w me get them back?
+else
+sayto $n Have you found them?
+endif
+else
+say Bandit scum!! 
+endif
+else
+say Bandit scum!! 
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) != 3202
+if hasqbit($n) != 3201
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+emote claps his hands happily and nods his head.
+sayto $n Thank you very much! It will be dangerous so be careful
+sayto $n and return the letters to me once you have them!
+mpsleep 2
+sayto $n My scouts have told me that they have a camp to the
+sayto $n north of here. They will be expecting me to be sending
+sayto $n a warrior to get my property back so watch your back.
+mpqset $n 3211
+else
+sayto $n Have you found my letters yet?
+endif
+else
+sayto $n Thank you again for helping me.
+endif
+else
+say Bandit scum!!
+endif
+else
+say Bandit scum!!
+endif
+else
+emote claps his hands happily and nods his head.
+sayto $n Thank you very much! It will be dangerous so be careful
+sayto $n and return the letters to me once you have them!
+emote ponders for a few moments before continuing.
+sayto $n My scouts have told me that they have a camp to the
+sayto $n north of here. They will be expecting me to be sending
+sayto $n a warrior to get my property back so watch your back.
+mpqset $n 3211
+mpqset $n 3200
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 3211
+if hasqbit($n) != 3213
+if hasqbit($n) == 3212
+if ovnuminv(3208) == 1
+emote sighs with relief and smiles.
+sayto $n You have done an incredible service to me today. Thank you
+sayto $n so much! Here is a reward for your aid and may Phywa
+sayto $n bless you with many treasures!
+mpmset ronias gold 20
+give 20 gold $n
+mpadvance $n 2000
+mpqset $n 3212
+mpqset $n 3213
+mpjunk bundle
+else 
+sayto $n What is this?
+drop all
+endif
+else
+sayto $n What is this?
+drop all
+endif
+else
+sayto $n What is this?
+endif
+else
+sayto $n What is this?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3208
+Keywords   noble guard watch caravan human man~
+Short      &Ya guard&w~
+Long       &YA guard is here standing watch over a caravan.&w
+~
+Desc       &YThis guard is here watching over a noble's caravan. He is wearing
+simple chainmail from head to toe and watches this campsite
+very carefully.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared~
+Stats1     0 1 0 0 15 0 0 1 5 0
+Stats2     3 8 25
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3202
+if hasqbit($n) != 3201
+if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+mea $n &YYou feel the gaze of a guard linger on you for awhile.&w
+else
+endif
+else
+endif
+else
+mea $n &YA guard charges at you as you enter the clearing!&w
+endif
+else
+mea $n &YA guard charges at you as you enter the clearing!&w
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpsleep 3
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   wake
+mpsleep 3
+yawn
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3209
+Keywords   vochia berdant wizardess red velvet robe spellbook~
+Short      &RVochia Berdant&w~
+Long       &RA wizardess in a red velvet robe is here reading over her spellbook.&w
+~
+Desc       &RDressed in a red velvet robe that has a deep cut in the front
+stands a beautiful wizardess. She has long waves of flaxen colored
+hair and bright blue eyes. She spends much of her time preparing
+her spells as she waits for her employer's next task.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared truesight~
+Stats1     500 35 10 0 13 0 5 5 20 0
+Stats2     10 10 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    12 18 12 18 12 14 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     sleep charm paralysis~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   60~
+Comlist   mpoload 1901
+c 'stone skin'
+mpjunk rock
+mpjunk stone
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'firebolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'lightning bolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   mpoload 1780 1
+c 'ice shield'
+mpjunk water
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3202
+if hasqbit($n) != 3201
+if hasqbit($n) != 3211
+peer $n
+else
+nod $n
+endif
+else
+mpecho &RThe wizardess touches her employer and begins a chant.
+mpecho &RSuddenly the noble and wizardess disappear from sight!&w
+mptransfer ronias 3271
+mpgoto 3270
+endif
+else
+mpecho &RThe wizardess touches her employer and begins a chant...&w
+mpecho &RSuddenly the noble and wizardess disappear from sight!&w
+mptransfer ronias 3271
+mpgoto 3270
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   if ovnumroom(3206) == 1
+else
+emote snaps a finger and utters a chant as a fire appears.
+mpoload 3206 1
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote closes her spellbook and enters the caravan for the night.
+mpgoto 3270
+emote arrives and settles in for the night.
+mpsleep 2
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   wake
+emote arises for the day and heads out of the caravan.
+mpgoto 3204
+emote emerges from the caravan and begins studying her spellbook.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   emote snaps a finger and utters a chant as a fire disappears.
+mppurge fire
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3210
+Keywords   noble guard guard2 patrolling clearing human man~
+Short      &Ya guard&w~
+Long       &YA guard is here patrolling around the clearing.&w
+~
+Desc       &YThis guard is here watching over a noble's caravan. He is wearing
+simple chainmail from head to toe and watches this campsite
+very carefully.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared~
+Stats1     0 1 0 0 15 0 0 1 5 0
+Stats2     3 8 25
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3202
+if hasqbit($n) == 3201
+k $n
+else
+endif
+else
+k $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   wake
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3211
+Keywords   noble guard guard3 taking inventory caravan~
+Short      &Ya guard&w~
+Long       &YA guard is here taking inventory next to a caravan.&w
+~
+Desc       &YThis guard is here watching over a noble's caravan. He is wearing
+simple chainmail from head to toe and watches this campsite
+very carefully.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared~
+Stats1     0 1 0 0 15 0 0 1 5 0
+Stats2     3 8 25
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3202
+if hasqbit($n) == 3201
+k $n
+else
+endif
+else
+k $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   wake
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3212
+Keywords   noble guard guard4 nightprog night watch time evening~
+Short      &Ya guard&w~
+Long       &YA guard is here watching over the caravan during the night.&w
+~
+Desc       &YThis guard is here watching over a noble's caravan. He is wearing
+simple chainmail from head to toe and watches this campsite
+very carefully.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared truesight~
+Stats1     0 1 0 0 15 0 0 1 5 0
+Stats2     3 8 25
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Defenses   dodge~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   wake
+emote stands up and heads out of the caravan to begin his shift.
+mpgoto 3204
+mpsleep 5
+emote emerges from the caravan and begins his watch during the night.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpsleep 5
+emote enters the caravan to rest before his shift later at night.
+mpgoto 3273
+emote arrives and begins to get some rest before his shift later tonight.
+mpsleep 2
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3202
+if hasqbit($n) == 3201
+emote blows a horn to alert the guards.
+mpforce guard1 wake
+mpforce guard2 wake
+mpforce guard3 wake
+say Bandits! Attack!! Keep Lord Mythast safe!
+mpforce guard1 k $n
+mpforce guard2 k $n
+mpforce guard3 k $n
+k $n
+else
+peer $n
+endif
+else
+emote blows a horn to alert everyone at the camp.
+say Bandits!! Attack!! Keep Lord Mythast safe!
+mpforce guard1 wake
+mpforce guard2 wake
+mpforce guard3 wake
+mpforce guard3 k $n
+mpforce guard2 k $n
+mpforce guard1 k $n
+k $n
+mpoload 3210 1
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3213
+Keywords   forest bandit parinath recruiter human man hiding here~
+Short      &ga bandit&w~
+Long       &gA human man is here hiding nearby behind some trees.&w
+~
+Desc       &gThis human man is dressed in leather armor that has been dyed to match
+the forest to help him hide. He has a rough looking appearance from
+his scraggly looking beard and hair to his dirty face.&w
+~
+Race       human~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared sneak hide~
+Stats1     -600 20 7 0 12 0 1 5 20 0
+Stats2     5 25 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    16 12 14 18 16 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Attacks    kick~
+Defenses   dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if isevil($n)
+mea $n &gA man hiding behind a tree tries to get your attention.&w
+mea $n &gYou approach him and he begins to whisper to you...&w
+whisper $n We're looking for candidates to join our group.
+whisper $n You should speak with our leader, Zhotas. He is
+whisper $n located in our camp to the north. We have a rule...
+whisper $n If you kill a bandit you're out and any invitation
+whisper $n is revoked forever. Plus you'll be viewed as a
+whisper $n traitor and attacked on sight.
+mpqset $n 3200
+mpsleep 3
+mea $n &gThe bandit returns to hiding behind some trees.&w
+else
+endif
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!&w
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit you are forever banished and your
+mea $n &Rinvitation to join the Parinath Bandits is revoked!&w
+mpqset $n 3200
+mpqset $n 3210
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3299
+Keywords   forest bandit parinath zhotas bladeburn handsome man wavy black hair examining treasure stolen~
+Short      &GZhotas Bladeburn&w~
+Long       &GA handsome man is with wavy black hair is here examining some stolen goods.&w
+~
+Desc       &zThis handsome human man is dressed in pure black studded leather
+armor. He has shiny black wavy hair and lightly tanned skin that
+contrasts with his sky blue eyes. His devilish grin helps him
+get away with much in this world.
+~
+Race       half-elf~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared~
+Stats1     -1000 30 10 0 14 0 5 10 30 0
+Stats2     10 10 50
+Stats3     1 4 2
+Stats4     2 0 3 0 0 0 6
+Attribs    18 12 10 20 14 18 16
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     sleep charm~
+Defenses   parry dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+if hasqbit($n) == 3200
+emote chuckles to himself and waves a hand.
+Sayto $n Are you my new recruit? It is about time.
+Mpsleep 2
+mea $n &zYou feel Zhotas appraise you for a few moments...&w
+Mpsleep 2
+sayto $n Are you ready to &Whear more&w about our little organization and
+sayto $n if you wanting to join us, hmm?
+Else
+Sigh $n
+Hide
+Sneak
+K $n
+endif
+else
+nod $n
+sayto $n Steal anything good lately?
+endif
+else
+sigh $n
+sneak
+hide
+k $n
+endif
+else
+tsk $n
+sayto $n You look like the type of trash a noble could fool into having
+sayto $n help them.. a pity. They wont even mourn you as they will hire
+sayto $n someone else to attempt to kill me. You think youre the first?
+Chuckle
+Sayto $n Well then.. lets see if its your lucky day?
+Sneak
+Hide
+K $n
+endif
+else
+k $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3213
+if hasqbit($n) != 3212
+if hasqbit($n) != 3211
+if hasqbit($n) != 3200
+if hasqbit($n) == 3201
+mea $n &RUpon killing the bandit you are forever banished and no
+mea $n &Rlonger a member of the Parinath Bandits!
+mpqset $n 3201
+mpqset $n 3210
+else
+endif
+else
+mea $n &RUpon killing the bandit leader you are forever banished and
+mea $n &Ryour invitation to join the Parinath Bandits is revoked!
+mpqset $n 3200
+mpqset $n 3210
+endif
+else
+mpecho &RZhotas crashes into a crate as he dies, which falls over..
+mpgift 200 252
+mpgift 200 252
+mpgift 300 346
+mpgift 300 346
+mpgift 300 346
+silent drop all
+mpoload 3208 1
+mpqset $n 3211
+mpqset $n 3212
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 3205
+if hasqbit($n) == 3201
+if hasqbit($n) == 3204
+if ovnuminv(3208) == 1
+grin $n
+sayto $n This is a job well done!! Thank you for getting
+sayto $n me these letters. Now the real party can begin
+sayto $n with those idiots in Parinath.
+mpsleep 2
+emote looks over the letters for a few moments and smiles.
+mpsleep 2
+sayto $n I need to look over these letters. I may have a
+sayto $n task for you later on so visit with me later and
+sayto $n try not to get caught or blow our cover, eh?
+mpsleep 2
+wink $n
+mpqset $n 3204
+mpqset $n 3205
+mpadvance $n 1000
+mpjunk bundle
+else
+sayto $n What is this? It is not what I asked for...
+drop all
+endif
+else
+endif
+else
+endif
+else
+smile $n
+sayto $n Thanks again, friend!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p hear more~
+Comlist   if hasqbit($n) != 3213
+if hasqbit($n) != 3211
+if hasqbit($n) != 3210
+if hasqbit($n) != 3201
+emote grins and stops looking inside a crate.
+mpsleep 2
+sayto $n My associates and I are a group of free men and
+sayto $n women who are trying to stop the tyranny of the
+sayto $n nobles in Parinath. Some call us "Bandits," while
+sayto $n we like to think of ourselves as...
+mpsleep 2
+sayto $n Truthseekers. We want to expose them.
+mpsleep 2
+sayto $n Now.. I want to know.. will you join us or
+sayto $n not join us? I will say that those that refuse
+sayto $n are labeled as traitors. We cannot have people who
+sayto $n are not strong or brave join us. Now.. what do you say?
+mpsleep 2
+sayto $n A simple &Wyes&w or &Wno&w will do...
+else
+endif
+else
+endif
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p no~
+Comlist   if hasqbit($n) != 3201
+if hasqbit($n) == 3200
+sigh
+sayto $n That is a shame...
+mpsleep 2
+emote snaps a finger and then waits.
+mpqset $n 3200
+mpqset $n 3210
+mpsleep 2
+mea $n &RA red haired man enters this part of the tent and everything
+mea $n &Rfades to black as something strikes you!
+mer $n &RA red haired man enters the tent and smashes $n on the head!
+mpsleep 2
+mer $n &RThe man then drags $n out of the tent and to somewhere else.
+silent mpforce $n sleep
+mptransfer $n 3268
+mpat 3268 mer $n &RA red haired bandit drops off $n and leaves quickly.
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 3201
+if hasqbit($n) == 3200
+grin
+sayto $n Welcome aboard!
+mpsleep 2
+sayto $n Now.. I have a mission for you. We heard that a certain
+sayto $n Noble from Parinath is currently camped to the south of
+sayto $n us. He is traveling with some letters that contain some
+sayto $n information that I need. I want you to go there and steal
+sayto $n the letters. Kill whoever stands in your way.
+mpsleep 3
+sayto $n Now.. this will be hard during the day. The noble is
+sayto $n traveling with a powerful.. and rather beautiful wizard
+sayto $n who protects him. My scouts say that the best time to
+sayto $n strike is after midnight and not before morning. The
+sayto $n camp goes quiet around then and there is usually only
+sayto $n one guard who is awake. The caravan is magically
+sayto $n protected so you will need the guard's key to get
+sayto $n in. Any treasure found is yours.. I just want the
+sayto $n letters and the Noble will have them kept close to
+sayto $n him at all times.
+mpqset $n 3200
+mpqset $n 3201
+mpqset $n 3202
+mpqset $n 3203
+mpsleep 3
+sayto $n Good luck and I look forward to your gift later!
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     3200
+Keywords slim shortsword looking~
+Type     weapon~
+Short    a slim shortsword~
+Long     A slim looking shortsword has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 2
+Stats    2 5 1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3201
+Keywords slim longsword looking~
+Type     weapon~
+Short    a slim longsword~
+Long     A slim looking longsword has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   1 1 8 1 1 0
+Values2  0 2
+Stats    1 8 3 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3202
+Keywords quarter staff quarterstaff gnarled wooden looking~
+Type     weapon~
+Short    &Oa gnarled wooden quarterstaff&w~
+Long     &OA gnarled wooden quarterstaff has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 2
+Stats    4 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3203
+Keywords slim rapier looking~
+Type     weapon~
+Short    a slim rapier~
+Long     A slim looking rapier has been left here.~
+Flags    finesse~
+WFlags   take onehand~
+Values   12 1 8 3 3 0
+Values2  0 2
+Stats    2 10 2 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3204
+Keywords slim dagger looking~
+Type     weapon~
+Short    a slim dagger~
+Long     A slim looking dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 2 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3205
+Keywords black handled mace~
+Type     weapon~
+Short    a mace~
+Long     A mace has been left here.~
+WFlags   take onehand~
+Values   12 1 6 2 8 0
+Values2  0 2
+Stats    4 5 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3206
+Keywords small campfire fire~
+Type     fire~
+Short    &Ra small campfire&w~
+Long     &RA small campfire is here offering warmth.&w~
+Values   25 0 0 0 0 0
+Values2  0 0
+Stats    10 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3207
+Keywords shadowy blade magic shortsword~
+Type     weapon~
+Short    &za shadowy blade&w~
+Long     &zA shadowy shortsword has been left here.&w~
+Flags    evil magic inventory finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 2
+Stats    2 10 1 1 1 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3208
+Keywords intercepted letters parinath noble bundle~
+Type     trash~
+Short    &wa bundle of intercepted letters&w~
+Long     &wA bundle of intercepted letters from a noble has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate letters~
+Comlist   if investigation($n) >= 16
+mea $n You read through some of the letters and they are addressed
+mea $n to the Noble Ronias Mythast from a guild that works to
+mea $n create roads. The letters detail ideas about expanding a
+mea $n trade route through the Parinath forest and through the
+mea $n mountains.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3209
+Keywords longsword guard ronias~
+Type     weapon~
+Short    a longsword~
+Long     A longsword has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   1 1 8 1 1 0
+Values2  0 2
+Stats    1 0 10 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3210
+Keywords caravan key small silver key~
+Type     key~
+Short    &wa small silver key&w~
+Long     &wA small silver key has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3211
+Keywords caravan key secret room small bronze key~
+Type     key~
+Short    &Oa small bronze key&w~
+Long     &OA small bronze key has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3299
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3200
+Name     A Forest Path~
+Sector   forest~
+Desc     This is a small forest path off the main road. The forest here is dense
+and it is hard to see around the general vicinity. The path here continues
+toward the north deeper into the forest or back south towards the less
+dense portion of the forest and back to the main road.
+~
+#EXIT
+Direction north~
+ToRoom    3201
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      480
+MapY      841
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3201
+Name     A Forest Path~
+Sector   forest~
+Flags    nomob~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes east and west from
+here with a small path leading south back out of the forest.
+The trees here are several stories tall, which provides an ample
+amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    3202
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3200
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3206
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3202
+Name     A Forest Path~
+Sector   forest~
+Flags    nomob~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes east and west from
+here with a small path leading south towards a large grassy 
+clearing. The trees here are very ancient looking and are
+several stories tall, which provides an ample amount of shade
+throughout this part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    3203
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3204
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3201
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3203
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes northeast and west from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction west~
+ToRoom    3202
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3205
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3204
+Name     &GA Large Clearing&w~
+Sector   forest~
+Desc     This is a large grassy clearing located near the front of a forest. It is
+a popular spot for caravans to camp off the road, which helps protect
+them from highway based bandit attacks. The field has a variety of plants
+from long grasses to flowering herbs here.
+~
+#EXIT
+Direction north~
+ToRoom    3202
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3269
+Key       3210
+Keywords  'caravan door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 0 3208 1 3204
+  Reset E 0 3209 1 28
+Reset M 0 3210 1 3204
+  Reset E 0 3209 1 28
+Reset M 0 3211 1 3204
+  Reset E 0 3209 1 28
+Reset M 0 3207 1 3204
+  Reset E 0 3209 1 26
+Reset M 0 3209 1 3204
+Reset D 0 3204 1 2
+#ENDROOM
+
+#ROOM
+Vnum     3205
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes northeast and southwest from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction northeast~
+ToRoom    3213
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3203
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3206
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes east and northwest from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    3201
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3207
+#ENDEXIT
+
+Reset M 0 3213 1 3206
+  Reset E 0 3201 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3207
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes north and southwest from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    3208
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3206
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3200 6 3207
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3208
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The parth goes south and northwest from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest. The
+path ends to the northwest, which leads into the deepest part of
+the forest itself.
+~
+#EXIT
+Direction east~
+ToRoom    3209
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3207
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3209
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes west and northeast from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction west~
+ToRoom    3208
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3210
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3210
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes southwest and southeast from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction southeast~
+ToRoom    3211
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3209
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3211
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes northwest and east from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest. The path
+ends towards the northeast where one enters the deepest part of
+the forest.
+~
+#EXIT
+Direction east~
+ToRoom    3212
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3214
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3210
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3212
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes west and southeast from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction west~
+ToRoom    3211
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3213
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3213
+Name     A Forest Path~
+Sector   forest~
+Desc     This forest path has been established over many years of animals
+and people trekking all over here. The path goes northwest and southwest from
+here. The sounds of animals can be heard all over the forest here from
+the grunts of a bear to the howling of a wolf at night. The trees here
+are very ancient looking and are several stories tall, which provides
+an ample amount of shade throughout this part of the forest.
+~
+#EXIT
+Direction northwest~
+ToRoom    3212
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3205
+#ENDEXIT
+
+Reset M 0 3200 6 3213
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3214
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction north~
+ToRoom    3215
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3211
+#ENDEXIT
+
+Reset M 0 3200 6 3214
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3215
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction south~
+ToRoom    3214
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3216
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3216
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction north~
+ToRoom    3217
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3231
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3215
+#ENDEXIT
+
+Reset M 0 3200 6 3216
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3217
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction south~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3218
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3218
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction west~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3217
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3219
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction east~
+ToRoom    3218
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3239
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3220
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate campfire~
+Comlist   if investigation($n) >= 16
+if nature($n) >= 18
+mea $n You manage to pinpoint the smell towards the south of here
+mea $n where you spot a large camp has been established in a thick
+mea $n area of trees.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 16
+mpsleep 3
+mea $n &OYou suddenly smell a campfire coming from somewhere nearby.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3220
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction southeast~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3221
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3221
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction west~
+ToRoom    3222
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3220
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3236
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate campfire~
+Comlist   if investigation($n) >= 16
+if nature($n) >= 18
+mea $n You manage to pinpoint the smell towards the southeast of here
+mea $n where you spot a large camp has been established in a thick
+mea $n area of trees.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 16
+mpsleep 3
+mea $n &OYou suddenly smell a campfire coming from somewhere nearby.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3222
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction east~
+ToRoom    3221
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3223
+#ENDEXIT
+
+Reset M 0 3200 6 3222
+  Reset E 0 3204 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3223
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction east~
+ToRoom    3222
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3224
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3224
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction south~
+ToRoom    3225
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3223
+#ENDEXIT
+
+Reset M 0 3200 6 3224
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3225
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction north~
+ToRoom    3224
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3227
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3226
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction northeast~
+ToRoom    3225
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3208
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3227
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction east~
+ToRoom    3228
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3225
+#ENDEXIT
+
+Reset O 0 602 1 3227
+#ENDROOM
+
+#ROOM
+Vnum     3228
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction west~
+ToRoom    3227
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3229
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3229
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction north~
+ToRoom    3230
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3228
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3230
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction north~
+ToRoom    3233
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3229
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate campfire~
+Comlist   if investigation($n) >= 16
+if nature($n) >= 18
+mea $n You manage to pinpoint the smell towards the north of here
+mea $n where you spot a large camp has been established in a thick
+mea $n area of trees.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 16
+mpsleep 3
+mea $n &OYou suddenly smell a campfire coming from somewhere nearby.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3231
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction east~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3232
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3232
+Name     Deep in a Forest~
+Sector   forest~
+Desc     This part of the forest is incredibly dense with trees and other
+vegetation. Large ferns obscure the paths taken by others in the
+past and the shade from the trees gives this forest a haunting level
+of darkness. There is not much noise from animals here and it seems that
+many of them avoid this part of the forest altogether.
+~
+#EXIT
+Direction north~
+ToRoom    3243
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3231
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate campfire~
+Comlist   if investigation($n) >= 16
+if nature($n) >= 18
+mea $n You manage to pinpoint the smell towards the north of here
+mea $n where you spot a large camp has been established in a thick
+mea $n area of trees.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 16
+mpsleep 3
+mea $n &OYou suddenly smell a campfire coming from somewhere nearby.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3233
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis camp seemingly appears out of nowhere here in the forest. You
+notice an intricate usage of walls decorated with foliage gives the
+illusion that the forest goes on forever until you enter this camp
+and shatter the illusion. This camp is quite large with several
+camouflaged tents located all over it.
+~
+#EXIT
+Direction north~
+ToRoom    3234
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3246
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3230
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3234
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.&w
+~
+#EXIT
+Direction north~
+ToRoom    3235
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3233
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3251
+#ENDEXIT
+
+Reset M 0 3201 5 3234
+  Reset E 0 3201 1 26
+Reset M 0 3204 6 3234
+  Reset E 0 3201 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3235
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction east~
+ToRoom    3250
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3234
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3236
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3236
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis camp seemingly appears out of nowhere here in the forest. You
+notice an intricate usage of walls decorated with foliage gives the
+illusion that the forest goes on forever until you enter this camp
+and shatter the illusion. This camp is quite large with several
+camouflaged tents located all over it.
+~
+#EXIT
+Direction east~
+ToRoom    3237
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3252
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3221
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3235
+#ENDEXIT
+
+Reset M 0 3201 5 3236
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3237
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction north~
+ToRoom    3253
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3238
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3236
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3238
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction north~
+ToRoom    3254
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3239
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3255
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3237
+#ENDEXIT
+
+Reset M 0 3204 6 3238
+  Reset E 0 3203 1 26
+Reset O 0 3206 1 3238
+#ENDROOM
+
+#ROOM
+Vnum     3239
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis camp seemingly appears out of nowhere here in the forest. You
+notice an intricate usage of walls decorated with foliage gives the
+illusion that the forest goes on forever until you enter this camp
+and shatter the illusion. This camp is quite large with several
+camouflaged tents located all over it.
+~
+#EXIT
+Direction north~
+ToRoom    3219
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3240
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3238
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3256
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3240
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction west~
+ToRoom    3239
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3241
+#ENDEXIT
+
+Reset M 0 3201 5 3240
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3241
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction east~
+ToRoom    3260
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3242
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3240
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3242
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction north~
+ToRoom    3241
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3265
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3248
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3243
+#ENDEXIT
+
+Reset M 0 3204 6 3242
+  Reset E 0 3201 1 28
+Reset O 0 3206 1 3242
+#ENDROOM
+
+#ROOM
+Vnum     3243
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis camp seemingly appears out of nowhere here in the forest. You
+notice an intricate usage of walls decorated with foliage gives the
+illusion that the forest goes on forever until you enter this camp
+and shatter the illusion. This camp is quite large with several
+camouflaged tents located all over it.
+~
+#EXIT
+Direction south~
+ToRoom    3232
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3242
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3244
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction east~
+ToRoom    3243
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3264
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3245
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3245
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction north~
+ToRoom    3247
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3246
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3246
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction north~
+ToRoom    3266
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3233
+#ENDEXIT
+
+Reset M 0 3204 6 3246
+  Reset E 0 3203 1 26
+Reset O 0 3206 1 3246
+#ENDROOM
+
+#ROOM
+Vnum     3247
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction north~
+ToRoom    3249
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3248
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3267
+#ENDEXIT
+
+Reset M 0 3204 6 3247
+  Reset E 0 3201 1 28
+Reset O 0 3206 1 3247
+#ENDROOM
+
+#ROOM
+Vnum     3248
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time. A semi-burrowed hill with a
+tent on top is located to the north. A stone archway with a door
+has been established as its entrance and it seems to be used
+as a prison.
+~
+#EXIT
+Direction north~
+ToRoom    3268
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3242
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3259
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3247
+#ENDEXIT
+
+Reset D 0 3248 0 2
+#ENDROOM
+
+#ROOM
+Vnum     3249
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction north~
+ToRoom    3257
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3247
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3250
+#ENDEXIT
+
+Reset M 0 3204 6 3249
+  Reset E 0 3201 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3250
+Name     &OA Large Forest Camp&w~
+Sector   forest~
+Desc     &GThis is a large camp here in the dense forest surrounding it. You see
+large wooden walls surrounding the camp with vegetation growing on it to
+help disguise the location of the camp. There are many camouflaged
+tents that can be found here. It is very apparent that this camp
+has been here for a very long time.
+~
+#EXIT
+Direction east~
+ToRoom    3249
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3258
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3235
+#ENDEXIT
+
+Reset M 0 3201 5 3250
+  Reset E 0 3201 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3251
+Name     &wInside a Tent&w~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 14 0
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the east end of the tent.
+~
+Perdesc  &wYou notice that this tent has not been used for quite some time.&w
+~
+#EXIT
+Direction east~
+ToRoom    3234
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3252
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the east end of the tent.
+~
+#EXIT
+Direction east~
+ToRoom    3236
+#ENDEXIT
+
+Reset M 0 3202 6 3252
+  Reset E 0 3202 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3253
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the south end of the tent.
+~
+#EXIT
+Direction south~
+ToRoom    3237
+#ENDEXIT
+
+Reset M 0 3203 16 3253
+  Reset E 0 3201 1 26
+Reset M 0 3203 16 3253
+  Reset E 0 3203 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3254
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     Bandit store!
+&WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the south end of the tent.
+~
+#EXIT
+Direction south~
+ToRoom    3238
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3255
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the north end of the tent.
+~
+#EXIT
+Direction north~
+ToRoom    3238
+#ENDEXIT
+
+Reset M 0 3203 16 3255
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3256
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the northwest end of the tent.
+~
+#EXIT
+Direction northwest~
+ToRoom    3239
+#ENDEXIT
+
+Reset M 0 3202 6 3256
+  Reset E 0 3202 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3257
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the south end of the tent.
+~
+#EXIT
+Direction south~
+ToRoom    3249
+#ENDEXIT
+
+Reset M 0 3203 16 3257
+  Reset E 0 3201 1 26
+Reset M 0 3203 16 3257
+  Reset E 0 3200 1 26
+Reset M 0 3203 16 3257
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3258
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the north end of the tent.
+~
+#EXIT
+Direction north~
+ToRoom    3250
+#ENDEXIT
+
+Reset M 0 3203 16 3258
+  Reset E 0 3200 1 26
+Reset M 0 3203 16 3258
+  Reset E 0 3203 1 26
+Reset M 0 3202 6 3258
+  Reset E 0 3202 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3259
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the north end of the tent.
+~
+#EXIT
+Direction north~
+ToRoom    3248
+#ENDEXIT
+
+Reset M 0 3202 6 3259
+  Reset E 0 3202 1 26
+Reset M 0 3203 16 3259
+  Reset E 0 3200 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3260
+Name     &wInside a Large Tent&w~
+Sector   indoors~
+Desc     &WThis is the largest tent in the entire campground. It has several peaks
+at its ceiling, which are held up with strong looking poles and
+anchored to nearby trees. The tent has three compartments towards
+the north, south, and east. A large curtained door to the west
+leads back into the campground. 
+~
+#EXIT
+Direction north~
+ToRoom    3262
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3261
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3263
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3241
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3261
+Name     &wInside a Large Tent&w~
+Sector   indoors~
+Desc     &WThis is the largest compartment of the largest tent in the entire
+campground. This space has several rows of wooden crates full
+of random goods stacked here along with a large cot and a few
+trunks from whoever sleeps here. There are random treasures
+placed all over the space in an effort to make it look less like
+a tent and more like a bedroom.
+~
+#EXIT
+Direction west~
+ToRoom    3260
+#ENDEXIT
+
+Reset M 0 3299 1 3261
+  Reset E 0 3207 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3262
+Name     &wInside a Large Tent&w~
+Sector   indoors~
+Desc     &WThis is a small compartment that is part of the largest tent
+in the campground. It is used as a bedroom and also to store large
+crates full of random goods. There is a large cot and a trunk
+located in this space for whoever sleeps here.
+~
+#EXIT
+Direction south~
+ToRoom    3260
+#ENDEXIT
+
+Reset M 0 3202 7 3262
+  Reset E 0 3202 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3263
+Name     &wInside a Large Tent&w~
+Sector   indoors~
+Desc     &WThis is a small compartment that is part of the largest tent
+in the campground. It is used as a bedroom and also to store large
+crates full of random goods. There is a large cot and a trunk
+located in this space for whoever sleeps here.
+~
+#EXIT
+Direction north~
+ToRoom    3260
+#ENDEXIT
+
+Reset M 0 3206 1 3263
+  Reset E 0 3203 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3264
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the north end of the tent.
+~
+#EXIT
+Direction north~
+ToRoom    3244
+#ENDEXIT
+
+Reset M 0 3203 16 3264
+  Reset E 0 3201 1 26
+Reset M 0 3203 16 3264
+  Reset E 0 3203 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3265
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the west end of the tent.
+~
+#EXIT
+Direction west~
+ToRoom    3242
+#ENDEXIT
+
+Reset M 0 3203 16 3265
+  Reset E 0 3200 1 26
+Reset M 0 3203 16 3265
+  Reset E 0 3201 1 26
+Reset M 0 3203 16 3265
+  Reset E 0 3203 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3266
+Name     &wInside a Tent&w~
+Sector   indoors~
+Desc     &WThis is a small tent that has enough room for a few cots and some
+trunks for storing things. The tent is a typical a-frame tent that
+peaks at the center along a seam. A curtain like doorway leads
+back out of the tent at the south end of the tent.
+~
+#EXIT
+Direction south~
+ToRoom    3246
+#ENDEXIT
+
+Reset M 0 3202 6 3266
+  Reset E 0 3202 1 26
+Reset M 0 3203 16 3266
+  Reset E 0 3203 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3267
+Name     &wA Foul Smelling Tent&w~
+Sector   indoors~
+Desc     &WThis is a moderately sized tent and it is used for people to come
+receive medical treatment for wounds and such. There are rows of cots
+where patients can rest while they are treated. Buckets of water are
+readily available for various usages. The tent has a particular stench as 
+blood and other fluids have stained part of the tent from surgeries
+done in the past. An attempt to mask the smell is being done by
+burning incense nearby.
+~
+#EXIT
+Direction east~
+ToRoom    3247
+#ENDEXIT
+
+Reset M 0 3205 1 3267
+  Reset E 0 3205 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3268
+Name     &wA Prison Tent&w~
+Sector   underground~
+Desc     &wThis prison was created by burrowing part of it underground and placing
+a tent on top to cover it. A stone entrance has a wooden door attached
+to it to help secure this prison. The walls of the prison are earthen and
+it appears this prison has been here for quite some time. Straw lines
+the floor and was placed here for people to sleep on. There is not
+much here for food, water, or light.
+~
+#EXIT
+Direction south~
+ToRoom    3248
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3249
+Keywords  'escape tunnel'~
+Flags     isdoor closed hidden nomob~
+#ENDEXIT
+
+Reset D 0 3268 2 2
+Reset D 0 3268 7 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate tent~
+Comlist   if investigation($n) >= 18
+mea $n You notice at the northwest corner of the tent is a
+mea $n partially buried tunnel that was probably used by
+mea $n someone to escape this tent. Perhaps if you dig at
+mea $n that spot you may uncover it and get out of here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3269
+Name     &RInside a Caravan&w~
+Sector   indoors~
+Flags    nomob nomagic private nosummon noastral~
+Desc     &OThis is a very large caravan that has several rooms built into
+it for sleeping or to relax during traveling. The ceiling is not
+very tall and the walkway here is very small. Two curtains to the
+north and south leading into two private sleeping quarters
+while the wooden door to the east leading into the largest of
+the quarters.
+~
+#EXIT
+Direction north~
+ToRoom    3270
+Keywords  'curtains'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3271
+Keywords  'small wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3273
+Keywords  'curtains'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3204
+Key       3210
+Keywords  'caravan door'~
+Flags     isdoor closed locked pickproof bashproof~
+#ENDEXIT
+
+Reset D 0 3269 0 1
+Reset D 0 3269 1 1
+Reset D 0 3269 2 1
+Reset D 0 3269 3 2
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+Mpsleep 3
+mea $n &BYou see abjuration sigils on the walls here negating magic.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3270
+Name     &RA Private Sleeping Quarters&w~
+Sector   indoors~
+Flags    nomagic private nosummon noastral~
+Desc     &OThis is a small sleeping area which contains enough room for a
+small bed, a dresser that is built into the wall, and a small circular
+window. There is not much decor in this room save a few crystals on
+the dresser. A curtain door leads back south into the main part
+of the caravan here.
+~
+#EXIT
+Direction south~
+ToRoom    3269
+Keywords  'curtains'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 3270 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+Mpsleep 3
+mea $n &BYou see abjuration sigils on the walls here negating magic.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3271
+Name     &RA Noble's Quarters&w~
+Sector   indoors~
+Flags    nomagic nosummon noastral~
+Stats    0 0 0 0 22 0
+Desc     &OThis is an exquisite sleeping area with a large bed and several dressers
+located here. A large mirror is hung on the wall for whoever sleeps here
+to observe their appearance from head to toe. A large circular window
+allows an ample amount of light into the space. There are several
+tapestries hung from the remaining wall space, which adds even more
+luxury to the sleeping quarters.
+~
+Perdesc  &zYou spot the outline of a secret door on the eastern wall.&w
+~
+#EXIT
+Direction east~
+ToRoom    3272
+Key       3211
+Keywords  'secret door'~
+Flags     isdoor closed locked hidden~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3269
+Keywords  'small wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 3271 1 2
+Reset D 0 3271 3 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+Mpsleep 3
+mea $n &BYou see abjuration sigils on the walls here negating magic.&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate quarters~
+Comlist   if investigation($n) >= 18
+mea $n You notice the outline of a door on the eastern wall of
+mea $n this caravan room.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3272
+Name     &RA Secret Caravan Room&w~
+Sector   indoors~
+Flags    private~
+Desc     &OThis is a very small space, which is used to store things such
+as expensive objects. There are a few shelves built into the walls
+here for placing such items. A door leads back to the west into
+an exquisite sleeping area.
+~
+#EXIT
+Direction west~
+ToRoom    3271
+Key       3211
+Keywords  'secret door'~
+Flags     isdoor closed locked hidden~
+#ENDEXIT
+
+Reset D 0 3272 3 2
+#ENDROOM
+
+#ROOM
+Vnum     3273
+Name     &RA Private Sleeping Quarters&w~
+Sector   indoors~
+Flags    nomagic private nosummon noastral~
+Desc     &OThis is a small sleeping area which contains enough room for a
+small bed, a dresser that is built into the wall, and a small
+circular window. There is not much decor in this room save a 
+weapons leaning against the wall here. A curtain door leads back
+north into the main part of the caravan here.&w
+~
+#EXIT
+Direction north~
+ToRoom    3269
+Keywords  'curtains'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3212 1 3273
+  Reset E 0 3209 1 28
+Reset D 0 3273 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if arcana($n) >= 25
+Mpsleep 3
+mea $n &BYou see abjuration sigils on the walls here negating magic.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3299
+Name     &RTHE PARINATH FOREST BANDIT CAMP MOB STORAGE&W~
+Sector   city~
+Flags    nomob nomagic safe norecall nosummon noastral~
+Desc     Please use the exit to leave this room. You do not belong in here.
+If you ended up here please let a member of the admin staff know!
+~
+#EXIT
+Direction south~
+ToRoom    3201
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

@@ -1,0 +1,2428 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Khantul Manor~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 15 0 0
+Economy      0 3250160
+ResetMsg     &rYou hear the howl of a creature nearby...&w~
+Lore         Át›¿&rYou see a large army of gnolls as they lay siege upon a fortress.
+They manage to enter and begin slaughtering all of the people inside.
+As your vision slowly dissipates you can still hear the screams of
+the people as they are killed.........
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       3400
+Keywords   gnoll warrior lurking~
+Short      &ra gnoll warrior&w~
+Long       &rA gnoll warrior is lurking about here.&w
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Saliva drips from its mouth, which is full of razor sharp
+teeth. It is clad in rough looking leather armor that has been patched
+several times. It lurks about here looking for intruders.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 4 0 15 0 0 0 2 0
+Stats2     8 8 10
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    16 6 10 12 11 7 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3401
+Keywords   gnoll archer guard battlements~
+Short      &ra gnoll archer&w~
+Long       &rA gnoll archer is here looking for intruders near the fort.&w
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Saliva drips from its mouth, which is full of razor sharp
+teeth. It is clad in rough looking leather armor that has been patched
+several times. It lurks about here looking for intruders.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 4 0 15 0 0 0 2 0
+Stats2     8 8 10
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    16 6 10 14 11 7 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mpecho &rThe gnoll rears its head back and howls angrily!&w
+mpasound &rYou hear a bone chilling howl from nearby...
+fire $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3402
+Keywords   gnoll battlements captain large~
+Short      &Ra gnoll captain&w~
+Long       &RA large menacing looking gnoll is here walking the battlements.&w
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Saliva drips from its mouth, which is full of razor sharp
+teeth. It is clad in rough looking leather armor that has been patched
+several times. It lurks about here looking for intruders.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 5 0 15 0 0 0 2 0
+Stats2     10 10 20
+Stats3     0 0 0
+Stats4     3 0 2 0 0 0 6
+Attribs    16 6 10 16 11 7 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3403
+Keywords   young lady hooded woman~
+Short      &ga young woman&w~
+Long       &gA young woman is here dressed in simple clothes and a hooded cloak.&w
+~
+Desc       &gThis woman is dressed in a flowing green wool cloak and a large hood,
+which she keeps up to hide much of her face. She appears to be young
+and with noble looking features. Every so often a dark, raven black
+curl escapes the front of the hood.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 1 3 0 10 0 10 0 0 0
+Stats2     5 5 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    10 18 14 18 12 18 20
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3401
+if hasqbit($n) != 3400
+mea $n The hooded woman standing here turns to face you suddenly.
+sayto $n Greetings traveler. I am looking for some assistance if you
+sayto $n are interested?
+else
+sayto $n Have you found my father's ring yet?
+endif
+else
+sayto $n Thank you again for helping me.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p pin~
+Comlist   mpecho The woman instinctively covers the pin and nods her hooded head.
+mpsleep 3
+sayto $n It is the emblem of my family.. House Khantul. One of the last
+sayto $n things I have of my family that I treasure greatly...
+mpsleep 3
+sigh
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 3400
+if hasqbit($n) != 3401
+emote sighs with relief
+mpsleep 3
+sayto $n My family once owned the small walled manor to the north of
+sayto $n here. While I was away studying at the Adventuring Academy
+sayto $n in New Darkhaven the manor was attacked... My family helped
+sayto $n many escape before they were killed.
+mpsleep 3
+sayto $n I am asking you to enter the manor and retrieve my father's
+sayto $n ring in our secret treasury. Anything else in the treasury
+sayto $n is yours to keep. I just want my father's ring and will wait
+sayto $n for you here. Be careful.. the creatures are quite violent.
+mpsleep 3
+sayto $n Also.. a young man offered to help me and he has not returned. Can
+sayto $n you find him? I hope that nothing horrible has happened to him.
+mpqset $n 3400
+mpqset $n 3402
+else
+sayto $n Thank you for helping me.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p young man~
+Comlist   if deception($n) >= 12
+mea $n &YYou sense a genuine worry for the man's fate as she speaks...
+mpsleep 3
+sayto $n He is not very tall and is a traveling musician. He found me
+sayto $n here and offered to find the ring for me. I told him that
+sayto $n perhaps someone stronger could go look.. but he insisted.
+mpsleep 3
+sayto $n I just hope he is alright...
+frown
+else
+sayto $n He is not very tall and is a traveling musician. He found me
+sayto $n here and offered to find the ring for me. I told him that
+sayto $n perhaps someone stronger could go look.. but he insisted.
+mpsleep 3
+sayto $n I just hope he is alright...
+frown
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(3449) == 1
+if hasqbit($n) == 3400
+emote sighs with relief and examines the ring
+mpsleep 3
+sayto $n This is indeed my father's ring. I appreciate you doing this
+sayto $n for me. I can now report to the local Duke's and show them
+sayto $n what has befallen my home and seek help in taking it back.
+sayto $n This ring will prove my heritage and what I say is true.
+mpsleep 3
+emote begins packing up her belongings and smiles
+mpsleep 3
+sayto $n Thank you again. May the wolf guide you.
+mpsleep 3
+mpecho &gThe young woman quickly enters the forest and is gone.
+mpadvance $n 450
+mpgoto 2599
+mpqset $n 3400
+mpqset $n 3401
+mpjunk googoo11
+else
+frown
+sayto $n This is not my father's ring.
+drop all
+endif
+else
+drop all
+sayto $n This is not my father's ring.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3404
+Keywords   young man bard bard11 tattered clothing~
+Short      &Ca young man&w~
+Long       &CA young man in tattered clothing is here tied to a wall in this dungeon cell.
+~
+Desc       &CThis handsome man is dressed in the remnants of fancy clothing that
+has been ripped and torn. He has several wounds on his exposed body
+that shows he has been tortured. His hands have been bound to the wall
+of this dungeon cell, which forces him to stand and never sit or lay
+down.
+~
+Race       human~
+Class      bard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 1 3 0 10 0 10 0 0 0
+Stats2     5 5 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    10 18 14 18 12 18 20
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 3402
+mea $n A young man tied to the wall here turns slowly to look at you.
+sayto $n H-have you come to rescue me? Please... hurry. They will be back soon.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3405
+Keywords   gnoll captain sharpening dungeon tools~
+Short      &Ra gnoll captain&w~
+Long       &RA large menacing looking gnoll is here sharpening some dungeon tools.
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Saliva drips from its mouth, which is full of razor sharp
+teeth. It is clad in rough looking leather armor that has been patched
+several times. It lurks about here looking for intruders.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -1000 1 5 0 15 0 0 0 2 0
+Stats2     10 10 20
+Stats3     0 0 0
+Stats4     3 0 2 0 0 0 6
+Attribs    16 6 10 16 11 7 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3406
+Keywords   gnoll doorway guard sentry~
+Short      &ra gnoll sentry&w~
+Long       &rA gnoll sentry is here guarding the doorway behind it.&w
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Salive drips from its mouth, which is full of razor sharp
+teeth. It is clad in rough looking leather armor that has been patched
+several times. It stands here guarding the doorway behind its back.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -1000 1 4 0 15 0 0 0 2 0
+Stats2     10 10 10
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    16 6 10 12 11 7 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3407
+Keywords   gnoll leader large ~
+Short      &Ra gnoll leader&w~
+Long       &RA large looking gnoll is here enjoying the warmth from a fireplace.&w
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Saliva drips from its mouth, which is full of razor sharp
+teeth. It is clad in rough looking leather armor that has been patched
+several times. It lurks about here looking for intruders.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -1000 1 6 0 15 0 0 0 2 0
+Stats2     15 15 25
+Stats3     0 0 0
+Stats4     3 0 2 0 0 0 6
+Attribs    18 6 10 18 11 7 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 3400
+mpoload 3413 1
+mea $n You see a small stone peg on the corpse of the gnoll leader...
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3408
+Keywords   gnoll shaman prayer~
+Short      &ra gnoll shaman&w~
+Long       &rA gnoll dressed in feathers and tattered cloth is here.&w
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Saliva drips from its mouth, which is full of razor sharp
+teeth. It is clad in an odd looking outfit of feathers and tattered cloths
+that have been patched together.
+~
+Race       monster~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 4 0 15 0 0 0 2 0
+Stats2     10 8 10
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    16 6 10 12 11 7 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'mass cure serious'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3409
+Keywords   gnoll stalker slim looking~
+Short      &za gnoll stalker&w~
+Long       &zA slim looking gnoll is here sneaking about the area.&w
+~
+Desc       This feral looking creature is humanoid in silhouette, but with the
+head of a hyena. Saliva drips from its mouth, which is full of razor sharp
+teeth. It is clad in rough looking leather armor that has been patched
+several times. This gnoll is slimmer looking than the others and moves
+about stealthily while hunting for prey.
+~
+Race       monster~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak hide~
+Stats1     -1000 1 5 0 15 0 0 0 2 0
+Stats2     8 8 30
+Stats3     0 0 0
+Stats4     2 0 2 0 0 0 6
+Attribs    16 6 10 18 11 7 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       3449
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3400
+Keywords crumbling fountain dirty water~
+Type     fountain~
+Short    &Oa dirty fountain&w~
+Long     &OA crumbling stone fountain full of dirty water is here.&w~
+Values   1000 1000 6 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3401
+Keywords sharp looking spear~
+Type     weapon~
+Short    a spear~
+Long     A simple spear has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3402
+Keywords simple long bow~
+Type     missileweapon~
+Short    &Oa simple long bow&W~
+Long     &OA simple long bow has been left here.&W~
+Flags    inventory~
+WFlags   take twohand~
+Values   8 1 8 0 9 1
+Values2  0 2
+Stats    4 25 15 45 2 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3403
+Keywords poorly made arrow~
+Type     projectile~
+Short    &wa poorly made wooden arrow~
+Long     &wA small poorly made wooden arrow has been left here.~
+Flags    inventory organic~
+WFlags   take~
+Values   1 1 8 17 1 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3404
+Keywords tattered cloth quiver~
+Type     quiver~
+Short    &wa tattered cloth quiver&w~
+Long     &wA tattered looking cloth quiver has been left here.~
+Flags    inventory~
+WFlags   take back belt onehand~
+Values   50 0 0 12 0 0
+Values2  0 2
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3405
+Keywords shortsword~
+Type     weapon~
+Short    a shortsword~
+Long     A shortsword has been left here.~
+Flags    inventory finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 2
+Stats    2 10 1 1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3406
+Keywords dagger~
+Type     weapon~
+Short    a dagger~
+Long     A dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 5
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3407
+Keywords small campfire fire~
+Type     fire~
+Short    &Ra small campfire&w~
+Long     &RA small campfire is here offering warmth.&w~
+Values   25 0 0 0 0 0
+Values2  0 0
+Stats    10 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3408
+Keywords small rusty key~
+Type     key~
+Short    &ra small rusty key&w~
+Long     &rA small rusty key has been left here.&w~
+WFlags   take belt onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3409
+Keywords leather belt old~
+Type     armor~
+Short    &Oan old looking leather belt&w~
+Long     &OA leather belt has been left here.&W~
+Flags    inventory~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 3 5 20 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3410
+Keywords large key two headed wolf metal~
+Type     key~
+Short    &Oa metal key depicting a two headed wolf&w~
+Long     &OA large metal key depicting a two headed wolf has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3411
+Keywords glaive rusty looking~
+Type     weapon~
+Short    a rusty looking glaive~
+Long     A glaive has been left here.~
+Flags    inventory heavy~
+WFlags   take twohand~
+Values   12 1 10 1 17 0
+Values2  0 2
+Stats    6 20 2 1 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3412
+Keywords mace~
+Type     weapon~
+Short    a mace~
+Long     A mace has been left here.~
+Flags    inventory~
+WFlags   take onehand~
+Values   12 1 6 2 8 0
+Values2  0 2
+Stats    4 5 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3413
+Keywords two headed wolf emblem peg stone~
+Type     rune~
+Short    &Ya stone peg with a two headed wolf emblem&w~
+Long     &YA stone peg with the emblem of a two headed wolf has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate peg~
+Comlist   if investigation($n) >= 14
+mea $n This peg looks like it could be used to open something...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3414
+Keywords helm shaped wolf metal~
+Type     armor~
+Short    &wa metal helm shaped like a wolf's head&w~
+Long     &wA metal helm shaped like a wolf's head has been left here.&w~
+Flags    magic~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  10 2
+Stats    1 10 20 90 1 1 0
+Affect       -1 -1 1 23 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3415
+Keywords breastplate armor etched wolves~
+Type     armor~
+Short    &wbreastplate armor etched with wolves&w~
+Long     &wSome breastplate armor etched with wolves has been left here.&w~
+Flags    magic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  10 2
+Stats    20 200 40 1 20 1 0
+Affect       -1 -1 1 22 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3416
+Keywords pair gauntlets metal shaped wolf paws~
+Type     armor~
+Short    &wgauntlets shaped like wolf paws&w~
+Long     &wA pair of gauntlets shaped like the paws of a wolf are here.&w~
+Flags    magic~
+WFlags   take hands~
+Values   0 0 0 0 0 0
+Values2  10 2
+Stats    1 90 20 0 9 1 0
+Affect       -1 -1 1 20 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3417
+Keywords visor metal wolf fangs~
+Type     armor~
+Short    &wa metal visor crafted to resemble wolf fangs~
+Long     &wA metal visor crafted to depict the fangs of a wolf has been left here.&w~
+Flags    magic~
+WFlags   take face~
+Values   0 0 0 0 0 0
+Values2  10 2
+Stats    1 50 100 0 5 1 0
+Affect       -1 -1 1 24 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3418
+Keywords greaves etched wolves metal~
+Type     armor~
+Short    &wmetal greaves etched with wolves&w~
+Long     &wA pair of metal greaves etched with wolves on them have been left here.&w~
+Flags    magic~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  10 2
+Stats    1 75 80 0 7 1 0
+Affect       -1 -1 1 21 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3419
+Keywords metal sabatons shaped wolf paws~
+Type     armor~
+Short    &wa pair of sabatons shaped like wolf paws&w~
+Long     &wA pair of metal sabatons shaped like the paws of a wolf have been left here.~
+Flags    magic~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  10 2
+Stats    1 60 60 0 6 1 0
+Affect       -1 -1 15 14 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3420
+Keywords belt wolf silvery hide tassets~
+Type     armor~
+Short    &wa belt with silvery wolf hide tassets~
+Long     &wA belt with silvery wolf hide tassets has been left here.&w~
+Flags    magic~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  5 2
+Stats    1 150 90 0 15 1 0
+Affect       -1 -1 1 78 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3421
+Keywords wand dark red wooden~
+Type     wand~
+Short    &ra dark red wooden wand&w~
+Long     &rA wand made from dark red wood has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   25 5 5 -1 0 0
+Values2  0 2
+Stats    1 25 0 0 2 1 0
+Spells   'darkvision'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3422
+Keywords wand scorched wood~
+Type     wand~
+Short    &za wand of scorched wood&w~
+Long     &zA wand made from scorched wood has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   15 3 3 -1 0 0
+Values2  0 2
+Stats    1 100 0 0 10 1 0
+Spells   'fireball'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3423
+Keywords bottle shaped wolf potion~
+Type     potion~
+Short    &Wa potion bottle shaped like a wolf&w~
+Long     &WA potion bottle shaped like a wolf has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 60 0 0 6 1 0
+Spells   'cure serious' 'cure serious' 'cure serious'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3424
+Keywords collapsed wall large pile rubble~
+Type     trash~
+Short    a large pile of rubble~
+Long     A large pile of rubble is here created from part of the wall collapsing.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    rubble~
+ExDesc       The wall has collapsed here and there are several spots that look
+like they would hold while someone were to climb over the rubble...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3425
+Keywords humanoid skeleton~
+Type     trash~
+Short    &Wa humanoid skeleton&w~
+Long     &WA humanoid skeleton is here partially covered by the straw of the dungeon cell.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    skeleton~
+ExDesc       &WThis skeleton is not very big and seems to have once been a young woman.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate skeleton~
+Comlist   if investigation($n) >= 14
+mea $n You see various claw and chew marks on the skeleton's bones.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3426
+Keywords destroyed journal small~
+Type     book~
+Short    &Oa small destroyed journal&w~
+Long     &OA small destroyed journal has been left here.&w~
+Flags    buried~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#EXDESC
+ExDescKey    journal~
+ExDesc       Much of the journal has been destroyed by fire, being torn somehow, 
+and there apparently is only one PAGE that can be read clearly.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    page~
+ExDesc       You see some faint writing that says:
+ 
+"The howling outside our gates has grown more and more over the last
+couple of days. The hunting party that was dispatched on a regular
+trip have not returned either and we fear the worse. Rations are low
+as the local farmers that rent from us have not come either. I do
+not blame them as the howling would deter me if I heard it. Our
+only hope is that someone sends help or happens upon us..."
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3449
+Keywords gold ring wolf two heads ruby eyes googoo11~
+Type     armor~
+Short    &Ya ring of a two-headed wolf with &Rruby eyes&w~
+Long     &YA gold ring of a two-headed wolf with rubies for eyes has been left here.&w~
+Flags    magic~
+WFlags   take finger~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 20 0 0 2 1 0
+Affect       -1 -1 2 23 0
+Affect       -1 -1 2 24 0
+#EXDESC
+ExDescKey    ring~
+ExDesc       &YThis ring is quite heavy looking and is made from solid gold. It has
+been cast so that it depicts a wolf with two heads. The eyes have been
+set with four shining rubies.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate ring~
+Comlist   if investigation($n) >= 18
+mea $n You find a faint inscription inside the ring that says:
+mea $n "May the wolf lead the pack with clarity."
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#ROOM
+Vnum     3400
+Name     A Forest Path~
+Sector   forest~
+Desc     This is end of a small forest path, which has ended near the gates of
+an old looking fortress. A small path leads to the east and west along
+the walls of the fortress. To the south the path continues till it exits
+the forest.
+~
+#EXIT
+Direction north~
+ToRoom    3401
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3415
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3449
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3414
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3401
+Name     Before a Gatehouse~
+Sector   city~
+Desc     The forest path ends abruptly before the gates of an old fortress. The 
+gates are incredibly old and have the emblem of a two headed wolf engraved
+on them. The walls of the fortress are made from old fieldstone and
+have a jagged looking texture. Moss and vines have begun to grow along
+the walls and are a sign that the maintenance of this fortress has not
+been done in some time.
+~
+#EXIT
+Direction north~
+ToRoom    3402
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3400
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3402
+Name     A Courtyard~
+Sector   city~
+Desc     This is a small courtyard within the fortress that is overgrown with
+weeds and other vegetation that would normally be cleared with regular
+maintenance. Some of the structure have been destroyed by fire and
+lay in a charred pile where it once stood. A large manor house can be
+seen towards the far north end of the courtyard.
+~
+#EXIT
+Direction north~
+ToRoom    3420
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3419
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3401
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3418
+#ENDEXIT
+
+Reset M 0 3400 5 3402
+  Reset E 0 3401 1 28
+Reset M 0 3400 5 3402
+  Reset E 0 3401 1 28
+Reset M 0 3400 5 3402
+  Reset E 0 3401 1 28
+Reset M 0 3400 5 3402
+  Reset E 0 3401 1 28
+Reset M 0 3400 5 3402
+  Reset E 0 3401 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3403
+Name     Along the Battlements~
+Sector   city~
+Stats    0 0 0 0 15 0
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+Perdesc  &RThe tattered remains of a rope ladder are here leading down...
+~
+#EXIT
+Direction east~
+ToRoom    3408
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3404
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3418
+Flags     climb hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3404
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction east~
+ToRoom    3403
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3405
+#ENDEXIT
+
+Reset M 0 3401 4 3404
+  Reset E 0 3402 1 28
+  Reset E 0 3404 1 22
+    Reset P 0 3403 20 3404
+#ENDROOM
+
+#ROOM
+Vnum     3405
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction east~
+ToRoom    3404
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3406
+#ENDEXIT
+
+Reset M 0 3401 5 3405
+  Reset E 0 3402 1 28
+  Reset E 0 3404 1 22
+    Reset P 0 3403 20 3404
+#ENDROOM
+
+#ROOM
+Vnum     3406
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction east~
+ToRoom    3405
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3407
+#ENDEXIT
+
+Reset M 0 3401 6 3406
+  Reset E 0 3402 1 28
+  Reset E 0 3404 1 22
+    Reset P 0 3403 20 3404
+#ENDROOM
+
+#ROOM
+Vnum     3407
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction east~
+ToRoom    3406
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3408
+Name     The Upper Gatehouse~
+Sector   indoors~
+Desc     This is the battlements gatehouse which also serves as a guardhouse
+for the archers or other guards up here. This structure has several
+large slits for archers to fire from and also to spy out for any
+dangers lurking nearby. A few benches offer relief to guards needing
+a brake or to shield themselves from the elements.
+~
+#EXIT
+Direction east~
+ToRoom    3409
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3403
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3401
+Flags     secret hidden window can_look~
+#ENDEXIT
+
+Reset M 0 3402 1 3408
+  Reset E 0 3405 1 26
+  Reset E 0 3405 1 27
+#ENDROOM
+
+#ROOM
+Vnum     3409
+Name     Along the Battlements~
+Sector   city~
+Stats    0 0 0 0 15 0
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+Perdesc  &RThe tattered remains of a rope ladder are here leading down...
+~
+#EXIT
+Direction east~
+ToRoom    3410
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3408
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3419
+Flags     climb hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3410
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction east~
+ToRoom    3411
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3409
+#ENDEXIT
+
+Reset M 0 3401 2 3410
+  Reset E 0 3402 1 28
+  Reset E 0 3404 1 22
+    Reset P 0 3403 20 3404
+#ENDROOM
+
+#ROOM
+Vnum     3411
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction east~
+ToRoom    3412
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3410
+#ENDEXIT
+
+Reset M 0 3401 2 3411
+  Reset E 0 3404 1 22
+    Reset P 0 3403 1 3404
+    Reset P 0 3403 19 3404
+  Reset E 0 3402 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3412
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction east~
+ToRoom    3413
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3411
+#ENDEXIT
+
+Reset M 0 3401 3 3412
+  Reset E 0 3402 1 28
+  Reset E 0 3404 1 22
+    Reset P 0 3403 20 3404
+#ENDROOM
+
+#ROOM
+Vnum     3413
+Name     Along the Battlements~
+Sector   city~
+Desc     This is the battlements that follows along the walls of the fortress.
+It is here that archers and various guards can look out over the nearby
+forest and fields to see danger. The battlements here run to the east
+or west with a central guardhouse located over the gatehouse of the
+fortress.
+~
+#EXIT
+Direction west~
+ToRoom    3412
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3414
+Name     Along a Wall~
+Sector   forest~
+Desc     This is a small grassy path where the forest meets the walls of an
+old fortress to the north. You can see the battlements above, which
+seem to be manned by something. The trees have been cut away to allow
+those on the battlements a better view from above.
+~
+#EXIT
+Direction east~
+ToRoom    3400
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3416
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3415
+Name     Along a Wall~
+Sector   forest~
+Desc     This is a small grassy path where the forest meets the walls of an
+old fortress to the north. You can see the battlements above, which
+seem to be manned by something. The trees have been cut away to allow
+those on the battlements a better view from above.
+~
+#EXIT
+Direction east~
+ToRoom    3417
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3400
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3416
+Name     Along a Wall~
+Sector   forest~
+Desc     This is a small grassy path where the forest meets the walls of an
+old fortress to the north. You can see the battlements above, which
+seem to be manned by something. The trees have been cut away to allow
+those on the battlements a better view from above.
+~
+#EXIT
+Direction east~
+ToRoom    3414
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3417
+Name     Along a Wall~
+Sector   forest~
+Desc     This is a small grassy path where the forest meets the walls of an
+old fortress to the north. You can see the battlements above, which
+seem to be manned by something. The trees have been cut away to allow
+those on the battlements a better view from above.
+~
+#EXIT
+Direction west~
+ToRoom    3415
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3418
+Name     A Courtyard~
+Sector   city~
+Stats    0 0 0 0 15 0
+Desc     This is a small courtyard within the fortress that is overgrown with
+weeds and other vegetation that would normally be cleared with regular
+maintenance. Some of the structure have been destroyed by fire and
+lay in a charred pile where it once stood. A large manor house can be
+seen towards the far north end of the courtyard.
+~
+Perdesc  &RThe tattered remains of a rope ladder can be seen nearby leading up...
+~
+#EXIT
+Direction north~
+ToRoom    3422
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3402
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3403
+Flags     climb hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3419
+Name     A Courtyard~
+Sector   city~
+Stats    0 0 0 0 15 0
+Desc     This is a small courtyard within the fortress that is overgrown with
+weeds and other vegetation that would normally be cleared with regular
+maintenance. Some of the structure have been destroyed by fire and
+lay in a charred pile where it once stood. A large manor house can be
+seen towards the far north end of the courtyard.
+~
+Perdesc  &RThe tattered remains of a rope ladder can be seen nearby leading up...
+~
+#EXIT
+Direction north~
+ToRoom    3421
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3402
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3409
+Flags     climb hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3420
+Name     A Courtyard~
+Sector   city~
+Desc     This is the center of a small courtyard within the fortress that is
+overgrown with weeds and other vegetation that would normally be cleared
+with regular maintenance. An old stone fountain in need of repair is
+located here and the water inside appears to be very dirty. To the north
+is a large manor house while a stone structure can be found towards
+the west.
+~
+#EXIT
+Direction north~
+ToRoom    3423
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3421
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3402
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3422
+#ENDEXIT
+
+Reset O 0 3400 1 3420
+#ENDROOM
+
+#ROOM
+Vnum     3421
+Name     A Courtyard~
+Sector   city~
+Desc     This is a small courtyard within the fortress that is overgrown with
+weeds and other vegetation that would normally be cleared with regular
+maintenance. The remnants of a small interior garden can be seen to the
+east of here while a large manor house is located at the northern end
+of the courtyard.
+~
+#EXIT
+Direction north~
+ToRoom    3424
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3426
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3419
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3420
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3422
+Name     A Courtyard~
+Sector   city~
+Desc     This is a small courtyard within the fortress that is overgrown with
+weeds and other vegetation that would normally be cleared with regular
+maintenance. A large stone structure can be seen to the west of here
+while a large manor house is located at the northern end of the
+courtyard.
+~
+#EXIT
+Direction north~
+ToRoom    3425
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3420
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3418
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3438
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3423
+Name     A Courtyard~
+Sector   city~
+Desc     This is the end of the courtyard that ends at the entrance of the large
+manor house of the fortress. The manor is made from the same fieldstone
+as the walls of the fortress. Above the large main door is the emblem
+of a two headed wolf carved into a stone plaque. Many of the windows of
+the house have been smashed and broken during some sort of incident.
+~
+#EXIT
+Direction north~
+ToRoom    3427
+Key       3410
+Keywords  'large wooden door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3424
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3420
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3425
+#ENDEXIT
+
+Reset M 0 3406 2 3423
+  Reset E 0 3401 1 28
+  Reset G 0 3410 1
+Reset M 0 3406 2 3423
+  Reset E 0 3401 1 28
+Reset D 0 3423 0 2
+#ENDROOM
+
+#ROOM
+Vnum     3424
+Name     A Courtyard~
+Sector   city~
+Desc     This is the edge of the courtyard that borders along the walls of the
+fortress and the manor house located to the west of here. Remnants of
+a wooden structure can be found here, which was destroyed by fire. Some
+of the windows of the manor house have been destroyed and from here one
+can see that the inside of the manor is quite destroyed as well.
+~
+#EXIT
+Direction south~
+ToRoom    3421
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3423
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3425
+Name     A Courtyard~
+Sector   city~
+Desc     This is the edge of the courtyard that borders along the walls of the
+fortress and the manor house located to the east of here. Remnants of
+a wooden structure can be found here, which was destroyed by fire. Some
+of the windows of the manor house have been destroyed and from here one
+can see that the inside of the manor is quite destroyed as well.
+~
+#EXIT
+Direction east~
+ToRoom    3423
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3422
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3426
+Name     Remnants of a Garden~
+Sector   field~
+Stats    0 0 0 0 13 0
+Desc     The garden here has been reduced to patches of burnt ground or weeds
+from lack of daily tending. There are some wooden stakes here that
+were used to burn something. Pieces of paper from books and other
+materials can be found scattered throughout the gardens. There are
+a few crops from a previous season that have withered and left vegetables
+covered in bugs and mold. 
+~
+Perdesc  &OThe earth seems to have been disturbed here at some point.
+~
+#EXIT
+Direction west~
+ToRoom    3421
+#ENDEXIT
+
+Reset M 0 3409 1 3426
+  Reset E 0 3406 1 26
+Reset O 0 3426 1 3426
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate garden~
+Comlist   if investigation($n) >= 16
+mea $n You see a few books that are half buried here in the garden.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate stakes~
+Comlist   if investigation($n) >= 16
+mea $n You discover hair and other things that would suggest that people
+mea $n were burned here while tied to the stakes. 
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3427
+Name     A Hallway~
+Sector   indoors~
+Desc     This is a large hallway in the manor house with the doorway located
+to the south of here. To the north is a large great hall where guests
+would be taken to meet with the noble and his family. The hallway 
+continues to the east and west from here with the eastern portion of
+the hallway being much longer. The decor and furnishings of the manor
+have been either destroyed or completely ruined. Paintings are slashed
+or burned and parts of the walls have collapsed slightly.
+~
+#EXIT
+Direction north~
+ToRoom    3430
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3428
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3423
+Key       3410
+Keywords  'large wooden door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3429
+#ENDEXIT
+
+Reset M 0 3400 22 3427
+  Reset E 0 3401 1 28
+Reset M 0 3400 22 3427
+  Reset E 0 3401 1 28
+Reset M 0 3400 22 3427
+  Reset E 0 3401 1 28
+Reset M 0 3400 22 3427
+  Reset E 0 3401 1 28
+Reset D 0 3427 2 2
+#ENDROOM
+
+#ROOM
+Vnum     3428
+Name     A Hallway~
+Sector   indoors~
+Desc     The main hallway of the manor continues here to the east and west. Pieces
+of glass from windows that have been shattered can be found on the 
+floor here. To the nearby east is a large staircase that leads up to
+the second floor of the manor. The hallway continues to the west where
+the entrance and great hall are located.
+~
+#EXIT
+Direction east~
+ToRoom    3431
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3427
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3429
+Name     A Hallway~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 15 0
+Desc     This is the short end of the main hallway of the manor house. There is
+not much here besides a stone plaque of a wolf hung on the center of the
+western wall. In the center of the plaque is an odd small hole that does
+not seem to have been caused by damage. A few small tables have been
+smashed here and there is wooden pieces all over.
+~
+Perdesc  &wThere is an odd hole in the center of a hanging plaque here.&w
+~
+#EXIT
+Direction east~
+ToRoom    3427
+#ENDEXIT
+
+#EXDESC
+ExDescKey    hole~
+ExDesc       The hole is small and centered perfectly on the stone plaque on the
+wall. The stone is quite exquisite and polished beautifully.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+mea $n &BYou sense a faint trace of magic in this area...&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p insertobject~
+Comlist   if wearingvnum($n) == 3413
+if hasqbit($n) != 3404
+mea $n You push the peg into the hole and hear a click noise before the
+mea $n world around you becomes blurry...
+mpechoaround $n $n pushes something into a hole in the wall and vanishes!
+mpat 3448 mpoload 3449 1
+mpat 3448 mpgift 3414 3420
+mpat 3448 mpgift 3414 3420
+mpqset $n 3404
+mptransfer $n 3448
+else
+mea $n Nothing happens when the peg is inserted...
+endif
+else
+mea $n Perhaps you should be holding the object to be inserted?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate hole~
+Comlist   if investigation($n) >= 16
+mea $n It appears that something could be used like a key with this
+mea $n hole in the wall. Perhaps if you find the right item you could
+mea $n INSERTOBJECT into the hole?
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3430
+Name     A Destroyed Great Hall~
+Sector   indoors~
+Desc     The hall here is in complete disarray with a good majority of the 
+furniture being destroyed. The remnants of a large fire can be seen
+in the middle of the room where much of the furniture met their
+demise. A large crest of a two headed wolf hangs above a large
+fieldstone fireplace, which is empty and cold looking. All of the
+stained glass windows have been destroyed, which robs this room of
+its former beauty.
+~
+#EXIT
+Direction south~
+ToRoom    3427
+#ENDEXIT
+
+Reset M 0 3409 2 3430
+  Reset E 0 3406 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3431
+Name     A Hallway~
+Sector   indoors~
+Desc     The main hallway of the manor ends here at the base of a large staircase
+that leads up to the second flood. The hallway continues back to the 
+west where it eventually meets the front entry where the great hall is
+located. A table that once had many candles on it has been tipped over
+here and the crushed remains of candles can be found all over. Some of
+the melted wax has cooled and there are imprints of feet emblazoned
+within the wax.
+~
+#EXIT
+Direction west~
+ToRoom    3428
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3432
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3432
+Name     A Second Floor Hallway~
+Sector   indoors~
+Desc     This is a small hallway on the second floor of the manor house
+located within a small fortress. The furnishings on this second floor
+are not quite as ruined as the first floor, but they are far from the
+original luxury status they once held. Some of the walls here have
+been scorched with fire and there are blood stains on the walls as
+well. The staircase leading back down to the first floor is located here.
+~
+#EXIT
+Direction west~
+ToRoom    3433
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3431
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3433
+Name     A Second Floor Hallway~
+Sector   indoors~
+Desc     This is a small hallway on the second floor of the manor house
+located within a small fortress. The furnishings on this second floor
+are not quite as ruined as the first floor, but they are far from the
+original luxury status they once held. Some of the walls here have
+been scorched with fire and there are blood stains on the walls as
+well. A small bedroom can be seen to the south of here. Its doors have
+been completely ripped off their hinges and tossed on the floor.
+~
+#EXIT
+Direction east~
+ToRoom    3432
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3437
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3434
+#ENDEXIT
+
+Reset M 0 3400 21 3433
+  Reset E 0 3401 1 28
+Reset M 0 3400 21 3433
+  Reset E 0 3401 1 28
+Reset M 0 3400 21 3433
+  Reset E 0 3401 1 28
+Reset M 0 3400 21 3433
+  Reset E 0 3401 1 28
+Reset M 0 3400 21 3433
+  Reset E 0 3401 1 28
+Reset M 0 3400 21 3433
+  Reset E 0 3401 1 28
+Reset M 0 3400 21 3433
+  Reset E 0 3401 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3434
+Name     A Second Floor Hallway~
+Sector   indoors~
+Desc     This is a small hallway on the second floor of the manor house
+located within a small fortress. The furnishings on this second floor
+are not quite as ruined as the first floor, but they are far from the
+original luxury status they once held. Some of the walls here have
+been scorched with fire and there are blood stains on the walls as
+well. A large bedroom can be seen to the north of here. Its doors have
+been smashed open and wooden chunks lay strewn all over the floor.
+~
+#EXIT
+Direction north~
+ToRoom    3436
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3433
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3435
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3435
+Name     A Second Floor Hallway~
+Sector   indoors~
+Desc     This is a small hallway on the second floor of the manor house
+located within a small fortress. The furnishings on this second floor
+are not quite as ruined as the first floor, but they are far from the
+original luxury status they once held. Some of the walls here have
+been scorched with fire and there are blood stains on the walls as
+well.
+~
+#EXIT
+Direction east~
+ToRoom    3434
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3436
+Name     A Large Bedroom~
+Sector   indoors~
+Flags    nomob~
+Desc     The luxury of this room has been maintained despite the state of the
+rest of the manor house. There is a large blood stain on the center of
+a tapestry rug before a large feather bed. The fireplace in this bedroom
+has been maintained with a healthy fire for whoever is still using this
+room. A painting on the northern wall has been clawed several times till
+the identity of the portrait lies in pieces of painted canvas on the
+floor. 
+~
+#EXIT
+Direction south~
+ToRoom    3434
+#ENDEXIT
+
+Reset M 0 3407 1 3436
+  Reset E 0 3411 1 28
+Reset M 0 3408 1 3436
+  Reset E 0 3412 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3437
+Name     A Bedroom~
+Sector   indoors~
+Desc     There is blood stains all over this bedroom from the walls to the torn
+up feather bed. It appears that a massive slaughter occurred in this 
+very room and the blood poured from the carnage. The furniture that 
+has not been completely destroyed has blood stains and deep gouges
+from claws on them. The window facing the courtyard has been blown
+open and glass lies on the floor underneath it.
+~
+#EXIT
+Direction north~
+ToRoom    3433
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3438
+Name     A Destroyed Guardhouse~
+Sector   indoors~
+Desc     This is what remains of the old guard house of the fortress. Many of
+the interior furnishings have been destroyed or burned away completely.
+A portion of the walls of the guardhouse have collapsed, which blocks
+the hallway to the south. A painting of an elderly man can be seen in
+the corner of the room with deep slashes running through it.
+~
+#EXIT
+Direction east~
+ToRoom    3422
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 3424 1 3438
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p climbover~
+Comlist   if acrobatics($n) >= 15
+mea $n You manage to climb over the rubble and reach the other side.
+mpechoaround $n $n starts climbing over the rubble to reach the other side.
+mptransfer $n 3439
+mpat 3439 mpechoaround $n $n arrives from the north by climbing over the rubble.
+else
+mea $n You fail to climb over the rubble.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rubble~
+Comlist   if investigation($n) >= 14
+mea $n While the rubble is quite high perhaps you can CLIMBOVER to get
+mea $n to the other side?
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3439
+Name     Inside a Destroyed Guardhouse~
+Sector   indoors~
+Desc     This is what remains of the old guardhouse of the fortress. Many of the
+interior furnishings have been destroyed or burned away completely. A
+portion of the walls of the guardhouse have collapsed, which blocks the
+hallway to the north where the entrance can be seen. A staircase is here
+and leads down into complete darkness.
+~
+#EXIT
+Direction down~
+ToRoom    3440
+#ENDEXIT
+
+Reset M 0 3400 22 3439
+  Reset E 0 3401 1 28
+Reset M 0 3400 22 3439
+  Reset E 0 3401 1 28
+Reset O 0 3424 1 3439
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p climbover~
+Comlist   if acrobatics($n) >= 15
+mea $n You manage to climb over the rubble and reach the other side.
+mpechoaround $n $n starts climbing over the rubble to reach the other side.
+mptransfer $n 3438
+mpat 3438 mpecharound $n $n arrives from the south by climbing over the rubble.
+else
+mea $n You fail to climb over the rubble.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rubble~
+Comlist   if investigation($n) >= 14
+mea $n While the rubble is quite high perhaps you can CLIMBOVER to get
+mea $n to the other side?
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3440
+Name     A Stone Staircase~
+Sector   indoors~
+Flags    dark~
+Desc     The staircase here is very dark and there are spots on the wall where
+torches could be placed. The stairs head down towards somewhere below
+in a spiral style. The stairs themselves are wide set and made of the
+same fieldstones as the walls of the fortress.
+~
+#EXIT
+Direction up~
+ToRoom    3439
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3441
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3441
+Name     An Underground Tunnel~
+Sector   indoors~
+Flags    dark~
+Desc     This is a large and cavern like space where the fortress once held
+prisoners. It is very dark down here and there are spots of the walls
+for torches to be placed to help illuminate the area. The tunnel leads
+towards the north and there are several rooms located off of the tunnel,
+which were used for various means.
+~
+#EXIT
+Direction north~
+ToRoom    3442
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3440
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3400 9 3441
+  Reset E 0 3401 1 28
+Reset M 0 3400 9 3441
+  Reset E 0 3401 1 28
+Reset M 0 3400 9 3441
+  Reset E 0 3401 1 28
+Reset M 0 3400 9 3441
+  Reset E 0 3401 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3442
+Name     An Underground Tunnel~
+Sector   indoors~
+Flags    dark~
+Desc     This is a large and cavern like space where the fortress once held
+prisoners. It is very dark down here and there are spots of the walls
+for torches to be placed to help illuminate the area. The tunnel leads
+towards the north and there are several rooms located off of the tunnel,
+which were used for various means. There is a large room located to the
+west of here, which has an active torch lit inside.
+~
+#EXIT
+Direction north~
+ToRoom    3443
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3441
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3445
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 3442 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3443
+Name     An Underground Tunnel~
+Sector   indoors~
+Flags    dark~
+Desc     This is a large and cavern like space where the fortress once held
+prisoners. It is very dark down here and there are spots of the walls
+for torches to be placed to help illuminate the area. The tunnel leads
+towards the north and there are several rooms located off of the tunnel,
+which were used for various means. There are two dungeon cells located
+to the right and left of this cavern tunnel while the tunnel seems to
+ends towards the north.
+~
+#EXIT
+Direction north~
+ToRoom    3444
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3447
+Key       3408
+Keywords  'dungeon cell door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3442
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3446
+Key       3408
+Keywords  'dungeon cell door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 0 3443 1 2
+Reset D 0 3443 3 2
+#ENDROOM
+
+#ROOM
+Vnum     3444
+Name     An Underground Tunnel~
+Sector   indoors~
+Flags    dark~
+Desc     This is the end of the dungeon cavern, which is located underneath the
+fortress and guardhouse. It is very dark down here and there are a few
+spots for torches to be placed on the wall. There are the remnants of
+an old wooden table here, which has been burned and destroyed. 
+~
+#EXIT
+Direction south~
+ToRoom    3443
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3445
+Name     A Torture Chamber~
+Sector   indoors~
+Desc     This room is clearly used for torture purposes as the walls of the 
+room are covered in various sharp implements and there are several
+tables with chains or ropes to restrain someone during a torture
+session. A wolf's head has been mounted on a wooden plaque above
+the doorway to this torture room. The scent of dust and blood is very
+strong in this room. A torch has been placed on the wall to provide
+light to whoever is using this room lately.
+~
+#EXIT
+Direction east~
+ToRoom    3442
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3405 1 3445
+  Reset E 0 3408 1 24
+  Reset E 0 3405 1 26
+  Reset E 0 3405 1 27
+  Reset E 0 3409 1 13
+Reset D 0 3445 1 1
+#ENDROOM
+
+#ROOM
+Vnum     3446
+Name     A Dungeon Cell~
+Sector   indoors~
+Flags    dark~
+Desc     The floor of this dungeon cell is covered in straw that the occasional
+rodent climbs out of. There is no window in this cell, which renders it
+very dark. The straw has a rather large pile in one of the far corners
+of the cell. There are chains on the wall, which were once used to
+restain a prisoner.
+~
+#EXIT
+Direction east~
+ToRoom    3443
+Key       3408
+Keywords  'dungeon cell door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 0 3446 1 2
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate straw~
+Comlist   if ovnumroom(3425) != 1
+if investigation($n) >= 12
+mea $n You dig through the straw and discover a skeleton!
+mpechoaround $n $n digs around the straw and uncovers a skeleton.
+mpoload 3425 1
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3447
+Name     A Dungeon Cell~
+Sector   indoors~
+Flags    nomob~
+Desc     The floor of this dungeon cell is covered in straw and has a destroyed
+wooden bench against the northern wall. There is a window on the eastern
+wall, but it is heavily barred to deter escaping. A bucket used for water
+has been dumped and lies on the floor. The southern wall has various
+chains and ropes to hold a prisoner still.
+~
+#EXIT
+Direction west~
+ToRoom    3443
+Key       3408
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 0 3404 1 3447
+Reset D 0 3447 3 2
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p loosenrope~
+Comlist   if hasqbit($n) == 3402
+if sleight($n) >= 15
+mea $n You manage to loosen the ropes and the young man slips free.
+mpechoaround $n $n manages to get the young man free of his bonds.
+mpforce bard11 sayto $n T-t-thank you! I thought all was lost until you!
+mpforce bard11 sayto $n I know a way out and I will use it now to escape.
+mpsleep 3
+mpforce bard11 sayto $n One day I will f-find you again and will repay you!
+mpsleep 3
+mpadvance $n 450
+mpqset $n 3402
+mpqset $n 3403
+mpecho &zThe young man walks to the doorway and peeks before slipping away!
+mptransfer bard11 2599
+else
+mea $n You fail to loosen the rope.
+endif
+else
+mea $n You manage to loosen the ropes and the young man slips away quickly!
+mptransfer bard11 2599
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rope~
+Comlist   if investigation($n) >= 15
+mea $n You find that the rope has loosened a bit over time, but the
+mea $n young man is too tired to wiggle free. Perhaps you can help
+mea $n him by LOOSENROPE?
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate man~
+Comlist   if investigation($n) >= 12
+mea $n You see thick rope around the hands of the young man, which keeps
+mea $n him from escaping or resting.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3448
+Name     A Secret Treasury~
+Sector   indoors~
+Desc     This appears to be the one location that has not been touched by looters
+or those that destroyed the majority of the fortress. The walls are covered
+in paintings or mounted heads from various hunting trips. There are tables
+covered with soft linens table cloths that are embroidered with wolves. A 
+large statue of a hunter battling a wolf can be see against the western 
+wall of this room. There is a small staircase on the east wall leading up
+to an unknown location.
+~
+#EXIT
+Direction up~
+ToRoom    3429
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3449
+Name     A Forest Path~
+Sector   forest~
+Flags    nomob~
+Desc     This is a small clearing that a forest path intersects where a small
+camp has been erected. A small fire pit has been erected here along
+with a tent and other materials needed for camping. To the north the
+path continues and there appears to be a structure near there. 
+~
+#EXIT
+Direction north~
+ToRoom    3400
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     overland~
+MapX      444
+MapY      796
+#ENDEXIT
+
+Reset M 0 3403 1 3449
+  Reset E 0 3406 1 26
+Reset O 0 3407 1 3449
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate woman~
+Comlist   if mobinroom(3403) == 1
+if investigation($n) >= 14
+mea $n You notice a pin on her cloak depicting a wolf with two heads.
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

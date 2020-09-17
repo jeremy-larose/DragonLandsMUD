@@ -1,0 +1,155 @@
+#PLAYER
+Version      5
+Name         Jerekai~
+Sex          1
+Class        3
+Multiclass 3 32
+Race         0
+Adjective    an ordinary male human~
+Age          0 28 4 677
+Languages    1 1
+Level        32
+Played       4536
+Room         1382
+HpManaMove   29481 30000 100 100 340 340
+ClassValues  10 10
+Gold         0
+Silver       0
+Copper       0
+Exp          0
+Height          59
+Weight          141
+Act          570426952
+Position     113
+Style     2
+Practice     31
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    0
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 90
+Speechcolor  6
+Mentalstate  -40
+Password     4a61f7541578d5a341d52753f48da1ffdc1cc537150734f59996b35dcd6e7448~
+Title         the Not set.~
+Flags        32768
+PKills       0
+PDeaths      0
+MKills       0
+MDeaths      0
+IllegalPK    0
+Timezone     -1
+AttrPerm     27 11 13 15 15 9 6
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Condition    0 30 0 42
+Background    0
+Site         68.56.102.227
+Tongue       95 'abyssal'
+Skill        95 'actionsurge'
+Tongue       95 'aquan'
+Skill        95 'archery style'
+Tongue       95 'auran'
+Weapon       95 'axes'
+Skill        95 'bash'
+Weapon       95 'blowguns'
+Weapon       95 'bows'
+Tongue       95 'celestial'
+Skill        95 'cleave'
+Skill        95 'climb'
+Weapon       95 'clubs'
+Tongue       95 'common'
+Skill        95 'cook'
+Weapon       95 'crossbows'
+Weapon       95 'daggers'
+Weapon       95 'darts'
+Skill        95 'dash'
+Tongue       95 'deep speech'
+Skill        95 'defense style'
+Skill        95 'dig'
+Skill        95 'disarm'
+Skill        95 'dodge'
+Skill        95 'doorbash'
+Tongue       95 'draconic'
+Skill        95 'drag'
+Skill        95 'dual wield'
+Skill        95 'dueling style'
+Tongue       95 'dwarven'
+Skill        95 'elbow'
+Tongue       95 'elvish'
+Skill        95 'forage'
+Skill        95 'fourth attack'
+Tongue       95 'giant'
+Tongue       95 'gnomish'
+Tongue       95 'goblin'
+Skill        95 'grapple'
+Skill        95 'great weapon style'
+Skill        95 'grip'
+Weapon       95 'halberds'
+Tongue       95 'halfling'
+Weapon       95 'hammers'
+Skill        95 'headbutt'
+Skill        95 'hide'
+Skill        95 'holdbreath'
+Tongue       95 'ignan'
+Skill        95 'improved critical'
+Skill        95 'indomitable'
+Tongue       95 'infernal'
+Weapon       95 'javelins'
+Skill        95 'kick'
+Skill        95 'knee'
+Weapon       95 'lances'
+Skill        95 'leap'
+Weapon       95 'long swords'
+Weapon       95 'maces'
+Tongue       95 'magical'
+Skill        95 'mount'
+Weapon       95 'nets'
+Tongue       95 'orc'
+Skill        95 'parry'
+Skill        95 'pounce'
+Tongue       95 'primordial'
+Skill        95 'protection style'
+Weapon       95 'pugilism'
+Skill        95 'pummel'
+Skill        95 'punch'
+Weapon       95 'rapiers'
+Skill        95 'remarkable athlete'
+Skill        95 'rescue'
+Skill        95 'roundhouse'
+Skill        95 'scan'
+Weapon       95 'scimitars'
+Skill        95 'scribe'
+Skill        95 'search'
+Skill        95 'second attack'
+Skill        95 'second wind'
+Skill        95 'secondwind'
+Weapon       95 'short swords'
+Skill        95 'shoulder'
+Skill        95 'shove'
+Weapon       95 'sickles'
+Skill        95 'slice'
+Weapon       95 'slings'
+Weapon       95 'spears'
+Skill        95 'stabilize'
+Weapon       95 'staves'
+Skill        95 'stun'
+Tongue       95 'sylvan'
+Tongue       95 'terran'
+Skill        95 'third attack'
+Skill        95 'trip'
+Tongue       95 'troll'
+Skill        95 'two weapon style'
+Tongue       95 'undercommon'
+Weapon       95 'whips'
+Coordinates	-1 -1 -1 -1
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+End
+
+#END

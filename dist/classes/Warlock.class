@@ -1,0 +1,347 @@
+Name          Warlock~
+Class         11
+SavingStatOne 4
+SavingStatTwo 25
+SpellModStat  25
+Weapon        0
+Guild         0
+Skilladept    0
+Thac0         0
+Thac32        0
+Hpmin         1
+Hpmax         8
+Mana          0
+Expbase       1000
+Affected      0
+Resist	       0
+Suscept	    0
+CasterType    0
+Subclasses    0
+Skill 'absorb mind' 18 95 5
+Skill 'absorb vitality' 18 95 5
+Skill 'abyssal' 1 95 0
+Skill 'acid splash' 18 95 5
+Skill 'acrobatics' 1 95 0
+Skill 'animal handling' 1 95 0
+Skill 'animate dead' 14 95 4
+Skill 'aquan' 1 95 0
+Skill 'arcana' 1 95 0
+Skill 'armor of agathys' 1 95 1
+Skill 'arms of hadar' 1 95 1
+Skill 'astral projection' 34 95 9
+Skill 'athletics' 1 95 0
+Skill 'auran' 1 95 0
+Skill 'axes' 1 95 0
+Skill 'bestow curse' 10 95 3
+Skill 'bestow greater curse' 34 95 8
+Skill 'blade ward' 1 95 0
+Skill 'blight' 14 95 4
+Skill 'bows' 1 95 0
+Skill 'celestial' 1 95 0
+Skill 'charm person' 1 95 1
+Skill 'chill touch' 1 95 0
+Skill 'climb' 1 95 0
+Skill 'cloud of daggers' 6 95 2
+Skill 'clubs' 1 95 0
+Skill 'common' 1 95 0
+Skill 'cook' 1 95 0
+Skill 'create bonfire' 1 95 0
+Skill 'crossbows' 1 95 0
+Skill 'daggers' 1 95 0
+Skill 'darkvision' 6 95 2
+Skill 'darts' 1 95 0
+Skill 'dash' 1 95 0
+Skill 'deception' 1 95 0
+Skill 'deep speech' 1 95 0
+Skill 'dig' 1 95 0
+Skill 'dispel magic' 10 95 3
+Skill 'draconic' 1 95 0
+Skill 'drag' 1 95 0
+Skill 'dream' 18 95 5
+Skill 'dwarven' 1 95 0
+Skill 'eldritch blast' 1 95 0
+Skill 'elvish' 1 95 0
+Skill 'fear' 10 95 3
+Skill 'feeblemind' 30 95 8
+Skill 'finger of death' 26 95 7
+Skill 'fly' 10 95 3
+Skill 'forage' 1 95 0
+Skill 'friends' 1 95 0
+Skill 'giant' 1 95 26
+Skill 'gnomish' 1 95 0
+Skill 'goblin' 1 95 0
+Skill 'grapple' 1 95 0
+Skill 'greater shout' 30 95 8
+Skill 'halfling' 1 95 0
+Skill 'hammers' 1 95 0
+Skill 'headbutt' 1 95 0
+Skill 'hellish rebuke' 1 95 1
+Skill 'hide' 1 95 0
+Skill 'history' 1 95 0
+Skill 'hold person' 6 95 2
+Skill 'holdbreath' 1 95 0
+Skill 'horrid wilting' 30 95 8
+Skill 'ignan' 1 95 0
+Skill 'infernal' 1 95 0
+Skill 'infernal calling' 18 95 5
+Skill 'insight' 1 95 0
+Skill 'intimidation' 1 95 0
+Skill 'investigation' 1 95 0
+Skill 'investiture of flame' 22 95 6
+Skill 'investiture of ice' 22 95 6
+Skill 'investiture of stone' 22 95 6
+Skill 'investiture of wind' 22 95 6
+Skill 'invisibility' 6 95 2
+Skill 'javelins' 1 95 0
+Skill 'kick' 1 95 0
+Skill 'kobold keen' 18 95 5
+Skill 'life transference' 10 95 3
+Skill 'lightning lure' 1 95 0
+Skill 'maces' 1 95 0
+Skill 'magic jar' 26 95 6
+Skill 'medicine' 1 95 0
+Skill 'mount' 1 95 0
+Skill 'nature' 1 95 0
+Skill 'orc' 1 95 0
+Skill 'perception' 1 95 0
+Skill 'performance' 1 95 0
+Skill 'persuasion' 1 95 0
+Skill 'poison spray' 1 95 0
+Skill 'power word stun' 30 95 8
+Skill 'primordial' 1 95 0
+Skill 'psychic scream' 34 95 9
+Skill 'punch' 1 95 0
+Skill 'ray of enfeeblement' 6 95 2
+Skill 'religion' 1 95 0
+Skill 'remove curse' 10 95 3
+Skill 'rescue' 1 95 0
+Skill 'scan' 1 95 0
+Skill 'scry' 18 95 5
+Skill 'search' 1 95 0
+Skill 'shout' 4 95 4
+Skill 'shove' 1 95 0
+Skill 'sickening radiance' 14 95 4
+Skill 'sickles' 1 95 0
+Skill 'sleight of hand' 1 95 0
+Skill 'slice' 1 95 0
+Skill 'slings' 1 95 0
+Skill 'sneak' 1 95 0
+Skill 'spears' 1 95 0
+Skill 'stabilize' 1 95 0
+Skill 'staves' 1 95 0
+Skill 'stealth' 1 95 0
+Skill 'summon demon' 22 95 6
+Skill 'summon greater demon' 34 95 9
+Skill 'summon lesser demon' 10 95 3
+Skill 'survival' 1 95 0
+Skill 'sword burst' 1 95 0
+Skill 'sylvan' 1 95 0
+Skill 'synaptic static' 18 95 5
+Skill 'terran' 1 95 0
+Skill 'thunderclap' 1 95 0
+Skill 'toll the dead' 1 95 0
+Skill 'troll' 1 95 0
+Skill 'trollish visage' 18 95 5
+Skill 'true seeing' 22 95 6
+Skill 'true strike' 1 95 0
+Skill 'undercommon' 1 95 0
+Skill 'vampiric touch' 10 95 3
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+(null)~
+(null)~
+End

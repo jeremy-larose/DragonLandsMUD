@@ -1,0 +1,7680 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Temos: Upper and Lower Villages~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 30025410
+ResetMsg     &CYou hear the sounds of the Temos river nearby.&w~
+Lore         &GYou see a small army of halfling lead by a stern looking chief as
+they engage a horde of trolls on a small island. The battle is bloody and the
+trolls are driven from the island. The chief walks to the center 
+of the island and plants a flag proudly as the other warriors
+cheer...&w
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2600
+Keywords   village temos guard halfling seedling leather feathers~
+Short      &ga gate guard&w~
+Long       &gA guard dressed in leather and feathers is here guarding the village entrance.&w
+~
+Desc       &gThis halfling guard is dressed in leather armor that is embellished 
+traditionally with feathers and beading. He stands guard at the
+entrance of the village awaiting people wishing to enter.
+~
+Race       lightfoot-halfing~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_hidden infrared~
+Stats1     0 20 0 0 15 0 0 1 5 0
+Stats2     4 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+sayto $n Welcome friend. You are allowed into the village of Temos.
+else
+sayto $n Only true friends are permitted to enter our village. You
+sayto $n need to earn the right to enter and our trust.
+endif
+else
+bow $n
+sayto $n Welcome home great warrior. May Shamis bless you.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+sayto $n Safe travels to you, friend.
+else
+peer $n
+sayto $n You are not allowed into our village. You need to earn the
+sayto $n right and our trust first. Begone from here.
+endif
+else
+bow $n
+sayto $n Safe travels great warrior. May Shamis bless you.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p north.~
+Comlist   if ispc($n)
+if hasqbit($n) != 2202
+mpat 2603 mer $n &OThe gate guard catches $n and leads them out.&w
+mpat 2603 mea $n &OThe gate guard catches you trying to sneak in and
+mpat 2603 mea $n &Oleads you back to just south of the village gates...&w
+mptransfer $n 2601
+mpecho &OThe guard grabs an intruder and leads them out of the village.&w
+mpat 2601 mer $n &OA guard leads $n to this spot outside of the village.
+mpat 2601 sayto $n You are not allowed into the village. Begone.
+mpsleep 2
+mpat 2601 mea $n &OThe guard returns to his post at the village gates.&w
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   yell Help! We are being attacked at the village gates! Send help!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies at the gate! Send help!!!
+dirtkick troll
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2601
+Keywords   village temos guard entry halfling seedling leather feathers~
+Short      &ga gate guard&w~
+Long       &gA guard dressed in leather and feathers is here guarding the village entrance.&w
+~
+Desc       &gThis halfling guard is dressed in leather armor that is embellished 
+traditionally with feathers and beading. He stands guard at the
+entrance of the village awaiting people wishing to enter.
+~
+Race       lightfoot-halfing~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_hidden infrared~
+Stats1     0 20 0 0 15 0 0 0 5 0
+Stats2     4 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   yell Help! We are being attacked at the village gates! Send help!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies! Send help to the village gate at once!!
+dirtkick troll
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2602
+Keywords   guard1 village lower temos guard wandering halfling seedling~
+Short      &ga village guard&w~
+Long       &gA guard dressed in leather and feathers is here watching over the village.&w
+~
+Desc       &gThis halfling guard is dressed in leather armor that is embellished 
+traditionally with feathers and beading. He wanders about the village
+looking for intruders or those that seek to cause harm.&w
+~
+Race       lightfoot-halfing~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_hidden infrared~
+Stats1     0 25 0 0 15 0 0 0 5 0
+Stats2     4 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+else
+sayto $n Halt! You are not permitted in the village of Temos! Follow
+sayto $n me and I will lead you out peacefully.
+mea $n &OThe guard leads you out of the village and heads back.
+mer $n &OThe guard leads $n out of the village.
+mptransfer $n 2600
+mpat 2600 mer $n &OA guard delivers $n to this spot before leaving.&w
+mpgoto 2665
+endif
+else
+bow $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   dirtkick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   yell Help! I am being attacked!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Send help! I've encountered a greenie in the village!!
+dirtkick troll
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2603
+Keywords   village lower temos wizard guard wandering halfling seedling robe feathers beading~
+Short      &Ca village guard&w~
+Long       &CA guard dressed in a robe with feathers and beads is here watching over the village.
+~
+Desc       &CThis halfling guard is dressed in a simple green robe that is
+embellished with feathers and beading. She wanders about the
+village looking for intruders or those that seek to cause harm.&w
+~
+Race       lightfoot-halfing~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared truesight~
+Stats1     0 30 0 0 15 0 1 0 5 0
+Stats2     4 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 16 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'firebolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpoload 1901 1
+c 'stoneskin'
+mpjunk rock
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   dirtkick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'touch of idiocy'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   yell Help! I am being attacked!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+nod $n
+else
+sayto $n Halt! You are not permitted in the village of Temos! Follow
+sayto $n me and I will lead you out peacefully.
+mea $n &CThe guard leads you out of the village and heads back.&w
+mer $n &CThe guard leads $n out of the village.&w
+mptransfer $n 2600
+mpat 2600 mer $n &CA guard delivers $n to this spot before leaving.&w
+mpgoto 2665
+endif
+else
+bow $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Help! There's a greenie in the village! Send help!!
+c 'firebolt' troll
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2604
+Keywords   river guide halfling seedling young male~
+Short      &Ba river guide&w~
+Long       &BA young halfling male is here working as a river guide.&w
+~
+Desc       &BThis young halfling man is dressed in a simple tunic and pants as
+he walks along barefoot on the docks. He manages a boat that goes
+across the river for a fee.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Speaks     common halfling~
+Speaking   halfling~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+sayto $n Hello there friend! It is only a mere 10 copper to cross
+sayto $n the Temos river with yours truly! What do you say?
+else
+peer $n
+sayto $n I cannot serve you. Please leave our village or I'll call
+sayto $n the guards.
+endif
+else
+bow $n
+sayto $n Hello great warrior. It is only 5 copper to cross the
+sayto $n Temos river with yours truly! What do you say?
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 10 copper coins.~
+Comlist   if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+sayto $n All aboard then, eh?
+emote climbs on to his boat and gets ready to sail.
+mpsleep 2
+mea $n &CYou get on the boat and the river guide sets sail across
+mea $n &Cthe Temos river. The journey is quick and you arrive
+mea $n &Cat the island that is home to Upper Temos...
+mer $n &C$n boards a small boat and sails across the river.
+mpsleep 3
+mea $n &CThe river guide waves as he takes his boat back to Lower Temos...&w
+silent mptransfer $n 2624
+mpat 2624 mer $n &CA boat arrives and drops off a passenger.&w
+else
+sayto $n Keep you money. I will not help you. Now leave.
+give 5 copper $n
+endif
+else
+shake $n 
+sayto $n No no great warrior. Your fee is only five copper coins.
+give 5 copper $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 5 copper coins.~
+Comlist   if hasqbit($n) == 2202
+if hasqbit($n) == 2223
+bow $n
+sayto $n All aboard then, eh?
+emote climbs on to his boat and gets ready to sail.
+mpsleep 2
+mea $n &CYou get on the boat and the river guide sets sail across
+mea $n &Cthe Temos River. The journey is quick and you arrive
+mea $n &Cat the island that is home to Upper Temos...
+mer $n &C$n boards a small boat and sails across the river.
+mpsleep 3
+mea $n &CThe river guide waves as he takes his boat back to Lower Temos...&w
+silent mptransfer $n 2624
+mpat 2624 mer $n &CA boat arrives and drops off a passenger.&w
+else
+sayto $n I am sorry.. That discount is reserved for our honored warriors.
+give 5 copper $n
+endif
+else
+sayto $n You dishonor our warriors! How disrespectful!
+yell Guards! We have an intruder at the docks! Come quick!!
+scowl $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+Yell There's a greenie at the docks! Send the guards!!!
+k troll
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2622
+emote arrives and begins opening up the docks for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote closes up the docks for the evening and heads home
+mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2605
+Keywords   river guide upper temos halfling seedling young male~
+Short      &Ba river guide&w~
+Long       &BA young halfling male is here working as a river guide.&w
+~
+Desc       &BThis young halfling man is dressed in a simple tunic and pants as
+he walks along barefoot on the docks. He manages a boat that goes
+across the river for a fee.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+sayto $n Hello! It is only 10 copper to cross the Temos and
+sayto $n return to Lower Temos. What do you say?
+else
+peer $n
+sayto $n I cannot serve you. How did you get over here...
+yell Guards! We have an intruder at the docks!!!
+endif
+else
+bow $n
+sayto $n Hello great warrior. It is only 5 copper to cross the
+sayto $n river and return to Lower Temos. What do you say?
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 10 copper coins.~
+Comlist   if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+sayto $n All aboard then, eh?
+emote climbs on to his boat and gets ready to sail.
+mpsleep 2
+mea $n &CYou get on the boat and the river guide sets sail across
+mea $n &Cthe Temos river. The journey is quick and you arrive
+mea $n &Cat the docks of the mainland and Lower Temos...
+mer $n $n boards a small boat and sails across the river.
+mpsleep 3
+mea $n &CThe river guide waves as he takes his boat back to Upper Temos...&w
+silent mptransfer $n 2622
+mpat 2622 mer $n &CA boat arrives and drops off a passenger.&w
+else
+sayto $n Keep you money. I will not help you. Now leave.
+give 5 copper $n
+endif
+else
+shake $n 
+sayto $n No no great warrior. Your fee is only five copper coins.
+give 5 copper $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 5 copper coins.~
+Comlist   if hasqbit($n) == 2202
+if hasqbit($n) == 2223
+bow $n
+emote climbs on to his boat and gets ready to sail.
+mpsleep 2
+mea $n &CYou get on a boat and the river guide sets sail across
+mea $n &Cthe Temos river towards the mainland and Lower Temos.
+mea $n &CYou arrive at the docks in a matter of moments...&w
+mer $n &C$n boards a small boat and sails across the river.&w
+mpsleep 3
+mea $n &CThe river guide waves as he takes his boat back to Upper Temos...&w
+silent mptransfer $n 2622
+mpat 2622 mer $n &CA boat arrives and drops off a passenger.&w
+else
+sayto $n I am sorry.. That discount is reserved for our honored warriors.
+give 5 copper $n
+endif
+else
+sayto $n You dishonor our warriors! How disrespectful!
+yell Guards! We have an intruder at the docks! Come quick!!
+scowl $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell There's a greenie at the upper docks! Send the guards!!
+k troll
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2624
+emote arrives and begins opening up the docks for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote closes up the docks for the evening and heads home
+mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2606
+Keywords   female halfling villager young woman seedling~
+Short      &ga female villager&w~
+Long       &gA female villager is here walking around completing her daily errands.&w
+~
+Desc       &gThis female villager is dressed in a simple cotton dress that is
+embellished with embroidery, beads, and a few feathers.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+Yell G-Greenie!!!! Help me!!!!!!
+mpasound &RYou hear screaming coming from nearby!&W
+Flee
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+else
+peer $n
+endif
+else
+mea $n The female villager bows her head in respect towards you.
+mer $n The female villager bows her head in respect towards $n.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2610
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2607
+Keywords   male halfling villager young man seedling~
+Short      &ga male villager&w~
+Long       &gA male villager is here heading off to work for the day.
+~
+Desc       &gThis male villager is dressed in a simple cotton top and pants. He
+wears a feathery necklace set with a stone.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yellYell Help! Im being attacked by a Greenie!!
+mpasound &RYou hear the sounds of yelling coming from nearby!&w
+flee
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+else
+peer $n
+endif
+else
+mea $n The male villager bows his head in respect towards you.
+mer $n The male villager bows his head in respect towards $n.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2617
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2608
+Keywords   girl halfling child villager seedling playing~
+Short      &Ga halfling girl&w~
+Long       &GA young halfling girl is here playing around.&w
+~
+Desc       &GThis young halfling girl is dressed in a green dress and has
+a feathery headband in her hair.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 1 0
+Stats2     1 2 1
+Stats3     1 4 0
+Stats4     0 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell G-Greenie!!!
+mpasound &RYou hear the sounds of screaming coming from nearby!&w
+flee
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+else
+giggle $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2609
+Keywords   boy halfling child villager seedling playing ball~
+Short      &Ga halfling boy&w~
+Long       &GA young halfling boy is here playing with a ball.&w
+~
+Desc       &gThis male villager is dressed in a simple cotton top and pants. He
+wears a feathery necklace set with a stone.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 1 0
+Stats2     1 3 1
+Stats3     1 4 0
+Stats4     0 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Monster! Green monster!
+mpasound &RYou hear the sounds of screaming coming from nearby!&w
+flee
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+nod $n
+else
+smirk $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2604
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2610
+Keywords   cranky old halfling man villager seedling~
+Short      &ga cranky old man&w~
+Long       &gA cranky looking old male villager is here walking around with his cane.&w
+~
+Desc       &gThis elderly male villager is dressed in a simple cotton top and
+pants. He wears a coat decorated in feathers as he walks around
+with his cane.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 2 5 0
+Stats2     1 12 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+scowl troll
+sayto troll Foul greenie!!
+mpoload 2602 1
+wield short
+k troll
+mpasound &RYou hear the sounds of yelling coming from nearby!&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2203
+if hasqbit($n) == 2202
+nod $n
+else
+tsk $n
+endif
+else
+scowl $n
+endif
+else
+scowl $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2606
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2611
+Keywords   Colt halfling bartender bar tender ooc~
+Short      &GColt&w~
+Long       &GA young halfling man is here working as a bartender.&w
+~
+Desc       &gThe halfling man before you has wild curls of raven black and fair
+skin the color of cream. His jovial looking dark brown eyes have
+a hint of mischief in them.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     500 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   wink $n
+sayto $n How are ya? What can I get ya to drink?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2612
+Keywords   female shop clerk halfling seedling~
+Short      &Pa shop clerk&w~
+Long       &PA female halfling folding new clothes is here working as a shop clerk.&w
+~
+Desc       &PThis shop clerk is dressed in a very embellished dress with lots
+of beading. Her beautiful long chestnut hair has been braided
+back with a few loose pieces to frame her face.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Speaks     halfling~
+Speaking   halfling~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+mpsleep 2
+sayto $n Hello there! How can I help you?
+else
+sayto $n Please leave.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote begins closing the store before heading home
+close s
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 2645
+emote arrives for the day and begins setting up
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Oh help!!! Greenies!!!
+emote runs upstairs and locks herself in a spare room
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2613
+Keywords   stable owner halfling man cleaning stall~
+Short      &ga stable owner&w~
+Long       &gThe stable owner is here cleaning a stall for a customer.&w
+~
+Desc       &gThe halfling man here is middle aged and working very hard for his
+customers. He has a kind looking face and is covered in dirt and
+grime.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+wave $n
+sayto $n Hello there. How can I help you today?
+else
+sayto $n I cannot help you. Please leave.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies!!!!
+emote runs away and hides from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2646
+emote stretches his arms and starts cleaning a stall
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2614
+Keywords   female halfling stablehand cleaning bridle~
+Short      &ga stablehand&w~
+Long       &gA female stablehand is here cleaning a bridle.&w
+~
+Desc       &gThis female stablehand is here cleaning a customer's bridle for them
+while she waits for a customer. She is very young, but seems very
+capable.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n How can I help you? Interested in a horse?
+else
+sayto $n I cannot help you. Go.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   mpgoto 2648
+emote arrives and begins setting up for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote cleans up and heads home for the evening
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell HELP!!!!!! Greenies!!!!
+emote runs and hides from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2615
+Keywords   dapple grey pony~
+Short      &wa dapple grey pony&w~
+Long       &wA dapple grey pony has been left here.&w
+~
+Desc       &wThis pony has a speckled looking appearance with his fur mixing
+white and various shades of grey. He has deep dark eyes that have
+a look of mischief about them.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     -450 5 1 0 10 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     1 1 1 0 0 0 6
+Attribs    15 2 11 10 13 7 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(1761) <= 0
+emote cocks his tail and grunts.
+silent mpoload 1761 1
+mposet manure timer 30
+silent drop manure
+mpsleep 9
+mpecho &OThe fresh smell of manure strikes your nose suddenly.&w
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2616
+Keywords   black bay pony~
+Short      &za black bay pony&w~
+Long       &zA black bay pony is here.&w
+~
+Desc       &zThis pony has a deep black coat except for two white socks on his
+back hooves. He has a soft white blaze on his forehead and kind
+looking eyes.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     600 6 1 0 10 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     1 1 1 0 0 0 6
+Attribs    15 2 11 10 13 7 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(1761) <= 0
+emote cocks his tail and grunts.
+silent mpoload 1761 1
+mposet manure timer 30
+silent drop manure
+mpsleep 9
+mpecho &OThe fresh smell of manure strikes your nose suddenly.&w
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2617
+Keywords   brown pony~
+Short      &Oa brown pony&w~
+Long       &OA brown pony is here.&w
+~
+Desc       &OThis pony has a coat that looks black until sunlight touches it. 
+Then it appears to be a rich brown color. Some of her points are
+black and she has serious looking eyes.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     600 2 1 0 10 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     1 1 1 0 0 0 6
+Attribs    15 2 11 10 13 7 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(1761) <= 0
+emote cocks her tail and grunts.
+silent mpoload 1761 1
+mposet manure timer 30
+silent drop manure
+mpsleep 9
+mpecho &OThe fresh smell of manure strikes your nose suddenly.&w
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2618
+Keywords   blood bay pony~
+Short      &ra blood bay pony&w~
+Long       &rA blood bay pony is here.&w
+~
+Desc       &rThis pony has a coat that is a deep blood-red color with black
+points on her legs. Her mane and tail are also a deep black, which
+makes her very striking. She has kind eyes that have a hint of
+mischief to them.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     -300 2 1 0 10 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     1 1 1 0 0 0 6
+Attribs    15 2 11 10 13 7 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(1761) <= 0
+emote cocks her tail and grunts.
+silent mpoload 1761 1
+mposet manure timer 30
+silent drop manure
+mpsleep 9
+mpecho &OThe fresh smell of manure strikes your nose suddenly.&w
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2619
+Keywords   buckskin pony~
+Short      &Ya buckskin pony&w~
+Long       &YA buckskin pony is here.&w
+~
+Desc       &YThis pony has a golden colored body, which contrasts with his
+black mane, tails, and legs. He has deep dark eyes that shine
+with warmth and kindness.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     800 4 1 0 10 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     1 1 1 0 0 0 6
+Attribs    15 2 11 10 13 7 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(1761) <= 0
+emote cocks his tail and grunts.
+silent mpoload 1761 1
+mposet manure timer 30
+silent drop manure
+mpsleep 9
+mpecho &OThe fresh smell of manure strikes your nose suddenly.&w
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2620
+Keywords   pinto pony~
+Short      &Oa p&Win&zto p&Wo&Ony&w~
+Long       &OA pin&zto pony i&Ws here.&w
+~
+Desc       &OThis pony has wild coloring with his coat consisting of large
+patches of white, black, and brown. His mane is one part white
+and then one part black while his tail is completely black. He
+has eyes that shine with mischief.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     -900 8 1 0 10 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     1 1 1 0 0 0 6
+Attribs    15 2 11 10 13 7 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(1761) <= 0
+emote cocks his tail and grunts.
+silent mpoload 1761 1
+mposet manure timer 30
+silent drop manure
+mpsleep 9
+mpecho &OThe fresh smell of manure strikes your nose suddenly.&w
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2621
+Keywords   cremello pony~
+Short      &Wa cremello pony&w~
+Long       &WA cremello pony is here.&w
+~
+Desc       &WThis pony has a coat that is such a light color of cream that it
+almost appears white at times. She has a matching light mane and tail
+while her jovial looking eyes are a light sky blue.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     1000 9 1 0 10 0 0 0 0 0
+Stats2     2 8 2
+Stats3     2 4 2
+Stats4     1 1 1 0 0 0 6
+Attribs    15 2 11 10 13 7 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       2622
+Keywords   female halfling stablehand cleaning saddle~
+Short      &ga stablehand&w~
+Long       &gA female stablehand is here cleaning a saddle.&w
+~
+Desc       &gThis female stablehand is here cleaing a new saddle in preparation for
+selling it. She seems to be in her teenage years and is very quiet
+as she works.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+sayto $n Let me know if you'd like to buy something..
+mpsleep 2
+emote returns to working on a saddle before her.
+else
+peer $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   mpgoto 2653
+emote arrives and begins setting up for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote cleans up and heads home for the evening
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies!!!!!!!!!!! AHHHH!!!!!
+emote runs and hides from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2623
+Keywords   male shop clerk halfling elder~
+Short      &ga shop clerk&w~
+Long       &gA male halfling elder is here selling boats and fishing supplies.&w
+~
+Desc       &gThis halfling elder is here selling fishing supplies and boats
+to the locals and visitors. He has white hair and thick eyebrows
+that the local kids call "wings."
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 6 20
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n Ready to set sail? I can help you find a good boat or fishing pole!
+else
+yell Guards! I have an intruder in my store!!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2650
+emote arrives for the day and begins setting up
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote begins closing down the store and heads home for the day
+close s
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Send help!!! I've encountered a greenie!!
+emote runs to a backroom and locks himself in it
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2624
+Keywords   male shop clerk halfling seedling smoking pipe~
+Short      &ga shop clerk&w~
+Long       &gA male halfling is here smoking a pipe next to a counter.&w
+~
+Desc       &gThis halfling is here selling pipes and various herbs to smoke
+with. He is not very old and appears content to smoke his pipe
+and think all day.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   30 31 32 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+emote takes a puff on his pipe and blows a smoke ring
+mpsleep 3
+sayto $n Hello there.. interested in a pipe or some herbs?
+else
+mea $n The shop clerk smokes his pipe and ignores your presence.
+mer $n The shop clerk smokes his pipe and ignores $n's presence.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2651
+emote arrives very sleepily and starts opening his store
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   emote starts cleaning up and heads home for the night
+close e
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Yikes!! Greenies!!!!
+emote runs into a store room and locks himself inside it
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2625
+Keywords   rhalia female halfling strong shop clerk store~
+Short      &RRhalia&w~
+Long       &RA strong looking female halfling is here selling weapons.&w
+~
+Desc       &RThis female halfling is here selling various weapons. She is
+rippling with muscles and strength as she stocks shelves or
+sharpens blades for customers.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   5 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+nod $n
+sayto $n Let me know if you see anything you like.
+else
+emote brandishes a blade and scowls
+sayto $n Get out.
+endif
+else
+bow $n
+sayto $n Let me know if you need anything.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2652
+emote arrives and begins firing up her forge
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote closes up her store for the evening and heads home
+close s
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies! Send the guards!!
+emote quickly heads into a safe spot and vanishes!
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2626
+Keywords   olyvi shop clerk owner halfling seedling graying grey beard~
+Short      &GOlyvi&w~
+Long       &GA male halfling with a graying beard is here oiling a suit of leather armor.&w
+~
+Desc       &GThis halfling man has a graying long beard and has tanned skin
+from years of being outside. His eyes twinkle with humor and he
+is very friendly to those he considers true friends.
+~
+Lore       &GYou see a younger Olyvi as he runs through a field of long grasses...&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n How can I help you, friend?
+else
+scowl $n
+sayto $n Get out! You do not belong here.
+open w
+mpforce $n w
+close w
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2654
+emote arrives and begins setting up the store for the day
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote closes up the store for the evening and heads home
+mpgoto 2699
+close w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Guards!!! Greenie intruders!!!
+emote runs to a safe spot and vanishes quickly from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2627
+Keywords   male shop clerk halfling young~
+Short      &ga shop clerk&w~
+Long       &gA shop clerk is here keeping the store tidy and well stocked.&w
+~
+Desc       &gThis halfling young man is dressed in simple clothing as he
+works around the store. He has short blonde colored hair and 
+bright blue eyes. 
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 6 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n Greetings. How can I help you?
+else
+sayto $n Begone! 
+open w
+mpforce $n w
+close w
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2655
+emote arrives for the day and sets up the shop
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote starts cleaning up and heads home afterwards
+close w
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies!!
+emote runs and hides from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2628
+Keywords   randia female shop clerk owner crazy looking halfling pink hair~
+Short      &PRandia&w~
+Long       &PA crazy looking female halfling with pink hair is here brewing a potion.&w
+~
+Desc       &PThis female halfling has chin length hair that is a wild shade of
+bright pink. She is wearing a long, flowing purple robe as she works
+around the shop brewing potions or helping customers.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+giggle $n
+sayto $n How can I help you?
+else
+smirk $n
+sayto $n Tsk tsk.. surprise the guards haven't found you yet.
+mpecho &PThe wizard begins a chant and waves her arms...
+mea $n &PYou open your eyes and find you are not in the store anymore.
+mer $n &P$n begins to glow and disappears slowly!&w
+mptransfer $n 2600
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   mpgoto 2656
+emote arrives in a flash and starts setting up for the day
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote cleans up the store for the night and disappears suddenly
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+gasp
+emote utters some words and slowly fades from sight!
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2629
+Keywords   female halfling baker rolling flour~
+Short      &ga baker&w~
+Long       &gA female halfling is here rolling flour and helping customers.&w
+~
+Desc       &gThis baker is dressed in a simple white outfit that is covered
+in flour and other stains from daily tasks. She has a plump
+face and a pleasant way of dealing with customers.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2657
+emote arrives and begins setting up for the day
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote cleans up the bakery and heads home for the evening
+close w
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n Welcome to my bakery. How can I help you?
+else
+frown $n
+sayto $n Please leave or I will call for the guards.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Oh help! Please!! Greenies!!!
+emote runs screaming into her back room and locks herself inside it
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2630
+Keywords   general store clerk halfling male ~
+Short      &ga general store clerk&w~
+Long       &gA halfling man is here cleaning some shelves and restocking.&w
+~
+Desc       &gThis halfling man is dressed in a green tunic and matching pants as
+he works around this store. He spends much of his time greeting with
+guests and working to keep the store clean. 
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+emote stops stocking a shelf and smiles
+mpsleep 3
+sayto $n How can I help you?
+else
+peer $n
+sayto $n You need to leave my store. Now.
+open w
+mpforce $n w
+close w
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2664
+emote arrives and begins opening the store for the day
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote cleans up the store and heads home for the evening
+close w
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Help!!!!
+emote runs upstairs and locks himself in a room
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2631
+Keywords   female halfling tailor sewing shirt seedling~
+Short      &ga tailor&w~
+Long       &gA female halfling is here sewing buttons on to a tunic.&w
+~
+Desc       &gThis tailor is wearing a dress covered in loose threads and
+other sewing scraps from her daily work. She has her thick
+chocolate brown hair tied back into a low bun as she works.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+RepairData 9 15 0 100 1 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+nod $n
+sayto $n How can I help you?
+else
+sigh $n
+sayto $n You do not belong here. Please leave or I'll call for the guards.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2661
+emote arrives for the day and begins setting up her shop
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote begins cleaning up for the night and heads home
+close e
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies!!!!!
+emote runs into a storage room and locks herself inside it
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2632
+Keywords   seedling halfing farmer market vegetables~
+Short      &ga vegetable farmer&w~
+Long       &gA vegetable farmer is here selling various crops.&w
+~
+Desc       &gThis halfling is dressed in simple clothes with a straw hat as
+he tries to sell his crops here at the market.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 0 0 10 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   19 32 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+wave $n
+sayto $n Are you hungry for a fresh tomato or maybe some onions?
+else
+yell Guards! To the market at once! We have an intruder in Temos!!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2658
+emote arrives and begins setting up for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   emote cleans up and takes down his booth before heading home
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+emote runs away and hides from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2633
+Keywords   seedling halfling farmer market fruit female~
+Short      &ga fruit farmer&w~
+Long       &gA fruit farmer is here selling various crops.&w
+~
+Desc       &gThis halfling is dressed in a simple dress with a straw hat as
+she tries to sell her crops here at the market.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 0 0 10 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n Can I interest you in some fresh fruit?
+else
+yell Help! Intruder at the market!!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2659
+emote arrives and sets up her booth for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   emote cleans up and closes her booth before heading home
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+emote runs screaming and hides safely from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2634
+Keywords   hunter seedling halfling selling game~
+Short      &ga hunter&w~
+Long       &gA hunter is here selling wild game to customers.&w
+~
+Desc       &gThis halfling is dressed in leather armor and feathers as he
+sells wild game such as rabbit to customers.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 0 0 10 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+nod $n
+else
+peer $n
+yell Guards! Intruder at the market!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2660
+emote arrives and begins setting up his booth for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   emote closes up his booth for the day and heads home
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies at the market! Run!!!
+emote runs and hides quickly from sight
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2635
+Keywords   female halfling inn innkeeper elderly~
+Short      &gan elderly innkeeper&w~
+Long       &gAn elderly female halfling is here folding some laundry at a desk.&w
+~
+Desc       &gThis elderly female halfling has white hair that is rolled into
+a very thick bun on the top of her head. She is dressed in a
+soft looking cotton dress as she works around the inn.
+~
+Race       lightfoot-halfing~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n Welcome to the Forked River Inn. How can I help you?
+else
+scowl $n
+sayto $n Get out, intruder.
+open e
+mea $n The old woman waves a finger and a force throws you out!
+mer $n The old woman waves a finger and $n is flung out!
+mpforce $n e
+yell And stay out!!
+close e
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   if hasqbit($n) == 2202
+smile $n
+sayto $n I hope you enjoyed your stay. Safe travels.
+else
+scowl $n
+sayto $n Get out! I'm going to call the guards!
+yell Guards!!! Guards!!!!! Intruder!!!
+open e
+mea $n The old woman waves a finger and a force throws you out!
+mer $n The old woman waves a finger and $n is flung outside!
+mpforce $n e
+yell And stay out!!!
+close e
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+emote runs screaming into a back room and locks herself inside it
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2636
+Keywords   female bartender bar halfling Chali~
+Short      &CChali&w~
+Long       &CA female halfling is here cleaning some mugs while talking to some customers.&w
+~
+Desc       &CThis female halfling is dressed in a cute cotton dress with large
+jewelry as she works as a bartender in this tavern. She has strawberry
+red hair and bright green eyes that have a hint of mischief to them.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 17 4
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+wink $n
+sayto $n What can I get you to drink, friend?
+else
+frown
+sayto $n You need to leave. You are not welcome here.
+mea $n A tavern guard leads you out of the tavern.
+silent open e
+mer $n A tavern guard leads $n out of the tavern.
+mpforce $n e
+silent close e
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Help! Greenies!!!
+emote runs into the back room of the bar and hides
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   mpgoto 2674
+yawn
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2637
+Keywords   candela halfling seedling raven hair beautiful shop clerk~
+Short      &PCandela&w~
+Long       &PA beautiful halfling woman with raven colored hair is here.&w
+~
+Desc       &PThis halfling woman is simply gorgeous with her ivory skin, long
+raven black hair, and bright green eyes. She is dressed in a fine
+gown and has lots of jewelry on.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 0 100 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n Is there anything I can interest you in?
+else
+yell Help! Guards! There's an intruder in my store!!! Help!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2689
+emote arrives and begins setting up the store for the day
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   emote begins closing up the store and heads home for the evening
+close e
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell HELP ME!!!!!!!!!
+emote runs screaming into her back room and locks it behind her
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2638
+Keywords   fisherman halfling man fishing small boat~
+Short      &ga fisherman&w~
+Long       &gA halfling man on a small boat is here fishing.&w
+~
+Desc       &gThis fisherman is using a small boat on the river as he fishes
+and takes a light cat nap. He is dressed in simple cotton clothing
+and has a straw hat to help protect him from the sun.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+wave $n
+mpsleep 3
+emote tugs on his fishing pole to tease the fish below
+else
+mea $n The fisherman looks at you and takes his boat further down the river.
+mer $n The fisherman looks at $n before taking his boat further down the river.
+mpgoto 2699
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2694
+mpecho &CA fisherman slowly sails to this part of the river suddenly.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpecho &CThe fisherman takes his boat and sails to the docks for the evening.&w
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote tugs on his pole to tease the fish below before resuming his nap
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2639
+Keywords   post office worker male halfling sorting mail~
+Short      &ga post office employee&w~
+Long       &gA male halfling is here sorting mail for the villagers of Temos.&w
+~
+Desc       &gThis post office employee is here sorting mail and putting the
+correct mail in the village mail boxes. He is dressed in a
+simple cotton outfit and seems to be very busy.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+nod $n
+sayto $n Let me know if you need any writing supplies.
+else
+sayto $n Please leave.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2697
+yawn
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell HELP!!!!
+emote runs out of the post office and hides
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2640
+Keywords   halfling female woman banker counting coins~
+Short      &ga halfling banker&w~
+Long       &gA female halfling is here counting coins before depositing them for a customer.&w
+~
+Desc       &gThis female halfling is working here as a banker. She is dressed in
+a beautiful dress with feathery accents. She wears a pair of glasses
+to help her count coins.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+smile $n
+sayto $n How can I help you today?
+else
+yell Guards! There is an intruder at the bank!!!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2698
+emote stretches and yawns slightly
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+emote grabs the coins in front of her and runs to hide somewhere
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2641
+Keywords   male librarian halfling sorting books~
+Short      &ga librarian&w~
+Long       &gA male halfling is here sorting books and putting them away.&w
+~
+Desc       &gThis female halfling is working here as a banker. She is dressed in
+a beautiful dress with feathery accents. She wears a pair of glasses
+to help her count coins.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+emote stops sorting some books and smiles
+sayto $n Hello. Is there something I can help you find today?
+else
+sayto Please leave. Now.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2690
+emote arrives and opens up the library for the day
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote closes up the library for the evening and heads home
+close e
+mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Help!!!!
+emote runs into the back of the library and hides
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2642
+Keywords   chief Tanri Silvergrass young halfling man male~
+Short      &GChief Tanri Silvergrass&w~
+Long       &GA young halfling man is here working on some paperwork.&w
+~
+Desc       &gThis young male halfling serves as the current chief of the village
+and tribe of Temos. He is very fair in complexion with light skin, bright
+blonde hair that is kept short, and sky blue eyes. He is dressed in
+fine cotton clothing and has a mantle of feathers draped on his
+shoulders. He seems busy at work at his desk looking over various
+things from new laws to village complaints.
+~
+Lore       &gYou vision suddenly shifts to show you a vision of a very young
+halfling standing over a fresh grave decorated with feathers...
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     700 1 0 0 10 0 10 5 5 0
+Stats2     10 10 90
+Stats3     2 9 3
+Stats4     1 0 3 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+sayto $n Hello friend. Is there anything I can help you with?
+else
+yell Guards! We have an intruder! Come at once!
+mpecho The chief quickly moves about the room and is gone suddenly!
+mpgoto 2699
+endif
+else
+mea $n The chief bows his head at you as you enter his home.
+mer $n The chief bows his head at $n as $e enters the house.
+sayto $n Welcome great warrior. How can I help you today?
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+mpecho Before the chief can react a group of guards rush in to help him!
+mpmload 2644
+mpmload 2644
+mpgoto 2699
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 2667
+emote enters his parlor and begins working on his paperwork
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   emote retires for the night and heads upstairs to sleep
+close w
+mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2643
+Keywords   priestess shamis buzzed female halfling~
+Short      &Oa priestess of Shamis&w~
+Long       &OA priestess of Shamis is here lighting incense around the temple.&w
+~
+Desc       &OThis priestess is dressed in a long brown robe with the
+symbol of Shamis embroidered on the front. She has long
+brown hair and smells faintly of ale.
+~
+Race       lightfoot-halfing~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden truesight~
+Stats1     400 50 0 0 14 1000 0 0 0 0
+Stats2     10 10 90
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    30 13 13 20 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+grin $n
+sayto $n Hello there! Welcome to the temple of the Small Father!
+else
+sayto $n The father never turns his back on anyone.. but you should
+sayto $n really work to create a relationship with our people. It
+sayto $n is in your best interest if you wish to visit Temos.
+endif
+else
+bow $n
+sayto $n Welcome great warrior to the temple of the Small Father.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+scowl troll
+sayto troll Begone in the name of Shamis!!!
+mpecho &YThe priestess utters a chant and points at the troll!&w
+silent open s
+mpsleep 2
+mpecho &OAn invisible force throws the troll out of the temple!&w
+mpforce troll s
+silent close s
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'sacred flame'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   yell Help! I am being attacked!!!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   c 'cure serious wounds'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2644
+Keywords   upper temos village guard wandering halfling seedling guard2 male~
+Short      &ga village guard&w~
+Long       &gA guard dressed in leather and feathers is here watching over the village.&w
+~
+Desc       &gThis halfling guard is dressed in leather armor that is embellished 
+traditionally with feathers and beading. He wanders about the village
+looking for intruders or those that seek to cause harm.&w
+~
+Race       lightfoot-halfing~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_hidden infrared~
+Stats1     0 25 0 0 15 0 0 0 5 0
+Stats2     4 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+else
+sayto $n Halt! You are not permitted in the village of Temos! Follow
+sayto $n me and I will lead you out peacefully.
+mea $n &OThe guard leads you out of the village and heads back.
+mer $n &OThe guard leads $n out of the village.
+mptransfer $n 2677
+mpat 2677 mer $n &OA guard delivers $n here before sending them out.&w
+mpat 2677 mpforce $n w
+mpgoto 2691
+endif
+else
+bow $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   dirtkick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   yell Help! There is an intruder in Upper Temos!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Send help! I've encountered a greenie in Upper Temos!!
+dirtkick troll
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2645
+Keywords   village upper temos wizard guard wandering halfling seedling female robe feathers beading~
+Short      &Ca village guard&w~
+Long       &CA guard dressed in a robe with feathers and beads is here watching over the village.
+~
+Desc       &CThis halfling guard is dressed in a simple green robe that is
+embellished with feathers and beading. She wanders about the
+village looking for intruders or those that seek to cause harm.&w
+~
+Race       lightfoot-halfing~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared truesight~
+Stats1     0 30 0 0 15 0 1 0 5 0
+Stats2     4 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 16 11 12 12 10 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+else
+sayto $n Halt! You are not permitted in the village of Temos! Follow
+sayto $n me and I will lead you out peacefully.
+mea $n &OThe guard leads you out of the village and heads back.
+mer $n &OThe guard leads $n out of the village.
+mptransfer $n 2677
+mpat 2677 mer $n &OA guard delivers $n here before sending them out.
+mpat 2677 mpforce $n w
+mpgoto 2691
+endif
+else
+bow $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'firebolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpoload 1901 1
+c 'stoneskin'
+mpjunk rock
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   dirtkick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'touch of idiocy'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   yell Help! There is an intruder in Upper Temos attacking me!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Help! There is a greenie in Upper Temos! Send more guards!!
+c firebolt troll
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2646
+Keywords   old wizard Gragyn frizzy hair musty robes~
+Short      &GGragyn&w~
+Long       &GAn old halfling wizard with frizzy hair is here reading from a spellbook.&w
+~
+Desc       &GThis old halfling wizard is dressed in a musty smelling robe that
+is in need of repairs. His frizzy white hair flops about as he
+walks around the upper part of his tower. He spends much of his
+time reading from his spellbook and muttering to himself.
+~
+Lore       &GYou see a younger Gragyn blasting a horde of trolls with a powerful
+fireball. He laughs at his success and continues to fight...
+~
+Race       lightfoot-halfing~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel stayarea pacifist~
+Affected   infrared truesight~
+Stats1     400 15 8 0 10 0 0 5 20 0
+Stats2     9 10 90
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    9 18 14 16 10 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote mutters as he turns a page in his spellbook
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   mea $n Gragyn waves a hand dismissively at you.
+mer $n Gragyn waves a hand dismissively at $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from below.~
+Comlist   if class($n) == wizard
+peer $n
+sayto $n What do you want?!
+else
+mutter
+sayto $n Begone. I have no use for you. Pfft!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+laugh troll
+mpecho &GGragyn begins to chant and points at a troll!&w
+mpsleep 3
+mpecho &CThere is a snap of energy and the troll disappears!
+mptransfer troll 2221
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2647
+Keywords   street cleaner village halfling young man~
+Short      &ga street cleaner&w~
+Long       &gA young halfling man is here working as a street cleaner.&w
+~
+Desc       &gThis young halfling man is dressed in simple cotton clothing and
+a cap as he cleans the streets of the village.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 50 0 0 10 0 0 0 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2615
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 2699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2202
+nod $n
+else
+yell Guards! Intruder!!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Help! Greenies!!!!
+dirtkick troll
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2648
+Keywords   street cleaner upper temos village halfling young man~
+Short      &ga street cleaner&w~
+Long       &gA young halfling man is here working as a street cleaner.&w
+~
+Desc       &gThis young halfling man is dressed in simple cotton clothing and
+a cap as he cleans the streets of the village.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 50 0 0 10 0 0 0 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+if hasqbit($n) == 2202
+nod $n
+else
+yell Help! Guards!!! Intruder in Upper Temos!!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Help! Greenies in Upper Temos!!! Send help!!!!!!
+dirtkick troll
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2632
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 2699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2649
+Keywords   wandering bard human~
+Short      &Ca wandering bard&w~
+Long       &CA bard is here humming a little song to himself.&w
+~
+Desc       &CThis bard is dressed in velvet frocks and has a long brimmed
+hat on for dramatic effect. You see slight elven ears poking out
+from his long wavy brown hair and he has a handsome smile.&w
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     0 20 5 0 14 0 0 0 5 0
+Stats2     5 4 45
+Stats3     1 4 0
+Stats4     2 0 2 0 0 0 6
+Attribs    15 12 10 16 14 16 10
+Saves      0 0 0 0 0 0
+Immune     charm~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c firebolt
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   55~
+Comlist   c 'blindness'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 2223
+if hasqbit($n) == 2202
+smile $n
+else
+wave $n
+sayto $n Hey there friend.. may I give you some quick advice?
+endif
+else
+bow $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2202
+sayto $n If you seek to enter the village ahead.. you need to earn
+sayto $n their trust and friendship. It's not easy and one of the
+sayto $n easiest ways I know is to help them fight their true
+sayto $n enemy.
+mpsleep 3
+sayto $n This enemy is the troll.. or what they often call "Greenies."
+sayto $n They have a hunting camp in the great marsh to the far west
+sayto $n of here. I'm sure if you help the camp with a task you
+sayto $n will earn what they call "True Friendship," and you will
+sayto $n be allowed into the village.
+mpsleep 2
+sayto $n And I wouldn't try sneaking in. They don't take kindly to
+sayto $n intruders who haven't earned the right to be there.
+mpsleep 2
+mpecho &CThe bard smiles as he turns and walks off towards the great prairie.
+mpgoto 2699
+say delete
+else
+sayto $n I can tell you have already earned their trust. Don't do
+sayto $n anything to jeopardize it.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == troll
+yell Greenies near the gate! Prepare the guards my friends!!!
+c 'firebolt' troll
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2699
+say delete
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote hums a little song as he leans against a sign post
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate bard~
+Comlist   if investigation($n) >= 16
+mea $n You notice a small badge decorated with feathers on the bard.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2699
+Keywords   troll attacking village~
+Short      &ga troll&w~
+Long       &gA large troll is here attacking the village.&w
+~
+Desc       &gThis giant has skin the color of mossy green, which would normally
+help it hide in a swamp or field. However, this troll has decided
+to attack a village. Its mouth reveals rows of sharp teeth, which
+are used to shred flesh from its victims. 
+~
+Race       troll~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea running~
+Affected   infrared~
+Stats1     -1000 1 10 0 14 0 0 0 0 0
+Stats2     8 10 40
+Stats3     2 6 4
+Stats4     3 0 3 0 0 0 6
+Attribs    18 7 9 13 20 7 13
+Saves      0 0 0 0 0 0
+Suscept    fire acid~
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   trollregen
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == lightfoot-halfli
+mea $n &GThe troll roars with rage at the sight of you!
+mer $n &GThe troll roars with rage at the sight of $n&G!
+k halfling
+else
+k $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     2600
+Keywords guard spear halfling seedling~
+Type     weapon~
+Short    &ga guard's spear&w~
+Long     &gA small spear has been left here.&w~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 1
+Stats    3 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2601
+Keywords guard quarterstaff staff~
+Type     weapon~
+Short    &ga guard's quarterstaff&w~
+Long     &gA small quarterstaff has been left here.&w~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 1
+Stats    4 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2602
+Keywords shortsword~
+Type     weapon~
+Short    a shortsword~
+Long     A shortsword has been left here.~
+Flags    inventory finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 1
+Stats    2 0 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2603
+Keywords flagon halfling house ale~
+Type     drinkcon~
+Short    &Oa flagon of halfling ale&w~
+Long     &OA flagon of halfling ale has been left here.&w~
+WFlags   take hold~
+Values   2 2 4 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2604
+Keywords plate fried river fish vegetables~
+Type     food~
+Short    &Wa plate of &cfried river fish&W with &gvegetables&w~
+Long     &WA plate containing fried river fish with vegetables has been left here.&w~
+WFlags   take onehand~
+Values   6 0 0 0 0 0
+Values2  0 2
+Stats    1 0 3 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2605
+Keywords piece honey cake~
+Type     food~
+Short    &YA piece of honey cake&w~
+Long     &YA cake drizzled in honey has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 5 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2606
+Keywords fresh garden salad~
+Type     food~
+Short    &Ga fresh garden salad&w~
+Long     &GA fresh garden salad has been left here.&W~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 65 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2607
+Keywords cheese plate fresh~
+Type     food~
+Short    &Oa fresh &Ycheese&O plate&w~
+Long     &OA plate of fresh cheese has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 90 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2608
+Keywords glass strawberry lemonade~
+Type     drinkcon~
+Short    &Wa glass of &Rstrawberry&Y lemonade&w~
+Long     &WA glass of strawberry lemonade has been left here.&w~
+WFlags   take onehand~
+Values   4 4 6 0 0 0
+Values2  0 2
+Stats    1 0 10 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2609
+Keywords goblet red wine~
+Type     drinkcon~
+Short    &ra goblet of red wine&w~
+Long     &rA goblet of red wine has been left here.&W~
+WFlags   take hold~
+Values   2 3 4 0 0 0
+Values2  0 2
+Stats    1 0 0 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2610
+Keywords cotton dress embellished beading~
+Type     armor~
+Short    &wan &wcotton dress&w embellished with &Gb&Be&Ya&Gd&Bi&Yn&Bg&w~
+Long     &wA cotton dress embellished with beads has been left here.&w~
+WFlags   take body onehand~
+Values   1 0 0 0 0 0
+Values2  1 1
+Stats    1 0 5 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2611
+Keywords soft pair leather moccasins~
+Type     armor~
+Short    &Oa pair of soft leather moccasins&w~
+Long     &OA pair of soft leather moccasins has been left here.&w~
+WFlags   take feet onehand~
+Values   0 0 0 0 0 0
+Values2  1 1
+Stats    1 0 1 90 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2612
+Keywords feather headband beading bead feathers band~
+Type     armor~
+Short    &Oa headband decorated with &Wfe&wath&Wers&O and &Yb&Ge&Ba&Yd&Gi&Bn&Yg&w~
+Long     Some god dropped a newly created feathers headband beaded here.~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  1 1
+Stats    1 0 3 80 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2613
+Keywords simple cotton shirt~
+Type     armor~
+Short    &Wa simple cotton shirt&w~
+Long     &wA simple cotton shirt has been left here.&w~
+WFlags   take body onehand~
+Values   0 0 0 0 0 0
+Values2  1 1
+Stats    1 0 2 100 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2614
+Keywords pair cotton trousers~
+Type     armor~
+Short    &wa pair of cotton trousers&w~
+Long     &wA pair of cotton trousers have been left here.&w~
+WFlags   take legs onehand~
+Values   0 0 0 0 0 0
+Values2  1 1
+Stats    1 0 3 100 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2615
+Keywords travelers cloak hood~
+Type     container~
+Short    &ga traveler's cloak with a hood&w~
+Long     &gA small cloak with a hood has been left here.&w~
+WFlags   take about~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 1 1 90 0 0 7
+#EXDESC
+ExDescKey    cloak~
+ExDesc       &gThis cloak has many hidden pockets for someone to store something
+for later.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2616
+Keywords embroidered embroidery belt thick cotton~
+Type     armor~
+Short    &wa thick &gembroidered&w cotton belt&w~
+Long     &wA thick cotton belt decorated with embroidery has been left here.&w~
+WFlags   take waist onehand~
+Values   0 0 0 0 0 0
+Values2  1 1
+Stats    1 0 4 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2617
+Keywords coin bag small~
+Type     container~
+Short    &Ya small coin bag&w~
+Long     &YA small coin bag has been left here.&w~
+WFlags   take belt onehand~
+Values   20 0 0 0 0 0
+Values2  0 1
+Stats    1 0 5 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2618
+Keywords leather pony saddle~
+Type     armor~
+Short    &Oa leather saddle&w~
+Long     &OA leather saddle has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    10 5 20 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2619
+Keywords leather bridle pony~
+Type     armor~
+Short    &Oa leather bridle&w~
+Long     &OA leather bridle has been left here.&W~
+WFlags   take face~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    1 0 10 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2620
+Keywords saddle bags pony~
+Type     container~
+Short    &Oleather pony saddle bags&w~
+Long     &OSome pony sized saddle bags have been left here.&w~
+WFlags   take back~
+Values   15 0 0 12 0 0
+Values2  3 1
+Stats    10 1 10 0 0 0 0
+#EXDESC
+ExDescKey    bags~
+ExDesc       &OSome standard bags attached to a saddle in order to carry goods.&w
+ 
+&R(OOC): You may use "SBAGS" when arranging these bags with other
+items labeled as "Saddle" to help with wearing/removing.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2621
+Keywords red pony saddle blanket~
+Type     armor~
+Short    &Ra red pony saddle blanket&w~
+Long     &RA red pony saddle blanket has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  2 1
+Stats    1 0 0 100 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2622
+Keywords purple pony saddle blanket~
+Type     armor~
+Short    &pa purple pony saddle blanket&w~
+Long     &pA purple poney saddle blanket has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  2 1
+Stats    1 0 0 100 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2623
+Keywords blue pony saddle blanket~
+Type     armor~
+Short    &Ba blue pony saddle blanket&w~
+Long     &BA blue pony saddle blanket has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  2 1
+Stats    1 0 0 100 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2624
+Keywords halfling sized boat~
+Type     boat~
+Short    &Oa halfling sized boat&w~
+Long     &OA halfling sized boat has been left here.&w~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    10 20 40 0 2 0 0
+#EXDESC
+ExDescKey    boat~
+ExDesc       &OThis boat is only big enough to carry one to two people on it. It
+has been made from carved wood and seems very stable.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2625
+Keywords small silver pipe~
+Type     pipe~
+Short    &wa small silver pipe&w~
+Long     &wA silver pipe used for smoking has been left here.~
+WFlags   take onehand~
+Values   5 2 0 0 0 0
+Values2  0 1
+Stats    1 0 10 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2626
+Keywords small dagger~
+Type     weapon~
+Short    a dagger~
+Long     A dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 1
+Stats    1 0 0 3 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2627
+Keywords small shortsword~
+Type     weapon~
+Short    a shortsword~
+Long     A shortsword has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 1
+Stats    2 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2628
+Keywords small quarter quarterstaff staff~
+Type     weapon~
+Short    a quarterstaff~
+Long     A simple quarterstaff has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 1
+Stats    4 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2629
+Keywords small longsword~
+Type     weapon~
+Short    a longsword~
+Long     A longsword has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 1 0
+Values2  0 1
+Stats    3 15 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2630
+Keywords small spear~
+Type     weapon~
+Short    a spear~
+Long     A simple spear has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 1
+Stats    3 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2631
+Keywords small sling ~
+Type     missileweapon~
+Short    a sling~
+Long     A simple sling lies here.~
+WFlags   take onehand~
+Values   12 1 4 2 12 3
+Values2  0 2
+Stats    1 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2632
+Keywords small stone sling bullet~
+Type     projectile~
+Short    &wa small stone sling bullet&w~
+Long     &wA small stone used as a projectile for a sling has been left here.&w~
+WFlags   take onehand~
+Values   12 1 4 2 3 0
+Values2  0 2
+Stats    0 0 0 3 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2633
+Keywords small shortbow bow~
+Type     weapon~
+Short    a shortbow~
+Long     A simple shortbow has been left here.~
+WFlags   take twohand~
+Values   12 1 6 3 9 0
+Values2  0 1
+Stats    2 25 2 1 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2634
+Keywords small wooden arrow~
+Type     projectile~
+Short    a wooden arrow~
+Long     A wooden arrow has been left here.~
+WFlags   take onehand~
+Values   1 1 4 7 1 0
+Values2  0 1
+Stats    1 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2635
+Keywords small rapier~
+Type     weapon~
+Short    a rapier~
+Long     A rapier has been left here.~
+Flags    finesse~
+WFlags   take onehand~
+Values   12 1 8 3 3 0
+Values2  0 1
+Stats    2 25 2 1 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2636
+Keywords ranger heart packet small~
+Type     herb~
+Short    &Ya small packet of ranger heart&w~
+Long     &YA small packet has been left here.&w~
+WFlags   take onehand~
+Values   2 2 2 0 0 0
+Values2  0 2
+Stats    1 4 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2637
+Keywords studded leather armor feathers~
+Type     armor~
+Short    &Ostudded leather armor embellished with &wfe&Wat&whe&Wrs&w~
+Long     &OStudded leather armor that has been embellished with feathers is here.&w~
+Flags    inventory~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  4 1
+Stats    10 20 4 1 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2638
+Keywords leather armor feathers~
+Type     armor~
+Short    &Oleather armor embellished with &wfe&Wat&whe&Wrs&w~
+Long     &OSome light leather armor embellished with feathers has been left here.&w~
+Flags    inventory~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    7 8 30 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2639
+Keywords post office employee worker male halfling sorting mail~
+Type     armor~
+Short    &Oleather breeches decorated with &Yb&Oe&wa&Od&Yi&wn&Yg&w~
+Long     &OA pair of leather breeches has been left here.&W~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    7 10 20 5 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2640
+Keywords pair leather boots sturdy~
+Type     armor~
+Short    &Oa pair of sturdy leather boots&w~
+Long     &OA pair of sturdy leather boots has been left here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    7 9 0 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2641
+Keywords leather rope belt~
+Type     armor~
+Short    &Oa leather rope belt&w~
+Long     &OA leather rope belt has been left here.&w~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    5 3 5 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2642
+Keywords leather pair fingerless gloves~
+Type     armor~
+Short    &Oa pair of leather fingerless gloves&w~
+Long     &OA pair of leather fingerless gloves have been left here.&w~
+WFlags   take hands~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    3 6 4 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2643
+Keywords leather helm feathers~
+Type     armor~
+Short    &Oa leather helm embellished with &wfe&Wat&whe&Wrs&w~
+Long     &OA leather helm embellished with feathers has been left here.&w~
+Flags    inventory~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    4 7 15 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2644
+Keywords leather sleeves beading~
+Type     armor~
+Short    &Oleather sleeves decorated with &Yb&Oe&wa&Od&Yi&wn&Yg&w~
+Long     &OLeather sleeves decorated with beading has been left here.&w~
+WFlags   take arms~
+Values   0 0 0 0 0 0
+Values2  3 1
+Stats    4 10 20 30 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2645
+Keywords leather quiver~
+Type     quiver~
+Short    &Oa leather quiver&w~
+Long     &OA leather quiver has been left here.&w~
+WFlags   take back belt onehand~
+Values   50 0 0 12 0 0
+Values2  0 1
+Stats    1 5 85 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2646
+Keywords leather backpack small~
+Type     container~
+Short    &Oa small leather backpack&w~
+Long     &OA small leather backpack has been left here.&w~
+WFlags   take back~
+Values   35 0 0 12 0 0
+Values2  3 1
+Stats    2 15 20 27 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2647
+Keywords padded light armor suit~
+Type     armor~
+Short    &wpadded light armor&w~
+Long     &wA suit of padded armor has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  2 1
+Stats    5 5 0 1 0 0 9
+#ENDOBJECT
+
+#OBJECT
+Vnum     2648
+Keywords deerskin hide armor~
+Type     armor~
+Short    &Odeerskin hide armor&w~
+Long     &ODeerskin hide armor has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  5 1
+Stats    9 9 1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2649
+Keywords scale mail armor~
+Type     armor~
+Short    chain mail armor~
+Long     Chain mail armor has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  9 1
+Stats    20 50 7 1 5 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2650
+Keywords chain mail shirt~
+Type     armor~
+Short    a chain shirt~
+Long     A chain shirt has been left here.&w~
+WFlags   take body~
+Values   18 18 0 0 0 0
+Values2  6 1
+Stats    12 35 1 1 3 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2651
+Keywords scale mail armor~
+Type     armor~
+Short    scale mail armor~
+Long     Scale mail armor has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  9 1
+Stats    30 45 5 0 4 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2652
+Keywords simple wooden shield~
+Type     armor~
+Short    &Oa simple wooden shield&w~
+Long     &OA simple wooden shield has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    6 9 1 1 0 0 0
+Affect       -1 -1 20 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2653
+Keywords apprentice robe beading~
+Type     armor~
+Short    &Oan apprentice robe decorated with &Gb&Ye&Ca&Gd&Yi&Cn&Yg&w~
+Long     &OAn apprentice robe has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 1
+Stats    1 5 0 0 0 0 3
+#ENDOBJECT
+
+#OBJECT
+Vnum     2654
+Keywords small spell component bag~
+Type     container~
+Short    &Oa small spell component bag&w~
+Long     &OA small spell component bag has been left here.&w~
+WFlags   take belt~
+Values   75 0 0 0 0 0
+Values2  0 1
+Stats    1 10 2 1 1 0 7
+#ENDOBJECT
+
+#OBJECT
+Vnum     2655
+Keywords small sugar cookie~
+Type     food~
+Short    &Wa small sugar cookie&w~
+Long     &WA small sugar cookie has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2656
+Keywords piece honey cake~
+Type     food~
+Short    &Ya piece of honey cake&w~
+Long     &YA cake drizzled in honey has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 5 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2657
+Keywords cornbread loaf~
+Type     food~
+Short    &Ya cornbread loaf&w~
+Long     &YA loaf of cornbread has been left here.&w~
+WFlags   take onehand~
+Values   6 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 35 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2658
+Keywords loaf fresh bread~
+Type     food~
+Short    &Oa loaf of fresh bread&w~
+Long     &OA loaf of fresh bread has been left here.&w~
+Action   %s enjoy$q $p.~
+WFlags   take~
+Values   10 0 0 0 0 0
+Values2  0 0
+Stats    1 0 2 80 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2659
+Keywords small woodsman axe old~
+Type     weapon~
+Short    &ga small woodsman's axe&w~
+Long     &gA small woodsman's axe has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 4 1 13 0
+Values2  0 1
+Stats    2 5 1 1 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p chop~
+Comlist   if sector($n) == 3
+if wearingvnum($n) == 2011
+if survival($n) >= 16
+mea $n &gYou manage to fell a small sized tree and cut it into logs.&w
+mer $n &g$n manages to fell a small tree and cuts it into several logs.&w
+mpoload 2014 1
+mpoload 2014 1
+mpoload 2014 1
+silent mpforce $n drop log
+silent mpforce $n drop log
+silent mpforce $n drop log
+else
+mea $n You barely hit a nearby tree with your mighty swing!
+endif
+else
+mea $n You aren't holding an axe to cut with.
+endif
+else
+mea $n You swing the axe wildly, but there are no trees to cut...
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p refinelog~
+Comlist   if wearingvnum($n) == 2011
+if ovnumhere(2014) > 0
+if survival($n) >= 16
+mea $n &gYou manage to create some pieces of firewood from the log.&w
+mer $n &g$n manages to split the log into pieces of usable firewood.&w
+mppurge log
+mpoload 2012 1
+mpoload 2012 1
+mpoload 2012 1
+mpoload 2012 1
+silent mpforce $n drop firewood
+silent mpforce $n drop firewood
+silent mpforce $n drop firewood
+silent mpforce $n drop firewood
+mpoload 2013 1
+mpoload 2013 1
+silent mpforce $n drop bark
+silent mpforce $n drop bark
+else
+mea $n You fail to split the log into some firewood.
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate axe~
+Comlist   if investigation($n) >= 12
+mea $n This axe is not truly meant for combat and is more of a tool
+mea $n to take down trees (CHOP) to help create logs for a fire.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2660
+Keywords small sized miners pick~
+Type     trash~
+Short    a small sized miner's pick&w~
+Long     A small sized miner's pick has been left here.~
+WFlags   take twohand~
+Values   35 0 0 0 0 0
+Values2  0 1
+Stats    1 8 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2661
+Keywords small fresh tomato~
+Type     food~
+Short    &Ra small tomato&w~
+Long     &RA small tomato has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 12 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2662
+Keywords small potato~
+Type     food~
+Short    &Oa small potato&w~
+Long     &OA small potato has been left here.&w~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2663
+Keywords small head lettuce~
+Type     food~
+Short    &Ga small head of lettuce&w~
+Long     &GA small head of lettuce has been left here.&w~
+WFlags   take onehand~
+Values   4 0 0 0 0 0
+Values2  0 0
+Stats    0 0 1 50 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2664
+Keywords small onion yellow~
+Type     food~
+Short    &Ya small yellow onion&w~
+Long     &YA small yellow onion has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2665
+Keywords small ear corn~
+Type     food~
+Short    &Ya small ear of corn&w~
+Long     &YA small ear of corn has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 75 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2666
+Keywords small eggplant~
+Type     food~
+Short    &pa small eggplant&w~
+Long     &pA small eggplant has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 75 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2667
+Keywords stalk broccoli~
+Type     food~
+Short    &ga stalk of broccoli&w~
+Long     &gA stalk of broccoli has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2668
+Keywords small red apple~
+Type     food~
+Short    &Ra small red apple&w~
+Long     &RA small red apple has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 15 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2669
+Keywords small green apple~
+Type     food~
+Short    &Ga small green apple&w~
+Long     &GA small green apple has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 14 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2670
+Keywords small handful blueberries~
+Type     food~
+Short    &ba small handful of blueberries&w~
+Long     &bA small handful of blueberries has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2671
+Keywords small handful red raspberries~
+Type     food~
+Short    &ra small handful of red raspberries&w~
+Long     &rA small handful of red raspberries has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 12 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2672
+Keywords small handful cherries~
+Type     food~
+Short    &Ra small handful of cherries&w~
+Long     &RA small handful of cherries have been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2673
+Keywords small watermelon~
+Type     food~
+Short    &Ga sm&Pall waterm&Gelon&w~
+Long     &GA small watermelon has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 1
+Stats    0 0 0 80 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2674
+Keywords small handful mulberries~
+Type     food~
+Short    &pa small handful of mulberries&w~
+Long     &pA small handful of mulberries have been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    0 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2675
+Keywords roast roasted wild rabbit~
+Type     food~
+Short    &Oa roasted wild rabbit&w~
+Long     &OA roasted wild rabbit is here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    0 0 2 75 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2676
+Keywords roast roasted wild pheasant~
+Type     food~
+Short    &Oa roasted wild pheasant&w~
+Long     &OA roasted wild pheasant is here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    0 0 4 75 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2677
+Keywords smoked venison~
+Type     food~
+Short    &wsome smoked venison&w~
+Long     &wSome smoked venison is here.&w~
+WFlags   take onehand~
+Values   6 0 0 0 0 0
+Values2  0 1
+Stats    0 0 5 80 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2678
+Keywords small fishing pole plainpole~
+Type     weapon~
+Short    &Oa fishing pole&w~
+Long     &OA fishing pole has been left here.&w~
+Flags    organic versatile~
+WFlags   take onehand twohand~
+Values   12 1 4 2 15 0
+Values2  0 2
+Stats    2 5 0 1 0 0 0
+#EXDESC
+ExDescKey    fishing~
+ExDesc       &OThis is a fairly sturdy fishing pole that can help someone
+fish for their dinner. You need to set a lure first before
+you can use the pole (INVESTIGATE POLE).
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    pole~
+ExDesc       &OThis is a fairly sturdy fishing pole that can help someone
+fish for their dinner. You need to set a lure first before
+you can use the pole (INVESTIGATE POLE).
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate pole~
+Comlist   if investigation($n) >= 12
+mea $n &wThis fishing pole needs to be set with a lure first before
+mea $n you can use it. Place a fishing tackle box along with this
+mea $n unlured pole on the ground. You will then use &CCHANGE
+mea $n &CLURE <RIVER, SHALLOW, DEEP, OCEAN>&w to set the pole.
+mpsleep 2
+mea $n &wIn order to change from lure to another you need to
+mea $n &wkeep your tackle box on the ground and place the pole
+mea $n &wnext to it. Then use &CDETACH LURE <RIVER, SHALLOW
+mea $n &CDEEP, OCEAN>&w to remove the current lure prior to
+mea $n &wusing &CCHANGE LURE&w to set a different lure.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2679
+Keywords stone fountain statue chief ancient~
+Type     fountain~
+Short    &wa stone fountain&w~
+Long     &wA stone fountain of an ancient chief is here, full of crystal clear water.&w~
+Values   1000 1000 6 0 0 0
+Values2  0 4
+Stats    9000 0 0 0 0 0 0
+#EXDESC
+ExDescKey    fountain~
+ExDesc       &wThis fountain has been created with stone resourced from the mountains
+nearby. In the middle of the fountain is a crudely crafted statue
+of an ancient halfling chief. He is dressed in feathers and loose
+fabric as he looks out protectively.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2680
+Keywords halfling shot whiskey~
+Type     drinkcon~
+Short    &Oa shot of halfling whiskey&w~
+Long     &OA shot glass with whiskey in it has been left here.&w~
+WFlags   take hold~
+Values   1 1 5 0 0 0
+Values2  0 1
+Stats    0 0 1 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2681
+Keywords turquoise pendant feathers~
+Type     treasure~
+Short    &Ca tu&Grq&Cuo&Gis&Ce pendant framed with &wfe&Wat&whe&Wrs&w~
+Long     &CA turquoise pendant framed with feathers is here.&w~
+WFlags   take neck onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 15 30 40 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2682
+Keywords turquoise bead bracelet leather clasp~
+Type     treasure~
+Short    &Ca tu&Grq&Cuo&Gis&Ce bead bracelet with a &Oleather clasp&w~
+Long     &CA turquoise bead bracelet with a leather clasp has been left here.&w~
+WFlags   take wrist onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 8 20 60 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2683
+Keywords copper circlet feathers~
+Type     treasure~
+Short    &Oa copper circlet embellished with &wfe&Wat&whe&Wrs&w~
+Long     &OA copper circlet embellished with feathers has been left here.&w~
+WFlags   take head onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 20 10 35 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2684
+Keywords turquoise ring silver~
+Type     treasure~
+Short    &wa silver ring set with a &Ctu&Grq&Cuo&Gis&Ce stone&w~
+Long     &CA silver ring with a turquoise stone has been left here.&w~
+WFlags   take finger onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 10 30 90 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2685
+Keywords silver circlet feathers~
+Type     treasure~
+Short    &wa silver circlet embellished with &Wfe&wat&Whe&wrs&w~
+Long     &wA silver circlet embellished with feathers has been left here.&w~
+WFlags   take head onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 20 10 35 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2686
+Keywords mail boxes temos~
+Type     furniture~
+Short    &Othe Temos mail boxes&w~
+Long     &OA wall of mail boxes used by the villagers of Temos is here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    24464 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2687
+Keywords board note noteboard village announcements news temos~
+Type     furniture~
+Short    &Oa village noteboard&w~
+Long     &OA wooden noteboard is covered in announcements and news for the villagers of Temos.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    900 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2688
+Keywords mace cleric~
+Type     weapon~
+Short    a mace~
+Long     A mace has been left here.~
+Flags    inventory~
+WFlags   take onehand~
+Values   12 1 6 2 8 0
+Values2  0 1
+Stats    4 5 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2689
+Keywords fishing tackle box small~
+Type     container~
+Short    &Oa small fishing tackle box&w~
+Long     &OA small fishing tackle box has been left here.&w~
+Flags    inventory~
+WFlags   take about onehand~
+Values   10 0 0 12 0 0
+Values2  0 1
+Stats    1 2 10 25 0 0 0
+#EXDESC
+ExDescKey    box~
+ExDesc       &OThis is a small box that is used to store fishing supplies. It has
+a leather strap that allows a fisherman to wear it over his shoulder
+like a satchel.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p detach lure ocean~
+Comlist   if ovnumroom(2964) == 1
+if ovnumroom(2689) == 1
+Mea $n You remove the lure from your fishing pole.
+Mer $n $n removes a lure from $s fishing pole.
+Mpoload 2678 1
+Mppurge opole
+Else
+mea $n &CYou need to put the tackle box on the ground first.
+Endif
+Else
+mea $n &CYou need a fishing pole with an ocean lure on first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p detach lure deep~
+Comlist   if ovnumroom(5070) == 1
+if ovnumroom(2689) == 1
+Mea $n You remove the lure from your fishing pole.
+Mer $n $n removes a lure from $s fishing pole.
+Mpoload 2678 1
+Mppurge opole
+Else
+mea $n &CYou need to put the tackle box on the ground first.
+Endif
+Else
+mea $n &CYou need a fishing pole with a deep water lure on first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p change lure ocean~
+Comlist   If ovnumroom(2678) == 1
+If ovnumroom(2689) == 1
+If survival($n) >= 14
+Mea $n &CYou change the lure on your fishing pole.
+Mer $n &C$n&C changes the lure on $s fishing pole.
+Mpoload 2964 1
+Mppurge plainpole
+Else
+Mea $n &CYou fail to remove the lure from your fishing pole.
+Endif
+Else
+Mea $n &CPlace your tackle box on the ground first.
+Endif
+Else
+Mea $n &CPlace your unlured fishing pole on the ground first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p detach lure shallow~
+Comlist   if ovnumroom(5068) == 1
+if ovnumroom(2689) == 1
+Mea $n You remove the lure from your fishing pole.
+Mer $n $n removes a lure from $s fishing pole.
+Mpoload 2678 1
+Mppurge opole
+Else
+mea $n You need to put the tackle box on the ground first.
+Endif
+Else
+mea $n You need a fishing pole with a river lure on first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p detach lure river~
+Comlist   if ovnumroom(1618) == 1
+if ovnumroom(2689) == 1
+Mea $n You remove the lure from your fishing pole.
+Mer $n $n removes a lure from $s fishing pole.
+Mpoload 2678 1
+Mppurge opole
+Else
+mea $n You need to put the tackle box on the ground first.
+Endif
+Else
+mea $n You need a fishing pole with a river lure on first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p change lure deep~
+Comlist   If ovnumroom(2678) == 1
+If ovnumroom(2689) == 1
+If survival($n) >= 14
+Mea $n &CYou change the lure on your fishing pole.
+Mer $n &C$n&C changes the lure on $s fishing pole.
+Mpoload 5070 1
+Mppurge plainpole
+Else
+Mea $n &CYou fail to remove the lure from your fishing pole.
+Endif
+Else
+Mea $n &CPlace your tackle box on the ground first.
+Endif
+Else
+Mea $n &CPlace your unlured fishing pole on the ground first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p change lure shallow~
+Comlist   If ovnumroom(2678) == 1
+If ovnumroom(2689) == 1
+If survival($n) >= 14
+Mea $n &CYou change the lure on your fishing pole.
+Mer $n &C$n&C changes the lure on $s fishing pole.
+Mpoload 5068 1
+Mppurge plainpole
+Else
+Mea $n &CYou fail to remove the lure from your fishing pole.
+Endif
+Else
+Mea $n &CPlace your tackle box on the ground first.
+Endif
+Else
+Mea $n &CPlace your unlured fishing pole on the ground first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p change lure river~
+Comlist   If ovnumroom(2678) == 1
+If ovnumroom(2689) == 1
+If survival($n) >= 14
+Mea $n &CYou change the lure on your fishing pole.
+Mer $n &C$n&C changes the lure on $s fishing pole.
+Mpoload 1618 1
+Mppurge plainpole
+Else
+Mea $n &CYou fail to remove the lure from your fishing pole.
+Endif
+Else
+Mea $n &CPlace your tackle box on the ground first.
+Endif
+Else
+Mea $n &CPlace your unlured fishing pole on the ground first.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2690
+Keywords fish net fishing~
+Type     container~
+Short    &wa fishing net&w~
+Long     &wA net used to store caught fish has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    1 0 25 60 0 0 0
+#EXDESC
+ExDescKey    net~
+ExDesc       &wThis net is used to keep fish that have been caught. It has
+been knitted tightly with cotton cording. It is strong and can
+hold only a few fish.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2699
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2600
+Name     A Dirt Path~
+Sector   city~
+Desc     This is a small dirt path that leads to the walled village to the
+north of here. The walls are made from lumber and stone brought in
+from far away. The path continues to the east from here or back out
+into the prairie at the west.
+~
+#EXIT
+Direction east~
+ToRoom    30000
+Flags     nomob overland~
+MapX      358
+MapY      614
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2601
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if mobinarea(2649) == 0
+if hasqbit($n) != 2202
+mpat 2601 mpecho &CYou hear someone humming something suddenly.
+mpat 2601 mpmload 2649
+mpat 2601 mpforce bard mpoload 127 1
+silent mpat 2601 mpforce bard wield shortsword
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2601
+Name     A Dirt Path~
+Sector   city~
+Stats    0 0 0 0 10 0
+Desc     This small dirt path has been created by the amount of travelers, horses,
+and wagons that come through here. To the north is a walled village with
+a border made from lumber and stone. The dirt patch continues back to
+the east into the prairie.
+~
+Perdesc  &OYou see a small &Ysign&O is located near the path here.
+~
+#EXIT
+Direction north~
+ToRoom    2602
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2600
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &YWelcome to the Village of Temos.
+&OOnly those that have earned true friendship can enter this village. 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2602
+Name     A Village Gate~
+Sector   city~
+Desc     The dirt road to the south ends here at the gates of a walled village.
+The walls of the village are made from lumber and stone carted in
+from far away since there is nothing but wild prairie all around
+here. The gates are manned usually by two guards who check to
+see who is coming and going from the village.
+~
+#EXIT
+Direction north~
+ToRoom    2603
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2601
+#ENDEXIT
+
+Reset M 0 2600 1 2602
+  Reset E 0 2600 1 28
+Reset M 0 2601 1 2602
+  Reset E 0 2600 1 28
+#ENDROOM
+
+#ROOM
+Vnum     2603
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. Each building has a round door with a window
+to help the owners identify who is visiting. The village seems
+to be working on modernizing much of settlement with some of
+the street being paved with stones and some being dirt still.
+The street divides here as it goes east, west, and north.
+~
+#EXIT
+Direction north~
+ToRoom    2616
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2604
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2602
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2606
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2604
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the east and west from here. A small shop dedicated to
+weapons is located to the north. 
+~
+#EXIT
+Direction north~
+ToRoom    2652
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2605
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2603
+#ENDEXIT
+
+Reset M 0 2608 1 2604
+Reset M 0 2609 1 2604
+Reset D 0 2604 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2605
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the north and west from here. A small shop dedicated to
+leather is located to the east. During the day a small team of seedling 
+workers are here trying to get the streets cobbled with smooth stones.
+~
+#EXIT
+Direction north~
+ToRoom    2615
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2654
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2604
+#ENDEXIT
+
+Reset D 0 2605 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2606
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the north, east, and west while a stable house is located 
+south of here.
+~
+#EXIT
+Direction north~
+ToRoom    2617
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2603
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2646
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2607
+#ENDEXIT
+
+Reset M 0 2610 1 2606
+#ENDROOM
+
+#ROOM
+Vnum     2607
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the north and east while a new constructed bank is towards
+the west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2608
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2606
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2698
+Keywords  'bank doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2607 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2608
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the north and south while a quaint looking inn is towards
+the west from here. A small dirt path heads east into a large farmers
+market.
+~
+#EXIT
+Direction north~
+ToRoom    2609
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2658
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2607
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2662
+Keywords  'inn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2606 3 2608
+Reset M 0 2607 2 2608
+Reset M 0 2608 2 2608
+Reset D 0 2608 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2609
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the north and south while a small store can be found toward
+the west from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2610
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2608
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2651
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2609 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2610
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the south, east, and west from here. Some of the buildings
+north of the street here resemble the older style of architecture and
+are currently being rebuilt into the new style.
+~
+#EXIT
+Direction east~
+ToRoom    2611
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2609
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2620
+#ENDEXIT
+
+Reset M 0 2606 1 2610
+#ENDROOM
+
+#ROOM
+Vnum     2611
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the south, east, and west from here. A city guard post can
+be found north of here with a small jail attached.
+~
+#EXIT
+Direction north~
+ToRoom    2665
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2612
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2618
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2610
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2612
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the south, east, and west from here. A small boutique is
+located north of here.
+~
+#EXIT
+Direction north~
+ToRoom    2645
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2613
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2619
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2611
+#ENDEXIT
+
+Reset D 0 2612 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2613
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the south and west from here. A small boat shop can be
+found north of here. During the day a small team of seedling workers
+are here trying to get the streets cobbled with smooth stones.
+~
+#EXIT
+Direction north~
+ToRoom    2650
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2614
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2612
+#ENDEXIT
+
+Reset D 0 2613 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2614
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the north and south from here. Two small shops can be
+found to the east and west. During the day a small team of seedling workers
+are here trying to get the streets cobbled with smooth stones.
+~
+#EXIT
+Direction north~
+ToRoom    2613
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2655
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2615
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2689
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2614 1 1
+Reset D 0 2614 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2615
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The streets of the village are slowly being modernized
+as parts are being cobbled with stone or remain dirt still. The streets 
+continue to the north and south from here. Two small shops can be
+found to the east and west. During the day a small team of seedling workers
+are here trying to get the streets cobbled with smooth stones.
+~
+#EXIT
+Direction north~
+ToRoom    2614
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2664
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2605
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2661
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2647 1 2615
+Reset D 0 2615 1 0
+Reset D 0 2615 3 0
+#ENDROOM
+
+#ROOM
+Vnum     2616
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The street here is not as cobbled with stone as
+other parts of the village. The street continues to the north, east,
+and south while a bakery can be seen to the east. A dirt path that 
+heads northwest from here enters the village square.
+~
+#EXIT
+Direction north~
+ToRoom    2619
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2657
+Keywords  'bakery door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2603
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2617
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2623
+#ENDEXIT
+
+Reset D 0 2616 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2617
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The street here is not as cobbled with stone as
+other parts of the village. The street continues to the north, south,
+and east while a tavern can be found to the west. To the northeast
+is the village square.
+~
+#EXIT
+Direction north~
+ToRoom    2618
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2616
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2606
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2674
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2623
+#ENDEXIT
+
+Reset D 0 2617 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2618
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The street here is not as cobbled with stone as
+other parts of the village. The street continues to the north and
+south while a dirt path leading southeast enters the village square.
+~
+#EXIT
+Direction north~
+ToRoom    2611
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2617
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2623
+#ENDEXIT
+
+Reset D 0 2618 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2619
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The street here is not as cobbled with stone as
+other parts of the village. The street continues to the north and
+south while a strange looking store can be found to the east. A dirt 
+path that heads northwest from here enters the village square.
+~
+#EXIT
+Direction north~
+ToRoom    2612
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2656
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2616
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2623
+#ENDEXIT
+
+Reset D 0 2619 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2620
+Name     A Village Street~
+Sector   city~
+Desc     This is a street in a bustling city full of seedlings and whom they
+have deemed worthy to visit. Many of the homes and stores are dome
+shaped starting with stone at the base and arched wood at the top.
+The roof of each building features intricate shingle patterns that
+are quite artistic. The street here is not as cobbled with stone as
+other parts of the village. The main part of the street continues back
+to the east from here while the dirt path heads north. A tavern can
+be seen to the west while a new looking post office is to the south. Much
+of the buildings in this part of the village look very new.
+~
+#EXIT
+Direction north~
+ToRoom    2621
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2610
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2697
+Keywords  'post office door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2644
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2620 2 1
+Reset D 0 2620 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2621
+Name     Before the River Docks~
+Sector   city~
+Desc     This part of the village appears to be much older with some odd
+looking stone homes found around here and towards the river
+that can be seen to the north. The streets of the city are dirt here
+and attempts at stone cobbling start to the south of here. The
+path continues to the east where a large set of docks and buildings
+can be found.
+~
+#EXIT
+Direction east~
+ToRoom    2622
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2620
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2622
+Name     The Lower Temos River Docks~
+Sector   indoors~
+Stats    0 0 0 0 10 0
+Desc     The docks here are quite small and can house only a few boats at
+a time. The river runs smoothly here and it is easy to get to the
+island that is home to the second portion of the village. A small
+wooden canopy helps those waiting for a boat to stay out of the
+weather while a metal cookstove provides some heat.
+~
+Perdesc  &cYou see a &Csign&c near the entrance of the docks.&w
+~
+#EXIT
+Direction west~
+ToRoom    2621
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2692
+Flags     secret climb hidden nomob~
+#ENDEXIT
+
+Reset M 0 2604 1 2622
+#EXDESC
+ExDescKey    sign~
+ExDesc       &CThe Temos docks are open from 5am till 10pm.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2623
+Name     The Village Square~
+Sector   city~
+Desc     The village square here is a popular location for villagers to come
+and relax as they catch up with neighbors. Some pass through here
+while finishing errands and some come to admire the new fountain
+that has been erected here. To the north is a small path where
+a village board has been posted. 
+~
+#EXIT
+Direction north~
+ToRoom    2676
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2619
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2618
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2616
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2617
+#ENDEXIT
+
+Reset O 0 2679 1 2623
+#ENDROOM
+
+#ROOM
+Vnum     2624
+Name     The Upper Temos River Docks~
+Sector   indoors~
+Stats    0 0 0 0 10 0
+Desc     The docks here are quite small and can house only a few boats at
+a time. The river runs smoothly here and it is easy to get to the
+mainland that is home to the first portion of the village. A small
+wooden canopy helps those waiting for a boat to stay out of the
+weather while a metal cookstove provides some heat.
+~
+Perdesc  &cYou see a &Csign&c near the entrance of the docks.&w
+~
+#EXIT
+Direction north~
+ToRoom    2625
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2696
+Flags     secret climb hidden nomob~
+#ENDEXIT
+
+Reset M 0 2605 1 2624
+#EXDESC
+ExDescKey    sign~
+ExDesc       &CThe Temos docks are open from 5am till 10pm.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2625
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east and west from here
+as well as to the south where the docks are located.
+~
+#EXIT
+Direction east~
+ToRoom    2626
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2624
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2640
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2626
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the north, east, and west 
+from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2642
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2627
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2625
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2627
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the north, east, and west from
+here. A small path to the south leads out of the village.
+~
+#EXIT
+Direction north~
+ToRoom    2643
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2628
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      354
+MapY      613
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2626
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2628
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east and west from
+here. There are fewer residences on this side of the island and 
+most are very small in size.
+~
+#EXIT
+Direction east~
+ToRoom    2629
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2627
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2629
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the west and northeast from
+here. There are fewer residences on this side of the island and most are
+very small in size.
+~
+#EXIT
+Direction west~
+ToRoom    2628
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2630
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2630
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the northwest and southwest
+of here while a dirt path can be seen heading east to a stone tower.
+There are fewer residences on this side of the island and most are
+very small in size.
+~
+#EXIT
+Direction east~
+ToRoom    2671
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2631
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2629
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2631
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the southeast and west from
+here while a large flower garden sponsored by the village is to the
+south from here.
+~
+#EXIT
+Direction south~
+ToRoom    2669
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2632
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2630
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2632
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east, west and south 
+from here. This part of the island is home to quite a few large 
+residences.
+~
+#EXIT
+Direction east~
+ToRoom    2631
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2643
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2633
+#ENDEXIT
+
+Reset M 0 2648 1 2632
+#ENDROOM
+
+#ROOM
+Vnum     2633
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east, west and south 
+from here. This part of the island is home to quite a few large 
+residences.
+~
+#EXIT
+Direction east~
+ToRoom    2632
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2642
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2634
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2634
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east and west from here.
+This part of the island is home to quite a few large residences.
+~
+#EXIT
+Direction east~
+ToRoom    2633
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2635
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2635
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east, west, and south
+from here.
+~
+#EXIT
+Direction east~
+ToRoom    2634
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2641
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2636
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2636
+Name     A Village Street~
+Sector   city~
+Stats    0 0 0 0 20 0
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east and southwest 
+from here.
+~
+Perdesc  &gYou spot a hidden path to the north from here heading to a dock...&w
+~
+#EXIT
+Direction north~
+ToRoom    2675
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2635
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2637
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2637
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the northeast and southeast 
+from here while a dirt path to the west leads out of the village.
+~
+#EXIT
+Direction west~
+ToRoom    2677
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2636
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2638
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2638
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east and northwest from 
+here.
+~
+#EXIT
+Direction east~
+ToRoom    2639
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2637
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2639
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east and west from here.
+A stone temple can be found to the north past a small metal gate
+while to the south is the island's guard house.
+~
+#EXIT
+Direction north~
+ToRoom    2670
+Keywords  'temple door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2640
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2691
+Flags     isdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2638
+#ENDEXIT
+
+Reset D 0 2639 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2640
+Name     A Village Street~
+Sector   city~
+Desc     This part of the village appears to be much newer than the village
+on the mainland. The roads here are cobbled with smooth stones
+and there is no need for a wall around the village due to the river. All
+of the buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The view from this island is quite
+impressive an all-around one can see if vast prairie and mountains
+in the distance. The street continues to the east and west from here
+as well as to the north.
+~
+#EXIT
+Direction north~
+ToRoom    2641
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2625
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2639
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2641
+Name     A Village Street~
+Sector   city~
+Desc     The roads here are cobbled with smooth stones and there is no 
+need for a wall around the village due to the river. All of the 
+buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The street continues to the 
+north and south from here. Two significantly large buildings can
+be found to the east and west of here. The building to the west
+looks like a great meeting hall while the east looks like a residence
+of someone important.
+~
+#EXIT
+Direction north~
+ToRoom    2635
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2667
+Keywords  'circular wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2640
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2668
+#ENDEXIT
+
+Reset D 0 2641 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2642
+Name     A Village Street~
+Sector   city~
+Desc     The roads here are cobbled with smooth stones and there is no 
+need for a wall around the village due to the river. All of the 
+buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The street continues to the 
+north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2633
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2626
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2643
+Name     A Village Street~
+Sector   city~
+Desc     The roads here are cobbled with smooth stones and there is no 
+need for a wall around the village due to the river. All of the 
+buildings are dome shaped with a stone base and a wooden
+roof with intricate shingle patterns. The street continues to the 
+north and south from here. A small building can be see to the west,
+which functions as the village library.
+~
+#EXIT
+Direction north~
+ToRoom    2632
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2627
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2690
+Keywords  'library doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2643 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2644
+Name     &GThe Happy Toad Tavern &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob nomagic safe nosummon noastral~
+Stats    0 0 0 0 10 0
+Desc     This tavern is a lively location with bards playing music and tavern
+servers moving about selling beverages or food. A large stone fireplace
+offers warmth and light for the establishment. A long wooden bar is
+manned by a young looking bartender who serves drinks to his patrons.
+~
+Perdesc  &gYou see a &Gsign&g located near the bar at the end of the tavern.&w
+~
+#EXIT
+Direction east~
+ToRoom    2620
+Keywords  'tavern doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2611 1 2644
+  Reset G 0 4027 1
+  Reset G 0 2603 1
+  Reset G 0 2606 1
+  Reset G 0 2607 1
+  Reset G 0 2608 1
+  Reset G 0 2604 1
+  Reset G 0 2605 1
+  Reset G 0 2609 1
+Reset D 0 2644 1 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WHello!
+
+&YThis location is one of many &R-{(OOC)}-&Y locations across the lands.
+Each major civilization and some minor villages have such locations
+where you will be able to see/use the global &RChat&Y command along with
+the OOC channels such as &ROsay&Y and &ROtell.&Y While at these locations 
+you can enjoy the company of other characters taking a break from RP and 
+talk OOC. 
+
+Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. Please review &RHELP OOC&Y for more information on the rules.
+
+And when anyone last saw you.. you were "headed off to some
+tavern or inn in town."
+ 
+Thanks!
+&WThe DLoC Admin Team
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2645
+Name     &PThe Lovely Feather Boutique&w~
+Sector   indoors~
+Desc     This is a very small boutique that features a blend of ancient with
+modern styling. Dressform made from carved wood feature some of the
+wares for sale here. There is a scent of aromatic oil that adds
+an element of surprise to those that enter.
+~
+#EXIT
+Direction south~
+ToRoom    2612
+Keywords  'store doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2612 1 2645
+  Reset G 0 2612 1
+  Reset G 0 2611 1
+  Reset G 0 2614 1
+  Reset G 0 2616 1
+  Reset G 0 2610 1
+  Reset G 0 2613 1
+  Reset G 0 2617 1
+  Reset G 0 2615 1
+Reset D 0 2645 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2646
+Name     The Temos Stables~
+Sector   indoors~
+Desc     This is a small stable house used by the villagers and their guests. The
+stables are kept very clean and there are quite a few stalls open
+for horses to stay in. To the east and west are supplemental services
+that the stables here provide for customers such as tack for sale
+or even horses.
+~
+#EXIT
+Direction north~
+ToRoom    2606
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2653
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2648
+#ENDEXIT
+
+Reset M 0 2613 1 2646
+#ENDROOM
+
+#ROOM
+Vnum     2647
+Name     &RTEMOS STABLE MOB STORAGE&w~
+Sector   city~
+Flags    nomob nomagic safe norecall noastral~
+Desc     You do not belong here. Please contact an admin in order to get out.
+~
+#ENDROOM
+
+#ROOM
+Vnum     2648
+Name     Temos Horse Sale~
+Sector   indoors~
+Flags    petshop~
+Desc     This location is used by the stables to sell horses to interested
+guests. There is a small selection here and all of the horses for
+sale look very well cared for. Stable hands move about here as they
+clean, feed, and water the horses as part of their daily job.
+~
+#EXIT
+Direction east~
+ToRoom    2646
+#ENDEXIT
+
+Reset M 0 2614 1 2648
+#ENDROOM
+
+#ROOM
+Vnum     2649
+Name     &RTEMOS STABLE MOUNTS FOR SALE&w~
+Sector   indoors~
+Flags    nomob~
+Reset M 0 2615 1 2649
+Reset M 0 2616 1 2649
+Reset M 0 2617 1 2649
+Reset M 0 2618 1 2649
+Reset M 0 2619 1 2649
+Reset M 0 2620 1 2649
+Reset M 0 2621 1 2649
+Reset O 0 1761 1 2649
+#ENDROOM
+
+#ROOM
+Vnum     2650
+Name     The Temos Boat & Fishing Supply Store~
+Sector   indoors~
+Desc     The walls of this store are covered in sailing and fishing tools. A
+few tapestries about sailing and fishing can also be found on
+the cluttered looking walls. Boats for sale can be found on several
+tables or even the floor here.
+~
+#EXIT
+Direction south~
+ToRoom    2613
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2623 1 2650
+  Reset G 0 2678 1
+  Reset G 0 2624 1
+  Reset G 0 2689 1
+  Reset G 0 2690 1
+Reset D 0 2650 2 0
+#ENDROOM
+
+#ROOM
+Vnum     2651
+Name     &cThe Hazy Dream Pipe Store&w~
+Sector   indoors~
+Desc     The store here is full of customers who enjoy the seedling past time
+of smoking from a pipe. There are men and women of varying age that
+are looking over the wares for sale here. Shelves stocked with all
+sorts of smokable herbs can be seen along the northern wall while
+the southern wall is full of shelves stocked with interesting
+looking pipes.
+~
+#EXIT
+Direction east~
+ToRoom    2609
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2624 1 2651
+  Reset G 0 4056 1
+  Reset G 0 1674 1
+  Reset G 0 2636 1
+  Reset G 0 2625 1
+Reset D 0 2651 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2652
+Name     The Temos Weaponry Store~
+Sector   indoors~
+Flags    nomob~
+Desc     The walls and shelves of this store are full of beautiful looking
+weaponry for sale. A dressform has been comically stabbed with a
+silvery dagger and the store seems to have a sense of humor
+despite what it sells. A forge can be seen against the northern
+side of the store where new weapons are created.
+~
+#EXIT
+Direction south~
+ToRoom    2604
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2625 1 2652
+  Reset G 0 2626 1
+  Reset G 0 2629 1
+  Reset G 0 2628 1
+  Reset G 0 2635 1
+  Reset G 0 2633 1
+  Reset G 0 2627 1
+  Reset G 0 2630 1
+  Reset G 0 2632 1
+  Reset G 0 2631 1
+  Reset G 0 2634 1
+Reset D 0 2652 2 0
+#ENDROOM
+
+#ROOM
+Vnum     2653
+Name     The Temos Stable Supply~
+Sector   indoors~
+Desc     This part of the stable house is dedicated to the selling of tack
+and other goods. There are tables full of equipment needed to
+get a horse ready for riding. A few dressforms shaped like horses have
+saddles and other implements on it to show off the latest designs
+for sale.
+~
+#EXIT
+Direction west~
+ToRoom    2646
+#ENDEXIT
+
+Reset M 0 2622 1 2653
+  Reset G 0 2623 1
+  Reset G 0 2619 1
+  Reset G 0 2618 1
+  Reset G 0 2621 1
+  Reset G 0 2622 1
+  Reset G 0 1554 1
+  Reset G 0 2620 1
+#ENDROOM
+
+#ROOM
+Vnum     2654
+Name     &OOlyvi's Leather Goods&w~
+Sector   indoors~
+Desc     This store smells deeply of oiled leather, which comes as no surprise as
+the walls are covered with leather armor. A small space can be seen to
+the north where new armor and equipment is crafted. A small dressing
+room can be seen on the east wall where customers can try on things.
+~
+#EXIT
+Direction west~
+ToRoom    2605
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2626 1 2654
+  Reset G 0 2643 1
+  Reset G 0 2641 1
+  Reset G 0 2642 1
+  Reset G 0 2640 1
+  Reset G 0 2638 1
+  Reset G 0 2639 1
+  Reset G 0 2644 1
+  Reset G 0 2637 1
+  Reset G 0 2645 1
+  Reset G 0 2646 1
+Reset D 0 2654 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2655
+Name     The Temos Armor Shop~
+Sector   indoors~
+Desc     This store is dedicated to selling protective armor to its customers.
+Dressforms feature some of the latest armor for sale while some are
+laid out on small tables throughout the store. A store location towards
+the south end of the store is used to repair and make new armor with
+a small forge installed there.
+~
+#EXIT
+Direction west~
+ToRoom    2614
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2627 1 2655
+  Reset G 0 2652 1
+  Reset G 0 2648 1
+  Reset G 0 2647 1
+  Reset G 0 2650 1
+  Reset G 0 2649 1
+  Reset G 0 2651 1
+Reset D 0 2655 3 0
+#ENDROOM
+
+#ROOM
+Vnum     2656
+Name     &pRandia's Spell Supplies&w~
+Sector   indoors~
+Desc     This is a unique looking store that is stocked with supplies for
+those of the magical arts. Shelves are full of bottles of odd looking
+ingredients while a few dressforms feature robes and other wearable
+goods. A small black cat can be found sleeping on the shelves or
+hiding behind the store counter.
+~
+#EXIT
+Direction west~
+ToRoom    2619
+Keywords  'store door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 2628 1 2656
+  Reset G 0 2653 1
+  Reset G 0 1780 1
+  Reset G 0 1756 1
+  Reset G 0 1748 1
+  Reset G 0 1546 1
+  Reset G 0 1760 1
+  Reset G 0 1781 1
+  Reset G 0 1747 1
+  Reset G 0 1751 1
+  Reset G 0 2654 1
+Reset D 0 2656 3 0
+#ENDROOM
+
+#ROOM
+Vnum     2657
+Name     &BThe Riverstone Bakery&w~
+Sector   indoors~
+Desc     This is a very small business with only a small space for customers to
+enter and pick up what they need. Behind the wooden counters that bar
+customers from entering too far is where all the baking occurs. A few
+stone ovens are kept aflame all day and night while some tables are
+for kneading dough and preparing food. 
+~
+#EXIT
+Direction west~
+ToRoom    2616
+Keywords  'bakery door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2629 1 2657
+  Reset G 0 2657 1
+  Reset G 0 2658 1
+  Reset G 0 2655 1
+  Reset G 0 2656 1
+Reset D 0 2657 3 0
+#ENDROOM
+
+#ROOM
+Vnum     2658
+Name     &GThe Temos Farmer's Market&w~
+Sector   city~
+Stats    0 0 0 0 12 0
+Desc     This is a popular location for the villagers who come to haggle with
+the vendors here. The smell of cooked meat, fresh fruit, and savory
+vegetables permeates the air here. Young seedling children run
+about and play here as their parents look at what is being
+offered. 
+~
+Perdesc  &YYou spot a &gsign&Y near the entrance to the farmer's market.&w
+~
+Nightdesc  This is a popular location for the villagers during the day. Currently
+the market is quiet as all of the vendors have gone home for the
+evening. The remnants of some of the wares can be found on the
+Ground here as the occasional rat finds its dinner.
+~
+#EXIT
+Direction north~
+ToRoom    2659
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2660
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2608
+#ENDEXIT
+
+Reset M 0 2632 1 2658
+  Reset G 0 2663 1
+  Reset G 0 2662 1
+  Reset G 0 2661 1
+  Reset G 0 2665 1
+  Reset G 0 2664 1
+  Reset G 0 2667 1
+  Reset G 0 2666 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &GThe Farmer's Market is open everyday from 7am to 7pm.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2659
+Name     &GThe Temos Farmer's Market&w~
+Sector   city~
+Desc     This is a popular location for the villagers who come to haggle with
+the vendors here. The smell of cooked meat, fresh fruit, and savory
+vegetables permeates the air here. Young seedling children run
+about and play here as their parents look at what is being
+offered. 
+~
+Nightdesc  This is a popular location for the villagers during the day. Currently
+the market is quiet as all of the vendors have gone home for the
+evening. The remnants of some of the wares can be found on the
+Ground here as the occasional rat finds its dinner.
+~
+#EXIT
+Direction south~
+ToRoom    2658
+#ENDEXIT
+
+Reset M 0 2633 1 2659
+  Reset G 0 2673 1
+  Reset G 0 2669 1
+  Reset G 0 2672 1
+  Reset G 0 2668 1
+  Reset G 0 2670 1
+  Reset G 0 2674 1
+  Reset G 0 2671 1
+#ENDROOM
+
+#ROOM
+Vnum     2660
+Name     &GThe Temos Farmer's Market&w~
+Sector   city~
+Desc     This is a popular location for the villagers who come to haggle with
+the vendors here. The smell of cooked meat, fresh fruit, and savory
+vegetables permeates the air here. Young seedling children run
+about and play here as their parents look at what is being
+offered. 
+~
+Nightdesc  This is a popular location for the villagers during the day. Currently
+the market is quiet as all of the vendors have gone home for the
+evening. The remnants of some of the wares can be found on the
+Ground here as the occasional rat finds its dinner.
+~
+#EXIT
+Direction north~
+ToRoom    2658
+#ENDEXIT
+
+Reset M 0 2634 1 2660
+  Reset G 0 2676 1
+  Reset G 0 2675 1
+  Reset G 0 2677 1
+#ENDROOM
+
+#ROOM
+Vnum     2661
+Name     The Temos Tailor Shop~
+Sector   indoors~
+Desc     This shop is dedicated to repairing and resizing garments for
+its customers. A few tables contain garments that are completed
+and are ready for pick up. A table towards the back of the store
+is where all sewing is conducted. The store is quiet save for the
+humming of workers as they sew.
+~
+#EXIT
+Direction east~
+ToRoom    2615
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2631 1 2661
+Reset D 0 2661 1 0
+#ENDROOM
+
+#ROOM
+Vnum     2662
+Name     &BThe Forked River Inn&w~
+Sector   indoors~
+Desc     The inn here is quite small and very quaint. Its architecture is a blend
+of the old style and the new. Some of the decor features finely woven
+tapestries with beading or interesting pod like chairs. A small fireplace
+offers warmth to the interior of the inn during the night or cold
+times of the year. A small staircase leads up into the bedrooms used
+by the guests who come to visit here.
+~
+#EXIT
+Direction east~
+ToRoom    2608
+Keywords  'inn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2635 1 2662
+Reset D 0 2662 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2663
+Name     A Cozy Bedroom~
+Sector   indoors~
+Desc     This room is quite small and there is only enough room for a bed, dresser,
+and a fireplace. The bed has a lovely looking quilt top on it that is
+made from various fabrics. A small door leads out and down to the main part
+of the inn. There are no windows in this room save for a skylight above.
+~
+#EXIT
+Direction down~
+ToRoom    2662
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2664
+Name     The Temos General Supply Store~
+Sector   indoors~
+Desc     This general store is quite small and stocked with just the
+essentials someone may need. The store is kept very clean
+and tidy with all items for sale pulled forward on shelves
+for easy shopping. A large counter top is where all transactions
+are completed and it is found against the northern side of the store.
+~
+#EXIT
+Direction west~
+ToRoom    2615
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2630 1 2664
+  Reset G 0 2659 1
+  Reset G 0 1661 1
+  Reset G 0 1660 1
+  Reset G 0 1652 1
+  Reset G 0 1653 1
+  Reset G 0 1657 1
+  Reset G 0 1651 1
+  Reset G 0 1427 1
+  Reset G 0 36 1
+  Reset G 0 2660 1
+Reset D 0 2664 3 0
+#ENDROOM
+
+#ROOM
+Vnum     2665
+Name     The Lower Temos Guard House & Jail~
+Sector   indoors~
+Desc     The guard house here is used by the local guard to rest after one
+of their long shifts. There are several beds where guards can go
+sleep. A few tables with chairs are used for eating, conversation,
+or playing games. A door to the east leads to the jail where people
+are held until sentencing.
+~
+#EXIT
+Direction east~
+ToRoom    2666
+Keywords  'jail cell door'~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2611
+#ENDEXIT
+
+Reset M 0 2602 5 2665
+  Reset E 0 2600 1 28
+Reset M 0 2603 2 2665
+  Reset E 0 2601 1 28
+Reset M 0 2603 2 2665
+  Reset E 0 2601 1 28
+Reset M 0 2602 5 2665
+  Reset E 0 2600 1 28
+Reset M 0 2602 5 2665
+  Reset E 0 2600 1 28
+Reset M 0 2602 5 2665
+  Reset E 0 2600 1 28
+Reset M 0 2602 5 2665
+  Reset E 0 2600 1 28
+Reset D 0 2665 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2666
+Name     A Jail Cell~
+Sector   indoors~
+Desc     This is a jail cell in the guard house of the surrounding village. There
+is not much here except for a bench for convicts to sit. A small skylight
+offers some light for the cell and is too small to help someone
+escape this place.
+~
+#EXIT
+Direction west~
+ToRoom    2665
+Keywords  'jail cell door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2666 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2667
+Name     The Chief's Residence~
+Sector   indoors~
+Desc     This is the home of the current chief of the village. It has been well
+furnished over the ages from other chiefs who have served. The walls
+are covered in various relics from hunting trips, treasure hunts, and
+other victories. The living quarters can be found upstairs while
+a kitchen, living room, parlor, and small office can be found on
+the base floor of the residence.
+~
+#EXIT
+Direction west~
+ToRoom    2641
+Keywords  'circular wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2642 1 2667
+Reset D 0 2667 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2668
+Name     &GThe Great Temos Village Hall&w~
+Sector   indoors~
+Desc     The hall is quite large and circular with stadium like seating for
+villagers and guests to sit during meetings. In the middle of the
+hall is a podium for speakers to stand, which also has a spot for
+a bonfire. The ceiling has been cut open with a large circle, which
+gives a clear view of the sky and allows smoke from a bonfire to
+escape.
+~
+#EXIT
+Direction east~
+ToRoom    2641
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2669
+Name     A Large Flower Garden~
+Sector   field~
+Desc     The garden here is quite beautiful during the warmer times of the year.
+There are various type of flowers that grow here and provide fragrance
+to much of the island. There are benches for visitors to sit and
+enjoy themselves while here as well as statues providing art.
+~
+#EXIT
+Direction north~
+ToRoom    2631
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2670
+Name     A Temple to Shamis~
+Sector   indoors~
+Desc     This temple is decorated with plenty of beads, feathers, and burning
+incense in small metal containers found throughout the space. A statue
+of Shamis can be found at a large altar to the north end of the temple.
+The statue depicts the god playing an entertaining song while a mug of
+ale is at his feet.
+~
+#EXIT
+Direction south~
+ToRoom    2639
+Keywords  'temple doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2643 1 2670
+  Reset E 0 2688 1 26
+Reset D 0 2670 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2671
+Name     Before a Small Tower~
+Sector   field~
+Desc     This dirt path heads towards a small stone tower near the edge of the
+island and near the river. The tower appears to be older than the village
+itself and is made of various stones from all over. A small wooden door
+can be seen to the east leading inside the tower. The dirt path leads
+back to the west into the main part of the village from here.
+~
+#EXIT
+Direction east~
+ToRoom    2672
+Keywords  'tower door'~
+Flags     isdoor closed nopassdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2630
+#ENDEXIT
+
+Reset D 0 2671 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2672
+Name     The First Floor~
+Sector   indoors~
+Desc     The first floor of the tower features much of the living quarters for
+whoever lives here. There is a small sectioned off area for a bedroom,
+a small kitchen, and a sitting area. A stone staircase leads up to
+the next section of the tower. From here one can smell odd things coming
+from upstairs.
+~
+#EXIT
+Direction west~
+ToRoom    2671
+Keywords  'tower door'~
+Flags     isdoor closed nopassdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2673
+#ENDEXIT
+
+Reset O 0 5222 1 2672
+Reset D 0 2672 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2673
+Name     The Second Floor~
+Sector   indoors~
+Flags    safe~
+Stats    0 0 0 0 15 0
+Desc     The upper part of this tower has been set up for studies in the
+arcane. Several bookshelves are full of odd tomes of magical
+information and spellbooks while tables throughout the space
+are covered in spell components. A few sections of the stone walls
+show burn marks from spells that have gone awry at one point or
+another. A fireplace on the western wall is kept aflame with
+a small metal cauldron hung inside. 
+~
+Perdesc  &BYou spot a door leading up into an attic nearby.
+~
+#EXIT
+Direction up~
+ToRoom    2678
+Key       3700
+Keywords  'attic door'~
+Flags     isdoor closed locked pickproof nopassdoor hidden bashproof nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2672
+#ENDEXIT
+
+Reset M 0 2646 1 2673
+Reset D 0 2673 4 2
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 3
+mea $n &BYou see glowing protective sigils on the walls of this room.&w
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BYou feel the magestone pulse in your hand suddenly.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2674
+Name     &CThe Leaky Boat Tavern&w~
+Sector   indoors~
+Desc     The tavern here is quite lively and packed full of villagers and
+travelers allowed inside. There are several small tables and chairs
+for customers to sit while eating and drinking. A small boat has been
+hung from the rafters as a joke to go along with the name of the
+tavern. A warm fireplace is kept aflame during all times of the day
+and night while a stage near the fireplace is for bards to play.
+~
+#EXIT
+Direction east~
+ToRoom    2617
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2636 1 2674
+  Reset G 0 4027 1
+  Reset G 0 2603 1
+  Reset G 0 2680 1
+  Reset G 0 2604 1
+  Reset G 0 2605 1
+  Reset G 0 2609 1
+Reset D 0 2674 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2675
+Name     A Secret Dock~
+Sector   city~
+Desc     This is a secret dock that is used by a few villagers to sneak off
+every so often. The docks are quite old and rickety from age. Some of
+the wood is turning green from moisture source such as the river
+and rain. The docks are big enough only for a few boats.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      352
+MapY      613
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2636
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2676
+Name     A Village General Board~
+Sector   city~
+Desc     This location is for villagers to come and post announcements for
+the others who live here. The board is covered in pieces of parchment
+paper detailing various events and the like. Many people come here just
+to snoop and see what is going on while others arrive with the
+goal of posting new information.
+~
+#EXIT
+Direction south~
+ToRoom    2623
+#ENDEXIT
+
+Reset O 0 2687 1 2676
+#ENDROOM
+
+#ROOM
+Vnum     2677
+Name     A Dirt Path~
+Sector   city~
+Desc     This dirt path leads into an island village to the east of here or
+out of the village to the west. The path here is faint and not used
+very often by the villagers. There are several weeds that are growing
+up around the sides of the dirt path that are quite high in height.
+~
+#EXIT
+Direction east~
+ToRoom    2637
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      353
+MapY      615
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2678
+Name     &BA Magic Circle&w~
+Sector   indoors~
+Desc     This room is dedicated to the usage of magic and has been cleared of
+all furnishings. The walls have magical glyphs painted on them and on
+the floor is a large circle drawn in chalk. Sigils can be found on the
+interior the circle, which helps the magic user channel their energies
+for a desired purpose.
+~
+#EXIT
+Direction down~
+ToRoom    2673
+Key       3700
+Keywords  'attic door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+Reset D 0 2678 5 2
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if arcana($n) >= 18
+mea $n &CYou decipher the sigils here as ones used for magical travel across
+mea $n &Cgreat distances both to and from here...
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p enterpath~
+Comlist   if class($n) == wizard
+if wearingvnum($n) == 3700
+mea $n &BYou feel the energy of the room swirl around you as a large
+mea $n &Bgateway appears before you. You are drawn inside the gateway
+mea $n &Band arrive in a new destination far from the magic circle...
+mer $n &B$n&B holds up a glowing stone before disappearing through a gateway.
+silent mptransfer $n 3710
+mpat 3710 mer $n &B$n&B appears in a flash of light!&w
+else
+mea $n &BYou need to be holding the magestone first.
+endif
+else
+mea $n Nothing happens.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2689
+Name     &PCandela's Jewelry Shop&w~
+Sector   indoors~
+Desc     The store here has several well decorated tables containing lots
+of beautiful jewelry for sale. The air has been perfumed to help
+entice customers and during the day a bard is brought in to play
+music. The windows of the store feature stained glass depicting
+roses and other flowers.
+~
+#EXIT
+Direction east~
+ToRoom    2614
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2637 1 2689
+  Reset G 0 4499 1
+  Reset G 0 2682 1
+  Reset G 0 2681 1
+  Reset G 0 2683 1
+  Reset G 0 2685 1
+  Reset G 0 2684 1
+Reset D 0 2689 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2690
+Name     The Temos Public Library~
+Sector   indoors~
+Desc     This small building has rows of shelves that are full of books. Some
+of them look very new and some have been around for quite some time.
+There are various tables and chairs for people to sit and read while
+they are here. 
+~
+#EXIT
+Direction east~
+ToRoom    2643
+Keywords  'library doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2641 1 2690
+Reset D 0 2690 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2691
+Name     The Upper Temos Guard House~
+Sector   indoors~
+Desc     The guard house here is used by the local guard to rest after one
+of their long shifts. There are several beds where guards can go
+sleep. A few tables with chairs are used for eating, conversation,
+or playing games.
+~
+#EXIT
+Direction north~
+ToRoom    2639
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 2644 5 2691
+  Reset E 0 2600 1 28
+Reset M 0 2644 5 2691
+  Reset E 0 2600 1 28
+Reset M 0 2644 5 2691
+  Reset E 0 2600 1 28
+Reset M 0 2644 5 2691
+  Reset E 0 2600 1 28
+Reset M 0 2644 5 2691
+  Reset E 0 2600 1 28
+Reset M 0 2645 2 2691
+  Reset E 0 2601 1 28
+Reset M 0 2645 2 2691
+  Reset E 0 2601 1 28
+#ENDROOM
+
+#ROOM
+Vnum     2692
+Name     &BThe Temos River&w~
+Sector   indoors~
+Desc     The waters of the river move smoothly here. During the day there are
+several boats with fishermen trying to catch fish here. Nearby is
+the docks back to the village while one could continue north. 
+~
+#EXIT
+Direction north~
+ToRoom    2693
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2622
+Flags     climb nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2693
+Name     &BThe Temos River&w~
+Sector   indoors~
+Desc     The waters of the river move smoothly here. During the day there are
+several boats with fishermen trying to catch fish here. Nearby to
+the south is the docks back to the village while one could continue north.
+~
+#EXIT
+Direction north~
+ToRoom    2694
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30000
+Flags     nomob overland~
+MapX      356
+MapY      614
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2692
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2694
+Name     &BThe Temos River&w~
+Sector   indoors~
+Desc     The waters of the river move smoothly here. During the day there are
+several boats with fishermen trying to catch fish here. Far to
+the south of here is the docks of the southern portion of a
+village while far to the north is an island with another village
+on it.
+~
+#EXIT
+Direction south~
+ToRoom    2693
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2695
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2695
+Name     &BThe Temos River&w~
+Sector   indoors~
+Desc     The waters of the river move smoothly here. During the day there are
+several boats with fishermen trying to catch fish here. Far to
+the south of here is the docks of the southern portion of a
+village while close to the north is an island with another village
+on it.
+~
+#EXIT
+Direction north~
+ToRoom    2696
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2694
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2696
+Name     &BThe Temos River&w~
+Sector   indoors~
+Desc     The waters of the river move smoothly here. During the day there are
+several boats with fishermen trying to catch fish here. Nearby is
+a dock to a village on a small island while far to the south
+is the southern portion of the village.
+~
+#EXIT
+Direction south~
+ToRoom    2695
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2624
+Flags     climb nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2697
+Name     The Temos Post Office~
+Sector   indoors~
+Desc     This is a relatively new building and service for the village. The
+interior is immaculately clean due to its newness and there is not
+much in terms of decoration yet. A wall of mail boxes lines several
+walls for the villagers to use. 
+~
+#EXIT
+Direction north~
+ToRoom    2620
+Keywords  'post office door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2639 1 2697
+  Reset G 0 1660 1
+  Reset G 0 36 1
+Reset O 0 2686 1 2697
+Reset D 0 2697 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2698
+Name     The Temos Bank~
+Sector   indoors~
+Desc     The building here appears to be relatively new and you do not see many
+older villagers coming here. The bank is still regarded as a very new
+type of service in the village and only the young to middle aged seem
+to have taken interest in it. The walls are decorated with finely
+woven tapestries with beading and feathers, which are quite lovely.
+~
+#EXIT
+Direction east~
+ToRoom    2607
+Keywords  'bank doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2640 1 2698
+Reset D 0 2698 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2699
+Name     &RTEMOS MOB STORAGE&w~
+Sector   city~
+Flags    nomob nomagic safe norecall~
+Desc     You do not belong in here. Please contact an admin in order to get out.
+~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p delete~
+Comlist   if mobinroom(2649) == 1
+mppurge bard
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

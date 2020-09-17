@@ -1,0 +1,5459 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Skyfall Village~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      17 359031764
+ResetMsg     &CYou hear the crash of waves from the sea nearby...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2900
+Keywords   male man villager young human~
+Short      a young man~
+Long       A young male villager is here walking about.
+~
+Desc       This young human male is in his mid-twenties in age. He has long
+brown hair, tan skin, and brown eyes. He is walking about the village
+whistling a little song.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2925
+wake
+open n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote notices the time and heads home for the night
+mpgoto 2925
+close n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   mpgoto 2925
+close n
+sleep
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2901
+Keywords   female woman villager young human~
+Short      a young woman~
+Long       A young female villager is here walking about.
+~
+Desc       This young human female is in her early twenties in age. She has long
+blonde hair that she has braided back revealing hazel eyes and an
+ivory complexion. She is walking about the village shopping for her
+household.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     500 1 0 0 10 0 0 1 4 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   mpgoto 2925
+close n
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2925
+wake
+open n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   emote notices the time and heads home for the afternoon
+mpgoto 2925
+close n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2902
+Keywords   elderly female halfling widow woman mourning~
+Short      an elderly widow~
+Long       An elderly female halfling is here walking about the village.
+~
+Desc       This elderly halfling woman appears to be a widow in mourning still
+as she is dressed in old black clothing. Her long silvery gray hair
+has been put into a bun at the back of her head. She walks about
+slowly and with deep sadness in her eyes.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     500 1 0 0 10 0 0 1 4 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2926
+wake
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 2926
+close s
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   emote begins slowly walking back to her home
+mpgoto 2926
+close s
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2903
+Keywords   villager woman errands human~
+Short      a villager~
+Long       A woman is here running errands about the village.
+~
+Desc       This woman is in her late thirties and is running about the village
+doing her daily errands. She has cropped auburn hair and is dressed
+in simple linens as she runs around the village.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     500 1 0 0 10 0 0 1 4 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   mpgoto 2944
+close e
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2944
+wake
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   emote notices the time and heads home for the afternoon
+mpgoto 2944
+close e
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2904
+Keywords   villager man errands human~
+Short      a villager~
+Long       A man is here doing some work for the village.
+~
+Desc       This male villager is in his late thirties. He has curly blonde hair
+that is showing signs of aging and his face is starting to wrinkle
+from being outside constantly. He has a charming smile and seems to
+enjoy working for the village during the day.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2944
+wake
+open e
+e
+close w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   emote stops his work for the day and heads home 
+mpgoto 2944
+close e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   mpgoto 2944
+close e
+sleep
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2905
+Keywords   young girl villager playing~
+Short      a young girl~
+Long       A young girl is here playing around the village.
+~
+Desc       This young girl is a female human around the age of eight years old.
+She has long curly blonde hair that flies everywhere as she plays
+around the village. 
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     500 1 0 0 10 0 0 1 4 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 2944
+close e
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 2944
+wake
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 2944
+close e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote giggles as she dances about while lost in a daydream
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2906
+Keywords   young boy villager playing~
+Short      a young boy~
+Long       A young boy is here playing around the village.
+~
+Desc       This young boy is a male human around the age of seven years old.
+He has short curly blonde hair that seems to have a mind of its own.
+He has a stick in hand and is pretending to be a soldier as he plays
+around the village.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     200 1 0 0 10 0 0 1 4 0
+Stats2     1 8 0
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 2944
+close e
+sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 2944
+wake
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 2944
+close e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote swings a stick and pretends he is sword fighting someone
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2907
+Keywords   runice skyfall female halfelf mayor~
+Short      &CRunice Skyfall&w~
+Long       A female halfelf is here serving as the mayor of Skyfall Village.
+~
+Desc       This female halfelf is very beautiful and strong looking. She has wavy
+deep red hair that is half braided to reveal features that still
+show signs of Elven heritage. Her piercing olive green eyes harmonize
+with her golden tan. She is dressed in soft leather armor as she
+works at her desk here.
+~
+Race       half-elf~
+Class      bard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_invis detect_hidden~
+Stats1     600 1 5 0 16 0 0 10 25 0
+Stats2     6 10 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    15 16 16 18 12 18 13
+Saves      0 0 0 0 0 0
+Immune     charm paralysis~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure critical wounds' self
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   c 'firebolt' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2900
+smile $n
+mpsleep 3
+sayto $n Welcome to Skyfall Village. I have not met you, but if you
+sayto $n would like I can tell you about our village.
+else
+grin $n
+mpsleep 3
+sayto $n Welcome back, friend.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2900
+nod $n
+mpsleep 3
+sayto $n Skyfall Village began as three separate neighboring villages
+sayto $n that were friendly with one another. During the Great Wars
+sayto $n the Black Horde marched their troops towards Darkhaven and
+sayto $n first encountered the villages located in this area.
+mpsleep 5
+sayto $n When one village fell the people would rush to the next one
+sayto $n for safety. When the second village fell to the soldiers
+sayto $n what was left of the two villages retreated to the final
+sayto $n third village. That village still stands here today and 
+sayto $n it was led by my ancestor, Raloquinal Skyfall.
+mpsleep 5
+sayto $n Ralo as he was often called gathered up his best troops and
+sayto $n those brave enough to help him. It is said that he rode upon
+sayto $n a white horse and was armed with a powerful magical blade
+sayto $n given to him by Honeth herself. He managed to keep the Black
+sayto $n Horde stalled until reinforcements from Darkhaven arrived to
+sayto $n help and drive them away.
+mpsleep 5
+sayto $n Are you ready for more?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ready~
+Comlist   if hasqbit($n) != 2900
+smile $n
+mpsleep 3
+sayto $n The remaining villagers decided to stay here and the new
+sayto $n village was named after my ancestor. Unfortunately Ralo
+sayto $n died when the Great Rift happened. This village was not
+sayto $n located near any sea originally and when Soronys succeeded
+sayto $n in patching our world back the sea rushed in and swallowed
+sayto $n much of the town while pieces of it fell into the rift.
+mpsleep 5
+sayto $n It is unknown if Ralo was on a part of the village that
+sayto $n fell into the rift or drowned when the sea came crashing
+sayto $n into the village. His brother, Rounim, took over and the
+sayto $n village repaired itself.
+mpsleep 5
+sayto $n Today we serve as the location of the Sky Dragon Express,
+sayto $n which allows people to travel over the rifts safely. We also
+sayto $n are a source of fish and sea goods for Darkhaven island.
+mpsleep 5
+sayto $n I hope you enjoy your stay here and you are always welcome.
+bow $n
+mpqset $n 2900
+mpadvance $n 75
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   open n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   close n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2908
+Keywords   village guard wandering~
+Short      a village guard~
+Long       A guard is here patrolling around the village.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     600 1 1 0 15 0 0 0 5 0
+Stats2     2 8 2
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 11 12 12 10 14
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       2909
+Keywords   Rosco ooc rainy day tavern bartender jokes~
+Short      &cRosco&w~
+Long       &cA bartender is here making drinks and cracking jokes with his patrons.
+~
+Desc       &cThis young man works here as the bartender. He makes or sells
+the drinks to the patrons who visit. He has shaggy black hair
+and twinkling green eyes.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 15 3
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   wave $n
+mpsleep 3
+sayto $n Welcome to the Rainy Day! Let me know if you want anything.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2910
+Keywords   gnome woman elderly cafe owner~
+Short      an elderly gnome woman~
+Long       An elderly gnome woman is here making tea for her customers.
+~
+Desc       &PThis elderly gnome woman is dress in a simple linen dress and wears
+an apron with seashells embroidered on it. She owns this cafe and walks
+around serving customers while her famous cookies are baking.
+~
+Race       forest-gnome~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     1000 1 0 0 10 0 100 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+sayto $n Welcome dearie! Can I get you a hot cup of coffee and a cookie?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2943
+emote arrives and begins opening up her cafe for the day
+mpsleep 3
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   emote finishes cleaning up the cafe and heads home for the evening
+close s
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2911
+Keywords   sanara shop clerk female elf sewing~
+Short      &Pa Sanara shop clerk&w~
+Long       &PA female elf is here working the counter and helping customers here.&w
+~
+Desc       &PThis female elf is dressed in a pink and purple striped outfit that
+all Sanara shop clerks wear. Her long black hair has been braided to help
+her work without it in her face.
+~
+Race       high-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     1000 50 0 0 10 0 100000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 8 21
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n 
+mpsleep 3
+sayto $n Welcome to Sanara's Sewing Supplies. How can I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 2942
+emote arrives and begins opening the store up for the day
+open n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   emote closes up the store and heads home for the night
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2912
+Keywords   wild nereid bartender~
+Short      &Pa bartender&w~
+Long       &PA bartender is here cleaning the bar and waiting for drink orders.&w
+~
+Desc       &PThis young woman works here as the bartender. She makes or sells
+the drinks to the patrons who visit this village.  She has a
+winning figure and long red hair that she has styled into
+an intricate updo.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 50 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 13 5
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   giggle $n
+mpsleep 3
+sayto $n Why hello there! Are you interested in a drink?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2913
+Keywords   shop clerk male halfelf~
+Short      a shop clerk~
+Long       A shop clerk is here cleaning some shelves and taking inventory.
+~
+Desc       The shop clerk here is an older half-elf male with grey hair
+and green eyes. He moves about the store cleaning, taking
+inventory, and greeting customers as they come in.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 10 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Welcome to my store! I carry unique and wonderful items that
+sayto $n will intrigue you!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   mpgoto 2933
+emote arrives and begins opening up his store for the day
+mpsleep 3
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote begins cleaning up and closes the store for the night
+mpsleep 3
+close s
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2914
+Keywords   vyrn old ranger carving new boat wood~
+Short      Vyrn~
+Long       An old ranger is here carving a new boat from a big piece of wood.
+~
+Desc       This older ranger is a male human who is completely bald and sports
+a long white beard. Despite his advanced age he moves about the
+shop quickly and carves new boats with great strength. He is
+known for his quiet, cranky moods and those that come to this
+store are not coming for lengthy conversations with the old ranger.
+~
+Race       human~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     300 1 0 0 10 0 100000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 6 18
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2902
+if hasqbit($n) != 2901
+if class($n) == ranger
+nod $n
+mpsleep 3
+sayto $n Welcome wanderer. Let me know if you wish to learn the
+sayto $n ancient art of boat making. It is our way to teach each
+sayto $n other these sacred traditions.
+mpqset $n 2901
+mpsleep 5
+emote returns to carving his boat with renewed vigor
+else
+nod $n
+endif
+else
+sayto $n Are you still interested?
+endif
+else
+smile $n
+sayto $n Welcome.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2901
+sayto $n I will charge wanderers a fee of twenty gold to learn. Pay me
+sayto $n and we will start.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 20 gold coins.~
+Comlist   if hasqbit($n) == 2901
+mpqset $n 2901
+mpqset $n 2902
+emote smiles briefly and pulls out a small kit
+sayto $n Let us begin...
+mpsleep 4
+mea $n Vyrn begins showing you how to make a boat. He takes five
+mea $n logs of wood on the floor before him and he uses some
+mea $n tools to CARVESHIP. Once he is done with this step a
+mea $n small boat frame is on the floor before you. He nods
+mea $n at you and begins the next lesson.
+mer $n Vyrn shows $n how to make a boat by creating a frame.
+mpsleep 8
+mea $n Vyrn begins to COMPLETESHIP, which requires five more logs
+mea $n on the ground. He begins to cut and refine these logs to
+mea $n become the floorboards of the boat. Once he is done he
+mea $n uses a hammer and nails from the kit to nail them to
+mea $n the base of the boat. He sighs with relief and takes a break to
+mea $n take a drink of water from a glass on his work table nearby.
+mer $n Vyrn shows $n how to make floorboards and finish the boat.
+mpsleep 8
+mea $n Vyrn takes out a small tube of SEALANT and begins to
+mea $n water proof the boat and seal any small holes in the
+mea $n wood. He takes out some carving tools and refines the
+mea $n boat a bit more before completing it.
+mer $n Vyrn seals the boat with a substance as he shows $n how to do it.
+mpsleep 5
+sayto $n That is how you make a small boat. There are instructions in
+sayto $n every kit in case you forget. Good luck.
+else
+shake $n
+give 20 gold $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2945
+emote arrives and begins opening up his store for the day
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote closes up the shop for the evening and heads home
+close w
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2915
+Keywords   female fish market clerk human~
+Short      &Ca market clerk&w~
+Long       &CA market clerk is here cleaning some fish while helping customers.&w
+~
+Desc       &cThis shop clerk is a young female human with black curly hair that
+has been tied back to keep it clean. She wears an apron as she cleans
+fish and helps customers. 
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 50 0 0 10 0 10000 1000000 1000000 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote smiles and waves a hand covered in fish guts
+mpsleep 3
+sayto $n Welcome to the Skyfall Fish Market! We buy locally and sell
+sayto $n some of the best fish in the realms here. Let me know if you
+sayto $n are here to sell your catch or want to purchase anything.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2923
+emote arrives and begins opening the market for the day
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote begins cleaning up and heads home for the evening
+close s
+mpgoto 2999
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2965) >= 2
+if persuasion($n) >= 20
+mea $n &PYou haggle and persuade the clerk for a higher price and succeed.
+mpsleep 3
+sayto $n Well done! Here you go and pleasure doing business with you.
+give 10 copper $n
+mpjunk bass
+else
+smile $n
+sayto $n Well done! Here you go and pleasure doing business with you.
+give 5 copper $n
+mpjunk bass
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p sell~
+Comlist   sayto $n We buy local fish and with a great price too! Just hand me
+sayto $n the fish and I will check it over to see what the best price
+sayto $n for it will be.
+mpsleep 3
+smile $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2916
+Keywords   stable master female ~
+Short      a stable master~
+Long       The village stable master is here, cleaning the barn.
+~
+Desc       This young human woman looks to be a very hard working type and she
+seems to do her job efficiently. She has strong muscular features and
+blonde hair.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     500 1 0 0 0 400 0 0 0 0
+Stats2     0 0 20
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+sayto $n Let me know if you would like to stable your horse here.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2917
+Keywords   fabric mill worker weaving fabric~
+Short      a fabric mill worker~
+Long       A fabric mill worker is here weaving fabric on a loom.
+~
+Desc       This woman has strong looking muscles from years of running looms
+and making fabric. She has greying chestnut brown hair and dark brown
+eyes. She is very quick as she moves about the mill and seems very
+capable.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 6 18
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote stops weaving on her loom and nods her head
+mpsleep 3
+sayto $n Welcome to the Skyfall mill. Let me know if you see anything
+sayto $n you would like to purchase.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote takes a break from her weaving to move some fabric off the loom
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   close s
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2918
+Keywords   symzoun priestess human woman~
+Short      &Ba Symzoun priestess&w~
+Long       &BA Symzoun priestess is here attending to those that visit the temple.
+~
+Desc       &BThis priestess has long sleek black hair that she has parted down 
+the middle. Her skin is an unnatural pale tone that borders on
+white. She is slender and dressed in flowing blue robes.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   truesight~
+Stats1     200 1 5 0 13 0 0 10 0 0
+Stats2     6 8 5
+Stats3     0 0 0
+Stats4     2 0 2 0 0 0 6
+Attribs    10 13 16 12 12 14 14
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure serious wounds' self
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'dispel magic' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   60~
+Comlist   c 'sacred flame' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if deity($n) == symzou
+smile $n
+sayto $n Greetings little wave and welcome home. May the Goddess smile
+sayto $n upon you. 
+else
+nod $n
+sayto $n Welcome landfoot to this temple of the goddess, Symzou. 
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2919
+Keywords   symzoun priest human man~
+Short      &Ba Symzoun priest&w~
+Long       &BA Symzoun priest is here offering wares to visitors.&w
+~
+Desc       &BThis priest has sandy blonde hair and a tan to match his beachy
+aesthetic. He is dressed in silk clothing and maintains the
+temple's store here.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     200 1 5 0 13 0 10000 10 0 0
+Stats2     6 8 5
+Stats3     0 0 0
+Stats4     2 0 2 0 0 0 6
+Attribs    10 13 16 12 12 14 14
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if deity($n) == symzou
+smile $n
+mpsleep 3
+sayto $n Hail fellow wave and welcome. How may I help you?
+else
+sayto $n How may I help you today, landfoot?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2920
+Keywords   sky dragon ticket clerk young man human~
+Short      &Ca ticket clerk&w~
+Long       &CA young man is here selling tickets for the Sky Dragon.&w
+~
+Desc       &CThis young man is dressed in the Sky Dragon uniform, which
+consists of a light sky blue jacket and white trousers. He has
+a white cap to match and is here to sell tickets to the
+air ship.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Hello! Welcome to the Sky Dragon Express. We offer comfortable
+sayto $n travel across the world for everyone. If you are curious
+sayto $n about the two types of tickets offered just ask me about one of
+sayto $n them and I will be happy to tell you!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p general ticket~
+Comlist   smile $n
+mpsleep 3
+sayto $n Splendid choice! The general ticket allows you one ride to
+sayto $n wherever you are going. Once you depart the Sky Dragon you
+sayto $n will need to purchase another to continue to another location.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p gold ticket~
+Comlist   grin $n
+mpsleep 3
+sayto $n The gold ticket is the best option for those that require a
+sayto $n lot of traveling. It is a permanent ticket and allows you
+sayto $n unlimited rides all over the realm. It is pricey, but it
+sayto $n will save you money in the long run!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2921
+Keywords   dreaming dragon innkeeper inn dwarf woman~
+Short      &Can innkeeper&w~
+Long       &CA dwarven woman is here running the inn and greeting guests.&w
+~
+Desc       &CThis older dwarven woman is here working as the innkeeper for the
+Dreaming Dragon Inn & Tavern. She has long brown hair that she lets
+roam free past her shoulders. She is dressed in a light sky blue dress
+and greets everyone who enters.
+~
+Race       hill-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 1000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Welcome to the Dreaming Dragon Inn and Tavern!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2922
+Keywords   dreaming dragon tavern bartender male human~
+Short      &Ca bartender&w~
+Long       &CA bartender is here cleaning the bar while he waits for a customer.
+~
+Desc       &CThis bartender is here cleaning the bar while he waits for someone
+to order a drink. He is dressed in a fancy sky blue suit and has his
+light brown hair slicked back. His face sports a well groomed mustache
+that has been waxed to have curved tips.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     -500 50 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 14 2
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+sayto $n Let me know if you'd like a drink.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2923
+Keywords   cafe clerk morning human woman~
+Short      &Ca morning cafe clerk&w~
+Long       &CA cafe clerk is here serving breakfast for the passengers.
+~
+Desc       &CThis young woman is dressed in a sky blue dress as she serves
+breakfast for all of the passengers and crew. She has strawberry
+blonde hair and a child-like face.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     500 1 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 1
+smile $n
+mpsleep 3
+sayto $n How may I help you this morning, m'lord?
+else
+smile $n
+mpsleep 3
+sayto $n How may I help you this morning, m'lady?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   mpgoto 2958
+emote arrives and begins setting up for the breakfast rush
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   emote cleans up the cafe and goes to take a break as the shift changes
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2924
+Keywords   cafe clerk gnome lunch man~
+Short      &Ca lunch cafe clerk&w~
+Long       &CA cafe clerk is here serving lunch for the passengers.&w
+~
+Desc       &CThis young man is dressed in a sky blue shirt and trousers that
+have been tailored for his smaller stature as a gnome. He wears 
+thin wire frame glasses and carries himself proudly as he works.
+~
+Race       forest-gnome~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     500 1 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 1
+bow $n
+mpsleep 3
+sayto $n How may I help you, m'lord?
+else
+bow $n
+mpsleep 3
+sayto $n How may I help you, m'lady?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   emote cleans up the cafe and goes to take a break as the shift changes
+mpgoto 2999
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   24~
+Comlist   mpgoto 2958
+emote arrives and begins setting up for the lunch rush
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2925
+Keywords   cafe clerk young elven woman snacks~
+Short      &Ca cafe clerk&w~
+Long       &CA cafe clerk is here serving snacks for the passengers.
+~
+Desc       &CThis young elven woman is dressed in a sky blue dress as she serves
+snacks for all of the passengers and crew. She has dark brown hair that
+has been curled and placed into an updo.
+~
+Race       high-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     500 50 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 1
+wink $n
+mpsleep 3
+sayto $n How may I help you, m'lord?
+else
+smile $n
+mpsleep 3
+sayto $n How may I help you, m'lady?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   mpgoto 2958
+emote arrives and begins setting up with various snacks
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   emote cleans up the cafe and leaves to go on break as the shift changes
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2926
+Keywords   cafe clerk dinner human man~
+Short      &Ca dinner cafe clerk&w~
+Long       &CA cafe clerk is here serving dinner for the passengers.&w
+~
+Desc       &CThis young man is dressed in a sky blue shirt and trousers along
+with a matching coat. He wears his reddish brown hair short and
+spiky while sporting a fresh shave.
+~
+Race       forest-gnome~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     500 50 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 1
+smile $n
+mpsleep 3
+sayto $n How may I help you tonight, m'lord?
+else
+smile $n
+mpsleep 3
+sayto $n How may I help you tonight, m'lady?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   mpgoto 2958
+emote arrives and begins setting up for the dinner rush
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote closes up the kitchen and cleans the cafe before leaving
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2927
+Keywords   cafe bartender halfelf woman bar~
+Short      &Ca cafe bartender&w~
+Long       &CA cafe bartender is here serving drinks and snacks for the passengers.&w
+~
+Desc       &CThis young half-elf woman is dressed in a revealing sky blue dress as
+she serves drinks and snacks during the late night hours. She has 
+shoulder length platinum blonde hair that is very wavy.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     -400 50 0 0 10 0 10000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 1
+grin $n
+mpsleep 3
+sayto $n What can I get you tonight, m'lord?
+else
+grin $n
+mpsleep 3
+sayto $n What can I get you tonight, m'lady?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   mpgoto 2958
+emote arrives and opens up the bar for the passengers to enjoy
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   emote cleans up the bar and closes it for the night before leaving
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2928
+Keywords   sky dragon captain~
+Short      &CThe Sky Dragon Captain&w~
+Long       &CThe Sky Dragon Captain is here watching over the ship.&w
+~
+Desc       &CThis is the captain of the Sky Dragon. He is a mature looking human
+man with greying brown hair and a thick beard. He is dressed in a 
+sky blue suit with a white captain's hat. The captain seems very
+busy steering and watching over the ship from here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+emote returns to watching over the ship and the control system
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2929
+Keywords   sky dragon crew member~
+Short      &Ca Sky Dragon crew member&w~
+Long       &CA crew member of the Sky Dragon is here working.
+~
+Desc       &CThis crew member of the Sky Dragon is a young dwarven man dressed
+in a sky blue jumpsuit. He moves about the ship checking on it and
+ensuring it's acting properly during traveling.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       2930
+Keywords   crew member boarding sky dragon woman human~
+Short      &Ca Sky Dragon crew member&w~
+Long       &CA crew member of the Sky Dragon is here helping passengers board the ship.&w
+~
+Desc       &CThis crew member of the Sky Dragon appears to have worked for the
+company for a long time. She has many medals on her chest and carries
+herself with pride. She has bright blonde hair that she has pulled
+back away from her face. Thin wire frame glasses help her see the
+tickets of the passengers who come to board the ship.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+sayto $n Hello there.. may I have your ticket before I let you board?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2906) == 1
+smile $n
+sayto $n Welcome to the Sky Dragon. You may now board the ship and
+sayto $n enjoy your trip!
+mpsleep 5
+mea $n &CYou get in line and slowly begin to board the ship with
+mea $n &Cother passengers. Before too long you are standing on the
+mea $n &Cdeck of Sky Dragon...
+mer $n &C$n gets in line and slowly boards the ship.
+silent mptransfer $n 2950
+mpjunk general
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2907) == 1
+smile $n
+sayto $n Welcome to the Sky Dragon! You may now board the ship and
+sayto $n enjoy your trip!
+mpsleep 3
+give gold $n
+mpoload 2920 1
+give candied $n
+mpsleep 5
+mea $n &CYou get in line with other gold ticket passengers and are
+mea $n &Cquickly allowed on to the ship while the general passengers
+mea $n &Cwait to board the Sky Dragon...&w
+mer $n &C$n is quickly led onto the ship with other gold ticket passengers.
+silent mptransfer $n 2951
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   mpgoto 2962
+mpecho &CThe Sky Dragon lands softly here and passengers begin to exit.
+mpsleep 3
+emote arrives from inside the ship and stand by a wood podium
+yell The Sky Dragon is now boarding general and gold passengers!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   yell The Sky Dragon is still boarding passengers. We shall be leaving soon!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   yell The Sky Dragon is now departing!
+mpsleep 3
+emote packs up the podium and boards the ship quickly
+mpsleep 10
+mpecho &CThe Sky Dragon begins to rise and takes off towards the north.
+mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2931
+Keywords   crew member exit sky dragon male halfelf~
+Short      &Ca Sky Dragon crew member&w~
+Long       &CA crew member of the Sky Dragon is here helping passengers depart the ship.&w
+~
+Desc       &CThis crew member is here to help people depart the ship. He is dressed
+in a sky blue suit, which looks nicely with his golden skin tone. His
+features show remnants of elven heritage and he is very tall standing
+at around six feet, three inches.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   mpgoto 2950
+emote arrives and begins setting up the ship for passengers to depart
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   emote closes the gate and prepares the ship for takeoff before leaving
+mpgoto 2999
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 1
+smile $n
+mpsleep 3
+sayto $n Do you wish to depart the Sky Dragon, m'lord?
+else
+smile $n
+mpsleep 3
+sayto $n Do you wish to depart the Sky Dragon, m'lady?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if time($n) == 2
+nod $n
+mpsleep 3
+mea $n &CThe crew member helps you depart the ship and you arrive on
+mea $n &Cthe loading dock near Skyfall Village...
+silent mptransfer $n 2962
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if time($n) == 3
+nod $n
+mpsleep 3
+mea $n &CThe crew member helps you depart the ship and you arrive on
+mea $n &Cthe loading dock near Skyfall Village...
+silent mptransfer $n 2962
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if time($n) == 4
+nod $n
+mpsleep 3
+mea $n &CThe crew member helps you depart the ship and you arrive on
+mea $n &Cthe loading dock near Skyfall Village...
+silent mptransfer $n 2962
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2932
+Keywords   artificer mechanic fixing ship parts~
+Short      &Can artificer&w~
+Long       &CAn artificer is here working as a mechanic for the Sky Dragon Express.&w
+~
+Desc       &CThis mechanic is here working on ship parts and finishing orders
+set upon him by the Sky Dragon Express. He is dressed in a sky
+blue jumpsuit that is covered in grease and dirt from working.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     600 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+emote continues working on a ship part with his tools
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2933
+Keywords   wandering merchant old wizard~
+Short      an old wizard~
+Long       An old wizard is here peddling some spell components and wares.
+~
+Desc       This old wizard is dressed in faded blue robes with a hem that depicts
+waves. He sports a bushy grey mustached and his wizardly cap has been
+smashed on top of greying wild curls. He had deep brown eyes that have
+a slint twinkle of mischief about them. He walks with a staff and peddles
+his wares here in town.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea pacifist~
+Affected   truesight~
+Stats1     0 50 0 0 10 0 100 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   2 3 10 13 4 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   bow $n
+mpsleep 3
+sayto $n Are you interested in any fine spellcasting ingredients?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2908
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   mpgoto 2999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2934
+Keywords   brandia seacrest halfelf woman halfelven blonde hair blue robes~
+Short      &CBrandia Seacrest&w~
+Long       &CA halfelven woman with long blonde hair is here lighting some incense.&w
+~
+Desc       &CThis halfelven woman is dressed in a rich looking blue robe that is
+embroidered with various sea motifs. Her long blonde hair rolls in soft
+waves past her shoulders.
+~
+Race       high-elf~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     1000 50 0 0 10 0 100000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   2 3 4 8 10 120 90 6 22
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2998
+yawn
+open se
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   yawn
+close se
+emote packs up and heads home for the evening.
+mpsleep 2
+mpgoto 2999
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 2
+sayto $n Welcome to the Salty Spell! What can I do for you?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2999
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     2900
+Keywords stone fountain statue elven man~
+Type     fountain~
+Short    &Ca stone fountain&w~
+Long     &CA stone fountain of a male elf brandishing a sword is here.~
+Values   1000 1000 6 0 0 0
+Values2  0 2
+Stats    900 0 0 0 0 0 0
+#EXDESC
+ExDescKey    fountain~
+ExDesc       This fountain was erected in honor of Lord Raloquinal Skyfall. The
+statue depicts the Lord with his sword drawn and preparing for battle.
+The fountain is made from simple field stones that has been developed
+into a nice looking fountain in honor of the Skyfall family.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2901
+Keywords statue symzou arms~
+Type     furniture~
+Short    &Ca statue of Symzou&w~
+Long     &CA statue of Symzou with her hands reaching out to the sea has been erected here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    9000 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2902
+Keywords longsword~
+Type     weapon~
+Short    a longsword~
+Long     A longsword has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 1 0
+Values2  0 2
+Stats    3 15 1 1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2903
+Keywords wooden sign village~
+Type     furniture~
+Short    &Oa wooden sign&w~
+Long     &OA wooden sign has been placed here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    sign~
+ExDesc       &CWelcome to Skyfall Village.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2904
+Keywords spear~
+Type     weapon~
+Short    a spear~
+Long     A simple spear has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2905
+Keywords morningstar~
+Type     weapon~
+Short    a morningstar~
+Long     A morningstar has been left here.~
+Flags    inventory~
+WFlags   take onehand~
+Values   12 1 8 3 8 0
+Values2  0 2
+Stats    4 15 1 1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2906
+Keywords sky dragon express general ticket~
+Type     trash~
+Short    &Ca Sky Dragon Express general ticket&w~
+Long     &CA ticket to ride on the Sky Dragon air ship has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 15 0 0 1 1 0
+#EXDESC
+ExDescKey    ticket~
+ExDesc       &CThe ticket is stamped with a silvery dragon that is depicted
+in mid-flight through some clouds. This ticket is good for
+one ride.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2907
+Keywords sky dragon gold ticket~
+Type     trash~
+Short    &Ya Sky Dragon Express gold ticket&w~
+Long     &YA ticket to ride on the Sky Dragon air ship has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 119 0 0 11 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2910
+Keywords breakfast platter eggs bacon toast sky dragon~
+Type     food~
+Short    &Ca Sky Dragon breakfast platter&w~
+Long     &CA platter full of breakfast food has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 5 25 0 1 0
+#EXDESC
+ExDescKey    platter~
+ExDesc       &CThis platter consists of eggs, bacon, hashbrowns, and two pieces of
+buttered toast. It has been expertly prepared and smells delicious.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2911
+Keywords glass orange juice~
+Type     drinkcon~
+Short    &Ra glass of orange juice&w~
+Long     &RA glass of orange juice has been left here.&w~
+WFlags   take onehand~
+Values   3 3 8 0 0 0
+Values2  0 2
+Stats    1 0 1 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2912
+Keywords cup coffee hot~
+Type     drinkcon~
+Short    &Oa cup of &zhot coffee&w~
+Long     &OA cup of hot coffee has been left here.&w~
+WFlags   take onehand~
+Values   4 4 12 0 0 0
+Values2  0 2
+Stats    1 0 0 30 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2913
+Keywords muffin chocolate chip~
+Type     food~
+Short    &Oa &zchocolate chip&O muffin&w~
+Long     &OA chocolate chip muffin has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2914
+Keywords toasted bagel cream cheese~
+Type     food~
+Short    &Oa toasted bagel with &wcream cheese&w~
+Long     &OA toasted bagel with cream cheese has been left here.&w~
+WFlags   take onehand~
+Values   7 0 0 0 0 0
+Values2  0 2
+Stats    1 0 3 45 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2915
+Keywords vegetable sandwich ~
+Type     food~
+Short    &Ga vegetable sandwich&w~
+Long     &GA sandwich consisting of only vegetables has been left here.&w~
+WFlags   take onehand~
+Values   8 0 0 0 0 0
+Values2  0 2
+Stats    1 0 5 45 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2916
+Keywords roast beef sandwich~
+Type     food~
+Short    &Oa roast beef sandwich&w~
+Long     &OA roast beef sandwich has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 9 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2917
+Keywords bowl cheese soup~
+Type     food~
+Short    &Ya bowl of cheese soup&w~
+Long     &YA bowl of cheese soup has been left here.&w~
+WFlags   take onehand~
+Values   6 0 0 0 0 0
+Values2  0 2
+Stats    1 0 6 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2918
+Keywords glass ice tea~
+Type     drinkcon~
+Short    &wa glass of &Wice &Otea&w~
+Long     &wA glass of ice tea has been left here.&w~
+WFlags   take onehand~
+Values   4 4 11 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2919
+Keywords glass chocolate milk~
+Type     drinkcon~
+Short    &Oa glass of &zchocolate &Wmilk&w~
+Long     &OA glass of chocolate milk has been left here.&w~
+WFlags   take onehand~
+Values   3 3 10 0 0 0
+Values2  0 2
+Stats    1 0 1 90 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2920
+Keywords candied fruit bag~
+Type     food~
+Short    &Pa bag of candied fruit&w~
+Long     &PA bag of candied fruit has been left here.&w~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2921
+Keywords bag fresh buttered popcorn~
+Type     food~
+Short    &wa bag of fresh &Ybuttered &Wpopcorn&w~
+Long     &wA bag of fresh buttered popcorn has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2922
+Keywords bottle rootbeer ~
+Type     drinkcon~
+Short    &Oa bottle of rootbeer&w~
+Long     &OA bottle of rootbeer has been left here.&w~
+WFlags   take onehand~
+Values   5 5 15 0 0 0
+Values2  0 2
+Stats    1 0 1 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2923
+Keywords dinner platter sky dragon~
+Type     food~
+Short    &Ca Sky Dragon dinner platter&w~
+Long     &CA dinner platter full of delicious food has been left here.&w~
+WFlags   take onehand~
+Values   12 0 0 0 0 0
+Values2  0 2
+Stats    1 0 8 25 0 1 0
+#EXDESC
+ExDescKey    platter~
+ExDesc       &CThis platter consists of honeyed ham, mashed potatoes, corn, and
+a bread roll. It has been expertly prepared and smells delicious.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2924
+Keywords chef salad chicken~
+Type     food~
+Short    &wa chef's &gsalad&w with &Ogrilled &Wchicken&w~
+Long     &wA chef's salad with grilled chicken has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 15 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2925
+Keywords small shepherds pie~
+Type     food~
+Short    &Oa small shepherd's pie&w~
+Long     &OA small shepherd's pie has been left here.&w~
+WFlags   take onehand~
+Values   6 0 0 0 0 0
+Values2  0 2
+Stats    1 0 3 40 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2926
+Keywords glass fresh lemonade~
+Type     drinkcon~
+Short    &Ya glass of fresh lemonade&w~
+Long     &YA glass of fresh lemonade has been left here.&w~
+WFlags   take onehand~
+Values   4 4 6 0 0 0
+Values2  0 2
+Stats    1 0 1 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2927
+Keywords flagon house ale~
+Type     drinkcon~
+Short    &Oa flagon of house ale&W~
+Long     &OA flagon of house ale has been left here.&W~
+WFlags   take hold~
+Values   3 3 4 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2928
+Keywords bottle calamitous intent~
+Type     drinkcon~
+Short    &ra bottle of &w"&RCal&zamit&rou&Rs In&zte&rnt&w"~
+Long     &rA bottle of ale labeled "Calamitous Intent" has been left here.&W~
+WFlags   take hold~
+Values   3 5 1 0 0 0
+Values2  0 2
+Stats    1 0 0 90 0 1 0
+#EXDESC
+ExDescKey    'bottle drow takeover'~
+ExDesc       &zThis bottle has been shaped in glass to look like a heavy bottom
+potion bottle. A slick looking paper label has been applied to the front
+with an illustration of a Drow army attacking a city. The words
+"Drow Takeover" have been splashed over the front label with the
+logo for the Obsidian Brewery.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    calamitous~
+ExDesc       &rThis bottle has been shaped in glass like a regular bottle used for
+ales and beers. A slick looking paper label has been applied to the front
+of the bottle with an illustration of scheming evil looking individuals
+sitting at a barely lit table. The words "Calamitous Intent" has been
+written on the front label with the logo for the Warhorse Brewing
+Company.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    bottle~
+ExDesc       &rThis bottle has been shaped in glass like a regular bottle used for
+ales and beers. A slick looking paper label has been applied to the front
+of the bottle with an illustration of scheming evil looking individuals
+sitting at a barely lit table. The words "Calamitous Intent" has been
+written on the front label with the logo for the Warhorse Brewing
+Company.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2929
+Keywords bottle paladins virtue~
+Type     drinkcon~
+Short    &Wa bottle of "P&wa&Ola&Ydin's V&Oi&wrtu&We"~
+Long     &WA bottle of labeled "Paladin's Virtue" has been left here.~
+WFlags   take hold~
+Values   3 3 4 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       This bottle has been made from shiny white glass that has a slick
+label depicting a Paladin being a hero with the words "Paladin's
+Virtue" written on top. The logo of the Valor Brewhouse can be
+seen at the bottom.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2930
+Keywords fine glass sherry~
+Type     drinkcon~
+Short    a fine glass of sherry~
+Long     A wine glass full of sherry drips here on the ground.~
+WFlags   take hold~
+Values   6 6 2 0 0 0
+Values2  0 0
+Stats    1 1 25 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2931
+Keywords bowl roasted peanuts~
+Type     food~
+Short    &wa bowl of &Oroasted peanuts&W~
+Long     &wA bowl of roasted peanuts has been left here.&W~
+WFlags   take hold~
+Values   2 9 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2932
+Keywords bottle sky dragon~
+Type     drinkcon~
+Short    &Wa bottle of "&CSk&cy Dra&Cgon&W"~
+Long     &CA bottle labeled "Sky Dragon" has been left here.&w~
+WFlags   take hold~
+Values   4 4 4 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       &CThis bottle has been made from cyan colored glass that has a slick
+label depicting a silvery dragon flying through white puffy clouds.
+The words "Sky Dragon" has been written on the top of the label. The
+logo of the Valor Brewhouse can be seen on the bottom of the bottle.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2933
+Keywords dark purple wine glass~
+Type     drinkcon~
+Short    &pa glass of dark purple wine&W~
+Long     &pA glass of dark purple wine has been left here.&W~
+WFlags   take hold~
+Values   3 3 2 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2934
+Keywords flagon dark dwarven ale~
+Type     drinkcon~
+Short    &wa flagon of &Odark dwarven ale&w~
+Long     &wA flagon of dark dwarven ale has been left here.&w~
+WFlags   take onehand~
+Values   6 6 4 0 0 0
+Values2  0 2
+Stats    1 0 0 75 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2935
+Keywords seashell sugar cookie~
+Type     food~
+Short    &Ca seashell sugar cookie&w~
+Long     &CA cookie in the shape of a seashell has been left here.&w~
+WFlags   take onehand~
+Values   4 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2936
+Keywords cinnamon tea hot cup~
+Type     drinkcon~
+Short    &wa cup of hot &Rcinnamon&O tea~
+Long     &wA cup of hot cinnamon tea has been left here.&w~
+WFlags   take onehand~
+Values   5 5 11 0 0 0
+Values2  0 2
+Stats    1 0 0 60 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2937
+Keywords cup caramel coffee hot~
+Type     drinkcon~
+Short    &za cup of &Ycaramel&z coffee&w~
+Long     &zA cup of coffee mixed with milk and caramel has been left here.&w~
+WFlags   take onehand~
+Values   5 5 12 0 0 0
+Values2  0 2
+Stats    1 0 10 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2938
+Keywords natural healing salve~
+Type     salve~
+Short    &ca natural healing salve&w~
+Long     &cA small healing salve has been left here.~
+Flags    magic~
+WFlags   take onehand~
+Values   10 5 5 10 -1 -1
+Values2  0 2
+Stats    1 11 90 0 1 1 0
+Spells   'cure light wounds' 'cure light wounds'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2939
+Keywords green bottle poison antidote~
+Type     potion~
+Short    &ga green bottle of poison antidote&w~
+Long     &gA green bottle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   25 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 12 0 0 1 1 0
+Spells   'neutralize poison' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2940
+Keywords trident blue metal gem encrusted~
+Type     weapon~
+Short    &Ba &bgem encrusted&B trident&w~
+Long     &BA gem encrusted trident made from a blue metal has been left here.~
+Lore   &BYour divination reveals this as a minorly enchanted trident created
+to help fishermen with catching fish or defending themselves. It has
+been crafted from a strange blue metal and is encrusted with pearls
+and other gems.
+~
+Flags    magic versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 17 0
+Values2  0 2
+Stats    4 98 40 1 9 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2941
+Keywords net silver magical~
+Type     weapon~
+Short    &wa net made from silver threads&w~
+Long     &wA net made from silver threads has been left here.&w~
+Lore   &wYour divination reveals this to be a minorly enchanted net used by
+fishermen to catch strong fish or those that try to attack them. It is
+crafted from strange silver threads that appear fragile, but are in
+fact quite strong.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 0 0 0 22 0
+Values2  0 2
+Stats    3 55 0 1 5 1 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2942
+Keywords bottle silly siren~
+Type     drinkcon~
+Short    &Pa bottle of "&pSilly Siren&P"&w~
+Long     &PA bottle labeled "Silly Siren" has been left here.&w~
+WFlags   take hold~
+Values   3 3 5 0 0 0
+Values2  0 2
+Stats    1 0 5 90 0 0 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       &PThis bottle has been made from a bright pink glass that has a slick
+label depicting three sirens laughing while drowning a sailor with
+the words "Silly Siren" written on the top. The logo of the Crazy
+Mage Brewery can be seen at the bottom.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2943
+Keywords envelope packet small mens trouser pattern sanara~
+Type     trash~
+Short    &Pa "Sewing with Sanara" men's trouser pattern&w~
+Long     &PA small envelope with a pattern for men's trousers has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 5 0 0 0 1 0
+#EXDESC
+ExDescKey    pattern~
+ExDesc       &PThis "Sewing with Sanara" pattern makes either one beginner level
+trouser or an advanced one. You will need a bolt of heavy cotton,
+thread, a heavy duty needle, scissors, and pins for this project,
+This is a packet which contains the pattern and a button for your
+trousers. The label on the front has an illustration of Sanara on it
+with a big grin on her face while wielding two pairs of scissors.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p cutoutpattern~
+Comlist   if carryingvnum($n) == 2954
+if wearingvnum($n) == 2946
+mea $n You carefully cut out your fabric pieces with the pattern on top.
+mer $n $n carefully cuts out $s fabric pieces with the pattern on top.
+mpoload 2955 1
+silent mpforce $n get pile
+silent mpforce $n drop pinned
+mppurge pinned
+else
+mea $n You need to be holding the scissors.
+endif
+else
+mea $n Your pattern is not ready to be cut out yet.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pinpattern~
+Comlist   if carryingvnum($n) == 2953
+if carryingvnum($n) == 2945
+mea $n You carefully pin the pattern to the fabric in preparation for cutting.
+mer $n $n carefully pins the pattern to the fabric.
+silent mpforce $n drop nextpin
+mppurge nextpin
+mpoload 2954 1
+silent mpforce $n get pinned
+else
+mea $n You do not have any sewing pins.
+endif
+else
+mea $n You do not have your pattern on the fabric ready for pinning.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p layoutpattern~
+Comlist   if carryingvnum($n) == 2944
+if sleight($n) >= 12
+mea $n You skillfully lay the pattern on the bolt of fabric in preparation.
+mer $n $n skillfully lays the pattern on the bolt of fabric.
+mpjunk bolt
+mpoload 2953 1
+silent mpforce $n get fabric
+else
+mea $n You fail to lay the pattern out on the fabric correctly.
+endif
+else
+mea $n You do not have any fabric to put your pattern on.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate pattern~
+Comlist   if investigation($n) >= 12
+mea $n You read the directions on the back of the envelope:
+mpsleep 3
+Mea $n You read that this pattern requires one bolt of heavy cotton fabric,
+Mea $n cotton thread, sewing pins, scissors, and a fine sewing needle.
+mpsleep 3
+mea $n Step 1: You must lay the pattern on the fabric (LAYOUTPATTERN).
+mea $n Step 2: You must pin the pattern to the fabric (PINPATTERN).
+mea $n Step 3: You will need to cut out the pattern from fabric (CUTPATTERN).
+mpsleep 3
+mea $n You will then be able to construct the simple or advanced trousers.
+mpsleep 3
+mea $n For the simple trousers you can simply SEWSIMPLETROUSERS.
+mea $n For the advanced trousers you can simply SEWADVTROUSERS.
+mpsleep 3
+mea $n This will complete a pair of simple or exquisite men's trousers
+mea $n based on skill level. Be careful as failure can ruin a project
+mea $n before it's finished. Have fun and hopefully the lucky man these 
+mea $n are for will enjoy them for years to come!
+else
+mea $n The pattern seems very difficult to understand...
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p sewsimpletrousers~
+Comlist   if carryingvnum($n) == 2955
+if wearingvnum($n) == 2947
+if carryingvnum($n) == 2958
+if sleight($n) >= 12
+mea $n You begin to carefully sew each piece of the trouser together...
+mer $n $n begins to carefully sew a pair of trousers together.
+mpsleep 20
+mea $n You continue sewing and reach the halfway point.
+mer $n $n continues sewing a pair of trousers.
+mpsleep 20
+mea $n You complete your pair of trousers.
+mer $n $n completes the pair of trousers $e was sewing.
+silent mpforce $n get looking
+mpoload 2956 1
+silent mpforce $n get looking
+silent mpforce $n drop pile
+mppurge pile
+else
+mea $n You fail to sew the trousers correctly.
+silent mpforce $n drop pile
+mppurge pile
+endif
+else
+mea $n You do not have any thread ready for sewing.
+endif
+else 
+mea $n You need to have your needle held and ready to sew.
+endif
+else
+mea $n You do not have any pattern pieces ready to sew yet.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p sewadvtrousers~
+Comlist   if carryingvnum($n) == 2955
+if wearingvnum($n) == 2947
+if carryingvnum($n) == 2958
+if sleight($n) >= 20
+mea $n You begin to carefully sew each piece of the trousers together...
+mer $n $n begins to carefully sew a pair of trousers together.
+mpsleep 20
+mea $n You continue sewing and reach the halfway point.
+mer $n $n continues sewing a pair of trousers.
+mpsleep 20
+mea $n You complete your pair of trousers.
+mer $n $n completes the pair of trousers $e was sewing.
+mpoload 2957 1
+silent mpforce $n get exquisite
+silent mpforce $n drop pile
+mppurge pile
+else
+mea $n You fail to sew the trousers correctly.
+silent mpforce $n drop pile
+mppurge pile
+endif
+else
+mea $n You do not have any thread ready for sewing.
+endif
+else 
+mea $n You need to have your needle held and ready to sew.
+endif
+else
+mea $n You do not have any pattern pieces ready to sew yet.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2944
+Keywords bolt heavy cotton~
+Type     trash~
+Short    &wa bolt of heavy cotton&w~
+Long     &wA bolt of heavy cotton has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    3 0 40 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2945
+Keywords sewing pins packet~
+Type     trash~
+Short    a packet of small sewing pins~
+Long     A packet of small sewing pins has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 3 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2946
+Keywords pair scissors sewing~
+Type     weapon~
+Short    a pair of sewing scissors~
+Long     A pair of sewing scissors have been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 2 3 5 0
+Values2  0 2
+Stats    1 0 1 45 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2947
+Keywords sewing needle heavy duty~
+Type     trash~
+Short    a heavy duty sewing needle~
+Long     A sewing needle has been left here.~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2948
+Keywords sewing needle fine~
+Type     trash~
+Short    a fine sewing needle~
+Long     A sewing needle has been left here.~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 60 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2949
+Keywords sewing box embroidered bats~
+Type     container~
+Short    &za sewing box embroidered with bats&w~
+Long     &zA sewing box embroidered with bats has been left here.&w~
+WFlags   take onehand~
+Values   25 1 0 12 0 0
+Values2  0 2
+Stats    1 0 10 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2950
+Keywords sewing box embroidered unicorns~
+Type     container~
+Short    &Wa sewing box embroidered with unicorns&w~
+Long     &WA sewing box embroidered with unicorns has been left here.&w~
+WFlags   take onehand~
+Values   25 1 0 12 0 0
+Values2  0 2
+Stats    1 0 10 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2951
+Keywords sewing box embroidered willow trees~
+Type     container~
+Short    &Ga sewing box embroidered with willow trees&w~
+Long     &GA sewing box embroidered with willow trees has been left here.&w~
+WFlags   take onehand~
+Values   25 1 0 12 0 0
+Values2  0 2
+Stats    1 0 10 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2952
+Keywords sewing box embroidered hearts~
+Type     container~
+Short    &Pa sewing box embroidered with pink hearts&w~
+Long     &PA sewing box embroidered with pink hearts has been left here.&w~
+WFlags   take onehand~
+Values   25 1 0 12 0 0
+Values2  0 2
+Stats    1 0 10 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2953
+Keywords fabric pattern layout nextpin~
+Type     trash~
+Short    some fabric with a pattern on top~
+Long     Some fabric with a pattern placed on top is here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2954
+Keywords fabric pattern layout pinned~
+Type     trash~
+Short    some fabric with a pattern pinned to it~
+Long     Some fabric with a pattern pinned to it has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2955
+Keywords fabric pattern pieces pile cut~
+Type     trash~
+Short    a pile of cut out pattern pieces~
+Long     A pile of pattern pieces pinned to fabric has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2956
+Keywords simple looking cotton mens trousers~
+Type     armor~
+Short    a pair of simple looking cotton trousers~
+Long     A pair of simple looking cotton trousers have been left here.~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 1 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2957
+Keywords exquisite looking cotton mens trousers~
+Type     armor~
+Short    &wa pair of exquisite cotton trousers~
+Long     &wA pair of exquisite cotton trousers have been left here.&w~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 5 35 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2958
+Keywords spool thread cotton~
+Type     trash~
+Short    a spool of cotton thread~
+Long     A spool of cotton thread has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 10 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2959
+Keywords bolt silk silkbolt beautiful~
+Type     trash~
+Short    &Wa bolt of beautiful silk&w~
+Long     &WA bolt of silk has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 25 0 0 2 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2960
+Keywords spool thread silk~
+Type     trash~
+Short    &Wa spool of silk thread&w~
+Long     &WA spool of silk thread has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 10 0 0 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2961
+Keywords envelope packet pattern small womens womans elegant gown sanara~
+Type     trash~
+Short    &Ra "Sewing with Sanara" women's elegant gown pattern&w~
+Long     &RA small envelope with a pattern for a woman's gown has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 9 0 0 0 1 0
+#EXDESC
+ExDescKey    pattern~
+ExDesc       &RThis "Sewing with Sanara" patterns makes only one elegant silk
+gown for an advanced seamstress. You will need a bolt of silk,
+silk thread, a fine needle, scissors, and pins for this project,
+This is a packet which contains the pattern and a closure for your
+gown. The label on the front has an illustration of Sanara on it
+with a big grin on her face while wielding two pairs of scissors.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p cutoutpattern~
+Comlist   if carryingvnum($n) == 2954
+if wearingvnum($n) == 2946
+mea $n You carefully cut out your fabric pieces with the pattern on top.
+mer $n $n carefully cuts out $s fabric pieces with the pattern on top.
+mpoload 2955 1
+silent mpforce $n get pile
+silent mpforce $n drop pinned
+mppurge pinned
+else
+mea $n You need to be holding the scissors.
+endif
+else
+mea $n Your pattern is not ready to be cut out yet.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pinpattern~
+Comlist   if carryingvnum($n) == 2953
+if carryingvnum($n) == 2945
+mea $n You carefully pin the pattern to the fabric in preparation for cutting.
+mer $n $n carefully pins the pattern to the fabric.
+silent mpforce $n drop nextpin
+mppurge nextpin
+mpoload 2954 1
+silent mpforce $n get pinned
+else
+mea $n You do not have any sewing pins.
+endif
+else
+mea $n You do not have your pattern on the fabric ready for pinning.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p layoutpattern~
+Comlist   if carryingvnum($n) == 2959
+if sleight($n) >= 12
+mea $n You skillfully lay the pattern on the bolt of fabric in preparation.
+mer $n $n skillfully lays the pattern on the bolt of fabric.
+silent mpforce $n drop silkbolt
+mppurge silkbolt
+mpoload 2953 1
+silent mpforce $n get fabric
+else
+mea $n You fail to lay the pattern out on the fabric correctly.
+endif
+else
+mea $n You do not have any fabric to put your pattern on.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p sewsilkgown~
+Comlist   if carryingvnum($n) == 2955
+if wearingvnum($n) == 2948
+if carryingvnum($n) == 2960
+if sleight($n) >= 20
+mea $n You begin to carefully sew each piece of the gown together...
+mer $n $n begins to carefully sew a silk gown.
+mpsleep 20
+mea $n You continue sewing and reach the halfway point.
+mer $n $n continues to carefully sew a silk gown.
+mpsleep 20
+mea $n You complete your silk gown with a sigh of relief.
+mer $n $n completes the silk gown $e was sewing.
+Mpoload 2962 1
+silent mpforce $n get silkgown
+silent mpforce $n drop pile
+mppurge pile
+else
+mea $n You fail to sew the silk gown.
+silent mpforce $n drop pile
+mppurge pile
+endif
+else
+mea $n You do not have any thread ready for sewing.
+endif
+else 
+mea $n You need to have your needle held and ready to sew.
+endif
+else
+mea $n You do not have any pattern pieces ready to sew yet.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate pattern~
+Comlist   if investigation($n) >= 13
+mea $n You read the directions on the back of the envelope:
+mpsleep 3
+Mea $n You read that this pattern requires one bolt of silk fabric,
+Mea $n silk thread, sewing pins, scissors, and a fine sewing needle.
+mpsleep 3
+mea $n Step 1: You must lay the pattern on the fabric (LAYOUTPATTERN).
+mea $n Step 2: You must pin the pattern to the fabric (PINPATTERN).
+mea $n Step 3: You will need to cut out the pattern from fabric (CUTPATTERN).
+mpsleep 3
+mea $n You will then be able to construct the gown.
+mpsleep 3
+mea $n To sew the gown you can will carefully SEWSILKGOWN.
+mpsleep 3
+mea $n This will complete an elegant silk gown that requires an
+mea $n advanced skill level. Be careful as failure can ruin a project
+mea $n before it's finished. Have fun and enjoy wearing your gown
+mea $n to elegant dinner parties!
+else
+mea $n The pattern seems very difficult to understand...
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2962
+Keywords silk gown elegant silkgown~
+Type     armor~
+Short    &Wan elegant silk gown&w~
+Long     &WAn elegant silk gown has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 25 0 0 2 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2963
+Keywords small wooden boat~
+Type     boat~
+Short    &Oa small wooden boat&w~
+Long     &OA small wooden boat has been left here.&w~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    10 45 90 0 4 1 0
+#EXDESC
+ExDescKey    boat~
+ExDesc       &OThis boat is only big enough to carry one to two people on it. It
+has been made from carved wood and seems very stable.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2964
+Keywords fishing pole ocean opole olure1 ~
+Type     weapon~
+Short    &Oa fishing pole with an &bocean lure&w~
+Long     &OA fishing pole used for fishing in the ocean has been left here.&w~
+Flags    organic versatile~
+WFlags   take onehand twohand~
+Values   12 1 4 2 15 0
+Values2  0 2
+Stats    4 5 0 1 1 1 0
+#EXDESC
+ExDescKey    fishing~
+ExDesc       &OThis is a fairly sturdy fishing pole that can help someone
+FISH for their dinner.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    pole~
+ExDesc       &wThis is a metal fishing pole used to help someone fish at the sea.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate pole~
+Comlist   if investigation($n) >= 12
+mea $n You can use this to fish at large bodies of water like the
+mea $n ocean. You can simply FISH to try and catch something.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   fish~
+Comlist   if wearingvnum($n) == 2964
+if sector($n) == 18
+if survival($n) >= 18
+mea $n &BYou manage to catch a fish using your fishing pole!
+mpoload 2965 1
+mposet bass timer 25
+silent mpforce $n get bass
+else
+mea $n &wYou fail to catch a fish using your fishing pole.
+endif
+else
+mea $n &wYou need to be in the ocean in order to do any fishing.
+endif
+else
+mea $n &wYou need to be holding the fishing pole first.
+Endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2965
+Keywords sea bass fish~
+Type     cook~
+Short    &Ba sea bass&w~
+Long     &BA fresh sea bass has been left here.&w~
+WFlags   take onehand~
+Values   5 1 0 0 0 0
+Values2  0 2
+Stats    1 0 2 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2967
+Keywords small boat making tool kit boatkit~
+Type     trash~
+Short    &Oa small boat tool making kit&w~
+Long     &OA small boat tool making kit has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    5 5 0 0 0 1 0
+#EXDESC
+ExDescKey    kit~
+ExDesc       &OThis kit is used by someone to make a small boat. The kit contains
+some carving implements, hammer, nails, and some sealant. There are
+some instructions included in the kit, but it written in an odd
+code...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p sealant~
+Comlist   if ovnumroom(2969) == 1
+if hasqbit($n) == 2902
+mea $n You take the sealant from the kit and begin applying it to
+mea $n patch any small holes and prepare the boat for sailing.
+mer $n $n takes something from a kit and begins applying it to the boat.
+mpsleep 20
+mea $n You finish making the boat with the last of the kit's supplies.
+mppurge unsealed
+mpoload 2963 1
+silent mpforce $n drop boatkit
+mppurge boatkit
+else
+endif
+else
+mea $n You need to place the boat on the ground first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p completeship~
+Comlist   if ovnumroom(2014) == 5
+if ovnumroom(2968) == 1
+if hasqbit($n) == 2902
+if survival($n) >= 14
+mea $n You begin the process of completing the boat by creating the floor
+mea $n pieces from the logs. You begin by refining them first...
+mer $n $n begins refining some logs and cutting them into pieces.
+mpasound The sounds of wood being carved and cut can be heard nearby.
+mpsleep 15
+mea $n You finish refining and cutting the floor pieces. Slowly you
+mea $n begin to place the floorboards on the bottom of the ship
+mea $n and hammering them into place.
+mer $n $n begins hammering the floorboards into the bottom of the ship.
+mpasound You hear the sounds of hammering coming from nearby.
+mpsleep 15
+mea $n You finish creating the unsealed boat and are ready for 
+mea $n the last step of the process...
+mppurge frame
+mpoload 2969 1
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+else
+mea $n &RYou fail to work on the boat's frame correctly.
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+endif
+else
+mea You need five logs on the ground to begin.
+endif
+else
+mea $n You do not know how to make boats...
+endif
+else
+mea $n You do not know how to do that.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p carveship~
+Comlist   if ovnumroom(2014) == 5
+if hasqbit($n) == 2902
+if survival($n) >= 14
+mea $n You take out the carving tools and begin crafting a boat frame.
+mer $n $n takes out some tools from a kit and begins carving some logs.
+mpasound You hear the sounds of wood being carved nearby...
+mpsleep 15
+mea $n You finish carving and begin hammering the pieces into place.
+mer $n $n begins hammering pieces of wood together.
+mpasound You hear the sounds of hammering from nearby...
+mpsleep 15
+mea $n You sigh with relief as you finish the frame of your boat.
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+mpoload 2968 1
+else
+mea $n &RYou fail to work on the boat's frame correctly.
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+mppurge log
+endif
+else
+mea $n You need five logs on the ground to begin.
+endif
+else
+mea $n You do not know how to make boats...
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate kit~
+Comlist   if class($n) == Ranger
+if hasqbit($n) == 2902
+if investigation($n) >= 12
+mea $n &GYou read the ranger's code and decipher the instructions:
+mpsleep 3
+mea $n &w1.) Obtain ten logs of unrefined wood prior to boat making.
+mea $n &w2.) Begin to CARVESHIP to create the boat frame.
+mea $n &w2.) Begin to COMPLETESHIP to finish the boat frame and floor.
+mea $n &w3.) Use the SEALANT to help prevent water from entering.
+else
+mea $n You find nothing.
+endif
+else 
+mea $n You cannot seem to decipher the code on the instructions.
+endif
+else
+mea $n You cannot seem to decipher the code on the instructions.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2968
+Keywords small boat frame~
+Type     trash~
+Short    &Oa small boat frame&w~
+Long     &OA small frame for a boat has been left here.&w~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    5 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2969
+Keywords small boat unsealed rough looking~
+Type     trash~
+Short    &Oan unsealed rough looking small boat&w~
+Long     &OA rough looking boat has been left here.&w~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    10 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2970
+Keywords fish pie small~
+Type     food~
+Short    &ca small fish pie&w~
+Long     &cA small pie made with fish has been left here.&w~
+WFlags   take onehand~
+Values   6 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2971
+Keywords sea bass fishy stew bowl~
+Type     food~
+Short    &Ba bowl of sea bass stew&w~
+Long     &BA bowl of fishy stew has been left here.&w~
+WFlags   take onehand~
+Values   9 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 80 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2972
+Keywords fish guts handful~
+Type     trash~
+Short    &ca handful of fish guts&w~
+Long     &cA small handful of fish guts have been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2973
+Keywords fish eyes small pair~
+Type     trash~
+Short    &ca pair of small fish eyes&w~
+Long     &cA pair of small fish eyes have been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2974
+Keywords sunstone yellow stone gold flecks gem~
+Type     gem~
+Short    &Ya sunstone&w~
+Long     &YA stone with gold flecks in it has been left here.&w~
+WFlags   take onehand~
+Values   25 0 0 0 0 0
+Values2  0 2
+Stats    1 5 10 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2975
+Keywords leaf sumac small bright green~
+Type     trash~
+Short    &Ga leaf of sumac&w~
+Long     &GA small bright green leaf has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2976
+Keywords moonseed pure white seed~
+Type     trash~
+Short    &Wa moonseed&w~
+Long     &WA small white seed has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2977
+Keywords opalescent feldspar pale looking rock~
+Type     trash~
+Short    &Can opalescent feldspar&w~
+Long     &CA pale looking opalescent rock has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 4 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2978
+Keywords small vine thorns~
+Type     trash~
+Short    &ga small vine with thorns&w~
+Long     &gA small vine with thorns has been left here.&w~
+WFlags   take onehand~
+Values   25 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2979
+Keywords shamrock leaf~
+Type     trash~
+Short    &Ga shamrock leaf&w~
+Long     &GA shamrock leaf has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2980
+Keywords pinch powder yellow colored sulfur brimstone~
+Type     trash~
+Short    &Ya pinch of sulfur&w~
+Long     &YA pinch of yellow colored powder has been left here.&w~
+Flags    inventory~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 40 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2981
+Keywords earthstone small plain looking stone~
+Type     trash~
+Short    &Oan earthstone&w~
+Long     &OA plain looking stone has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2982
+Keywords bag twigs velvet small~
+Type     trash~
+Short    &ga small velvet bag full of twigs&w~
+Long     &gA small velvet bag full of twigs has been left here.&w~
+WFlags   take onehand~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2983
+Keywords piece red clay~
+Type     trash~
+Short    &Ra piece of red clay&w~
+Long     &RA piece of red colored clay has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2984
+Keywords small piece iron~
+Type     trash~
+Short    &wa small piece of iron&w~
+Long     &wA small piece of iron has been left here.&w~
+WFlags   take onehand~
+Values   25 0 0 0 0 0
+Values2  0 2
+Stats    1 1 5 90 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2985
+Keywords sea pill dark teal colored~
+Type     pill~
+Short    &ca sea pill&w~
+Long     &cA dark teal colored pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 2 0
+Values2  0 2
+Stats    1 15 0 0 1 1 0
+Spells   'water breathing' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2986
+Keywords small white ceramic cone~
+Type     trash~
+Short    &Wa small white ceramic cone&w~
+Long     &WA small white ceramic cone has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2987
+Keywords pair small magnets ~
+Type     trash~
+Short    &wa pair of small magnets&w~
+Long     &wA pair of small magnets have been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    0 0 25 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2988
+Keywords jar sand beach~
+Type     trash~
+Short    &Ya jar of beach sand&w~
+Long     &YA jar of beach sand has been left here.&w~
+WFlags   take onehand~
+Values   15 0 0 0 0 0
+Values2  0 1
+Stats    0 2 10 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2999
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2900
+Name     A Dirt Path~
+Sector   city~
+Desc     This is a small dirt road that travels near the sea located towards the
+south from here. The road is well traveled and you can see wagon marks 
+deeply embedded into the soil here. Some of the wildlife has been trampled
+by animals such as horses over the years, which helps to form the boundaries
+of the road.
+~
+#EXIT
+Direction east~
+ToRoom    30000
+Flags     nomob overland~
+MapX      482
+MapY      814
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2901
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2901
+Name     Before a Small Village~
+Sector   city~
+Desc     The dirt road ends here at the beginnings of a small fishing village to
+the west of here. The town has been built into the sandy fields with a
+few trees growing in the village limits. There are large dunes to the 
+south that hide views of the sea from time to time. The road continues
+back to the east where it eventually enters a large forest.
+~
+#EXIT
+Direction east~
+ToRoom    2900
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2902
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 2903 1 2901
+#ENDROOM
+
+#ROOM
+Vnum     2902
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs north and south while
+a path leads down the middle of the village to the west. Tiny cottages
+with thatched roofs can be seen throughout this quaint little village
+that sits by the sea. A large cottage can be seen towards the west off
+the main path and it is the only one with a second floor.
+~
+#EXIT
+Direction north~
+ToRoom    2904
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2901
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2903
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2917
+#ENDEXIT
+
+Reset M 0 2908 1 2902
+  Reset E 0 2904 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2903
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs north and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A family
+sized cottage can be seen to the west off the path here.
+~
+#EXIT
+Direction north~
+ToRoom    2902
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2906
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2944
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2908 3 2903
+  Reset E 0 2904 1 26
+Reset D 0 2903 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2904
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs north and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A stable
+house can be seen to the east of here where visitors often stable their
+horses during their stay.
+~
+#EXIT
+Direction north~
+ToRoom    2905
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2939
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2902
+#ENDEXIT
+
+Reset M 0 2908 3 2904
+  Reset E 0 2904 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2905
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs west and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil.
+~
+#EXIT
+Direction south~
+ToRoom    2904
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2909
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2998
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2906
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs west and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil.
+~
+#EXIT
+Direction north~
+ToRoom    2903
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2907
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2907
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs east and west. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A small 
+white building can be seen to the north, which serves as the village's
+fish market.
+~
+#EXIT
+Direction north~
+ToRoom    2923
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2906
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2929
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2908
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs north and east. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil.
+~
+#EXIT
+Direction north~
+ToRoom    2914
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2929
+#ENDEXIT
+
+Reset M 0 2933 1 2908
+  Reset G 0 2981 1
+  Reset G 0 2978 1
+  Reset G 0 2977 1
+  Reset G 0 2975 1
+  Reset G 0 2979 1
+  Reset G 0 2983 1
+  Reset G 0 2976 1
+  Reset G 0 2980 1
+  Reset G 0 2974 1
+  Reset G 0 2982 1
+  Reset G 0 2984 1
+#ENDROOM
+
+#ROOM
+Vnum     2909
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs east and west. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A small
+cottage can be seen towards the north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2926
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2905
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2910
+#ENDEXIT
+
+Reset D 0 2909 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2910
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs east and west. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A large
+family sized cottage can be seen to the south from here.
+~
+#EXIT
+Direction east~
+ToRoom    2909
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2925
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2911
+#ENDEXIT
+
+Reset D 0 2910 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2911
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs east and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A small
+mill can seen towards the north as a large river runs behind it.
+~
+#EXIT
+Direction north~
+ToRoom    2941
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2910
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2912
+#ENDEXIT
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &CYou hear the wheel of the mill to the north creak as it moves slowly.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2912
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs north and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil.
+~
+#EXIT
+Direction north~
+ToRoom    2911
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2913
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2913
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs north and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. Another
+path in the village is to the east as it cuts through the middle of
+the village.
+~
+#EXIT
+Direction north~
+ToRoom    2912
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2915
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2914
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2914
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs north and south. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A small 
+shop can be seen to the east while a path leading out of the village
+is located to the west.
+~
+#EXIT
+Direction north~
+ToRoom    2913
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2945
+Flags     isdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2908
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2918
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2915
+Name     A Small Village Path~
+Sector   city~
+Desc     This is the busiest path in the village as it runs east and west while
+cutting through the direct center of the village. Tiny cottages with
+thatched roofs can be seen throughout the village while the majority
+of buildings on this path are more commercial properties used for
+businesses. Long grasses grow alongside these buildings and a few
+trees can be seen about this part of the village. Two large stone
+buildings can be seen to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2943
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2916
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2924
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2913
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2916
+Name     &CThe Village Square&w~
+Sector   city~
+Desc     A large stone fountain has been placed here to mark this are the village
+square of Skyfall village. The busy dirt path that cuts through the 
+middle of the village can be seen towards the east and west here while
+two large stone buildings can be found at the north and south. The 
+building to the south is home to the village mayor and is the only
+building to have two stories. A shop occupies the building to the
+north. Long grasses grow alongside these buildings and a few trees 
+are located nearby.
+~
+#EXIT
+Direction north~
+ToRoom    2933
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2917
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2932
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2915
+#ENDEXIT
+
+Reset O 0 2900 1 2916
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate fountain~
+Comlist   if investigation($n) >= 12
+mea $n You find a plaque that reads, "In honor defending shores of
+mea $n Darkhaven against the Dark Lord and keeping the nearby
+mea $n villages safe."
+else
+mea $n You find nothing.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2917
+Name     A Small Village Path~
+Sector   city~
+Desc     This is the busiest path in the village as it runs east and west while
+cutting through the direct center of the village. Tiny cottages with
+thatched roofs can be seen throughout the village while the majority
+of buildings on this path are more commercial properties used for
+businesses. Long grasses grow alongside these buildings and a few
+trees can be seen about this part of the village. Two large stone
+buildings can be seen to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2931
+Flags     isdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2902
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2942
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2916
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2918
+Name     A Dirt Path~
+Sector   field~
+Desc     This path here is well traveled by those either heading towards the
+large airfield towards the northwest or towards the village located
+to the east from here. Small cottages can be seen all over the village
+with thatched roofs and white stone walls. The path leading to the
+airfield has been carved through long grass and the remnants of
+wagon wheels has been permanently indented into the ground.
+~
+#EXIT
+Direction east~
+ToRoom    2914
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2919
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2919
+Name     A Dirt Path~
+Sector   field~
+Desc     This path here is well traveled by those either heading towards the
+large airfield towards the northwest or towards the village located
+to the far east from here. Cottages can be seen all over the village
+with thatched roofs and white stone walls. The path leading to the
+airfield has been carved through long grass and the remnants of
+wagon wheels has been permanently indented into the ground.
+~
+#EXIT
+Direction north~
+ToRoom    2921
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2918
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2920
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2920
+Name     A Dirt Path~
+Sector   field~
+Desc     This path leads towards the sea and a large statue to a goddess has
+been erected here to mark the way. A well established path leads to 
+north from here towards a large field located at the northwest or
+to a small village of white stone cottages with thatched roofs. A
+beach can be seen to the south and the shimmering waters of the
+sea beckons to anyone that sees it.
+~
+#EXIT
+Direction north~
+ToRoom    2919
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      677
+MapY      894
+#ENDEXIT
+
+Reset O 0 2901 1 2920
+#EXDESC
+ExDescKey    statue~
+ExDesc       &BThis statue of the goddess Symzou has been carved to show her reaching
+out to the sea with a graceful gesture. Her youthful face is depicted
+in a state of calm tranquility.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2921
+Name     A Dirt Path~
+Sector   field~
+Desc     This path here is well traveled by those either heading towards the
+large airfield towards the northwest or towards the village located
+to the southeast from here. Cottages can be seen all over the village
+with thatched roofs and white stone walls. The path leading to the
+airfield has been carved through long grass and the remnants of
+wagon wheels has been permanently indented into the ground.
+~
+#EXIT
+Direction south~
+ToRoom    2919
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2922
+#ENDEXIT
+
+Reset O 0 981 1 2921
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   if ovnumroom(981) == 1
+mppurge acluster
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   if ovnumroom(981) == 0
+mpoload 981 1
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2922
+Name     A Dirt Path~
+Sector   field~
+Desc     This path here is well travelved by those either heading towards the
+large airfield to the north of here or towards a small village located
+towards the southeast of here. From here you can see several buildings
+up ahead, which are part of the airship operations. A large runway is
+towards the north, which the airship uses to land.
+~
+#EXIT
+Direction north~
+ToRoom    2930
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2921
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      476
+MapY      814
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2923
+Name     &CThe Skyfall Fish Market&w~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 10 0
+Desc     The market here is a very busy place when it's open as the fishermen
+come to sell their catch and to also gossip or trade stories with one
+another. It is a popular hangout for many of the villagers. There are
+large wooden tables stained from years of cleaning fish and the market
+itself smells of sea water and the insides of fish.
+~
+Perdesc  &cYou notice a sign on the counter nearby...
+~
+#EXIT
+Direction south~
+ToRoom    2907
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2915 1 2923
+  Reset G 0 2965 1
+  Reset G 0 2972 1
+  Reset G 0 2973 1
+  Reset G 0 1619 1
+  Reset G 0 2970 1
+  Reset G 0 2971 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &CWelcome to the Skyfall Fish Market!
+ 
+              &WOpens at 5am and closes at 10pm every day.
+
+   &cWe buy sea bass from local fishers and pay competitive prices too!
+    &cIn order to sell your catch please inquire with our market clerk.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2924
+Name     &cThe Rainy Day Tavern &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob safe norecall nosupplicate~
+Stats    0 0 0 0 12 0
+Desc     &wThis is a small tavern that features no tables and only provides
+standing room. Some tables have been built into the wall for people
+to place their drinks while visiting the tavern. The tavern itself is
+narrow and the main bar runs the entire length of the bar and is not
+too far from the opposing wall. The tavern always has lively music
+playing at night as wandering bards like to walk through playing 
+their latest song before leaving to find another venue to play.
+~
+Perdesc  &cYou see a &Csign&c on the wall near the tavern's bar.&w
+~
+#EXIT
+Direction north~
+ToRoom    2915
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 2909 1 2924
+  Reset G 0 2927 1
+  Reset G 0 2929 1
+  Reset G 0 2928 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WHello!&Y
+
+This location is one of many &R-{(OOC)}-&Y locations across the lands.
+Each major civilization and some minor villages have such locations 
+where you will be able to see/use the global Chat command along with
+the OOC version of "Tell," &WOtell&Y. While at these locations you can
+enjoy the company of other characters taking a break from RP and talk
+OOC. Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. And when anyone last saw you.. you were "headed off to some
+tavern in town."
+ 
+Thanks!
+&WThe DLoC Admin Team :)
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2925
+Name     A Villager's Home~
+Sector   indoors~
+Desc     The cottage here is quaint and painted in bright colors. The furnishings
+are also bright and cheery in tones from yellow to bright grass green.
+The fireplace has been replaced with a more modern metal cook stove
+that is rather new and provides enough warm for the cottage. A small
+bedroom denotes that this cottage is owned by a small family or a 
+single person.
+~
+#EXIT
+Direction north~
+ToRoom    2910
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2900 1 2925
+Reset M 0 2901 1 2925
+Reset D 0 2925 0 0
+#ENDROOM
+
+#ROOM
+Vnum     2926
+Name     A Villager's Home~
+Sector   indoors~
+Desc     This home has been maintained well despite its age. It seems to be one
+of the oldest homes in the village and the furnishings also reveal it
+to be very old. A large metal anchor has been hung over the fireplace
+proudly and there fire inside the fireplace is very welcoming. A few
+cats sleep lazily on the furniture and there is drying herbs hanging
+from the low beams of the cottage.
+~
+#EXIT
+Direction south~
+ToRoom    2909
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2902 1 2926
+Reset D 0 2926 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2929
+Name     A Small Village Path~
+Sector   city~
+Desc     This is a busy dirt path in the village that runs east and west. Tiny
+cottages with thatched roofs can be seen throughout the village. Long
+grasses grow wildly all over the village along with a few trees that
+can withstand the wind off the sea and the inhospitable soil. A path leads
+to the south towards a small white temple that has been built closest
+to the sea.
+~
+#EXIT
+Direction east~
+ToRoom    2907
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2935
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2908
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2930
+Name     Before a Large Airfield~
+Sector   field~
+Flags    nomob~
+Desc     This is the main operations area of the airfield for the Skydragon
+airship. To the west is the ticket office where passengers can purchase
+their boarding tickets. A large inn and tavern combination can be found
+to the east where people can relax before flying or stay upon arriving.
+The path leads north towards the boarding area used by passengers to
+get on the airship when it arrives.
+~
+#EXIT
+Direction north~
+ToRoom    2947
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2948
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2922
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2946
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2931
+Name     &PThe Wild Nereid Tavern&w~
+Sector   indoors~
+Flags    nomob~
+Desc     &pThis is a wild looking tavern where many of the more chaotic clientele
+visiting or residing in the village like to gather for a drink and to
+gossip. The walls of the tavern have been painted with murals of nereids
+luring men to their deaths in the sea. Several tables and chairs can be
+found for patrons to sit and chat while a countertop decorated with
+pink seashells can be found against the northern wall.
+~
+#EXIT
+Direction south~
+ToRoom    2917
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 2912 1 2931
+  Reset G 0 2927 1
+  Reset G 0 2942 1
+  Reset G 0 2929 1
+  Reset G 0 2933 1
+  Reset G 0 2928 1
+  Reset G 0 2934 1
+  Reset G 0 2930 1
+Reset D 0 2931 2 0
+#ENDROOM
+
+#ROOM
+Vnum     2932
+Name     The Village Mayor's Home~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a very elegant looking home with the furnishings coming from
+various parts of the world. A cozy looking parlor greets guests while
+a large dining space connected to a kitchen is used for entertaining. 
+The sleeping quarters and other private rooms can be found up an oak
+staircase. The walls are decorated with tapestries and paintings that
+depict the ocean or the family that owns the home. 
+~
+#EXIT
+Direction north~
+ToRoom    2916
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2907 1 2932
+  Reset E 0 2902 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2933
+Name     A Large Store~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a general store located off the middle path of the village. 
+Various things for sale can be found on small tables and shelves all
+throughout the store, but it appears that inventory is running low. A
+long countertop made of wood and glass is used to store the more rare
+and expensive merchandise. A painting of the seaside can be found hung
+above the countertop. The store is kept very clean and organized despite
+not having much merchandise for sale.
+~
+#EXIT
+Direction south~
+ToRoom    2916
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2913 1 2933
+  Reset G 0 2940 1
+  Reset G 0 2938 1
+  Reset G 0 2939 1
+  Reset G 0 2941 1
+Reset D 0 2933 2 0
+#ENDROOM
+
+#ROOM
+Vnum     2934
+Name     &BTreasures from the Sea&w~
+Sector   indoors~
+Desc     &WThis part of the temple has been dedicated towards offering wares to
+&Cthose that visit the temple. There are shelves of various types of 
+&Bthings for sale such as shells, pearls, and an assortment of edible
+&bmagics. A small countertop is used for transactions with the clergy
+who run the store.
+~
+#EXIT
+Direction east~
+ToRoom    2936
+#ENDEXIT
+
+Reset M 0 2919 1 2934
+  Reset G 0 1863 1
+  Reset G 0 2707 1
+  Reset G 0 2706 1
+  Reset G 0 2985 1
+#ENDROOM
+
+#ROOM
+Vnum     2935
+Name     &BA Large Courtyard&w~
+Sector   city~
+Flags    nomob~
+Desc     This is a large courtyard that is before the entrance to a small white
+temple. Statues of water nymphs and elementals dancing can be seen along
+the walls of the courtyard. In the middle of the courtyard is a large
+statue of the goddess Symzou, goddess of the ocean. She is also depicted
+as dancing and she has been carved with a lighthearted look on her face.
+~
+#EXIT
+Direction north~
+ToRoom    2929
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2936
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2936
+Name     &BThe House of the Shimmering Shores&w~
+Sector   indoors~
+Desc     &WThe walls of this temple have been painted in a gradient that goes
+&Cfrom the lightest shade of blue and gets deeper towards the floor. The
+walls have sconces where candles have been lit and placed to provide
+&Blight here. The sound of trickling water can be heard everywhere one
+is while here at the temple. A large altar space can be seen towards
+&bthe south, a temple store to the west, and a large pool of water to
+the east.
+~
+#EXIT
+Direction north~
+ToRoom    2935
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2938
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2937
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2934
+#ENDEXIT
+
+Reset M 0 2918 1 2936
+  Reset E 0 2905 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2937
+Name     &BA Large Altar to Symzou&w~
+Sector   indoors~
+Desc     &WThis is the main altar to the goddess Symzou here at the temple. A large
+statue of the goddess has been placed on the other side of an altar
+&Cdecorated with seashells and various other objects found on the beach. 
+Villagers come here to place found objects near the altar in honor of
+&Bthe goddess and her realm. A water fountain has been created magically
+on the western wall with the water trickling down the wall and then 
+&bbeing pulled back to the starting point so that it will repeat the cycle.
+~
+#EXIT
+Direction north~
+ToRoom    2936
+#ENDEXIT
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &CThe sounds of the waterfall on the wall echo around the temple.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2938
+Name     &BA Meditation Pool&w~
+Sector   ice~
+Flags    indoors~
+Desc     &WThe pool here was created for those faithful to enter it and commune
+&Cwith their goddess through meditation to even bathing. The walls are 
+&Blined with candles to provide soft illumination and there are several
+&bstone seashells that are used to sit upon and place your feet in the
+water here.
+~
+#EXIT
+Direction west~
+ToRoom    2936
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2939
+Name     The Skyfall Village Stables~
+Sector   indoors~
+Desc     This is a large stable housed used by guests of the village to watch
+over their horses. The stables have been built with wood resourced 
+from the New Darkhaven forest nearby and has been kept in good condition.
+There are many stalls in this stable house and a large gate to the east
+leads to a moderately sized pasture.
+~
+#EXIT
+Direction west~
+ToRoom    2904
+#ENDEXIT
+
+Reset M 0 2916 1 2939
+#ENDROOM
+
+#ROOM
+Vnum     2940
+Name     &RSKYFALL STABLES MOB STORAGE&W~
+Sector   indoors~
+Flags    nomob nomagic safe nosummon noastral~
+Desc     You do not belong in here. Please contact an admin in order to get
+out of here.
+~
+#ENDROOM
+
+#ROOM
+Vnum     2941
+Name     A Large Fabric Mill~
+Sector   indoors~
+Desc     This is a small textile mill that is powered by the Darkhaven river 
+that runs through the island and empties in the sea nearby. The main
+floor of the mill is used for weaving and selling fabric to customers
+while the upper parts of the mill are used for powerful the mill itself.
+The mill itself is very clean and there are several workers here weaving
+fabric and working hard. There are shelves of bolts for sale for the locals
+and those that visit the town.
+~
+#EXIT
+Direction south~
+ToRoom    2911
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2917 1 2941
+  Reset G 0 2944 1
+  Reset G 0 2959 1
+#ENDROOM
+
+#ROOM
+Vnum     2942
+Name     Sanara's Sewing Supplies~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a popular store chain that sells sewing supplies such as 
+patterns, notions, and other crafting supplies. A large poster of the
+owner of the store, Sanara Silverbraid, can be seen on the south wall
+as she is depicted sewing a gown and smiling. There are several shelves
+full of various objects for sale and a countertop to the west is used
+to pay for purchases.
+~
+#EXIT
+Direction north~
+ToRoom    2917
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 2911 1 2942
+  Reset G 0 2958 1
+  Reset G 0 2951 1
+  Reset G 0 2943 1
+  Reset G 0 2952 1
+  Reset G 0 2961 1
+  Reset G 0 2950 1
+  Reset G 0 2960 1
+  Reset G 0 2949 1
+  Reset G 0 2948 1
+  Reset G 0 2947 1
+  Reset G 0 2945 1
+#ENDROOM
+
+#ROOM
+Vnum     2943
+Name     The Seashell Cafe~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a popular location of the residents and visitors of this village.
+The cafe is known for its sweet treats, drinks, and warm hospitality. It
+has been decorated with paintings of the sea and various seashells have
+been painted and hung on the white walls. There are several tables for
+customers to sit and enjoy their purchases with each covered with a
+white cotton tablecloth that has been embroidered with seashells.
+~
+#EXIT
+Direction south~
+ToRoom    2915
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2910 1 2943
+  Reset G 0 2935 1
+  Reset G 0 2936 1
+  Reset G 0 2937 1
+Reset D 0 2943 2 0
+#ENDROOM
+
+#ROOM
+Vnum     2944
+Name     A Villager's Home~
+Sector   indoors~
+Desc     This cottage is rather large and perfect for the small family that
+resides here. The floorplan is rather open with no distinct separation
+of the different types of spaces. A large stone fireplace is used for
+both warmth and to cook meals. A table is near a small sleeping area
+and the home has been decorated in a minimal fashion.
+~
+#EXIT
+Direction east~
+ToRoom    2903
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2904 1 2944
+Reset M 0 2905 1 2944
+Reset M 0 2906 1 2944
+Reset M 0 2903 1 2944
+Reset D 0 2944 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2945
+Name     Vyrn's Ships~
+Sector   indoors~
+Flags    nomob~
+Desc     Boats of different sizes have been hung from the rafters of this small
+shop dedicated to sailing. The boats have been carved masterfully from
+local wood by a retired ranger who runs this store. Along the walls are
+the heads of various animals the ranger hunted in his past and he
+proudly has placed these trophies for all to see.
+~
+#EXIT
+Direction west~
+ToRoom    2914
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2914 1 2945
+  Reset G 0 2678 1
+  Reset G 0 2967 1
+  Reset G 0 2689 1
+  Reset G 0 2963 1
+Reset D 0 2945 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2946
+Name     The Sky Dragon Express~
+Sector   indoors~
+Stats    0 0 0 0 10 0
+Desc     This is the ticket office for passengers to buy their boarding tickets. 
+The office has a few chairs for the elderly to sit while they wait their
+turn to buy tickets and the office is made entirely out of glass. A large
+booth can be found towards the west side of the office where the tickets
+can be purchased. The glass walls of the office have been etched with
+outlines of islands and locations in the realms, which children like to
+look at while their parents buy tickets.
+~
+Perdesc  &CYou spot a &csign&C behind the ticket booth with important information.
+~
+#EXIT
+Direction east~
+ToRoom    2930
+#ENDEXIT
+
+Reset M 0 2920 1 2946
+  Reset G 0 2906 1
+  Reset G 0 2907 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &C-&c=&C-&w*&W   Sky Dragon Flight Schedule   &w*&C-&c=&C-
+ 
+                           &CArrive         &CDepart
+
+&cSkyfall Village Depot:       &W2am     &c|&W      4am
+&cMeridan Depot:&W               6am     &c|&W      8am
+&cFelrast Depot:              &W10am     &c|      &W12pm
+&cDurasi Depot:                &W2pm     &c|      &W4pm
+&cSilap Depot:                 &W6pm     &c|      &W8pm
+&cElheleska Depot:&W            10pm     &c|&W      12am
+ 
+
+&CWarning: All flights leave immediately on the hour listed. Please
+plan to arrive early and have your ticket ready prior to boarding.
+ 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2947
+Name     The Sky Dragon Airfield~
+Sector   field~
+Desc     This is a main path of the Skydragon airfield that leads towards the
+passenger loading dock at the north. A large garage used by the ship's
+crew to make repairs and such can be found to the west. Past the loading
+dock is a large field that the Skydragon uses to land on before it slowly
+rolls towards the dock for boarding.
+~
+#EXIT
+Direction north~
+ToRoom    2962
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2930
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2961
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2948
+Name     The Dreaming Dragon Inn~
+Sector   indoors~
+Desc     This is an inn that is part of the Skydragon airfield. It is quite large
+and is a popular spot for passengers to pass the time while waiting for
+their ship or to rest after arriving. A desk where an innkeeper is located
+can be found on the north facing wall near the stairs leading to the
+rooms purchased by customers. A hallway to the east leads to the tavern
+that is connected to this inn.
+~
+#EXIT
+Direction east~
+ToRoom    2949
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2930
+#ENDEXIT
+
+Reset M 0 2921 1 2948
+#ENDROOM
+
+#ROOM
+Vnum     2949
+Name     The Dreaming Dragon Tavern~
+Sector   indoors~
+Desc     While the inn located to the west is popular for rest this tavern has
+become popular as a party location for travelers and locals. There are
+many tables for the customers to sit, drink, and swap stories. A roaring
+fireplace can be found on the south wall and the bar is located on the
+opposite north facing wall. Tapestries of the Skydragon have been hung
+proudly on the wall depicting it cutting through clouds or landing in
+foreign places.
+~
+#EXIT
+Direction west~
+ToRoom    2948
+#ENDEXIT
+
+Reset M 0 2922 1 2949
+  Reset G 0 2927 1
+  Reset G 0 2929 1
+  Reset G 0 2933 1
+  Reset G 0 2928 1
+  Reset G 0 2934 1
+  Reset G 0 2930 1
+#ENDROOM
+
+#ROOM
+Vnum     2950
+Name     &CThe Deck of the Sky Dragon&w~
+Sector   city~
+Desc     This is the upper deck of the Sky Dragon, which is an exquisite collaboration
+of magic and technology. The ship is made from metal and wood that would
+normally be heavy, but it is quite light due to magic. The deck has amazing
+views when it is high in the sky, but it is advised that anyone on the deck
+during flight should go downstairs to avoid being blown overboard by a strong
+wind. The deck continues to the east and west from here while a navigation pod
+used by the crew is located up some stairs here.
+~
+#EXIT
+Direction east~
+ToRoom    2951
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2953
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2954
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2929 1 2950
+Reset D 0 2950 4 1
+#ENDROOM
+
+#ROOM
+Vnum     2951
+Name     &CThe Deck of the Sky Dragon&w~
+Sector   city~
+Desc     This is the upper deck of the Sky Dragon, which is an exquisite collaboration
+of magic and technology. The ship is made from metal and wood that would
+normally be heavy, but it is quite light due to magic. The deck has amazing
+views when it is high in the sky, but it is advised that anyone on the deck
+during flight should go downstairs to avoid being blown overboard by a strong
+wind. The deck continues to the west from here and the front of the ship is to
+the east. A navigation pod used by the ship's crew can be seen to the nearby
+west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2952
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2950
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2952
+Name     &CThe Deck of the Sky Dragon&w~
+Sector   city~
+Desc     This is the upper deck of the Sky Dragon, which is an exquisite collaboration
+of magic and technology. The ship is made from metal and wood that would
+normally be heavy, but it is quite light due to magic. The deck has amazing
+views when it is high in the sky, but it is advised that anyone on the deck
+during flight should go downstairs to avoid being blown overboard by a strong
+wind. The deck continues to the west from here and a pod used by the navigation
+crew can be seen to the west.
+~
+#EXIT
+Direction west~
+ToRoom    2951
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2953
+Name     &CThe Deck of the Sky Dragon&w~
+Sector   city~
+Desc     This is the upper deck of the Sky Dragon, which is an exquisite collaboration
+of magic and technology. The ship is made from metal and wood that would
+normally be heavy, but it is quite light due to magic. The deck has amazing
+views when it is high in the sky, but it is advised that anyone on the deck
+during flight should go downstairs to avoid being blown overboard by a strong
+wind. The deck continues to the east from here with a pod used by the navigation
+crew. A hatch leading inside the ship is here and is used to keep passengers
+safe during flight.
+~
+#EXIT
+Direction east~
+ToRoom    2950
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2955
+Keywords  'passenger hatch'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2953 5 1
+#ENDROOM
+
+#ROOM
+Vnum     2954
+Name     &CThe Sky Dragon Navigation Center&w~
+Sector   indoors~
+Desc     This is the inside of the navigation pod used by the crew and the captain
+to steer the ship. There are several controls and panels located all
+over the pod and chairs for the crew to sit as they work. The pod has
+windows facing all directions to help them keep an eye on the sky and
+during landing. A golden steering wheel used on traditional sailing
+ships has been hung from the ceiling of the pod as decoration and to
+hold magical globes of light that provide light during the night
+time.
+~
+#EXIT
+Direction down~
+ToRoom    2950
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2928 1 2954
+Reset D 0 2954 5 1
+#ENDROOM
+
+#ROOM
+Vnum     2955
+Name     &CPassenger Seating&w~
+Sector   indoors~
+Desc     This is the passenger area of the ship, which consists of rows and
+rows of velvet backed seats. Each seat comes with its own table for
+people to place books or other items. Two long rows of windows can be
+found on each side of the ship for passengers to watch the flight in
+progress. A narrow walkway leads to the east where more seating is
+located. A stairway and hatch here leads up to the deck of the ship
+or down into the cargohold.
+~
+#EXIT
+Direction east~
+ToRoom    2956
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2959
+Keywords  'privy door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2953
+Keywords  'passenger hatch'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2960
+Keywords  'cargo hatch'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2955 3 1
+Reset D 0 2955 4 1
+Reset D 0 2955 5 1
+#ENDROOM
+
+#ROOM
+Vnum     2956
+Name     &CPassenger Seating&w~
+Sector   indoors~
+Desc     This is the passenger area of the ship, which consists of rows and
+rows of velvet backed seats. Each seat comes with its own table for
+people to place books or other items. Two long rows of windows can be
+found on each side of the ship for passengers to watch the flight in
+progress. A narrow walkway leads to the east where more seating is
+located. 
+~
+#EXIT
+Direction east~
+ToRoom    2957
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2955
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2957
+Name     &CPassenger Seating&w~
+Sector   indoors~
+Desc     This is the passenger area of the ship, which consists of rows and
+rows of velvet backed seats. Each seat comes with its own table for
+people to place books or other items. Two long rows of windows can be
+found on each side of the ship for passengers to watch the flight in
+progress. A narrow walkway leads to the east where more seating is
+located. The smell of food can be found coming from the nearby east.
+~
+#EXIT
+Direction east~
+ToRoom    2958
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2956
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2958
+Name     &CThe Sky Dragon Passenger Cafe&w~
+Sector   indoors~
+Desc     This is the cafe of the Skydragon where passengers can purchase food
+and drinks during their flight. Meals are served on this ship and there
+is seating for people to use while enjoying their purchases or they 
+can take them back to their seat. The room is circular shaped with the
+middle of the room used for the crew to serve food. Chairs and tables
+have been placed around the circular windows and bards often come here
+to play music during flights.
+~
+#EXIT
+Direction west~
+ToRoom    2957
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2959
+Name     &CA Passenger Privy&w~
+Sector   indoors~
+Flags    solitary~
+Desc     This is a small privy used by passengers and crew to relieve themselves
+during flights. It has been kept extremely clean by the crew and there
+is everything one needs here. A small sink is built into the wall and
+has running water to wash one's hands.
+~
+#EXIT
+Direction east~
+ToRoom    2955
+Keywords  'privy door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2960
+Name     &CThe Star Dragon Cargo Hold&w~
+Sector   indoors~
+Desc     This is the lower cargo hold of the Skydragon, which stores both luggage
+and supplies that are being shipped to locations the ship stops at. The
+cargo hold is quite large and consists of various shelves and storage
+containers for things to be placed and strapped down during flights.
+~
+#EXIT
+Direction up~
+ToRoom    2955
+Keywords  'cargo hatch'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2960 4 1
+#ENDROOM
+
+#ROOM
+Vnum     2961
+Name     A Large Workshop~
+Sector   indoors~
+Desc     This is a large garage and workshop used by the artificers who work on
+the Skydragon. This workshop is used for a variety of reasons from
+repairing pieces of the ship to making new ones or improving the current
+technology. Large workbenches can be found through this garage and there
+are metal tools and pieces everywhere. The garage is not organized very
+well and could use some work.
+~
+#EXIT
+Direction east~
+ToRoom    2947
+#ENDEXIT
+
+Reset M 0 2932 1 2961
+#ENDROOM
+
+#ROOM
+Vnum     2962
+Name     The Sky Dragon Loading Deck~
+Sector   field~
+Desc     The loading dock here is a series of wooden decks of varying levels 
+that are used for boarding passengers, luggage, and shipping. The lower
+part of the dock is used to put supplies and shipping into the bottom
+of the Skydragon while the middle is used for luggage. A long and winding
+staircase is used by passengers to board, which takes them directly to the
+top of the loading dock and the deck of the Skydragon.
+~
+#EXIT
+Direction south~
+ToRoom    2947
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2998
+Name     &CThe Salty Spell&w~
+Sector   indoors~
+Flags    nomob prototype~
+Desc     This is a small store that is dedicated to the magical arts. The shelves
+of this store are full of various ingredients to cast spells. A large 
+plethora of wands and ointments can be found on some tables located
+around the store. The smell of incense is strong here and you see
+several incense burners located throughout the store.
+~
+#EXIT
+Direction southwest~
+ToRoom    2905
+Keywords  'store door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2934 1 2998
+  Reset G 0 1780 1
+  Reset G 0 1928 1
+  Reset G 0 1912 1
+  Reset G 0 1748 1
+  Reset G 0 1760 1
+  Reset G 0 1901 1
+  Reset G 0 1910 1
+  Reset G 0 2203 1
+  Reset G 0 1809 1
+  Reset G 0 1747 1
+  Reset G 0 1925 1
+  Reset G 0 2988 1
+  Reset G 0 2987 1
+Reset D 0 2998 9 1
+#ENDROOM
+
+#ROOM
+Vnum     2999
+Name     &RSkyfall/Sky Dragon Mobile Storage&w~
+Sector   city~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     You do not belong in here. Please contact the admins to get taken out
+of here. Thank you! :)
+~
+Reset M 0 2926 1 2999
+  Reset G 0 2923 1
+  Reset G 0 2922 1
+  Reset G 0 2912 1
+  Reset G 0 2925 1
+  Reset G 0 2926 1
+  Reset G 0 2924 1
+Reset M 0 2927 1 2999
+  Reset G 0 2912 1
+  Reset G 0 2927 1
+  Reset G 0 2920 1
+  Reset G 0 2932 1
+  Reset G 0 2929 1
+  Reset G 0 2928 1
+  Reset G 0 2921 1
+  Reset G 0 2930 1
+Reset M 0 2923 1 2999
+  Reset G 0 2910 1
+  Reset G 0 2913 1
+  Reset G 0 2912 1
+  Reset G 0 2914 1
+  Reset G 0 2911 1
+Reset M 0 2924 1 2999
+  Reset G 0 2915 1
+  Reset G 0 2919 1
+  Reset G 0 2916 1
+  Reset G 0 2917 1
+  Reset G 0 2918 1
+Reset M 0 2930 1 2999
+Reset M 0 2925 1 2999
+  Reset G 0 2922 1
+  Reset G 0 2912 1
+  Reset G 0 2916 1
+  Reset G 0 2914 1
+  Reset G 0 2920 1
+  Reset G 0 2921 1
+  Reset G 0 2918 1
+Reset M 0 2931 1 2999
+#ENDROOM
+
+#ENDAREA

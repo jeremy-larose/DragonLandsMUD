@@ -1,0 +1,139 @@
+#PLAYER
+Version      5
+Name         Mynaheir~
+Sex          2
+Class        0
+Race         4
+Adjective    a slender, frizzy-haired female high-elf~
+Age          0 18 8 607
+Languages    1 1
+Level        15
+Played       8012
+Room         1202
+HpManaMove   83 83 100 100 30 30
+Gold         0
+Silver       0
+Copper       0
+Exp          159500
+Height          69
+Weight          113
+Act          570426952
+AffectedBy   512
+Position     113
+Style     2
+Practice     16
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    980
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -44
+Resistant    11264
+Mentalstate  -66
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Title         the Not set.~
+Flags        163840
+PKills       0
+PDeaths      0
+MKills       15
+MDeaths      1
+IllegalPK    0
+Timezone     -1
+AttrPerm     13 12 13 14 13 13 12
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 1 0 0 0 0 0 0 1 
+Condition    0 0 0 25
+Site         141.209.152.36
+Spell        95 'acid splash'
+Spell        95 'aganazzars scorcher'
+Spell        95 'animate dead'
+Spell        95 'bears endurance'
+Spell        95 'beautiful distraction'
+Spell        95 'bestow curse'
+Spell        95 'blindness'
+Weapon       95 'blowguns'
+Spell        95 'bulls strength'
+Spell        95 'cats grace'
+Spell        95 'charm person'
+Spell        95 'clairvoyance'
+Weapon       95 'crossbows'
+Spell        95 'crushing despair'
+Weapon       95 'daggers'
+Spell        95 'dancing lights'
+Spell        95 'darkvision'
+Spell        95 'detect hidden'
+Spell        95 'detect invis'
+Spell        95 'detect magic'
+Spell        95 'detect poison'
+Spell        95 'disenchant weapon'
+Spell        95 'dispel magic'
+Spell        95 'eagles splendor'
+Spell        95 'enchant weapon'
+Spell        95 'enhanced rage'
+Spell        95 'fireball'
+Spell        95 'fly'
+Spell        95 'foxs cunning'
+Spell        95 'friends'
+Spell        95 'glyph of warding'
+Spell        95 'heroism'
+Spell        95 'identify'
+Spell        95 'invis'
+Spell        95 'ironguts'
+Spell        95 'knock'
+Spell        95 'lightning bolt'
+Spell        95 'owls wisdom'
+Spell        95 'poison spray'
+Spell        95 'polymorph'
+Spell        95 'produce flame'
+Spell        95 'ray of enfeeblement'
+Spell        95 'remove curse'
+Spell        95 'shocking grasp'
+Weapon       95 'slings'
+Spell        95 'snowball swarm'
+Weapon       95 'staves'
+Spell        95 'tensers floating disk'
+Spell        95 'touch of idiocy'
+Spell        95 'true strike'
+Spell        95 'vampiric touch'
+Spell        95 'ventriloquism'
+Spell        95 'water breathing'
+Spell        95 'waves of exhaustion'
+AffectData   'stoneskin' 430  13  27 0
+Killed       1000 1
+Killed       1405 1
+Killed       1015 1
+Killed       1008 1
+Killed       1009 1
+Killed       1010 1
+Killed       1004 3
+Killed       1005 5
+Killed       1019 1
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+Qbit        1002 You are helping a Merchant find his kidnapped daughter in a marsh.~
+Qbit        1000 A Marsh Pixie is asking you for some assistance...~
+IMCPerm      2
+IMCFlags     256
+End
+
+#OBJECT
+Vnum         107
+WearLoc      28
+Level        1
+Values       12 1 6 2 -1 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         1022
+WearLoc      5
+Level        1
+Values       3 3 0 0 0 0
+Values2      1 2
+End
+
+#END

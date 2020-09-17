@@ -1,0 +1,1375 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Soronys' Tower~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 50 0 0
+Economy      0 831250000
+ResetMsg     &wYou feel the tower pulse with magic for a brief moment...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2800
+Keywords   butler magical magic construct male human~
+Short      a butler~
+Long       A magical construct that resembles a male human is here greeting newcomers.
+~
+Desc       This magical construct has been crafted to resemble a male human. His
+metallic parts clink and make lots of different noises as he moves
+about here. His outfit resembles a classic butler uniform and he
+sports a metallic mustache. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 20 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 3 1 0 0 0 6
+Attribs    13 20 20 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p flies in from the south.~
+Comlist   if hasqbit($n) == 2705
+bow $n
+sayto $n Welcome to Soronys' tower. May your key take you on great travels.
+silent close s
+silent lock s
+else
+shake $n
+emote waves his metallic arms and suddenly his eyes glow brightly
+silent mptransfer $n 1689
+silent close s
+silent lock s
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p arrives from the south.~
+Comlist   if hasqbit($n) == 2705
+bow $n
+sayto $n Welcome to Soronys' tower. May your key take you on great travels.
+silent close s
+silent lock s
+else
+shake $n
+emote waves his metallic arms and suddenly his eyes glow brightly
+silent mptransfer $n 1689
+silent close s
+silent lock s
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p leaves south.~
+Comlist   silent close s
+silent lock s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p flies south.~
+Comlist   silent close s
+silent lock s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   silent close s
+silent lock s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) == 2705
+else
+say Intruder! Intruder alert! Intruder alert! Guard! Guard!!
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2801
+Keywords   construct chef female dwarf~
+Short      a chef~
+Long       A magical construct that resembles a female dwarf is here cooking.
+~
+Desc       This magical construct has been crafted to resemble a female dwarf. Her
+metallic parts clink and make lots of different noises as she moves
+about the kitchen preparing meals. Her eyes twinkle in the light like
+two bright sapphires.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 8000 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 3 1 0 0 0 6
+Attribs    13 13 13 13 13 16 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2705
+emote smiles and bows her head
+sayto $n Welcome dear. Please let me know if you are hungry.
+else
+sayto $n Intruder! Intruder alert! Intruder alert!
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2802
+Keywords   maid construct female elf~
+Short      a maid~
+Long       A magical construct that resembles a female elf is here cleaning.
+~
+Desc       This magical construct has been crafted to resemble a female elf. Her
+metallic parts clink and make lots of different noises as she moves
+about tower cleaning. She often sings while she works and her elven
+features have been beautifully rendered.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 16 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2705
+smile $n
+else
+tsk $n
+say Intruder! Intruder alert! Intruder alert!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote hums a little song as she cleans
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2803
+Keywords   shadow~
+Short      &za shadow&w~
+Long       &zAn odd looking shadow is here, lurking along the walls of the stairway.
+~
+Desc       &zThis creature is made of pure shadows and is slightly transparent. It
+has a humanoid shape except for the shadows that attach to it from everywhere
+like dark threads. It has two dark piercing orbs for eyes.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   sneak hide~
+Stats1     -1000 1 3 0 12 0 0 0 0 0
+Stats2     3 8 3
+Stats3     2 6 2
+Stats4     2 13 1 0 0 0 6
+Attribs    6 6 10 14 13 8 13
+Saves      0 0 0 0 0 0
+Resist     fire cold lightning blunt pierce slash acid nonmagic thunder~
+Immune     poison necrotic charm paralysis~
+Suscept    psychic radiant~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2804
+Keywords   guard construct male dragonborn~
+Short      a guard~
+Long       A magical construct that resembles a male dragonborn is here guarding the tower.
+~
+Desc       This magical construct has been crafted to resemble a male bronze
+dragonborn. His metallic parts clink and make lots of different
+noises as he moves. He is dressed in plate armor, which also
+makes metallic noises when he moves. This construct moves about
+the tower looking for intruders and it takes its job very
+seriously.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 3 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2705
+salute $n
+else
+say Intruder alert. Removing intruder from tower.
+mea $n &zThe construct points at you and everything fades to black!
+mer $n &zThe construct points at $n who disappears suddenly!
+silent mptransfer $n 1689
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2899
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     2800
+Keywords large chocolate cake caramel~
+Type     food~
+Short    &za large chocolate cake drizzled with &Ocaramel&w~
+Long     &zA large chocolate cake drizzled with caramel has been left here.&w~
+Flags    inventory~
+WFlags   take onehand~
+Values   9 0 0 0 0 0
+Values2  0 1
+Stats    1 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2801
+Keywords savory turkey leg~
+Type     food~
+Short    &Oa savory turkey leg&w~
+Long     &OA savory looking cooked turkey leg has been left here.&w~
+WFlags   take onehand~
+Values   12 0 0 0 0 0
+Values2  0 1
+Stats    1 2 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2802
+Keywords baked potato herbs butter~
+Type     food~
+Short    &Oa baked potato with &Ybutter&O and &gherbs&w~
+Long     &OA baked potato with butter and herbs has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 1 20 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2803
+Keywords glass strawberry lemonade~
+Type     drinkcon~
+Short    &Wa glass of &Rstrawberry&Y lemonade&w~
+Long     &WA glass of strawberry lemonade has been left here.&w~
+WFlags   take onehand~
+Values   4 4 6 0 0 0
+Values2  0 2
+Stats    1 0 10 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2804
+Keywords fireplace roaring fire large stone~
+Type     fire~
+Short    &wa large stone fireplace&w~
+Long     &wA large stone fireplace is here with a roaring fire inside.&w~
+Values   0 0 0 0 0 0
+Values2  0 3
+Stats    9000 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2805
+Keywords floating book open~
+Type     rune~
+Short    &Oa floating book&w~
+Long     &OAn open book is here floating in the middle of the study.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    9000 0 0 0 0 1 0
+#EXDESC
+ExDescKey    book~
+ExDesc       This magical book floats in the middle of the room and has been
+permanently opened to a certain page.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2806
+Keywords large spool silver cording~
+Type     rune~
+Short    &Wa large spool of silver cording&w~
+Long     &WA large spool of silver cording is here in the middle of the room.&w~
+Flags    glow hum magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    spool~
+ExDesc       &wThis spool is quite tall and stands at five feet in height. It is
+composed of thin magic looking silver cording. The spool glows with
+a magical light and seems very powerful.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2899
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2800
+Name     Inside a Large Foyer~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     This is the large foyer of the tower once owned by the late wizard
+and hero, Soronys. The foyer is elegantly decorated and is a time
+capsule of a design aesthetic long passed. The furnishings of the
+tower have been kept spotless by the magical constructs that used
+to serve the Archmage. A tapestry of the wizard can be seen hung
+nearby depicting Soronys in his older years. A large parlor is
+located to the west and a study to the east from this foyer. A
+long hallway leads further into the base of the tower to the
+north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2803
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2802
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1689
+Key       2150
+Keywords  'large red door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2801
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2800 1 2800
+  Reset G 0 2150 1
+Reset D 0 2800 2 2
+#ENDROOM
+
+#ROOM
+Vnum     2801
+Name     A Large Parlor~
+Sector   indoors~
+Flags    safe nosummon noastral nosupplicate~
+Desc     This parlor was used by the Archmage to host guests to his tower before
+he died. The fireplace maintains a roaring fire at all times and is
+watched over by the magical constructs that work here. Several pieces
+of velvet backed furniture can be found here for guests to sit on.
+Shelves of books line the walls along with a faded tapestry of an
+outdated map of the world. 
+~
+#EXIT
+Direction east~
+ToRoom    2800
+#ENDEXIT
+
+Reset O 0 2804 1 2801
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpecho &RThe fire in the large stone fireplace crackles and pops...&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2802
+Name     A Large Study~
+Sector   indoors~
+Flags    safe nosummon noastral nosupplicate~
+Desc     This room is both a study and a well stocked library. However as time
+has passed much of the books have been stolen from this study. In 
+the middle of the study is an odd book, which floats above the floor.
+It has been opened to a certain page for everyone to look at. A large
+window on the eastern wall overlooks part of the gardens that surround
+the tower.
+~
+#EXIT
+Direction east~
+ToRoom    1688
+Flags     secret hidden nomob window can_look~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2800
+#ENDEXIT
+
+Reset O 0 2805 1 2802
+#EXDESC
+ExDescKey    page~
+ExDesc       Dear Visitor,
+ 
+This tower upon my dying breath and last act to save the realm from
+splintering off has become an anchor. In order to keep our material
+realm from falling away into other realms my magics and assistance
+from the deities themselves used this tower to keep our realm whole
+as best we could. The act changed this tower and made it possible 
+for people to use it to travel to parts of the realm that have
+become hard to reach since the splintering occurred.
+ 
+Be wary! The tower has many dangers that lurk in it.. especially
+to those that gain access to the upper reaches. There are many
+keys that reach various parts of the tower and their whereabouts
+are unknown since the tower was changed. I fear my own apprentice
+has run off with one himself in an act of pure greed.
+ 
+If you choose to use the tower be careful and may Crisma watch
+over you.
+ 
+- Soronys Stormheart, Archmage of Darkhaven
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate book~
+Comlist   if investigation($n) >= 10
+mea $n You see that the book is opened to a certain PAGE, perhaps you
+mea $n can look at it?
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2803
+Name     A Long Hallway~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here leads through the major part of the lower half of
+the tower. A large bedroom can be seen to the west and a beautifully
+decorated dining room is to the east. The hallway has many lovely
+artifacts hung on the walls or nearby such as statues. These are 
+pieces that the Archmage collected before his death.
+~
+#EXIT
+Direction north~
+ToRoom    2804
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2814
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2800
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2816
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2804
+Name     A Long Hallway~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here leads through the major part of the lower half of
+the tower of the late Archmage, Soronys Stormheart. The hallway here
+contains many lovely artifacts that are either hung on the wall or
+found stationed nearby such as statues. Several glass cases on small
+stone podiums contain small pieces such as jewelry or weapons. The
+hallway continues to the north where it ends at the base of a large
+marble staircase or back south towards the entrance of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    2805
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2803
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2805
+Name     A Long Hallway~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here leads through the major part of the lower half of
+the tower of the late Archmage, Soronys Stormheart. The hallway here
+contains many lovely artifacts that are either hung on the wall or
+found stationed nearby such as statues. Several glass cases on small
+stone podiums contain small pieces such as jewelry or weapons. The
+hallway continues to the north where it ends at the base of a large
+marble staircase or back south towards the entrance of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    2806
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2804
+#ENDEXIT
+
+Reset M 0 2802 1 2805
+#ENDROOM
+
+#ROOM
+Vnum     2806
+Name     The End of the Hallway~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here leads through the major part of the lower half of
+the tower of the late Archmage, Soronys Stormheart. The hallway here
+contains many lovely artifacts that are either hung on the wall or
+found stationed nearby such as statues. Several glass cases on small
+stone podiums contain small pieces such as jewelry or weapons. The
+hallway ends here at the base of a large marble staircase leading up
+to another level of the tower. A small spiral marble staircase leads
+down to a level below the tower. 
+~
+#EXIT
+Direction south~
+ToRoom    2805
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2807
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2813
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2807
+Name     The Hallway of Doors~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here is long and with very tall ceilings. On the wall at
+various points of the hallway are extremely large doors that are
+highly decorated. A staircase is here leading back down to the first
+floor of the tower. To the north at this point of the hallway is one
+of the decorated doors. The door has been painted an icy shade of blue
+and the door frame is outline with thick rock. The rocky frame of the
+door is covered in frost and there is a cold breeze emanating from the
+door somewhere. A stain glass window depicting a mountain range in
+a snow storm is located on the center of the door. A spot for a key
+to be inserted is located next to an axe shaped door knob.
+~
+#EXIT
+Direction east~
+ToRoom    2808
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2806
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate door~
+Comlist   if investigation($n) >= 12
+mea $n You find the word 'Felfarthen' in the stained glass window.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2808
+Name     The Hallway of Doors~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here is long and with very tall ceilings. On the wall at
+various points of the hallway are extremely large doors that are
+high decorated. A staircase leading back to the first floor of the tower
+is located directly to the west. To the south at this point of the hallway
+is one of the decorated doors. The door has been painted in various shades
+of grey and white. The door frame consists of thick ivy and feathers from
+different types of birds. Fog slowly rolls from under the door to sweep
+across the floor of the hallway here. A stain glass window depicting a
+across the floor of the hallway here. A stain glass window depicting an
+island of lush greenery with fog and grey skies is located on the center
+of the door. A spot for a key to be inserted can be found next to a door
+knob shaped like a leaf.
+~
+#EXIT
+Direction east~
+ToRoom    2809
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2807
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate door~
+Comlist   if investigation($n) >= 12
+mea $n You find the word 'Stormbreak' in the stained glass window.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2809
+Name     The Hallway of Doors~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here is long and with very tall ceilings. On the wall at
+various points of the hallway are extremely large doors that are
+highly decorated. To the south at this point of the hallway is one
+of the decorated doors. The door has been painted with a bright shade
+of gold while the door frame is made from sand. Occasionally a bit of
+sand falls to the floor here and collects near the door. A stained
+glass window depicting an oasis in a never ending desert is located
+on the center of the door. A spot for a key to be inserted can be
+found next to a scorpion tail shaped door knob.
+~
+#EXIT
+Direction east~
+ToRoom    2810
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2808
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate door~
+Comlist   if investigation($n) >= 12
+mea $n You find the word 'Kaltas' in the stained glass window.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2810
+Name     The Hallway of Doors~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here is long and with very tall ceilings. On the wall at
+various points of the hallway are extremely large doors that are
+high decorated. To the north at this point of the hallway is one
+of the decorated doors. The door has been painted abstractly with a
+myriad of orange, red, yellow, and black tones. The door frame is
+covered in thick vegetation, which rustles as if something is moving
+inside the plants. The smell of sulphur is very prevalent here and
+seems to be coming from behind the door. A stain glass window of a
+seems to be coming from behind the door. A stain glass window of 
+several volcanoes surrounded by thick jungles is located on the
+center of the door. A spot for a key to be inserted can be found
+next to a door knob made from black volcanic stone.
+~
+#EXIT
+Direction east~
+ToRoom    2811
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2809
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate door~
+Comlist   if investigation($n) >= 12
+mea $n You find the word 'Siph' in the stained glass window.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2811
+Name     The Hallway of Doors~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway here is long and with very tall ceilings. On the wall at
+various points of the hallway are extremely large doors that are
+highly decorated. To the south at this point of the hallway is one
+of the decorate doors. The door has been painted a soft shade of purple
+while the door frame is covered in lush wildflower that weep with dew.
+The smell of sweet flowers is strong here and you can hear the crashing
+of waves from behind the door. Every so often the sounds of a harp
+being played can be heard as well. A stained glass window depicting an
+elegant looking forest and mountain range is located on the center of 
+the door. The window is framed with exquisite silver metal work. A
+spot for a key to be inserted can be found next to a silver door
+knob shaped like a flower. 
+~
+#EXIT
+Direction east~
+ToRoom    2812
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2810
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate door~
+Comlist   if investigation($n) >= 12
+mea $n You find the words 'Lirima Tol' in the stained glass window.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2812
+Name     The Hallway of Doors~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The hallway ends here at a wall where there is one large door. The door
+itself is comprised of only glass, which swirls and changes colors
+rapidly. The door itself seems to glow unnaturally and there is a door
+knob located in the center of the door. The knob itself seems to change
+shape and is never the same shape twice. It seems to be made from a silvery
+material and glistens in the light. Every so often when the door is 
+changing colors a staircase leading up can be seen on the other side
+of the door. 
+~
+#EXIT
+Direction east~
+ToRoom    2818
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2811
+#ENDEXIT
+
+Reset M 0 2804 1 2812
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate door~
+Comlist   if investigation($n) >= 14
+mea $n You find there is no spot for a key to be inserted here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2813
+Name     &zA Cavern under the Tower&w~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     &OThis is a small cavern underneath the tower that is reachable only
+the marble staircase here. The cavern was carved deep under ground
+and cleared to resemble a room. Towards the southern end of the cavern
+is a large black door. Spiderwebs have formed along the door frame in
+intricate patterns that are eerily beautiful. At the center of the door
+is a stained glass window depicting an underground world that has a
+bright greenish hue. The window is framed with a black colored metal
+frame of a spider. A spot for a key to be inserted is located next to
+a spider shaped door knob.
+~
+#EXIT
+Direction up~
+ToRoom    2806
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2814
+Name     An Exquisite Dining Room~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The dining room here has been decorated quite exquisitely with a large
+mahogany dining room set that can seat up to thirty people. The walls
+have textured wall paper that features an ivy pattern with flowers 
+made from gold leaf. A chandelier hangs above the table made from
+clear crystal shaped like water droplets and is lit with over twenty
+silver colored candles. A door leading to the kitchen is located to
+the north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2815
+Keywords  'kitchen door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2803
+#ENDEXIT
+
+Reset D 0 2814 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2815
+Name     A Small Kitchen~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     The size of this kitchen is surprising at first as it is relatively
+small. However, upon closer examination one sees the various constructs
+of small size moving about the kitchen under the direction of the
+construct that acts as the main chef. The kitchen despite its size is
+quite capable of creating a large amount of food in a short amount
+of time. A large cook stove is heated with logs of wood and is always
+being used to prepare meals.
+~
+#EXIT
+Direction south~
+ToRoom    2814
+Keywords  'kitchen door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 2801 1 2815
+  Reset G 0 2802 1
+  Reset G 0 2801 1
+  Reset G 0 2803 1
+  Reset G 0 2800 1
+#ENDROOM
+
+#ROOM
+Vnum     2816
+Name     A Large Bedroom~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     This is the bedroom of the late Archmage, Soronys Stormheart. A large
+bed made from mahogany has long curtains strung along the top to provide
+privacy when needed. A large closet once used by the wizard is located
+to the north from here. Several chests and wardrobes can be found 
+throughout the bedroom, but the contents have been removed over time
+by thieves.
+~
+#EXIT
+Direction north~
+ToRoom    2817
+Keywords  'closet door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2803
+#ENDEXIT
+
+Reset D 0 2816 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2817
+Name     Inside a Closet~
+Sector   indoors~
+Flags    nomagic safe nosummon noastral nosupplicate~
+Desc     This is a large walk in closet that was once full of clothing and things
+worn by the owner of the tower. Now it is very empty as everything has
+been stolen or removed over time. There are rows of metal bars that
+clothes were once hung from. A wall of shelves was once used to hold
+shoes and other articles of clothing for the late Archmage.
+~
+#EXIT
+Direction south~
+ToRoom    2816
+Keywords  'closet door'~
+Flags     isdoor~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate closet~
+Comlist   if race($n) == feyborn
+if investigation($n) >= 15
+mea $n You find a twinkle of light emanating from the back wall of
+mea $n the closet. Perhaps you can touch it? (TOUCHLIGHT)
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+if perception($n) >= 15
+mea $n &PYou see a twinkle of light at the end of the closet.
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2818
+Name     Before a Marble Stairway~
+Sector   indoors~
+Flags    nomob norecall nosummon noastral prototype~
+Desc     This is a small area located before a grand marble staircase that leads
+up to an unknown destination. There are no windows and the only light
+source comes from magical globes of light that float along the walls of
+the tower. A long hallway with many decorative doors can be seen to
+the west from here.
+~
+#EXIT
+Direction west~
+ToRoom    2812
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2819
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2819
+Name     A Marble Stairway~
+Sector   indoors~
+Flags    norecall nosummon prototype~
+Desc     This is a long and wide marble staircase that goes up to an unknown
+location. The stairs are in pristine condition and glisten under the
+light of magical globes that float along the walls of the tower. The
+very top of the tower is very black and it is hard to see other levels
+if they exist. There are no windows or any indication how high up
+this part of the tower is from the outside world.
+~
+#EXIT
+Direction up~
+ToRoom    2820
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2818
+#ENDEXIT
+
+Reset M 0 2803 6 2819
+Reset M 0 2803 6 2819
+Reset M 0 2803 6 2819
+Reset M 0 2803 6 2819
+#ENDROOM
+
+#ROOM
+Vnum     2820
+Name     A Marble Stairway~
+Sector   indoors~
+Flags    norecall nosummon prototype~
+Desc     This is a long and wide marble staircase that goes up to an unknown
+location. The stairs are in pristine condition and glisten under the
+light of magical globes that float along the walls of the tower. The
+very top of the tower is very black and it is hard to see other levels
+if they exist. There are no windows or any indication how high up
+thsi part of the tower is from the outside world. There is a small wooden
+door on the west wall leading into a small chamber.
+~
+#EXIT
+Direction west~
+ToRoom    2826
+Key       3700
+Keywords  'small wooden door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2821
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2819
+#ENDEXIT
+
+Reset D 0 2820 3 2
+#ENDROOM
+
+#ROOM
+Vnum     2821
+Name     A Marble Stairway~
+Sector   indoors~
+Flags    norecall nosummon prototype~
+Desc     This is a long and wide marble staircase that goes up to an unknown
+location. The stairs are in pristine condition and glisten under the
+light of magical globes that float along the walls of the tower. The
+very top of the tower is very black and it is hard to see other levels
+if they exist. There are no windows or any indication how high up
+this part of the tower is from the outside world.
+~
+#EXIT
+Direction up~
+ToRoom    2822
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2820
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2822
+Name     A Marble Stairway~
+Sector   indoors~
+Flags    norecall nosummon prototype~
+Desc     This is a long and wide marble staircase that goes up to an unknown
+location. The stairs are in pristine condition and glisten under the
+light of magical globes that float along the walls of the tower. The
+very top of the tower is very black and it is hard to see other levels
+if they exist. There are no windows or any indication how high up
+this part of the tower is from the outside world.
+~
+#EXIT
+Direction up~
+ToRoom    2823
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2821
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2823
+Name     A Marble Stairway~
+Sector   indoors~
+Flags    norecall nosummon prototype~
+Desc     This is a long and wide marble staircase that goes up to an unknown
+location. The stairs are in pristine condition and glisten under the
+light of magical globes that float along the walls of the tower. The
+very top of the tower is very black and it is hard to see other levels
+if they exist. There are no windows or any indication how high up
+this part of the tower is from the outside world.
+~
+#EXIT
+Direction up~
+ToRoom    2824
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2822
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2824
+Name     &pA Purple Colored Room&w~
+Sector   indoors~
+Flags    nomob safe norecall nosummon noastral prototype~
+Desc     &PThis room is rather odd as the walls are painted like swirls of 
+purple colored energy. The paint moves and swirls across the walls
+in endless patterns. The floor is made from a black stone material
+and in the center of the room sits a rather large spool of silver
+cording. The ceiling is painted in the same pattern as the walls and
+also swirls and moves about. The makings of a door can be seen to
+the north and there appears to be no door knob or placed to unlock
+the door. The silhouette of the door fades from time to time as the
+colors on the wall swirl over it. Another staircase leading up
+can be seen to the east from here.
+~
+#EXIT
+Direction north~
+ToRoom    1346
+Key       1399
+Keywords  'swirling door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2825
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2823
+#ENDEXIT
+
+Reset O 0 2806 1 2824
+Reset D 0 2824 0 2
+#MUDPROG
+Progtype  act_prog~
+Arglist   p opens the swirling door.~
+Comlist   mpecho &PAs the door opens a whirling force of energy erupts into the room!
+mpsleep 3
+mea $n &pThe energy released throws you through the door suddenly!!
+mer $n &pThe whirling energy throws $n through the door before it closes.
+silent mpforce $n n
+mpoload 1399 1
+silent close n
+silent lock n
+mppurge rbmlaos
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate door~
+Comlist   if investigation($n) >= 14
+mea $n You find a small hook on the door that could be used to unlock it.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &PThe colors on the walls swirl wildly for a moment suddenly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate spool~
+Comlist   if investigation($n) >= 18
+mea $n You touch the cord and find that it could be broken off easily.
+mea $n Perhaps you could (BREAKCORD) and retrieve a piece for yourself?
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p breakcord~
+Comlist   if arcana($n) >= 20
+mea $n You manage to retrieve a piece of the cording and it suddenly
+mea $n becomes a perfect circle in your hand. It hums with soft magical energy.
+mer $n $n manages to remove a piece of the cording from the spool.
+mpoload 1399 1
+silent mpforce $n get rbmlaos
+else 
+mea $n You fail to remove a piece of the cording from the spool.
+mer $n $n tries to remove a piece of cording from the spool and fails.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2825
+Name     Before a Marble Stairway~
+Sector   indoors~
+Flags    nomob norecall nosummon noastral nosupplicate prototype~
+Desc     This is a large marble landing before a staircase that leads up to
+an unknown destination. There are no windows here and the only light
+is provided by magical globes of light that float along the walls. A
+strange looking purple room can be seen to the west from here. The
+stairway is eerily quiet and there appears to be no end in sight
+with the stairs that lead upwards.
+~
+#EXIT
+Direction west~
+ToRoom    2824
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2826
+Name     &BA Magic Circle&w~
+Sector   indoors~
+Flags    nosummon noastral prototype~
+Desc     This room is dedicated to the usage of magic and has been cleared of
+all furnishings. The walls have magical glyphs painted on them and on
+the floor is a large circle drawn in chalk. Sigils can be found on the
+interior the circle, which helps the magic user channel their energies
+for a desired purpose.
+~
+#EXIT
+Direction east~
+ToRoom    2820
+Key       3700
+Keywords  'small wooden door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+Reset D 0 2826 1 2
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p enterpath~
+Comlist   if class($n) == wizard
+if wearingvnum($n) == 3700
+mea $n &BYou feel the energy of the room swirl around you as a large
+mea $n &Bgateway appears before you. You are drawn inside the gateway
+mea $n &Band arrive in a new destination far from the magic circle...
+mer $n &B$n&B holds up a glowing stone before disappearing through a gateway.
+silent mptransfer $n 3710
+mpat 3710 mer $n &B$n&B appears in a flash of light!&w
+else
+mea $n You need to be holding the magestone first.
+endif
+else
+mea $n Nothing happens.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if arcana($n) >= 18
+mea $n &CYou decipher the sigils here as ones used for magical travel across
+mea $n &Cgreat distances both to and from here...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2899
+Name     Floating in a void~
+Sector   city~
+Flags    nomob~
+#ENDROOM
+
+#ENDAREA

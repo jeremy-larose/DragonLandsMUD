@@ -1,0 +1,3400 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Whispering Peak Mines~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 15 0 0
+Economy      0 31258190
+ResetMsg     &wYou hear the wind howl over the mountain peak...&w~
+Lore         &wYou see an army of small humanoid creatures as they attack the mines
+and the fort above it...&w
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       4800
+Keywords   goblin gate guard solder monster~
+Short      &wa goblin gate guard&w~
+Long       &wA goblin guard is here guarding the gatehouse behind it.
+~
+Desc       &RThis small humanoid creature has a flat, wide nose and bright
+orange eyes. It has a mouth full of razor sharp teeth, dark hair,
+and greyish skin. Despite it stout size it ripples with muscles
+and looks very strong.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -800 3 3 0 13 0 0 0 0 0
+Stats2     3 8 5
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    8 10 8 14 10 8 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum       4801
+Keywords   goblin guard soldier elite monster wandering~
+Short      a goblin fort guard~
+Long       &wA goblin guard is here patrolling about.&w
+~
+Desc       &RThis small humanoid creature has a flat, wide nose and bright
+orange eyes. It has a mouth full of razor sharp teeth, dark hair,
+and greyish skin. Despite it stout size it ripples with muscles
+and looks very strong. It is dressed in old looking leather armor
+that has seen better days.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -800 3 3 0 17 0 0 0 5 0
+Stats2     3 8 5
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    14 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum       4802
+Keywords   goblin miner monster digging~
+Short      &Oa goblin miner&w~
+Long       &OA goblin miner is here digging for ore.&w
+~
+Desc       &OThis small humanoid creature has a flat, wide nose and bright
+orange eyes. It has a mouth full of razor sharp teeth, dark hair,
+and greyish skin. Despite it stout size it ripples with muscles
+and looks very strong. It is dressed in old looking leather armor
+that appears to have had better days in the past.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -800 3 2 0 13 0 0 0 0 0
+Stats2     2 6 1
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    8 10 8 14 10 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpasound &OYou hear something digging nearby...&w
+emote hits the stone walls of the mine with his pick.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4803
+Keywords   goblin mines overseer soldier monster~
+Short      &Ya goblin overseer&w~
+Long       &YA goblin is here running the mining operations.&w
+~
+Desc       &YThis small humanoid creature is very stout as it ripples with
+muscle. It has a flat, wide nose and piercing orange eyes. Its
+mouth is full of razor sharp teeth and it has five fingers on
+each hand. It has long ears that go back quite away from its
+head. Long dark hair has been tied back with a piece of
+leather.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -800 3 4 0 15 0 0 0 0 0
+Stats2     4 8 1
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if mobinroom(4802) == 1
+emote cracks his whip with annoyance at the hobgoblin miner.
+mpforce miner sigh
+mpsleep 2
+mpforce miner emote bows his head and resumes digging.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4804
+Keywords   goblin soldier guard patrolling mines~
+Short      a goblin guard~
+Long       A goblin guard is here patrolling the mines.
+~
+Desc       &wThis small humanoid creature is stout in stature and is dressed in 
+tattered looking leather armor. It has a wide, flat nose and bright
+orange eyes. Its long black hair has been tied back with a piece of
+leather.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -800 3 3 0 13 0 0 0 0 0
+Stats2     3 6 2
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    9 10 8 14 10 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum       4805
+Keywords   goblic cleric painting walls blood symbols~
+Short      &pa goblin cleric&w~
+Long       &pA goblin cleric is here using blood to paint symbols on the walls of this chamber.&w
+~
+Desc       &pThis small humanoid creature is stout in stature and is dressed in
+patched leather armor. Its face has been painted with some sort of
+white paint to depict some sort of symbols on its grey skin.
+~
+Race       monster~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   detect_magic infrared~
+Stats1     -800 3 4 0 13 0 0 0 0 0
+Stats2     3 6 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 14 14 10 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote chants as it paints some symbols on the walls with blood.
+mpasound &wYou hear the sounds of chanting coming from somewhere nearby.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4806
+Keywords   goblin elite guard strong~
+Short      &Ra goblin elite guard&w~
+Long       &RA very strong looking goblin guard is here patrolling the fort.&w
+~
+Desc       &wThis small humanoid creature is stout in stature and is dressed in 
+tattered looking leather armor. It has a wide, flat nose and bright
+orange eyes. Its long black hair has been tied back with a piece of
+leather.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -800 3 4 0 15 0 0 0 0 0
+Stats2     4 6 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 8 14 12 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     poison~
+#ENDMOBILE
+
+#MOBILE
+Vnum       4807
+Keywords   goblin elite guard strong entrance~
+Short      &Ra goblin elite guard&w~
+Long       &RA very strong looking goblin is here standing guard.&w
+~
+Desc       &wThis small humanoid creature is stout in stature and is dressed in 
+tattered looking leather armor. It has a wide, flat nose and bright
+orange eyes. Its long black hair has been tied back with a piece of
+leather.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -800 3 4 0 15 0 0 0 2 0
+Stats2     4 6 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 8 14 12 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     poison~
+#ENDMOBILE
+
+#MOBILE
+Vnum       4808
+Keywords   goblin wizard studying soiled spellbook~
+Short      &za goblin wizard&w~
+Long       &zA goblin wizard is here studying from a soiled looking spellbook.&w
+~
+Desc       &zThis small humanoid creature is more thin than some of the other
+creatures similar to it here. Its face still has the flat, wide 
+nose and bright orange eyes. This creature is dressed in patched
+cotton black robes as it studies its spellbook here.
+~
+Race       monster~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   detect_magic detect_hidden infrared~
+Stats1     -800 10 5 0 13 0 0 2 0 0
+Stats2     3 6 20
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 14 14 10 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'firebolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   c 'mage armor'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4809
+Keywords   goblin general elite strong commanding~
+Short      &Ya goblin general&w~
+Long       &YA strong looking goblin is here commanding the other goblins.&w
+~
+Desc       &YThis small humanoid creature is stout in stature and is dressed in
+rather new chainmail armor. It has a wide, flat nose and bright orange
+eyes. It has a commanding presence and all of the other creatures seem
+to respect it.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 3 6 0 16 0 0 4 10 0
+Stats2     5 6 15
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    12 10 10 14 12 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     poison~
+#ENDMOBILE
+
+#MOBILE
+Vnum       4810
+Keywords   goblin war wizard patrolling stern looking~
+Short      &Ra goblin war wizard&w~
+Long       &RA stern looking goblin is here patrolling as she chants.&w
+~
+Desc       &RThis small humanoid creature is more thin than some of the other
+creatures similar to it here. Its face still has the flate, wide
+noise and bright orange eyes. Its long black hair has been wrapped
+into a tight bun on top of its head. This creature is dressed in
+silk robes that have a few patches here and there.
+~
+Race       monster~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   detect_magic detect_hidden infrared~
+Stats1     -800 10 6 0 13 0 0 2 2 0
+Stats2     3 6 25
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 14 14 10 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpoload 1901 1
+c 'stoneskin'
+mpjunk rock
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'poison spray'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   mpoload 1918 1
+mpoload 1954 1
+c 'acid arrow'
+mpjunk adder
+mpjunk pouch
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   c 'poison spray'
+c 'chill touch'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4811
+Keywords   goblin archer searching mountainside soldier guard~
+Short      &Ra goblin archer&w~
+Long       &RA goblin archer is here looking out over the mountain for intruders.&w
+~
+Desc       &wThis small humanoid creature is stout in stature and is dressed in 
+tattered looking leather armor. It has a wide, flat nose and bright
+orange eyes. Its long black hair has been tied back with a piece of
+leather.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -800 3 4 0 15 0 0 0 0 0
+Stats2     4 6 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    10 10 8 16 12 8 10
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     poison~
+#ENDMOBILE
+
+#OBJECT
+Vnum     4800
+Keywords longsword martial weapon long sword~
+Type     weapon~
+Short    a small longsword~
+Long     A small longsword has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   1 1 8 1 1 0
+Values2  0 1
+Stats    1 10 10 20 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4801
+Keywords war pick rusty looking~
+Type     weapon~
+Short    a small rusty war pick~
+Long     A small rusty war pick has been left here.~
+WFlags   take onehand~
+Values   12 1 8 3 21 0
+Values2  0 1
+Stats    2 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4802
+Keywords barbed leather whip~
+Type     weapon~
+Short    &Oa barbed leather whip&w~
+Long     &OA barbed leather whip has been left here.&w~
+Flags    finesse~
+WFlags   take onehand~
+Values   12 1 4 1 6 0
+Values2  0 1
+Stats    3 4 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4803
+Keywords dagger small~
+Type     weapon~
+Short    a small dagger~
+Long     A small dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 1
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4804
+Keywords small metal key trapdoor goblin mines~
+Type     key~
+Short    &wa small metal key&w~
+Long     &wA small metal key has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    0 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4805
+Keywords small wooden club~
+Type     weapon~
+Short    &Oa small wooden club&w~
+Long     &OA small wooden club has been left here.&w~
+Flags    lightweight~
+WFlags   take onehand~
+Values   12 1 4 2 19 0
+Values2  0 2
+Stats    2 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4806
+Keywords small bucket blood wooden~
+Type     drinkcon~
+Short    &Oa small wooden bucket&w~
+Long     &OA small wooden bucket with red stains has been left here.&w~
+WFlags   take onehand~
+Values   3 3 13 0 0 0
+Values2  0 1
+Stats    3 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4807
+Keywords male human corpse drained blood hung wall~
+Type     trash~
+Short    &Oa male human corpse&w~
+Long     &OA male human corpse has been hung on a wall here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    20 0 0 0 0 0 0
+#EXDESC
+ExDescKey    corpse~
+ExDesc       &OThis male human has been dissected and hung on the wall here. All of
+his blood has been drained away completely and many of his organs are
+missing.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate corpse~
+Comlist   if investigation($n) >= 15
+mea $n As you examine the corpse you can see it has been completely
+mea $n drained of blood and many organs are missing. The corpse still
+mea $n has one blue eye left and his head has been shaved almost
+mea $n to the skin. What hair is left is pure snow white, which seems
+mea $n uncommon for a young man of his age. Perhaps you can untie
+mea $n the body and bring it to its rightful home for burial (UNTIECORPSE)?
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4808
+Keywords male human corpse drained blood bodz121~
+Type     trash~
+Short    &Oa male human corpse&w~
+Long     &OThe corpse of a male human has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    25 0 0 0 0 0 0
+#EXDESC
+ExDescKey    corpse~
+ExDesc       &OThis corpse has been completely drained of blood and many of its
+organs have been removed. Upon further examination you can see the
+corpse is male, has one blue eye left, and his shaved dirty head
+reveals snow white hair.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4809
+Keywords small wooden box~
+Type     trap~
+Short    &Oa small wooden box&w~
+Long     &OA small wooden box has been left here.&w~
+Values   5 7 5 4 1 4
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4810
+Keywords small stone key fort~
+Type     key~
+Short    &wa small stone key&w~
+Long     &wA small stone key has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4811
+Keywords small scimitar~
+Type     weapon~
+Short    a small scimitar~
+Long     A small scimitar has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 1 4 0
+Values2  0 1
+Stats    3 5 2 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4812
+Keywords small bronze key~
+Type     key~
+Short    &Oa small bronze key&w~
+Long     &OA small bronze key has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4813
+Keywords wooden chest small~
+Type     container~
+Short    &Oa wooden chest&w~
+Long     &OA wooden chest is here along the eastern wall of the chamber.&w~
+Values   10 5 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4814
+Keywords small wooden keyring~
+Type     keyring~
+Short    &Oa small wooden keyring&w~
+Long     &OA small wooden keyring has been left here.&w~
+Flags    organic~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4815
+Keywords small silver key top fort~
+Type     key~
+Short    &Wa small silver key&w~
+Long     &WA small silver key has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4816
+Keywords small shortbow short bow~
+Type     missileweapon~
+Short    &Oa small shortbow&w~
+Long     &OA small shortbow has been left here.&w~
+WFlags   take twohand~
+Values   12 1 6 3 9 1
+Values2  0 1
+Stats    2 4 2 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4817
+Keywords cloth quiver small~
+Type     quiver~
+Short    a small cloth quiver~
+Long     A small cloth quiver has been left here.&w~
+WFlags   take about back belt onehand~
+Values   50 0 0 12 0 0
+Values2  0 1
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4818
+Keywords wooden arrow wood~
+Type     projectile~
+Short    a wooden arrow~
+Long     A wooden arrow has been left here.~
+WFlags   take onehand~
+Values   1 1 4 7 1 0
+Values2  0 2
+Stats    1 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4819
+Keywords small wooden box trap~
+Type     trap~
+Short    &Oa small wooden box&w~
+Long     &OA small wooden box has been left here.&w~
+Values   1 6 5 4 1 4
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     4800
+Name     A Rocky Path~
+Sector   mountain~
+Flags    nomob~
+Desc     All around is picturesque views of the Whispering Mountains, which
+are snow capped when fog is not too thick. Ahead is one of the
+summits of the mountain range known as the Whispering Peak. The
+path is very rocky and hard to travel upon as it climbs up.
+~
+#EXIT
+Direction east~
+ToRoom    4801
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     overland~
+MapX      424
+MapY      751
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4801
+Name     A Rocky Path~
+Sector   mountain~
+Desc     All around is picturesque views of the Whispering Mountains, which
+are snow capped when fog is not too thick. Ahead is one of the
+summits of the mountain range known as the Whispering Peak. The
+path is very rocky and hard to travel upon as it climbs up. The
+path continues to the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    4802
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4800
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4802
+Name     A Rocky Path~
+Sector   mountain~
+Desc     All around is picturesque views of the Whispering Mountains, which
+are snow capped when fog is not too thick. Ahead is one of the
+summits of the mountain range known as the Whispering Peak. The
+path is very rocky and hard to travel upon as it climbs up. The
+path continues to the north and west from this point.
+~
+#EXIT
+Direction north~
+ToRoom    4803
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4801
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4803
+Name     A Rocky Path~
+Sector   mountain~
+Desc     All around is picturesque views of the Whispering Mountains, which
+are snow capped when fog is not too thick. Ahead is one of the
+summits of the mountain range known as the Whispering Peak. The
+path is very rocky and hard to travel upon as it climbs up. The
+path continues to the north and south from this point. The
+snow is beginning to get thicker as one climbs towards the
+summit.
+~
+#EXIT
+Direction north~
+ToRoom    4804
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4802
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4804
+Name     A Rocky Path~
+Sector   mountain~
+Desc     All around is picturesque views of the Whispering Mountains, which
+are snow capped when fog is not too thick. Ahead is one of the
+summits of the mountain range known as the Whispering Peak. The
+summit is quite tall and there appears to be some sort of settlement
+built into the top of it. The snowy path continues west towards
+an opening at the base of the summit or back south away fromt
+the snow capped mountain peak.
+~
+#EXIT
+Direction south~
+ToRoom    4803
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4805
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4805
+Name     Before a Large Cave Entrance~
+Sector   mountain~
+Stats    0 0 0 0 14 0
+Desc     Ahead is the summit of the summits of the mountain range known as
+the Whispering Peak. The summit is quite tall and there appears to
+be some sort of settlement built into the top of it. A large
+cave opening is to the north at the base of the summit. It looks
+to have been carved out at one point and then abandoned.
+~
+Perdesc  &wYou see the remnants of a wooden &Wsign&w near the cave entrance.&w
+~
+#EXIT
+Direction north~
+ToRoom    4806
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4804
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate sign~
+Comlist   if investigation($n) >= 14
+mea $n You are able to see that the sign once said "KEEP OUT" from
+mea $n all of the pieces. The sign seems to have been destroyed
+mea $n by someone or something that opened up the cave ahead.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate cave~
+Comlist   if investigation($n) >= 14
+mea $n You notice that this entrance leads into what appears to be an
+mea $n old mine. It looks like it was once abandoned, but recently it has
+mea $n been put back into service by someone.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4806
+Name     A Dark Mine~
+Sector   indoors~
+Desc     The mines were once closed, but it appears they have been reopened
+by someone. The wall torches have been lit and maintained so
+that there is a light source in the dark mines. The ceiling of
+the mines is quite tall and can accommodate people of varying
+heights. The sounds of digging can be heard echoing from all
+over the mines ahead.
+~
+#EXIT
+Direction north~
+ToRoom    4807
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4805
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4826
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4807
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere. A cold breeze can be felt coming
+from the south from here.
+~
+#EXIT
+Direction north~
+ToRoom    4808
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4806
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4808
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4809
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4807
+#ENDEXIT
+
+Reset M 0 4802 12 4808
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4809
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction east~
+ToRoom    4810
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4808
+#ENDEXIT
+
+Reset M 0 4803 1 4809
+  Reset E 0 4802 1 26
+  Reset E 0 4803 1 27
+#ENDROOM
+
+#ROOM
+Vnum     4810
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction south~
+ToRoom    4811
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4809
+#ENDEXIT
+
+Reset M 0 4802 12 4810
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4811
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4810
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4812
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4812
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4811
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4813
+#ENDEXIT
+
+Reset M 0 4802 12 4812
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4813
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4812
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4814
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4814
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4815
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4813
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4815
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4816
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4814
+#ENDEXIT
+
+Reset M 0 4802 12 4815
+  Reset E 0 4801 1 26
+Reset M 0 4802 12 4815
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4816
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4817
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4815
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4817
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4818
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4816
+#ENDEXIT
+
+Reset M 0 4802 12 4817
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4818
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction south~
+ToRoom    4817
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4819
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4819
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction east~
+ToRoom    4818
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4820
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4820
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere. A large entrance to another section of
+the mines can be seen to the north from here.
+~
+#EXIT
+Direction north~
+ToRoom    4827
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4819
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4821
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4821
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction east~
+ToRoom    4820
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4822
+#ENDEXIT
+
+Reset M 0 4802 12 4821
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4822
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction east~
+ToRoom    4821
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4823
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4823
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4822
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4824
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4824
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4823
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4825
+#ENDEXIT
+
+Reset M 0 4802 12 4824
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4825
+Name     A Mineshaft~
+Sector   indoors~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4824
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4826
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4826
+Name     A Mineshaft~
+Sector   indoors~
+Flags    nomob~
+Desc     This mineshaft is quite wide and there are signs it has been recently
+dug into. The torches that line along the walls have been well
+maintained and kept lit during all hours of the day and night. The
+mine floor has been swept to ensure that whoever is mining can
+walk easily everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    4825
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4806
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 4802 12 4826
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4827
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction north~
+ToRoom    4828
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4820
+#ENDEXIT
+
+Reset M 0 4804 5 4827
+  Reset E 0 4800 1 26
+  Reset E 0 4803 1 27
+#ENDROOM
+
+#ROOM
+Vnum     4828
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction east~
+ToRoom    4829
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4827
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 980 1 4828
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   if ovnumroom(980) == 1
+mppurge ecluster
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   if ovnumroom(980) == 0
+mpoload 980
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4829
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction east~
+ToRoom    4830
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4828
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4830
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction east~
+ToRoom    4831
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4829
+#ENDEXIT
+
+Reset M 0 4804 5 4830
+  Reset E 0 4803 1 26
+  Reset E 0 4803 1 27
+  Reset G 0 4804 1
+Reset M 0 4802 12 4830
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4831
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 2 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction north~
+ToRoom    4832
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4830
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4832
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction north~
+ToRoom    4833
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4831
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4833
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Stats    0 0 5 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here. The mineshaft narrows quite severely to the east
+of here.
+~
+#EXIT
+Direction east~
+ToRoom    4834
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4832
+#ENDEXIT
+
+Reset M 0 4802 12 4833
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4834
+Name     An Extremely Narrow Mineshaft~
+Sector   indoors~
+Stats    0 0 1 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here. The mineshaft is extremely narrow here
+and not many can pass through here at once.
+~
+#EXIT
+Direction south~
+ToRoom    4835
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4833
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4835
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 2 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here. The mineshaft narrows extremely tight towards the north
+of here.
+~
+#EXIT
+Direction north~
+ToRoom    4834
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4836
+#ENDEXIT
+
+Reset M 0 4802 12 4835
+  Reset E 0 4801 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4836
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction north~
+ToRoom    4835
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4837
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4837
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction east~
+ToRoom    4838
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4836
+#ENDEXIT
+
+Reset M 0 4804 5 4837
+  Reset E 0 4800 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4838
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here.
+~
+#EXIT
+Direction north~
+ToRoom    4839
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4837
+#ENDEXIT
+
+Reset M 0 4804 5 4838
+  Reset E 0 4800 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4839
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Stats    0 0 4 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here. A cold breeze can be felt coming from
+somewhere to the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    4840
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4838
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4840
+Name     A Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This part of the mines appears to be relatively newer and
+the mineshaft has not been widened with usage. Parts of this
+path are narrow and can only allow a certain amount of traffic
+to pass while other parts are wide enough for many to cross through.
+Torches align the walls to help provide light to those that are digging
+through here. A cold breeze can be felt coming from
+somewhere to the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    4841
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4839
+#ENDEXIT
+
+Reset M 0 4804 5 4840
+  Reset E 0 4800 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4841
+Name     End of a Narrow Mineshaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 14 0
+Desc     The mineshaft becomes less narrow here as it ends at a rock wall. Several
+metal bars have been installed into the wall to create a ladder that
+leads up to where a cold breeze can be felt. Otherwise the other
+way out is to head south through the narrow mineshaft.
+~
+Perdesc  &OYou spot a wooden trapdoor at the end of a metal ladder here.&w
+~
+#EXIT
+Direction south~
+ToRoom    4840
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4842
+Key       4804
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed climb nomob~
+#ENDEXIT
+
+Reset D 0 4841 4 1
+#ENDROOM
+
+#ROOM
+Vnum     4842
+Name     A Large Mountain Ledge~
+Sector   mountain~
+Desc     This is a large ledge that has been manually created a long time ago
+for those exiting the mines and heading to what appears to be a fort.
+The fort is located to the north and is built into the top of the
+summit. A stone gate house is the initial entrance to the fort and
+can be also seen to the north. To the south one receives an impressive
+panoramic view of the lands. The pristine fog and snow covered Whispering
+Mountain range can be seen all around as well as the low fields and
+forests of New Darkhaven.
+~
+#EXIT
+Direction north~
+ToRoom    4843
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4847
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4841
+Key       4804
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed climb nomob~
+#ENDEXIT
+
+Reset D 0 4842 5 1
+#ENDROOM
+
+#ROOM
+Vnum     4843
+Name     A Large Mountain Ledge~
+Sector   mountain~
+Desc     This is a large ledge that has been manually created a long time ago
+for those exiting the mines and heading to what appears to be a fort.
+The fort is located to the north and is built into the top of the
+summit. A stone gate house is the initial entrance to the fort and
+can be also seen to the north. To the south one receives an impressive
+panoramic view of the lands. The pristine fog and snow covered Whispering
+Mountain range can be seen all around as well as the low fields and
+forests of New Darkhaven.
+~
+#EXIT
+Direction east~
+ToRoom    4844
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4842
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4844
+Name     A Large Mountain Ledge~
+Sector   mountain~
+Desc     This is a large ledge that has been manually created a long time ago
+for those that exited the mines below. A large stone fort has
+been built into the summit of the Whispering Peak. To the
+north is also a large stone gatehouse that acts as the initial
+entrance to the fort before one climbs stone stairs an enters
+the main courtyard. To the south of here one receives an impressive
+panoramic view of the lands. The pristine fog and snow covered
+Whispering Mountain range can be seen all around as well as the low
+fields and forests of New Darkhaven.
+~
+#EXIT
+Direction north~
+ToRoom    4848
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4845
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4847
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4843
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4845
+Name     A Large Mountain Ledge~
+Sector   mountain~
+Desc     This is a large ledge that has been manually created a long time ago
+for those exiting the mines and heading to what appears to be a fort.
+The fort is located to the north and is built into the top of the
+summit. A stone gate house is the initial entrance to the fort and
+can be also seen to the north. To the south one receives an impressive
+panoramic view of the lands. The pristine fog and snow covered Whispering
+Mountain range can be seen all around as well as the low fields and
+forests of New Darkhaven.
+~
+#EXIT
+Direction south~
+ToRoom    4846
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4844
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4846
+Name     A Large Mountain Ledge~
+Sector   mountain~
+Desc     This is a large ledge that has been manually created a long time ago
+for those exiting the mines and heading to what appears to be a fort.
+The fort is located to the north and is built into the top of the
+summit. A stone gate house is the initial entrance to the fort and
+can be also seen to the north. To the south one receives an impressive
+panoramic view of the lands. The pristine fog and snow covered Whispering
+Mountain range can be seen all around as well as the low fields and
+forests of New Darkhaven.
+~
+#EXIT
+Direction north~
+ToRoom    4845
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4847
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4847
+Name     A Large Mountain Ledge~
+Sector   mountain~
+Desc     This is a large ledge that has been manually created a long time ago
+for those exiting the mines and heading to what appears to be a fort.
+The fort is located to the north and is built into the top of the
+summit. A stone gate house is the initial entrance to the fort and
+can be also seen to the north. To the south one receives an impressive
+panoramic view of the lands. The pristine fog and snow covered Whispering
+Mountain range can be seen all around as well as the low fields and
+forests of New Darkhaven.
+~
+#EXIT
+Direction north~
+ToRoom    4844
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4846
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4842
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4848
+Name     A Mountain Fort Gatehouse~
+Sector   indoors~
+Desc     The stone gatehouse here was created by carved into a large boulder. The
+entrance portal is circular in shape and past it is a stone stairway
+that leads up to the main courtyard of the fort. Two torches have been
+placed on each side of the entrance to provide light inside. 
+~
+#EXIT
+Direction north~
+ToRoom    4849
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4844
+#ENDEXIT
+
+Reset M 0 4800 2 4848
+  Reset E 0 4800 1 26
+Reset M 0 4800 2 4848
+  Reset E 0 4800 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4849
+Name     A Mountain Fort Courtyard~
+Sector   city~
+Desc     After climbing stone stairs to the south of here one arrives at a
+courtyard that has been built into the side of the summit. The main part
+of the fort has been built into the tip of the summit and at the
+very top. From here one can see four towers that have been crafted
+from stone and offer whoever is in them a good view of the fort and
+the surrounding area.
+~
+#EXIT
+Direction east~
+ToRoom    4850
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4848
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4851
+#ENDEXIT
+
+Reset M 0 4801 3 4849
+  Reset E 0 4800 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4850
+Name     A Mountain Fort Courtyard~
+Sector   city~
+Stats    0 0 0 0 12 0
+Desc     The courtyard ends here as the entrance to the interior section
+of the fort. A large wooden door can be seen at the north,
+which leads inside. Two torches have been mounted on each side
+of the door to help provide light around this area. Fog slowly
+creeps in around here since the summit is quite high.
+~
+Perdesc  &OA large wooden door to the north leads inside the fortress.
+~
+#EXIT
+Direction north~
+ToRoom    4854
+Key       4810
+Keywords  'large wooden door'~
+Flags     isdoor closed locked nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4849
+#ENDEXIT
+
+Reset M 0 4801 3 4850
+  Reset E 0 4800 1 26
+  Reset G 0 4810 1
+Reset D 0 4850 0 2
+#ENDROOM
+
+#ROOM
+Vnum     4851
+Name     A Mountain Fort Courtyard~
+Sector   city~
+Desc     This part of the courtyard curves around the side of the summit. A stone
+barrier that is four feet off the ground helps define the courtyard
+path as it curves along the summit. The courtyard continues to
+the north as well as to the east from here.
+~
+#EXIT
+Direction north~
+ToRoom    4852
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4849
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4852
+Name     A Mountain Fort Courtyard~
+Sector   city~
+Desc     The courtyard continues to wind around the summit here as this part of
+the courtyard gets slightly higher than the rest. Signs of a
+campfire can be seen here at a corner. Charred wood and scorch
+marks on the stone floor can still be seen there. The courtyard
+continues to the west as well as the south from here.
+~
+#EXIT
+Direction south~
+ToRoom    4851
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4853
+#ENDEXIT
+
+Reset M 0 4801 3 4852
+  Reset E 0 4800 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4853
+Name     A Mountain Fort Courtyard~
+Sector   city~
+Stats    0 0 0 0 14 0
+Desc     The stone courtyard ends here at a rock wall. Several old wooden boxes
+and crates can be seen here, which were emptied some time ago. A
+wooden part of the courtyard floor is here, which is partially
+covered in snow and stone debris. The courtyard continues back
+to the east from here.
+~
+Perdesc  &OYou spot a wooden trapdoor here leading into another part of the fort.
+~
+#EXIT
+Direction east~
+ToRoom    4852
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4894
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed climb~
+#ENDEXIT
+
+Reset D 0 4853 5 1
+#ENDROOM
+
+#ROOM
+Vnum     4854
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is the first level of the fort that has been built into the
+Whispering Peak summit. The walls here are very smooth and
+almost seem polished. Torches has been lit and hung along the
+walls here to provide light. There is slight debris and
+rubble that can be found on the floor here, which came from
+a long period of not being used.
+~
+#EXIT
+Direction east~
+ToRoom    4855
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4850
+Key       4810
+Keywords  'large wooden door'~
+Flags     isdoor closed locked nomob~
+#ENDEXIT
+
+Reset D 0 4854 2 2
+#ENDROOM
+
+#ROOM
+Vnum     4855
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is the first level of the fort that has been built into the
+Whispering Peak summit. The walls here are very smooth and
+almost seem polished. Torches has been lit and hung along the
+walls here to provide light. There is slight debris and
+rubble that can be found on the floor here, which came from
+a long period of not being used.
+~
+#EXIT
+Direction north~
+ToRoom    4856
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4854
+#ENDEXIT
+
+Reset M 0 4806 4 4855
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4856
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is the first level of the fort that has been built into the
+Whispering Peak summit. The walls here are very smooth and
+almost seem polished. Torches has been lit and hung along the
+walls here to provide light. There is slight debris and
+rubble that can be found on the floor here, which came from
+a long period of not being used.
+~
+#EXIT
+Direction south~
+ToRoom    4855
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4857
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4857
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is the first level of the fort that has been built into the
+Whispering Peak summit. The walls here are very smooth and
+almost seem polished. Torches has been lit and hung along the
+walls here to provide light. There is slight debris and
+rubble that can be found on the floor here, which came from
+a long period of not being used.
+~
+#EXIT
+Direction north~
+ToRoom    4858
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4856
+#ENDEXIT
+
+Reset M 0 4806 4 4857
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4858
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is the first level of the fort that has been built into the
+Whispering Peak summit. The walls here are very smooth and
+almost seem polished. Torches has been lit and hung along the
+walls here to provide light. There is slight debris and
+rubble that can be found on the floor here, which came from
+a long period of not being used. A cold breeze can be felt
+wafting through the hall here.
+~
+#EXIT
+Direction south~
+ToRoom    4857
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4859
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4859
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is the first level of the fort that has been built into the
+Whispering Peak summit. The walls here are very smooth and
+almost seem polished. Torches has been lit and hung along the
+walls here to provide light. There is slight debris and
+rubble that can be found on the floor here, which came from
+a long period of not being used. A small hallways can
+be seen leading into a great hall to the south of here.
+~
+#EXIT
+Direction east~
+ToRoom    4858
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4860
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4862
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4860
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is a small hallway that leads into a great hall to the south of
+here. To the north is the main hallway of the first floor of the
+fort. The doorway to the south is circular in shape and has
+been carved out of rough looking stone a long time ago.
+~
+#EXIT
+Direction north~
+ToRoom    4859
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4861
+#ENDEXIT
+
+Reset M 0 4807 2 4860
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4861
+Name     A Great Hall~
+Sector   indoors~
+Desc     This large chamber once served as the great hall for those that
+worked for this fort. Long wooden tables have been reduced to
+debris over time and from interactions with random creatures. A 
+skylight can be seen on the southern wall from here, which
+provides much of the light in this hall. The glass is quite
+old looking and has a few holes in it. A large stone
+fireplace is cold and empty on the eastern wall. It has
+not been used in quite some time.
+~
+#EXIT
+Direction north~
+ToRoom    4860
+#ENDEXIT
+
+Reset M 0 4808 3 4861
+  Reset E 0 4803 1 26
+  Reset G 0 4812 1
+#ENDROOM
+
+#ROOM
+Vnum     4862
+Name     Inside a Mountain Fort~
+Sector   indoors~
+Desc     This is the first level of the fort that has been built into the
+Whispering Peak summit. The walls here are very smooth and
+almost seem polished. Torches has been lit and hung along the
+walls here to provide light. There is slight debris and
+rubble that can be found on the floor here, which came from
+a long period of not being used. The cool breeze is
+getting stronger to the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    4863
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4859
+#ENDEXIT
+
+Reset M 0 4806 4 4862
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4863
+Name     End of a Hallway~
+Sector   indoors~
+Stats    0 0 0 0 14 0
+Desc     The stone hallway ends here before a metal ladder that has been
+installed into the rock wall to the north. The ladder leads up
+to the second floor of the fort. The hallway leads back to
+the south from here into the main part of the first floor
+of the fort.
+~
+Perdesc  &OYou see a wooden door at the top of some stairs here.&w
+~
+#EXIT
+Direction south~
+ToRoom    4862
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4864
+Key       4812
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed locked climb nomob~
+#ENDEXIT
+
+Reset D 0 4863 4 2
+#ENDROOM
+
+#ROOM
+Vnum     4864
+Name     End of a Hallway~
+Sector   indoors~
+Desc     This second floor of the fort was once used as living quarters for
+the soldiers of the fort. Several of the rooms are empty and have been
+cleared out. A few rooms look like they have been used recently by
+someone. A metal ladder leads down to the first floor of the
+fort, which is often covered by a wooden trapdoor.
+~
+#EXIT
+Direction east~
+ToRoom    4865
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4863
+Key       4812
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed locked climb nomob~
+#ENDEXIT
+
+Reset D 0 4864 5 2
+#ENDROOM
+
+#ROOM
+Vnum     4865
+Name     A Mountain Fort Second Floor~
+Sector   indoors~
+Desc     This second floor of the fort was once used as living quarters for
+the soldiers of the fort. Several of the rooms are empty and have been
+cleared out. A few rooms look like they have been used recently by
+someone. The hallway continues to the north from here and ends
+to the west of here at a metal ladder leading down.
+~
+#EXIT
+Direction north~
+ToRoom    4866
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4864
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4866
+Name     A Mountain Fort Second Floor~
+Sector   indoors~
+Desc     This second floor of the fort was once used as living quarters for
+the soldiers of the fort. Several of the rooms are empty and have been
+cleared out. A few rooms look like they have been used recently by
+someone. The hallway continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    4867
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4870
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4865
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4871
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 4807 2 4866
+  Reset E 0 4811 1 26
+Reset D 0 4866 1 1
+Reset D 0 4866 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4867
+Name     A Mountain Fort Second Floor~
+Sector   indoors~
+Desc     This second floor of the fort was once used as living quarters for
+the soldiers of the fort. Several of the rooms are empty and have been
+cleared out. A few rooms look like they have been used recently by
+someone. The hallway continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    4869
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4868
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4866
+#ENDEXIT
+
+Reset D 0 4867 1 1
+#ENDROOM
+
+#ROOM
+Vnum     4868
+Name     A Stone Chamber~
+Sector   indoors~
+Desc     This chamber has several large wooden boxes, crates, and chests here.
+Most of the contents have been looted and removed at some point. The
+remnants of a tapestry can be seen on the northern wall with some of it
+having been torn off or even burnt.
+~
+#EXIT
+Direction west~
+ToRoom    4867
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 0 4813 1 4868
+  Reset P 0 4814 1 4813
+Reset D 0 4868 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4869
+Name     A Mountain Fort Second Floor~
+Sector   indoors~
+Desc     This second floor of the fort was once used as living quarters for
+the soldiers of the fort. Several of the rooms are empty and have been
+cleared out. A few rooms look like they have been used recently by
+someone. The hallway continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    4873
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4867
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4872
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 4806 4 4869
+  Reset E 0 4811 1 26
+Reset D 0 4869 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4870
+Name     A Stone Chamber~
+Sector   indoors~
+Desc     This chamber has been completely cleared out except for a few
+wooden boxes and crates. The inside of these storage units have
+been completely cleared out. A few of the boxes have been thrown
+against a wall and left to creaft a small wooden pile. Some of
+the pile has been used for a fire at some point.
+~
+#EXIT
+Direction west~
+ToRoom    4866
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 4808 3 4870
+  Reset E 0 4803 1 26
+Reset D 0 4870 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4871
+Name     A Stone Chamber~
+Sector   indoors~
+Desc     This chamber has been completely cleared out except for a few
+wooden boxes and crates. The inside of these storage units have
+been completely cleared out. A few of the boxes have been thrown
+against a wall and left to create a small wooden pile.
+~
+#EXIT
+Direction east~
+ToRoom    4866
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 0 4819 1 4871
+Reset D 0 4871 1 1
+#ENDROOM
+
+#ROOM
+Vnum     4872
+Name     A Stone Chamber~
+Sector   indoors~
+Desc     This chamber has been completely cleared out except for a few
+wooden boxes and crates. The inside of these storage units have
+been completely cleared out. A few of the boxes have been thrown
+against a wall and left to create a small wooden pile. Some of
+the pile has been used for a fire at some point. Tiny foot
+prints can be seen in the dust on the floor here.
+~
+#EXIT
+Direction east~
+ToRoom    4869
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 4808 3 4872
+  Reset E 0 4803 1 26
+  Reset G 0 4815 1
+Reset D 0 4872 1 1
+#ENDROOM
+
+#ROOM
+Vnum     4873
+Name     A Mountain Fort Second Floor~
+Sector   indoors~
+Stats    0 0 0 0 14 0
+Desc     The stone hallway ends here with a metal ladder installed into the rock
+wall at the north. The ladder leads up to a trapdoor above and to the
+the top of the fort. An extremely cold draft is coming from above, which
+travels back down the hall to the south.
+~
+Perdesc  &OYou spot a wooden trapdoor at the end up the hall leading up.&w
+~
+#EXIT
+Direction south~
+ToRoom    4869
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4874
+Key       4815
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed locked climb nomob~
+#ENDEXIT
+
+Reset D 0 4873 4 2
+#ENDROOM
+
+#ROOM
+Vnum     4874
+Name     Top of a Mountain Fort~
+Sector   city~
+Stats    0 0 0 0 14 0
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard. A wooden trapdoor here leads down back
+into the interior of the fort.
+~
+Perdesc  &OYou spot a wooden trapdoor at the end up the hall leading down.&w
+~
+#EXIT
+Direction east~
+ToRoom    4881
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4899
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4875
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4873
+Key       4815
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed locked climb nomob~
+#ENDEXIT
+
+Reset D 0 4874 5 2
+#ENDROOM
+
+#ROOM
+Vnum     4875
+Name     Top of a Mountain Fort~
+Sector   city~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard. One of the towers is to
+the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    4885
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4874
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4876
+#ENDEXIT
+
+Reset M 0 4806 8 4875
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4876
+Name     Top of a Mountain Fort~
+Sector   city~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard.
+~
+#EXIT
+Direction north~
+ToRoom    4875
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4899
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4877
+#ENDEXIT
+
+Reset M 0 4806 7 4876
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4877
+Name     Top of a Mountain Fort~
+Sector   city~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard. One of the towers can be seen
+to the south of here.
+~
+#EXIT
+Direction north~
+ToRoom    4876
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4878
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4888
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4878
+Name     Top of a Mountain Fort~
+Sector   city~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard.
+~
+#EXIT
+Direction north~
+ToRoom    4899
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4879
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4877
+#ENDEXIT
+
+Reset M 0 4809 1 4878
+  Reset E 0 4811 1 26
+  Reset E 0 4803 1 27
+Reset M 0 4810 1 4878
+  Reset E 0 4803 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4879
+Name     Top of a Mountain Fort~
+Sector   city~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard. One of the towers can be seen
+to the south of here.
+~
+#EXIT
+Direction north~
+ToRoom    4880
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4891
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4878
+#ENDEXIT
+
+Reset M 0 4806 6 4879
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4880
+Name     Top of a Mountain Fort~
+Sector   city~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard.
+~
+#EXIT
+Direction north~
+ToRoom    4881
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4879
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4899
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4881
+Name     Top of a Mountain Fort~
+Sector   city~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard. One of the towers can be seen
+to the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    4882
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4880
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4874
+#ENDEXIT
+
+Reset M 0 4806 5 4881
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4882
+Name     Before a Small Tower~
+Sector   city~
+Desc     This is a small stone path that leads to a stone tower to the
+north. The tower has been carved out of a large boulder and
+shaped similar to a castle tower. An open doorway is to the
+north, which leads to the base level of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    4883
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4881
+#ENDEXIT
+
+Reset M 0 4807 6 4882
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4883
+Name     Base Floor of a Tower~
+Sector   indoors~
+Desc     This base level of the tower is quite empty save for a bed
+of straw used for sleeping. There is not much else in terms of
+decor or furnishings. A few open windows allow quite a draft to
+enter. A small area of the tower is used for burning wood for heat
+and light during the night time. A wooden ladder leads up to th e
+top of the tower.
+~
+#EXIT
+Direction south~
+ToRoom    4882
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4884
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4884
+Name     Upper Floor of a Tower~
+Sector   indoors~
+Desc     This upper portion of the tower is used for archers and those that
+need to keep an eye on who is approaching the fort or already
+in it. There is not much in terms of furnishings here except for
+a wooden bench. Each direction from north, south, east, and west has
+a stone opening for someone to use to see what is happening. A wooden
+ladder leads down into the base of the tower below. This is the coldest
+part of the tower with the open windows allowing very cold air to
+pass through.
+~
+#EXIT
+Direction down~
+ToRoom    4883
+#ENDEXIT
+
+Reset M 0 4811 2 4884
+  Reset E 0 4816 1 28
+  Reset E 0 4817 1 22
+    Reset P 0 4818 12 4817
+#ENDROOM
+
+#ROOM
+Vnum     4885
+Name     Before a Small Tower~
+Sector   city~
+Desc     This is a small stone path that leads to a stone tower to the
+north. The tower has been carved out of a large boulder and
+shaped similar to a castle tower. An open doorway is to the north,
+which leads to the base level of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    4886
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4875
+#ENDEXIT
+
+Reset M 0 4807 4 4885
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4886
+Name     Base Floor of a Tower~
+Sector   indoors~
+Desc     This base level of the tower is quite empty save for a bed
+of straw used for sleeping. There is not much else in terms of
+decor or furnishings. A few open windows allow quite a draft to
+enter. A small area of the tower is used for burning wood for heat
+and light during the night time. A wooden ladder leads up to th e
+top of the tower.
+~
+#EXIT
+Direction south~
+ToRoom    4885
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4887
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4887
+Name     Upper Floor of a Tower~
+Sector   indoors~
+Desc     This upper portion of the tower is used for archers and those that
+need to keep an eye on who is approaching the fort or already
+in it. There is not much in terms of furnishings here except for
+a wooden bench. Each direction from north, south, east, and west has
+a stone opening for someone to use to see what is happening. A wooden
+ladder leads down into the base of the tower below. This is the coldest
+part of the tower with the open windows allowing very cold air to
+pass through.
+~
+#EXIT
+Direction down~
+ToRoom    4886
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 4811 1 4887
+  Reset E 0 4816 1 28
+  Reset E 0 4817 1 12
+    Reset P 0 4818 1 4817
+    Reset P 0 4818 11 4817
+#ENDROOM
+
+#ROOM
+Vnum     4888
+Name     Before a Small Tower~
+Sector   city~
+Desc     This is a small stone path that leads to a stone tower to the
+south. The tower has been carved out of a large boulder and
+shaped similar to a castle tower. An open doorway is to the south,
+which leads to the base level of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    4877
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4889
+#ENDEXIT
+
+Reset M 0 4807 3 4888
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4889
+Name     Base Floor of a Tower~
+Sector   indoors~
+Desc     This base level of the tower is quite empty save for a bed
+of straw used for sleeping. There is not much else in terms of
+decor or furnishings. A few open windows allow quite a draft to
+enter. A small area of the tower is used for burning wood for heat
+and light during the night time. A wooden ladder leads up to th e
+top of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    4888
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4890
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4890
+Name     Upper Floor of a Tower~
+Sector   indoors~
+Desc     This upper portion of the tower is used for archers and those that
+need to keep an eye on who is approaching the fort or already
+in it. There is not much in terms of furnishings here except for
+a wooden bench. Each direction from north, south, east, and west has
+a stone opening for someone to use to see what is happening. A wooden
+ladder leads down into the base of the tower below. This is the coldest
+part of the tower with the open windows allowing very cold air to
+pass through.
+~
+#EXIT
+Direction down~
+ToRoom    4889
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 4811 4 4890
+  Reset G 0 4816 1
+  Reset E 0 4817 1 22
+    Reset P 0 4818 12 4817
+#ENDROOM
+
+#ROOM
+Vnum     4891
+Name     Before a Small Tower~
+Sector   city~
+Desc     This is a small stone path that leads to a stone tower to the
+south. The tower has been carved out of a large boulder and
+shaped similar to a castle tower. An open doorway is to the south,
+which leads to the base level of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    4879
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4892
+#ENDEXIT
+
+Reset M 0 4807 6 4891
+  Reset E 0 4811 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4892
+Name     Base Floor of a Tower~
+Sector   indoors~
+Desc     This base level of the tower is quite empty save for a bed
+of straw used for sleeping. There is not much else in terms of
+decor or furnishings. A few open windows allow quite a draft to
+enter. A small area of the tower is used for burning wood for heat
+and light during the night time. A wooden ladder leads up to th e
+top of the tower.
+~
+#EXIT
+Direction north~
+ToRoom    4891
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4893
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4893
+Name     Upper Floor of a Tower~
+Sector   indoors~
+Desc     This upper portion of the tower is used for archers and those that
+need to keep an eye on who is approaching the fort or already
+in it. There is not much in terms of furnishings here except for
+a wooden bench. Each direction from north, south, east, and west has
+a stone opening for someone to use to see what is happening. A wooden
+ladder leads down into the base of the tower below. This is the coldest
+part of the tower with the open windows allowing very cold air to
+pass through.
+~
+#EXIT
+Direction down~
+ToRoom    4892
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 4811 3 4893
+  Reset G 0 4816 1
+  Reset E 0 4817 1 12
+    Reset P 0 4818 12 4817
+#ENDROOM
+
+#ROOM
+Vnum     4894
+Name     A Mountain Fort Dungeon~
+Sector   indoors~
+Stats    0 0 0 0 14 0
+Desc     This part of the fort was once used for holding prisoners or workers
+that rebelled. There are several jail cells on each side of the
+stone carved hallway here. The hallway continues to the south from
+here or back up to the courtyard above.
+~
+Perdesc  &OYou spot a wooden trapdoor here leading upwards to the outside.
+~
+#EXIT
+Direction south~
+ToRoom    4895
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4853
+Keywords  'wooden trapdoor'~
+Flags     isdoor closed climb~
+#ENDEXIT
+
+Reset D 0 4894 4 1
+#ENDROOM
+
+#ROOM
+Vnum     4895
+Name     A Mountain Fort Dungeon~
+Sector   indoors~
+Desc     The stone hallway continues here as well as to the north or south. Various
+empty jail cells can be seen on each side of the hallway here. The
+smell of death and decay is quite prevalent in the air here, as
+well as an odd smell.
+~
+#EXIT
+Direction north~
+ToRoom    4894
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4896
+#ENDEXIT
+
+Reset O 0 4809 1 4895
+#ENDROOM
+
+#ROOM
+Vnum     4896
+Name     A Mountain Fort Dungeon~
+Sector   indoors~
+Desc     The stone hallway ends here with a large dungeon cell to the
+west and a cell turned into a torture chamber to the west. There
+is dried blood all over the ground here, which has frozen
+to the cold stone. The smell of death and decay is quite
+heavy in the air here.
+~
+#EXIT
+Direction north~
+ToRoom    4895
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4898
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4897
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4897
+Name     A Dungeon Cell~
+Sector   indoors~
+Desc     This dungeon cell is eerily quiet and there is signs of a struggle
+at some point. Scuff marks can be seen on the floor as well
+as an impressive amount of blood. The walls have streaks of
+blood that trail down to the floor like morbid rivers.
+~
+#EXIT
+Direction east~
+ToRoom    4896
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(4807) == 0
+if hasqbit($n) == 4800
+mpsleep 2
+mea $n &rYou seem blood and death here suddenly...
+mpoload 4807 1
+mpqset $n 4800
+mpqset $n 4801
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p untiecorpse~
+Comlist   if ovnumhere(4807) == 1
+if sleight($n) >= 12
+mea $n You manage to untie the corpse and free it from the wall. The corpse
+mea $n falls to the ground of the cell with a dull thump.
+mppurge wall
+mpoload 4808 1
+mpasound &OYou hear a dull sound come from somewhere nearby...
+mer $n $n manages to untie the body from the wall and the corpse falls
+mer $n down onto the floor of the cell with a dull thump.
+else
+mea $n You fail to untie the corpse from the wall.
+endif
+else
+mea $n There is no corpse here to untie.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4898
+Name     A Torture Chamber~
+Sector   indoors~
+Desc     The dungeon cell here has been set up as a torture chamber. There
+are various sharp implement that have been recently used on someone
+as there is blood stains everywhere. The walls have several odd symbols
+painted with blood as well, which seem arcane in nature.
+~
+#EXIT
+Direction west~
+ToRoom    4896
+#ENDEXIT
+
+Reset M 0 4805 1 4898
+  Reset E 0 4805 1 26
+  Reset G 0 4806 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate symbols~
+Comlist   if religion($n) >= 15
+mer $n $n investigates something in the chamber.
+mea $n You recognize the symbols as a crude form of religious blessings to
+mea $n some dark god or goddess. The symbols are drawn in blood, which
+mea $n adds a sacrificial element to the symbols.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4899
+Name     Top of a Mountain Fort~
+Sector   city~
+Flags    nomob~
+Desc     This is a small courtyard on the top of the fort, which is also the
+top of the summit. The summit has been carved so that the courtyard
+is flat. The courtyard is walled in with a stone border that is
+about four feet in height. The view from here is quite impressive
+as one can see past the mountain range in all directions depending
+on the levels of fog and snow. Four towers can be seen at each point of
+the square shaped courtyard. There is remnants of a fire having been
+burnt here at some point.
+~
+#EXIT
+Direction north~
+ToRoom    4874
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4880
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4878
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4876
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

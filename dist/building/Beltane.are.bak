@@ -1,0 +1,1909 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         {PROTO} Beltane's area in progress~
+Author       Beltane~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+Flags        prototype~
+#ENDAREADATA
+
+#MOBILE
+Vnum       6200
+Keywords   zombie lord tattered silk clothing rotting corpse~
+Short      &Oa zombie lord&w~
+Long       &OA rotting corpse dressed in tattered silk clothing is here.&w
+~
+Desc       &OThis zombie was once a rich noble and all that is left to denote
+such is the silk that is decaying on its body. Much of its facial
+features have fallen off over time. It stumbles as tries to walk about.
+~
+Lore       &OYou see a rich looking noble lord sitting at a table with other
+nobles before their world is twisted with darkness...
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive stayarea prototype~
+Affected   infrared truesight~
+Stats1     -1000 1 9 0 10 0 0 0 0 0
+Stats2     11 8 30
+Stats3     1 12 3
+Stats4     2 13 2 0 0 0 1
+Attribs    16 13 12 10 16 8 13
+Saves      0 0 0 0 0 0
+Immune     poison necrotic sleep charm psychic~
+#ENDMOBILE
+
+#MOBILE
+Vnum       6201
+Keywords   rotting corpse rusty chain mail armor zombie warrior~
+Short      &za zombie warrior&w~
+Long       &zA rotting corpse wearing chain mail armor is standing here.&w
+~
+Desc       &zThe facial features of this corpse have completely rotted off and some
+of the skull beneath the skin is showing. It is dressed in rusty
+looking chain mail armor as it stumbles about.
+~
+Lore       &zYou see a man patrolling a village before a dark cloud begins to form
+above the village. Dark tendrils begin to descend upon the village and
+grab the various villagers. Some turn into spectral shadows while others
+turn into rotting corpses like the one before you...
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea prototype~
+Affected   infrared~
+Stats1     -800 1 8 0 16 0 0 2 1 0
+Stats2     7 8 20
+Stats3     1 8 1
+Stats4     2 13 2 0 0 0 6
+Attribs    16 6 10 11 16 7 10
+Saves      0 0 0 0 0 0
+Immune     necrotic sleep charm psychic~
+#ENDMOBILE
+
+#MOBILE
+Vnum       6203
+Keywords   lord draxin necromancer archmage undead spellbook~
+Short      &zLord Draxin&w~
+Long       &zAn older looking man is here studying a spellbook at a wooden desk.&w
+~
+Desc       &zThis human man was once living, but now he is stuck between life and
+death. Part of his face has decayed off and one can see his skull now
+in certain spots. He wears torn black robes as he walks about
+his study looking over various spellbooks.
+~
+Lore       &zYou see a younger, handsome man trying to cast a spell while a party
+is being held in his home. He loses control of the spell and his entire
+world is destroyed. He awakens in his current state and yells as he
+looks about the destroyed location that was once his home...
+~
+Race       undead~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel prototype~
+Affected   detect_hidden truesight~
+Stats1     -1000 35 15 0 10 0 10 20 10 0
+Stats2     1 1 99
+Stats3     0 0 0
+Stats4     2 13 1 0 0 0 8
+Attribs    11 20 15 14 12 16 10
+Saves      0 0 0 0 0 0
+Resist     nonmagic magic~
+Immune     sleep charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpoload 1781 1
+c 'freezing sphere'
+mpjunk rod
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote sighs as he closes a spellbook.
+mpsleep 2
+sayto $n Hmmm.. I do not like when someone disturbs my studies. Luckily for
+sayto $n me your fresh corpse will sustain me and my research for another
+sayto $n few centuries. Now be a friend and perish...
+mpoload 1782 1
+mpoload 1935 1
+mpoload 1781 1
+c 'chain lightning'
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 6200
+if class($n) != sorcerer
+if class($n) != warlock
+if class($n) == wizard
+mea $n &zYou see a scroll fall from the robe of the wizard as he dies.
+mpoload 6202 1
+silent drop scroll
+mpqset $n 6200
+else
+endif
+else
+mea $n &zYou see a scroll fall from the robe of the wizard as he dies.
+mpoload 6202 1
+silent drop scroll
+mpqset $n 6200
+endif
+else
+mea $n &zYou see a scroll fall from the robe of the wizard as he dies.
+mpoload 6202 1
+silent drop scroll
+mpqset $n 6200
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       6299
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc prototype~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     6200
+Keywords rusty halberd martial weapon~
+Type     weapon~
+Short    &ra rusty halberd&w~
+Long     &rA rusty looking halberd has been left here.&w~
+Flags    prototype heavy~
+WFlags   take twohand~
+Values   5 1 10 1 17 0
+Values2  0 2
+Stats    6 0 2 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6201
+Keywords quarterstaff quarter staff black wood~
+Type     weapon~
+Short    &za black quarterstaff&w~
+Long     &zA black wooden quarterstaff has been left here.&w~
+Lore   &zThis quarterstaff is known as a "Quarterstaff +1" and has been
+enchanted to help the user strike a foe.
+~
+Flags    evil magic prototype versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 2
+Stats    4 65 0 1 6 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     6202
+Keywords dark scroll depicting bloody corpse~
+Type     scroll~
+Short    &za dark scroll depicting a &rbloody corpse&w~
+Long     &zA dark scroll depicting a bloody corpse has been left here.&w~
+Lore   &zYou see a man in dark black robes crafting this scroll using the
+blood from a fresh corpse that lies on a table next to him...
+~
+Flags    evil magic prototype~
+WFlags   take onehand~
+Values   30 -1 -1 -1 0 0
+Values2  0 1
+Stats    1 200 20 30 20 0 0
+Spells   'absorb vitality' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     6299
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Flags    prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     6200
+Name     Before a Village~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6201
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6201
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6202
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6200
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6205
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6202
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6217
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6203
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6201
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6203
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6204
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6202
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6204
+Name     A Shrine to Cerunon~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6203
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6205
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6206
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6201
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6206
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6207
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6212
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6205
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6213
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6207
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6208
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6214
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6206
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6208
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6209
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6207
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6209
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6215
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6210
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6208
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6210
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6211
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6209
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6211
+Name     Before a Village~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6210
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6212
+Name     The Rivdale General Store~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6206
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6213
+Name     The Rivdale Public Library~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6206
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6214
+Name     The Rivdale Tavern~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6207
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6215
+Name     The Rivdale Inn~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6209
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6216
+Name     A Small Room~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction down~
+ToRoom    6215
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6217
+Name     The Roseblade Ranch~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6220
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6218
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6202
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6221
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6218
+Name     Inside the Stables~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6217
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6219
+Name     &RROSEBLADE RANCH HORSES FOR SALE&w~
+Sector   indoors~
+Flags    safe nosummon noastral prototype~
+Desc     You do not belong in here. Please use the exit to leave this space
+or contact a member of the admin team. Thanks!
+~
+#EXIT
+Direction down~
+ToRoom    6218
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6220
+Name     A Training Pen~
+Sector   field~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6217
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6221
+Name     Inside a Large Home~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6217
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6223
+Name     Before a Village~
+Sector   field~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6224
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6224
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6223
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6225
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6225
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6224
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6231
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6226
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6233
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6225
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6235
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6227
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6227
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6234
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6226
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6236
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6228
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6228
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6227
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6238
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6229
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6229
+Name     A Village Road~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6237
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6228
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6230
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6230
+Name     Before a Village~
+Sector   shore~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6229
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6231
+Name     The Ocean View Inn~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6225
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6232
+Name     A Cozy Bedroom~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction down~
+ToRoom    6231
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6233
+Name     The Salty Kiss Tavern~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6234
+Name     A Fishing & Boat Supply Store~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6227
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6235
+Name     The Ocadale General Store~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6236
+Name     The Ocadale Ice Cream Parlor~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6227
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6237
+Name     A Shrine to Symzou~
+Sector   shore~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6229
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6238
+Name     Lord Darbin's Manor~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6228
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6239
+Name     A Forest Path~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6240
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6240
+Name     The Ruins of a Village~
+Sector   forest~
+Flags    prototype~
+Desc     Smidale - Mirror Plane
+Make a statue to commemorate the loss here
+~
+#EXIT
+Direction south~
+ToRoom    6239
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6241
+Name     An Overgrown Path~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6242
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6242
+Name     Before a Ruined Gatehouse~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6241
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6243
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6244
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6266
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6267
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6244
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6245
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6243
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6281
+#ENDEXIT
+
+Reset M 0 6201 5 6244
+  Reset E 0 6200 1 28
+#ENDROOM
+
+#ROOM
+Vnum     6245
+Name     A Destroyed Market Square~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6246
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6256
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6244
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6273
+#ENDEXIT
+
+Reset M 0 6201 3 6245
+  Reset E 0 6200 1 28
+#ENDROOM
+
+#ROOM
+Vnum     6246
+Name     A Destroyed Shop~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6245
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6247
+Name     A Destroyed Home~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6248
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6248
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6249
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6247
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6249
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6250
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6248
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6250
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6251
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6252
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6249
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6251
+Name     An Overgrown Forest Path~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6285
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6250
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6252
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6250
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6255
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6253
+Name     A Destroyed Inn~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6257
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    6254
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6254
+Name     A Destroyed Bedroom~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction down~
+ToRoom    6253
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6255
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6252
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6256
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6256
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6255
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6257
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6282
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6245
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6257
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6253
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6258
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6260
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6256
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6258
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6259
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6257
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6259
+Name     A Destroyed Shop~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6258
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6260
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6257
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6283
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6261
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6261
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6260
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6262
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6266
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6262
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6263
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6261
+#ENDEXIT
+
+Reset M 0 6201 4 6262
+  Reset E 0 6200 1 28
+#ENDROOM
+
+#ROOM
+Vnum     6263
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6264
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6262
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6264
+Name     Before a Destroyed Temple~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6265
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6263
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6265
+Name     A Destroyed Temple~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6264
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6266
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6261
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6243
+#ENDEXIT
+
+Reset M 0 6201 1 6266
+  Reset E 0 6200 1 28
+#ENDROOM
+
+#ROOM
+Vnum     6267
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6243
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6275
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6268
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6268
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6269
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6267
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6269
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6270
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6274
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6268
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6276
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6270
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6271
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6273
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6269
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6277
+#ENDEXIT
+
+Reset M 0 6201 2 6270
+  Reset E 0 6200 1 28
+#ENDROOM
+
+#ROOM
+Vnum     6271
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6279
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6272
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6270
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6278
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6272
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6280
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6245
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6271
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6273
+Name     A Destroyed Street~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6245
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6284
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6270
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6274
+Name     A Destroyed Home~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6269
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6275
+Name     A Destroyed Home~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6267
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6276
+Name     A Destroyed Home~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6269
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6277
+Name     A Destroyed Shop~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6270
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6278
+Name     A Destroyed Bank~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6271
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6279
+Name     A Destroyed Library~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6271
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6280
+Name     A Destroyed Tavern~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6272
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6281
+Name     A Destroyed Home~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6244
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6282
+Name     A Destroyed Home~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6256
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6283
+Name     A Destroyed Tavern~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6260
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6284
+Name     A Destroyed Blacksmith Shop~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6273
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6285
+Name     An Overgrown Forest Path~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6286
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6251
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6286
+Name     Before a Destroyed Manor~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6287
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6285
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6287
+Name     An Overgrown Courtyard~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    6288
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6286
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6288
+Name     Inside a Destroyed Manor~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6287
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6293
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6289
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6292
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6289
+Name     A Destroyed Hallway~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6288
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6290
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6294
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6290
+Name     A Destroyed Hallway~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6289
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    6295
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6291
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6296
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6291
+Name     A Destroyed Hallway~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    6290
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6297
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6292
+Name     A Destroyed Parlor~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6288
+#ENDEXIT
+
+Reset M 0 6200 3 6292
+Reset M 0 6200 3 6292
+#ENDROOM
+
+#ROOM
+Vnum     6293
+Name     A Collapsed Room~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6288
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    6298
+Keywords  'cellar door'~
+Flags     closed dig hidden~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6294
+Name     A Collapsed Room~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6289
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6295
+Name     A Destroyed Bedroom~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    6290
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6296
+Name     A Destroyed Bedroom~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    6290
+#ENDEXIT
+
+Reset M 0 6200 3 6296
+#ENDROOM
+
+#ROOM
+Vnum     6297
+Name     A Collapse Study~
+Sector   indoors~
+Flags    private prototype~
+#EXIT
+Direction east~
+ToRoom    6291
+#ENDEXIT
+
+Reset M 0 6203 1 6297
+  Reset E 0 6201 1 26
+#ENDROOM
+
+#ROOM
+Vnum     6298
+Name     A Destroyed Cellar~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction up~
+ToRoom    6293
+Keywords  'cellar door'~
+Flags     closed dig hidden~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     6299
+Name     &RMOB REPOP/HIDEAWAY ROOM&w~
+Sector   city~
+Flags    nomagic safe nosummon noastral prototype~
+Desc     You definitely do not belong in here. Please use the exit to leave or
+contact a member of the admin team. Thanks! :)
+~
+#EXIT
+Direction south~
+ToRoom    6218
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

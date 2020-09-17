@@ -1,0 +1,727 @@
+Sender  Beltane~
+Date    Thu Jan 19 21:48:46 2017~
+To      Seikyr~
+Subject Automap~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Automap shows exits that are supposed to be hidden/secret and windows
+show all other room connections through automap. It shouldn't show
+them anything...
+~
+
+Sender  Beltane~
+Date    Sat Jan 21 11:21:02 2017~
+To      Seikyr~
+Subject Deity stuff~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Things to be added when able:
+1.) Holy Symbol (wear location)
+2.) Supplicate:
+- Symbol, deityobj1, deityobj2, Aid (Healing), Reincarnate
+------> Reincarnate will be one option to use favor to come back
+3.) Deityfoe - Able to set deity enemies and receive favor for killing
+4.) Deityally - Get bonuses for helping deity allies
+~
+
+Sender  Beltane~
+Date    Sat Jan 21 11:31:22 2017~
+To      Seikyr~
+Subject More Deity Stuff~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Deity align range - Take followers of this alignment range.
+ 
+(If Clerics fall out of this, their domain spells fail)
+(Supplicate won't work if they are out of the range)
+~
+
+Sender  Beltane~
+Date    Sat Jan 21 13:04:02 2017~
+To      Seikyr~
+Subject Optrigger~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I need an optrigger for time like rptrigger. I tried using it for
+object 215. I want the deity symbol for the dark moon goddess to
+react when it's night time and when dawn approaches. The same
+for the sun god, etc.
+ 
+I also need one for fight to check and see if the person is battling
+and it does a rand prog.
+ 
+And a prog for when they use a command like "cast," etc.
+~
+
+Sender  Beltane~
+Date    Sat Jan 21 13:24:50 2017~
+To      Seikyr~
+Subject Mobinvis & Mpscatter~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Will you make it so mobinvis is set to 64? I don't want even deities
+to see it or be able to interfere.
+ 
+And also Mpscatter works.. but it sets the player to sitting. Can
+you make it so it has them still standing after?
+~
+
+Sender  Beltane~
+Date    Sun Jan 22 01:38:23 2017~
+To      Seikyr~
+Subject Bows/Crossbows~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+You might want to check this. I used the bow and arrow from Bullywug
+and it threw a bug.
+ 
+ 
+Also - Will bows and crossbows be on a held/wielded -normal-
+spot and not this special -missile wielded- spot? Hate that! :)
+~
+
+Sender  Beltane~
+Date    Sun Jan 22 10:27:26 2017~
+To      Seikyr~
+Subject Owner~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Can you make a spot on mset/oset that logs a "creator?" So that those
+who create glyphs of warding or summon creatures could use one
+of the "fake commands" to dismiss it and it checks for the creator?
+It would be settable by an mp/rp/op commands like mpowner <$n>.
+Or ifowner == $n
+ 
+Then a spell would need a flag like setowner, so the casters name
+is set as the owner of the object or created monster.
+ 
+I think it will be helpful for warding spells if the Wizard can
+dismiss the ward or move in/out of it when entering.
+ 
+ 
+Which I will need to check if objects have an entry or greet prog...
+~
+
+Sender  Beltane~
+Date    Sun Jan 22 20:36:56 2017~
+To      Seikyr~
+Subject Examine/Investigate~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+One last toy - Investigate info showing up in examine..
+ 
+examine <object/room>
+~
+
+Sender  Beltane~
+Date    Sun Jan 22 22:21:05 2017~
+To      Seikyr~
+Subject One last Toy~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Wear locations!
+Holy Symbol, Floating Around, Both Hands, Left Hand, Right Hand
+Scabbard, Worn on Belt1-3, Worn on Back
+
+Remove:
+Light, Missile Weapon
+ 
+I dunno how I feel about having all the wear locations listed.
+Especially for classes that will never use shields, dual
+wielding, etc.
+ 
+Spell components need to just check to see if the item is on
+the players in some location and not only the inventory.
+~
+
+Sender  Beltane~
+Date    Mon Jan 23 03:48:09 2017~
+To      Seikyr~
+Subject Spell Timer~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Is there a way to set up a message for objects that when they
+run out of time on their timer, it uses the message set up by
+the builder?
+ 
+So instead of "Tiny orbs of light mysteriously vanishes" it could
+say like, "The tiny orbs of light collide and disappear in a flash!"
+ 
+I think it would look better and offer more customization.
+~
+
+Sender  Beltane~
+Date    Wed Jan 25 00:42:10 2017~
+To      Seikyr~
+Subject Teleportation Circle~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+When you get a chance (I know right) - Can you go into the portal
+spell and change this message:
+A portal created by Beltane unravels and winks from existence.
+ 
+It's now called "Teleportation Circle" so something involving those
+words and don't use the caster's name in the spell since it'll take
+away from secrecy, etc.
+~
+
+Sender  Beltane~
+Date    Sat May 19 20:38:11 2018~
+To      You~
+Subject Onehand~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+You need to add onehand location to zap/brandish for wands and staves
+since it's looking for the old hold command.
+~
+
+Sender  Beltane~
+Date    Wed May 23 19:36:53 2018~
+To      Seikyr~
+Subject mpreward mpcommand~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+We talked about this last night but I felt I should write it down.
+Mpreward would grant a player a prize for a quest or something
+but using the vnums specified by the builder as the "prize items" of
+the area. Sort of like Mpscatter but with items.
+ 
+So like:
+Mpreward $n 1500 1510
+Mpreward $n 1500 1510
+Mpreward $n 1500 1510
+ 
+And the player would receive three items out of that vnum range.
+ 
+Another one to think about is:
+ 
+Mpcoin $n # coin type?
+ 
+So like:
+mpcoin $n 20 gold?
+~
+
+Sender  Beltane~
+Date    Wed May 23 19:37:54 2018~
+To      Seikyr~
+Subject Mpglory~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+We also need a command that awards glory for future renaming, etc.
+ 
+Mpglory $n #
+~
+
+Sender  Beltane~
+Date    Wed May 23 21:12:27 2018~
+To      Seikyr~
+Subject Tool item type and usage~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Can you make a tool item type and use the V0 for amount of uses
+it has left? We need this for various tools.
+ 
+We also need a mpusage for when someone uses a command prog and this
+can remove a V0 point off. When it reaches 0 the item gets junked.
+ 
+So something like
+opedit fishing add command fish
+You caught a fish!
+mpusage <vnum> 1
+ 
+So it would remove the one off the v0. Obviously if it would always
+use one usage off the v0 to ensure it works.
+~
+
+Sender  Beltane~
+Date    Wed May 23 21:22:11 2018~
+To      Seikyr~
+Subject Books~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Just a fun idea for the future - Book writing.
+ 
+So you can purchase a book with blank pages (v0) and you can
+write in them so like "book write 1" and it'll start or allow
+you to edit page 1. "book read 1" would allow you to read the
+first page, etc.
+ 
+A book copy 'leather journal' 'large tome' could allow you to
+copy the pages from one to another. And you would need to pay
+attention to the language you are currently speaking since it
+would write in that language.
+ 
+People could publish their books if they fill out a book and give
+it to an admin team member. They would review it, copy it, and
+flag it as published. Then we could sell it at a book store or
+the player could sell it through their own store system?
+ 
+Just a fun late night idea.
+~
+
+Sender  Beltane~
+Date    Wed May 23 21:28:52 2018~
+To      Seikyr~
+Subject Spellbooks & Qlog~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I think we also need a spellbook and questjournal item type too? So
+that you can use those commands when you have that item in your
+inventory. 
+~
+
+Sender  Beltane~
+Date    Wed May 23 21:33:27 2018~
+To      Seikyyy~
+Subject Instruments, Components, Components Bag~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Needed: Instrument object type
+Works just like a wand where it can release a spell or it is a 
+spell component. 
+ 
+Needed: Component object type. 
+v0 is the uses it has before it is consumed.
+ 
+Needed: Componentbag object tyoe. Only allows components in it.
+Works like a container. Spell component bags have high v0 and
+can be abused by players who stick things like bows and shit
+in them. We need to ensure that only component object types
+fit in them.
+~
+
+Sender  Beltane~
+Date    Wed May 23 21:33:53 2018~
+To      Seikyyy~
+Subject Buy command missing~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Just a reminder that "buy" is missing lolz
+~
+
+Sender  Beltane~
+Date    Wed May 23 21:35:41 2018~
+To      Seikyr~
+Subject Shop List~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I'm noticing that despite the shopkeeper having all the items they
+seem stop listing after a certain time. My mob Horald won't list
+a journal even though it's in his inventory.
+~
+
+Sender  Beltane~
+Date    Wed May 30 09:56:45 2018~
+To      Seikyr~
+Subject NPC Armorclass~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I need you to allow me to mset an npc's armorclass. Sometimes an
+NPC doesn't have armor like a "Giant Rat" but I need it's AC
+to be 12 or something different based on the monster manual.
+~
+
+Sender  Beltane~
+Date    Sat Jun  2 12:40:12 2018~
+To      Seikyr~
+Subject Unlock/Lock~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Can we make it so keys have to be held in order to use them? I have
+a key that I want only member's to use. Thanks! :)
+~
+
+Sender  Beltane~
+Date    Sat Jun  2 13:18:19 2018~
+To      Seikyr~
+Subject Swimming~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Well we need the following:
+- Swim skill
+- Reduce damage done when failing to swim or not swimming by a lot
+since it seems to damage too much.
+- Reduce the move cost while swimming based on if you are using
+the skill or not and how well you swim.
+ 
+I think the no_swim and swim sectors may be messed up. We also need
+a sector where it's water but doesn't require swimming unless you
+are size small. Perhaps two sectors? One for no swimming needed
+for size 2 and then one for size 1? It would make creeks and
+such more surprising for smaller types.
+~
+
+Sender  Beltane~
+Date    Mon Jun  4 15:01:19 2018~
+To      Seikyr~
+Subject Repoping~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Oddly enough if you set a prog on a mob and then create more than
+one of them with minvoke.. only the original one will do the prog... 
+ 
+For example check out the city guards in new darkhaven.. the one
+day time and night guard will do the progs required. The north
+gate guard (wizard) is the only one that creates torches
+while her duplicates ignore the prog.
+~
+
+Sender  Beltane~
+Date    Wed Jun  6 20:35:02 2018~
+To      Seikyr~
+Subject Floating wear location~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I need a "Floating" 1 and 2 location. :)
+~
+
+Sender  Beltane~
+Date    Thu Jun  7 16:08:27 2018~
+To      Seikyr~
+Subject Needed Mpcommands and if Checks~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I need these if checks. <3 :D
+if sector($n)
+
+I need these mpcommands. <3 :D
+Mprefresh # # - Refreshed move by whatever #
+Mpheal # # - heals hp by whatever #
+mpmemorize # # - Restores a certain number of spells instantly.
+
+
+mpreward #### #### # - Bestows a treasure/s from a vnum range 
+and a designated number. Like Mpreward 100 110 2 - Pulls two
+items from that range, ensures they are level 1, and loads
+them into the mob's inventory. Perhaps putting "0" as the number
+of items to pull checks their Luck score to see if they get
+anything from it.
+~
+
+Sender  Beltane~
+Date    Thu Jun  7 16:10:24 2018~
+To      Seikyr~
+Subject Spell Mem~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I need to be able to set additional spells via magical items or
+even a spell that boosts spell slots... like a "circle1, circle2" etc
+ 
+So I could do oset tiara affect circle2 2 -> Gives two circle 2 slots
+~
+
+Sender  Beltane~
+Date    Thu Jun  7 17:54:25 2018~
+To      Seikyr~
+Subject Mpcommand - Mposet, Mpmset, Mpredit~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I need this mpcommands:
+ 
+Mposet - Sets whatever oset does.. can be used with rpedit, opedit,
+and mpedit.
+ 
+mpmset - Just like Mposet
+mpredit - Same as above.
+~
+
+Sender  Beltane~
+Date    Thu Jun  7 23:25:09 2018~
+To      Seikyr~
+Subject Sectors!~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+For some reason I cannot set a sector to 6. It will reboot and load
+up as "ice" with a forest coloring. Help.
+ 
+Example: Toric river in Newdarkhaven.are and Newdarkforest.are
+~
+
+Sender  Beltane~
+Date    Mon Jun 18 23:07:16 2018~
+To      Seikyr~
+Subject Weaponspells ~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Weaponspells are not saving right. I set it on an object and after
+it was installed it set it as "unknown"
+~
+
+Sender  Beltane~
+Date    Mon Jun 25 12:54:51 2018~
+To      Seikyr~
+Subject Ankle wear location~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I needs one or two ankle locations. :)
+~
+
+Sender  Seikyr~
+Date    Thu Jul  5 16:51:45 2018~
+To      Self~
+Subject Expiring Items~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Want to create objects that expire based on number of uses or
+based on ticks remaining maybe? 
+ 
+you use a charge, it'll detract from the remaining charges. 
+ 
+Would need an ifcheck to see if there were no charges remaining
+Or if there was only one charge remaining to send a custom message
+To let the player know that the item is expiring. 
+ 
+Then the builder can decide whether or not the item simply becomes
+something else.
+ 
+This exists in some form with the sset component, where it ticks down
+the v0 form. So we need a command for a mob to be able to tick down
+very similarly to how the casting does for components. Need to be able
+to increment it down by one instead of using mposet to change the
+value entirely.
+~
+
+Sender  Seikyr~
+Date    Tue Feb 12 17:20:54 2019~
+To      Self~
+Subject Bug in Resistant Equipment~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Bug in the Demonmarsh.are maul: #3699
+Resist Radiant doesn't seem to work, segfaults game
+when the mobile wears the item on load_resets
+ 
+Fix: Deleted reset to reload game and removed resist
+~
+

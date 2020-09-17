@@ -1,0 +1,1645 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         {PROTO} Saeris's area in progress~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+#ENDAREADATA
+
+#MOBILE
+Vnum       4500
+Keywords   skeleton knight~
+Short      &Wa skeleton knight&w~
+Long       &WThe skeletal remains of a knight is here stumbling around the cemetary.&w
+~
+Desc       &WThis is the skeletal remains of an knight from many years ago. It is
+dressed in the armor it wore in life, which has rusted over the years.
+It shuffles across the ground as it moves about the cemetary.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 7 0 15 0 0 0 0 0
+Stats2     8 8 20
+Stats3     1 4 1
+Stats4     2 13 1 0 0
+Attribs    15 8 14 12 16 3 13
+Saves      0 0 0 0 0 0
+Immune     poison sleep~
+Suscept    blunt~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpasound &wYou hear creaking sounds coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+k old
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503 
+k male
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504
+k female
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4501
+Keywords   zombie decaying commoner~
+Short      &Ra zombie&w~
+Long       &RThe remains of a dead commoner is here moving about the cemetary.&w
+~
+Desc       &RThis is the undead remains of what was once a commoner who lived in
+the city of Oldgate. It is hard to distinguish their gender or features
+as much of their flesh is peeling away from their bones. 
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Specfun    spec_fido~
+Gender     neuter~
+Actflags   npc aggressive~
+Affected   infrared~
+Stats1     -1000 1 4 0 10 0 0 0 0 0
+Stats2     3 10 9
+Stats3     1 6 1
+Stats4     2 13 1 0 0
+Attribs    13 3 6 6 16 3 13
+Saves      0 0 0 0 0 0
+Immune     poison sleep~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote moans as it slowly moves around
+mpasound &rYou hear the sounds of moaning coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+k old
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503
+k male
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504 
+k female
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4502
+Keywords   gravedigger old man~
+Short      a gravedigger~
+Long       An old man is here working as a gravedigger for the city.
+~
+Desc       &wThis kind looking old man is here working as the gravedigger for the
+city of Oldgate. He is dressed in simple clothing and looks like he
+has been doing this for awhile now.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     500 1 0 0 12 0 0 0 0 0
+Stats2     3 8 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0
+Attribs    12 12 16 10 12 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpasound &RYou hear yelling coming from somewhere nearby!&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   peer $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p leave~
+Comlist   if hasqbit($n) == 4500
+if persuasion($n) >= 18
+peer $n
+sayto $n You say there is danger? I thought I heard something...
+peer
+sayto $n Well, I guess I could head home then. Thank you.
+mpecho The gravedigger quickly heads for the gates of the cemetary.
+mpadvance $n 25
+else
+eye $n
+sayto $n And who sent you? Why should I care? I have a job to do!
+endif
+else
+peer $n
+sayto $n I'm trying to work here. Leave me be!
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4503
+Keywords   male teenager~
+Short      &Ba male teenager&w~
+Long       &BA male teenager is here playing around the cemetary.&w
+~
+Desc       &BThis young man appears to be up to no good as he plays around the
+cemetary despite the rumors. He is dressed in simple clothing as
+he stalks about the cemetary playing with his friends.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     -300 1 0 0 10 0 0 0 1 0
+Stats2     4 9 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0
+Attribs    14 10 9 14 14 14 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpasound &RYou hear the sounds of yelling coming from nearby!&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p leave~
+Comlist   if hasqbit($n) == 4500
+if persuasion($n) >= 15
+hmm $n
+sayto $n Well.. I suppose we can go play by the docks..
+mpsleep 3
+mutter $n
+mpadvance $n 25
+mpecho &BThe young man looks around and then takes off for the docks.
+mpgoto 4499
+else
+smirk $n
+sayto $n And why should I listen to you? Why should I leave?
+endif
+else
+smirk $n
+sayto $n And why should I care what you have to say? Huh?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4504
+Keywords   female teenager~
+Short      &Pa female teenager&w~
+Long       &PA female teenager is here playing around the cemetary.&w
+~
+Desc       &PThis young lady is playing in the cemetary with her friends.
+She doesn't seem to think it's a good idea and looks very nervous
+as she plays around the cemetary at night.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     400 1 0 0 10 0 0 0 0 0
+Stats2     1 15 5
+Stats3     1 3 1
+Stats4     2 0 1 0 0
+Attribs    9 10 9 16 12 14 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpasound &RYou hear the sounds of screaming coming from somewhere!&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p leave~
+Comlist   if hasqbit($n) == 4500
+if persuasion($n) >= 14
+emote looks around scared and nods her head
+sayto $n I agree. I did not want to come here in the first place!
+mpadvance $n 25
+mpecho &PThe young woman hurries off back to her home in the city.
+mpgoto 4499
+else
+giggle $n
+sayto $n And why should I believe some stupid rumors?
+endif
+else
+roll
+sayto $n And who do you think you are?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+wink $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4505
+Keywords   grieving widow~
+Short      &za grieving widow&w~
+Long       &zA grieving widow is here seated in front of a grave.&w
+~
+Desc       &zThis woman is dressed in black from head to toe as she sit before
+a freshly dug grave.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     400 1 0 0 10 0 0 0 1 0
+Stats2     1 15 5
+Stats3     1 3 1
+Stats4     2 0 1 0 0
+Attribs    9 10 9 16 12 14 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote weeps softly into a handkerchief
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote gathers herself and heads home for the evening
+mpgoto 4498
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 4541
+emote walks up to a grave and sits by it as she weeps softly
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4506
+Keywords   person dark robes necromancer wizard man~
+Short      &za necromancer&w~
+Long       &zA person dressed in dark robes is here lurking about the cemetary.&w
+~
+Desc       &zThis figure is clad into dark black robes that obscure the owner's
+silhouette and facial features. The figure moves about the cemetary
+clearly up to no good.
+~
+Lore       &zYou see this dark figure using a spell over grave to raise the dead
+under the ground. He laughs as an undead monstrosity digs itself
+free and begins to walk forth...&w
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     -1000 15 8 0 10 0 0 5 20 0
+Stats2     9 8 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0
+Attribs    9 18 14 16 10 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   c 'mage armor'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'chill touch'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'acid splash'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+c 'horrid wilting' old
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503
+c 'horrid wilting' male
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504
+c 'horrid wilting' female
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4507
+Keywords   crusader paladin qylaith qylain female shining armor halfelf~
+Short      &wa Qylain crusader&w~
+Long       &wA female paladin dressed in shining armor is here patrolling the cemetary at night.&w
+~
+Desc       &wThis female halfelf is dressed in shining armor that glistens under
+the moonlight or by torchlight. Her short strawberry blonde hair can
+be seen from under her helmet and her features are stunning. On her
+armor is the symbol of Qylaith, Goddess of Death. This crusader
+patrols the cemetary at night seeking out the undead and helping
+people escape.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared truesight~
+Stats1     0 15 8 0 17 0 0 10 20 0
+Stats2     10 10 15
+Stats3     1 8 1
+Stats4     2 0 2 0 0
+Attribs    16 12 15 12 16 18 12
+Saves      0 0 0 0 0 0
+Immune     poison necrotic sleep charm~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+sayto $n You should leave immediately. It is too dangerous.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   if ispc($n)
+sigh $n
+mpsleep 3
+sayto $n If you must. I saw some teenagers sneak into the cemetary.
+sayto $n Please tell them to leave when you see them. Be careful!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure serious wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   c 'spirit guardians'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   c bless
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'sacred flame'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   stun
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   emote finally resigns herself to head home for the day
+mpgoto 4549
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 4501
+emote arrives to begin patrolling the cemetary at night
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4500
+c 'sacred flame' knight
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4501
+c 'sacred flame' zombie
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4506
+sayto necromancer By Qylaith your tampering of the dead shall end!
+c 'sacred flame' necromancer
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503 
+mpecho &wThe Crusader convinces the teenager to head home!
+mptransfer teenager 4499
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504
+mpecho &wThe Crusader convinces the teenager to head home!
+mptransfer teenager 4499
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+mpecho &wThe Crusader convinces the gravedigger to head home!
+mptransfer gravedigger 4499
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4549
+Keywords   mob repop necromancer evil~
+Short      &zan repop necromancer&w~
+Long       &zA mob is here acting as an evil necromancer.&w
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     -1000 51 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpecho &zThe necromancer waves his hands and closes a portal!&w
+mpclosepassage 4549 5
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpecho &zThe necromancer waves his hands and opens a portal!
+mpopenpassage 4549 4534 5
+mpat 4510 mpmload 4504
+mpat 4510 mpmload 4503
+mpat 4520 mpmload 4504
+mpat 4520 mpmload 4503
+mpat 4520 mpmload 4504
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     4500
+Keywords ancient looking longsword~
+Type     weapon~
+Short    &wan ancient looking longsword&w~
+Long     &wAn ancient looking longsword has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   3 1 8 1 1 0
+Values2  0 2
+Stats    3 1 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4501
+Keywords ancient looking spear~
+Type     weapon~
+Short    &wan ancient looking spear&w~
+Long     &wAn ancient looking spear has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   4 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4502
+Keywords ancient looking mace~
+Type     weapon~
+Short    &wan ancient looking mace&w~
+Long     &wAn ancient looking mace has been left here.&w~
+WFlags   take onehand~
+Values   4 1 6 2 8 0
+Values2  0 2
+Stats    4 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4503
+Keywords ancient looking halberd~
+Type     weapon~
+Short    &wan ancient looking halberd&w~
+Long     &wAn ancient looking halberd has been left here.&w~
+Flags    heavy~
+WFlags   take twohand~
+Values   5 1 10 1 17 0
+Values2  0 2
+Stats    6 1 2 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4504
+Keywords dagger~
+Type     weapon~
+Short    a dagger~
+Long     A dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4505
+Keywords qylain greatsword crusader qylaith~
+Type     weapon~
+Short    &wa Qylain crusader's greatsword&w~
+Long     &wA greatsword with the symbol of Qylaith on it has been left here.&w~
+Flags    heavy~
+WFlags   take twohand~
+Values   12 2 6 1 1 0
+Values2  0 2
+Stats    6 20 5 1 2 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4549
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     4500
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4501
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4501
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4513
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4500
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4502
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    4503
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4513
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4503
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    4504
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4502
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4504
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    4505
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4503
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4505
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction south~
+ToRoom    4506
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4504
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4506
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4505
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4507
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4507
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4506
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4508
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4508
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4507
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4543
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4530
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4509
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4509
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4508
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4510
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4510
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4544
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4509
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4511
+#ENDEXIT
+
+Reset D 0 4510 0 1
+#ENDROOM
+
+#ROOM
+Vnum     4511
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4512
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4510
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4514
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4512
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4513
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4511
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4513
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4502
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4512
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4501
+#ENDEXIT
+
+Reset M 1 4502 1 4513
+  Reset E 0 1649 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4514
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4511
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4515
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4515
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4514
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4516
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4516
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4515
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4517
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4517
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4516
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4518
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4518
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4519
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4546
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4517
+#ENDEXIT
+
+Reset D 0 4518 2 1
+#ENDROOM
+
+#ROOM
+Vnum     4519
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4520
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4518
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4520
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4545
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4521
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4519
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4521
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4522
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4520
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4522
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4523
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4521
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4523
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4524
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4531
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4522
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4524
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4525
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4523
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4525
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4526
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4537
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4524
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4547
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4525 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4526
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4527
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4525
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4527
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction east~
+ToRoom    4528
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4526
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4528
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4529
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4540
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4527
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4529
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4530
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4530
+Name     A Cemetary Path~
+Sector   city~
+#EXIT
+Direction north~
+ToRoom    4508
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4529
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4531
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4523
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4532
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4532
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4531
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4533
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4533
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4532
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4534
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4534
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4535
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4533
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4535
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4536
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4548
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4534
+#ENDEXIT
+
+Reset D 0 4535 1 1
+#ENDROOM
+
+#ROOM
+Vnum     4536
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4537
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4535
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4537
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4538
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4536
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4525
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4538
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    4539
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4537
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4539
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4540
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4538
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4540
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4541
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4539
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4541
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    4542
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4540
+#ENDEXIT
+
+Reset M 1 4505 1 4541
+#ENDROOM
+
+#ROOM
+Vnum     4542
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction south~
+ToRoom    4541
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4543
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4543
+Name     Amongst the Graves~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    4542
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4508
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4544
+Name     Inside a Mausoleum~
+Sector   indoors~
+#EXIT
+Direction south~
+ToRoom    4510
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4544 2 1
+#ENDROOM
+
+#ROOM
+Vnum     4545
+Name     Inside a Mausoleum~
+Sector   indoors~
+#EXIT
+Direction south~
+ToRoom    4520
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4546
+Name     Inside a Mausoleum~
+Sector   indoors~
+#EXIT
+Direction north~
+ToRoom    4518
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4546 0 1
+#ENDROOM
+
+#ROOM
+Vnum     4547
+Name     Inside a Mausoleum~
+Sector   indoors~
+#EXIT
+Direction east~
+ToRoom    4525
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4547 1 1
+#ENDROOM
+
+#ROOM
+Vnum     4548
+Name     Inside a Mausoleum~
+Sector   indoors~
+#EXIT
+Direction west~
+ToRoom    4535
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4548 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4549
+Name     &RMOB HIDEOUT&w~
+Sector   city~
+Flags    nomob nomagic norecall nosummon~
+Desc     You do not belong here. Please contact an admin in order to be 
+released from here. Thank you!
+~
+Reset M 1 4500 4 4549
+  Reset E 0 4500 1 28
+Reset M 1 4500 4 4549
+  Reset E 0 4500 1 28
+Reset M 1 4500 4 4549
+  Reset E 0 4500 1 28
+Reset M 1 4500 4 4549
+  Reset E 0 4500 1 28
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+Reset M 1 4506 1 4549
+  Reset E 0 4504 1 26
+Reset M 1 4549 1 4549
+Reset M 1 4507 1 4549
+  Reset E 0 4505 1 28
+Reset M 1 4501 12 4549
+Reset M 1 4501 12 4549
+#ENDROOM
+
+#ENDAREA

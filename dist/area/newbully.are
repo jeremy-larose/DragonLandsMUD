@@ -1,0 +1,5037 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Bullywug Marsh~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+Economy      0 31253540
+ResetMsg     The fog rolls across the marsh slowly...~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       1400
+Keywords   bullywug warrior frog man~
+Short      &ga bullywug warrior~
+Long       &gA short frog-headed man is here, looking menacing.&W
+~
+Race       amphibian~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc~
+Affected   infrared~
+Stats1     -500 1 3 0 14 0 0 0 0 0
+Stats2     2 8 2
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    12 7 10 12 13 7 9
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1401
+Keywords   bullywug scout frog~
+Short      &Ga bullywug scout~
+Long       &GA short frog-headed man is here, searching the area for intruders.&W
+~
+Race       amphibian~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea wimpy~
+Affected   infrared aqua_breath~
+Stats1     -500 1 3 0 15 0 0 0 0 0
+Stats2     2 8 7
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    12 7 10 12 13 7 8
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if acrobatics($n) < 16
+fire $n
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   fire $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1402
+Keywords   bullywug wizard wizardess frog robes~
+Short      &Pa bullywug wizardess&W~
+Long       &PA short frog-headed woman is here, clad in tattered robes.&W
+~
+Desc       A short humanoid standing around four feet, five inches. Her skin is
+of a dark olive color and she has the head of a large frog.
+~
+Race       amphibian~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel scavenger aggressive~
+Affected   infrared aqua_breath~
+Stats1     -1000 5 3 0 10 0 0 0 0 0
+Stats2     2 9 15
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    12 14 10 12 13 7 9
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'acid splash'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'poison spray'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   60~
+Comlist   c 'true strike'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1403
+Keywords   bullywug shaman frog~
+Short      &Ra bullywug shaman&W~
+Long       &RA short frog-headed man is here, his body painted with sigils.&W
+~
+Desc       A short humanoid standing around four feet, five inches. His skin is
+of a dark olive color and he has the head of a large frog.&W
+~
+Race       amphibian~
+Class      cleric~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel scavenger aggressive stayarea~
+Affected   infrared aqua_breath~
+Stats1     -1000 4 3 0 13 0 0 0 0 0
+Stats2     2 9 15
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    12 12 14 14 10 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1404
+Keywords   bullywug guardian guard frog man~
+Short      &ra bullywug guardian&W~
+Long       &rA short frog-headed man is here, standing guard.&W
+~
+Desc       A short humanoid standing around four feet, five inches. His skin is
+of a dark olive color and he has the head of a large frog.
+~
+Race       amphibian~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -1000 5 3 0 14 0 0 0 0 0
+Stats2     2 10 9
+Stats3     1 8 1
+Stats4     2 0 2 0 0 0 6
+Attribs    14 10 10 13 12 10 9
+Saves      0 0 0 0 0 0
+Defenses   parry dodge~
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p untie~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1405
+Keywords   kobold scavenger reptilian creature~
+Short      &ga kobold scavenger~
+Long       &gA small reptilian creature is here, scavenging the area for food.
+~
+Desc       This creature is quite short and looks like a miniature version
+of a dragon. It moves about the marsh, looking for food.
+~
+Race       kobold~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc scavenger aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 1 0 10 0 0 0 0 0
+Stats2     2 6 2
+Stats3     1 4 2
+Stats4     1 0 1 0 0 0 6
+Attribs    7 8 13 15 13 8 13
+Saves      0 0 0 0 0 0
+Speaking   dragon~
+#MUDPROG
+Progtype  death_prog~
+Arglist   75~
+Comlist   mpoload 1447 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1406
+Keywords   pixie fey fairy woman~
+Short      &Pa beautiful pixie&W~
+Long       &PA beautiful fairy woman is here, gazing into the waters of a pool.&W
+~
+Desc       This fairy creature is very tiny, standing at roughly twelve inches
+in height. Her long auburn hair flows freely past her shoulders.
+~
+Lore       You see the pixie screaming as her crown is ripped from her head
+by a frog looking humanoid...
+~
+Race       monster~
+Class      cleric~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     800 10 3 0 10 0 0 0 0 0
+Stats2     1 4 1
+Stats3     1 4 1
+Stats4     0 0 1 0 0 0 6
+Attribs    2 10 14 20 8 15 20
+Saves      0 0 0 0 0 0
+Attacks    curse colorspray~
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote looks down into the pool and frowns deeply at what she sees.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   80~
+Comlist   mpecho &PUpon dying part of the pixie's body disintegrates into glittery dust.
+mpoload 1413 1
+silent drop dust
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpecho &PThe pixie claps her hands and disappears in a flash!&W
+mpgoto 1499
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 1401
+sayto $n Some horrible creatures found this place and stole my crown!
+sayto $n Please, bring it back to me?
+mpqset $n 1400
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if ovnuminv(1423) == 1
+if hasqbit($n) == 1400
+emote sighs with relief as she holds her crown.
+say Oh thank Aerilaya you have found it! I must see to cleansing it now.
+sayto $n You have my thanks, adventurer. 
+endif
+mpadvance $n 600
+mpqset $n 1400
+mpqset $n 1401
+mpjunk crown
+mpecho &PThe pixie snaps her fingers and is gone.
+mpgoto 1499
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 1401
+smile $n
+sayto $n Thank you for retrieving my crown, may Aerilaya bless you.
+else
+sigh
+Sayto $n Hello young adventurer.. do you think you could help me?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   feybeam
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1407
+Keywords   bullywug commoner frog man~
+Short      &Ga bullywug commoner&W~
+Long       &GA short frog-headed man is here, lounging about.&W
+~
+Desc       A short humanoid standing around four feet, five inches. His skin is
+of a dark olive color and he has the head of a large frog.
+~
+Race       amphibian~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel scavenger~
+Affected   aqua_breath~
+Stats1     -100 4 2 0 14 0 0 0 0 0
+Stats2     2 6 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    12 10 10 12 13 9 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1408
+Keywords   bullywug child girl~
+Short      &Pa young bullywug girl~
+Long       &PA young frog-headed girl is here, walking around the village.&W
+~
+Race       amphibian~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   infrared~
+Stats1     10 1 2 0 9 0 0 0 0 0
+Stats2     2 8 4
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    9 9 9 17 9 9 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1409
+Keywords   bullywug towncrier commoner~
+Short      &Cthe bullywug towncrier~
+Long       &CA short frog-headed man is here, croaking loudly as he walks about.&W
+~
+Race       amphibian~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea running~
+Affected   infrared aqua_breath~
+Stats1     -1000 1 2 0 12 0 0 4 0 0
+Stats2     2 9 10
+Stats3     1 4 4
+Stats4     2 0 2 0 0 0 6
+Attribs    12 9 10 16 14 9 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   30~
+Comlist   emote croaks loudly and hops about.
+mpasound &CYou hear loud croaking nearby...&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1410
+Keywords   bullywug prison guard~
+Short      &Ra bullywug prison guard&W~
+Long       &RA frog-headed man is here, guarding the door to the west of him.
+~
+Race       amphibian~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel aggressive prototype~
+Affected   infrared aqua_breath~
+Stats1     -1000 12 3 0 14 0 0 0 0 0
+Stats2     2 9 15
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    12 10 10 12 14 9 10
+Saves      0 0 0 0 0 0
+Defenses   parry dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1411
+Keywords   bullywug king fancy large~
+Short      &Ythe Bullywug King&W~
+Long       &YAn older frog-headed man is here on a throne, dressed in his fanciest rags.&W
+~
+Desc       A short humanoid standing around four feet, eight inches. His skin is
+a brighter green than many of the other Bullywugs and he has the
+head of a large frog. He commands a powerful presence.
+~
+Race       amphibian~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 15 4 0 14 5 0 0 0 0
+Stats2     3 5 25
+Stats3     1 4 4
+Stats4     2 0 2 0 0 0 6
+Attribs    12 10 10 12 14 9 10
+Saves      0 0 0 0 0 0
+Attacks    bite kick~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   40~
+Comlist   if ispc($n)
+smote croaks angrily.
+say Yuzz dun belonghsss hereee!!! Ghuardsss!!!
+mpecho The King croaks loudly as a warrior comes hopping in quickly.
+mpmload 1400
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1412
+Keywords   bullywug queen mirror crown~
+Short      &Rthe Bullywug Queen&W~
+Long       &RAn older frog-headed woman is here, looking at herself on a broken mirror.&W
+~
+Desc       A short humanoid standing around four feet, two inches. Her skin is
+a bright lime green and she has the head of a large frog. She has
+a very commanding presence.
+~
+Race       amphibian~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel scavenger aggressive stayarea~
+Affected   aqua_breath~
+Stats1     0 13 2 0 14 0 0 0 0 0
+Stats2     2 9 10
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    12 10 10 12 12 9 10
+Saves      0 0 0 0 0 0
+Attacks    bite~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'acid splash' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 1400
+emote tries on a crown in front of a mirror before she croaks angrily.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 1400
+mpoload 1423 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1413
+Keywords   worried looking man merchant~
+Short      &Ca merchant&W~
+Long       &CA worried looking merchant is here before his destroyed caravan.&W
+~
+Desc       An older man with a full beard is here. He wears simple clothing
+and looks to be a very low level of merchant.
+~
+Race       human~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     600 1 2 0 12 0 0 0 0 0
+Stats2     2 2 10
+Stats3     1 2 1
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+ShopData   9 5 10 2 0 120 90 5 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 1403
+mea $n The Merchant nods in silent greeting at you as he works on his caravan.
+else
+if hasqbit($n) != 1402
+emote moves frantically around what is left of his caravan.
+sayto $n Hello! Can you help me perhaps? It is most dire!!
+else
+if hasqbit($n) == 1402
+sayto $n Have you found my daughter? I am getting very worried!
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 1403
+emote claps his hands excitedly and breathes a sigh of relief.
+sayto $n My daughter and I were traveling when we were attacked!
+sayto $n When I awoke my caravan was destroyed and my daughter missing..
+sayto $n If you could perhaps find her for me? Some sign she is alive?
+sayto $n I have some wares left that I can sell to you too to help you.
+Sigh
+Mpsleep 4
+sayto $n Please... find my daughter Lynnith. May the Gods help you.
+mpqset $n 1402
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if ovnuminv(1421) == 1
+if hasqbit($n) == 1402
+emote holds the body of his daughter begins to sob softly for a few moments.
+sayto $n Thank you for this act of mercy. I will not forget this.
+sayto $n Please, take this as a token of my gratitude.
+mea $n The merchant hands a small blue bag to you.
+say It's all I have.. now I must prepare for her burial.. Something proper..
+emote sits by the campfire holding his daughter, lost in sorrow and thought.
+endif
+mpadvance $n 1000
+Silent mpoload 1441 1
+Silent mpoload 1426 1
+Silent mpoload 1426 1
+Silent mpoload 1426 1
+Silent put vial bag
+Silent put vial bag
+Silent put vial bag
+Silent give bag $n
+mpqset $n 1402
+mpqset $n 1403
+mpjunk corpse
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1414
+Keywords   bullywug hunter man frog~
+Short      &za bullywug hunter~
+Long       &zA short frog-headed man is here, hunting about the area.&W
+~
+Race       amphibian~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared sneak hide~
+Stats1     -1000 1 3 0 12 2 0 0 0 0
+Stats2     2 9 20
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 13 13 16 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if acrobatics($n) < 16
+mea $n &zThere is some rustling nearby and everything fades to black...&W
+mptransfer $n 1467
+mpat 1467 mea $n &zYou awaken in a small room to smell of rotten food.&W
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1415
+Keywords   giant wolf spider~
+Short      &ca giant wolf spider~
+Long       &cA giant spider is here, weaving its web on a tree.&W
+~
+Race       spider~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc scavenger aggressive stayarea running~
+Affected   infrared sneak hide~
+Stats1     -500 1 3 0 14 0 0 0 0 0
+Stats2     2 10 10
+Stats3     1 6 1
+Stats4     3 10 1 0 0 0 6
+Attribs    12 3 12 16 13 4 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1416
+Keywords   bullywug high shaman elderly~
+Short      &za bullywug high shaman&W~
+Long       &zAn elderly frog-headed man is here, doing something on the altar.&W
+~
+Desc       A short humanoid standing around four feet, two inches. His skin is
+of a dark emerald green color and he has the head of a large frog.
+He appears much older than others and commands a powerful presence.
+~
+Race       amphibian~
+Class      cleric~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel scavenger aggressive~
+Affected   infrared aqua_breath~
+Stats1     -1000 13 3 0 14 0 0 0 0 0
+Stats2     2 9 25
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 9 13 13 13 9 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 1402
+mpoload 1421 1
+silent put corpse altar
+else
+mpoload 1443 1
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1417
+Keywords   green snake bright marsh~
+Short      &Ga bright green snake&W~
+Long       &GA bright green snake makes its way through the marsh here.&W
+~
+Race       snake~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc stayarea~
+Affected   infrared sneak hide~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 2 1
+Stats3     1 2 0
+Stats4     0 0 1 0 0 0 6
+Attribs    2 2 2 18 3 2 9
+Saves      0 0 0 0 0 0
+Attacks    poison~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1418
+Keywords   marsh deer long haired~
+Short      &Oa marsh deer&W~
+Long       &OA marsh deer is here, nibbling on some of the tall grass.&W
+~
+Race       mammal~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc stayarea running~
+Affected   infrared sneak hide~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 4 1
+Stats3     1 3 0
+Stats4     2 0 1 0 0 0 6
+Attribs    8 2 2 16 9 10 10
+Saves      0 0 0 0 0 0
+Attacks    kick~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1419
+Keywords   pixie fey fairy woman~
+Short      &Pa pixie&W~
+Long       &PA young fairy girl is here, flying around the grove.&W
+~
+Race       human~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc stayarea~
+Affected   infrared flying~
+Stats1     800 4 2 0 0 0 0 0 0 0
+Stats2     1 4 2
+Stats3     1 4 1
+Stats4     0 0 1 0 0 0 6
+Attribs    3 10 14 20 8 16 20
+Saves      0 0 0 0 0 0
+Attacks    curse colorspray~
+Defenses   dodge curecritical dispelevil~
+#MUDPROG
+Progtype  death_prog~
+Arglist   80~
+Comlist   mpecho &PUpon dying part of the pixie's body disintegrates into glittery dust.
+mpoload 1013 1
+silent drop dust
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 1404
+sayto $n Thank you for finding our captured sister, we appreciate it.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1420
+Keywords   bullywug child boy~
+Short      &Ba young bullywug boy~
+Long       &BA young frog-headed boy is here, walking around the village.&W
+~
+Race       amphibian~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared~
+Stats1     10 1 2 0 9 0 0 0 0 0
+Stats2     2 8 4
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    9 9 9 17 9 9 10
+Saves      0 0 0 0 0 0
+Attacks    bite~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   60~
+Comlist   mpoload 1443 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1421
+Keywords   captured pixie fey fairy woman~
+Short      &Pa captured pixie~
+Long       &PA young fairy girl is here, tied up against the wall.&W
+~
+Race       human~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   infrared~
+Stats1     800 5 2 0 10 0 0 0 0 0
+Stats2     1 4 2
+Stats3     1 4 1
+Stats4     0 0 1 0 0 0 6
+Attribs    3 10 14 20 8 16 20
+Saves      0 0 0 0 0 0
+Attacks    curse colorspray~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   80~
+Comlist   mpecho &PUpon dying part of the pixie's body disintegrates into glittery dust.
+mpoload 1013 1
+silent drop dust
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   30~
+Comlist   emote cries softly as she tries to look out the window.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   l $n
+sayto $n If you could just untie me, I could use my magic and get away...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote struggles against the ropes binding her.
+sayto $n Can you help me? I need you to untie these ropes for me!
+say If I don't get away, they're going to kill me!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p untie~
+Comlist   if sleight($n) > 10
+if hasqbit($n) != 1404
+emote sighs with relief as she stands up and stretches her bruised limbs.
+sayto $n You have my thanks adventurer, allow me to aid you.
+mea $n &PThe pixie lays her tiny hands on your leg and you feel better!
+mprestore $n 1000
+mpadvance $n 250
+mpqset $n 1404
+sayto $n I will go now, please be careful. And beware their King and Queen!
+mpecho &PThe pixie claps her hands and is gone in a flash of light!
+mpgoto 1499
+else 
+emote sighs with relief as she stands up and stretches her bruised limbs.
+sayto $n You have my thanks adventurer, allow me to aid you.
+mea $n &PThe pixie lays her tiny hands on your leg and you feel better!
+mprestore $n 10
+sayto $n I will go now, please be careful. And beware their King and Queen!
+mpecho &PThe pixie claps her hands and is gone in a flash of light!
+mpgoto 1499
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   feybeam
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1422
+Keywords   man ranger old leather male human~
+Short      &ga ranger&W~
+Long       &gA man dress in old leather is here, scouting about the area.
+~
+Desc       This male human is in his mid-forties in age and is dressed in very
+old leather armor. His beard reaches his waist and he moves about
+in a very silent way, watching for something.
+~
+Lore       You see the ranger receiving orders from a group of men. The vision
+slides to reveal him making his way to this marsh.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden infrared~
+Stats1     0 1 6 0 14 350 0 0 0 0
+Stats2     0 0 90
+Stats3     1 10 1
+Stats4     2 0 1 0 0 0 6
+Attribs    16 17 18 16 13 15 10
+Saves      0 0 0 0 0 0
+Speaking   common~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   If hasqbit($n) != 1405
+Emote holds up a hand in greeting and clears his throat.
+Sayto $n Greetings, may I ask you for something?
+Else
+Sayto $n Have you accomplished any more hunting?
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 1405
+emote looks to the north for a quick second.
+Sayto $n I have been asked to clear this area of Bullywugs. They
+Sayto $n have been terrorizing and kidnapping people. Any
+Sayto $n assistance would be appreciated. If you could bring
+Sayto $n anything to prove you have slain one, I will reward you.
+Mpqset $n 1405
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if ovnuminv(1443) == 1
+if hasqbit($n) == 1405
+emote smiles gruffly and nods his head.
+Sayto $n Well done, here is your payment. Please return with more
+Sayto $n if you come across anymore of these creatures.
+give 1 gold $n
+Mpjunk flesh
+Else
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p no~
+Comlist   sigh $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1499
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     1400
+Keywords tattered armor leather~
+Type     armor~
+Short    &rtattered leather armor&W~
+Long     &rThe tattered remnants of leather armor lies here.&W~
+Flags    organic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    3 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1401
+Keywords crude spear wood~
+Type     weapon~
+Short    &wa crude wooden spear&W~
+Long     &wA crude looking wooden spear has been left here.&W~
+Flags    organic versatile~
+WFlags   take onehand twohand~
+Values   4 1 6 3 14 0
+Values2  0 2
+Stats    1 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1402
+Keywords necklace human teeth~
+Type     trash~
+Short    &za necklace of human teeth&W~
+Long     &WA crude necklace made from teeth lies here.~
+Flags    organic~
+WFlags   take neck~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1403
+Keywords crude wood shortbow bow~
+Type     missileweapon~
+Short    &wa crude wooden shortbow&W~
+Long     &wA crude wooden bow has been discarded here.&W~
+WFlags   take twohand~
+Values   8 1 4 0 9 0
+Values2  0 2
+Stats    2 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1404
+Keywords small poorly made arrow~
+Type     projectile~
+Short    &wa poorly made wooden arrow~
+Long     &wA small poorly made wooden arrow has been left here.~
+Flags    organic~
+WFlags   take~
+Values   1 0 0 9 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1405
+Keywords tattered leather quiver~
+Type     quiver~
+Short    &ra tattered leather quiver&W~
+Long     &rA small quiver of tattered leather is here.&W~
+WFlags   take back~
+Values   15 0 0 8 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1406
+Keywords tattered cloth robes~
+Type     armor~
+Short    &ra tattered cloth robe&W~
+Long     &rA heap of tattered fabric is here.&W~
+Flags    organic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1407
+Keywords crude stone dagger wood handle~
+Type     weapon~
+Short    &wa crude stone dagger~
+Long     &wA long piece of sharpened stone lies here.&W~
+WFlags   take onehand~
+Values   6 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1408
+Keywords feathered feather stone mace~
+Type     weapon~
+Short    &wa stone mace &radorned with bird feathers&W~
+Long     &r A stone attached to a wooden handle is here, adorned with feathers.&W~
+WFlags   take onehand~
+Values   10 1 6 2 8 0
+Values2  0 2
+Stats    4 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1409
+Keywords feather headdress shaman head~
+Type     armor~
+Short    &Ra shaman's feather headdress&W~
+Long     &RA headdress made of various feathers lies here.&W~
+Flags    organic~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1410
+Keywords tattered leather helm~
+Type     armor~
+Short    &ra tattered leather helm&W~
+Long     &rA helm made from tattered leather lies here.&W~
+Flags    organic~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    2 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1411
+Keywords crude stone blade sharpened piece~
+Type     weapon~
+Short    &wa crude stone blade&W~
+Long     &wA piece of sharpened stone is here.&W~
+Flags    finesse~
+WFlags   take onehand~
+Values   5 1 6 3 2 0
+Values2  0 2
+Stats    2 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1412
+Keywords crude wooden shield~
+Type     armor~
+Short    &Oa crude looking wooden shield&W~
+Long     &OA small poorly made wooden shield lies here.&W~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    4 1 0 1 0 0 0
+Affect       -1 -1 20 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1413
+Keywords fey fairy pixie dust sparkling powder sprinkling~
+Type     treasure~
+Short    &Psome fairy dust&w~
+Long     &PA small sprinkling of sparkling powder is here.&w~
+Flags    magic~
+WFlags   take~
+Values   5 0 0 0 0 0
+Values2  0 0
+Stats    1 20 10 1 10 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1414
+Keywords tattered clothes~
+Type     armor~
+Short    &rtattered clothing&W~
+Long     &rSome tattered rags have been left here.&W~
+Flags    organic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1415
+Keywords iron key prison~
+Type     key~
+Short    &za small iron key~
+Long     &zA small iron key lies here.&W~
+WFlags   take onehand~
+Values   1064 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1416
+Keywords crude wooden stick~
+Type     key~
+Short    &Oa crude wooden stick&W~
+Long     &OA crude wooden stick lies here.&W~
+WFlags   take twohand~
+Values   1064 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#EXDESC
+ExDescKey    crude wooden stick~
+ExDesc       This long but sturdy stick was gathered from nearby and shows some
+decay on one end of it. As you look around you notice a lot of
+the construction of things in this village uses similar sticks.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    crude wooden stick~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  exa_prog~
+Arglist   100~
+Comlist   if investigation($n) > 12
+mea $n You notice that this stick could be lodged into the nearby
+mea $n door's lock like a key and then maneuvered to break it off...
+else
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1417
+Keywords wicker basket dirty~
+Type     container~
+Short    &Oa dirty wicker basket&W~
+Long     &OA dirty wicker basket lies in the corner.&W~
+Values   10 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1418
+Keywords sleeping mat rags~
+Type     container~
+Short    &Oa sleeping mat made from rags&W~
+Long     &OA sleeping mat made from rags is here, laid upon several sticks.&W~
+Values   5 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#EXDESC
+ExDescKey    mat~
+ExDesc       This mat has been laid on several heavy sticks that can be
+disassembled and moved if needed. The sticks look easy
+to pick up and use for various purposes.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1419
+Keywords fly ridden slop prisoner food~
+Type     food~
+Short    &rsome prisoner slop&W~
+Long     &rSome food slop is here, ridden with flies.&W~
+WFlags   take~
+Values   1 2 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1420
+Keywords drinking bucket prisoner~
+Type     drinkcon~
+Short    &wa dirty water bucket&W~
+Long     &wA rusty metal bucket is here filled with dirty water.&W~
+Values   10 10 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1421
+Keywords corpse little girl lynnith~
+Type     treasure~
+Short    &Rthe corpse of a little girl&W~
+Long     &RThe corpse of a little girl is here, ritually mutilated.&W~
+Lore   You see the sky before a frog headed man looks down at you, lifting
+a dagger to the sky before plunging it downward...
+~
+Flags    organic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    25 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1422
+Keywords robe fancy rags~
+Type     armor~
+Short    &Ga fancy robe made from quality rags&W~
+Long     &GA heap of fancy looking fabrics patched together is here.&W~
+WFlags   take body about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    2 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1423
+Keywords crown marsh vines flowering c1marshie~
+Type     armor~
+Short    &wa crown of &Pflowering &gmar&Gsh vi&gnes&W~
+Long     &GA circlet of flowering foul smelling vines lies here.&W~
+Lore   You hear the screams of a woman as the crown is ripped from her head
+and taken from her. You see her continue to scream before disappearing
+in a flash of magical light...
+~
+Flags    magic~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+Affect       -1 -1 1 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1424
+Keywords gown fancy rags~
+Type     armor~
+Short    &Pa fancy gown made from quality rags&W~
+Long     &PA heap of fancy looking fabrics is here.&W~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    2 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1425
+Keywords ring tarnished missing stone~
+Type     armor~
+Short    &Oa tarnished ring with an empty stone setting&W~
+Long     &OA small tarnished ring has been abandoned here, it's original stone missing.&W~
+Lore   You see the ring fall off the hand of a wizard as he struggles
+against two thieves next to a river. The ring falls into the river
+and the already loose setting breaks. The stone falls deep into
+the river....
+~
+Flags    magic~
+WFlags   take finger~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    0 5 0 1 0 0 0
+Affect       -1 -1 1 14 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1426
+Keywords healing blue vial~
+Type     potion~
+Short    &Ca blue healing vial&W~
+Long     &CA blue vial has been dropped here.&W~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    0 250 25 1 25 0 0
+Spells   'healing word' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     1427
+Keywords tin lantern~
+Type     light~
+Short    &Oa tin lantern&W~
+Long     &OA tin lantern has been left here.&W~
+WFlags   take onehand~
+Values   0 0 200 0 0 0
+Values2  0 2
+Stats    1 5 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1428
+Keywords destroyed caravan~
+Type     container~
+Short    &OA destroyed caravan~
+Long     &OA merchant's caravan is here, destroyed almost beyond recognition.&W~
+Values   100 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1429
+Keywords campfire fire~
+Type     fire~
+Short    &Ra campfire&W~
+Long     &RA small campfire has been set up here.&w~
+Flags    glow~
+Values   100 0 -1 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1430
+Keywords small loaf sweet bread~
+Type     food~
+Short    &Ya loaf of sweet bread&W~
+Long     &YA small loaf of bread sit here.&W~
+WFlags   take hold~
+Values   3 10 0 0 0 0
+Values2  0 2
+Stats    0 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1431
+Keywords sheer gown fairy~
+Type     armor~
+Short    &Wa gown of layered sheer fabrics&W~
+Long     &WA tiny gown made from layers of sheer fabric is here.~
+Flags    antievil organic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1432
+Keywords webbed corpse bullywug~
+Type     trash~
+Short    &wa webbed bullywug corpse&W~
+Long     &wThe corpse of a frog-man is here, completely wrapped up in webbing.&W~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1433
+Keywords webbed corpse bullywug~
+Type     trash~
+Short    &wa webbed bullywug child's corpse&W~
+Long     &wThe corpse of frog-headed girl is here, completely wrapped in webbing.&W~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1434
+Keywords little girl shoe~
+Type     armor~
+Short    &Pa little girl's shoe&W~
+Long     &PA little girl's shoe has been left here in the mud.&W~
+Lore   You see a little girl being dragged through a marsh, screaming
+as she is taken somewhere dark and left for awhile. 
+~
+Flags    hidden~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1435
+Keywords altar blood stained symbols painted~
+Type     container~
+Short    &Ra blood stained &wstone altar&W~
+Long     &wA stone altar is here, stained with years of &Rblood spilled.&W~
+Flags    glow evil magic~
+Values   100 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 50 0 0 0
+#EXDESC
+ExDescKey    altar stone~
+ExDesc       You see a small stone slab that is covered in dried blood. The top
+of the altar is curved to allow a body to be place on top of it.
+All one has to do is simply look inside the altar to see if there
+is a body...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1436
+Keywords robe painted blood symbols~
+Type     armor~
+Short    &Oa tattered robe covered with &rblood stains&W~
+Long     &OA dirty robe is here, covered in blood stains.&W~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1437
+Keywords well village dirty water~
+Type     fountain~
+Short    &ca dirty village well&W~
+Long     &cA makeshift well is here, supplying dirty water to the village.&W~
+Values   1000 1000 0 0 0 0
+Values2  0 0
+Stats    1 0 0 50 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1438
+Keywords apple tree fragrant marsh~
+Type     container~
+Short    &Ga marsh apple tree&W~
+Long     &GA marsh apple tree is here, bearing brightly colored fruit.&W~
+Values   10 0 0 0 0 0
+Values2  0 0
+Stats    5000 0 0 50 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1439
+Keywords apple marsh green bright~
+Type     food~
+Short    &Ga bright green marsh apple&W~
+Long     &GA fragrant bright green apple is here.&W~
+WFlags   take hold~
+Values   1 9 0 0 0 0
+Values2  0 1
+Stats    1 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1440
+Keywords fairy pool spring clear crystal water~
+Type     fountain~
+Short    &Ca fairy pool&W~
+Long     &CA pool of crystral clear water is here, glittering brightly.&W~
+Flags    glow magic~
+Values   1000 1000 0 0 0 0
+Values2  0 4
+Stats    1 0 0 50 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1441
+Keywords small blue velvet bag~
+Type     container~
+Short    &Ba small blue velvet bag&W~
+Long     &BA small blue velvet bag lies here.&W~
+WFlags   take belt onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1442
+Keywords rope binding wrapped body~
+Type     trash~
+Short    &Oa long piece of rope tightly tied~
+Long     &OA long stretch of rope is here.~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1443
+Keywords bullywug flesh slimy~
+Type     scraps~
+Short    &ga piece of bullywug flesh~
+Long     &gA piece of slimy flesh has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1444
+Keywords armor for show leather~
+Type     trash~
+Short    &Oold leather armor&W~
+Long     &OOld leather armor has been left here.&W~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1445
+Keywords quiver for show~
+Type     quiver~
+Short    &gan old leather quiver&W~
+Long     &rA small quiver of tattered leather is here.&W~
+WFlags   take back~
+Values   15 0 0 8 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1446
+Keywords longbow for show~
+Type     missileweapon~
+Short    &Oa beautiful oak longbow~
+Long     &Oa beautiful oak longbow~
+WFlags   take twohand~
+Values   8 1 4 0 9 1
+Values2  0 2
+Stats    2 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1447
+Keywords kobold flesh small piece~
+Type     trash~
+Short    &ra piece of kobold flesh&w~
+Long     &rA small piece of flesh has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1499
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     1400
+Name     A Path in the Forest~
+Sector   forest~
+Desc     The path here is wet and soft, changing with each step made on it.
+The trees range from very old willows to decaying pine, a sign of
+a high level of water nearby. There are few birds in this area as 
+well. Something just seems odd about this forest. The path continues
+to the east.
+~
+#EXIT
+Direction east~
+ToRoom    1401
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     overland~
+MapX      468
+MapY      755
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1401
+Name     A Path in the Forest~
+Sector   forest~
+Desc     The path here is wet and soft, changing with each step made on it.
+a high level of water nearby. There are few birds in this area as 
+well. Something just seems odd about this forest. The path continues
+to the east and west.
+~
+#EXIT
+Direction east~
+ToRoom    1402
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1400
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1402
+Name     A Path in the Forest~
+Sector   forest~
+Stats    0 0 0 0 14 0
+Desc     The path here is wet and soft, changing with each step made on it.
+The trees range from very old willows to decaying pine, a sign of
+a high level of water nearby. There are few birds in this area as 
+well. Something just seems odd about this forest. The path continues
+to the east and west.
+~
+Perdesc  &RYou see a small camp to the east of here...&W
+~
+#EXIT
+Direction east~
+ToRoom    1403
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1401
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1403
+Name     A Path in the Forest~
+Sector   forest~
+Desc     The path here is wet and soft, changing with each step made on it.
+The trees range from very old willows to decaying pine, a sign of
+a high level of water nearby. There are few birds in this area as 
+well. Something just seems odd about this forest. A man is here,
+staying near a destroyed caravan. A camp has been made near the
+caravan with a tent and fire. The path continues to the east
+and far west.
+~
+#EXIT
+Direction east~
+ToRoom    1404
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1402
+#ENDEXIT
+
+Reset M 0 1413 1 1403
+  Reset G 0 1426 1
+  Reset G 0 1427 1
+  Reset G 0 1430 1
+Reset O 0 1428 1 1403
+Reset O 0 1429 1 1403
+#ENDROOM
+
+#ROOM
+Vnum     1404
+Name     A Path in the Forest~
+Sector   forest~
+Desc     The path here is wet and soft, changing with each step made on it.
+The trees range from very old willows to decaying pine, a sign of
+a high level of water nearby. There are few birds in this area as 
+well. Something just seems odd about this forest. A path leads
+north up a hill. The original path leads both east and west.
+~
+#EXIT
+Direction east~
+ToRoom    1405
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1403
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1405
+Name     A Path in the Forest~
+Sector   forest~
+Desc     The path here is wet and soft, changing with each step made on it.
+The trees range from very old willows to decaying pine, a sign of
+a high level of water nearby. There are few birds in this area as 
+well. Something just seems odd about this forest. The path continues
+east and far west.
+~
+#EXIT
+Direction north~
+ToRoom    1407
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1406
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1404
+#ENDEXIT
+
+Reset M 0 1422 1 1405
+  Reset E 0 1444 1 5
+  Reset E 0 1445 1 22
+  Reset E 0 1446 1 28
+#ENDROOM
+
+#ROOM
+Vnum     1406
+Name     A Path in the Forest~
+Sector   forest~
+Stats    0 0 0 0 16 0
+Desc     The path here is wet and soft, changing with each step made on it.
+The trees range from very old willows to decaying pine, a sign of
+a high level of water nearby. There are few birds in this area as 
+well. 
+~
+Perdesc  &gThe faint signs of a barely used path leads north. 
+~
+#EXIT
+Direction north~
+ToRoom    1482
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     overland~
+MapX      481
+MapY      755
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1405
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1407
+Name     Entrance of a Marsh~
+Sector   forest~
+Desc     At the top of the hill a large expanse of marsh can be seen going
+for miles and miles. The marsh has a high moisture level and remains
+fairly foggy every day and night. Occassional the wind picks up and
+one can see various dead trees, small hills, banks, and higher levels
+of water in certain places.
+~
+#EXIT
+Direction north~
+ToRoom    1408
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1405
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1408
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1417
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2080
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1407
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1409
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1416
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1409
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1416
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1408
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1410
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1417
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1415
+#ENDEXIT
+
+Reset M 0 1400 8 1409
+  Reset E 0 1401 1 28
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+#ENDROOM
+
+#ROOM
+Vnum     1410
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1415
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1409
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1411
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1416
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1414
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1411
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1414
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1410
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1412
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1415
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1413
+#ENDEXIT
+
+Reset M 0 1405 5 1411
+#ENDROOM
+
+#ROOM
+Vnum     1412
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1413
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1411
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1414
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1413
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1422
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1414
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1412
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1421
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1411
+#ENDEXIT
+
+Reset M 0 1400 8 1413
+  Reset E 0 1410 1 6
+  Reset E 0 1401 1 28
+  Reset E 0 1400 1 5
+#ENDROOM
+
+#ROOM
+Vnum     1414
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+A faintly seen path can be discerned towards the north, leading up
+a small hill and into some woods. The water level here is slightly
+higher than average.
+~
+#EXIT
+Direction north~
+ToRoom    1421
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1415
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1411
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1413
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1420
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1422
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1410
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1412
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1415
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1420
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1416
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1410
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1414
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1419
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1421
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1409
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1411
+#ENDEXIT
+
+Reset M 0 1405 5 1415
+#ENDROOM
+
+#ROOM
+Vnum     1416
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1419
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1417
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1409
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1415
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1418
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1420
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1408
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1410
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1417
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1418
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1408
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1416
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1419
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1409
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1418
+Name     A Dreary Marsh~
+Sector   swamp~
+Stats    0 0 0 0 15 0
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+Perdesc  &gThe fog parts for a moment and you briefly see a small clearing
+to the east of here...
+~
+#EXIT
+Direction north~
+ToRoom    1427
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1480
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1417
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1419
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1426
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1416
+#ENDEXIT
+
+Reset M 0 1405 5 1418
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1419
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1426
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1418
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1416
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1420
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1427
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1425
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1417
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1415
+#ENDEXIT
+
+Reset O 0 1434 1 1419
+#ENDROOM
+
+#ROOM
+Vnum     1420
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1425
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1419
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1415
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1421
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1426
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1424
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1416
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1414
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1421
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1424
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1420
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1414
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1422
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1425
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1423
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1415
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1413
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1422
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1423
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1421
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1413
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1424
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1414
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1423
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1432
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1424
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1422
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1431
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1421
+#ENDEXIT
+
+Reset M 0 1401 5 1423
+  Reset E 0 1405 1 22
+    Reset P 0 1404 2 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+  Reset E 0 1403 1 28
+#ENDROOM
+
+#ROOM
+Vnum     1424
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1431
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1425
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1421
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1423
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1430
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1432
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1420
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1422
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1425
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1430
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1426
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1420
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1424
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1429
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1431
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1419
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1421
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1426
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    1429
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1427
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1419
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1425
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1428
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1430
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1418
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1420
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1427
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a high level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction north~
+ToRoom    1428
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1418
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1426
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1429
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1419
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1428
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction east~
+ToRoom    1433
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1427
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1429
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1426
+#ENDEXIT
+
+Reset M 0 1405 5 1428
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1429
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction east~
+ToRoom    1428
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1426
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1430
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1427
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1425
+#ENDEXIT
+
+Reset M 0 1405 5 1429
+#ENDROOM
+
+#ROOM
+Vnum     1430
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+The water level here is a bit higher than other areas of the marsh.
+~
+#EXIT
+Direction east~
+ToRoom    1429
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1425
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1431
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1426
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1424
+#ENDEXIT
+
+Reset M 0 1400 8 1430
+  Reset E 0 1401 1 28
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1431
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+~
+#EXIT
+Direction east~
+ToRoom    1430
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1424
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1432
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1425
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1423
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1432
+Name     A Dreary Marsh~
+Sector   swamp~
+Desc     The marsh is hard to see through the rolling fog. This particular
+part of the marsh has a low level of water. Dead trees look ominous
+in the fog and could be mistaken for something threatening. A soft
+croaking sound can be heard echoing in the marsh. There is a foul
+smell in the air created by a combination of decay and dirty water.
+A faintly seen path can be discerned towards the north, leading up
+a small hill and into some woods. The water level here is slightly
+higher than average.
+~
+#EXIT
+Direction north~
+ToRoom    1445
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1431
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1423
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1424
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1433
+Name     A Small Forest Path~
+Sector   forest~
+Flags    nomob~
+Desc     This part of the path is entering a small forest of willow trees
+and tall swamp grasses. The fog rolls quickly through this area
+creating intricate patterns as it is sliced by the branches of
+the trees. The path is very wet and squishy to walk upon.
+~
+#EXIT
+Direction east~
+ToRoom    1434
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1428
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1434
+Name     A Small Forest Path~
+Sector   forest~
+Flags    nomob~
+Desc     This part of the path is entering a small forest of willow trees
+and tall swamp grasses. The fog rolls quickly through this area
+creating intricate patterns as it is sliced by the branches of
+the trees. The path is very wet and squishy to walk upon. A small
+clearing and a field can be seen towards the east.
+~
+#EXIT
+Direction east~
+ToRoom    1435
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1433
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1435
+Name     Before a Small Field~
+Sector   forest~
+Stats    0 0 0 0 12 0
+Desc     The path ends at a parting of the trees, which opens to a small
+looking field of tall swamp grass and wild plants. The air is very
+aromatic due to the presence of various herbs and flowers. The water
+level appears to be low from this perspectice. Some sort of stone
+structure can be seen rising in the center of the field, high above
+the tall grasses.
+~
+Perdesc  &rYou hear chanting coming from somewhere east of here...&W
+~
+#EXIT
+Direction east~
+ToRoom    1436
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1434
+#ENDEXIT
+
+Reset M 0 1400 8 1435
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+  Reset E 0 1401 1 28
+#ENDROOM
+
+#ROOM
+Vnum     1436
+Name     A Small Field~
+Sector   field~
+Stats    0 0 0 0 15 0
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water stands
+above the ground by a couple of inches. In the distance you can here
+the rustle of grass and splashes of water. Towards the south the
+water level is rising dangerously.
+~
+Perdesc  &RYou notice a very faint blood trail leading towards a stone slab
+located just up from here. On closer inspection you see the blood
+trail lead to the top of the stone.
+~
+#EXIT
+Direction north~
+ToRoom    1437
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1444
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1435
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1440
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1437
+Name     A Small Field~
+Sector   field~
+Stats    0 0 0 0 18 0
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water level here
+is above the ground by a couple of inches. In the distance you can hear
+the sounds of rustling grass and water splashing. You notice that
+to the east the water level seems higher.
+~
+Perdesc  &gYou notice a trail leading up a hill towards what looks like a
+village...&W
+~
+#EXIT
+Direction east~
+ToRoom    1438
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1436
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1451
+Flags     hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1438
+Name     A Small Field~
+Sector   indoors~
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water level here
+requires the usage of swimming.
+~
+#EXIT
+Direction east~
+ToRoom    1439
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1437
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the splashing of something moving through water nearby&W
+mpasound &cYou hear the splashing of something moving through water nearby.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1439
+Name     A Small Field~
+Sector   field~
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water level here
+is above the ground by a couple of inches. In the distance you can hear
+the sounds of rustling grass and water splashing. To the west the
+water level is very high and may require swimming to cross.
+~
+#EXIT
+Direction south~
+ToRoom    1441
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1438
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1440
+Name     &RA Sacrificial Shrine&W~
+Sector   field~
+Desc     &rThis strange shrine has been built up above the marsh. Rocks have
+been moved into the area and then leveled off at the top for standing.
+Five large crudely shaped columns stand on the circular edge of the
+shrine. At the center is a stone altar stained with blood. Upon
+closer inspection there are glyphs on the various columns, drawn
+with blood and mud.
+~
+#EXIT
+Direction down~
+ToRoom    1436
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1416 1 1440
+  Reset E 0 1409 1 6
+  Reset E 0 1400 1 5
+  Reset E 0 1402 1 3
+  Reset E 0 1407 1 26
+  Reset E 0 1412 1 27
+Reset M 0 1403 3 1440
+  Reset E 0 1408 1 26
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+  Reset E 0 1402 1 3
+Reset M 0 1403 3 1440
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+  Reset E 0 1408 1 26
+  Reset E 0 1402 1 3
+Reset O 0 1435 1 1440
+#ENDROOM
+
+#ROOM
+Vnum     1441
+Name     A Small Field~
+Sector   field~
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water level here
+is above the ground by a couple of inches. In the distance you can hear
+the sounds of rustling grass and water splashing. 
+~
+#EXIT
+Direction north~
+ToRoom    1439
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1442
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1442
+Name     A Small Field~
+Sector   field~
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water level here
+is above the ground by a couple of inches. In the distance you can hear
+the sounds of rustling grass and water splashing.
+~
+#EXIT
+Direction north~
+ToRoom    1441
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1443
+#ENDEXIT
+
+Reset M 0 1401 5 1442
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+  Reset E 0 1403 1 28
+  Reset E 0 1405 1 22
+    Reset P 0 1404 2 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 4 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+#ENDROOM
+
+#ROOM
+Vnum     1443
+Name     A Small Field~
+Sector   field~
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water level here
+is above the ground by a couple of inches. In the distance you can hear
+the sounds of rustling grass and water splashing. 
+~
+#EXIT
+Direction east~
+ToRoom    1442
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1444
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1444
+Name     A Small Field~
+Sector   field~
+Desc     The field has higher level of moisture, which causes the rolling fog
+to settle high above the tall grasses. This provides better visibility
+of the field despite the tall grass and plants. The water level here
+is above the ground by a couple of inches. In the distance you can hear
+the sounds of rustling grass and water splashing. 
+~
+#EXIT
+Direction north~
+ToRoom    1436
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1443
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1445
+Name     A Large Forest Path~
+Sector   forest~
+Desc     This path through the forest has large sections of water that appears
+deep to step in. More willow tree dot the landscape, swaying haunting
+in the freeze and rolling fog. This path appears to have been more
+distinct in the past and less maintained over time.
+~
+#EXIT
+Direction north~
+ToRoom    1446
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1432
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1446
+Name     A Large Forest Path~
+Sector   forest~
+Stats    0 0 0 0 15 0
+Desc     This path through the forest has large sections of water that appears
+deep to step in. More willow tree dot the landscape, swaying haunting
+in the freeze and rolling fog. This path appears to have been more
+distinct in the past and less maintained over time. To the north it 
+appears is the gate of a small village here in the marsh.
+~
+Perdesc  &gYou notice a small unused trail to the west of here...&W
+~
+#EXIT
+Direction north~
+ToRoom    1447
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1484
+Flags     hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1447
+Name     Before a Small Village~
+Sector   forest~
+Desc     The path leads to the entrance of a small village. The trees have been
+bent and shaped magically to form an arch signaling the entrance.
+Two torches are on either side of the entrance to help illuminate
+the area to help the guards see visitors. The village appears to be
+made of many huts of differing sizes.
+~
+#EXIT
+Direction north~
+ToRoom    1448
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1446
+#ENDEXIT
+
+Reset M 0 1404 7 1447
+  Reset E 0 1401 1 28
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+Reset M 0 1404 7 1447
+  Reset E 0 1401 1 28
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+#ENDROOM
+
+#ROOM
+Vnum     1448
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction east~
+ToRoom    1449
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1447
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1455
+#ENDEXIT
+
+Reset M 0 1401 5 1448
+  Reset E 0 1403 1 28
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+  Reset E 0 1405 1 22
+    Reset P 0 1404 2 1405
+    Reset P 0 1404 3 1405
+    Reset P 0 1404 2 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+#ENDROOM
+
+#ROOM
+Vnum     1449
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction east~
+ToRoom    1450
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1448
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1450
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction north~
+ToRoom    1452
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1451
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1449
+#ENDEXIT
+
+Reset D 0 1450 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1451
+Name     A Village Path~
+Sector   forest~
+Stats    0 0 0 0 18 0
+Desc     The main road ends here with two medium sized huts. The road continues
+back to the west. The road is very muddy and not very even to travel
+on. The smell of burning meat wafts through the village as various
+villagers are making some sort of meal. This part of the village is
+on a large hill, overlooking the marsh.
+~
+Perdesc  &gYou notice a trail leading down from here towards a small field...&W
+~
+#EXIT
+Direction north~
+ToRoom    1453
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1454
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1450
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1437
+Flags     hidden nomob~
+#ENDEXIT
+
+Reset M 0 1400 8 1451
+  Reset E 0 1400 1 5
+  Reset E 0 1401 1 26
+  Reset E 0 1412 1 27
+Reset D 0 1451 0 1
+Reset D 0 1451 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1452
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. One sleeping area feature a mat made from different
+materials.
+~
+#EXIT
+Direction south~
+ToRoom    1450
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1401 5 1452
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+  Reset E 0 1405 1 22
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 2 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 2 1405
+    Reset P 0 1404 2 1405
+    Reset P 0 1404 1 1405
+  Reset E 0 1403 1 28
+Reset M 0 1402 6 1452
+  Reset E 0 1406 1 5
+  Reset E 0 1407 1 26
+Reset O 0 1418 2 1452
+Reset D 0 1452 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1453
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction south~
+ToRoom    1451
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1407 6 1453
+  Reset E 0 1414 1 5
+  Reset E 0 1401 1 26
+Reset O 0 1418 2 1453
+Reset D 0 1453 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1454
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction north~
+ToRoom    1451
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1400 8 1454
+  Reset E 0 1400 1 5
+  Reset E 0 1401 1 28
+Reset M 0 1402 6 1454
+  Reset E 0 1406 1 5
+  Reset E 0 1407 1 26
+Reset D 0 1454 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1455
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction east~
+ToRoom    1448
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1457
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1456
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction south~
+ToRoom    1457
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1407 6 1456
+  Reset E 0 1414 1 5
+  Reset E 0 1401 1 26
+Reset D 0 1456 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1457
+Name     A Village Path~
+Sector   forest~
+Stats    0 0 0 0 16 0
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+Perdesc  &gYou notice a faint trail to the south of here leading into some
+thick vegetation.
+~
+#EXIT
+Direction north~
+ToRoom    1456
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1455
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1494
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1458
+#ENDEXIT
+
+Reset D 0 1457 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1458
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+The road turns here and heads south, creating an L shaped village.
+~
+#EXIT
+Direction east~
+ToRoom    1457
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1459
+#ENDEXIT
+
+Reset M 0 1414 1 1458
+  Reset E 0 1400 1 5
+  Reset E 0 1401 1 26
+  Reset E 0 1410 1 6
+#ENDROOM
+
+#ROOM
+Vnum     1459
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction north~
+ToRoom    1458
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1460
+#ENDEXIT
+
+Reset M 0 1400 8 1459
+  Reset E 0 1401 1 28
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+#ENDROOM
+
+#ROOM
+Vnum     1460
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction north~
+ToRoom    1459
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1461
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1470
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1460 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1461
+Name     A Village Path~
+Sector   forest~
+Stats    0 0 0 0 16 0
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+A path of overgrown plants can be seen to the east, which would
+make a great hiding place.
+~
+Perdesc  &gYou notice a faint trail to the east, leading into some rather
+thick vegetation.
+~
+#EXIT
+Direction north~
+ToRoom    1460
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1487
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1462
+#ENDEXIT
+
+Reset M 0 1401 5 1461
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+  Reset E 0 1403 1 28
+  Reset E 0 1405 1 22
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 3 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+    Reset P 0 1404 1 1405
+#ENDROOM
+
+#ROOM
+Vnum     1462
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction north~
+ToRoom    1461
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1463
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1463
+Name     A Village Path~
+Sector   forest~
+Stats    0 0 0 0 16 0
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+Two huts can be seen on both sides of the road. One hut is quite
+large and guarded while the other is of a medium size.
+~
+Perdesc  &gYou notice a faint trail to the northeast, leading into some
+thick vegetation.
+~
+#EXIT
+Direction north~
+ToRoom    1462
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1472
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1464
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1467
+Key       1415
+Flags     isdoor closed locked nomob~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1498
+Flags     hidden nomob~
+#ENDEXIT
+
+Reset M 0 1410 1 1463
+  Reset E 0 1411 1 26
+  Reset E 0 1412 1 27
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+  Reset G 0 1415 1
+Reset D 0 1463 1 1
+Reset D 0 1463 3 2
+#ENDROOM
+
+#ROOM
+Vnum     1464
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+~
+#EXIT
+Direction north~
+ToRoom    1463
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1465
+#ENDEXIT
+
+Reset M 0 1400 8 1464
+  Reset E 0 1410 1 6
+  Reset E 0 1400 1 5
+  Reset E 0 1401 1 28
+#ENDROOM
+
+#ROOM
+Vnum     1465
+Name     A Village Path~
+Sector   forest~
+Desc     This appears to be a main road in the village, going both east and
+west. Many huts line the road, some with crude wooden doors and
+some with heavy curtains. The smell of burning meat wafts through
+the village as various villagers are making some sort of meal.
+Towards the south is a giant space surrounded by huts and what
+appears to be a well.
+~
+#EXIT
+Direction north~
+ToRoom    1464
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1471
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1466
+#ENDEXIT
+
+Reset D 0 1465 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1466
+Name     A Village Square~
+Sector   forest~
+Desc     This appears to be what the villagers have deemed the center of
+their village. A large poorly created well is located here with
+many buckets on each side. Stones have been rolled here to serve
+as possible seating. To the southwest you can see a giant hut that
+looks to be heavily guarded.
+~
+#EXIT
+Direction north~
+ToRoom    1465
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1473
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1469
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1409 1 1466
+  Reset E 0 1401 1 28
+  Reset E 0 1414 1 5
+Reset M 0 1408 1 1466
+  Reset E 0 1414 1 5
+  Reset E 0 1407 1 26
+Reset O 0 1437 1 1466
+Reset D 0 1466 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1467
+Name     A Prison Hut~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 16 0
+Desc     This is a hut dedicated to holding people captive. There is a small
+window towards the northeast, barred with wooden branches. The room
+is barely lit and very dirty inside. A bloody handprint can be seen
+on some of the chains connected to the west wall. The room contains 
+a basket where food is placed, a bucket of water for drinking, and 
+a sleeping mat. The mat has been placed on sticks to keep it off the 
+floor.The door of the hut features a poorly made lock that could 
+possibly broken with something. 
+~
+Perdesc  &CYou notice the lock is very unstable and could possibly be broken
+easily with something...&W
+~
+#EXIT
+Direction east~
+ToRoom    1463
+Key       1416
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1463
+Flags     window can_look~
+#ENDEXIT
+
+Reset M 0 1421 1 1467
+  Reset E 0 1431 1 5
+  Reset E 0 1442 1 12
+Reset O 0 1418 1 1467
+  Reset P 0 1416 1 1418
+  Reset P 0 1416 3 1418
+  Reset P 0 1434 1 1418
+Reset O 0 1417 1 1467
+Reset O 0 1420 1 1467
+Reset D 0 1467 1 2
+#ENDROOM
+
+#ROOM
+Vnum     1468
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction west~
+ToRoom    1461
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1469
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction east~
+ToRoom    1466
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1407 6 1469
+  Reset E 0 1414 1 5
+  Reset E 0 1401 1 26
+Reset M 0 1407 6 1469
+  Reset E 0 1414 1 5
+  Reset E 0 1401 1 26
+Reset O 0 1418 1 1469
+Reset O 0 1417 1 1469
+Reset O 0 1418 1 1469
+Reset D 0 1469 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1470
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction east~
+ToRoom    1460
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1402 6 1470
+  Reset E 0 1406 1 5
+  Reset E 0 1407 1 26
+Reset M 0 1402 6 1470
+  Reset E 0 1406 1 5
+  Reset E 0 1407 1 26
+Reset O 0 1418 2 1470
+Reset D 0 1470 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1471
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction west~
+ToRoom    1465
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1407 6 1471
+  Reset E 0 1414 1 5
+  Reset E 0 1401 1 26
+Reset M 0 1402 6 1471
+  Reset E 0 1406 1 5
+  Reset E 0 1407 1 26
+Reset M 0 1420 1 1471
+  Reset E 0 1407 1 26
+  Reset E 0 1414 1 5
+Reset O 0 1418 2 1471
+Reset D 0 1471 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1472
+Name     Inside a Hut~
+Sector   indoors~
+Desc     This hut is of a medium size and is poorly kept. Random objects lie
+around the floor, collected from various places. A small fire keeps the
+hut cozy and warm. Two sleeping areas feature mats made from different
+materials.
+~
+#EXIT
+Direction west~
+ToRoom    1463
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1402 6 1472
+  Reset E 0 1406 1 5
+  Reset E 0 1407 1 26
+Reset M 0 1407 6 1472
+  Reset E 0 1414 1 5
+  Reset E 0 1401 1 26
+Reset O 0 1418 2 1472
+Reset D 0 1472 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1473
+Name     A Path to a Massive Hut~
+Sector   forest~
+Desc     This path starts from the village square and heads southward to
+the largest hut in the entire village. The path is clear of debris
+and is easy to travel on. It is the nicest path in the entire village
+for some reason.
+~
+#EXIT
+Direction north~
+ToRoom    1466
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1474
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1474
+Name     Before a Massive Hut~
+Sector   forest~
+Desc     The giant hut is before you and is dome shaped. It has been formed
+through careful construction and features a bark siding. One entrance
+can be seen and that is directly ahead. Several small hatches have
+been built in to let fresh air and light inside. Smoke travels out
+one major hatch to the west. The craftsmanship of this hut is by
+far the best in the village.
+~
+#EXIT
+Direction north~
+ToRoom    1473
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1475
+#ENDEXIT
+
+Reset M 0 1404 7 1474
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+  Reset E 0 1411 1 26
+  Reset E 0 1412 1 27
+Reset M 0 1404 7 1474
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+  Reset E 0 1411 1 26
+  Reset E 0 1412 1 27
+#ENDROOM
+
+#ROOM
+Vnum     1475
+Name     Inside a Massive Hut~
+Sector   indoors~
+Desc     The inside of the dome is just as impressive as the outside construction.
+The dome has torches aligning the walls and the floor has been carefully
+cut from local willow trees and joined nicely. They have a brilliant
+polish to them and are kept tidy. A long hallway starts here and
+heads south. Guards move about keeping an eye on everything
+~
+#EXIT
+Direction north~
+ToRoom    1474
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1476
+#ENDEXIT
+
+Reset M 0 1404 7 1475
+  Reset E 0 1401 1 28
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+Reset M 0 1404 7 1475
+  Reset E 0 1401 1 28
+  Reset E 0 1400 1 5
+  Reset E 0 1410 1 6
+#ENDROOM
+
+#ROOM
+Vnum     1476
+Name     Inside a Massive Hut~
+Sector   indoors~
+Desc     The inside of the dome is just as impressive as the outside construction.
+The dome has torches aligning the walls and the floor has been carefully
+cut from local willow trees and joined nicely. They have a brilliant
+polish to them and are kept tidy. A long hallway starts here and
+heads south. Guards move about keeping an eye on everything.
+Two sections of the dome are to the east and west of here.
+~
+#EXIT
+Direction north~
+ToRoom    1475
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1478
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1477
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1479
+#ENDEXIT
+
+Reset M 0 1404 7 1476
+  Reset E 0 1411 1 26
+  Reset E 0 1410 1 6
+  Reset E 0 1412 1 27
+#ENDROOM
+
+#ROOM
+Vnum     1477
+Name     A Crude Looking Throne Room~
+Sector   indoors~
+Desc     The hallway ends into a massive room full of various objects obtained
+through various means, mostly stolen. Expensive fur rugs, weapons,
+suits of armor, and other relics dot the room leading to the massive
+throne at the southern end. The throne is massive and made from
+wood, possibly hand carved. It is clear someone of power rules
+here. Sticks of incense burn and give the room an exotic aroma
+~
+#EXIT
+Direction north~
+ToRoom    1476
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1411 1 1477
+  Reset E 0 1400 1 5
+  Reset E 0 1422 1 12
+  Reset E 0 1411 1 26
+#ENDROOM
+
+#ROOM
+Vnum     1478
+Name     A Large Shrine~
+Sector   indoors~
+Stats    0 0 0 0 16 0
+Desc     This area has been designated as a private temple to the gods of this
+village. Several stone idols that have been hard carved have been
+set up here as well as a giant altar to the eastern wall under
+a large window hatch. The view from the window shows the village
+square. Various candles are burning in the room to provide ample
+lighting to those that enter.
+~
+Perdesc  &rYou notice blood all over the giant altar, some of it fresh...
+~
+#EXIT
+Direction west~
+ToRoom    1476
+#ENDEXIT
+
+Reset M 0 1403 3 1478
+  Reset E 0 1412 1 26
+  Reset E 0 1408 1 27
+  Reset E 0 1402 1 3
+  Reset E 0 1406 1 5
+  Reset E 0 1410 1 6
+#ENDROOM
+
+#ROOM
+Vnum     1479
+Name     A Large Bedroom~
+Sector   indoors~
+Desc     This bedroom is nothing like the huts outside in the village. The 
+room is large with multiple types of furniture from chairs, tables,
+and a large oak bed. All of the items do not look original to the
+village and were probably stolen or purchased somehow. Maps of
+various parts of the world have been set up like art on several
+of the walls. A large broken wall mirror has been mounted on
+the north wall.
+~
+#EXIT
+Direction east~
+ToRoom    1476
+#ENDEXIT
+
+Reset M 0 1412 1 1479
+  Reset E 0 1424 1 5
+  Reset E 0 1407 1 26
+  Reset E 0 1425 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1480
+Name     Before a Clearing~
+Sector   field~
+Desc     You pass through the fog like wall of concealment to discover a
+small beautiful garden. The air quality is much better and birds sing
+brightly. The ground is more firm and easier to walk on here. Towards
+the west the wall of fog has closed behind you like a door.
+~
+#EXIT
+Direction north~
+ToRoom    1481
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1483
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1482
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1418
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1481
+Name     A Peaceful Spring~
+Sector   field~
+Desc     Before you is a small sized spring that is crystal clear and smells
+sweet. This spring is called a fairy spring and is often maintained
+by magical creatures such as fairies. These pools are known as
+modes of scrying and transportation to those that figure out how to
+enter them. Bright purple flowers grow along the spring and almost seem
+to move as if sentient.
+~
+#EXIT
+Direction south~
+ToRoom    1480
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1483
+#ENDEXIT
+
+#EXIT
+Direction somewhere~
+ToRoom    1403
+Desc      &CYou peer into the pool's waters to see another place magically appear...&W
+~
+Keywords  pool~
+Flags     secret can_enter can_look~
+#ENDEXIT
+
+Reset M 0 1406 1 1481
+  Reset E 0 1431 1 5
+Reset O 0 1440 1 1481
+#ENDROOM
+
+#ROOM
+Vnum     1482
+Name     A Small Orchard~
+Sector   field~
+Desc     The fog seems to magically moved around this orchand instead of
+through it. This orchard is very small, full of fruit bearing trees
+and fragrant smelling herbs. The dreariness of the marsh seems to
+not be even located anywhere near this place.
+~
+#EXIT
+Direction north~
+ToRoom    1480
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1406
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1483
+#ENDEXIT
+
+Reset M 0 1419 2 1482
+  Reset E 0 1431 1 5
+#ENDROOM
+
+#ROOM
+Vnum     1483
+Name     A Small Shrine~
+Sector   field~
+Desc     A small stone circle is here, decorated with flowers and herbs. The
+location is used for special occasions by the fairies of this grove.
+The stones stand at a height of five inches and create a very small
+circle. Little hand crafted bird houses are hung off the stones for
+various types of birds who fly in and out of the circle.
+~
+#EXIT
+Direction west~
+ToRoom    1480
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1481
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1482
+#ENDEXIT
+
+Reset M 0 1419 2 1483
+  Reset E 0 1431 1 5
+#ENDROOM
+
+#ROOM
+Vnum     1484
+Name     A Secret Path~
+Sector   trail~
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog.
+~
+#EXIT
+Direction east~
+ToRoom    1446
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1485
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1485
+Name     A Secret Path~
+Sector   trail~
+Stats    0 0 0 0 18 0
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog.
+~
+Perdesc  &gYou see a small trail leading to the north, leading into an
+area of thick webs laced through the vegetation...
+~
+#EXIT
+Direction north~
+ToRoom    1488
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1484
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1486
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1486
+Name     A Secret Path~
+Sector   trail~
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog.
+~
+#EXIT
+Direction east~
+ToRoom    1485
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1495
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1487
+#ENDEXIT
+
+Reset M 0 1417 1 1486
+#ENDROOM
+
+#ROOM
+Vnum     1487
+Name     A Secret Path~
+Sector   trail~
+Desc     This path is barely visible and must have fallen out of popularity
+for some reason. The vegetation has almost completely reclaimed
+it. Willow trees are blanketed in layers of heavy white material,
+which restricts the swaying of their branches.
+~
+#EXIT
+Direction west~
+ToRoom    1461
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1486
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1488
+Name     A Spider's Den~
+Sector   forest~
+Desc     This area is covered in layers of thick webbing from the ground
+to the highest level of the willow trees. It creates almost an
+enclosed space of the creature making the web. The air is very
+still and not much noise can be heard nearby.
+~
+#EXIT
+Direction north~
+ToRoom    1491
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1485
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1489
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1490
+#ENDEXIT
+
+Reset O 0 1433 1 1488
+#ENDROOM
+
+#ROOM
+Vnum     1489
+Name     A Spider's Den~
+Sector   forest~
+Desc     This area is covered in layers of thick webbing from the ground
+to the highest level of the willow trees. It creates almost an
+enclosed space of the creature making the web. The air is very
+still and not much noise can be heard nearby.
+~
+#EXIT
+Direction north~
+ToRoom    1490
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1488
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1491
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1490
+Name     A Spider's Den~
+Sector   forest~
+Desc     This area is covered in layers of thick webbing from the ground
+to the highest level of the willow trees. It creates almost an
+enclosed space of the creature making the web. The air is very
+still and not much noise can be heard nearby.
+~
+#EXIT
+Direction north~
+ToRoom    1493
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1491
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1489
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1492
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1488
+#ENDEXIT
+
+Reset O 0 1432 2 1490
+#ENDROOM
+
+#ROOM
+Vnum     1491
+Name     A Spider's Den~
+Sector   forest~
+Desc     This area is covered in layers of thick webbing from the ground
+to the highest level of the willow trees. It creates almost an
+enclosed space of the creature making the web. The air is very
+still and not much noise can be heard nearby.
+~
+#EXIT
+Direction north~
+ToRoom    1492
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1488
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1490
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1493
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1489
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1492
+Name     A Spider's Den~
+Sector   forest~
+Desc     This area is covered in layers of thick webbing from the ground
+to the highest level of the willow trees. It creates almost an
+enclosed space of the creature making the web. The air is very
+still and not much noise can be heard nearby.
+~
+#EXIT
+Direction south~
+ToRoom    1491
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1493
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1490
+#ENDEXIT
+
+Reset M 0 1415 1 1492
+#ENDROOM
+
+#ROOM
+Vnum     1493
+Name     A Spider's Den~
+Sector   forest~
+Desc     This area is covered in layers of thick webbing from the ground
+to the highest level of the willow trees. It creates almost an
+enclosed space of the creature making the web. The air is very
+still and not much noise can be heard nearby.
+~
+#EXIT
+Direction north~
+ToRoom    1494
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1492
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1490
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1491
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1494
+Name     A Secret Path~
+Sector   forest~
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog.
+~
+#EXIT
+Direction north~
+ToRoom    1457
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1493
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1495
+Name     A Secret Path~
+Sector   trail~
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog.
+~
+#EXIT
+Direction north~
+ToRoom    1486
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1496
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1496
+Name     A Secret Path~
+Sector   trail~
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog.
+~
+#EXIT
+Direction northeast~
+ToRoom    1495
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1497
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1497
+Name     A Secret Path~
+Sector   trail~
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog. Through the clearing of fog here and there you can
+begin to see the start of a small village.
+~
+#EXIT
+Direction northeast~
+ToRoom    1496
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1498
+#ENDEXIT
+
+Reset M 0 1418 1 1497
+#ENDROOM
+
+#ROOM
+Vnum     1498
+Name     A Secret Path~
+Sector   trail~
+Desc     This appears to be a popular path that has fallen out of use over
+time. The vegetation has tried to reclaim it, leaving only the
+faintest remnants of the original trail. Willow trees covered in
+white material dot about the trail, swaying hauntingly in the
+wind and fog. Through the clearing of fog here and there you can
+begin to see a small road of a village to the west. Tall grasses
+obscure the entrance of the secret trail to the villagers.
+~
+#EXIT
+Direction northeast~
+ToRoom    1497
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1463
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1499
+Name     A Fairy Plane~
+Sector   city~
+Flags    nomob norecall nosummon noastral nosupplicate~
+Desc     This place was created by fairies who need to escape when the normal
+world tries to hunt them down or hurt them. It looks like an
+endless field of flowers.
+~
+Reset M 0 1499 1 1499
+Reset O 0 1499 1 1499
+#ENDROOM
+
+#ENDAREA

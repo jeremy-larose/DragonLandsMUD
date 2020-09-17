@@ -1,0 +1,265 @@
+#PLAYER
+Version      5
+Name         Arahele~
+Sex          2
+Class        0
+Multiclass 0 5
+Race         12
+Adjective    a fair, auburn haired female half-elf~
+Age          0 18 8 679
+Languages    1 1
+Level        5
+Played       11016
+Room         1872
+HpManaMove   62 42 100 100 30 30
+ClassValues  0 0
+Gold         86
+Silver       0
+Copper       21
+Exp          6595
+Height          65
+Weight          141
+Act          1644168776
+AffectedBy   66048
+Position     113
+Style     2
+Practice     0
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    6
+Favor        179
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -420
+Speechcolor  6
+Resistant    3072
+Mentalstate  0
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Title         the Not set.~
+Deity	     Amunar~
+Flags        32803
+PKills       0
+PDeaths      0
+MKills       76
+MDeaths      1
+IllegalPK    0
+Timezone     -1
+AttrPerm     12 16 10 14 13 16 7
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 
+Condition    0 9 24 15
+Background    0
+Greeted        Saeris~
+Prepped       'mage armor' 1 -1
+Prepped       'magic missile' 1 -1
+Site         75.38.141.125
+Proficiency  100 'arcana'
+Spell        100 'blade ward'
+Tongue       100 'common'
+Spell        100 'create bonfire'
+Spell        100 'dancing lights'
+Spell        100 'darkvision'
+Spell        100 'detect hidden'
+Spell        100 'detect magic'
+Tongue       100 'elvish'
+Spell        100 'firebolt'
+Spell        100 'ghost sound'
+Skill        100 'hide'
+Proficiency  100 'investigation'
+Spell        100 'lightning lure'
+Spell        100 'mage armor'
+Spell        100 'magic alarm'
+Spell        100 'magic missile'
+Spell        100 'produce flame'
+Skill        100 'scan'
+Skill        100 'sneak'
+Weapon       100 'staves'
+Spell        100 'sword burst'
+Spell        100 'true strike'
+AffectData   'barkskin'  24  16  81 0
+Killed       1586 1
+Killed       1588 3
+Killed       1582 2
+Coordinates	-1 -1 -1 -1
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+Qbit        904 &RNewbie: You learned about the history of the planes (HELP AERIX).&w~
+Qbit        905 &RNewbie: You learned about descriptions (HELP DESC).&w~
+Qbit        906 &RNewbie: You learned about adjectives (HELP ADJECTIVE).&w~
+Qbit        907 &RNewbie: You learned about alignments (HELP ALIGNMENT).&w~
+Qbit        908 &RNewbie: You learned about weapons and weapon types (HELP WEAPONS).&w~
+Qbit        909 &RNewbie: You learned about tools and tool kits (HELP TOOLKITS).&w~
+Qbit        911 &RNewbie: You learned about armor and armor types (HELP ARMOR).&w~
+Qbit        910 &RNewbie: You learned about banking (HELP BANKING).&w~
+Qbit        913 &RNewbie: You learned how to use an Inn (HELP INN).&w~
+Qbit        912 &RNewbie: You learned how to practice new spell/skills/languages (HELP PRACTICE).&w~
+Qbit        914 &RNewbie: You learned about deities and the benefits of faith (HELP DEITIES).&w~
+Qbit        902 &RNewbie: You learned about fighting and spells from a wise wizard.&w~
+Qbit        903 &RNewbie: You won your first battle against a kobold on a rocky path!~
+Qbit        901 &RNewbie: You helped a treasure hunter and were rewarded for aiding her.&w~
+Qbit        2599 &WYou graduated from the &RNe&Yw D&zark&Whave&zn C&Yolle&Rge&W of Adventuring.&w~
+Qbit        2594 &WYou have access to the &RNe&Yw D&zark&Whave&zn C&Yolle&Rge's&W Advanced Combat Center.~
+Qbit        2597 &YYou are an alumni member of the Wands College Dormitory.&w~
+Qbit        1547 &OYou are finding snakeskins for "Lady" Meersha in the sewers for money.~
+End
+
+#OBJECT
+Vnum         107
+WearLoc      26
+Level        1
+Coords	-1 -1 -1
+Values       12 1 6 2 -1 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         1224
+WearLoc      3
+Level        1
+Coords	-1 -1 -1
+Values       100 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         853
+WearLoc      1
+Coords	-1 -1 -1
+Values2      0 2
+End
+
+#OBJECT
+Vnum         2519
+WearLoc      22
+Level        1
+Coords	-1 -1 -1
+Values       20 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2522
+Level        1
+Coords	-1 -1 -1
+Values       24 76 80 45 0 0
+Values2      0 2
+Spell 1      'bulls strength'
+Spell 2      'cats grace'
+Spell 3      'bears endurance'
+End
+
+#OBJECT
+Nest         1
+Vnum         2523
+Level        1
+Coords	-1 -1 -1
+Values       25 266 -1 -1 0 0
+Values2      0 2
+Spell 1      'greater heroism'
+End
+
+#OBJECT
+Nest         1
+Vnum         854
+Level        1
+Coords	-1 -1 -1
+Values       14 132 -1 -1 0 0
+Values2      0 2
+Spell 1      'cure serious wounds'
+End
+
+#OBJECT
+Nest         1
+Vnum         200
+Level        1
+Coords	-1 -1 -1
+Values       5 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2525
+Level        1
+Coords	-1 -1 -1
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         1651
+Level        1
+Coords	-1 -1 -1
+Values       15 9 0 0 0 0
+Values2      0 1
+End
+
+#OBJECT
+Nest         1
+Count        2
+Vnum         1681
+Level        1
+Coords	-1 -1 -1
+Values       25 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         2511
+WearLoc      5
+Level        1
+Coords	-1 -1 -1
+Values       3 3 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2512
+WearLoc      7
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2513
+WearLoc      8
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2517
+WearLoc      13
+Level        1
+Coords	-1 -1 -1
+Values       3 3 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2504
+WearLoc      12
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2500
+WearLoc      4
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#END

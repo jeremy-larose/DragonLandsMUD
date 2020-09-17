@@ -1,0 +1,2806 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Taverns of the Realms~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 38934000
+ResetMsg     &OYou hear the sounds of travelers nearby...~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       3450
+Keywords   rhasuram ooc inn clerk voluptuous raven black woman hair~
+Short      &zRhasuram&w~
+Long       &zA voluptuous woman with raven black hair is here working as the inn clerk.&w
+~
+Desc       &wThe woman before you is quite voluptuous at her hips and breasts,
+which garner attention wherever she goes. She has her wild raven
+black hair swept up and pinned away from her face. This reveals
+her mature, beautiful face speckled with tiny freckles and sparkling
+green eyes.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     200 25 0 0 14 400 20 100 50 0
+Stats2     10 10 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 16 14 12 15 18 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from below.~
+Comlist   wink $n
+mpsleep 2
+sayto $n Greetings dearie! Welcome to the Whispering Mountains Inn.
+sayto $n Let me know if you are interested in a room to rent.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   smile $n
+sayto $n I hope you enjoyed your stay! Safe travels dearie!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3451
+Keywords   tavern bar tender young man~
+Short      &wa young bartender&w~
+Long       &wA young man is here working as the tavern's bartender.&w
+~
+Desc       &wThis young man is here working as the tavern's bartender in order
+to earn a decent wage. He is handsome with a strong jawline and tender
+looking brown eyes. His blonde hair has been cut short and he is
+wearing a white tunic with brown trousers. 
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     -400 50 0 0 14 0 10 90 50 0
+Stats2     10 10 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    10 13 13 18 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 10 2
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+msleep 3
+sayto $n Can I offer you something to eat or drink?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3452
+Keywords   shaggy old dog Sparky~
+Short      &Oa shaggy old dog&w~
+Long       &OA shaggy old dog is here resting on the wood porch of the cottage.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden~
+Stats1     800 1 0 0 10 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 4 1
+Stats4     2 1 1 0 0 0 6
+Attribs    10 13 13 14 13 13 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isevil($n)
+mea $n &OThe old dog looks up at you and begins barking loudly.
+mpechoaround $n &OThe old dog begins barking while staring at $n.&w
+mpasound &OYou hear the sounds of a dog barking nearby...&w
+mpsleep 5
+mpat 3461 mpforce hazel emote sighs and begins yelling at her dog outside
+mpecho &gYou hear someone inside the cottage yell for the dog to stop.
+mpsleep 3
+emote grumbles and pouts as he lays his head back on the cottage's porch
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3453
+Keywords   whispering mountains stable hand ~
+Short      &w a stable hand&w~
+Long       &wA stable hand is here tending to some horses.&w
+~
+Desc       &wThis stable hand is very young looking and moves about the stables
+working on various projects. He has long brown hair and tan skin that
+contrasts with his sky blue eyes.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 10 30 40 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+sayto $n To board your horse it costs 10 silver.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3454
+Keywords   smoking parlor clerk inn~
+Short      a newly created smoking parlor clerk inn~
+Long       Some god abandoned a newly created smoking parlor clerk inn here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       3455
+Keywords   golden acorn stable hand~
+Short      &Ya stable hand&w~
+Long       &YA stable hand is here tending to some horses.&w
+~
+Desc       &wThis stable hand is very young looking and moves about the stables
+working on various projects. He has long brown hair and tan skin that
+contrasts with his sky blue eyes.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 10 30 40 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+sayto $n I can stable your mount for you. Let me know if you'd like to.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3456
+Keywords   Palazi ooc halfling female blonde hair inn clerk~
+Short      &YPalazi&w~
+Long       &YA kind looking female halfling is here working as the inn clerk.&w
+~
+Desc       &YThis female halfling has a kind looking face with dark brown eyes
+that stand out from her pale ivory skin. She is not very tall and uses
+a stool to help boost her above the counter used to check in people.
+She seems capable despite looking very young.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     200 25 0 0 14 400 20 100 50 0
+Stats2     10 10 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 16 14 12 15 18 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   smile $n
+mpsleep 3
+sayto $n Greetings! Welcome to the Golden Acorn Inn. Let me know if
+sayto $n you are interested in staying here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   smile $n
+mpsleep 3
+sayto $n I hope you had a restful stay! Be safe on your travels and
+sayto $n please come again soon.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3457
+Keywords   tavern bartender halfling woman ~
+Short      &Ya bartender&w~
+Long       &YA halfling woman is here working as the tavern's bartender.&w
+~
+Desc       &YTHis young halfling woman is dressed in bright green garments to
+help her stand out to the customers. She is quite beautiful with
+big expressive dark green eyes and reddish chestnut brown hair. She
+uses a stool to reach much of the higher reaches of the tavern
+while she works.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     600 50 0 0 14 0 10 90 50 0
+Stats2     10 10 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    10 13 13 18 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 9 2
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote finishes drying off a tavern mug and nods her head
+mpsleep 3
+sayto $n What can I get you?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3458
+Keywords   store clerk tavern inn older halfling man~
+Short      &Ya store clerk&w~
+Long       &YA store clerk is here helping travelers with their needs.
+~
+Desc       This older looking male halfling is sitting on a large wooden stool
+as he waits for customers to arrive. He has frizzy grey hair that he
+allows to do whatever it wishes in terms of style. His bushy eyebrows
+match the wild nature of his features. 
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     400 1 0 0 10 0 10 90 20 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+sayto $n Is there something I can interest you in, traveler?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3459
+Keywords   bard halfling entertainer male~
+Short      &Ca halfling bard&w~
+Long       &CA male halfling is here entertaining the tavern with his music and jokes.&w
+~
+Race       stout-halfling~
+Class      bard~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel~
+Affected   detect_hidden~
+Stats1     450 1 5 0 14 0 5 100 100 0
+Stats2     10 10 10
+Stats3     1 8 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 12 14 18 12 20 18
+Saves      0 0 0 0 0 0
+Speaks     halfling~
+Speaking   halfling~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpecho &CThe halfling bard smiles and begins a tune on his instrument.
+mpasound &CYou hear the sounds of music coming from nearby...&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 3463
+mpecho &cA halfling arrives from above where the rooms are located.
+n
+emote walks over to the fireplace and sets up a spot for himself for the night
+mpsleep 2
+sayto bar Nothing right now. Perhaps later.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   yawn
+mpsleep 3
+emote cleans up his spot, collects his earnings, and leaves the tavern
+s
+mpecho &cThe halfling heads up some stairs to the rooms above.
+mpgoto 3499
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3460
+Keywords   Avisi inn clerk elderly old woman white hair curly~
+Short      &GAvisi&w~
+Long       &GAn elderly woman with bright white curly hair is here folding laundry.&w
+~
+Desc       &GThe woman before you is quite mobile despite her advanced years. She
+has white curly hair that seems to still have a mind of its own. She
+keeps pieces of it pinned back while she works around the inn. A kind
+looking face with grey eyes greets everyone who comes to this inn.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     200 25 0 0 14 400 20 100 50 0
+Stats2     10 10 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 16 14 12 15 18 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   if race($n) == halfling
+nod $n
+sayto $n You are welcome here. Do not cause any trouble.
+else
+smile $n
+sayto $n How can I help you today? We have a lovely selection of
+sayto $n rooms still available if you desire. Let me know.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   if race($n) == halfling
+nod $n
+else
+smile $n
+sayto $n I hope you enjoyed your stay. Safe travels.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3461
+Keywords   old older halfling man cook broken arrow inn fireplace~
+Short      &Ga cook&w~
+Long       &GAn older halfling man is here stirring a pot of food over by a fireplace.
+~
+Desc       &GThis wise looking halfling man is employed by the inn to cook food
+for the patrons. He is dressed in simple cotton clothing that has many
+stains on it from years of cooking. He moves about the kitchen with
+an uncanny speed as he cooks.
+~
+Lore       &GYou see a younger halfling man agree to some terms given by a young
+female outside of a building being constructed. The halfling man's family
+disappears into the grasslands ahead of the construction zone and are
+never seen again...
+~
+Race       stout-halfling~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 10 0 0 0
+Stats2     10 4 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 6 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+sayto $n If you want food, let me know.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3462
+Keywords   chandin young man mustache behind counter inn clerk~
+Short      &WChandin&w~
+Long       &WA young man with a big mustache is here working behind a counter.&w
+~
+Desc       &WThis young man has a large black colored mustache that matches his
+slicked back raven locks on his head. He is dressed in a dark outfit
+as he worked behind the counter. He greets all guests and helps them
+with their needs during their stay.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     -850 25 0 0 14 400 20 100 50 0
+Stats2     10 10 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 16 14 12 15 18 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   grin $n
+sayto $n Welcome to the Spider's Web. How can I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   nod $n
+sayto $n Safe travels to you and thank you for staying.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3463
+Keywords   spider web bartender male human curly blonde hair young~
+Short      &Wa bartender&w~
+Long       &WA bartender with light blonde hair is here serving drinks to customers.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     -600 50 0 0 10 0 10 0 0 0
+Stats2     10 3 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 2
+wink $n
+sayto $n What can I get you to drink?
+else
+nod $n
+sayto $n What can I get you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3464
+Keywords   Govan older man inn clerk muscular eye patch~
+Short      &pGovan&w~
+Long       &pAn older man with an eye patch is here waiting to help customers.&w
+~
+Desc       &pThis older human man is very muscular, which his clothing fails to
+hide from view. His left eye has a simple looking eye patch over it and
+he seems to always be in a gruff mood. His long hair is tied back to allow
+him to work without it getting in his way.
+~
+Lore       &pYou see a man battling a horde of trolls when suddenly one claws
+at the man's face. He bellow in pain and looks forward to reveal he
+has lost one of his eyes. He raises his axe and yells as he continues
+to fight...&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     -850 25 0 0 14 400 20 100 50 0
+Stats2     10 10 5
+Stats3     1 9 1
+Stats4     2 0 1 0 0 0 6
+Attribs    25 16 14 12 15 18 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   nod $n
+sayto $n Welcome to the Wandering Soul. How can I help ye?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p trolls~
+Comlist   spit
+sayto $n Do not talk about such unless you're removing their heads!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   nod $n
+sayto $n Safe travels to ye.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3465
+Keywords   young man bartender cleaning tables~
+Short      &pa bartender&w~
+Long       &pA bartender is here cleaning up some tables as he waits for a customer.&w
+~
+Desc       &pThis young man is dressed in simple clothing as he works around the
+bar cleaning tables, serving drinks and food, or chatting with locals.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 10 0 0 0
+Stats2     10 3 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+sayto $n How can I help ye today?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3466
+Keywords   Tika halfelf female tall inn clerk~
+Short      &PTika&w~
+Long       &PA tall halfelf woman is working on some paperwork at a table here.&w
+~
+Desc       &PThis female halfelf looks very busy as she works on various papers
+on a table. She has slightly pointed ears, which she uses to part her
+long black tresses away from her face. She is dressed in simple leather
+armor mixed with cotton clothing.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     200 25 0 0 14 400 20 100 50 0
+Stats2     10 10 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 16 14 12 15 18 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   nod $n
+sayto $n Welcome to the Wild Pony Inn. How can I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   nod $n
+sayto $n Thank you for staying. Safe travels.
+mpsleep 3
+emote returns to her paper work on the table before her
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3467
+Keywords   fynar older human man retired ranger inn clerk~
+Short      &gFynar&w~
+Long       &gAn older looking human man is here resting by a large counter.&w
+~
+Desc       &gThis male human appears to be a retired ranger with his long beard
+and frizzy hair. He wears simple leather armor over his clothing as if
+he is still waiting for something to happen. He spends much of his time
+resting his eyes by the front desk.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     200 25 0 0 14 400 20 100 50 0
+Stats2     10 10 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    14 16 14 12 15 18 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   emote snorts as he snaps awake from his nap
+mpsleep 3
+sayto $n Greetings! Welcome to the Silver Rose. How can I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   emote rubs his sleepy looking eyes and nods his head
+mpsleep 2
+sayto $n Thank you for staying. Safe travels to you.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   snore
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3468
+Keywords   worried looking woman fur cloak drinking ale bar mom momwmi22~
+Short      &wa woman&w~
+Long       &wA worried looking woman in a fur cloak is here drinking at the bar.&w
+~
+Desc       &wThis woman is quite beautiful with long reddish hair that has been
+braided into a thick braid. She wears simple cotton clothing while
+wearing a thick cloak made of bear fur to keep her warm.
+~
+Lore       &wYou see this woman arguing with a young blonde man before
+he turns and walks off into the mountains before him.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden~
+Stats1     800 50 0 0 10 0 0 2 5 0
+Stats2     1 10 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 15
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 4803
+if hasqbit($n) != 4802
+if hasqbit($n) != 4801
+if hasqbit($n) != 4800
+glance $n
+mpsleep 2
+sayto $n Perhaps you could hear my tale and maybe help me?
+else
+sayto $n Have you found my son yet?
+endif
+else
+sayto $n Have you found my son yet?
+endif
+else
+mea $n &wA woman raises a flagon of ale at you.
+mer $n &wA woman raises a flagon of ale at &w$n&w.
+sayto $n Thank you again.
+endif
+else
+mea $n &wA woman raises a flagon of ale at you.
+mer $n &wA woman raises a flagon of ale at &w$n&w.
+sayto $n Thank you again.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 4803
+if hasqbit($n) != 4802
+if hasqbit($n) != 4801
+if hasqbit($n) != 4800
+sigh
+mpsleep 2
+sayto $n It is my son. We had a disagreement about him wanting
+sayto $n to check the mines. He heard some rumor and set off to
+sayto $n check them. His father worked there befoe they were
+sayto $n closed. Since my husband's passing he views them as
+sayto $n sacred and wanted to see what was happening.
+mpsleep 2
+sayto $n Please.. see if you can find him and bring him back
+sayto $n to me... I am so worried about him.
+mpqset $n 4800
+else
+sayto $n Have you found him?
+endif
+else
+gasp
+sayto $n What have you found out? Where is he?
+emote looks past you as she tries to find her son.
+sayto $n Where is he?!
+endif
+else
+sayto $n Thank you again.
+endif
+else
+sayto $n Thank you again.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p dead~
+Comlist   if hasqbit($n) == 4801
+mea $n &wThe woman with the fur cloak looks at you speechless for awhile.
+mer $n &wThe woman with the fur cloak looks at $n&w for a few moments.
+mpsleep 3
+sayto $n I.. I prayed so hard for his return and Qylaith took him
+sayto $n from me..
+mpsleep 3
+mpecho &wThe woman slams her hands on the bar angrily.&w
+mpsleep 3
+sayto $n How did it happen.. no.. WHO did it? Who?!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p goblin~
+Comlist   if hasqbit($n) == 4801
+sigh
+mpsleep 2
+mpecho The woman stares at her empty drink before speaking.
+mpsleep 2
+sayto $n You know.. his father told us this would happen.. He knew
+sayto $n once the mines closed it would be used by some sort of
+sayto $n creature.. I never knew it would be goblins.
+mpsleep 2
+sayto $n Thank you. I do not mean to take my grief out on
+sayto $n you. It helps to know what actually happened.
+mpsleep 2
+sayto $n Please let me know if you found his body. I would like
+sayto $n to put him at rest. Until then I will drink and heal with time.
+mpecho &wThe woman turns back to the bar and orders another drink.
+mpqset $n 4801
+mpqset $n 4802
+mpadvance $n 500
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p goblins~
+Comlist   if hasqbit($n) == 4801
+sigh
+mpsleep 2
+mpecho The woman stares at her empty drink before speaking.
+mpsleep 2
+sayto $n You know.. his father told us this would happen.. He knew
+sayto $n once the mines closed it would be used by some sort of
+sayto $n creature.. I never knew it would be goblins.
+mpsleep 2
+sayto $n Thank you. I do not mean to take my grief out on
+sayto $n you. It helps to know what actually happened.
+mpsleep 2
+sayto $n Please let me know if you found his body. I would like
+sayto $n to put him at rest. Until then I will drink and heal with time.
+mpecho &wThe woman turns back to the bar and orders another drink.
+mpqset $n 4801
+mpqset $n 4802
+mpadvance $n 500
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 4802
+if ovnuminv(4808) == 1
+mpecho &wThe woman holds the remains of her son and stifles her sobs.
+say Oh my poor baby... oh my sweet dear.. Mom will put you to
+say rest now.. I am so sorry we parted on such terms.
+emote kisses the forehead of her deceased son.
+mpsleep 2
+sayto $n I have nothing to offer you other than my praise
+sayto $n for risking your own life to bring me my son.
+sayto $n Thank you. May the gods watch over you.
+mpecho &wThe woman walks out of the tavern with her son's corpse.
+mpadvance $n 1500
+mpqset $n 4802
+mpqset $n 4803
+mpgoto 3499
+mpjunk bodz121
+else
+eye $n
+drop all
+endif
+else
+eye $n
+drop all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 3454
+mpecho &wA fur clad woman enters the tavern and heads to the bar.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpecho &wThe fur clad woman stumbles out of the tavern and heads home.
+mpgoto 3499
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3499
+Keywords   hazel elderly old witch woman stirring cauldron fireplace~
+Short      &gHazel&w~
+Long       &gAn elderly woman is here stirring a cauldron in a fireplace.&w
+~
+Desc       &gThis elderly woman is dressed in soft flowing robes that have been
+patched lovingly over the years in unique patterns. Her hair is almost
+completely grey with streaks of brown and has been left to its own
+devices over the years. Her eyes are glazed over and almost white in
+appearance. She moves about her cottage slowly as she works on various
+projects.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_invis detect_hidden~
+Stats1     0 1 0 0 10 0 0 20 40 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    9 20 20 14 12 14 20
+Saves      0 0 0 0 0 0
+Immune     magic~
+ShopData   0 0 0 0 0 120 90 4 20
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if level($n) < 10
+if hasqbit($n) != 3450
+emote looks up from her cauldron and peers with her glassy eyes
+mpsleep 3
+sayto $n Greetings dearie. May I interest you in some tinctures?
+else
+smile $n
+mpsleep 3
+sayto $n Are you interested in learning more about herbs?
+endif
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if level($n) < 10
+if hasqbit($n) != 3450
+eye
+saytp $n What's that, dearie? You'd like to see my wares?
+else
+smile $n
+sayto $n Very good, dearie! My divine charge in this mortal life is
+sayto $n to provide knowledge of Amunar's gifts... especially herbs.
+sayto $n I would like you to bring me some bubbleweed to begin.
+sayto $n I will give you a hint: It prefers a moist area to grow in.
+sayto $n And none of that store bought crap! I want fresh from the soil!
+mpqset $n 3450
+mpqset $n 3451
+endif
+else
+smile $n
+sayto $n Very good, dearie! My divine charge in this mortal life is
+sayto $n to provide knowledge of Amunar's gifts... especially herbs.
+sayto $n I would like you to bring me some bubbleweed to begin.
+sayto $n I will give you a hint: It prefers a moist area to grow in.
+sayto $n And none of that store bought crap! I want fresh from the soil!
+mpqset $n 3450
+mpqset $n 3451
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     3450
+Keywords wooden sign~
+Type     trash~
+Short    &Oa wooden sign&w~
+Long     &OA wooden sign has been erected here for travelers to see.&w~
+Flags    organic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3451
+Keywords small glass vial bubbleweed extract~
+Type     potion~
+Short    &ca glass vial of bubbleweed extract&w~
+Long     &cA glass vial of herbal extract has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 10 20 90 1 1 0
+Spells   'water breathing' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3452
+Keywords small glass vial arcana bloom extract~
+Type     potion~
+Short    &pa glass vial of arcana bloom extract&w~
+Long     &pA glass vial of herbal extract has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 120 0 0 12 1 0
+Spells   'true seeing' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3453
+Keywords small glass vial frostweed extract~
+Type     potion~
+Short    &Ca glass vial of frostweed extract&w~
+Long     &CA glass vial of herbal extract has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 20 90 0 2 1 0
+Spells   'resist cold' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3454
+Keywords bowl stewed vegetables~
+Type     food~
+Short    &wa bowl of &Ostewed &gvegetables&w~
+Long     &wA bowl of stewed vegetables has been left here.&w~
+WFlags   take onehand~
+Values   8 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 45 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3455
+Keywords plate roast chicken vegetables~
+Type     food~
+Short    &wa plate of &Oroast chicken&w with &Gvegetables&w~
+Long     &wA plate of roast chicken with vegetables has been left here.&w~
+WFlags   take onehand~
+Values   7 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 45 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3456
+Keywords sweet roll dusted powder sugar~
+Type     food~
+Short    &Oa sweet roll dusted with &Wpowdered sugar&w~
+Long     &OA sweet roll dusted with powdered sugar has been left here.&w~
+WFlags   take hold~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3457
+Keywords bottle shadow oil beer~
+Type     drinkcon~
+Short    &wa bottle of "&zShadow Oil&w"~
+Long     &wA bottle of beer labeled "Shadow Oil" has been left here.&w~
+WFlags   take onehand~
+Values   4 4 1 0 0 0
+Values2  0 2
+Stats    1 0 0 35 0 1 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       &zThis beer bottle is made from a dark colored glass and has a slick
+label on it depicting a thief robbing a young couple on the streets
+at night. It has the words "Shadow Oil" splashed on the front of 
+the label in a quirky font. The logo of the Shadowdancer Brewery
+can be seen in the bottom right corner of the label.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3458
+Keywords bottle sky dragon beer~
+Type     drinkcon~
+Short    &Wa bottle of "&CSk&cy Dra&Cgon&W"~
+Long     &CA bottle labeled "Sky Dragon" has been left here.&w~
+WFlags   take hold~
+Values   4 4 4 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       &CThis bottle has been made from cyan colored glass that has a slick
+label depicting a silvery dragon flying through white puffy clouds.
+The words "Sky Dragon" has been written on the top of the label. The
+logo of the Valor Brewhouse can be seen on the bottom of the bottle.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3459
+Keywords flagon house ale~
+Type     drinkcon~
+Short    &Oa flagon of house ale&W~
+Long     &OA flagon of house ale has been left here.&W~
+WFlags   take hold~
+Values   3 3 4 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3460
+Keywords flagon house ale~
+Type     drinkcon~
+Short    &Oa flagon of house ale&W~
+Long     &OA flagon of house ale has been left here.&W~
+WFlags   take hold~
+Values   3 3 4 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3461
+Keywords plate liver onions~
+Type     food~
+Short    &wa plate of &rliver&w and &Wonions&w~
+Long     &wA plate of liver and onions has been left here.&w~
+WFlags   take onehand~
+Values   4 0 0 0 0 0
+Values2  0 2
+Stats    1 0 4 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3462
+Keywords sweet roll drizzled honey~
+Type     food~
+Short    &Oa sweet roll drizzled with &Yhoney&w~
+Long     &OA roll drizzled with honey has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3463
+Keywords fresh garden salad~
+Type     food~
+Short    &Ga fresh garden salad&W~
+Long     &GA fresh garden salad has been left here.&W~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3464
+Keywords bottle paladins virtue beer~
+Type     drinkcon~
+Short    &Wa bottle of "P&wa&Ola&Ydin's V&Oi&wrtu&We"~
+Long     &WA bottle of labeled "Paladin's Virtue" has been left here.~
+WFlags   take hold~
+Values   3 3 4 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       This bottle has been made from shiny white glass that has a slick
+label depicting a Paladin being a hero with the words "Paladin's
+Virtue" written on top. The logo of the Valor Brewhouse can be
+seen at the bottom.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3465
+Keywords bottle tavern trouble beer~
+Type     drinkcon~
+Short    &Pa bottle of "&RTavern Trouble&P"&w~
+Long     &PA bottle labeled "Tavern Trouble" has been left here.&w~
+WFlags   take hold~
+Values   2 2 5 0 0 0
+Values2  0 2
+Stats    1 0 2 50 0 1 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       This bottle has been shaped into a smaller flask shape. It has been
+crafted using a pink glass with swirls of red and purple and has
+as label depiciting a tavern patron being comically thrown out of
+ a tavern. The words "Tavern Trouble" have been printed at the top
+of the label while the logo for the Dark Horse Brewery can be seen
+on the bottom of the label.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3466
+Keywords tin lantern~
+Type     light~
+Short    &Oa tin lantern&W~
+Long     &OA tin lantern has been left here.&W~
+WFlags   take onehand~
+Values   0 0 200 0 0 0
+Values2  0 2
+Stats    1 5 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3467
+Keywords healers kit small~
+Type     trash~
+Short    a small healer's kit~
+Long     A small healer's kit has been left here.~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 5 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3468
+Keywords shovel~
+Type     shovel~
+Short    &wa shovel~
+Long     &wA shovel with a wooden handle used by adventurers has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    3 2 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3469
+Keywords tinderbox~
+Type     tinder~
+Short    a tinderbox~
+Long     A tinderbox full of tools used to create a fire has been left here.&W~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 20 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3470
+Keywords small bonfire ring stones~
+Type     fire~
+Short    &Ra bonfire&w~
+Long     &RA small bonfire contained by a ring of stones is here.~
+Values   45 0 0 0 0 0
+Values2  0 1
+Stats    1000 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3471
+Keywords rough looking hitching post~
+Type     trash~
+Short    &Oa rough looking hitching post&w~
+Long     &OA rough looking hitching post has been erected here many years ago.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    900 0 0 0 0 0 0
+#EXDESC
+ExDescKey    post~
+ExDesc       &OThis hitching post was made of a large tree at one point that is
+slowly decaying from lack of maintenance.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3472
+Keywords hitching post wooden sturdy~
+Type     trash~
+Short    &Oa sturdy hitching post&w~
+Long     &OA sturdy looking hitching post has been erected here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    900 0 0 0 0 0 0
+#EXDESC
+ExDescKey    post~
+ExDesc       &OThis hitching post was made of a large tree at one point that is
+slowly decaying from lack of maintenance.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3499
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3450
+Name     &OA Rocky Path&w~
+Sector   trail~
+Stats    0 0 0 0 16 0
+Desc     This is a path in the Whispering Mountains, which leads to a large 
+stone building towards the north. The building is quite large and
+resembles an inn for travelers to rest before continuing on their
+journey. The mountains behind the building serve as an impressive
+backdrop of splendor and scale. The path here moves through the
+rocks and provides natural like steps along the way.
+~
+Perdesc  &gYou spot a faint path to the northeast leading into the mountains.
+~
+#EXIT
+Direction north~
+ToRoom    3451
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30000
+Flags     overland~
+MapX      425
+MapY      760
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3456
+Flags     secret hidden~
+#ENDEXIT
+
+Reset O 0 3450 1 3450
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OThe sign points towards the north and reads:
+"Welcome to the Whispering Mountains Inn & Tavern"
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     3451
+Name     &wBefore a Large Inn&w~
+Sector   hills~
+Desc     The rocky path ends here at the base of a small hill that an impressively
+big inn has been established. The inn is constructed completely of large
+stones and wood. The style of the inn is old and the inn itself seems to
+have been in business for a very long time. A staircase has been carved
+into the rocky hilltop leading up to the inn itself. To the west is a
+large stables for travelers to board their horses during their stay.
+~
+#EXIT
+Direction south~
+ToRoom    3450
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3470
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3452
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 0 3472 1 3451
+Reset D 0 3451 4 1
+#ENDROOM
+
+#ROOM
+Vnum     3452
+Name     &wThe Whispering Mountains Inn & Tavern&w~
+Sector   indoors~
+Desc     This inn is very old and has been patched up over the years. Long
+cracks can be seen running along the white walls from the mountain
+moving and settling. A metal cook stove has been placed in this room
+to provide heat and to help warm up things like tea for guests. The walls
+are barren of artwork and other decorations. The inn itself is purely
+focused on serving its customers before they move forward on their
+journey. A staircase leads up to the bedrooms assigned to the paying
+customers only. A small parlor can be seen to the east while a sizable
+tavern is located to the west.
+~
+#EXIT
+Direction east~
+ToRoom    3455
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3454
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3451
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3450 1 3452
+Reset D 0 3452 5 1
+#ENDROOM
+
+#ROOM
+Vnum     3453
+Name     &wA Small Bedroom&w~
+Sector   indoors~
+Desc     This is a small bedroom that has enough room for a bed, chest, a table
+near a window facing the east end of the inn, and a small fireplace to
+help provide heat during the cold nights. There are no other furnishings
+in the room or decorations. The walls are white and there are a few
+cracks in the ceiling that have formed over time. The bed features the
+only color, which is a brightly colored quilt that is thick and warm.
+~
+#EXIT
+Direction east~
+ToRoom    3457
+Flags     hidden window~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3452
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3454
+Name     &wA Tavern&w~
+Sector   indoors~
+Desc     This tavern continues with the same focus on functionality over things
+such as aesthetics. The walls are white and show the same cracks as
+other rooms. The dark wooden floors have been scratched and scuffed
+from years of the tables and chairs being moved around. An old bar
+can be seen towards the north wall, which is in front of the inn's
+kitchen. A large stone fireplace is located at the west end of the
+tavern and is a popular spot for people to gather to talk during
+the night hours.
+~
+#EXIT
+Direction east~
+ToRoom    3452
+#ENDEXIT
+
+Reset M 0 3451 1 3454
+  Reset G 0 3459 1
+  Reset G 0 3456 1
+  Reset G 0 3458 1
+  Reset G 0 3457 1
+  Reset G 0 3454 1
+  Reset G 0 3455 1
+Reset M 0 3468 1 3454
+#ENDROOM
+
+#ROOM
+Vnum     3455
+Name     &wA Cozy Parlor &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob nomagic safe noastral~
+Stats    0 0 0 0 10 0
+Desc     The parlor here is small and offers a limited amount of seating, which
+have been placed in front of the fireplace. Most customers who cannot
+sit congregate near the fireplace for warmth and conversation. The 
+white walls of the inn continue to show cracks due to age and lack of
+continued maintenance. The wood floors have been scratched from the
+furniture constantly moving around the parlor.
+~
+Perdesc  &wYou spot a &Wsign&w near the entrance of the parlor.&w
+~
+#EXIT
+Direction west~
+ToRoom    3452
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WHello!
+
+&YThis location is one of many &R-{(OOC)}-&Y locations across the lands.
+Each major civilization and some minor villages have such locations
+where you will be able to see/use the global &RChat&Y command along with
+the OOC channels such as &ROsay&Y and &ROtell.&Y While at these locations 
+you can enjoy the company of other characters taking a break from RP and 
+talk OOC. 
+ 
+Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. Please review &RHELP OOC&Y for more information on the rules.
+
+And when anyone last saw you.. you were "headed off to some
+tavern or inn in town."
+ 
+Thanks!
+&WThe DLoC Admin Team
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 10
+mea $n &RThis is an OOC area. Please see HELP ROLEPLAY for more information.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3456
+Name     &OA Rocky Path&w~
+Sector   trail~
+Desc     This is a rocky path that leads up the side of a hill that is part
+of the Whispering Mountains. The mountains are known for their strong
+bouts of fog and rain so the sides of the mountain and this hill are
+lush with green foliage. The path continues faintly towards the east
+while it returns back to the southwest, which is before a large inn.
+~
+#EXIT
+Direction east~
+ToRoom    3457
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3450
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3457
+Name     &OA Rocky Path&w~
+Sector   trail~
+Desc     This path continues up the side of a steep rocky hill to some unknown
+destination. The fog is particularly thick here and can obscure the
+view of the valley below or the mountain tops nearby. The smell of 
+burning wood can be detected from somewhere nearby as well.
+~
+#EXIT
+Direction west~
+ToRoom    3456
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3458
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3458
+Name     &OA Rocky Path&w~
+Sector   trail~
+Desc     The path is starting to round the rocky hill here and the top is starting
+to come into view. The fog parts every so often to reveal an old cottage
+nestled into the top of the hill ahead. Every so often the view of the
+valley below is breathtaking and one can see the sea from here as well.
+~
+#EXIT
+Direction east~
+ToRoom    3459
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3457
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3459
+Name     &OA Rocky Path&w~
+Sector   trail~
+Desc     The top of the hill is ahead where a small white cottage has been
+built many years ago. The rocky path continues back to the west,
+which leads back down to where an inn is located. The views from this
+high point are breathtaking and many artists could develop masterpiece
+art depicting the magnificent landscape here. The fog rolls around 
+smoothly and quickly as the wind carries it to a new destination.
+~
+#EXIT
+Direction north~
+ToRoom    3460
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3458
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3460
+Name     &gA Small Cottage&w~
+Sector   trail~
+Desc     The cottage ahead is located at the top of a large hill and overlooks
+much of the valley below when the fog parts. The cottage has been created
+with stacked rocks and has been painted white. It has an old thatched
+roof and some windows to allow light inside. A small wooden porch is
+located at the front and is covered to provide shelter during rain or
+snow.
+~
+#EXIT
+Direction north~
+ToRoom    3461
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3459
+#ENDEXIT
+
+Reset M 0 3452 1 3460
+Reset D 0 3460 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3461
+Name     &gInside a Small Cottage&w~
+Sector   indoors~
+Desc     The cottage here is full of old furniture and a large altar to the
+goddess Amunar. Several herbs have been hung from the low rafters above
+to dry and become prepared for other things such as potions or tinctures.
+The cottage itself has a strong herbal scent that can overwhelm the senses
+upon entering. There is a large fireplace where a roaring fire is located.
+A cauldron has been placed in the fireplace and there is something new
+brewing inside it. A small twin size bed is located along the east wall
+for the owner of the cottage to sleep.
+~
+#EXIT
+Direction south~
+ToRoom    3460
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3499 1 3461
+  Reset G 0 3453 1
+  Reset G 0 3451 1
+  Reset G 0 3452 1
+Reset D 0 3461 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3462
+Name     Before a Large Inn~
+Sector   field~
+Stats    0 0 0 0 20 0
+Desc     A large stone building comprised of several floors is before you. The
+building itself is made from a combination of wood and stone. The wood
+portions of the inn have been painted a golden yellow tone, which stands
+out against the forest all around it. A similar yellow building is located
+to the east of here where horses are held. To the south is the long road
+that runs to the east and west as it cuts through the forest.
+~
+Perdesc  &gYou spot a faded path to the northwest leading around the inn...&w
+~
+#EXIT
+Direction north~
+ToRoom    3463
+Keywords  'large yellow door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3468
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      274
+MapY      769
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3472
+Flags     secret hidden~
+#ENDEXIT
+
+Reset O 0 3450 1 3462
+Reset D 0 3462 0 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OThe sign originally pointed north, but the point has been torn off.
+The writing is hard to make out and you manage to read:
+"Welcome to the Golden Acorn."
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     3463
+Name     &YThe Golden Acorn Inn & Tavern&w~
+Sector   indoors~
+Desc     &OThe entry way of this inn is quaint with a fireplace against the western
+wall offering warmth and light during the night. A desk for travelers to
+see lodging is located towards the back of the entry. A short hallway
+leads to a supply store to the left and a cozy looking parlor to the
+right. The sounds of a bustling tavern can be heard towards the north
+past the clerk's desk. The walls of this entry are decorated with 
+paintings of landscapes and tapestries depicting hard working halflings.
+~
+#EXIT
+Direction north~
+ToRoom    3465
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3467
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3462
+Keywords  'large yellow door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3466
+#ENDEXIT
+
+Reset M 0 3456 1 3463
+Reset D 0 3463 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3464
+Name     &YA Small Bedroom&w~
+Sector   indoors~
+Desc     &OThis bedroom is large enough for a bed, one chest of drawers, and
+a small table by a window against the southern wall of the room. The
+window overlooks the front of the inn and provides much light during
+the day. The room has been scented with various herbs to help provide
+a relaxing effect on those that stay here. It is an adequate space for
+the price and there is many decorations on the walls and on the table
+to add a nice home like touch.
+~
+#EXIT
+Direction south~
+ToRoom    3462
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3463
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3465
+Name     &YA Tavern&w~
+Sector   indoors~
+Desc     &OThe tavern portion of the Golden Acorn is a large room with a central
+fireplace so that all patrons can be warm. The fireplace has been crafted
+with stones brought from the north and the jagged edges have been sanded
+off. A bar to obtain food and drink is located at the far northern wall
+of the tavern and there are tables with chairs all over. The walls are
+decorated with tapestries, paintings, and the heads of animals from
+hunts done in the past.
+~
+Nightdesc  &OThe tavern portion of the Golden Acorn is a large room with a central
+fireplace so that all patrons can be warm. The fireplace has been crafted
+with stones brought from the north and the jagged edges have been sanded
+off. A bar to obtain food and drink is located at the far northern wall
+of the tavern and there are tables with chairs all over. The walls are
+decorated with tapestries, paintings, and the heads of animals from
+hunts done in the past. Many of the tables are occupied with customers 
+who have come to visit the inn for the evening. A bard is here playing
+music for the inn and offering the occasional dirty joke for customers.
+~
+#EXIT
+Direction south~
+ToRoom    3463
+#ENDEXIT
+
+Reset M 0 3457 1 3465
+  Reset G 0 3462 1
+  Reset G 0 3465 1
+  Reset G 0 3463 1
+  Reset G 0 3460 1
+  Reset G 0 3464 1
+  Reset G 0 3461 1
+#ENDROOM
+
+#ROOM
+Vnum     3466
+Name     &YA Travel Supply Store&w~
+Sector   indoors~
+Desc     &OThis store is a newer addition to the inn and adds a valuable service
+to those that live near here. The shelves and several tables are stocked
+with supplies for those traveling through these parts or products for
+those homesteading in the wilderness. A table where customers can 
+purchase their goods is located near the western wall of the store.
+~
+#EXIT
+Direction east~
+ToRoom    3463
+#ENDEXIT
+
+Reset M 0 3458 1 3466
+  Reset G 0 3466 1
+  Reset G 0 3467 1
+  Reset G 0 3468 1
+  Reset G 0 3469 1
+#ENDROOM
+
+#ROOM
+Vnum     3467
+Name     &YA Cozy Parlor &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob nomagic safe noastral~
+Stats    0 0 0 0 10 0
+Desc     &OThis parlor has been set up to allow several people to sit and
+relax next to a stone fireplace. An animal skin rug can be found in
+the middle of the room with a table sitting on top. Several books
+and trinkets are located on the table. A painting of a strong looking
+halfling warrior is hung near the fireplace. The warrior has on
+golden armor that matches her flaming red locks that are whipping
+wildly in the wind as she raises her sword. 
+~
+Perdesc  &YYou spot a &Wsign&Y near the entrance of the parlor.&w
+~
+#EXIT
+Direction west~
+ToRoom    3463
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WHello!
+
+&YThis location is one of many &R-{(OOC)}-&Y locations across the lands.
+Each major civilization and some minor villages have such locations
+where you will be able to see/use the global &RChat&Y command along with
+the OOC channels such as &ROsay&Y and &ROtell.&Y While at these locations 
+you can enjoy the company of other characters taking a break from RP and 
+talk OOC. 
+ 
+Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. Please review &RHELP OOC&Y for more information on the rules.
+
+And when anyone last saw you.. you were "headed off to some
+tavern or inn in town."
+ 
+Thanks!
+&WThe DLoC Admin Team
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 10
+mea $n &RThis is an OOC area. Please see HELP ROLEPLAY for more information.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3468
+Name     &YThe Golden Acorn Stables&w~
+Sector   indoors~
+Desc     This stable is used by the nearby inn for its customers to board 
+their horses and carriages while resting from their traveling. The
+stables are set up with many of the horses located towards the back
+of the building. A large stock of hay and other things used to take
+care of the animals is located to the south. 
+~
+#EXIT
+Direction west~
+ToRoom    3462
+#ENDEXIT
+
+Reset M 0 3455 1 3468
+#ENDROOM
+
+#ROOM
+Vnum     3469
+Name     &YGolden Acorn Stables Storage&w~
+Sector   city~
+Flags    nomob safe norecall noastral nosupplicate~
+Desc     You should not be here. Contact the admin staff in order to get out.
+~
+#ENDROOM
+
+#ROOM
+Vnum     3470
+Name     &wThe Whispering Mountains Stables~
+Sector   indoors~
+Desc     This stable is used by the nearby inn for its customers to board their
+horses during their stay. The stables have been created by stable large
+stones and then using mortar to fill in the holes. The stables appear
+almost as old as the inn itself. The stalls for the horses have been
+created with ancient wood and each stall has a section above for hay
+or straw to be stored for that particular stall.
+~
+#EXIT
+Direction east~
+ToRoom    3451
+#ENDEXIT
+
+Reset M 0 3453 1 3470
+#ENDROOM
+
+#ROOM
+Vnum     3471
+Name     &wThe Whispering Mountains Stables Storage~
+Sector   city~
+Flags    nomob safe norecall noastral nosupplicate~
+Desc     You should not be in here. Please contact the admin staff in order to
+get out.
+~
+#ENDROOM
+
+#ROOM
+Vnum     3472
+Name     &gA Path&w~
+Sector   trail~
+Desc     This is a faint grassy path that runs along the western side of the
+inn. It is hard to detect at times as the grass has grown quite tall
+along with other shrubbery. A large pine tree grows here as well helping
+to hide much of the path. The path continues to the north and back to
+the front of the inn at the southeast.
+~
+#EXIT
+Direction north~
+ToRoom    3473
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3462
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3473
+Name     &gA Path&w~
+Sector   trail~
+Desc     This is a faint grassy path that runs along the western side of the
+inn. It is hard to detect at times as the grass has grown quite tall
+along with other shrubbery. Several trees are located here as well helping
+to hide much of the path. The path continues to the northeast and back to
+the front of the inn at the south.
+~
+#EXIT
+Direction south~
+ToRoom    3472
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3474
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3474
+Name     &gA Small Clearing&w~
+Sector   trail~
+Desc     The path ends here at a small clearing behind the inn. The clearing
+appears to have been used from time to time by a group of people as
+the grasses have been smashed down. A stump is here from a tree that
+was cut down many years ago. The sounds of the forest can be heard
+all around from this location.
+~
+#EXIT
+Direction southwest~
+ToRoom    3473
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate clearing~
+Comlist   if nature($n) >= 16
+mea $n You notice that the grass here has been recently crushed under
+mea $n the feet of a group of people...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3475
+Name     Before a Small Inn~
+Sector   field~
+Flags    prototype~
+Desc     Located to the south of here is a large building used as a local inn
+by travelers and merchants. The building is quite old and the wooden
+planks could use a fresh coat of paint. There are several field stone
+chimneys that provide heat for the inn. To the west is a hitching post
+used by guests to keep their mounts during their visit while to the
+east is a small bonfire area. 
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     overland~
+MapX      402
+MapY      658
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3482
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3476
+Keywords  'sturdy wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3478
+#ENDEXIT
+
+Reset D 0 3475 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3476
+Name     &CThe Broken Arrow Inn&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This is the main entry of the inn where the clerk and owner greets all
+who enter. The inn despite being an old place is well furnished and
+decorated with various pieces collected over the years. Velvet curtains
+are draped around windows add an unexpected touch of elegance to this
+inn located in the middle of nowhere. A small counter is used by the
+clerk to do monetary exchanges and a staircase leads up to the bedrooms.
+To the east is a small parlor used by guests to lounge and relax while
+to the west is a dining room.
+~
+#EXIT
+Direction north~
+ToRoom    3475
+Keywords  'sturdy wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3479
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3480
+#ENDEXIT
+
+Reset M 0 3460 1 3476
+Reset D 0 3476 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3477
+Name     &CA Simple Bedroom&w~
+Sector   city~
+Flags    prototype~
+Desc     This is a very cozy looking bedroom that is simple in terms of decor
+and furnishings. There is a small bed located on the western wall and 
+a dresser with a wash basin on it on the south wall. There are no windows
+in this room and a vent near the bed allows heat from a nearby fireplace
+to enter. A doorway leads the guest of this room back down to the main
+part of the inn. 
+~
+#EXIT
+Direction down~
+ToRoom    3476
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3478
+Name     A Hitching Post~
+Sector   field~
+Flags    prototype~
+Desc     This is a small area used by the inn nearby for guests to keep their
+mounts during their stay here. The hitching post is long and made from
+a very thick piece of wood. To the northwest begins the great expanse
+of grasslands and prairie that is home to the halfling tribes. The inn
+can be seen to the southeast with its faded wooden panels and stone
+chimneys.
+~
+#EXIT
+Direction east~
+ToRoom    3475
+#ENDEXIT
+
+Reset O 0 3471 1 3478
+#ENDROOM
+
+#ROOM
+Vnum     3479
+Name     &CA Cozy Parlor &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob nomagic safe noastral prototype~
+Stats    0 0 0 0 10 0
+Desc     This parlor is well furnished with velvet chairs situated near the
+fireplace located on the east wall. Several bookshelves are full of
+lovely looking books donated to the inn or collected by the owner. A
+beautiful rug is located in the middle of the room, which also acts 
+like a map of the realm. The parlor is kept well clean and tidy despite
+the amount of dust and dirt trekked in from outside.
+~
+Perdesc  &cYou spot a &Csign&c near the entrance of the parlor.
+~
+#EXIT
+Direction west~
+ToRoom    3476
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WHello!
+
+&YThis location is one of many &R-{(OOC)}-&Y locations across the lands.
+Each major civilization and some minor villages have such locations
+where you will be able to see/use the global &RChat&Y command along with
+the OOC channels such as &ROsay&Y and &ROtell.&Y While at these locations 
+you can enjoy the company of other characters taking a break from RP and 
+talk OOC. 
+ 
+Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. Please review &RHELP OOC&Y for more information on the rules.
+
+And when anyone last saw you.. you were "headed off to some
+tavern or inn in town."
+ 
+Thanks!
+&WThe DLoC Admin Team
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     3480
+Name     &CA Dining Hall&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This dining hall has a long oak table situated right in the middle of
+the room with many chairs. Guests sit family style during meal times
+as the owner likes everyone to network and connect. The walls have striped
+wallpaper applied that comes in navy, golden yellow, and cream. A small
+corner fireplace on the southwest corner adds additional heat during the
+colder times of the year. A small doorway north of here leads into the
+inn's kitchen.
+~
+#EXIT
+Direction north~
+ToRoom    3481
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3476
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3481
+Name     &CA Small Kitchen&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This kitchen is not very big and has enough room for the cooking fireplace,
+some cabinetry and a working area. The floor of the kitchen is stone that
+has been grouted and sealed. The stone floor makes it easier to clean up
+during spills and other messy situations. The kitchen has two windows
+which are kept open during busy cooking times to help keep the room from
+getting too hot.
+~
+#EXIT
+Direction south~
+ToRoom    3480
+#ENDEXIT
+
+Reset M 0 3461 1 3481
+  Reset G 0 4027 1
+  Reset G 0 3462 1
+  Reset G 0 4111 1
+  Reset G 0 3454 1
+  Reset G 0 2918 1
+  Reset G 0 3455 1
+#ENDROOM
+
+#ROOM
+Vnum     3482
+Name     A Bonfire Location~
+Sector   field~
+Flags    prototype~
+Desc     This is a small area where a campfire is maintained by the local inn.
+The bonfire area is a popular spot for guests to come out and enjoy
+the stars while smoking or chatting with other guests. There are several
+logs set up as seats and the ground has no vegetation here to help
+avoid an out of control fire.
+~
+#EXIT
+Direction west~
+ToRoom    3475
+#ENDEXIT
+
+Reset O 0 3470 1 3482
+Reset O 0 983 1 3482
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   if ovnumroom(983) == 0
+mpoload 983 1
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   if ovnumroom(983) == 1
+mppurge fcluster
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3483
+Name     Before a Large Inn~
+Sector   field~
+Flags    prototype~
+Desc     This area like much of the surrounding forest is covered in webbing
+remnants from large forest spiders that have been driven off. A strong
+wind is known to blow loose webbing around until it settles somewhere
+new. The inn and tavern to the south almost blends into the grey and
+white webbing with its pristine looking white walls. A small hitching
+post can be seen to the east where mounts can be left during one's 
+stay here.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     overland~
+MapX      455
+MapY      646
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3488
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3484
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 3483 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3484
+Name     &WThe Spider's Web Inn & Tavern&w~
+Sector   indoors~
+Flags    prototype~
+Desc     The interior of this inn and tavern is well furnished with the latest
+fashions. The walls are painted a soft light grey and the only pops of
+color can be found in the decor from vibrant purple to rich looking reds.
+A sleek looking mahogany countertop is used by the inn clerk to help
+customers with their needs as well as welcoming new ones. A small parlor
+can be seen to the east of here through a rounded doorway while the
+tavern entrance is to the west. A stairwell leads up to all of the
+available bedrooms in the inn.
+~
+#EXIT
+Direction north~
+ToRoom    3483
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3487
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3486
+#ENDEXIT
+
+Reset M 0 3462 1 3484
+Reset D 0 3484 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3485
+Name     &WA Large Bedroom&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This is a very large bedroom for a rustically located inn. The room
+consists of a canopy bed with sheer curtains that drape like a spider's
+web to an armoire and dresser used for storing one's belongings. A large
+private tub is located near a small fireplace, which can be used to heat
+water for bathing. The decor of the bedroom is exquisite and a round
+shaped window on the southern wall overlooks the forest nearby. A doorway
+leads back into the main part of the inn below.
+~
+#EXIT
+Direction down~
+ToRoom    3484
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3486
+Name     &WA Large Tavern&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This tavern is a popular hangout for the locals in the surrounding area
+who come for food and drink with their friends and neighbors. The tavern
+is large with a dancefloor and stage located in the southern half of the
+space. A long mahogany countertop used by the bartender is towards the
+northern end of the bar near the large fireplace that heats the tavern.
+Lots of small tables can be found throughout this tavern for people to
+gather and enjoy themselves.
+~
+#EXIT
+Direction east~
+ToRoom    3484
+#ENDEXIT
+
+Reset M 0 3463 1 3486
+  Reset G 0 4027 1
+  Reset G 0 1569 1
+  Reset G 0 4110 1
+  Reset G 0 2933 1
+  Reset G 0 1525 1
+  Reset G 0 1570 1
+  Reset G 0 2934 1
+  Reset G 0 2531 1
+  Reset G 0 3461 1
+#ENDROOM
+
+#ROOM
+Vnum     3487
+Name     &WA Cozy Parlor &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob nomagic safe noastral prototype~
+Stats    0 0 0 0 10 0
+Desc     This parlor is quite large with several spaces for people to sit either
+by themselves or within small groups. A large fireplace is located at
+the northern wall, which supplies light and heat during the colder months
+of the year. There are several spider based decorations that can be found
+in this room from small statuary to bookshelves with oddities on display.
+~
+Perdesc  &wYou spot a &Wsign&w by the entrance of the parlor.&w
+~
+#EXIT
+Direction west~
+ToRoom    3484
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WHello!
+
+&YThis location is one of many &R-{(OOC)}-&Y locations across the lands.
+Each major civilization and some minor villages have such locations
+where you will be able to see/use the global &RChat&Y command along with
+the OOC channels such as &ROsay&Y and &ROtell.&Y While at these locations 
+you can enjoy the company of other characters taking a break from RP and 
+talk OOC. 
+ 
+Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. Please review &RHELP OOC&Y for more information on the rules.
+
+And when anyone last saw you.. you were "headed off to some
+tavern or inn in town."
+ 
+Thanks!
+&WThe DLoC Admin Team
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     3488
+Name     A Hitching Post~
+Sector   field~
+Flags    prototype~
+Desc     This is a hitching post for mounts to be left during a stay at the nearby
+inn and tavern. The hitching post is made from several pieces of wood
+with holes for bridles and other forms of navigating one's mount to be
+tied through to secure them. The inn and tavern to the southeast can be
+seen from here with its white pristine walls and well manicured grounds
+despite the pieces of spider's web floating in the breeze.
+~
+#EXIT
+Direction west~
+ToRoom    3483
+#ENDEXIT
+
+Reset O 0 3472 1 3488
+#ENDROOM
+
+#ROOM
+Vnum     3489
+Name     Before a Small Inn~
+Sector   hills~
+Flags    prototype~
+Desc     The area here has been cleared mostly of the large rocks and boulders
+to create a relatively smooth hilltop. To the east of here lies a small
+inn that has been established for travelers to rest during their
+strenous travels through the mountains and hills nearby. The view of the
+area from here is impressive as one can see very far from all directions.
+The inn nearby has been crafted in stone and mortar with the stones sourced
+from nearby. It isn't very large, but it looks very welcoming with its 
+large stained glass windows on the first floor.
+~
+#EXIT
+Direction east~
+ToRoom    3490
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     overland~
+MapX      265
+MapY      395
+#ENDEXIT
+
+Reset O 0 3471 1 3489
+Reset D 0 3489 1 1
+#ENDROOM
+
+#ROOM
+Vnum     3490
+Name     &PThe Wild Pony Inn&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This is a quaint looking inn with stone and mortar walls that add
+texture to the interior of the inn. The furnishings of this inn are
+very nice with soft looking chairs for people to sit near the entrance
+to fine artist quality paintings on the walls. Towards the eastern end
+of a hallway is a mahogany table where guests can check in or out with
+the inn clerk. A softly roaring fire has been preserved in a fireplace
+near the table, which provides warmth during the cold nights here. A
+wooden staircase located near the inn clerk's table leads upstairs where
+all of the guests stay in private rooms.
+~
+#EXIT
+Direction west~
+ToRoom    3489
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3466 1 3490
+Reset D 0 3490 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3491
+Name     &PA Small Bedroom&w~
+Sector   city~
+Flags    prototype~
+Desc     This is a small bedroom with stone and mortar walls that give the space
+texture. A small wood framed window overlooks the entrance of the inn
+on the west side of the room. A small woven rug provides space from the
+cold wooden floors. The bedroom has a small cozy looking bed and a 
+small wooden dresser to store things located in it. A small chair can
+be found next to a vent that allows heat from downstairs to enter and warm
+the room. A doorway leads out and back downstairs where the main portion
+of the inn is located.
+~
+#EXIT
+Direction west~
+ToRoom    3489
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3490
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3492
+Name     Before a Small Inn~
+Sector   field~
+Flags    prototype~
+Desc     The area here has been cleared of most trees except for a few that
+offer shade to an inn established nearby. The inn is made from the finest
+wood sourced from nearby. The exterior walls have been painted a silvery
+white, which allows the inn to stand out amongst the earth tones of the
+fields and forests nearby. The inn itself is not very large, but looks
+very welcoming. 
+~
+#EXIT
+Direction north~
+ToRoom    3493
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     overland~
+MapX      466
+MapY      472
+#ENDEXIT
+
+Reset O 0 3472 1 3492
+Reset D 0 3492 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3493
+Name     &wThe Silver Rose Inn&w~
+Sector   indoors~
+Flags    prototype~
+Desc     The interior of this inn has been painted the same silvery white as the
+exterior walls, which shimmer in the sunlight. The floors are a soft
+honey color, which contrasts with the cool toned walls. There is not
+much for furnishings in this inn except for the occasional painting or
+chair. A large counter is located at the northern end of the inn
+next to some stairs leading up towards the guest bedrooms. The counter
+is made from thick wood and is where all guests check in or out.
+~
+#EXIT
+Direction south~
+ToRoom    3492
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3467 1 3493
+Reset D 0 3493 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3494
+Name     &wA Cozy Bedroom&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This bedroom is very nice and has a bed, dresser, wash basin, and a
+private fireplace. There is not much decoration in this room save for
+an ornamental looking rug placed in front of the bed. There is no
+window to the outside world here and candles provide light during the
+nighttime hours. A doorway leads back down into the main part of the
+inn here.
+~
+#EXIT
+Direction down~
+ToRoom    3493
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3495
+Name     Before a Large Inn~
+Sector   hills~
+Flags    prototype~
+Desc     This is a small hill where a large inn and tavern has been established.
+The inn itself has been created from stones sourced from the local
+mountain range. It stands well over three stories tall and has several
+chimneys connected to it. A large hitching post is located in the front
+of the inn and is made from one long piece of wood that appears to be
+very sturdy. A small garden has been established along the inn, which is
+used to supply food for the inn itself.
+~
+#EXIT
+Direction east~
+ToRoom    3496
+Keywords  'wooden door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     overland~
+MapX      304
+MapY      532
+#ENDEXIT
+
+Reset O 0 3472 1 3495
+Reset D 0 3495 1 1
+#ENDROOM
+
+#ROOM
+Vnum     3496
+Name     &pThe Wandering Soul Inn & Tavern&w~
+Sector   indoors~
+Flags    prototype~
+Desc     The interior of this inn and tavern is very simple in terms of decor
+while the architecture stands for itself. Large stone columns and archways
+create interesting visual displays that lead up to a large stone
+countertop where the inn clerk greets guests. A few stone statues located
+near the countertop depict warriors standing proudly in gleaming armor.
+A large doorway to the north leads to a small tavern, which is a popular
+spot for locals to come and eat while being entertained by traveling bards.
+~
+#EXIT
+Direction north~
+ToRoom    3498
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3495
+Keywords  'wooden door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 3464 1 3496
+Reset D 0 3496 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3497
+Name     &pA Small Bedroom&w~
+Sector   city~
+Flags    prototype~
+Desc     This bedroom is small, but has the necessary furnishings for someone
+who is staying at this inn. The room has a bed, dresser, and a wash
+basin located next to a small fireplace. A small window overlooks the
+mountain range to the west with their snow capped heights. A simple
+looking rug provides a nice separation from the cold wooden floors
+and covers much of the floor here. A doorway leads back down to the main
+part of the inn below.
+~
+#EXIT
+Direction down~
+ToRoom    3496
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3498
+Name     &pA Small Tavern&w~
+Sector   indoors~
+Flags    prototype~
+Desc     This tavern is not very large, but provides enough space for people to
+come and eat. The bar consists of small tables and chairs for customers
+to sit while a small stage is located on the west wall for a bard to
+perform. A fireplace is located next to the stage, which provides heat
+and light during the night time hours. The floors of the tavern much
+like the rest of the inn is a polished wood that shines warmly from
+years of maintenance. 
+~
+#EXIT
+Direction south~
+ToRoom    3496
+#ENDEXIT
+
+Reset M 0 3465 1 3498
+  Reset G 0 4027 1
+  Reset G 0 4043 1
+  Reset G 0 3462 1
+  Reset G 0 4110 1
+  Reset G 0 2933 1
+  Reset G 0 2531 1
+#ENDROOM
+
+#ROOM
+Vnum     3499
+Name     &RMOB STORAGE&W~
+Sector   city~
+Flags    nomob nomagic safe norecall noastral nosupplicate~
+Desc     You should not be in here. Please contact the admin staff for help.
+~
+Reset M 0 3459 1 3499
+#ENDROOM
+
+#ENDAREA

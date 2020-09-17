@@ -1,0 +1,2493 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Oldgate City Sewers~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 10 0 0
+Economy      0 21117400
+ResetMsg     &OYou hear the squeaking of a rat nearby.&w~
+Lore         &OYour vision reveals nothing...&w
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       3100
+Keywords   sahuagin young soldier fish fishy humanoid~
+Short      &ca sahuagin soldier&w~
+Long       &cA fish like humanoid is here stalking around the sewers.&w
+~
+Desc       &cThis humanoid has a giant fish like head that is full of razor
+sharp teeth. It has webbed feet and hands and a long fishy tail. 
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared aqua_breath~
+Stats1     -600 5 5 0 12 0 0 0 0 0
+Stats2     4 8 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 12 13 11 12 9 13
+Saves      0 0 0 0 0 0
+Bodyparts  arms legs heart guts fins scales claws~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 3102
+mea $n &RAs the creature falls you notice its claws and they seem like
+mea $n &Rwhat would have been used to kill the sewer worker, Delsam.&w
+mpqset $n 3102
+mpqset $n 3103
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 3103 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3101
+Keywords   sahuagin general strong looking fish fishy humanoid guard~
+Short      &cA sahuagin general&w~
+Long       &cA strong looking fishy humanoid is standing guard here.&w
+~
+Desc       &cThis humanoind has a giant gish like head that is full of long
+razor sharp teeth. Its hands and feet are webbed, which helps
+it swim fast. The body of this humanoid is especially muscular
+and seems ready to fight.&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -900 5 8 0 12 0 0 5 20 0
+Stats2     6 7 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    15 12 14 14 14 8 13
+Saves      0 0 0 0 0 0
+Bodyparts  arms legs heart guts fins scales claws~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3106
+if hasqbit($n) == 3104
+mpoload 3104 1
+else
+mpoload 3103 1
+endif
+else
+mpoload 3103 1
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3102
+Keywords   sahuagin priestess fish fishy humanoid chanting~
+Short      &ca sahuagin priestess&w~
+Long       &cA fish like humanoid is here chanting loudly.&w
+~
+Desc       &cThis humanoid has a giant fish like head that is full of razor
+sharp teeth. It has webbed feet and hands that are decorated
+with silver bangles. It is dressed in tattered fabric and seems
+to be busy chanting.&w
+~
+Race       monster~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -600 5 7 0 12 0 0 10 5 0
+Stats2     6 8 10
+Stats3     1 4 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 12 16 12 12 12 13
+Saves      0 0 0 0 0 0
+Bodyparts  arms legs heart guts fins scales claws~
+Immune     charm~
+Attacks    bite claws~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   c 'hold person'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   55~
+Comlist   mpoload 
+mpoload 1787 1
+c bless
+mpjunk water
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote makes very strange noises while chanting.
+mpasound &wYou hear strange noises coming from somewhere neary.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3103 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3103
+Keywords   sahuagin lieutenant stalking fishy humanoid~
+Short      &ca sahuagin lieutenant&w~
+Long       &cA fish like humanoid is here stalking around.&w
+~
+Desc       &cThis humanoid has a giant fish like head that is full of razor
+sharp teeth. It has webbed feet and hands and a long fishy tail. 
+&cThis creature carries itself with confidence as it scours the
+area here looking for intruders or prey.&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared aqua_breath~
+Stats1     -600 5 5 0 12 0 0 2 10 0
+Stats2     4 8 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 12 13 12 12 9 13
+Saves      0 0 0 0 0 0
+Bodyparts  arms legs heart guts fins scales claws~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3103 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3104
+Keywords   night tide room sector changer~
+Short      &bthe night tide&w~
+Long       &bThe night tide is here filling the sewers with water.&w
+~
+Desc       &bThis is the night tide, which is known to fill the sewers to almost
+their limit at night time.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea mobinvis pacifist~
+Affected   infrared truesight aqua_breath~
+Stats1     0 55 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       3105
+Keywords   giant sewer rat~
+Short      &Oa giant rat&w~
+Long       &OA giant brown rat is here nibbling on some garbage.
+~
+Desc       &OThis rat stands at about four feet in height and is quite disgusting
+to look at. It has large teeth that it uses to eat things down here
+in the sewers.
+~
+Race       rat~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc scavenger~
+Affected   infrared~
+Stats1     0 1 1 0 120 0 0 0 0 0
+Stats2     2 6 8
+Stats3     1 4 2
+Stats4     2 1 1 0 0 0 6
+Attribs    7 2 10 15 11 4 13
+Saves      0 0 0 0 0 0
+Bodyparts  legs guts tail~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1682 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3106
+Keywords   giant black bat~
+Short      &za giant black bat&w~
+Long       &zA giant black bat is here flying around the sewers. 
+~
+Desc       &zThis a massive bat that stands at about four feet in height and has
+a large wingspan. It has two large prominent fangs and large golden
+eyes.
+~
+Race       bat~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive~
+Affected   infrared flying~
+Stats1     -600 1 4 0 0 0 0 0 0 0
+Stats2     5 10 15
+Stats3     1 6 2
+Stats4     2 0 1 0 0 0 6
+Attribs    15 2 12 18 11 6 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1684 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3107
+Keywords   oldgate city guard standing guard sewers~
+Short      &Ya city guard&w~
+Long       &YAn Oldgate city guard is here guarding the entrance to the sewers.&w
+~
+Desc       &YThe guard before you is dressed in yellow armor that has roses engraved
+into it. He carries himself with pride as he patrols and maintains the
+order of the city.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel running pacifist~
+Affected   detect_hidden infrared~
+Stats1     500 50 0 0 15 0 200 300 5 0
+Stats2     3 8 9
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3106
+if hasqbit($n) != 3104
+if hasqbit($n) != 3103
+if hasqbit($n) != 3102
+if hasqbit($n) != 3101
+if hasqbit($n) != 3100
+mea $n &YA guard holds up a hand as you approach.
+sayto $n Greetings! I need someone's help and I was wondering if
+sayto $n you could assist me? We're trying to find a missing person.
+else
+sayto $n Have you had any luck in finding poor Delsam?
+endif
+else
+sayto $n Have you had any luck in finding poor Delsam?
+endif
+else
+mea $n &YThe guard looks at you with sad eyes as you arrive here.&w
+sayto $n Have you found what killed my friend?
+endif
+else
+sayto $n What have you found down in the sewers??
+endif
+else
+sayto $n Have you stopped the invasion and brought me the general's head?
+endif
+else
+bow $n
+sayto $n Thank you again for helping the city of Oldgate stay safe!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 3101
+if ovnuminv(3108) == 1
+emote frowns deeply as he holds the remains of a sewer worker.
+mpsleep 2
+nod $n
+sayto $n You have done a good thing bringing me back my friend.
+sayto $n Now he can be buried with his family and his wife can
+sayto $n have closure...
+mpjunk remains
+mpsleep 2
+sayto $n Now.. I ask.. will you seek out what did this to him?
+sayto $n I need to know what is going on down there so I can
+sayto $n report to the Constable. Please find out what did this
+sayto $n and return here to tell me. Then we'll figure out
+sayto $n what to do next.
+mpqset $n 3101
+mpqset $n 3102
+else
+sayto $n What is this? I do not need this...
+drop all
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p sahuagin~
+Comlist   if hasqbit($n) == 3103
+sigh
+sayto $n I should have guessed.. they have been trying to use our
+sayto $n sewers to sneak into the city for years...
+mpsleep 2
+frown
+mpsleep 2
+sayto $n Poor Delsam.. no one should die that way. I spoke with
+sayto $n the Constable while you were searching the sewers and
+sayto $n I have a reward for you if you stop them.
+mpsleep 2
+sayto $n The Sahuagin usually travel with a General. If you
+sayto $n bring me his head I will give you the reward.
+mpsleep 2
+sayto $n I will also pay you for any Sahuagin heads you bring
+sayto $n me. They all need to be eliminated or we will have
+sayto $n an invasion.
+mpqset $n 3103
+mpqset $n 3104
+mpqset $n 3105
+else
+sayto $n Where?!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 3106
+if hasqbit($n) == 3104
+if ovnuminv(3104) == 1
+mpjunk head
+bow $n
+sayto $n You have done Oldgate an incredible service today. You helped
+sayto $n put my friend to rest and stopped those fish monsters from
+sayto $n from building an invasion. On behalf of the Constable I present
+sayto $n you with a magic bracelet and some coin.
+give 10 gold $n
+mpgift 3194 3199
+silent get bracelet
+give bracelet $n
+mpqset $n 3104
+mpqset $n 3105
+mpqset $n 3106
+mpadvance $n 1000
+sayto $n Thank you again for you help!
+else
+sayto $n What is this? I do not need this..
+drop all
+endif
+else
+say What is this? I do not need this...
+drop all
+endif
+else 
+mpjunk head
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 3105
+if ovnuminv(3103) == 1
+sayto $n Well done! Here is a reward for you hard work.
+give 1 gold $n
+mpjunk head
+else
+say What is this? I do not need this...
+drop all
+endif
+else
+mpjunk head
+salute $n
+endif
+
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 3163
+emote arrives and begins standing guard here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   emote heads off to the other sewer entrance to stand guard.
+mpgoto 3164
+mpsleep 2
+emote arrives and begins standing guard here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote notices the time and heads home for the evening.
+mpgoto 3199
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3199
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3100
+Keywords rusty tipped spear~
+Type     weapon~
+Short    &Oa rusty tipped spear&w~
+Long     &OA spear with a rusty tip has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3101
+Keywords rusty tipped trident~
+Type     weapon~
+Short    &Oa rusty tipped trident&w~
+Long     &OA rusty tipped trident has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 17 0
+Values2  0 2
+Stats    4 0 5 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3102
+Keywords rusty dagger~
+Type     weapon~
+Short    &Oa rusty dagger&w~
+Long     &OA rusty dagger has been left here.&w~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3103
+Keywords sahuagin fish head sewers fishy severed~
+Type     trash~
+Short    &ca severed sahuagin head&w~
+Long     &cThe severed head of a fishy humanoid has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    5 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3104
+Keywords sahuagin fish head sewers fishy severed general~
+Type     trash~
+Short    &ca severed sahuagin general's head&w~
+Long     &cThe severed head of a fishy humanoid has been left here.&w~
+WFlags   take onehand~
+Values   8 0 0 0 0 0
+Values2  0 2
+Stats    5 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3105
+Keywords sewer metal ladder~
+Type     trash~
+Short    &Oa metal sewer ladder&w~
+Long     &OA metal sewer ladder is here leading up to the city.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    300 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3106
+Keywords &Oa sewer manhole cover&w~
+Type     trash~
+Short    &Oa sewer grate cover&w~
+Long     &OA sewer manhole cover with the Oldgate sigil on it is here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    90 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3107
+Keywords guard trident~
+Type     weapon~
+Short    &Ya yellow guard's trident&w~
+Long     &YA yellow trident with roses etched on it has been left here.&w~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 17 0
+Values2  0 2
+Stats    4 5 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3108
+Keywords remains corpse sewer worker claws savaged body human man~
+Type     trash~
+Short    &Rthe remains of a sewer worker&w~
+Long     &RThe remains of a human man have been left here.&w~
+WFlags   take~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    25 0 0 0 0 0 0
+#EXDESC
+ExDescKey    remains~
+ExDesc       &RThese remains are fresh and appear to be recently inflicted. The
+body has been shredded and torn up by something. The physical
+appearance of the man is hard to see as his face has been practically
+scraped off.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate remains~
+Comlist   if investigation($n) >= 14
+mea $n You recognize what is left of the clothing on the remains as
+mea $n the work wear of an Oldgate sewer worker. The remains reveal
+mea $n a partial scalp of blonde hair and a tall height.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3193
+Keywords tall pedestal antiflood statue sewer builders guild oldgate~
+Type     trash~
+Short    &wa statue of the sewer builders guild&w~
+Long     &wAn ancient looking statue of the Oldgate sewer builders guild is here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    600 0 0 0 0 0 0
+#EXDESC
+ExDescKey    statue~
+ExDesc       &wThis statue was placed here to commemorate the now defunt 
+Oldgate Sewer Builder Guild. The statue depicts a group of men
+burrowing deep into the earth and laying pipeline. This statue
+is placed on a very tall stone pedestal that water runs along,
+but never floods. This includes at high tide when the sewers
+rush with water from the nearby Bay of Blades.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate statue~
+Comlist   if hasqbit($n) != 3100
+if investigation($n) >= 14
+mea $n You find the statue is in roughly good shape with some rats
+mea $n find homes in certain areas of it. The statue itself its on a
+mea $n very tall pedestal, which makes this the safest place to be
+mea $n when the sewers flood at night. Many sewer workers are known
+mea $n to camp here if they don't get out in time and wait till morning
+mea $n when the water goes down before heading home.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You follow a blood trail to behind the statue were you
+mea $n find the remains of a human man...
+mpoload 3108 1
+mpqset $n 3100
+mpqset $n 3101
+mer $n &O$n discovers a body behind the statue here.&w
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3194
+Keywords bracelet reward rose gold rhodochrosite gemstone charisma~
+Type     treasure~
+Short    &Pa ro&Yse go&Pld bracelet set with rhodochrosites&w~
+Long     &PA rose gold bracelet set with rhodochrosites has been left here.&w~
+Lore   &PYour vision reveals that this bracelet is a "Bracelet of Charisma,"
+which is generally enchanted to help bards and entertainers.&w
+~
+Flags    magic~
+WFlags   take wrist onehand~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 15 20 40 1 0 0
+Affect       -1 -1 1 78 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3195
+Keywords bracelet reward silver bracelet aquamarines wisdom~
+Type     treasure~
+Short    &wa silver bracelet set with &Ca&cq&Gu&ca&Gm&Ca&cr&Gi&cn&Ce&cs&w~
+Long     &wA silver bracelet set with aquamarines has been left here.&w~
+Lore   &CYou vision reveals that this bracelet is a "Bracelet of Wisdom,"
+which is generally enchanted to help clergy with daily tasks.&w
+~
+Flags    magic~
+WFlags   take wrist onehand~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 15 20 20 1 0 0
+Affect       -1 -1 1 24 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3196
+Keywords bracelet reward bronze bracelet topaz constitution~
+Type     treasure~
+Short    &Oa bronze bracelet set with &Ytopaz&w~
+Long     &OA bronze bracelet set with topaz has been left here.&w~
+Lore   &OYour vision reveals that this bracelet is a "Bracelet of Hardiness,"
+and is generally enchanted to help people with their constitution.&w
+~
+Flags    magic~
+WFlags   take wrist onehand~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 15 10 40 1 0 0
+Affect       -1 -1 1 22 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3197
+Keywords bracelet reward gold bracelet rubies ruby strength~
+Type     treasure~
+Short    &Ya gold bracelet set with &rru&Rb&ries&w~
+Long     &YA gold bracelet set with rubies has been left here.&w~
+Lore   &YYour vision reveals that this bracelet is a "Bracelet of Strength,"
+which is generally enchanted to help people in battle or survival.
+~
+Flags    magic~
+WFlags   take wrist onehand~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 10 20 45 1 0 0
+Affect       -1 -1 1 20 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3198
+Keywords bracelet reward tin emeralds emerald intelligence~
+Type     treasure~
+Short    &Wa tin bracelet set with &Gemeralds&w~
+Long     &WA tin bracelet set with emeralds has been left here.&w~
+Lore   &GYou vision reveals this bracelet as a "Bracelet of Intelligence,"
+which is generally enchanted to help wizards conduct daily tasks.
+~
+Flags    magic~
+WFlags   take wrist onehand~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 50 20 30 5 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3199
+Keywords bracelet reward copper jet gemstones dexterity~
+Type     treasure~
+Short    &Oa &Ycopp&rer&O bracelet set with &zjet gemstones&w~
+Long     &OA copper bracelet set with jet gemstones has been left here.&w~
+Lore   &OYour vision reveals that this bracelet is a "Bracelet of Nimbleness,"
+which is generally enchanted to help people with tumbling or gracefulness.&w
+~
+Flags    magic~
+WFlags   take wrist onehand~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 15 35 50 1 0 0
+Affect       -1 -1 1 21 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3100
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east and to west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3129
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3101
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3101
+Name     An Intersection of Large Pipes~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the south or to the east from here.
+~
+#EXIT
+Direction east~
+ToRoom    3100
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3102
+#ENDEXIT
+
+Reset M 0 3105 3 3101
+#ENDROOM
+
+#ROOM
+Vnum     3102
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3101
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3103
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3103
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south. A smaller pipe
+connects here and heads towards the east.
+~
+#EXIT
+Direction north~
+ToRoom    3102
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3130
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3104
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3104
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or to the south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3103
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3105
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3105
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or to the south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3104
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3106
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3106
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the south or to the east from here. A
+metal ladder is located here, which leads to the city above.
+~
+#EXIT
+Direction north~
+ToRoom    3105
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3107
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3163
+Keywords  'sewer manhole'~
+Flags     isdoor closed climb nomob~
+#ENDEXIT
+
+Reset O 0 3105 1 3106
+Reset D 0 3106 4 1
+#ENDROOM
+
+#ROOM
+Vnum     3107
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or to the south from hee.
+~
+#EXIT
+Direction north~
+ToRoom    3106
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3108
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3108
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here while
+a smaller pipe attaches here. The smaller pipe heads towards
+the east from this intersection.
+~
+#EXIT
+Direction north~
+ToRoom    3107
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3149
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3109
+Name     An Intersection of Large Pipes~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or east from here.
+~
+#EXIT
+Direction north~
+ToRoom    3108
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3110
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3110
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or west from this location.
+~
+#EXIT
+Direction east~
+ToRoom    3111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3111
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or west from this location.
+~
+#EXIT
+Direction east~
+ToRoom    3112
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3110
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3112
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or west from this location.
+A small pipe attaches to this pipe here and heads off towards
+the north.
+~
+#EXIT
+Direction north~
+ToRoom    3156
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3113
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3111
+#ENDEXIT
+
+Reset M 0 3106 3 3112
+#ENDROOM
+
+#ROOM
+Vnum     3113
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3114
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3112
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3114
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or west from this location.
+~
+#EXIT
+Direction east~
+ToRoom    3115
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3113
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3115
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or west from this location.
+~
+#EXIT
+Direction east~
+ToRoom    3116
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3114
+#ENDEXIT
+
+Reset M 0 3100 8 3115
+  Reset E 0 3100 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3116
+Name     An Intersection of Large Pipes~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3117
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3115
+#ENDEXIT
+
+Reset M 0 3105 3 3116
+#ENDROOM
+
+#ROOM
+Vnum     3117
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3118
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3116
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3118
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3119
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3117
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3119
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here while
+a smaller pipe heads off to the west.
+~
+#EXIT
+Direction north~
+ToRoom    3120
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3118
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3154
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3120
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3121
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3119
+#ENDEXIT
+
+Reset M 0 3100 8 3120
+  Reset E 0 3100 1 26
+Reset M 0 3100 8 3120
+  Reset E 0 3100 1 26
+Reset M 0 3100 8 3120
+  Reset E 0 3100 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3121
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3122
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3120
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3122
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3121
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3123
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the north or south from here while a
+smaller pipe attaches here leading towards the west.
+~
+#EXIT
+Direction north~
+ToRoom    3124
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3122
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3143
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3124
+Name     An Intersection of Large Pipes~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the west or to the south from hee.
+~
+#EXIT
+Direction south~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3125
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3125
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or to the west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3124
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3126
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3126
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east and to the west from here
+while a small waterway leads out to the north through a cave
+network that empties into a huge bay of water.
+~
+#EXIT
+Direction north~
+ToRoom    3157
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3125
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3127
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3127
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east or west while a smaller pipe
+attaches here leading towards the south.
+~
+#EXIT
+Direction east~
+ToRoom    3126
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3138
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3128
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3128
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east and to the west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3127
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3129
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3129
+Name     A Large Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     &wThis is a series of networking pipes that run underneath the
+city above. This part of the network consists of a large pipe with
+walkways above the water on each side of the pipe. The height of
+the pipe is around seven feet in height and is not very wide.
+The pipe continues to the east and to the west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3128
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3100
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3130
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the east and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3131
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3103
+#ENDEXIT
+
+Reset M 0 3106 3 3130
+#ENDROOM
+
+#ROOM
+Vnum     3131
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller piper than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the west and south from here.
+~
+#EXIT
+Direction south~
+ToRoom    3132
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3130
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3132
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller piper than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3131
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3133
+#ENDEXIT
+
+Reset M 0 3100 8 3132
+  Reset E 0 3100 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3133
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller piper than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    3132
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3134
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3134
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the east and west from here. You can hear a lot of water nearby.
+~
+#EXIT
+Direction east~
+ToRoom    3135
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3133
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3135
+Name     The Grand Intersection~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 10 0 0 0
+Desc     &wThis is the largest intersection of pipes for the entire sewage
+system underneath the city. There are pipes of varying sizes dumping their
+waste here. Pipes from above and as low as the water leve itself. At
+the center is a small pavement island in which the water rolls
+alongside as the sewage water. At the center of the faux island is
+a statue dedicated to the men and women who built this system. All pipes
+that connect here form little metal bridges that reach the island.
+There are small pipes used for sewage and traveling at the north,
+south, east, and west corners of this intersection.&w
+~
+#EXIT
+Direction north~
+ToRoom    3136
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3139
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3144
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3134
+#ENDEXIT
+
+Reset O 0 3193 1 3135
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpsleep 3
+mea $n &RYou notice a blood trail leading up to a statue...&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3136
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3137
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3135
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3137
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3138
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3136
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3138
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3127
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3137
+#ENDEXIT
+
+Reset M 0 3106 3 3138
+#ENDROOM
+
+#ROOM
+Vnum     3139
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the east and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3140
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3135
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3140
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    3141
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3139
+#ENDEXIT
+
+Reset M 0 3105 3 3140
+#ENDROOM
+
+#ROOM
+Vnum     3141
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3142
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3140
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3142
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3141
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3143
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the east and south from here.
+~
+#EXIT
+Direction east~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3142
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3144
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3135
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3145
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3145
+Name     An Intersection of Small Pipes~
+Sector   indoors~
+Flags    tunnel~
+Desc     &wThis is a smaller intersection of pipes, which allows several the
+other pipes to be relieved of pressure as sewage navigates here. This
+intersection contains no faux pavement island and only the metal walkways
+attached truly help with traveling down here. Pipe entrances can be
+found towards the north, south, east, and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    3144
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3150
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3146
+#ENDEXIT
+
+Reset M 0 3100 8 3145
+  Reset E 0 3100 1 28
+Reset M 0 3100 8 3145
+  Reset E 0 3100 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3146
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the east and south from here.
+~
+#EXIT
+Direction east~
+ToRoom    3145
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3147
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3147
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3146
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3148
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3148
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    3147
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3149
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3149
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the west and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3108
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3150
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the east or to the west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3145
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3151
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the west or to the south from here.
+~
+#EXIT
+Direction south~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3150
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3152
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3154
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3153
+#ENDEXIT
+
+Reset M 0 3100 8 3152
+  Reset E 0 3100 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3153
+Name     A Dead End~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues back
+to the north, which is the main part of the sewers. A metal ladder
+here leads up back into the clean comforts of the city above.
+~
+#EXIT
+Direction north~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3164
+Keywords  'sewer manhole'~
+Flags     isdoor closed climb nomob~
+#ENDEXIT
+
+Reset O 0 3105 1 3153
+Reset D 0 3153 4 1
+#ENDROOM
+
+#ROOM
+Vnum     3154
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the east or to the west from here.
+~
+#EXIT
+Direction east~
+ToRoom    3119
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3152
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3155
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3145
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3156
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3156
+Name     A Small Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is a much smaller pipe than the main border pipes. Pipes like
+this are used to help navigate and control the amount of sewage coming
+from above. This pipe is not very tall or wide, which makes traveling
+them harder than the largers ones. This part of the pipe continues to
+the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3112
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3157
+Name     End of a Pipe~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     &wThis is the main entrance for the sewers, which leads out into
+the nearby bay. Water either enters the sewers to flush out the
+pipes or sewage is dragged out. The pipe here ends with a small
+circular doorway cut from metal, which the water leads out to
+the bay here.
+~
+#EXIT
+Direction north~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3126
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3103 2 3157
+  Reset E 0 3100 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3158
+Name     &wA Watery Cave&w~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &OThis is a small cavern in which a small river of sewage flows through
+on its way out of the city above. The cave has been dug by hand many
+years ago and is not very tall or wide in depth. The cave leads to the
+east into a small cave, deeper into the cave towards the west,
+or back to the pipes at the south.
+~
+#EXIT
+Direction east~
+ToRoom    3161
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3157
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3159
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3159
+Name     &wA Watery Cave&w~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &OThis is a small cavern in which a small river of sewage flows through
+on its way out of the city above. The cave has been dug by hand many
+years ago and is not very tall or wide in depth. The cave leads to the
+west into a small cave, back east, or out of the cave towards
+the north where one can see a small shoreline.
+~
+#EXIT
+Direction north~
+ToRoom    3160
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3162
+#ENDEXIT
+
+Reset M 0 3103 2 3159
+  Reset E 0 3100 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3160
+Name     &YA Small Sandy Shore&w~
+Sector   shore~
+Desc     &OThis is a small shoreline, which is broken up by a river of sewage and
+other liquids coming from a cave nearby to the south. The shoreline is not
+very long and is very sandy. To the south is a large cave entrance
+that sits at the base of a long cliff. At the top of the cliff is a large
+city with stone walls. Nearby docks can be seen leading into the
+city.
+~
+#EXIT
+Direction south~
+ToRoom    3159
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    30000
+Flags     nomob overland~
+MapX      155
+MapY      782
+#ENDEXIT
+
+Reset M 0 3101 1 3160
+  Reset E 0 3101 1 28
+Reset O 0 2705 5 3160
+#ENDROOM
+
+#ROOM
+Vnum     3161
+Name     &wA Small Cavern&w~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &OThis is a small cavern that was dug by hand many years ago. It is quite
+dry despite the water and sewage running nearby. This cavern is used
+by various creatures, which is evident by the loads of broken eggs
+that can be found on the cavern floor here.
+~
+#EXIT
+Direction west~
+ToRoom    3158
+#ENDEXIT
+
+Reset M 0 3102 2 3161
+  Reset E 0 3102 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3162
+Name     &wA Small Cavern&w~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     &OThis is a small cavern that was dug by hand many years ago. It is quite
+dry despite the water and sewage running nearby. This cavern is used
+by various creatures, which is evident by the loads of broken eggs
+that can be found on the cavern floor here.
+~
+#EXIT
+Direction east~
+ToRoom    3159
+#ENDEXIT
+
+Reset M 0 3102 2 3162
+  Reset E 0 3102 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3163
+Name     Before a Sewer Entrance~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction west~
+ToRoom    4033
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3106
+Keywords  'sewer manhole'~
+Flags     isdoor closed climb nomob~
+#ENDEXIT
+
+Reset M 0 3107 1 3163
+  Reset E 0 3107 1 26
+Reset O 0 3106 1 3163
+Reset D 0 3163 5 1
+#ENDROOM
+
+#ROOM
+Vnum     3164
+Name     Before a Sewer Entrance~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction west~
+ToRoom    4086
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3153
+Keywords  'sewer manhole'~
+Flags     isdoor closed climb nomob~
+#ENDEXIT
+
+Reset O 0 3106 1 3164
+Reset D 0 3164 5 1
+#ENDROOM
+
+#ROOM
+Vnum     3199
+Name     &ROLDGATE SEWERS MOB STORAGE&W~
+Sector   indoors~
+Flags    nomob~
+Reset M 0 3104 1 3199
+#ENDROOM
+
+#ENDAREA

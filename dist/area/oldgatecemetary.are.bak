@@ -1,0 +1,2788 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Oldgate Cemetary~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 10 0 0
+Economy      0 215420
+ResetMsg     &zYou hear something move deep within the cemetary...&w~
+ResetFreq    10
+#ENDAREADATA
+
+#MOBILE
+Vnum       4500
+Keywords   skeleton knight~
+Short      &Wa skeleton knight&w~
+Long       &WThe skeletal remains of a knight is here stumbling around the cemetary.&w
+~
+Desc       &WThis is the skeletal remains of an knight from many years ago. It is
+dressed in the armor it wore in life, which has rusted over the years.
+It shuffles across the ground as it moves about the cemetary.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 7 0 15 0 0 0 0 0
+Stats2     8 8 20
+Stats3     1 4 1
+Stats4     2 13 1 0 0
+Attribs    15 8 14 12 16 3 13
+Saves      0 0 0 0 0 0
+Immune     poison sleep~
+Suscept    blunt~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpasound &wYou hear creaking sounds coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+k old
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503 
+k male
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504
+k female
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4505
+k widow
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4501
+Keywords   zombie decaying commoner~
+Short      &Ra zombie&w~
+Long       &RThe remains of a dead commoner is here moving about the cemetary.&w
+~
+Desc       &RThis is the undead remains of what was once a commoner who lived in
+the city of Oldgate. It is hard to distinguish their gender or features
+as much of their flesh is peeling away from their bones. 
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Specfun    spec_fido~
+Gender     neuter~
+Actflags   npc aggressive~
+Affected   infrared~
+Stats1     -1000 1 4 0 10 0 0 0 0 0
+Stats2     3 10 9
+Stats3     1 6 1
+Stats4     2 13 1 0 0
+Attribs    13 3 6 6 16 3 13
+Saves      0 0 0 0 0 0
+Immune     poison sleep~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote moans as it slowly moves around
+mpasound &rYou hear the sounds of moaning coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+k old
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503
+k male
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504 
+k female
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4505
+k widow
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4502
+Keywords   gravedigger old man~
+Short      a gravedigger~
+Long       An old man is here working as a gravedigger for the city.
+~
+Desc       &wThis kind looking old man is here working as the gravedigger for the
+city of Oldgate. He is dressed in simple clothing and looks like he
+has been doing this for awhile now.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Specfun    spec_janitor~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared~
+Stats1     500 1 0 0 12 0 0 0 0 0
+Stats2     3 8 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0
+Attribs    12 12 16 10 12 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpasound &RYou hear yelling coming from somewhere nearby!&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   peer $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p leave~
+Comlist   if hasqbit($n) == 4500
+if persuasion($n) >= 18
+peer $n
+sayto $n You say there is danger? I thought I heard something...
+peer
+sayto $n Well, I guess I could head home then. Thank you.
+mpecho The gravedigger quickly heads for the gates of the cemetary.
+mpadvance $n 25
+else
+eye $n
+sayto $n And who sent you? Why should I care? I have a job to do!
+endif
+else
+peer $n
+sayto $n I'm trying to work here. Leave me be!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpsilent rem shovel
+mpjunk shovel
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4503
+Keywords   male teenager~
+Short      &Ba male teenager&w~
+Long       &BA male teenager is here playing around the cemetary.&w
+~
+Desc       &BThis young man appears to be up to no good as he plays around the
+cemetary despite the rumors. He is dressed in simple clothing as
+he stalks about the cemetary playing with his friends.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     -300 1 0 0 10 0 0 0 1 0
+Stats2     4 9 5
+Stats3     1 4 1
+Stats4     2 0 1 0 0
+Attribs    14 10 9 14 14 14 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpasound &RYou hear the sounds of yelling coming from nearby!&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p leave~
+Comlist   if hasqbit($n) == 4500
+if persuasion($n) >= 15
+hmm $n
+sayto $n Well.. I suppose we can go play by the docks..
+mpsleep 3
+mutter $n
+mpadvance $n 25
+mpecho &BThe young man looks around and then takes off for the docks.
+mpgoto 4499
+else
+smirk $n
+sayto $n And why should I listen to you? Why should I leave?
+endif
+else
+smirk $n
+sayto $n And why should I care what you have to say? Huh?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4504
+Keywords   female teenager~
+Short      &Pa female teenager&w~
+Long       &PA female teenager is here playing around the cemetary.&w
+~
+Desc       &PThis young lady is playing in the cemetary with her friends.
+She doesn't seem to think it's a good idea and looks very nervous
+as she plays around the cemetary at night.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     400 1 0 0 10 0 0 0 0 0
+Stats2     1 15 5
+Stats3     1 3 1
+Stats4     2 0 1 0 0
+Attribs    9 10 9 16 12 14 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   mpasound &RYou hear the sounds of screaming coming from somewhere!&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p leave~
+Comlist   if hasqbit($n) == 4500
+if persuasion($n) >= 14
+emote looks around scared and nods her head
+sayto $n I agree. I did not want to come here in the first place!
+mpadvance $n 25
+mpecho &PThe young woman hurries off back to her home in the city.
+mpgoto 4499
+else
+giggle $n
+sayto $n And why should I believe some stupid rumors?
+endif
+else
+roll
+sayto $n And who do you think you are?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+wink $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4505
+Keywords   grieving widow~
+Short      &za grieving widow&w~
+Long       &zA grieving widow is here walking around the cemetary.&w
+~
+Desc       &zThis woman is dressed in black from head to toe as she walks around
+the cemetary with a handkerchief.
+~
+Lore       &zYou see this woman sending her husband off to sea on a ship and
+then receiving news later that he has passed due to an accident. She
+cries but seems to not believe it...&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     400 1 0 0 10 0 0 0 1 0
+Stats2     1 15 5
+Stats3     1 3 1
+Stats4     2 0 1 0 0
+Attribs    9 10 9 16 12 14 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote weeps softly into a handkerchief
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote gathers herself and heads home for the evening
+mpgoto 4498
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 4541
+emote walks up to a grave and sits by it as she weeps softly
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   mpasound &RYou hear screaming coming from nearby!&w
+scream
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4506
+Keywords   person dark robes necromancer wizard man~
+Short      &za necromancer&w~
+Long       &zA person dressed in dark robes is here lurking about the cemetary.&w
+~
+Desc       &zThis figure is clad into dark black robes that obscure the owner's
+silhouette and facial features. The figure moves about the cemetary
+clearly up to no good.
+~
+Lore       &zYou see this dark figure using a spell over grave to raise the dead
+under the ground. He laughs as an undead monstrosity digs itself
+free and begins to walk forth...&w
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     -1000 15 8 0 10 0 0 5 20 0
+Stats2     9 8 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0
+Attribs    9 18 14 16 10 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   c 'mage armor'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'chill touch'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'acid splash'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+c 'horrid wilting' old
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503
+c 'horrid wilting' male
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504
+c 'horrid wilting' female
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 4505
+if hasqbit($n) != 4506
+if hasqbit($n) != 4503
+if hasqbit($n) != 4500
+emote holds up a hand in greeting
+sayto $n I need help.. someone is trying to hurt me.. Will you
+sayto $n listen to my story?
+else
+sayto $n You have chosen the wrong path by agreeing to help that
+sayto $n Qylaith fool! Now perish!!
+c 'chill touch' $n
+endif
+else
+sayto $n Fool! How dare you help her against my plans!
+c 'chill touch' $n
+endif
+else
+mea $n &zThe dark hooded figure looks at you briefly before ignoring you.
+endif
+else
+sayto $n Well?
+endif
+else
+sneer
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 4503
+if hasqbit($n) != 4502
+if hasqbit($n) != 4500
+sayto $n A ruthless woman is lurking in this cemetary and is hunting
+sayto $n me for the sheer reason that I practice magic. Can you stop
+sayto $n her? She has even crafted a scroll of magic that she intends
+sayto $n to use. It will destroy my very soul and all of my plans!
+mpsleep 3
+sayto $n I need you to remove her by any means and bring me her scroll.
+sayto $n Will you help me? Please.. time is of the urgency...
+else
+sayto $n Fool! I cannot trust you! You have sided with her!!
+c 'chill touch' $n
+endif
+else
+sayto $n How dare you help her over me! Perish!!
+c 'chill touch' $n
+endif
+else
+sayto $n How dare you help her over me! Perish!!
+c 'chill touch' $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   if hasqbit($n) != 4506
+if hasqbit($n) != 4502
+if hasqbit($n) != 4503
+if hasqbit($n) != 4500
+sayto $n Thank you. She can be found hunting these parts at night. I
+sayto $n have managed to avoid her, but I feel she is getting close to
+sayto $n catching me...
+mpqset $n 4504
+else
+sayto $n Fool! You have sided with her! Now die!!
+c 'chill touch' $n
+endif
+else
+sayto $n Thank you again for helping me...
+endif
+else
+say Fool! How dare you help her over me! Perish!
+c 'chill touch' $n
+endif
+else
+say Fool! How dare you help her over me! Perish!
+c 'chill touch' $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 4506
+if hasqbit($n) == 4505
+if ovnuminv(4507) == 1
+grin
+mpjunk bani22
+sayto $n You have done well my pet. For this I shall reward you..
+mpmset self gold 35
+give 35 gold $n
+mpqset $n 4505
+mpqset $n 4506
+mpadvance $n 3000
+sayto $n Now, I must return to my work. Farewell..
+mpecho &GThe man in dark robes disappears in a flash of green light!
+mpgoto 4549
+else
+sayto $n This is not the scroll...
+drop all
+endif
+else
+endif
+else
+mea $n &zThe dark figure nods his hooded head at you quickly.&w
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4507
+Keywords   crusader paladin qylaith qylain female shining armor halfelf~
+Short      &wa Qylain crusader&w~
+Long       &wA female paladin dressed in shining armor is here patrolling the cemetary.&w
+~
+Desc       &wThis female halfelf is dressed in shining armor that glistens under
+the moonlight or by torchlight. Her short strawberry blonde hair can
+be seen from under her helmet and her features are stunning. On her
+armor is the symbol of Qylaith, Goddess of Death. This crusader
+patrols the cemetary at night seeking out the undead and helping
+people escape.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   infrared truesight~
+Stats1     0 5 8 0 17 0 0 10 20 0
+Stats2     10 10 15
+Stats3     1 8 1
+Stats4     2 0 2 0 0
+Attribs    16 12 15 12 16 18 12
+Saves      0 0 0 0 0 0
+Immune     poison necrotic sleep charm~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 4504
+if hasqbit($n) != 4506
+if hasqbit($n) != 4500
+if ispc($n)
+sayto $n You should leave immediately. It is too dangerous.
+else
+endif
+else
+sayto $n Have you warned everyone yet? Danger lurks here...
+endif
+else
+sayto $n By siding with that foul Necromancer you have forfeited your life!
+c 'sacred flame' $n
+endif
+else
+sayto $n By siding with that foul Necromancer you have forfeited your life!
+c 'sacred flame' $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   if hasqbit($n) != 4504
+if hasqbit($n) != 4506
+if hasqbit($n) != 4500
+if ispc($n)
+sigh $n
+mpsleep 3
+mpqset $n 4500
+sayto $n If you must. I saw some teenagers sneak into the cemetary.
+sayto $n Please tell them to leave when you see them. Be careful!
+else
+endif
+else
+sayto $n Did you send away everyone? It is very dangerous right now!
+endif
+else
+sayto $n Nay! You help the dark one and shall die because of it!
+c 'sacred flame' $n
+endif
+else
+sayto $n Nay! You help the dark one and shall die because of it!
+c 'sacred flame' $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   c bless
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'sacred flame'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   stun
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4500
+say Qylaith! Aid me as I send this poor creature back to its eternal rest!
+c 'sacred flame' knight
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4501
+say Qylaith! Aid me as I send this poor creature back to its eternal rest!
+c 'sacred flame' zombie
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if mobinroom(4500) >= 1
+say Qylaith! Aid me as I send this poor creature back to its eternal rest!
+c 'sacred flame' knight
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if mobinroom(4501) >= 1
+say Qylaith! Aid me as I send this poor creature back to its eternal rest!
+c 'sacred flame' zombie
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if mobinroom(4506) == 1
+sayto necromancer By Qylaith your tampering of the dead shall end here!
+mpforce necromancer laugh crusader
+mpforce necromancer sayto crusader I would like to see you try fool!
+c 'sacred flame' necromancer
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if mobinroom(4503) >= 1
+sayto teenager Go home! It is far too dangerous here! Now!
+mpecho The teenager looks nervous before running towards the cemetary gates.
+mppurge teenager
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if mobinroom(4504) >= 1
+sayto teenager Go home! It is far too dangerous here! Now!
+mpecho The teenager looks nervous before running towards the cemetary gates.
+mppurge teenager
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if mobinroom(4502) >= 1
+sayto gravedigger Go home Earl.. night has fallen and there is danger!
+mpforce gravedigger emote makes a big gulping sound
+mpforce gravedigger salute crusader
+mpecho The gravedigger grabs his tools and heads quickly for the gates!
+mppurge gravedigger
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if mobinroom(4503) >= 1
+sayto teenager Go home! It is far too dangerous here! Now!
+mpecho The teenager looks nervous before running towards the cemetary gates.
+mppurge teenager
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if mobinroom(4502) >= 1
+sayto gravedigger Go home Earl.. night has fallen and there is danger!
+mpforce gravedigger salute crusader
+mpecho The gravedigger grabs his tools and heads quickly for the gates!
+mppurge gravedigger
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if mobinroom(4504) >= 1
+sayto teenager Go home! It is far too dangerous here! Now!
+mpecho The teenager looks nervous before running towards the cemetary gates.
+mppurge teenager
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p portal~
+Comlist   if hasqbit($n) != 4504
+if hasqbit($n) != 4506
+if hasqbit($n) != 4503
+if hasqbit($n) != 4502
+if hasqbit($n) == 4501
+eye $n
+sayto $n You have discovered a magical portal? That must be how the
+sayto $n raised undead are snuck back into the cemetary. I have checked
+sayto $n every inch of this cemetary and have found no location where
+sayto $n one has raised the dead...
+emote begins searching her pack for something
+mpsleep 3
+sayto $n Ah! Here it is... this holy scroll only works once and for the
+sayto $n person who saw the portal. Speak the words and the portal
+sayto $n will be destroyed. Bring the scroll back to me when it is gone.
+mpoload 4507 1
+give scroll $n
+else
+sayto $n What are you talking about?
+endif
+else
+sayto $n Have you used the scroll yet to close the portal you saw?
+endif
+else
+sayto $n Thank you again for helping me close the portal.
+endif
+else
+sayto $n I will not help you! You aid the dark one!
+c 'sacred flame' $n
+endif
+else
+sayto $n I will not help you! You aid the dark one!
+c 'sacred flame' $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p words~
+Comlist   sayto $n The words are on the scroll. Now go remove that unholy portal!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 4503
+if hasqbit($n) == 4502
+if ovnuminv(4507) == 1
+smile $n
+sayto $n Well done! I have noticed a diminished amount of the undead
+sayto $n wandering about so it must be closed. The Church of Qylaith
+sayto $n appreciates your assistance.
+mpqset $n 4503
+mpjunk bani22
+mpadvance $n 1000
+mpmset self gold 25
+give 25 gold $n
+else
+sayto $n What is this? This is not something I own...
+drop all
+endif
+else
+sayto $n Thank you for giving this to me. I must have dropped it...
+mpjunk bani22
+endif
+else
+sayto $n Another scroll? Thank you for returning it.
+mpjunk bani22
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4508
+say Qylaith! Aid me as I send this spectre back to you kingdom!
+c 'sacred flame' ghost
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 4506
+if hasqbit($n) != 4505
+if hasqbit($n) == 4504
+mea $n &OYou see a scroll on the crusader as she perishes!
+mpoload 4507 1
+mpqset $n 4505
+mpqset $n 4504
+else
+endif
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4508
+Keywords   ghost spectre baneful hovering~
+Short      &Ga ghost&w~
+Long       &GA baneful looking ghost is hovering here while hunting for prey.&w
+~
+Desc       &GThis ghost was recently summoned via dark magics to torment and hurt
+people. It moves about with an angry energy as it hunts prey...&w
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea running~
+Affected   sneak flying truesight~
+Stats1     -1000 1 9 0 9 0 0 0 0 0
+Stats2     10 8 10
+Stats3     4 4 2
+Stats4     2 13 1 0 0
+Attribs    7 10 12 14 10 16 13
+Saves      0 0 0 0 0 0
+Resist     fire lightning nonmagic thunder~
+Immune     cold acid poison necrotic sleep charm paralysis~
+Suscept    radiant~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4502
+k old
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4503
+k male
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4504 
+k female
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4507
+k crusader
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 4505
+k widow
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4549
+Keywords   mob cemetary repop evil voice dark spirit~
+Short      &za dark voice~
+Long       &zA mob is here acting as an evil necromancer.&w
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     -1000 51 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   if mobinarea(4508) == 0
+mpecho &zThe necromancer raises a ghost from the grave!
+mpmload 4508
+else
+snicker
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p open~
+Comlist   mpecho The necromancer waves his arms and opens a portal!
+mpoload 4506 1
+mpopenpassage 4549 4534 5
+silent mpat 4534 drop portal
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p close~
+Comlist   mpecho The necromancer waves his arms and closes a portal!
+mpclosepassage 4549 5
+mpat 4534 mppurge portal
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpecho The necromancer waves his arms and opens a portal!
+mpoload 4506 1
+mpopenpassage 4549 4534 5
+silent mpat 4534 drop portal
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpecho The necromancer waves his arms and closes a portal!
+mpclosepassage 4549 5
+mpat 4534 mppurge portal
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     4500
+Keywords ancient looking longsword~
+Type     weapon~
+Short    &wan ancient looking longsword&w~
+Long     &wAn ancient looking longsword has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   3 1 8 1 1 0
+Values2  0 2
+Stats    3 1 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4501
+Keywords ancient looking spear~
+Type     weapon~
+Short    &wan ancient looking spear&w~
+Long     &wAn ancient looking spear has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   4 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4502
+Keywords ancient looking mace~
+Type     weapon~
+Short    &wan ancient looking mace&w~
+Long     &wAn ancient looking mace has been left here.&w~
+WFlags   take onehand~
+Values   4 1 6 2 8 0
+Values2  0 2
+Stats    4 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4503
+Keywords ancient looking halberd~
+Type     weapon~
+Short    &wan ancient looking halberd&w~
+Long     &wAn ancient looking halberd has been left here.&w~
+Flags    heavy~
+WFlags   take twohand~
+Values   5 1 10 1 17 0
+Values2  0 2
+Stats    6 1 2 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4504
+Keywords dagger~
+Type     weapon~
+Short    a dagger~
+Long     A dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4505
+Keywords qylain greatsword crusader qylaith~
+Type     weapon~
+Short    &wa Qylain crusader's greatsword&w~
+Long     &wA greatsword with the symbol of Qylaith on it has been left here.&w~
+Flags    inventory heavy~
+WFlags   take twohand~
+Values   12 2 6 1 1 0
+Values2  0 2
+Stats    6 20 5 1 2 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4506
+Keywords green swirling portal dark energy~
+Type     trash~
+Short    &Ga swirling green portal&w~
+Long     &GA swirling green portal of dark energies is hovering above here.&w~
+Flags    evil invis magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    9000 0 0 0 0 51 0
+#EXDESC
+ExDescKey    portal~
+ExDesc       &GThis swirling green portal is invisible to the eyes of those without
+magical sight to see it. It whirls and moves above this part of the
+cemetary and was conjured by a spell. You cannot see through it
+and the smell of decay is strong here...&w
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate portal~
+Comlist   if hasqbit($n) != 4501
+if hasqbit($n) != 4502
+if isaffected($n) == detect_invis
+if isaffected($n) == detect_magic
+if arcana($n) >= 19
+mea $n You use your arcane senses to sense necromancy based energies
+mea $n within the portal. Perhaps with the correct banishing spell the
+mea $n portal could be closed...
+mpqset $n 4501
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You do not see a portal here.
+endif
+else
+mea $n You do not see a portal here.
+endif
+else
+mea $n You have already closed the portal...
+endif
+else
+mea $n You have already investigated the portal...
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4507
+Keywords ancient looking scroll qylain banishment bani22~
+Type     treasure~
+Short    &Oan ancient looking scroll&w~
+Long     &OAn ancient looking scroll has been left here.&w~
+Flags    magic bless~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    scroll~
+ExDesc       &OThis scroll appears to be extremely old and was crafted by the
+clergy of Qylaith. The symbols of the church can be found all over
+the scroll along with an ancient form of common.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate scroll~
+Comlist   if religion($n) >= 18
+mea $n You look over the inscriptions in the scroll and find the
+mea $n words, "Duroth Vobinar Curanist Dath Yig Duranis," written
+mea $n on the ancient paper. The scroll details these as words of
+mea $n power to be spoken while holding the scroll.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4549
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     4500
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that leads into the Oldgate cemetary. The
+path is lined with trees that seem older than the city itself. The 
+path continues to the east at the base of a hill. All around the path
+are areas where ancient looking gravestones and markers can be seen.
+The cemetary gates can be seen to the west leading back into the city
+of Oldgate.
+~
+#EXIT
+Direction east~
+ToRoom    4501
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4269
+Keywords  'cemetary gates'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4501
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that leads further into the Oldgate Cemetary.
+This part of the path is not lined with trees as the path continues to
+the east at the base of a hill. Alongside the path here is headstones
+and other markers of those that have passed on many years ago.
+~
+#EXIT
+Direction east~
+ToRoom    4513
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4500
+#ENDEXIT
+
+Reset M 0 4507 1 4501
+  Reset E 0 4505 1 28
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   if mobinarea(4502) == 0
+mpmload 4502
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   if mobinarea(4507) == 0
+mpmload 4507
+mpoload 4505 1
+silent mpforce crusader get greatsword
+silent mpforce crusader wield greatsword
+mpecho A Qylain crusader arrives to scout around the graveyard.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   if mobinarea(4507) == 0
+mpmload 4507 
+mpoload 4505 1
+silent mpforce crusader get greatsword
+silent mpforce crusader wield greatsword
+mpecho A Qylain crusader arrives to scout around the graveyard.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   if mobinarea(4507) == 0
+mpmload 4507 
+mpoload 4505 1
+silent mpforce crusader get greatsword
+silent mpforce crusader wield greatsword
+mpecho A Qylain crusader arrives to scout around the graveyard.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4502
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction east~
+ToRoom    4503
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4513
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4503
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction east~
+ToRoom    4504
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4502
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4504
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction east~
+ToRoom    4505
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4503
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4505
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction south~
+ToRoom    4506
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4504
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4506
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4505
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4507
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4507
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4506
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4508
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4508
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. Two small dirt
+paths to the north and east lead into the areas where the dead are
+buried while the stone path continues to the west and south.
+~
+#EXIT
+Direction north~
+ToRoom    4507
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4543
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4530
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4509
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4509
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. The path here
+continues to the west along the base of one of the two hills found
+in the cemetary.
+~
+#EXIT
+Direction east~
+ToRoom    4508
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4510
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4510
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. A large stone
+mausoleum can be seen to the north from here, which features beautiful
+stained glass windows. The stone path continues to the west and east
+from here.
+~
+#EXIT
+Direction north~
+ToRoom    4544
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4509
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4511
+#ENDEXIT
+
+Reset D 0 4510 0 1
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   if mobinarea(4504) == 0
+mpmload 4504
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   if mobinarea(4503) == 0
+mpmload 4503
+mpmload 4503
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4511
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. The path continues
+to the east or to the south as it rounds around one of the two hills
+found in the cemetary.
+~
+#EXIT
+Direction north~
+ToRoom    4512
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4510
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4514
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4512
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction north~
+ToRoom    4513
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4511
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4513
+Name     A Cemetary Path~
+Sector   city~
+Desc     The major stone path of the cemetary stops here at the base of a hill
+to the north and east of here. The hill is covered in stone markers
+and headstones of those that have passed on. The stone path continues
+to the south or back towards the cemetary gates at the west. Various
+pine trees and a few weeping willows can be found near here offering
+shade to some of the headstones beneath their boughs. 
+~
+#EXIT
+Direction north~
+ToRoom    4502
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4512
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4501
+#ENDEXIT
+
+Reset M 0 4502 1 4513
+  Reset E 0 1649 1 26
+#ENDROOM
+
+#ROOM
+Vnum     4514
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. The path continues
+to the north and west from here. A large hill covered in grave stones
+and other markers can be seen along the side of the path here.
+~
+#EXIT
+Direction north~
+ToRoom    4511
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4515
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4515
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. The path continues
+to the south and east from here. The sounds of birds can be heard
+from nearby trees where they have made their home.
+~
+#EXIT
+Direction east~
+ToRoom    4514
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4516
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4516
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction north~
+ToRoom    4515
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4517
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4517
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction north~
+ToRoom    4516
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4518
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4518
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. A small stone
+mausoleum can be seen towards the south of here, which is owned by
+a rich family in the city of Oldgate.
+~
+#EXIT
+Direction east~
+ToRoom    4519
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4546
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4517
+#ENDEXIT
+
+Reset D 0 4518 2 1
+#ENDROOM
+
+#ROOM
+Vnum     4519
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction east~
+ToRoom    4520
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4518
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4520
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. A large stone
+mausoleum can be seen towards the north from here, which is half
+submerged by the hill it is up against.
+~
+#EXIT
+Direction north~
+ToRoom    4545
+Keywords  'mausoleum door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4521
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4519
+#ENDEXIT
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   if mobinarea(4503) == 0
+mpmload 4503
+mpmload 4503
+mpmload 4503
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   if mobinarea(4504) == 0
+mpmload 4504 
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4521
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction east~
+ToRoom    4522
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4520
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4522
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction east~
+ToRoom    4523
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4521
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4523
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. A small path
+to the south leads towards the grounds where stone markers and
+other gravestones can be found.
+~
+#EXIT
+Direction north~
+ToRoom    4524
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4531
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4522
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4524
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction north~
+ToRoom    4525
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4523
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4525
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. A small stone
+mausoleum can be seen towards the west, which is owned by a rich
+family in the city of Oldgate. To the east is a small path leading
+into the area where graves and the dead are buried.
+~
+#EXIT
+Direction north~
+ToRoom    4526
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4537
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4524
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4547
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4525 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4526
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction east~
+ToRoom    4527
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4525
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4527
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction east~
+ToRoom    4528
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4526
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4528
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed. A small path
+to the east heads into the graves at the base of a hill in the
+cemetary.
+~
+#EXIT
+Direction north~
+ToRoom    4529
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4540
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4527
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4529
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction north~
+ToRoom    4530
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4530
+Name     A Cemetary Path~
+Sector   city~
+Desc     This is a small stone path that weaves through the Oldgate cemetary
+and its two gravestone laden hills. The path is made from loose stone
+that has been set by those that visit the cemetary. Various benches
+made from stone can be found along the path, which offers grieving
+people a place to sit. The landscaping of the cemetary is meticulously 
+taken care of by employed city workers who toil during the day to
+ensure the cemetary is clean and solemnly designed.
+~
+#EXIT
+Direction north~
+ToRoom    4508
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4529
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4531
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4523
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4532
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4532
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4531
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4533
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4533
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4532
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4534
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4534
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4535
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4533
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p test~
+Comlist   mpoload 4506 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p duroth vobinar curanist dath yig duranis~
+Comlist   if hasqbit($n) == 4501
+if hasqbit($n) != 4502
+if wearingvnum($n) == 4507
+if ovnumroom(4506) == 1
+mea $n &OThe scroll begins to glow in your hands as the holy words
+mea $n &Oof power are spoken! There is a crackle in the air and the wind
+mea $n &Obegins to pick up all around you!&w
+mer $n &OAs $n speaks some words from a scroll the wind picks up!
+mpat 4549 mpforce mob yell NOOOOOOOOOOOO!!!! My plans!!!!!
+mpsleep 3
+mea $n &GYou watch as the portal above you begins to collapse in on itself
+mea $n &Gand close up. The is a loud popping sound as it disappears!
+mer $n &GYou watch as a portal of green energy above suddenly closes!
+mpasound &GYou hear a loud POP come from somewhere nearby.&w
+mpsleep 3
+mpecho &wThe wind begins to slow down and return to normal...
+mpat 4549 mpclosepassage 4549 5
+mppurge portal
+mpadvance $n 2500
+mpqset $n 4501
+mpqset $n 4502
+else
+mea $n There is no portal here for you to banish.
+endif
+else
+mea $n You need to be holding the scroll first.
+endif
+else
+mea $n The scroll fails to activate upon your words of power...
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if isaffected($n) == detect_magic
+if ovnumroom(4506) == 1
+mea $n &BYou sense magical energies near here suddenly...&w
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+if ovnumroom(4506) == 1
+mea $n &BYou see something move above you suddenly before disappearing!
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4535
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently. A decrepit looking stone mausoleum can be found to the
+east from here. Its windows have been smashed and it has weeds
+growing up alongside it. It seems to have been forgotten by 
+everyone including the grounds staff.
+~
+#EXIT
+Direction north~
+ToRoom    4536
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4548
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4534
+#ENDEXIT
+
+Reset D 0 4535 1 1
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   if mobinarea(4506) == 0
+mpmload 4506
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4536
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4537
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4535
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4537
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4538
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4536
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4525
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4538
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction east~
+ToRoom    4539
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4537
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4539
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4540
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4538
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4540
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4541
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4539
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4541
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction north~
+ToRoom    4542
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4540
+#ENDEXIT
+
+Reset M 0 4505 1 4541
+#ENDROOM
+
+#ROOM
+Vnum     4542
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction south~
+ToRoom    4541
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4543
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4543
+Name     Amongst the Graves~
+Sector   field~
+Desc     This is the base of a hill found in the city cemetary of Oldgate. The
+field here is covered with stone markers and gravestones of those
+that have passed long ago. Some of the headstones are in excellent
+shape while others are crumbling away due to age or neglect. A few
+are fresh with the ground showing signs of having been dug up
+recently.
+~
+#EXIT
+Direction east~
+ToRoom    4542
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4508
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4544
+Name     Inside a Mausoleum~
+Sector   indoors~
+Desc     The interior of this stone mausoleum is very clean and shows signs of
+having been recently swept. A stone crest on the north wall of the
+mausoleum has faded and softened with time so that the family emblem
+can no longer be detected. There are several stone boxes that hold
+the skeletal remains of the family that owns the mausoleum here. The
+stone boxes are carved with the names of the remains that can be
+found in each box.
+~
+#EXIT
+Direction south~
+ToRoom    4510
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4544 2 1
+#ENDROOM
+
+#ROOM
+Vnum     4545
+Name     Inside a Mausoleum~
+Sector   indoors~
+Desc     The interior of this stone mausoleum is very clean and shows signs of
+having been recently swept. A stone crest on the north wall of the
+mausoleum has faded and softened with time so that the family emblem
+can no longer be detected. There are several stone boxes that hold
+the skeletal remains of the family that owns the mausoleum here. The
+stone boxes are carved with the names of the remains that can be
+found in each box. The stain glass window at the north end of the
+mausoleum is dark since the hill has run up against it, which blocks
+all light from entering the mausoleum.
+~
+#EXIT
+Direction south~
+ToRoom    4520
+Keywords  'mausoleum door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4546
+Name     Inside a Mausoleum~
+Sector   indoors~
+Desc     The interior of this stone mausoleum is very clean and shows signs of
+having been recently swept. A stone crest on the north wall of the
+mausoleum has faded and softened with time so that the family emblem
+can no longer be detected. There are several stone boxes that hold
+the skeletal remains of the family that owns the mausoleum here. The
+stone boxes are carved with the names of the remains that can be
+found in each box.
+~
+#EXIT
+Direction north~
+ToRoom    4518
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4546 0 1
+#ENDROOM
+
+#ROOM
+Vnum     4547
+Name     Inside a Mausoleum~
+Sector   indoors~
+Desc     The interior of this stone mausoleum is very clean and shows signs of
+having been recently swept. A stone crest on the north wall of the
+mausoleum has faded and softened with time so that the family emblem
+can no longer be detected. There are several stone boxes that hold
+the skeletal remains of the family that owns the mausoleum here. The
+stone boxes are carved with the names of the remains that can be
+found in each box.
+~
+#EXIT
+Direction east~
+ToRoom    4525
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4547 1 1
+#ENDROOM
+
+#ROOM
+Vnum     4548
+Name     Inside a Mausoleum~
+Sector   indoors~
+Desc     This mausoleum is completely empty except for the crumbling remains of
+a stone box that once held the remains of the family that used this
+building. The windows of the building have been smashed and there is
+bits of glass all over the cracked stone floor of the mausoleum. Strange
+art can be found on the walls, which were drawn by teenagers who
+come here at night.
+~
+#EXIT
+Direction west~
+ToRoom    4535
+Keywords  'mausoleum doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 4548 3 1
+#ENDROOM
+
+#ROOM
+Vnum     4549
+Name     &RMOB HIDEOUT&w~
+Sector   city~
+Flags    nomob nomagic norecall nosummon~
+Desc     You do not belong here. Please contact an admin in order to be 
+released from here. Thank you!
+~
+Reset M 0 4549 1 4549
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   if mobinarea(4501) == 0
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+mpmload 4501
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   if mobinarea(4500) == 0
+mpmload 4500
+mpoload 4500 1
+mpforce skeleton get longsword
+mpforce skeleton wield longsword
+mpmload 4500
+mpoload 4501 1
+mpforce 2.skeleton get spear
+mpforce 2.skeleton wield spear
+mpmload 4500
+mpoload 4502 1
+mpforce 3.skeleton get mace
+mpforce 3.skeleton wield mace
+mpmload 4500
+mpoload 4503 1
+mpforce 4.skeleton get halberd
+mpforce 4.skeleton wield halberd
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

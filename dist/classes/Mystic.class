@@ -1,0 +1,339 @@
+Name          Mystic~
+Class         12
+SavingStatOne 3
+SavingStatTwo 4
+SpellModStat  3
+Weapon        0
+Guild         0
+Skilladept    0
+Thac0         0
+Thac32        0
+Hpmin         1
+Hpmax         8
+Mana          0
+Expbase       1000
+Affected      0
+Resist	       0
+Suscept	    0
+CasterType    -1
+Subclasses    0
+Skill 'abyssal' 1 95 0
+Skill 'alter dreams' 14 95 26
+Skill 'apportation' 32 95 26
+Skill 'aquan' 1 95 0
+Skill 'astral body' 34 95 26
+Skill 'astral cord' 25 95 26
+Skill 'astral projection' 25 95 0
+Skill 'auran' 1 95 0
+Skill 'axes' 1 95 0
+Skill 'bows' 1 95 0
+Skill 'celestial' 1 95 0
+Skill 'chaos mind' 16 95 26
+Skill 'claircognizance' 14 95 26
+Skill 'clairgustance' 1 95 26
+Skill 'clairvoyance' 10 95 0
+Skill 'climb' 1 95 0
+Skill 'clubs' 1 95 0
+Skill 'combat mind' 7 95 26
+Skill 'common' 1 95 0
+Skill 'consumptive power' 10 95 26
+Skill 'cook' 1 95 0
+Skill 'crossbows' 1 95 0
+Skill 'daggers' 1 95 0
+Skill 'dampen defenses' 13 95 26
+Skill 'darts' 1 95 0
+Skill 'dash' 1 95 0
+Skill 'deep speech' 1 95 0
+Skill 'detect hidden minds' 2 95 26
+Skill 'detect invis minds' 8 95 26
+Skill 'dig' 1 95 0
+Skill 'draconic' 1 95 0
+Skill 'dwarven' 1 95 0
+Skill 'ego whip' 10 95 26
+Skill 'elvish' 1 95 0
+Skill 'empathy' 16 95 26
+Skill 'energy healing' 10 95 26
+Skill 'forage' 1 95 0
+Skill 'giant' 1 95 26
+Skill 'gnomish' 1 95 0
+Skill 'goblin' 1 95 0
+Skill 'grapple' 5 95 0
+Skill 'greater psychoblast' 40 95 26
+Skill 'halfling' 1 95 0
+Skill 'hammers' 1 95 0
+Skill 'hidden mind' 8 95 26
+Skill 'hive mind' 45 95 26
+Skill 'holdbreath' 1 95 0
+Skill 'ignan' 1 95 0
+Skill 'incite courage' 12 95 26
+Skill 'incite fear' 3 95 26
+Skill 'incite fury' 9 95 26
+Skill 'infernal' 1 95 0
+Skill 'javelins' 1 95 0
+Skill 'kick' 1 95 0
+Skill 'levitation' 6 95 26
+Skill 'maces' 1 95 0
+Skill 'magical' 1 95 0
+Skill 'malleable soul' 18 95 26
+Skill 'mass hidden mind' 23 95 26
+Skill 'mass mental fortress' 24 95 26
+Skill 'mass psychoblast' 30 95 26
+Skill 'mass telekinetic flight' 20 95 26
+Skill 'mediumship' 15 95 26
+Skill 'mental blindness' 16 95 26
+Skill 'mental domination' 15 95 26
+Skill 'mental fortress' 12 95 26
+Skill 'mental paralysis' 9 95 26
+Skill 'mental possession' 26 95 26
+Skill 'mindlink' 20 95 26
+Skill 'minor psychoblast' 2 95 26
+Skill 'molecular disruption' 40 95 26
+Skill 'mount' 1 95 0
+Skill 'orc' 1 95 0
+Skill 'primordial' 1 95 0
+Skill 'prophecy' 50 95 26
+Skill 'psionic armor' 1 95 26
+Skill 'psionic avatar' 45 95 26
+Skill 'psychic darts' 5 95 26
+Skill 'psychic imprint' 4 95 0
+Skill 'psychic slumber' 3 95 26
+Skill 'psychic steroid' 16 95 26
+Skill 'psychic tracking' 18 95 26
+Skill 'psychic vampire' 40 95 26
+Skill 'psychoblast' 20 95 26
+Skill 'psychometry' 6 95 26
+Skill 'punch' 5 95 0
+Skill 'pyrokinesis' 32 95 26
+Skill 'read aura' 1 95 26
+Skill 'remote viewing' 16 95 26
+Skill 'rescue' 1 95 0
+Skill 'retrocognition' 12 95 26
+Skill 'scan' 1 95 0
+Skill 'search' 1 95 0
+Skill 'second sight' 10 95 26
+Skill 'sedate brain' 16 95 26
+Skill 'sickles' 1 95 0
+Skill 'sleepy mind' 4 95 26
+Skill 'slings' 1 95 0
+Skill 'soothing presence' 2 95 26
+Skill 'soul knife' 45 95 26
+Skill 'spears' 1 95 0
+Skill 'spectral form' 28 95 26
+Skill 'stabilize' 1 95 0
+Skill 'staves' 1 95 0
+Skill 'sylvan' 1 95 0
+Skill 'telekinetic disarm' 15 95 26
+Skill 'telekinetic flight' 12 95 26
+Skill 'telekinetic parry' 18 95 0
+Skill 'telekinetic shield' 30 95 26
+Skill 'telekinetic smash' 20 95 26
+Skill 'telekinetic storm' 30 95 26
+Skill 'telekinetic thrust' 1 95 26
+Skill 'telekinetic toss' 10 95 26
+Skill 'telepathic rapport' 10 95 26
+Skill 'terran' 1 95 0
+Skill 'trance' 15 95 0
+Skill 'transmutation' 35 95 26
+Skill 'troll' 1 95 0
+Skill 'ultimate vision' 37 95 26
+Skill 'undercommon' 1 95 0
+Skill 'whips' 1 95 0
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+(null)~
+(null)~
+End

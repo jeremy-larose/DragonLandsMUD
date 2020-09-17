@@ -1,0 +1,11799 @@
+#FUSSAREA
+#AREADATA
+Version      1
+Name         The Darkhaven Sea~
+Author       Beltane~
+WeatherX     0
+WeatherY     0
+Ranges       15 50 0 0
+Economy      0 31273300
+ResetMsg     &BThe currents of the sea move quickly before returning to normal...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       3000
+Keywords   sea hag woman strange covered seaweed~
+Short      &ca sea hag&w~
+Long       &cA strange woman covered in seaweed is here chanting around a fire.&w
+~
+Desc       &cThis woman has long sea drenched dark locks of hair and skin the
+color of pale moonlight. Her eyes are huge and lime green colored,
+which contrasts with her skintone. She is covered in seaweed and
+tattered cloth that has been patched together.
+~
+Race       magical~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -1000 1 5 0 14 0 0 5 10 0
+Stats2     7 8 21
+Stats3     2 6 3
+Stats4     2 6 1 0 0
+Attribs    16 12 12 13 16 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   c 'hold person' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'lightning bolt' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   15~
+Comlist   c 'dispel magic' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   55~
+Comlist   c 'firebolt' $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3001
+Keywords   sea hag hag2 woman strange covered seaweed~
+Short      &ca sea hag&w~
+Long       &cA strange woman covered in seaweed is here chanting around a fire.&w
+~
+Desc       &cThis woman has long sea drenched dark locks of hair and skin the
+color of pale moonlight. Her eyes are huge and lime green colored,
+which contrasts with her skintone. She is covered in seaweed and
+tattered cloth that has been patched together.
+~
+Race       magical~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -1000 1 5 0 14 0 0 5 10 0
+Stats2     7 8 21
+Stats3     2 6 3
+Stats4     2 0 1 0 0
+Attribs    16 12 12 13 16 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'mass cure serious'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'poison spray' $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3002
+Keywords   sea hag hag3 woman strange covered seaweed~
+Short      &ca sea hag&w~
+Long       &cA strange woman covered in seaweed is here chanting around a fire.&w
+~
+Desc       &cThis woman has long sea drenched dark locks of hair and skin the
+color of pale moonlight. Her eyes are huge and lime green colored,
+which contrasts with her skintone. She is covered in seaweed and
+tattered cloth that has been patched together.
+~
+Race       magical~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -1000 1 5 0 14 0 0 5 10 0
+Stats2     7 8 21
+Stats3     2 6 3
+Stats4     2 0 1 0 0
+Attribs    16 12 12 13 16 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'charm person' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'firebolt'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3003
+Keywords   giant octopus swimming~
+Short      &ca giant octopus&w~
+Long       &cA giant octopus is here swimming about slowly.&w
+~
+Desc       &cThis octopus has long tentacles and is quite large in scale from
+a regular sized octopus. It swims about slowly as it hunts for
+prey.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared aqua_breath~
+Stats1     0 1 4 0 11 0 0 0 0 0
+Stats2     8 10 8
+Stats3     2 6 3
+Stats4     3 1 1 0 0
+Attribs    17 4 10 13 13 4 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3003 1
+mpoload 3003 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3004
+Keywords   giant shark ~
+Short      &Wa giant shark&w~
+Long       &WA giant shark is here hunting for prey.&w
+~
+Desc       &WThis shark is a huge and very dangerous looking. It swims about
+here looking for some prey. It has large teeth and swims very
+quickly as it hunts.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Specfun    spec_fido~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     0 1 8 0 18 0 0 0 0 0
+Stats2     11 12 55
+Stats3     3 10 6
+Stats4     4 1 1 1 0
+Attribs    23 1 10 11 21 5 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3004 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3005
+Keywords   blue whale massive~
+Short      &Ba massive blue whale&w~
+Long       &BA massive blue whale is here swimming about.&w
+~
+Desc       &BThis majestic creature is incredibly large and has very kind looking
+eyes. It swims about very slowly as it moves through the sea.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea~
+Affected   infrared aqua_breath~
+Stats1     0 1 9 0 18 0 0 0 0 0
+Stats2     36 12 12
+Stats3     15 6 4
+Stats4     5 1 1 0 0
+Attribs    24 5 14 10 20 7 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       3006
+Keywords   sahuagin city guard fishy humanoid~
+Short      &ca sahuagin guard&w~
+Long       &cA fishy humanoid is here guarding the entrance to an underwater city.&w
+~
+Desc       &CThis humanoid creature has fish features such as webbed feet and hands,
+but its head resembles a predator based fish. It ripples with muscles
+and looks very menancing. Its wide mouth full of razor sharp teeth helps
+give this impression as well.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -700 1 4 0 12 0 0 2 0 0
+Stats2     6 8 4
+Stats3     1 4 1
+Stats4     2 0 2 0 0
+Attribs    15 12 13 11 12 9 15
+Saves      0 0 0 0 0 0
+Resist     cold~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3007
+Keywords   sahuagin priestess fishy humanoid female~
+Short      &Ca sahuagin priestess&w~
+Long       &CA fishy humanoid is here chanting in front of an altar.&w
+~
+Desc       &CThis humanoid creature has fish features such as webbed feet and hands,
+but its head resembles a predator based fish. It ripples with
+muscles and is wearing the tattered remnants of some robes. Its wide
+mouth full of razor sharp teeth helps give the impression that this
+creature is very dangerous.
+~
+Race       monster~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -700 1 5 0 12 0 0 2 0 0
+Stats2     6 8 6
+Stats3     1 4 1
+Stats4     2 0 2 0 0
+Attribs    13 12 15 11 12 13 15
+Saves      0 0 0 0 0 0
+Resist     cold~
+Immune     charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure serious'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'chill touch' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   c 'hold person' $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3008
+Keywords   sahuagin commoner fishy humanoid~
+Short      &ca sahuagin&w~
+Long       &cA fishy humanoid is here swimming about the city.&w
+~
+Desc       &CThis humanoid creature has fish features such as webbed feet and hands,
+but its head resembles a predator based fish. It ripples with muscles
+and looks very menancing. Its wide mouth full of razor sharp teeth helps
+give this impression as well.
+ 
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared aqua_breath~
+Stats1     -700 1 3 0 12 0 0 2 0 0
+Stats2     4 8 4
+Stats3     1 4 1
+Stats4     2 0 2 0 0
+Attribs    15 12 13 11 12 9 15
+Saves      0 0 0 0 0 0
+Resist     cold~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3009
+Keywords   sahuagin raider fishy humanoid~
+Short      &ca sahuagin raider&w~
+Long       &cA fishy humanoid is here lurking about.&w
+~
+Desc       &CThis humanoid creature has fish features such as webbed feet and hands,
+but its head resembles a predator based fish. It ripples with muscles
+and looks very menancing. Its wide mouth full of razor sharp teeth helps
+give this impression as well.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive~
+Affected   infrared aqua_breath~
+Stats1     -700 1 5 0 12 0 0 2 0 0
+Stats2     6 8 25
+Stats3     1 4 1
+Stats4     2 0 2 0 0
+Attribs    15 12 13 11 12 9 15
+Saves      0 0 0 0 0 0
+Resist     cold~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3010
+Keywords   kraken gigantic monster squid resting~
+Short      &ca Kraken&w~
+Long       &cA gigantic squid is here resting at the bottom of the cargo hold of the sunken ship.&w
+~
+Lore       &cYou see a dark and stormy night at the sea. Above the sky is lit with
+magical fire and the world seems to be going crazy. A pirate ship
+is trying to set sail when the Kraken begins to strike by grabbing
+at the boat and dragging it under the waves. Suddenly the sky explodes and
+part of the boat catches fire...&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Affected   detect_hidden infrared aqua_breath~
+Stats1     -1000 1 26 0 18 0 0 0 0 0
+Stats2     27 20 189
+Stats3     3 8 10
+Stats4     5 10 4 0 0
+Attribs    30 22 18 11 25 20 13
+Saves      0 0 0 0 0 0
+Immune     lightning poison charm nonmagic paralysis~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   c 'lightning storm'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   tentaclefling $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3011
+Keywords   merrow sinister looking merfolk black~
+Short      &za merrow&w~
+Long       &zA sinister looking merfolk with black eyes is here.&w
+~
+Desc       &zThis creature resembles one of the merfolk, but it has been twisted
+by dark magics and corrupted. It's features are now tinged with black
+and its eyes are as dark as ink. It has sharp fangs and talons, which it
+uses to attack its foes.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea~
+Affected   infrared aqua_breath~
+Stats1     -1000 1 5 0 13 0 0 0 0 0
+Stats2     6 10 12
+Stats3     1 8 4
+Stats4     2 10 2 0 0
+Attribs    18 8 10 10 15 9 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3012
+Keywords   seahorse tiny swimming~
+Short      &Pa seahorse&w~
+Long       &PA seahorse is here swimming about quickly.
+~
+Desc       &PThis seahorse is quite tiny and elegant looking. It moves about
+the sea in quick motions before hovering to scout the area for
+danger.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea~
+Affected   infrared aqua_breath~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 0 0
+Stats3     0 0 0
+Stats4     1 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       3013
+Keywords   sea anemone brightly colored~
+Short      &PA se&Ya an&pem&Pon&Ye~
+Long       &PA bri&Yghtl&py col&Pore&Yd se&pa anem&Pon&Ye is h&pere a&Ptta&Yche&pd to a r&Pock.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel~
+Affected   infrared aqua_breath~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 1 0
+Stats3     1 0 0
+Stats4     1 1 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &PThe sea anemone sways and moves to the currents of the sea.&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3014
+Keywords   small clam sand colored~
+Short      &Ya sand colored clam&w~
+Long       &YA sand colored clam is here nestled on the sea floor.&w
+~
+Desc       &YThis is a small clam that is the same color as warm beach sand, which
+helps it hide from those seeking its pearls.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel~
+Affected   hide aqua_breath~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 3 0
+Stats3     1 0 0
+Stats4     1 1 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3218 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3015
+Keywords   dolphin swimming~
+Short      &Ca dolphin&w~
+Long       &CA dolphin is here swimming about happily.&w
+~
+Desc       &CThe dolphin is a light grey tone and seems to be of average size
+for its species. It has a playful disposition and likes to play
+games with creatures it meets.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea~
+Affected   detect_hidden aqua_breath~
+Stats1     0 1 2 0 13 0 0 0 0 0
+Stats2     2 8 4
+Stats3     1 6 1
+Stats4     2 0 1 0 0
+Attribs    11 6 12 16 14 16 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mpecho &CThe dolphin swims up to you and begins to playfully swim around you.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3016
+Keywords   wild water elemental~
+Short      &Ba wild water elemental&w~
+Long       &BA strange looking humanoid made of water is here splashing around the cave.&w
+~
+Desc       &BThe creature before you resembles a large humanoid, but it is
+made of nothing but swirling water. It leaves puddles everywhere it
+walks. It seems to have no eyes, mouth, or other facial features.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Affected   infrared~
+Stats1     0 1 8 0 14 0 0 0 0 0
+Stats2     12 10 36
+Stats3     2 6 4
+Stats4     3 0 2 0 0
+Attribs    18 5 10 14 20 10 16
+Saves      0 0 0 0 0 0
+Resist     blunt pierce slash acid nonmagic~
+Immune     poison charm paralysis~
+Suscept    fire~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3299
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3000
+Keywords hag eye string varnish coated eye~
+Type     trash~
+Short    &cAn eye coated in varnish on a string&w~
+Long     &cAn eye coated in varnish on a string has been left here.&w~
+Lore   &cYour divination reveals to be a "Hag's Eye," which is crafted by
+a coven of Hags to be used in their rituals of evil.
+~
+Flags    evil magic~
+WFlags   take neck~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3001
+Keywords cave fire small~
+Type     fire~
+Short    &Ra small cave fire&w~
+Long     &RA small fire has been lit here in the cave.&w~
+Values   25 0 0 0 0 0
+Values2  0 1
+Stats    10 0 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3002
+Keywords trap sea cave~
+Type     trap~
+Short    &ca trap&w~
+Long     &cA strange device has been set here amongst some rocks.&w~
+Values   1 9 0 13 1 15
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3003
+Keywords small piece octopus tentacle~
+Type     cook~
+Short    &ca small piece of octopus tentacle&w~
+Long     &cA small piece of an octopus' tentacle has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3004
+Keywords shark tooth large~
+Type     trash~
+Short    &Wa large shark's tooth&w~
+Long     &WA large shark's tooth has been left here.&w~
+WFlags   take onehand~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    1 1 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3005
+Keywords excavated tunnel down~
+Type     trash~
+Short    &Oan excavated tunnel&w~
+Long     &OA tunnel that was excavated long ago is here leading down.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3006
+Keywords sahuagin spear~
+Type     weapon~
+Short    a spear~
+Long     A simple spear has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3007
+Keywords sahuagin trident~
+Type     weapon~
+Short    a trident~
+Long     A trident has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 17 0
+Values2  0 2
+Stats    4 5 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3008
+Keywords merrow harpoon sinister looking~
+Type     weapon~
+Short    a sinister looking harpoon~
+Long     A sinister looking harpoon has been left here.~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 2 6 3 17 0
+Values2  0 2
+Stats    4 5 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3009
+Keywords bubbleweed white colored plant herb~
+Type     herb~
+Short    &Wsome bubbleweed&w~
+Long     &WA white colored plant is here growing on the sea floor.&w~
+WFlags   take onehand~
+Values   5 1 8 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3210
+Keywords algae sea large bush~
+Type     trash~
+Short    &ga sea algae bush&w~
+Long     &gA large bush of sea algae is here growing on the sea floor.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pickalgae~
+Comlist   if nature($n) >= 14
+mea $n You manage to pick some algae from the bush.
+mer $n $n picks some algae from a nearby bush.
+mpoload 3211 1
+mpoload 3211 1
+silent mpforce $n get picked
+silent mpforce $n get picked
+else
+mea $n You fail to pick some algae from the bush.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate bush~
+Comlist   if investigation($n) >= 12
+mea $n Perhaps you can PICKALGAE from the bush...
+else
+mea $n You don't find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3211
+Keywords sea algae picked~
+Type     trash~
+Short    &gsome sea algae&w~
+Long     &gSome sea algae has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 2 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3212
+Keywords large stone covering~
+Type     furniture~
+Short    &Oa large stone&w~
+Long     &OA large stone is here on the sea floor.&w~
+Flags    covering~
+Values   15 0 0 0 0 0
+Values2  0 2
+Stats    25 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3213
+Keywords huge rock covering algae covered~
+Type     furniture~
+Short    &zA huge algae covered rock&w~
+Long     &zA huge algae covered rock is here on the sea floor.&w~
+Flags    covering~
+Values   15 0 0 0 0 0
+Values2  0 4
+Stats    80 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3214
+Keywords seaweed long slimy~
+Type     trash~
+Short    &csome seaweed&w~
+Long     &cA crop of long slimy seaweed is here growing in between some rocks.&w~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pickseaweed~
+Comlist   if nature($n) >= 13
+mea $n You manage to pick some slimy seaweed.
+mer $n $n picks some seaweed from nearby.
+mpoload 3215 1
+mpoload 3215 1
+mpoload 3215 1
+silent mpforce $n get pickedseaweed
+silent mpforce $n get pickedseaweed
+silent mpforce $n get pickedseaweed
+else
+mea $n Your fingers slip on the seaweed and you fail to pick some.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate seaweed~
+Comlist   if investigation($n) >= 12
+mea $n Perhaps you can take some seaweed by PICKSEAWEED...
+else
+mea $n You don't find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3215
+Keywords some seaweed pickedseaweed~
+Type     trash~
+Short    &gsome seaweed&w~
+Long     &gSome seaweed has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3216
+Keywords killer algae poisonous red colored~
+Type     trash~
+Short    &Rkiller algae&w~
+Long     &RA crop of red colored algae is here dancing to the motions of the sea.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3217
+Keywords giant sea kelp forest~
+Type     trash~
+Short    &Ga forest of giant sea kelp&w~
+Long     &GA forest of giant sea kelp is here growing off the sea floor.&w~
+Values   0 0 0 0 0 0
+Values2  0 4
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3218
+Keywords small pearl~
+Type     trash~
+Short    &Wa small pearl&w~
+Long     &WA small pearl has been left here.&w~
+Flags    buried~
+WFlags   take onehand~
+Values   15 0 0 0 0 0
+Values2  0 2
+Stats    1 0 3 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3219
+Keywords handful beach sand~
+Type     trash~
+Short    &Ya handful of beach sand&w~
+Long     &YA handful of beach sand has been left here.&w~
+Flags    buried~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3297
+Keywords magic circle drawn glowing blue chalk~
+Type     trash~
+Short    &Ba magic circle&w~
+Long     &BAn abandoned magic circle has been drawn here with glowing blue chalk.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3298
+Keywords water crystal shard blue tinged~
+Type     rune~
+Short    &Ca water crystal shard&w~
+Long     &CA shard of blue tinged crystal has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    1 5 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3299
+Keywords water elemental crystal vein~
+Type     trash~
+Short    &Ca water crystal vein&w~
+Long     &CA vein of water crystal is here on the southern wall of the cave.&w~
+Flags    invis magic~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate vein~
+Comlist   if investigation($n) >= 16
+mea $n This is a vein of magical looking crystal that could be
+mea $n mined (PICKCRYSTAL) with the right mining pick...
+else
+mea $n You find nothing.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pickcrystal~
+Comlist   if wearingvnum($n) == 996
+if arcana($n) >= 20
+mea $n You use the elemental pick to knock loose a few shards. The vein
+mea $n glows for a few moments before disappearing...
+mer $n $n manages to successfully mine some crystals from a magical vein.
+mpoload 3298 1
+mpoload 3298 1
+mppurge vein
+else 
+mea $n You fail to mine anything off of the vein.
+endif
+else
+mea $n You need the corect mining pick to harvest any crystals.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#ROOM
+Vnum     3000
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction north~
+ToRoom    2920
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3001
+#ENDEXIT
+
+Reset O 0 3219 2 3000
+#ENDROOM
+
+#ROOM
+Vnum     3001
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3009
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3000
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3010
+#ENDEXIT
+
+Reset O 0 3219 3 3001
+#ENDROOM
+
+#ROOM
+Vnum     3002
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3010
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3001
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3009
+#ENDEXIT
+
+Reset O 0 3219 4 3002
+#ENDROOM
+
+#ROOM
+Vnum     3003
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    3004
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3012
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3011
+#ENDEXIT
+
+Reset O 0 3219 3 3003
+#ENDROOM
+
+#ROOM
+Vnum     3004
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    3005
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3003
+#ENDEXIT
+
+Reset O 0 3219 7 3004
+#ENDROOM
+
+#ROOM
+Vnum     3005
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    3006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3014
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3004
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3015
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3013
+#ENDEXIT
+
+Reset O 0 3219 2 3005
+#ENDROOM
+
+#ROOM
+Vnum     3006
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    3007
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3015
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3005
+#ENDEXIT
+
+Reset O 0 3219 6 3006
+#ENDROOM
+
+#ROOM
+Vnum     3007
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction north~
+ToRoom    2018
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3008
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3016
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3006
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3015
+#ENDEXIT
+
+Reset O 0 3219 1 3007
+Reset O 0 3219 2 3007
+#ENDROOM
+
+#ROOM
+Vnum     3008
+Name     &YA Long Sandy Beach&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction south~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3007
+#ENDEXIT
+
+Reset O 0 3219 2 3008
+#ENDROOM
+
+#ROOM
+Vnum     3009
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3001
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3010
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3023
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3036
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3024
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3010
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3011
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3024
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3009
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3037
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3001
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3023
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3011
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3012
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3025
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3010
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3038
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3026
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3024
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3012
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3026
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3011
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3039
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3013
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3004
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3014
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3027
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3012
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3040
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3005
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3026
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3014
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3005
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3015
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3028
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3041
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3027
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3015
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3006
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3016
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3029
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3014
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3042
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3007
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3005
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3030
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3028
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3016
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3007
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3030
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3015
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3043
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3017
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3008
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3018
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3031
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3016
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3044
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3007
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3032
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3030
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3018
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3019
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3032
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3045
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3019
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3020
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3033
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3018
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3046
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3034
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3032
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3020
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3021
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3019
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3021
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3022
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3020
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3048
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3035
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3034
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3022
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3232
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3035
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3021
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3049
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3238
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3023
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3009
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3024
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3053
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3010
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3024
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3011
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3025
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3023
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3054
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3011
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3009
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3025
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3011
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3026
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3024
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3055
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3026
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3012
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3027
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3025
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3056
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3011
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3027
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3028
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3026
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3057
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3014
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3028
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3014
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3029
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3027
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3058
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3029
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3015
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3030
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3028
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3030
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3016
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3031
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3029
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3060
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3031
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3032
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3030
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3032
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3018
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3033
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3031
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3062
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3019
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3017
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3033
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3019
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3032
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3063
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3034
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3020
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3035
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3033
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3064
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3021
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3019
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3035
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3022
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3238
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3034
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3065
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3232
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3021
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3036
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3037
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3009
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3066
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3052
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3037
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3038
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3036
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3010
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3067
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3053
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3051
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3038
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3039
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3053
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3037
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3011
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3067
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3054
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3052
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3039
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3040
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3054
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3038
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3012
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3068
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3055
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3053
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3040
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3041
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3055
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3039
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3069
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3056
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3054
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3041
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3042
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3056
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3040
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3014
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3070
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3057
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3055
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3042
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3043
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3057
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3041
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3015
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3071
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3058
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3058
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3043
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3044
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3042
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3016
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3072
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3059
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3057
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3044
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3045
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3059
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3043
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3073
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3045
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3046
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3060
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3044
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3018
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3074
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3061
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3046
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3047
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3061
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3045
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3019
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3075
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3062
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3047
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3048
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3062
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3046
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3020
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3076
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3063
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3048
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3049
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3063
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3047
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3021
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3077
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3064
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3062
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3049
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3050
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3064
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3048
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3022
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3078
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3065
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3063
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3050
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3065
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3049
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3022
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3079
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3250
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3064
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3051
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3036
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3052
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3023
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3080
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3037
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3052
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3037
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3053
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3051
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3024
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3080
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3038
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3036
+#ENDEXIT
+
+Reset M 0 3004 3 3052
+#ENDROOM
+
+#ROOM
+Vnum     3053
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3038
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3054
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3052
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3023
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3081
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3039
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3037
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3054
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3039
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3055
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3053
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3024
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3082
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3040
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3038
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3055
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3040
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3056
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3054
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3025
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3083
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3041
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3039
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3056
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3041
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3057
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3055
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3026
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3084
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3042
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3040
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3057
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3042
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3056
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3027
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3085
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3043
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3041
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3058
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3043
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3059
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3057
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3028
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3086
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3044
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3042
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3059
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3044
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3060
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3058
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3029
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3087
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3045
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3043
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3060
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3045
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3061
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3059
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3030
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3088
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3046
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3061
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3046
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3062
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3060
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3031
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3089
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3047
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3045
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3062
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3047
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3063
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3061
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3032
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3090
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3048
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3046
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3063
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3048
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3064
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3062
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3033
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3091
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3049
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3064
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3049
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3065
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3063
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3034
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3092
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3050
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3048
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3065
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3050
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3250
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3064
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3035
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3093
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3049
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3066
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3067
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3080
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3036
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3081
+#ENDEXIT
+
+Reset O 0 3009 8 3066
+Reset O 0 3212 3 3066
+Reset O 0 3213 2 3066
+Reset O 0 3210 1 3066
+Reset O 0 3214 1 3066
+#ENDROOM
+
+#ROOM
+Vnum     3067
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3068
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3081
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3066
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3038
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3082
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3080
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3068
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3069
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3082
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3067
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3039
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3083
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3081
+#ENDEXIT
+
+Reset M 0 3013 3 3068
+Reset O 0 3212 1 3068
+Reset O 0 3213 3 3068
+Reset O 0 3214 1 3068
+#ENDROOM
+
+#ROOM
+Vnum     3069
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3070
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3083
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3068
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3040
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3084
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3082
+#ENDEXIT
+
+Reset O 0 3009 2 3069
+Reset O 0 3210 1 3069
+Reset O 0 3212 8 3069
+Reset O 0 3213 10 3069
+Reset O 0 3214 1 3069
+#ENDROOM
+
+#ROOM
+Vnum     3070
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3071
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3084
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3069
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3041
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3085
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3083
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3071
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3072
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3085
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3070
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3042
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3086
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3084
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3072
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3073
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3086
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3071
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3043
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3087
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3085
+#ENDEXIT
+
+Reset O 0 3210 1 3072
+Reset O 0 3212 3 3072
+Reset O 0 3213 3 3072
+Reset O 0 3214 1 3072
+#ENDROOM
+
+#ROOM
+Vnum     3073
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3074
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3087
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3072
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3044
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3088
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3086
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3074
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3075
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3088
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3073
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3045
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3089
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3087
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3075
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3076
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3089
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3074
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3046
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3090
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3088
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3076
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3077
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3090
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3075
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3047
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3091
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3089
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3077
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3078
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3091
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3076
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3048
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3092
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3090
+#ENDEXIT
+
+Reset O 0 3217 1 3077
+#ENDROOM
+
+#ROOM
+Vnum     3078
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3079
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3092
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3077
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3049
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3093
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3091
+#ENDEXIT
+
+Reset O 0 3214 1 3078
+Reset O 0 3216 1 3078
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3079
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3256
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3093
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3078
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3050
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3092
+#ENDEXIT
+
+Reset O 0 3213 2 3079
+Reset O 0 3214 1 3079
+#ENDROOM
+
+#ROOM
+Vnum     3080
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3066
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3081
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3094
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3052
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3067
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3095
+#ENDEXIT
+
+Reset M 0 3003 5 3080
+Reset M 0 3014 6 3080
+Reset O 0 3213 1 3080
+#ENDROOM
+
+#ROOM
+Vnum     3081
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3067
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3082
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3095
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3080
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3053
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3068
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3066
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3096
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3094
+#ENDEXIT
+
+Reset M 0 3015 1 3081
+#ENDROOM
+
+#ROOM
+Vnum     3082
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3068
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3083
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3096
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3081
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3054
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3069
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3067
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3097
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3095
+#ENDEXIT
+
+Reset O 0 3009 5 3082
+Reset O 0 3210 1 3082
+Reset O 0 3213 1 3082
+#ENDROOM
+
+#ROOM
+Vnum     3083
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3069
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3084
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3097
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3082
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3055
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3070
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3068
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3098
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3096
+#ENDEXIT
+
+Reset O 0 3217 1 3083
+#ENDROOM
+
+#ROOM
+Vnum     3084
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3070
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3085
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3098
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3083
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3056
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3071
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3069
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3099
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3097
+#ENDEXIT
+
+Reset O 0 3212 3 3084
+Reset O 0 3213 5 3084
+#ENDROOM
+
+#ROOM
+Vnum     3085
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3071
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3086
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3099
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3084
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3057
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3072
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3070
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3100
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3098
+#ENDEXIT
+
+Reset O 0 3216 1 3085
+Reset O 0 3212 1 3085
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3086
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3072
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3087
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3100
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3085
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3058
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3073
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3071
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3101
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3099
+#ENDEXIT
+
+Reset O 0 3217 1 3086
+#ENDROOM
+
+#ROOM
+Vnum     3087
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3073
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3088
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3086
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3059
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3074
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3072
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3102
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3100
+#ENDEXIT
+
+Reset O 0 3217 1 3087
+#ENDROOM
+
+#ROOM
+Vnum     3088
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3074
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3089
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3102
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3087
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3060
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3075
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3073
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3103
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3101
+#ENDEXIT
+
+Reset M 0 3013 2 3088
+Reset O 0 3009 3 3088
+Reset O 0 3210 1 3088
+Reset O 0 3212 7 3088
+Reset O 0 3213 3 3088
+#ENDROOM
+
+#ROOM
+Vnum     3089
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3075
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3090
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3103
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3088
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3061
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3076
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3074
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3104
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3102
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3090
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3076
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3091
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3104
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3089
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3062
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3077
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3075
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3105
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3103
+#ENDEXIT
+
+Reset O 0 3214 1 3090
+#ENDROOM
+
+#ROOM
+Vnum     3091
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3077
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3092
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3105
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3090
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3063
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3078
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3076
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3106
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3104
+#ENDEXIT
+
+Reset O 0 3217 1 3091
+#ENDROOM
+
+#ROOM
+Vnum     3092
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3078
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3093
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3106
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3091
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3064
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3079
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3077
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3107
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3105
+#ENDEXIT
+
+Reset M 0 3014 4 3092
+Reset O 0 3009 5 3092
+Reset O 0 3210 1 3092
+Reset O 0 3212 4 3092
+Reset O 0 3213 2 3092
+#ENDROOM
+
+#ROOM
+Vnum     3093
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3079
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3262
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3107
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3092
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3065
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3078
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3106
+#ENDEXIT
+
+Reset M 0 3003 5 3093
+Reset M 0 3013 1 3093
+Reset O 0 3009 5 3093
+Reset O 0 3210 1 3093
+Reset O 0 3213 3 3093
+#ENDROOM
+
+#ROOM
+Vnum     3094
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3080
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3095
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3052
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3081
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3095
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3081
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3096
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3094
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3053
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3082
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3080
+#ENDEXIT
+
+Reset O 0 3217 1 3095
+#ENDROOM
+
+#ROOM
+Vnum     3096
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3082
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3097
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3095
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3054
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3083
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3081
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3097
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3083
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3098
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3096
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3055
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3084
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3082
+#ENDEXIT
+
+Reset M 0 3014 5 3097
+Reset O 0 3009 3 3097
+Reset O 0 3210 1 3097
+Reset O 0 3212 1 3097
+Reset O 0 3213 5 3097
+Reset O 0 3214 1 3097
+#ENDROOM
+
+#ROOM
+Vnum     3098
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+Stats    0 0 0 0 19
+Perdesc  &bYou see the opening of an ancient sea cave hidden to the south from here.
+~
+#EXIT
+Direction north~
+ToRoom    3084
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3099
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3296
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3097
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3056
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3085
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3083
+#ENDEXIT
+
+Reset O 0 3009 3 3098
+Reset O 0 3210 1 3098
+Reset O 0 3212 3 3098
+Reset O 0 3213 7 3098
+Reset O 0 3214 1 3098
+#ENDROOM
+
+#ROOM
+Vnum     3099
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3085
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3100
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3098
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3057
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3086
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3084
+#ENDEXIT
+
+Reset O 0 3009 3 3099
+Reset O 0 3210 1 3099
+Reset O 0 3212 2 3099
+Reset O 0 3213 3 3099
+Reset O 0 3214 1 3099
+#ENDROOM
+
+#ROOM
+Vnum     3100
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3086
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3099
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3058
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3087
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3085
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3101
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3087
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3102
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3100
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3059
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3088
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3086
+#ENDEXIT
+
+Reset O 0 3216 1 3101
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3102
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3088
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3103
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3101
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3060
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3089
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3087
+#ENDEXIT
+
+Reset O 0 3217 1 3102
+#ENDROOM
+
+#ROOM
+Vnum     3103
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3089
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3104
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3102
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3061
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3090
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3088
+#ENDEXIT
+
+Reset O 0 3217 1 3103
+#ENDROOM
+
+#ROOM
+Vnum     3104
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3090
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3105
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3103
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3062
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3091
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3089
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3105
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3091
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3106
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3104
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3063
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3092
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3090
+#ENDEXIT
+
+Reset O 0 3212 3 3105
+Reset O 0 3213 1 3105
+Reset O 0 3214 1 3105
+#ENDROOM
+
+#ROOM
+Vnum     3106
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3092
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3107
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3105
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3064
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3093
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3091
+#ENDEXIT
+
+Reset O 0 3217 1 3106
+#ENDROOM
+
+#ROOM
+Vnum     3107
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3093
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3106
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3065
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3262
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3092
+#ENDEXIT
+
+Reset O 0 3217 1 3107
+#ENDROOM
+
+#ROOM
+Vnum     3108
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3109
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3126
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3126
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2713
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3144
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3127
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3109
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3110
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3127
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3108
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2714
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3145
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3128
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3126
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2712
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3110
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3111
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3128
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3109
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2715
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3146
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3129
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3127
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3111
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3112
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3129
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3110
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2765
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3147
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3130
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3128
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3112
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3113
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3130
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2764
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3131
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3129
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3113
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3114
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3131
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3112
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2763
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3149
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3132
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3130
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3114
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3115
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3132
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3113
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2762
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3150
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3133
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3131
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3115
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3116
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3133
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3114
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2761
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3134
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3132
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3116
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3117
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3134
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3115
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2760
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3135
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3133
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3117
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3118
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3135
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3116
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2759
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3153
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3134
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3118
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3136
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2759
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3119
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3154
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3137
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3135
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3119
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3137
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3118
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2758
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3120
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3136
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3138
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3120
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3138
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3119
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2757
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3121
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3156
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3139
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3121
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3139
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3120
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2756
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3122
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3157
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3138
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3140
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3122
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3140
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3121
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2723
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3139
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3141
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3123
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3141
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3122
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2718
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3124
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3160
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3140
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3142
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3124
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3142
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2721
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3125
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3161
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3141
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2754
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3125
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3124
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2722
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3162
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3142
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2755
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3126
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3108
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3243
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3164
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3127
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3128
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3126
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3109
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3165
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3110
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3108
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3128
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3129
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3127
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3110
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3166
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3111
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3129
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3130
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3128
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3111
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3167
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3112
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3110
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3130
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3131
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3129
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3112
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3168
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3113
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3111
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3131
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3132
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3130
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3113
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3169
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3114
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3112
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3132
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3133
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3131
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3114
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3170
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3115
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3113
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3133
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3134
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3132
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3115
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3171
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3116
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3114
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3134
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3135
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3133
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3116
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3172
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3117
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3115
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3135
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3136
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3134
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3117
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3173
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3118
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3116
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3136
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction south~
+ToRoom    3135
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3137
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3174
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3119
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3137
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3136
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3119
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3138
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3175
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3118
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3138
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3137
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3120
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3139
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3176
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3119
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3121
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3139
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3138
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3121
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3140
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3177
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3120
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3122
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3140
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3139
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3122
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3141
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3178
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3121
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3123
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3141
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3140
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3142
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3179
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3122
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3124
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3142
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3141
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3124
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3180
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3125
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3143
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3142
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3125
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3182
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3124
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3144
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3145
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3164
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3255
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3108
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3185
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3165
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3145
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3146
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3144
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3249
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3109
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3186
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3166
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3164
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3146
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3147
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3166
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3145
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3110
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3187
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3167
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3165
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3147
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3167
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3146
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3111
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3188
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3169
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3166
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3148
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3149
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3169
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3147
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3112
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3189
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3167
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3149
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3150
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3113
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3190
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3170
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3169
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3150
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3170
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3149
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3114
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3191
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3171
+#ENDEXIT
+
+Reset M 0 3005 1 3150
+#ENDROOM
+
+#ROOM
+Vnum     3151
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3171
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3150
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3115
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3192
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3172
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3170
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3152
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3153
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3172
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3116
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3193
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3173
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3171
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3153
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3154
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3173
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3117
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3194
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3174
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3172
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3154
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3174
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3153
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3118
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3195
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3175
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3173
+#ENDEXIT
+
+Reset M 0 3004 3 3154
+#ENDROOM
+
+#ROOM
+Vnum     3155
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3176
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3175
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3154
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3156
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3119
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3196
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3177
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3174
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3156
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3177
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3157
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3120
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3197
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3176
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3178
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3157
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3178
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3156
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3121
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3198
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3177
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3179
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3158
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3179
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3157
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3160
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3122
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3199
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3178
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3180
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3159
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3180
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3200
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3179
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3181
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3160
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3181
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3159
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3161
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3123
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3201
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3180
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3182
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3161
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3182
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3160
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3162
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3124
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3202
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3181
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3183
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3162
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3183
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3161
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3163
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3125
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3203
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3182
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3184
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3163
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3184
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3162
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3125
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3204
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3183
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3164
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3165
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3144
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3126
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3207
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3145
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3165
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3166
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3164
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3127
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3208
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3146
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3144
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3166
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3167
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3165
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3146
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3128
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3209
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3147
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3145
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3167
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3168
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3166
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3147
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3129
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3210
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3146
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3168
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3169
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3167
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3130
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3211
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3149
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3147
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3169
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3170
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3168
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3131
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3212
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3149
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3147
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3170
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3171
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3169
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3150
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3132
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3213
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3149
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3171
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3172
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3170
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3133
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3214
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3150
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3172
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3173
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3171
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3134
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3215
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3153
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3151
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3173
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3174
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3172
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3153
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3135
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3154
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3152
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3174
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3175
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3173
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3154
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3136
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3217
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3153
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3175
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction south~
+ToRoom    3174
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3176
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3137
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3218
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3154
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3176
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3175
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3177
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3138
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3156
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3177
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3176
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3156
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3178
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3139
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3220
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3157
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3178
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3177
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3157
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3179
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3140
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3222
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3156
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3158
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3179
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3178
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3180
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3141
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3223
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3157
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3159
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3180
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3179
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3159
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3181
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3142
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3224
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3160
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3181
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3180
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3160
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3182
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3225
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3159
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3161
+#ENDEXIT
+
+Reset M 0 3004 3 3181
+#ENDROOM
+
+#ROOM
+Vnum     3182
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3181
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3161
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3183
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3226
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3160
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3162
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3183
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3182
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3162
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3184
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3227
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3161
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3163
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3184
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3183
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3163
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3143
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3228
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3162
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3185
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3186
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3207
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3267
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3144
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3208
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3261
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3186
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3187
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3208
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3185
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3261
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3145
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3209
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3207
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3267
+#ENDEXIT
+
+Reset O 0 3212 4 3186
+Reset O 0 3213 1 3186
+Reset O 0 3214 1 3186
+#ENDROOM
+
+#ROOM
+Vnum     3187
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3188
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3209
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3186
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3146
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3210
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3208
+#ENDEXIT
+
+Reset O 0 3217 1 3187
+#ENDROOM
+
+#ROOM
+Vnum     3188
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3189
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3210
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3187
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3147
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3211
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3209
+#ENDEXIT
+
+Reset O 0 3212 1 3188
+Reset O 0 3213 2 3188
+Reset O 0 3214 1 3188
+#ENDROOM
+
+#ROOM
+Vnum     3189
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3190
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3211
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3188
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3148
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3212
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3210
+#ENDEXIT
+
+Reset O 0 3214 1 3189
+#ENDROOM
+
+#ROOM
+Vnum     3190
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3191
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3212
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3189
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3149
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3213
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3211
+#ENDEXIT
+
+Reset M 0 3014 2 3190
+Reset O 0 3214 1 3190
+#ENDROOM
+
+#ROOM
+Vnum     3191
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3192
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3213
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3190
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3150
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3214
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3212
+#ENDEXIT
+
+Reset O 0 3214 1 3191
+#ENDROOM
+
+#ROOM
+Vnum     3192
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3193
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3214
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3191
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3151
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3215
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3213
+#ENDEXIT
+
+Reset M 0 3013 5 3192
+Reset O 0 3009 3 3192
+Reset O 0 3212 1 3192
+Reset O 0 3213 1 3192
+Reset O 0 3210 1 3192
+#ENDROOM
+
+#ROOM
+Vnum     3193
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3194
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3215
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3192
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3152
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3214
+#ENDEXIT
+
+Reset O 0 3213 6 3193
+Reset O 0 3210 1 3193
+#ENDROOM
+
+#ROOM
+Vnum     3194
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3195
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3193
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3153
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3217
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3215
+#ENDEXIT
+
+Reset O 0 3009 3 3194
+Reset O 0 3210 1 3194
+Reset O 0 3213 4 3194
+Reset O 0 3216 1 3194
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3195
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3196
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3217
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3194
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3154
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3218
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3216
+#ENDEXIT
+
+Reset O 0 3213 1 3195
+Reset O 0 3210 1 3195
+#ENDROOM
+
+#ROOM
+Vnum     3196
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3218
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3195
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3197
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3155
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3217
+#ENDEXIT
+
+Reset M 0 3013 6 3196
+Reset O 0 3009 6 3196
+Reset O 0 3210 1 3196
+Reset O 0 3212 1 3196
+#ENDROOM
+
+#ROOM
+Vnum     3197
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3196
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3198
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3156
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3220
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3198
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3220
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3197
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3199
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3157
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3221
+#ENDEXIT
+
+Reset O 0 3217 1 3198
+#ENDROOM
+
+#ROOM
+Vnum     3199
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3221
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3198
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3200
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3158
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3220
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3222
+#ENDEXIT
+
+Reset O 0 3213 1 3199
+Reset O 0 3213 1 3199
+Reset O 0 3214 1 3199
+#ENDROOM
+
+#ROOM
+Vnum     3200
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3222
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3199
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3201
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3159
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3221
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3223
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3201
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3223
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3200
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3202
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3160
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3222
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3224
+#ENDEXIT
+
+Reset O 0 3216 1 3201
+Reset O 0 3214 1 3201
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3202
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3224
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3201
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3203
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3161
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3223
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3225
+#ENDEXIT
+
+Reset O 0 3217 1 3202
+#ENDROOM
+
+#ROOM
+Vnum     3203
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3225
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3202
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3204
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3162
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3224
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3226
+#ENDEXIT
+
+Reset M 0 3013 7 3203
+Reset O 0 3009 3 3203
+Reset O 0 3210 1 3203
+Reset O 0 3212 3 3203
+Reset O 0 3213 1 3203
+#ENDROOM
+
+#ROOM
+Vnum     3204
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+Flags    nomob~
+Stats    0 0 0 0 18
+Perdesc  &bYou spot a sea cave to the south from here...&w
+~
+#EXIT
+Direction north~
+ToRoom    3226
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3203
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3298
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3205
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3163
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3225
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3227
+#ENDEXIT
+
+Reset O 0 3213 2 3204
+Reset O 0 3216 1 3204
+Reset O 0 3214 1 3204
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3205
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3227
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3204
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3206
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3163
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3226
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3228
+#ENDEXIT
+
+Reset O 0 3217 1 3205
+#ENDROOM
+
+#ROOM
+Vnum     3206
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3228
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3205
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3163
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3227
+#ENDEXIT
+
+Reset O 0 3217 1 3206
+#ENDROOM
+
+#ROOM
+Vnum     3207
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3208
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3185
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3164
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3186
+#ENDEXIT
+
+Reset O 0 3009 7 3207
+Reset O 0 3210 1 3207
+#ENDROOM
+
+#ROOM
+Vnum     3208
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3209
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3207
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3186
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3165
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3187
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3185
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3209
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3210
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3208
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3187
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3166
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3188
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3186
+#ENDEXIT
+
+Reset O 0 3214 1 3209
+#ENDROOM
+
+#ROOM
+Vnum     3210
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3211
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3209
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3188
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3167
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3189
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3187
+#ENDEXIT
+
+Reset O 0 3216 1 3210
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3211
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3212
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3210
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3189
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3168
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3190
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3188
+#ENDEXIT
+
+Reset O 0 3213 1 3211
+Reset O 0 3214 1 3211
+#ENDROOM
+
+#ROOM
+Vnum     3212
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3213
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3211
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3190
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3169
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3191
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3189
+#ENDEXIT
+
+Reset O 0 3214 1 3212
+#ENDROOM
+
+#ROOM
+Vnum     3213
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3214
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3212
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3191
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3170
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3192
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3190
+#ENDEXIT
+
+Reset O 0 3212 1 3213
+Reset O 0 3214 1 3213
+#ENDROOM
+
+#ROOM
+Vnum     3214
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3215
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3213
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3192
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3171
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3193
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3191
+#ENDEXIT
+
+Reset O 0 3210 1 3214
+Reset O 0 3212 3 3214
+Reset O 0 3217 1 3214
+#ENDROOM
+
+#ROOM
+Vnum     3215
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3214
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3193
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3172
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3194
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3192
+#ENDEXIT
+
+Reset M 0 3011 12 3215
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3215
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3215
+  Reset E 0 3008 1 28
+Reset O 0 3213 3 3215
+Reset O 0 3210 1 3215
+#ENDROOM
+
+#ROOM
+Vnum     3216
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+Stats    0 0 0 0 18
+Perdesc  &bYou spot a cave to the east from here...&w
+~
+#EXIT
+Direction north~
+ToRoom    3217
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3229
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3215
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3194
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3173
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3195
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3193
+#ENDEXIT
+
+Reset M 0 3011 12 3216
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3216
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3216
+  Reset E 0 3008 1 28
+Reset O 0 3213 2 3216
+Reset O 0 3210 1 3216
+Reset O 0 3217 1 3216
+#ENDROOM
+
+#ROOM
+Vnum     3217
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3218
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3195
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3174
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3196
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3194
+#ENDEXIT
+
+Reset M 0 3011 12 3217
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3217
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3217
+  Reset E 0 3008 1 28
+Reset O 0 3213 1 3217
+Reset O 0 3210 1 3217
+#ENDROOM
+
+#ROOM
+Vnum     3218
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction south~
+ToRoom    3217
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3175
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3195
+#ENDEXIT
+
+Reset M 0 3003 5 3218
+Reset O 0 3213 1 3218
+Reset O 0 3216 1 3218
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3219
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3218
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3197
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3220
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3176
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3196
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3198
+#ENDEXIT
+
+Reset O 0 3217 1 3219
+#ENDROOM
+
+#ROOM
+Vnum     3220
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3219
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3198
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3222
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3177
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3197
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3199
+#ENDEXIT
+
+Reset O 0 3214 1 3220
+#ENDROOM
+
+#ROOM
+Vnum     3221
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3220
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3199
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3198
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3200
+#ENDEXIT
+
+Reset M 0 3003 5 3221
+Reset O 0 3009 1 3221
+#ENDROOM
+
+#ROOM
+Vnum     3222
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3220
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3200
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3223
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3178
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3199
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3201
+#ENDEXIT
+
+Reset M 0 3014 6 3222
+Reset M 0 3012 1 3222
+#ENDROOM
+
+#ROOM
+Vnum     3223
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3222
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3201
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3224
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3179
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3200
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3202
+#ENDEXIT
+
+Reset O 0 3214 1 3223
+#ENDROOM
+
+#ROOM
+Vnum     3224
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3223
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3202
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3225
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3180
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3201
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3203
+#ENDEXIT
+
+Reset O 0 3214 1 3224
+#ENDROOM
+
+#ROOM
+Vnum     3225
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+Stats    0 0 0 0 18
+Perdesc  &bYou spot the remains of a ship below you in a small crater...&w
+~
+#EXIT
+Direction east~
+ToRoom    3224
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3203
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3226
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3181
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3286
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3202
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3204
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3226
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3225
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3204
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3227
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3182
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3203
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3205
+#ENDEXIT
+
+Reset M 0 3013 8 3226
+Reset O 0 3213 3 3226
+Reset O 0 3214 1 3226
+#ENDROOM
+
+#ROOM
+Vnum     3227
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3226
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3205
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3228
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3183
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3204
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3206
+#ENDEXIT
+
+Reset O 0 3217 1 3227
+#ENDROOM
+
+#ROOM
+Vnum     3228
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3227
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3206
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3184
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3205
+#ENDEXIT
+
+Reset O 0 3216 1 3228
+Reset O 0 3217 1 3228
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3229
+Name     &cA Sea Cave~
+Sector   ice~
+Flags    nomob~
+#EXIT
+Direction west~
+ToRoom    3216
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3230
+#ENDEXIT
+
+Reset M 0 3011 12 3229
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3229
+  Reset E 0 3008 1 28
+Reset M 0 3011 12 3229
+  Reset E 0 3008 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3230
+Name     &cA Sea Cave&w~
+Sector   indoors~
+#EXIT
+Direction east~
+ToRoom    3231
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3229
+#ENDEXIT
+
+Reset O 0 3002 1 3230
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpasound &cYou hear the sounds of chanting coming from somewhere...&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3231
+Name     &cA Sea Cave&w~
+Sector   indoors~
+#EXIT
+Direction west~
+ToRoom    3230
+#ENDEXIT
+
+Reset M 0 3000 1 3231
+  Reset E 0 3000 1 3
+Reset M 0 3001 1 3231
+Reset M 0 3002 1 3231
+Reset O 0 3001 1 3231
+#ENDROOM
+
+#ROOM
+Vnum     3232
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3233
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3238
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3022
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3239
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3035
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3233
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3234
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3239
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3232
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3240
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3238
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3234
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3241
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3240
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3233
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3246
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3235
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3239
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3235
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3242
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3241
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3247
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3236
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3234
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3236
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction east~
+ToRoom    3243
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3248
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3237
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3235
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3237
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    2712
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3108
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3243
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3249
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3236
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3238
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3232
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3239
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3035
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3250
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3233
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3022
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3239
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3233
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3240
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3238
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3251
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3234
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3232
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3240
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3234
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3239
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3252
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3241
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3233
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3241
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3235
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3234
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3253
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3242
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3240
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3242
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction west~
+ToRoom    3235
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3254
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3243
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3241
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3243
+Name     &CThe Darkhaven Sea&w~
+Sector   ice~
+#EXIT
+Direction north~
+ToRoom    3237
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3126
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3236
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3255
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3242
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3244
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3250
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3050
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3232
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3256
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3251
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3065
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3245
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3246
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3251
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3233
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3257
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3252
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3250
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3246
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3253
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3252
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3234
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3258
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3247
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3251
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3247
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3254
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3253
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3235
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3259
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3248
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3246
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3248
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3255
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3254
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3236
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3260
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3249
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3247
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3249
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3145
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3255
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3237
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3261
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3248
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3250
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3251
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3065
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3238
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3262
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3251
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3252
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3250
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3239
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3263
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3246
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3244
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3252
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3246
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3251
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3240
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3264
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3253
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3245
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3253
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3247
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3246
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3241
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3265
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3254
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3252
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3254
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3248
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3247
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3242
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3266
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3255
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3253
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3255
+Name     &BUnder the Waves&w~
+Sector   underwater~
+#EXIT
+Direction north~
+ToRoom    3249
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3144
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3248
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3243
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3267
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3254
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3256
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3257
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3262
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3079
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3244
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3263
+#ENDEXIT
+
+Reset O 0 3217 1 3256
+#ENDROOM
+
+#ROOM
+Vnum     3257
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3258
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3263
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3256
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3245
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3264
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3262
+#ENDEXIT
+
+Reset O 0 3212 1 3257
+Reset O 0 3210 1 3257
+Reset O 0 3213 2 3257
+Reset O 0 3217 1 3257
+#ENDROOM
+
+#ROOM
+Vnum     3258
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3265
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3264
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3257
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3246
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3259
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3263
+#ENDEXIT
+
+Reset M 0 3014 3 3258
+Reset O 0 3217 1 3258
+#ENDROOM
+
+#ROOM
+Vnum     3259
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3266
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3265
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3247
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3260
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3258
+#ENDEXIT
+
+Reset O 0 3212 2 3259
+Reset O 0 3213 1 3259
+Reset O 0 3214 1 3259
+Reset O 0 3217 1 3259
+#ENDROOM
+
+#ROOM
+Vnum     3260
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3267
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3266
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3248
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3261
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3259
+#ENDEXIT
+
+Reset O 0 3212 1 3260
+Reset O 0 3213 1 3260
+Reset O 0 3214 1 3260
+#ENDROOM
+
+#ROOM
+Vnum     3261
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3186
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3267
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3249
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3185
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3260
+#ENDEXIT
+
+Reset O 0 3217 1 3261
+#ENDROOM
+
+#ROOM
+Vnum     3262
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+Stats    0 0 0 0 16
+Perdesc  &bYou see the makings of a small city to the south from here...&w
+~
+#EXIT
+Direction north~
+ToRoom    3256
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3263
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3270
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3093
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3250
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3259
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3107
+#ENDEXIT
+
+Reset M 0 3009 10 3262
+  Reset E 0 3007 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3006 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3007 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3006 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3007 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3006 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3007 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3007 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3006 1 26
+Reset M 0 3009 10 3262
+  Reset E 0 3006 1 26
+Reset O 0 3214 1 3262
+Reset O 0 3213 2 3262
+Reset O 0 3212 1 3262
+#ENDROOM
+
+#ROOM
+Vnum     3263
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3257
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3264
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3262
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3251
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3258
+#ENDEXIT
+
+Reset O 0 3214 1 3263
+#ENDROOM
+
+#ROOM
+Vnum     3264
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3258
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3263
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3252
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3265
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3257
+#ENDEXIT
+
+Reset O 0 3213 2 3264
+Reset O 0 3210 1 3264
+Reset O 0 3216 1 3264
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3265
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+Stats    0 0 0 0 20
+Perdesc  &bYou spot a small sea cave to the east from here...
+~
+#EXIT
+Direction north~
+ToRoom    3259
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3268
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3258
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3253
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3266
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3264
+#ENDEXIT
+
+Reset M 0 3013 4 3265
+Reset O 0 3212 5 3265
+Reset O 0 3213 3 3265
+Reset O 0 3214 1 3265
+#ENDROOM
+
+#ROOM
+Vnum     3266
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3260
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3259
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3254
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3267
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3265
+#ENDEXIT
+
+Reset O 0 3212 3 3266
+Reset O 0 3213 1 3266
+Reset O 0 3214 1 3266
+#ENDROOM
+
+#ROOM
+Vnum     3267
+Name     &bThe Sea Depths&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3261
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3185
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3260
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3255
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3186
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3266
+#ENDEXIT
+
+Reset M 0 3003 5 3267
+Reset O 0 3212 1 3267
+Reset O 0 3213 3 3267
+Reset O 0 3214 1 3267
+Reset O 0 3216 1 3267
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(3216) == 1
+mea $n &RThe water seems to sting and burn as you swim here.&w
+mpdamage $n 1 5
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3268
+Name     &cA Sea Cave&w~
+Sector   ice~
+Flags    nomob indoors~
+#EXIT
+Direction west~
+ToRoom    3265
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3269
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3016 2 3268
+Reset M 0 3016 2 3268
+#ENDROOM
+
+#ROOM
+Vnum     3269
+Name     &cA Sea Cave&w~
+Sector   indoors~
+Flags    indoors~
+#EXIT
+Direction down~
+ToRoom    3268
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 3297 1 3269
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate circle~
+Comlist   if arcana($n) >= 25
+mea $n You recognize the symbols drawn with the chalk as markers for
+mea $n teleportation to an unknown location...
+else
+mea $n You find nothing.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3270
+Name     &cBefore a Small Underwater City&w~
+Sector   oceanfloor~
+Flags    nomob~
+#EXIT
+Direction north~
+ToRoom    3262
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3271
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3271
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3270
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3272
+#ENDEXIT
+
+Reset M 0 3006 4 3271
+  Reset E 0 3006 1 26
+Reset M 0 3006 4 3271
+  Reset E 0 3006 1 26
+Reset M 0 3006 4 3271
+  Reset E 0 3006 1 26
+Reset M 0 3006 4 3271
+  Reset E 0 3006 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3272
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3271
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3279
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3273
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3273
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3272
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3274
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3274
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3273
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3275
+#ENDEXIT
+
+Reset M 0 3008 3 3274
+#ENDROOM
+
+#ROOM
+Vnum     3275
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3274
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3276
+#ENDEXIT
+
+Reset M 0 3008 2 3275
+#ENDROOM
+
+#ROOM
+Vnum     3276
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3277
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3281
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3275
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3277
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3278
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3276
+#ENDEXIT
+
+Reset M 0 3008 1 3277
+#ENDROOM
+
+#ROOM
+Vnum     3278
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3279
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3277
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3279
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction south~
+ToRoom    3278
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3272
+#ENDEXIT
+
+Reset M 0 3008 5 3279
+Reset M 0 3008 5 3279
+#ENDROOM
+
+#ROOM
+Vnum     3280
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3276
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3281
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3281
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3276
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3283
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3282
+#ENDEXIT
+
+Reset M 0 3004 4 3281
+#ENDROOM
+
+#ROOM
+Vnum     3282
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction east~
+ToRoom    3281
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3284
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3283
+Name     &cA Small Underwater City&w~
+Sector   oceanfloor~
+#EXIT
+Direction west~
+ToRoom    3281
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3284
+Name     &cBefore a Large Temple&w~
+Sector   oceanfloor~
+#EXIT
+Direction north~
+ToRoom    3282
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3285
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3285
+Name     &cInside a Large Temple~
+Sector   ice~
+Flags    indoors~
+#EXIT
+Direction north~
+ToRoom    3284
+#ENDEXIT
+
+Reset M 0 3007 3 3285
+  Reset E 0 3007 1 26
+Reset M 0 3007 3 3285
+  Reset E 0 3007 1 26
+Reset M 0 3007 3 3285
+  Reset E 0 3007 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3286
+Name     &OThe Deck of a Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3287
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3225
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3287
+Name     &OThe Deck of a Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3288
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3286
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3288
+Name     &OThe Deck of a Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction west~
+ToRoom    3287
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3289
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3289
+Name     &OInside the Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction west~
+ToRoom    3290
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3288
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3290
+Name     &OInside the Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3289
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3291
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3291
+Name     &OInside the Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3290
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3292
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3293
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3292
+Name     &OThe Sunken Ship's Brig&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3291
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3293
+Name     &OThe Cargo Hold of the Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3294
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3291
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3294
+Name     &OThe Cargo Hold of the Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction east~
+ToRoom    3295
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3293
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3295
+Name     &OThe Cargo Hold of the Sunken Ship&w~
+Sector   underwater~
+#EXIT
+Direction west~
+ToRoom    3294
+#ENDEXIT
+
+Reset M 0 3010 1 3295
+#ENDROOM
+
+#ROOM
+Vnum     3296
+Name     &cA Sea Cave&w~
+Sector   ice~
+Flags    nomob indoors~
+#EXIT
+Direction north~
+ToRoom    3098
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3297
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3297
+Name     &cA Sea Cave&w~
+Sector   ice~
+Flags    indoors~
+#EXIT
+Direction north~
+ToRoom    3296
+#ENDEXIT
+
+Reset O 0 3299 1 3297
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if arcana($n) >= 20
+if ovnumroom(3299) == 1
+mea $n You sense a powerful energy nearby.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3298
+Name     &cAn Ancient Sea Cave&w~
+Sector   ice~
+Flags    nomob indoors~
+#EXIT
+Direction north~
+ToRoom    3204
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3299
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3299
+Name     &cAn Ancient Sea Cave&w~
+Sector   indoors~
+Flags    nomob~
+Desc     This is an entrance into the Underdark.
+~
+#EXIT
+Direction north~
+ToRoom    3298
+#ENDEXIT
+
+Reset O 0 3005 1 3299
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate tunnel~
+Comlist   if investigation($n) >= 16
+mea $n You see that this tunnel was created a very long time ago and would
+mea $n have taken a lot of people to do it. The tunnel leads downward and
+mea $n there is no light source...
+else
+mea $n You find nothing.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

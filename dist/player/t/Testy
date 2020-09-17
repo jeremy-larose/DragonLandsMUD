@@ -1,0 +1,279 @@
+#PLAYER
+Version      5
+Name         Testy~
+Sex          0
+Class        0
+Race         4
+Adjective    ~
+Age          0 30 13 606
+Languages    1 1
+Level        50
+Played       12147
+Room         3701
+HpManaMove   246 322 100 100 650 590
+ClassValues  1 1
+BondedWeapon 0 0
+Gold         960
+Silver       0
+Copper       0
+Exp          3725000
+Height          70
+Weight          165
+Act          1644168776
+AffectedBy   512
+Position     113
+Style     2
+Practice     99
+SavingThrows 0 0 0 0 0 0
+Size         0
+Alignment    0
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 100
+Speechcolor  6
+Resistant    3072
+Mentalstate  -1
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Title         the Not set.~
+Flags        163840
+PKills       0
+PDeaths      0
+MKills       0
+MDeaths      2
+IllegalPK    0
+Timezone     -1
+AttrPerm     14 14 14 14 15 15 12
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Condition    0 0 0 60
+Background    0
+Site         75.38.141.125
+Spell        95 'absorb mind'
+Spell        95 'absorb vitality'
+Tongue       95 'abyssal'
+Spell        95 'acid arrow'
+Spell        95 'acid splash'
+Proficiency  95 'acrobatics'
+Spell        95 'aganazzars scorcher'
+Spell        95 'alertness'
+Proficiency  95 'animal handling'
+Spell        95 'animate dead'
+Tongue       95 'aquan'
+Proficiency  95 'arcana'
+Spell        95 'arcane mark'
+Spell        95 'astral walk'
+Proficiency  95 'athletics'
+Tongue       95 'auran'
+Spell        95 'bears endurance'
+Spell        95 'beautiful distraction'
+Spell        95 'bestow curse'
+Spell        95 'bestow greater curse'
+Spell        95 'bigbys crushing hand'
+Spell        95 'blade ward'
+Spell        95 'blindness'
+Weapon       95 'blowguns'
+Skill        95 'brew'
+Spell        95 'bulls strength'
+Spell        95 'catnap'
+Spell        95 'cats grace'
+Tongue       95 'celestial'
+Spell        95 'chain lightning'
+Spell        95 'change sex'
+Spell        95 'charm person'
+Spell        95 'chill touch'
+Skill        95 'climb'
+Spell        95 'cloud of daggers'
+Spell        95 'comet'
+Tongue       95 'common'
+Spell        95 'control weather'
+Skill        95 'cook'
+Spell        95 'create bonfire'
+Weapon       95 'crossbows'
+Spell        95 'crushing despair'
+Spell        95 'crystal body'
+Weapon       95 'daggers'
+Spell        95 'dancing lights'
+Spell        95 'darkvision'
+Weapon       95 'darts'
+Skill        95 'dash'
+Spell        95 'death ward'
+Proficiency  95 'deception'
+Tongue       95 'deep speech'
+Spell        95 'delayed blast fireball'
+Spell        95 'detect hidden'
+Spell        95 'detect magic'
+Spell        95 'detect poison'
+Skill        95 'dig'
+Spell        95 'disenchant weapon'
+Spell        95 'dispel magic'
+Skill        95 'dodge'
+Tongue       95 'draconic'
+Spell        95 'dragonskin'
+Spell        95 'dream'
+Tongue       95 'dwarven'
+Spell        95 'eagles splendor'
+Tongue       95 'elvish'
+Spell        95 'enchant weapon'
+Spell        95 'energy drain'
+Spell        95 'enhanced rage'
+Spell        95 'fear'
+Spell        95 'finger of death'
+Spell        95 'fire shield'
+Spell        95 'fireball'
+Spell        95 'firebolt'
+Spell        95 'fly'
+Skill        95 'forage'
+Spell        95 'forcefield'
+Spell        95 'foxs cunning'
+Spell        95 'freezing sphere'
+Spell        95 'friends'
+Spell        95 'ghost sound'
+Spell        95 'ghostwalk'
+Tongue       95 'giant'
+Spell        95 'glyph of warding'
+Tongue       95 'gnomish'
+Tongue       95 'goblin'
+Skill        95 'grapple'
+Spell        95 'grease'
+Spell        95 'greater heroism'
+Spell        95 'greater shout'
+Tongue       95 'halfling'
+Spell        95 'heroism'
+Skill        95 'hide'
+Proficiency  95 'history'
+Skill        95 'holdbreath'
+Spell        95 'horrid wilting'
+Spell        95 'identify'
+Tongue       95 'ignan'
+Tongue       95 'infernal'
+Spell        95 'infernal calling'
+Proficiency  95 'insight'
+Proficiency  95 'intimidation'
+Proficiency  95 'investigation'
+Spell        95 'investiture of flame'
+Spell        95 'investiture of ice'
+Spell        95 'investiture of stone'
+Spell        95 'investiture of wind'
+Spell        95 'invisibility'
+Spell        95 'iron body'
+Spell        95 'ironguts'
+Skill        95 'kick'
+Spell        95 'knock'
+Spell        95 'kobold keen'
+Spell        95 'legend lore'
+Spell        95 'life transference'
+Spell        95 'lightning bolt'
+Spell        95 'lightning lure'
+Spell        95 'locate object'
+Spell        95 'mage armor'
+Spell        95 'magic alarm'
+Spell        95 'magic jar'
+Spell        95 'magic missile'
+Tongue       95 'magical'
+Spell        95 'magnetic thrust'
+Spell        95 'mass bears endurance'
+Spell        95 'mass bulls strength'
+Spell        95 'mass cats grace'
+Spell        95 'mass eagles splendor'
+Spell        95 'mass fly'
+Spell        95 'mass foxs cunning'
+Spell        95 'mass invis'
+Spell        95 'mass owls wisdom'
+Spell        95 'mass true seeing'
+Proficiency  95 'medicine'
+Spell        95 'meteor swarm'
+Spell        95 'mind blank'
+Spell        95 'mind fog'
+Spell        95 'mordenkainens sword'
+Skill        95 'mount'
+Proficiency  95 'nature'
+Tongue       95 'orc'
+Spell        95 'owls wisdom'
+Proficiency  95 'perception'
+Proficiency  95 'performance'
+Proficiency  95 'persuasion'
+Spell        95 'pixie dust'
+Spell        95 'poison spray'
+Spell        95 'polar ray'
+Spell        95 'polymorph'
+Spell        95 'power word stun'
+Tongue       95 'primordial'
+Spell        95 'produce flame'
+Spell        95 'psychic scream'
+Skill        95 'punch'
+Spell        95 'ray of enfeeblement'
+Spell        95 'ray of frost'
+Spell        95 'ray of sickness'
+Spell        95 'recharge'
+Proficiency  95 'religion'
+Spell        95 'remove curse'
+Skill        95 'rescue'
+Spell        95 'resist acid'
+Spell        95 'resist cold'
+Spell        95 'resist electricity'
+Spell        95 'resist fire'
+Spell        95 'resist force'
+Spell        95 'resist poison'
+Spell        95 'resist psychic'
+Spell        95 'resist radiant'
+Spell        95 'resist thunder'
+Skill        95 'scan'
+Skill        95 'scribe'
+Spell        95 'scry'
+Skill        95 'search'
+Spell        95 'see invisibility'
+Spell        95 'shield'
+Spell        95 'shocking grasp'
+Spell        95 'shout'
+Skill        95 'shove'
+Spell        95 'sickening radiance'
+Spell        95 'sleep'
+Proficiency  95 'sleight of hand'
+Skill        95 'slice'
+Weapon       95 'slings'
+Skill        95 'sneak'
+Spell        95 'snowball swarm'
+Skill        95 'stabilize'
+Weapon       95 'staves'
+Proficiency  95 'stealth'
+Spell        95 'stone body'
+Spell        95 'stoneskin'
+Spell        95 'summon demon'
+Spell        95 'summon greater demon'
+Spell        95 'summon lesser demon'
+Proficiency  95 'survival'
+Spell        95 'sword burst'
+Tongue       95 'sylvan'
+Spell        95 'synaptic static'
+Spell        95 'teleport'
+Spell        95 'teleport object'
+Spell        95 'teleportation circle'
+Spell        95 'tensers floating disk'
+Tongue       95 'terran'
+Spell        95 'thunderclap'
+Spell        95 'thunderstrike'
+Spell        95 'thunderwave'
+Spell        95 'toll the dead'
+Spell        95 'touch of idiocy'
+Tongue       95 'troll'
+Spell        95 'trollish visage'
+Spell        95 'true seeing'
+Spell        95 'true strike'
+Tongue       95 'undercommon'
+Spell        95 'vampiric touch'
+Spell        95 'ventriloquism'
+Spell        95 'water breathing'
+Spell        95 'waves of exhaustion'
+Coordinates	-1 -1 -1 -1
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+Qbit        5092 &RYou defeated Slunem the Barbarian at the Blazing Sword Gladiator Pit.&w~
+Qbit        5093 &RYou defeated Vosdar Icemoon at the Blazing Sword Gladiator Pit.&w~
+Qbit        5094 &RYou defeated Niby the Troll at the Blazing Sword Gladiator Pit.&w~
+End
+
+#END

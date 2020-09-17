@@ -1,0 +1,47 @@
+Sender  Beltane~
+Date    Sat Jan 21 10:09:50 2017~
+To      Builders~
+Subject Portals and YOU~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Here's how to create responsible portals, the Seikyr way!
+1) Creating the portal
+  redit exit ? <vnum> <keyword>
+2) Setting appropriate flags (secret makes it not show, can_look for free scry)
+  redit exflags ? can_enter secret can_look
+3) Set the description of the exit (when they type look <keyword>)
+  redit exdesc ? <what you want them to see>
+ 
+Remember that when you're doing the exit like this, it takes
+precedence over any objects in the room. It'll look at the exit
+keyword first, rather than the item in the room if they have
+the same keywords, so plan object description/keywords accordingly.
+Exits can have more than one keyword, as well. 
+~
+
+Sender  Seikyr~
+Date    Tue Jan 31 19:41:45 2017~
+To      Beltane~
+Subject Temporary Hit and Speed~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+You can currently do temporary hit points and speed with affect
+hit and move, respectively -- the extra points will go away
+when the spell ends. Base armor I'll add in, cuz some spells
+add armor while some affect base armor.
+~
+

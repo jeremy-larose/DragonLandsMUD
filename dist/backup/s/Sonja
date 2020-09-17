@@ -1,0 +1,331 @@
+#PLAYER
+Version      5
+Name         Sonja~
+Sex          2
+Class        3
+Multiclass 3 5
+Race         0
+Adjective    an ordinary female human~
+Age          0 17 8 679
+Languages    1 1
+Level        6
+Played       454
+Room         1200
+HpManaMove   36 60 100 100 70 70
+ClassValues  0 0
+Gold         0
+Silver       0
+Copper       0
+Exp          6500
+Height          60
+Weight          164
+Act          570426952
+Position     113
+Style     2
+Practice     0
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    0
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -88
+Speechcolor  6
+Subclasses   0&16
+Mentalstate  0
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Title         the Not set.~
+Deity	     Shamis~
+Flags        32768
+PKills       0
+PDeaths      0
+MKills       0
+MDeaths      0
+IllegalPK    0
+Timezone     -1
+AttrPerm     16 9 11 14 13 15 1
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 0 0 0 
+Condition    0 47 41 10
+Background    0
+Site         75.38.141.125
+Skill        100 'actionsurge'
+Tongue       100 'common'
+Skill        100 'dueling style'
+Skill        100 'second wind'
+Coordinates	-1 -1 -1 -1
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+End
+
+#OBJECT
+Vnum         1222
+WearLoc      3
+Level        1
+Coords	-1 -1 -1
+Values       100 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         141
+WearLoc      5
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      5 2
+End
+
+#OBJECT
+Vnum         853
+WearLoc      1
+Coords	-1 -1 -1
+Values2      0 2
+End
+
+#OBJECT
+Vnum         2519
+WearLoc      22
+Level        1
+Coords	-1 -1 -1
+Values       20 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2511
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2520
+Level        1
+Coords	-1 -1 -1
+Values       49 125 125 125 0 0
+Values2      0 2
+Spell 1      'cure critical wounds'
+Spell 2      'cure critical wounds'
+Spell 3      'cure critical wounds'
+End
+
+#OBJECT
+Nest         1
+Vnum         2521
+Level        1
+Coords	-1 -1 -1
+Values       25 43 -1 -1 0 0
+Values2      0 2
+Spell 1      'barkskin'
+End
+
+#OBJECT
+Nest         1
+Vnum         2522
+Level        1
+Coords	-1 -1 -1
+Values       25 76 79 45 0 0
+Values2      0 2
+Spell 1      'bulls strength'
+Spell 2      'cats grace'
+Spell 3      'bears endurance'
+End
+
+#OBJECT
+Nest         1
+Vnum         2523
+Level        1
+Coords	-1 -1 -1
+Values       25 264 -1 -1 0 0
+Values2      0 2
+Spell 1      'greater heroism'
+End
+
+#OBJECT
+Nest         1
+Vnum         861
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         860
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         858
+Level        1
+Coords	-1 -1 -1
+Values       3 3 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         854
+Level        1
+Coords	-1 -1 -1
+Values       14 130 -1 -1 0 0
+Values2      0 2
+Spell 1      'cure serious wounds'
+End
+
+#OBJECT
+Nest         1
+Vnum         854
+Level        1
+Coords	-1 -1 -1
+Values       13 130 -1 -1 0 0
+Values2      0 2
+Spell 1      'cure serious wounds'
+End
+
+#OBJECT
+Nest         1
+Vnum         856
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         202
+Level        1
+Coords	-1 -1 -1
+Values       5 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         857
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         859
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2512
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2525
+Level        1
+Coords	-1 -1 -1
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2527
+Level        1
+Coords	-1 -1 -1
+Values       0 0 0 0 -1 0
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         21
+Coords	-1 -1 -1
+Values       0 0 -1 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         1651
+Level        1
+Coords	-1 -1 -1
+Values       15 5 0 0 0 0
+Values2      0 1
+End
+
+#OBJECT
+Vnum         2513
+WearLoc      8
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2505
+WearLoc      12
+Level        1
+Coords	-1 -1 -1
+Values       3 3 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2500
+WearLoc      4
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2514
+WearLoc      13
+Level        1
+Coords	-1 -1 -1
+Values       3 3 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         1946
+WearLoc      24
+Level        1
+Coords	-1 -1 -1
+Values       1 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         121
+WearLoc      26
+Level        1
+Coords	-1 -1 -1
+Values       1 1 8 1 -1 0
+Values2      0 2
+End
+
+#END

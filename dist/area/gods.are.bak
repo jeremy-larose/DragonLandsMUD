@@ -1,0 +1,1526 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Godfire Mountain~
+Author       Admins~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+Economy      0 31250000
+ResetMsg     &RA volcano explodes violently nearby with hot lava and a plume of black smoke...&w~
+ResetFreq    25
+#ENDAREADATA
+
+#MOBILE
+Vnum       1200
+Keywords   first mob~
+Short      a newly created first mob~
+Long       Some god abandoned a newly created first mob here.
+~
+Race       human~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       1201
+Keywords   single dummy test testing nonaggro~
+Short      &YA Testing Dummy&W~
+Long       &YA single dummy is here, quivering while waiting to be tested on.&W
+~
+Race       human~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc sentinel~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 1 1000
+Stats3     1 2 1
+Stats4     0 0 1 0 0 3 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   say Oh god! It hurts! The pain!!!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   2~
+Comlist   emote sobs uncontrollably and runs around trying to get away.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1202
+Keywords   single dummy test testing aggro~
+Short      &RA Hungry Dummy~
+Long       &RA dummy is here, wild-eyed and foaming at the mouth.&W
+~
+Race       human~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 1 1000
+Stats3     1 2 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   cackle
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1203
+Keywords   seikyr test mob~
+Short      a newly created seikyr test mob~
+Long       Some god abandoned a newly created seikyr test mob here.
+~
+Lore       This is a test of the mob lore system.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc prototype day~
+Stats1     0 1 30 0 0 0 0 0 0 0
+Stats2     5 10 500
+Stats3     5 10 10
+Stats4     2 0 1 0 0 0 6
+Attribs    15 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   test~
+Comlist   sayto $n Well, look at you, a $n.level $n.race $n.class adventurer.
+if class($n) == Wizard
+sayto $n Do cast a spell for me, would you?
+endif
+if wearingvnum($n) == 204
+sayto $n Oh dear, you've got the armor of Seikyr!
+endif
+if carryingvnum($n) == 205
+sayto $n No weapons allowed here-- I'll have that, dear.
+silent mpforce $n give blade mob
+sayto $n All better.
+mpqset $n 1
+mpjunk blade
+endif
+if hasqbit($n) == 1
+gasp
+mpsleep 6
+sayto $n You're on the Epic Quest of Awesome! Incredible!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   athletics~
+Comlist   if athletics($n) >= 15
+say We're pretty close in strength, $n!
+else
+say Nope, not even close.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p levelup~
+Comlist   mpecho $n totally like rocks and shit.. LEVEL UPPPPPPPPP
+mpadvance $n 1000
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1299
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     1200
+Keywords immortal board fire copper disc godfire~
+Type     furniture~
+Short    &RThe Godfire&W~
+Long     &RA massive fire on a floating copper colored disc is here.&W~
+Flags    glow hum magic bless nolocate~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    9000 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1202
+Keywords dancing lights floating orbs group~
+Type     light~
+Short    &Ytiny orbs of light&W~
+Long     &YA group of tiny orbs of light are here, dancing around each other.&W~
+Flags    glow magic~
+Values   0 0 100 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1203
+Keywords whirlwind notes note board seikyr immortal~
+Type     furniture~
+Short    &RA whirlwind of notes&W~
+Long     &RA chaotic medium-sized whirlwind of papers twirls idly here.&W~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpecho &RA whirlwind buzzs around the room looking for something to do.&W
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1204
+Keywords seikyr blade slaying~
+Type     weapon~
+Short    Seikyr's Blade of Slaying~
+Long     Seikyr's Blade has been dropped here, unfortunately.~
+Flags    prototype finesse~
+WFlags   take onehand~
+Values   12 1 8 1 1 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1205
+Keywords seikyr shield defense~
+Type     trash~
+Short    Seikyr's Shield of Defense~
+Long     Some god dropped a newly created seikyr shield defense here.~
+Flags    prototype~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1206
+Keywords multicolored fruit tree~
+Type     treasure~
+Short    &Ra mul&Ytic&Golor&Bed fru&Pit tr&pee&W~
+Long     &RA mul&Ytic&Golor&Bed fru&Pit tr&pee i&Ps here, f&Bull of d&Gelicio&Yus fru&Rits.&W~
+Flags    glow magic bless~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1207
+Keywords seikyr twohand axe~
+Type     weapon~
+Short    Seikyr's Twohanded Axe of Brutality~
+Long     Some god dropped a newly created seikyr twohand axe here.~
+Flags    prototype~
+WFlags   take twohand~
+Values   0 1 12 1 13 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1208
+Keywords seikyr offhand dagger~
+Type     weapon~
+Short    Seikyr's Dagger of Wounding~
+Long     Some god dropped a newly created seikyr offhand dagger here.~
+Flags    prototype finesse~
+WFlags   take onehand~
+Values   0 1 6 3 2 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1210
+Keywords hycra hycrasymbol amulet hand ribbon holysymbol~
+Type     treasure~
+Short    &Yan amulet of a golden hand wrapped in &Wwhite ribbon&W~
+Long     &YAn amulet of a golden hand wrapped in white ribbon lies here.&W~
+Flags    magic~
+WFlags   take neck onehand~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 1 0 1 4
+Affect       -1 -1 1 24 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == Hycra
+mea $n &YA warm feeling courses through your body as you wear the amulet.&W
+else
+mea $n &YThe amulet jumps off your neck and falls to the ground.&W
+silent mpforce $n rem hycrasymbol
+silent mpforce $n drop hycrasymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1211
+Keywords soarin soarinsymbol amulet eye sun rays holysymbol~
+Type     treasure~
+Short    &Pan amulet of an open eye encircled with &Ysun rays&W~
+Long     &PAn amulet of an open eye encircled with sun rays has been left here.&W~
+Flags    magic~
+WFlags   take neck hold~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 1 0 0 4
+Affect       -1 -1 1 78 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == Soarin
+mea $n &PA warm feeling courses through your body as you wear the amulet.
+else
+mea $n &PThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem soarinsymbol
+silent mpforce $n drop soarinsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1212
+Keywords aerilaya aerilayasymbol amulet heart lyre holysymbol~
+Type     treasure~
+Short    &Wan amulet of a &rh&Rea&rrt&R-&rsh&Rape&rd&W lyre&w~
+Long     &RAn amulet of a heart-shaped lyre lies here.&W~
+Flags    magic~
+WFlags   take neck hold~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 4
+Affect       -1 -1 1 78 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == Aerilaya
+mea $n &RYou heart sweet music as you wear the amulet.
+else
+mea $n &RThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem aerilayasymbol
+silent mpforce $n drop aerilayasymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1213
+Keywords crisma crismasymbol amulet circle silver stars holysymbol~
+Type     treasure~
+Short    &Ban amulet depicting a circle of &wsi&Wlv&wer s&Wtar&ws~
+Long     &BAn amulet depicting a circle of silver stars lies here.&W~
+Flags    magic~
+WFlags   take neck hold~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 4
+Affect       -1 -1 1 23 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == Crisma
+mea $n &BYou feel the magic around you hum as you wear the amulet.
+else
+mea $n &BThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem Crismasymbol
+silent mpforce $n drop Crismasymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1214
+Keywords theuros theurossymbol amulet flaming greatsword holysymbol~
+Type     treasure~
+Short    &wan amulet depicting a &Rfl&Yam&rin&Rg &rsw&Yo&Rrd&W~
+Long     &wAn amulet depicting a flaming sword lies here.&W~
+Flags    magic~
+WFlags   take neck hold~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 4
+Affect       -1 -1 1 20 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == Theuros
+mea $n &RYou feel a desire for battle grow within as you wear the amulet.
+else
+mea $n &RThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem theurossymbol
+silent mpforce $n drop theurossymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1215
+Keywords rithyss rithysssymbol amulet black triple moon~
+Type     treasure~
+Short    &pan amulet depicting a &zblack triple moon&W~
+Long     &pAn amulet depicting a black triple moon lies here.&W~
+Flags    magic~
+WFlags   take neck hold~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+Affect       -1 -1 1 4 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == Rithyss
+mea $n &pYou feel the moon watching you as you wear the amulet.
+else
+mea $n &pThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem Rithysssymbol
+silent mpforce $n drop Rithysssymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1216
+Keywords cyth cythsymbol amulet black colored fox~
+Type     treasure~
+Short    &zan amulet depicting a black&w-&zcolored fox&W~
+Long     &zAn amulet depicting a black-colored fox has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 2 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == cyth
+mea $n &zYou see something dart away in the corner of your eye...
+else
+mea $n &zThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem cythsymbol
+silent mpforce $n drop cythsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1217
+Keywords qylaith qylaithsymbol qylain amulet skull eyes holysymbol~
+Type     treasure~
+Short    &Wan amulet of a skull with &Yglowing &zeyes&w~
+Long     &wAn amulet of a skull with glowing eyes has been left here.&W~
+Flags    magic~
+WFlags   take neck onehand~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 4
+Affect       -1 -1 1 24 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == qylaith
+mea $n &wA cold breeze blows past you softly as you wear the amulet.&W
+else
+mea $n &wThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem qylaithsymbol
+silent mpforce $n drop qylaithsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1218
+Keywords xerrch xerrchsymbol amulet curved sword drenched blood~
+Type     treasure~
+Short    &zan amulet of a curved sword &rdrenched in &Rblood&W~
+Long     &zAn amulet of a curved sword drenched in blood has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 1 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == xerrch
+mea $n &rYou smell blood for a moment as you wear the amulet.&W
+else
+mea $n &rThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem xerrchsymbol
+silent mpforce $n drop xerrchsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1219
+Keywords khaersyx khaersyxsymbol amulet spider dagger dripping poison~
+Type     treasure~
+Short    &zan amulet of a spider-hilted dagger &gdripping with &Gpoison&W~
+Long     &zAn amulet of a spider-hilted dagger has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 5 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == khaersyx
+mea $n &gYou feel the lash of a whip against your back as you wear the amulet.
+else
+mea $n &gThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem khaersyxsymbol
+silent mpforce $n drop khaersyxsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1220
+Keywords akemis akemissymbol amulet tornado fire lightning~
+Type     treasure~
+Short    &wan amulet depicting a tornado tossing &Rfire&w and &Ylightning&W~
+Long     &wAn amulet depicting a tornado tossing fire and lightning has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 1 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == akemis
+mea $n &YYou see a flash of lightning in the distance as you wear the amulet&W
+else
+mea $n &YThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem akemissymbol
+silent mpforce $n drop akemissymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1221
+Keywords honeth honethsymbol amulet shield emblazoned dragon holysymbol~
+Type     treasure~
+Short    &Wan amulet of a shield &Yemblazoned&W with a &Rdragon&W~
+Long     &WAn amulet of a shield emblazoned with a dragon has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 4
+Affect       -1 -1 1 24 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == honeth
+mea $n &YYou feel warmth coming from the amulet as you wear it.&W
+else
+mea $n &YThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem honethsymbol
+silent mpforce $n drop honethsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1222
+Keywords shamis shamissymbol amulet old boot ale~
+Type     treasure~
+Short    &gan amulet of an old boot &Ofilled with ale&W~
+Long     &gAn amulet of an old boot filled with ale has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 5 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == shamis
+mea $n &OYou hear the sounds of revelry nearby as you wear the amulet.&W
+else
+mea $n &OThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem shamissymbol
+silent mpforce $n drop shamissymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1223
+Keywords tor torsymbol amulet ornate scales golden holysymbol~
+Type     treasure~
+Short    &Oan amulet of ornate &Ygolden scales&W~
+Long     &OAn amulet of ornate golden scales has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 4
+Affect       -1 -1 1 22 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == tor
+mea $n &OYou feel an intense sense of order move through you suddenly.&W
+else
+mea $n &OThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem torsymbol
+silent mpforce $n drop torsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1224
+Keywords amunar amunarsymbol woman face leaves~
+Type     treasure~
+Short    &gan amule&Gt of a wom&gan's fac&Ge mad&ge fro&Gm leav&ges&W~
+Long     &gAn amulet of a woman's face made from leaves has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 4 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == amunar
+mea $n &gYou feel an intense connection to the natural world suddenly.&W
+else
+mea $n &gThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem amunarsymbol
+silent mpforce $n drop amunarsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1225
+Keywords myrbohr myrbohrsymbol amulet severed hand painted bloody runes~
+Type     treasure~
+Short    &ran amulet of a severed hand painted with &Rbloody runes~
+Long     &rAn amulet of a severed hand painted with bloody runes has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 3 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == myrbohr
+mea $n &rYou feel the cold touch of the undead upon your skin suddenly&W
+else
+mea $n &rThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem myrbohrsymbol
+silent mpforce $n drop myrbohrsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1226
+Keywords jeridon jeridonsymbol amulet wooden engragev crossed arrows~
+Type     treasure~
+Short    &Oa wooden amulet &Rengraved&O with crossed arrows&W~
+Long     &OA wooden amulet engraved with crossed arrows has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 5 0
+Affect       -1 -1 10 14 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == jeridon
+mea $n &OYou hear the sounds of a forest briefly as you wear the amulet.&W
+else
+mea $n &OThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem jeridonsymbol
+silent mpforce $n drop jeridonsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1227
+Keywords phywa phywasymbol amulet gem encrusted coin~
+Type     treasure~
+Short    &Yan amulet of a &Rge&Ym-&Gen&Bcru&Pst&ped &Ycoin~
+Long     &YAn amulet of a gem-encrusted coin has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 25 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == phywa
+mea $n &YYou hear coins falling and laughter somewhere as you wear the amulet.
+else
+mea $n &YThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem phywasymbol
+silent mpforce $n drop phywasymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1228
+Keywords dhordolim dhordolimsymbol amulet silver hammer flames holysymbol~
+Type     treasure~
+Short    &wan amulet of a &Wsil&wve&Wr h&wam&Wmer&w rising from &Rflames&W~
+Long     &wAn amulet of a silver hammer rising from flames has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 4
+Affect       -1 -1 1 23 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == dhordolim
+mea $n &wYou hear the hammering of metal as you wear the amulet.&W
+else
+mea $n &wThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem dhordolimsymbol
+silent mpforce $n drop dhordolimsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1229
+Keywords symzou symzousymbol amulet boat ocean waves~
+Type     treasure~
+Short    &Ban amulet of a seashell floating on &Cocean waves&W~
+Long     &BAn amulet of a seashell floating on ocean waves has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 4 0
+Affect       -1 -1 1 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == symzou
+mea $n &BYou hear the crash of waves as you wear the amulet.&W
+else
+mea $n &BThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem symzousymbol
+silent mpforce $n drop symzousymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1230
+Keywords nerramiah nerramiahsymbol amulet conjoined women fighting~
+Type     treasure~
+Short    &zan amulet of two &Wconjoined women &Rfighting&W~
+Long     &zan amulet of two conjoined women fighting has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 31 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == nerramiah
+mea $n &WYou hear the sounds of two women screaming at each other suddenly&W
+else
+mea $n &WThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem nerramiahsymbol
+silent mpforce $n drop nerramiahsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1231
+Keywords luciare luciaresymbol amulet blood stained crown scepter~
+Type     treasure~
+Short    &wan amulet of a &Rblood&w-&rstained &zcrown&w and&z scepter&W~
+Long     &wAn amulet of a blood-stained crown and scepter has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 25 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == luciare
+mea $n &zYou feel a dominating force sweep over you suddenly&W
+else
+mea $n &zThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem luciaresymbol
+silent mpforce $n drop luciaresymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1232
+Keywords gruarch gruarchsymbol amulet monster claw portal~
+Type     treasure~
+Short    &zan amulet of a &Rmonster's claw&z emerging from a &Gportal&W~
+Long     &zAn amulet of a monster's claw emerging from a portal has been left here.&W~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Affect       -1 -1 1 1 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == gruarch
+mea $n &zYou hear demonic laughter coming from somewhere...&W
+else
+mea $n &zThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem gruarchsymbol
+silent mpforce $n drop gruarchsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1233
+Keywords omunae omunaesymbol amulet hand wielding scroll holysymbol~
+Type     treasure~
+Short    &pan amulet of a hand &Owielding a &wscroll&w~
+Long     &pAn amulet of a hand wielding a scroll has been left here.&w~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 4
+Affect       -1 -1 1 23 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == omunae
+mea $n &pYou feel a rush of knowledge overwhelm you suddenly.&w
+else
+mea $n &pThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem omunaesymbol
+silent mpforce $n drop omunaesymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1234
+Keywords werbum werbumsymbol amulet decaying face screaming~
+Type     treasure~
+Short    &Oan amulet depicting a decaying face &rscreaming&W~
+Long     &OAn amulet depicting a decaying face screaming has been left here.&W~
+Flags    magic~
+WFlags   take neck hold~
+Values   100 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+Affect       -1 -1 10 13 0
+Affect       -1 -1 1 5 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == werbum
+mea $n &OYou hear the face scream for a moment as you wear the amulet.
+else
+mea $n &OThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem werbumssymbol
+silent mpforce $n drop werbumsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1235
+Keywords glyph warding spell glyph111~
+Type     trash~
+Short    &wa glyph of warding&W~
+Long     &wA glyph floats here, releasing pulses of protective energy outward.&W~
+Lore   This sigil floats in the middle of the space, projecting thin lines
+of protective force outward and encapsulating the area from harm.
+ 
+You see beyond it energy flowing from some unknown plane...&W
+~
+Flags    invis magic~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   Mea $n &wYou see energy lace together before you are expelled backwards!
+mer $n $N attempts to approach, but an invisible force repels them back!&W
+Silent mpforce $n n
+Silent mpforce $n e
+Silent mpforce $n s
+Silent mpforce $n w
+Silent mpforce $n ne
+Silent mpforce $n nw
+Silent mpforce $n se
+Silent mpforce $n sw
+Silent mpforce $n u
+Silent mpforce $n d
+Silent mpforce $n enter
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p disable glyph~
+Comlist   mea $n &wYou make a series of intricate hand motions...
+mer $n &w$n begins to make a series of intricate hand motions...&W
+mpsleep 8
+mpecho &wThere is one final pulse of energy as the glyph disappears.&W
+mpasound &wYou feel a small rush of energy pass by suddenly.
+mppurge glyph111
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   45~
+Comlist   mpecho &wYou feel a pulse of energy rush outwards suddenly.&W
+mpasound &wA small rush of energy moves past you, coming from nearby...
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1236
+Keywords cerunon cerunonsymbol amulet stag head holysymbol~
+Type     treasure~
+Short    &gan amulet of a &Ostag's head&w~
+Long     &gAn amulet of stag's head has been left here.&w~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 4
+Affect       -1 -1 1 24 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if deity($n) == Cerunon
+mea $n &gYou feel a soft breeze against the back of your neck suddenly.&w
+else
+mea $n &gThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem cerunonsymbol
+silent mpforce $n drop cerunonsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1237
+Keywords vhirmeath vhirmeathsymbol amulet dragon coiled sword holysymbol~
+Type     treasure~
+Short    &wan amulet of a &zdragon&w coiled around a&z sword&w~
+Long     &wAn amulet of a dragon coiled around a sword has been left here.&w~
+Flags    magic~
+WFlags   take neck~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 4
+Affect       -1 -1 1 20 0
+Affect       -1 -1 10 13 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if race($n) == dragonborn
+if deity($n) == vhirmeath
+mea $n &zYou hear a low dragon's growl as you wear the amulet.&w
+else
+mea $n &zThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem vhirmeathsymbol
+silent mpforce $n drop vhirmeathsymbol
+endif
+else
+mea $n &zThe amulet jumps off your neck and falls to the ground.
+silent mpforce $n rem vhirmeathsymbol
+silent mpforce $n drop vhirmeathsymbol
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1299
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     1200
+Name     &RHall of the Gods&w~
+Sector   indoors~
+Flags    norecall nosummon noastral~
+Desc     &wThis is a large circular temple space that is surrounded by large
+pristine white columns with golden arcane etchings. At the center
+of the temple is a massive glowing bonfire set upon a floating
+copper colored disc. This is known as the "Godfire," which is
+the source of all creation and divine power. The disc stays
+perfectly in the center of the space at all times. The view past
+this temple is chaotic with volcanoes spewing forth lava and fire.
+Large lakes of lava burn their way through rock to create a vein
+like network. Two small balconies can be seen to the north and south
+from here, which are connected to this temple space.
+~
+#EXIT
+Direction north~
+ToRoom    1204
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1205
+#ENDEXIT
+
+Reset O 0 1200 1 1200
+#EXDESC
+ExDescKey    godfire~
+ExDesc       &RThe fire is impressive and blazes brightly as it hovers above a
+floating copper discs. The flames burn in a variety of colors from
+blue, orange, red, and white. At different times the flames change
+color, height, and intensity. 
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   Mpecho &RThe Godfire crackles and glows brightly for a moment.&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1201
+Name     &GSaeris' Divine Grove~
+Sector   indoors~
+Flags    norecall nosummon noastral~
+Stats    0 0 0 0 22 0
+Desc     &gYou find yourself in a pleasant, sunny grove on a perfect spring day. Birds
+are singing as they fly by and the breeze smells of honey. A pool is in
+the middle of the grove, which is whatever temperature you desire. It
+shimmers brightly in the sunlight and looks very inviting. Many male
+dryads dance about the grove, providing entertainment. When night falls
+a small fire is lit and floating magical candles move about the grove
+providing illumination. Various types of fruit trees grow here and
+taste perfect when ate. Outside of the perimeter of the grove you
+notices miles and miles of starry night sky, which suggest this grove
+is not connected to the land of men and lies somewhere beyond it. A small
+trail of stars leads west towards a circular temple.
+~
+Perdesc  &gYou spot a male dryad peeking at you from behind a nearby tree.&w
+~
+#EXIT
+Direction west~
+ToRoom    1200
+#ENDEXIT
+
+Reset O 0 1206 1 1201
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &GYou are sure for a second you saw two male dryads fornicating...&W
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1202
+Name     Seikyr's Playground~
+Sector   indoors~
+Flags    norecall nosummon noastral~
+Stats    0 0 0 0 15 0
+Desc     This area is a complete mad house with various objects that have lost
+their gravity and float around upside down. Various pieces of parchment
+float around with ideas scrawled on them with blood. A tiny whirlwind
+moves about, a failed experiment. It sucks up random notes and contains
+them as it plays here. Nothing seems balanced and everything seems to be
+in a constant state of change and ideation.
+~
+Perdesc  You catch a glimmer of light from the west wall out of the corner of your eye..
+~
+#EXIT
+Direction east~
+ToRoom    1200
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     overland~
+#ENDEXIT
+
+Reset O 0 1203 1 1202
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &PA pink and purple striped Unicorn begins to sing Mariah Carey Karaoke.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   jump~
+Comlist   mpecho The floor shakes violently!
+mpecho A piece of the ceiling breaks loose and cracks $n on the head!
+mpdamage $n 2 10
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p dance and shake~
+Comlist   mpecho Does this?
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1203
+Name     &RA Large Balcony&w~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     &wThis is a large balcony cut into the side of a mountain located
+below the columned temple above. A staircase leads up along the
+mountain back to the temple or continues downward towards another
+balcony built into the mountain. All around the mountain you see
+fire and lava with large lakes of molten fire.
+~
+#EXIT
+Direction up~
+ToRoom    1205
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    103
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p single~
+Comlist   mpecho &RA door magically appears and a quivering dummy is shoved out.&W
+mpmload 1201
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p aggro~
+Comlist   mpecho &RA door magically appears and out pops a hungry lookin dummy.&W
+mpmload 1202
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p group~
+Comlist   Mpecho &RA magical door appears and out pops several hungry dummies!&W
+mpmload 1202
+mpmload 1202
+mpmload 1202
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p gangbang~
+Comlist   mpecho &RA magical door appears and hordes of dummies fly out.&W
+mpmload 1202
+mpmload 1202
+mpmload 1202
+mpmload 1202
+mpmload 1202
+mpmload 1202
+mpmload 1202
+mpmload 1202
+mpmload 1202
+mpmload 1202
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) >= 60
+mea $n &YIn order to use the test dummies you can either do the
+mea $n &Ythe following: &WSingle, Aggro, Group, or Gangbang.&Y By
+mea $n &Ysaying one of those words a dummy or dummies will appear.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1204
+Name     &RA Small Balcony&w~
+Sector   indoors~
+Flags    prototype~
+Desc     &wThis is a small balcony off the main part of the temple space to
+the south of here. A small enclosed pool of lava is here, which
+boils and bubbles from inside its stone basin. The landscape 
+surrounding the mountains is one of fire and lava as you see several
+volcanoes located nearby, which spew forth creation and destruction.
+~
+#EXIT
+Direction south~
+ToRoom    1200
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) >= 60
+mea $n &YIf you wish to visit an administrator's office, please say the
+mea $n &Yname of the admin to be transported there...&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p saeris~
+Comlist   if level($n) >= 60
+mer $n &Y$n disappears in a flash of flames suddenly!&w
+mea $n &YYou disappear in a flash of flames and arrive safely...&w
+mptransfer $n 1201
+else
+mea $n &YYou do not have sufficient power to do that...&w
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p seikyr~
+Comlist   if level($n) >= 60
+mer $n &Y$n disappears in a flash of flames suddenly!&w
+mea $n &YYou disappear in a flash of flames and arrive safely...&w
+mptransfer $n 1202
+else
+mea $n &YYou do not have sufficient power to do that...&w
+endif
+
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1205
+Name     &RA Small Balcony&w~
+Sector   indoors~
+Flags    prototype~
+Desc     &wThe small balcony here is surrounded by long columns similar to the
+ones found in the temple space to the north. There are several seats
+for people to sit and enjoy themselves. A small stone basin in the
+center of the balcony contains hot, bubbling lava. A stone staircase
+leads off towards another balcony below this one, which is built
+into the side of the mountain here.
+~
+#EXIT
+Direction north~
+ToRoom    1200
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1203
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1209
+Name     Floating in a void~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     1217
+Name     Floating in a void~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     1295
+Name     &RThe Swords Alumni Hall&w~
+Sector   city~
+Flags    prototype~
+Desc     &rThis is a large meeting and events space for the alumni members
+of the Swords dormitory. A large table is located in the center of
+the room with the emblem of a sword etched into the center of
+the table. A large chandelier hangs above with tiny sword
+metal motifs hanging off the chandelier. A tapestry of the
+founder, Fynar, can be seen on the northern wall of the large
+hall. A fireplace can be seen on the west wall with a stack
+of fresh wood next to it for usage with the fireplace. Large
+glass windows overlook a mountain range as it is apparent
+the alumni hall is not located near the college.
+~
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1296
+Name     &YThe Wands Alumni Hall&w~
+Sector   city~
+Flags    prototype~
+Desc     &OThis is a large meeting and events space for the alumni members
+of the Wands dormitory. A large table is located in the center of
+the room with the emblem of a wand etched into the center of
+the table. A large chandelier hangs above with tiny wand
+metal motifs hanging off the chandelier. A tapestry of the
+founder, Azuren, can be seen on the northern wall of the large
+hall. A fireplace can be seen on the west wall with a stack
+of fresh wood next to it for usage with the fireplace. Large
+glass windows overlook a foggy forest as it is apparent
+the alumni hall is not located near the college.
+~
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1297
+Name     &WThe Shields Alumni Hall&w~
+Sector   city~
+Flags    prototype~
+Desc     &wThis is a large meeting and events space for the alumni members
+of the Shields dormitory. A large table is located in the center of
+the room with the emblem of a shield etched into the center of
+the table. A large chandelier hangs above with tiny shield
+metal motifs hanging off the chandelier. A tapestry of the
+founder, Nhimaeri, can be seen on the northern wall of the large
+hall. A fireplace can be seen on the west wall with a stack
+of fresh wood next to it for usage with the fireplace. Large
+glass windows overlook some rolling fields as it is apparent
+the alumni hall is not located near the college.
+~
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1298
+Name     &zThe Daggers Alumni Hall&w~
+Sector   city~
+Flags    prototype~
+Desc     &wThis is a large meeting and events space for the alumni members
+of the Daggers dormitory. A large table is located in the center of
+the room with the emblem of a dagger etched into the center of
+the table. A large chandelier hangs above with tiny dagger
+metal motifs hanging off the chandelier. A tapestry of the
+founder, Ghourm, can be seen on the northern wall of the large
+hall. A fireplace can be seen on the west wall with a stack
+of fresh wood next to it for usage with the fireplace. Large
+glass windows overlook a large expanse of dark caverns as it 
+is apparent the alumni hall is not located near the college.
+~
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1299
+Name     Floating in a void~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction south~
+ToRoom    1298
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

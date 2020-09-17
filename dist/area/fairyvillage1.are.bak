@@ -1,0 +1,6937 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         A Fairy Village~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 28860770
+ResetMsg     &gYou hear the sounds of a bird nearby.&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       3300
+Keywords   elder nyzra fairy woman long black hair gossamer dress~
+Short      &PElder Nyzra&w~
+Long       &PA fairy woman in a gossamer dress is here brushing her long black hair.&w
+~
+Desc       &PThis woman has exquisite features from razor sharp high cheek bones,
+impossibly long eye lashes, and very delicate looking limbs. Her
+long, raven black hair falls in perfect waves past her shoulders. She is
+dressed in a shimmering, gossamer dress that seems to change color
+constantly. Her inquisitive sapphire eyes regard the world with
+childlike wonder despite her advanced age.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     800 4 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    3 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+if hasqbit($n) != 3301
+smile $n
+mpsleep 2
+sayto $n I have been expecting you, dear. I knew you would come when you
+sayto $n were ready. Now.. are you ready to learn more about who you
+sayto $n truly are?
+else
+hug $n
+sayto $n It is always lovely to see you.
+endif
+else
+smile $n
+sayto $n Welcome to our village. As long as you harbor no violence
+sayto $n here you will always be allowed to visit.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if race($n) == feyborn
+if hasqbit($n) != 3301
+nod $n
+mpsleep 2
+sayto $n You are what many call.. a "Feyborn." While many seem to believe
+sayto $n this involves a direct parent who is of fey blood.. this is
+sayto $n untrue. A Feyborn can appear several generations later after
+sayto $n their ancestors have bedded with one of us. Some generations of
+sayto $n children can show no signs of fey heritage until suddenly
+sayto $n one generation has one. Some are born directly from mating as
+sayto $n well.
+mpsleep 2
+sayto $n Being of fey blood is an incredible experience.. but it can also be
+sayto $n dangerous. You have unique gifts.. would you like to hear
+sayto $n about your &Pgifts&w?
+else
+grin $n
+sayto $n I have already told you about such, silly!
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p gifts~
+Comlist   if hasqbit($n) != 3300
+if race($n) == feyborn
+if hasqbit($n) != 3301
+smile $n
+sayto $n While you are not 100% fey.. you have received some of
+sayto $n our abilities.. such as you are harder to be enchanted and
+sayto $n you have limited telepathic abilities. You can also enter
+sayto $n what we call "Pocket Planes" by summoning the energy inside
+sayto $n of you.. places like this are a pocket plane. When the Great
+sayto $n Rift happened we were stuck on the Material Plane and we created
+sayto $n this place to keep us safe. There may be other pocket planes
+sayto $n out there for you to visit. We created this one and never left.
+mpsleep 2
+sayto $n The Fey Plane still exists and we are unsure how to find it now
+sayto $n since the Rift. Perhaps you will find a way to get in and see
+sayto $n our ancient homeland. It is quite a beautiful place!
+mpsleep 2
+sayto $n Caution about pocket planes.. if you are too far away from the
+sayto $n boundaries of the pocket plane you will not be able to enter it.
+mpsleep 2
+mpqset $n 3300
+mea $n &PYou can enter/leave pocket planes using FEYHOME & FEYEXIT now.&w
+mpsleep 2
+sayto $n You will also be able to one day summon your fey energy and
+sayto $n use it as a weapon against those that seek you harm. It can be very
+sayto $n draining on those who are not true fey.. so use it sparingly.
+mpsleep 2
+sayto $n Other unique gifts exist.. perhaps you will have one of them
+sayto $n that will show itself one day! We are fey - anything is possible!
+mpsleep 2
+sayto $n Now.. let me know when you are ready to know about the &Pdangers&w...
+else
+smile $n
+sayto $n You already know your gifts.
+endif
+endif
+else
+sayto $n You already know about your gifts.. do you know the
+sayto $n &Pdangers&w yet?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p dangers~
+Comlist   if race($n) == feyborn
+if hasqbit($n) != 3301
+nod $n
+sayto $n While you look rather human.. save for a few interesting
+sayto $n featues that are quite lovely.. you need to protect yourself.
+sayto $n Your unique heritage makes you a target for certain types
+sayto $n of creatures and people.
+mpsleep 2
+sayto $n The undead.. especially those who crave blood.. will be
+sayto $n drawn to you. Your blood is full of potent magic and they WILL
+sayto $n kill you for it. This blood is also used for dark magic and
+sayto $n evil wizards may seek you for it. Full fey are known for
+sayto $n their "fairy dust," which is left when we are killed. You
+sayto $n do not leave such behind. This is also used in dark spells and
+sayto $n is why many fey do not stay on the material plane for long periods.
+mpsleep 2
+sayto $n Before the Great Rift we had many brothers and sisters on the
+sayto $n Material Plane.. until the dark ones came and begun to drink our blood
+sayto $n as if it was a dessert to them. It was a very scary time for us.
+sayto $n We lost many of our family members to them and we created this place
+sayto $n to keep us safe. You will only be truly safe if you stay here among us
+sayto $n in this pocket plane. However, we cannot force anyone to stay here. We
+sayto $n just ask that you are careful out there.
+mpsleep 2
+sayto $n Also a unique feature of a pocket plane is that you are able to see
+sayto $n the corresponding area that mimics it. We have enchanted this plane
+sayto $n to alert us if someone with a dark heart passes nearby. If you see a
+sayto $n shadow do not be alarmed. We can see them.. they cannot see us. One
+sayto $n must simply look downward to see who is there. Our plane does
+sayto $n not allow violence so we are safe even if they manage to breach this
+sayto $n this place. Dark ones are especially not allowed here ever.
+mpsleep 2
+hug $n
+sayto $n May the goddess watch over you and welcome home.
+mpqset $n 3300
+mpqset $n 3301
+mpqset $n 3300
+else
+sayto $n You already know of the dangers... are you being safe?
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3301
+Keywords   firia shop owner clerk young fairy woman rosy cheeks stirring cauldron~
+Short      &PFiria&w~
+Long       &PA rosy cheeked fairy woman is here stirring a glowing cauldron.&w
+~
+Desc       &PThe woman here has bright rosy cheeks that form almost perfect
+circles on her high cheek bones. She is dressed in a gossamer looking
+robe as she stirs a cauldron full of a glowing liquid here.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   2 31 4 10 32 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+giggle $n
+sayto $n How can I help you? Interested in a tasty potion?
+else
+nod $n
+sayto $n How can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3302
+Keywords   bypin shop owner clerk fairy man wild curly hair~
+Short      &PBypin&w~
+Long       &PA fairy man with wild curly hair is here examining something trinkets.&w
+~
+Desc       &PThis man here has wild curly hair that form a large poof on the
+top of his head. His lilac colored eyes examine various things he
+has for sale here. He is dressed in a gossamer looking suit with
+matching jacket and pants.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   8 2 3 5 10 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n Hello there friend! How can I help you?
+else
+nod $n
+sayto $n I buy and sell unique treasures! Care to see?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3303
+Keywords   zhara shop owner clerk lovely fairy woman scarlet hair~
+Short      &PZhara&w~
+Long       &PA lovely looking fairy woman with scarlet colored hair is here.&w
+~
+Desc       &PThis fairy woman has bright scarlet colored hair that looks like
+flames as it tumbles past her shoulders. She is dressed in a gossamer
+looking dress that shimmers with coppery tones. 
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   13 2 10 3 4 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n Can I interest you in some arcane ingredients?
+else
+sayto $n Is there something I can help you find?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3304
+Keywords   Lustep bar tender bartender fairy man large ears~
+Short      &PLustep&w~
+Long       &PA fairy man with large ears is here tending the bar.&w
+~
+Desc       &PThis man has huge pointed ears that poke out of his wavy flax
+colored hair. He is rather handsome despite the eccentric looking
+ears and he is dressed in a simple ensemble of gossamer looking
+pants and shirt.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+grin $n
+sayto $n Hey there! What can I get you to drink or eat?
+else
+smile $n
+sayto $n What can I get you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3305
+Keywords   liror shop owner clerk older fairy man bushy white eyebrows~
+Short      &PLiror&w~
+Long       &PA fairy man with bushy white eyebrows is here examining a scroll.&w
+~
+Desc       &PThis older fairy man is quite slender with long limbs and ears. His
+eyebrows are quite bushy and white in color. He is dressed in a simple
+ensemble of gossamer looking pants, shirt, and vest.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   2 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+pat $n
+sayto $n Welcome! How can I help you today?
+else
+nod $n
+sayto $n How can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3306
+Keywords   tonshe shop owner clerk short fairy woman big blue eyes~
+Short      &PTonshe&w~
+Long       &PA short fairy woman with big blue eyes is sewing a dress here.&w
+~
+Desc       &PThis short fairy woman is here sewing garments to sell in her store. She
+is rather plump with a delicate looking face that is overpowered by
+her rather large blue eyes. Her hair is frizzy and the color of a
+raven's feather.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n You would look amazing in my fine garments!
+else
+nod $n
+sayto $n Can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3307
+Keywords   fairy woman repairing pair trousers young~
+Short      &Pa young fairy woman&w~
+Long       &PA young fairy woman is here repairing a pair of gossamer trousers.&w
+~
+Desc       &PThis young fairy woman is here singing to herself as she 
+repairs a pair of trousers. She is dressed in a lovely gown
+and has soft looking blonde hair.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+RepairData 9 0 0 100 1 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n Let me know if you need something repaired.
+else
+sayto $n Can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3308
+Keywords   tiscan fairy man polishing gemstones~
+Short      &PTiscan&w~
+Long       &PA handsome fairy man is here polishing several large gemstones.&w
+~
+Desc       &PThis fairy man is quite handsome and very slender. He has long
+limbs and piercing sapphire eyes fringed with silvery lashes. He
+is dressed in a gossamer suit and seems to be very busy here.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   8 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n Can I interest you in something shiny?
+else
+sayto $n Greetings. How can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3309
+Keywords   grindelle elderly fairy woman examining wands~
+Short      &PGrindelle&w~
+Long       &PAn elderly fairy woman is here examining some wands before her.&w
+~
+Desc       &PThis elderly fairy woman appears to be very ancient as her
+features are very wrinkled. Despite the wrinkles she is extremely
+beautiful and maintains a youthful glow. She is dressed in a gossamer
+dress with a ruffly collar as she examines some wands in her store.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   3 4 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n Hello there dear.. how can I help you?
+else
+nod $n
+sayto $n Can I help you find something?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3310
+Keywords   byzdrar fairy man pink hair organizing store shelves~
+Short      &PByzdrar&w~
+Long       &PA fairy man with pink hair is here organizing some shelves.&w
+~
+Desc       &PThis interesting looking fairy man has a vibrant shade of pink for his
+natural haircolor. All hair on his tan body is the same shade of
+vibrant pink from the hair on his scalp to his thick beard.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   2 3 4 5 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+grin $n
+sayto $n Hey there! How can I help you today?
+else
+nod $n
+sayto $n Is there something I can help you find?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3311
+Keywords   lypnie cheerful fairy woman exotic braided hair dark skin shop owner clerk~
+Short      &PLypnie&w~
+Long       &PA cheerful looking fairy woman with dark skin and beautifully braided hair is here.&w
+~
+Desc       &PThis fairy woman has a cheerful demeanor as she works around her
+store selling salves. She has dark chocolate brown colored skin
+that shimmers with a bronze hue. Her exceptionally long black hair
+has been braided into a massive intricate style that is complex
+and gorgeous.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   26 31 32 60 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n Hello there! Are you looking for something tasty to try?
+else
+nod $n
+sayto $n How can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3312
+Keywords   small fairy dragon~
+Short      &Pa fairy dragon&w~
+Long       &PA fairy dragon is here playing around.&w
+~
+Desc       &PThis handsome looking fairy dragon loves to play around and cause
+trouble wherever he goes. He has sly looking eyes and loves to
+laugh.
+~
+Race       dragon~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc pet~
+Affected   infrared flying~
+Stats1     600 20 0 0 15 0 0 0 0 0
+Stats2     3 12 3
+Stats3     1 4 1
+Stats4     1 6 1 0 0 0 6
+Attribs    9 16 14 17 13 16 13
+Saves      0 0 0 0 0 0
+Speaks     common elvish sylvan draconic~
+Speaking   sylvan~
+Immune     sleep charm paralysis~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3313
+Keywords   kizmi goofy looking fairy girl black eyes~
+Short      &PKizmi&w~
+Long       &PA goofy looking fairy girl with black eyes is here tending to her pets for sale.&w
+~
+Desc       &PThis short fairy woman is here sewing garments to sell in her store. She
+is rather plump with a delicate looking face that is overpowered by
+her rather large blue eyes. Her hair is frizzy and the color of a
+raven's feather.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+grin $n
+sayto $n I have several companions you would love to take home!
+else
+nod $n
+sayto $n Can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3314
+Keywords   large toad fairy hopping around~
+Short      &Ga large toad&w~
+Long       &GA very large toad is here hopping around.&w
+~
+Desc       &GThis toad is a bright green color with amber colored eyes. It is
+the size of a small pony and seems very content to hop around here.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc pet mountable~
+Affected   infrared~
+Stats1     0 20 0 0 10 0 0 0 0 0
+Stats2     3 10 10
+Stats3     1 4 1
+Stats4     2 6 2 0 0 0 6
+Attribs    10 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3315
+Keywords   Ghazala bar tender white hair young fairy woman~
+Short      &PGhazala&w~
+Long       &PA young fairy woman with sleek looking white hair is here tending to the bar.&w
+~
+Desc       &PThis young fairy woman has sleek looking center parted hair the
+color of white parchment paper. Her face features high cheekbones and
+full pouty lips. She is wearing a low cut gossamer dress as she
+serves customers.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+giggle $n
+sayto $n Welcome! Can I get you something to eat or drink?
+else
+smile $n
+sayto $n Hello there! Can I get you something?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3316
+Keywords   Himith fairy man dusting parlor inn keeper innkeep~
+Short      &PHimith&w~
+Long       &PA fairy man is here dusting the parlor of the inn while waiting for guests.&w
+~
+Desc       &PThis fairy man is not very tall, but he seems to get a lot done
+despite his size. He has a cloud of orange hair on his head and
+vibrant looking blue eyes.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     1 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n Are you looking for a room? I have several available!
+else
+nod $n
+sayto $n Can I interest you in a room?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3317
+Keywords   wyrlow shop owner clerk fairy man elderly sharpening sword~
+Short      &PWyrlow&w~
+Long       &PAn elderly fairy man is sharpening a glistening sword here.
+~
+Desc       &PThis fairy man is in his advanced years with many wrinkles on
+his face. However when he moves he suddenly appears much
+younger than when he's sedentary. He is dressed in a gossamer
+suit ensemble as he sharpens a sword here.
+~
+Race       magical~
+Class      wizard~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 2 0 10 0 0 0 0 0
+Stats2     2 20 50
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 10 14 20 8 20 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+ShopData   5 6 9 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == feyborn
+smile $n
+sayto $n How can I help you today?
+else
+nod $n
+sayto $n How can I help you?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3318
+Keywords   fairy man bard handsome blue hair long fingers~
+Short      &Pa fairy bard&w~
+Long       &PA handsome fairy man with blue hair and long fingers is here.&w
+~
+Desc       &PThis handsome fairy man has a wild shade of blue hair, which contrasts
+with his pink gossamer colored clothing. He is here conducting the instruments
+here for those that come to dance.
+~
+Race       magical~
+Class      bard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 6 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 3362
+emote arrives and begins checking over the instruments.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpsleep 5
+emote checks over the instruments before heading home to rest.
+mpgoto 3399
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3319
+Keywords   priestess aerilaya fairy woman lighting incense~
+Short      &Ra priestess&w~
+Long       &RA fairy woman is here lighting some sweet smelling incense.&w
+~
+Desc       &RThis fairy woman is exceptionally beautiful with long locks of
+auburn hair. She is dressed in a ceremonial robe with high slits on
+the side as she lights incense here.
+~
+Race       magical~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 0 0 14 0 0 10 10 0
+Stats2     5 9 15
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 13 13 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   bow $n
+sayto $n Is there something I can interest you in?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3320
+Keywords   priestess aerilaya fairy woman folding ceremonial clothing~
+Short      &Ra priestess&w~
+Long       &RA fairy woman folding ceremonial clothing is here.&w
+~
+Desc       &RThis fairy woman is exceptionally beautiful with large golden eyes
+that match her butterscotch colored hair. She is dressed in a ceremonial
+robe with high slits on the side as she folds clothing here.
+~
+Race       magical~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 0 0 14 0 0 10 10 0
+Stats2     5 9 15
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    30 13 13 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+sayto $n How can I help you today?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3321
+Keywords   priestess high aerilaya fairy woman cleaning altar Jaziri~
+Short      &RHigh Priestess Jaziri&w~
+Long       &RA fairy woman is here cleaning the altar and arranging the ceremonial objects on it.&w
+~
+Desc       &RThis fairy woman is dressed in very ornate looking robes as she
+cleans the temple space here. She seems to be very thorough and enjoys
+making sure it is pleasing to the eyes. She has long scarlet colored
+hair and deep blue eyes. 
+~
+Race       magical~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 0 0 14 0 0 10 10 0
+Stats2     9 9 20
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if deity($n) == aerilaya
+smile $n
+sayto $n Greetings! It is nice to see you here at our temple. If you
+sayto $n need anything please let myself or any of the priestesses here know.
+else
+smile $n
+sayto $n Welcome to our temple. I hope you enjoy your visit.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3322
+Keywords   priestess fairy woman temple guard aerilayan aerilaya standing~
+Short      &Ran Aerilayan guard&w~
+Long       &RA fairy woman dressed in armor is here standing guard.&w
+~
+Desc       &RThis fairy woman is one of the guard here at this temple. She is dressed
+in armor as she carries out her duties here.&w
+~
+Race       magical~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared truesight~
+Stats1     600 50 0 0 14 0 0 10 10 0
+Stats2     5 9 15
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    15 13 13 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if deity($n) == aerilaya
+bow $n
+else
+tsk $n
+sayto $n This space is reserved for the faithful.
+mea $n &RThe guard leads you back down the stairs.
+silent mpforce $n d
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3323
+Keywords   priestess aerilaya fairy woman greeting visitors~
+Short      &Ra priestess&w~
+Long       &RA fairy woman is here greeting visitors to the temple.&w
+~
+Desc       &RThis fairy woman is here greeting visitors that come to the temple.
+She is dressed in ceremonial robes and has her magenta colored hair
+braided into an intricate style.
+~
+Race       magical~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared truesight~
+Stats1     600 50 0 0 14 0 0 10 10 0
+Stats2     5 9 15
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if deity($n) == aerilaya
+bow $n
+sayto $n Welcome home. May you enjoy your visit here.
+else
+smile $n
+sayto $n Welcome to our temple to Aerilaya. Please enjoy your visit.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   if deity($n) == aerilaya
+smile $n
+else
+tsk $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3324
+Keywords   village fairy guard man patrolling ~
+Short      &Pa fairy guard&w~
+Long       &PA fairy man is here patrolling the village.&w
+~
+Desc       &PThis fairy man is dressed in armor as he patrols around the village
+looking for danger.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_hidden infrared truesight~
+Stats1     600 50 0 0 14 0 0 10 10 0
+Stats2     5 9 15
+Stats3     1 4 1
+Stats4     2 6 1 0 0 0 6
+Attribs    15 13 13 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) != feyborn
+nod $n
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3325
+Keywords   fairy woman villager~
+Short      &Pa fairy woman&w~
+Long       &PA fairy woman is here walking around the village.&w
+~
+Desc       &PThis female fairy is walking around the village in a gossamer
+looking dress. She seems to be in a very chipper mood and dances
+around when she feels like it.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   truesight~
+Stats1     500 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 6 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if race($n) == feyborn
+smile $n
+else
+eye $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   feybeam
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 1413 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3326
+Keywords   fairy man villager~
+Short      &Pa fairy man&w~
+Long       &PA fairy man is here walking around the village.&w
+~
+Desc       &PThis male fairy is walking around the village in a gossamer
+looking ensemble. He seems to be in a very chipper mood
+as he walks around the village.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   truesight~
+Stats1     500 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   feybeam
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 1413 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if race($n) == feyborn
+smile $n
+else
+eye $n
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3327
+Keywords   fairy child villager female~
+Short      &Pa fairy child&w~
+Long       &PA fairy child is here playing around the village.&w
+~
+Desc       &PThis child is quite lovely and has long hair that has been tied
+back to reveal her youthful face.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   truesight~
+Stats1     500 1 0 0 10 0 0 0 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 6 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   feybeam
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 1413 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if race($n) == feyborn
+giggle $n
+else
+peer $n
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3399
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3300
+Keywords blue glass shimmering potion greater heroism~
+Type     potion~
+Short    &Ba shimmering blue glass potion&w~
+Long     &BA shimmering blue glass potion bottle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 25 10 90 2 0 0
+Spells   'greater heroism' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3301
+Keywords earthstone potion crafted bottle stoneskin~
+Type     potion~
+Short    &Oan earthstone crafted potion bottle&w~
+Long     &OAn earthstone potion bottle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 45 10 90 4 0 0
+Spells   'stoneskin' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3302
+Keywords vibrant purple potion shaped flower true seeing~
+Type     potion~
+Short    &pa vibrant purple flower shaped potion bottle&w~
+Long     &pA vibrant purple potion bottle shaped like a flower is here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 190 90 10 19 0 0
+Spells   'true seeing' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3303
+Keywords fiery colored potion bottle fireshield~
+Type     potion~
+Short    &Ra fiery colored potion bottle&w~
+Long     &RA fiery colored potion bottle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 120 90 40 12 0 0
+Spells   'fire shield' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3304
+Keywords clear potion bottle ghostwalk~
+Type     potion~
+Short    &Wa clear potion bottle&w~
+Long     &WA clear potion bottle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 30 20 90 3 0 0
+Spells   'ghostwalk' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3305
+Keywords emerald green potion bottle heal~
+Type     potion~
+Short    &Gan emerald green potion bottle&w~
+Long     &GAn emerald green potion bottle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 160 90 90 16 0 0
+Spells   'heal' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3306
+Keywords dark crimson colored potion bottle~
+Type     potion~
+Short    &ra dark crimson red potion bottle&w~
+Long     &rA dark crimson red potion bottle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 30 10 30 3 0 0
+Spells   'detect evil' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3307
+Keywords ashes mistletoe spruce small pile~
+Type     trash~
+Short    &washes of &gmistletoe&w and &cspruce&w~
+Long     &wA small pile of ashes has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 0
+Stats    1 5 10 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3308
+Keywords chalks inks infused precious gems small pouch~
+Type     trash~
+Short    &wa pouch of &Wchalks&w and &zinks&w infused with &ppr&Pe&pci&Pou&ps g&Pem&ps&w~
+Long     &PA small pouch has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 1
+Stats    1 30 10 10 3 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3309
+Keywords chrysolite green powder handful small ~
+Type     trash~
+Short    &Ga small handful of chrysolite powder&w~
+Long     &GA small handful of a green powder has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 0
+Stats    1 32 0 0 3 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3310
+Keywords crystal vial phosphorescent material small~
+Type     trash~
+Short    &Wa small crystal vial of &Gpho&Ysphore&Gsce&Wnt m&Gat&Yeri&Gal&w~
+Long     &WA small crystal vial has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 0
+Stats    0 20 0 0 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3311
+Keywords small gem encrusted bowl~
+Type     trash~
+Short    &wa small &Rge&Ym e&Gnc&Bru&Pst&Ped&w bowl&w~
+Long     &WA small gem encrusted bowl has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 1
+Stats    1 625 0 0 62 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3312
+Keywords small glass eye~
+Type     trash~
+Short    &Wa small glass eye&w~
+Long     &WA small glass eye has been left here.&w~
+WFlags   take onehand~
+Values   50 0 0 0 0 0
+Values2  0 0
+Stats    1 26 0 0 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3313
+Keywords small green plant ceramic pot~
+Type     trash~
+Short    &ga small green plant in a &Oceramic pot&w~
+Long     &gA small green plant in a ceramic pot has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    1 5 20 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3314
+Keywords small piece honeycomb~
+Type     trash~
+Short    &Oa small piece of honeycomb&w~
+Long     &OA small piece of honeycomb has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 2 10 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3315
+Keywords ointment herbal eyes crystal vial small~
+Type     trash~
+Short    &Wa small crystal vial of &gherbal eye ointment&w~
+Long     &WA small crystal vial has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    0 25 10 20 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3316
+Keywords rainbow colored feather magical bird small~
+Type     trash~
+Short    &wa small &Rra&Yinb&Gow &Bco&plor&Ped&w feather&w~
+Long     &wA small &Rra&Yinb&Gow &Bco&plor&Ped&w feather has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 20 0 0 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3317
+Keywords flagon fairy ale glowing~
+Type     drinkcon~
+Short    &Pa flagon of fairy ale&w~
+Long     &PA glowing flagon of ale has been left here.&w~
+Flags    magic inventory~
+WFlags   take hold~
+Values   3 3 18 0 0 0
+Values2  0 1
+Stats    1 6 10 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3318
+Keywords salad edible flowers nuts~
+Type     food~
+Short    &ga salad of &Pedible flowers&g and &Onuts&w~
+Long     &gA salad of flowers and nuts has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 3 5 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3319
+Keywords plate sauteed fey mushrooms~
+Type     food~
+Short    &Oa plate of sauteed &pfey mushrooms&w~
+Long     &OA plate of odd looking cooked mushrooms is here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 4 10 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3320
+Keywords glass fresh glowing water~
+Type     drinkcon~
+Short    &Wa glass of fresh glowing water&w~
+Long     &WA glass of fresh looking glowing water has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 5 0 0 0 0
+Values2  0 1
+Stats    1 1 1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3321
+Keywords scroll glowing dome depicting glyph warding~
+Type     scroll~
+Short    &Oa scroll depicting a &Wglowing dome&w~
+Long     &OA scroll depicting a glowing dome has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 1
+Stats    0 140 50 75 14 0 0
+Spells   'glyph of warding' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3322
+Keywords scroll dragon depicting flying~
+Type     scroll~
+Short    &wa scroll depicting a &Rflying dragon&w~
+Long     &wA scroll depicting a flying dragon has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 1
+Stats    0 110 50 75 11 0 0
+Spells   'dragonskin' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3323
+Keywords scroll brain surrounded fog depicting~
+Type     scroll~
+Short    &pa scroll depicting a &Wbrain surrounded by fog&w~
+Long     &pA scroll depicting a brain surrounded by fog has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 1
+Stats    0 95 25 10 9 0 0
+Spells   'mind fog' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3324
+Keywords scroll depicting caged eye~
+Type     scroll~
+Short    &Pa scroll depicting a &wcaged eye&w~
+Long     &PA scroll depicting a caged eye has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 1
+Stats    0 80 25 10 8 0 0
+Spells   'resist psychic' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3325
+Keywords gossamer dress draped sleeves long train gossa12~
+Type     armor~
+Short    &Pa gossamer dress with draped sleeves and a long train&w~
+Long     &PA gossamer dress with draped sleeves and a long train has been left here.&w~
+Flags    magic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 20 0 0 2 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3325
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gossa12
+mpoload 3326 1
+silent mpforce $n get plainsies12
+silent mpforce $n drop gossa12
+silent mpforce $n wear plainsies12
+mppurge gossa12
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3326
+Keywords plain looking dress plainsies12~
+Type     armor~
+Short    &wa plain looking dress&w~
+Long     &wA plain looking dress has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3326
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem plainsies12
+mpoload 3325 1
+silent mpforce $n get gossa12
+silent mpforce $n drop plainsies12
+silent mpforce $n wear gossa12
+mppurge plainsies12
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3327
+Keywords gossamer trousers pair gtrousers55~
+Type     armor~
+Short    &Pa pair of gossamer trousers&w~
+Long     &PA pair of gossamer trousers has been left here.&w~
+Flags    magic~
+WFlags   take legs onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 15 0 0 1 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3327
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gtrousers55
+mpoload 3351 1
+silent mpforce $n get ptrou1
+silent mpforce $n drop gtrousers55
+silent mpforce $n wear ptrou1
+mppurge gtrousers55
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3328
+Keywords gossamer vest gvest1~
+Type     armor~
+Short    &Pa gossamer vest&w~
+Long     &PA gossamer vest has been left here.&w~
+Flags    magic~
+WFlags   take about onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 12 0 0 1 0 6
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3328
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gvest1
+mpoload 3352 1
+silent mpforce $n get pvest1
+silent mpforce $n drop gvest1
+silent mpforce $n wear pvest1
+mppurge gvest1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3329
+Keywords shimmering button down tunic gtunic1~
+Type     armor~
+Short    &Pa shimmering button down tunic&w~
+Long     &PA shimmering button down tunic has been left here.&w~
+Flags    magic~
+WFlags   take body onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 9 1 10 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3329
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gtunic1
+mpoload 3353 1
+silent mpforce $n get ptunic1
+silent mpforce $n drop gtunic1
+silent mpforce $n wear ptunic1
+mppurge gtunic1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3330
+Keywords shimmering shoes curled toes gshoes1~
+Type     armor~
+Short    &Pa pair of shimmering shoes with curled tips&w~
+Long     &PA pair of shimmering shoes with curled tips have been left here.&w~
+Flags    magic~
+WFlags   take feet onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 6 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3330
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gshoes1
+mpoload 3354 1
+silent mpforce $n get pshoes1
+silent mpforce $n drop gshoes1
+silent mpforce $n wear pshoes1
+mppurge gshoes1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3331
+Keywords gossamer cloak flowing gcloak1~
+Type     armor~
+Short    &Pa flowing gossamer cloak&w~
+Long     &PA flowing gossamer cloak has been left here.&w~
+Lore   &PYou discover that this is a "Fey Cloak," which is worn by guests and
+the fey to see magic clearly when worn...&w
+~
+Flags    magic~
+WFlags   take about onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 100 0 0 10 0 0
+Affect       -1 -1 16 26 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3331
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gcloak1
+mpoload 3355 1
+silent mpforce $n get pcloak71
+silent mpforce $n drop gcloak1
+silent mpforce $n wear pcloak71
+mppurge gcloak1
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n &PYou feel magic curl around your body suddenly...&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mea $n &PYou feel the magic around you disappear suddenly...&w
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3332
+Keywords gossamer dress side slits open back gossa13~
+Type     armor~
+Short    &Pa gossamer dress with side slits and an open back&w~
+Long     &PA gossamer dress with side slits and an open back has been left here.&w~
+Flags    magic~
+WFlags   take body onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 18 0 0 1 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3332
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gossa13
+mpoload 3356 1
+silent mpforce $n get pdress21
+silent mpforce $n drop gossa13
+silent mpforce $n wear pdress21
+mppurge gossa13
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3333
+Keywords gossamer suit coat gcoat1~
+Type     armor~
+Short    &Pa gossamer suit coat&w~
+Long     &PA gossamer suit coat has been left here.&w~
+Flags    magic~
+WFlags   take body about onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 17 0 0 1 0 9
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3333
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gcoat1
+mpoload 3357 1
+silent mpforce $n get psuit13
+silent mpforce $n drop gcoat1
+silent mpforce $n wear psuit13
+mppurge gcoat1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3334
+Keywords shimmering pair boots curled tips gboots1~
+Type     armor~
+Short    &Pa pair of shimmering boots with curled tips&w~
+Long     &PA pair of shimmering boots with curled tips have been left here.&w~
+Flags    magic~
+WFlags   take feet onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 9 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3334
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem gboots1
+mpoload 3358 1
+silent mpforce $n get pboot989
+silent mpforce $n drop gboots1
+silent mpforce $n wear pboot989
+mppurge gboots1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3335
+Keywords shimmering blue wand white crystal~
+Type     wand~
+Short    &Ba shimmering blue wand with a &Wwhite crystal&w~
+Long     &BA shimmering blue wand with a white crystal has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 5 5 -1 0 0
+Values2  0 2
+Stats    1 40 20 20 4 0 0
+Spells   'detect magic'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3336
+Keywords clear red wand long glass~
+Type     wand~
+Short    &Ra clear red glass wand&w~
+Long     &RA clear red glass wand has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 5 5 -1 0 0
+Values2  0 2
+Stats    1 175 0 0 17 0 0
+Spells   'fire shield'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3337
+Keywords smoky quartz wand long~
+Type     wand~
+Short    &wa long smoky quartz wand&w~
+Long     &wA long smoky quartz wand has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 5 5 -1 0 0
+Values2  0 2
+Stats    1 120 0 0 12 0 0
+Spells   'ghostwalk'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3338
+Keywords carrot shaped wand~
+Type     wand~
+Short    &Oa carrot shaped wand&w~
+Long     &OA carrot shaped wand has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 5 5 -1 0 0
+Values2  0 2
+Stats    1 75 0 0 7 0 0
+Spells   'darkvision'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3339
+Keywords black wand lilac crystal~
+Type     wand~
+Short    &za black wand with a &Plilac crystal&w~
+Long     &zA black wand with a lilac crystal has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   20 5 5 -1 0 0
+Values2  0 2
+Stats    1 96 0 0 9 0 0
+Spells   'invisibility'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3340
+Keywords ring dragon bronze~
+Type     treasure~
+Short    &Oa ring shaped like a br&Yonz&Oe drag&Yon&w~
+Long     &OA ring shaped like a bronze dragon has been left here.&w~
+Lore   &OYour scrying reveals this to be a "Ring of the Brass Dragon," which
+grants its wearer limited resistance to attacks made by lightning. It was
+crafted by ancient warriors that used to attack these types of
+dragons for sport.
+~
+Flags    magic~
+WFlags   take finger~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 600 0 0 60 0 0
+Affect       -1 -1 4 27 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3341
+Keywords spectacles black lens silver wire~
+Type     treasure~
+Short    &wa pair of silver wire spectacles with &zblack lenses&w~
+Long     &wA pair of silver wire spectacles with black lenses has been left here.&w~
+Lore   &zYour scrying reveals this pair of spectacles to be "Glasses
+of the Master Thief," which were crafted to help roguish types
+the ability to see traps set by others.
+~
+Flags    magic~
+WFlags   take face~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 560 0 0 56 0 0
+Affect       -1 -1 8388608 26 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3342
+Keywords pair slippers silver embroidered runes~
+Type     armor~
+Short    &wa pair of silver slippers embroidered with &Brunes&w~
+Long     &wA pair of silver slippers embroidered with runes have been left here.&w~
+Lore   &wYour scrying reveals this pair of slippers to be "Slippers of
+Mental Clarity." Theses slippers once belonged to a wizard who
+wore them to help them during contests of the mind.
+~
+Flags    magic~
+WFlags   take feet onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 525 0 0 52 0 0
+Affect       -1 -1 2 23 0
+Affect       -1 -1 2 24 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3343
+Keywords spell component bag woven silver hair~
+Type     container~
+Short    &Wa spell component bag made from woven s&wil&Wve&wr h&Wai&wr&w~
+Long     &WA bag made from woven silver hair has been left here.&w~
+Lore   &WYour scrying reveals this component bag to be a "Bag of Wondrous
+Holding," which was created using the hair of various fey creatures
+to imbue it with power. The bag is used for spell components and
+seems to be a pocket dimension in itself.
+~
+Flags    magic~
+WFlags   take about belt onehand~
+Values   300 0 0 0 0 0
+Values2  0 2
+Stats    1 375 0 0 37 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3344
+Keywords lilac colored pill~
+Type     pill~
+Short    &Pa lilac colored pill&w~
+Long     &PA lilac colored pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 -1 -1 -1 20 0
+Values2  0 0
+Stats    1 20 0 0 2 0 0
+Spells   'detect magic' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3345
+Keywords sapphire colored pill~
+Type     pill~
+Short    &Ba sapphire colored pill&w~
+Long     &BA sapphire colored pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 -1 -1 -1 10 0
+Values2  0 0
+Stats    1 15 0 0 1 0 0
+Spells   'water breathing' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3346
+Keywords fiery looking pill~
+Type     pill~
+Short    &Ra fiery looking pill&w~
+Long     &RA fiery looking pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 -1 -1 -1 10 0
+Values2  0 0
+Stats    1 90 0 0 9 0 0
+Spells   'resist fire' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3347
+Keywords gold colored pill~
+Type     pill~
+Short    &Ya gold colored pill&w~
+Long     &YA gold colored pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 -1 -1 -1 10 0
+Values2  0 0
+Stats    1 40 0 0 4 0 0
+Spells   'heroism' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3348
+Keywords jade colored pill~
+Type     pill~
+Short    &Ga jade colored pill&w~
+Long     &GA jade colored pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 -1 -1 -1 10 0
+Values2  0 0
+Stats    1 80 0 0 8 0 0
+Spells   'cure serious wounds' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3349
+Keywords clear small pill~
+Type     pill~
+Short    &Wa small clear pill&w~
+Long     &WA small clear pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 -1 -1 -1 10 0
+Values2  0 0
+Stats    1 150 0 0 15 0 0
+Spells   'see invisibility' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3350
+Keywords black colored pill~
+Type     pill~
+Short    &za black colored pill&w~
+Long     &zA black colored pill has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 -1 -1 -1 10 0
+Values2  0 0
+Stats    1 200 0 0 20 0 0
+Spells   'invisibility' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     3351
+Keywords pair plain looking trousers ptrou1~
+Type     armor~
+Short    &wa pair of plain looking trousers&w~
+Long     &wA pair of plain looking trousers have been left here.&w~
+WFlags   take legs onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3351
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem ptrou1
+mpoload 3327 1
+silent mpforce $n get gtrousers55
+silent mpforce $n drop ptrou1
+silent mpforce $n wear gtrousers55
+mppurge ptrou1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3352
+Keywords plain looking vest pvest1~
+Type     armor~
+Short    &wa plain looking vest&w~
+Long     &pA plain looking vest has been left here.&w~
+WFlags   take about onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3352
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pvest1
+mpoload 3328 1
+silent mpforce $n get gvest1
+silent mpforce $n drop pvest1
+silent mpforce $n wear gvest1
+mppurge pvest1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3353
+Keywords plain looking button down tunic ptunic1~
+Type     armor~
+Short    &wa plain looking button down tunic&w~
+Long     &wA plain looking button down tunic has been left here.&w~
+WFlags   take body onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3353
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem ptunic1
+mpoload 3329 1
+silent mpforce $n get gtunic1
+silent mpforce $n drop ptunic1
+silent mpforce $n wear gtunic1
+mppurge ptunic1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3354
+Keywords plain looking shoes pshoes1~
+Type     armor~
+Short    &wa pair of plain looking shoes&w~
+Long     &wA pair of plain looking shoes have been left here.&w~
+WFlags   take feet onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3354
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pshoes1
+mpoload 3330 1
+silent mpforce $n get gshoes1
+silent mpforce $n drop pshoes1
+silent mpforce $n wear gshoes1
+mppurge pshoes1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3355
+Keywords plain looking cloak pcloak71~
+Type     armor~
+Short    &wa plain looking cloak&w~
+Long     &wA plain looking cloak has been left here.&w~
+WFlags   take about onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3355
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pcloak71
+mpoload 3331 1
+silent mpforce $n get gcloak1
+silent mpforce $n drop pcloak71
+silent mpforce $n wear gcloak1
+mppurge pcloak71
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3356
+Keywords plain looking dress pdress21~
+Type     armor~
+Short    &wa plain looking dress&w~
+Long     &wA plain looking dress has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3356
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pdress21
+mpoload 3332 1
+silent mpforce $n get gossa13
+silent mpforce $n drop pdress21
+silent mpforce $n wear gossa13
+mppurge pdress21
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3357
+Keywords plain looking suit coat psuit13~
+Type     armor~
+Short    &wa plain looking suit coat&w~
+Long     &wA plain looking suit coat has been left here.&w~
+WFlags   take about onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 9
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3357
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem psuit13
+mpoload 3333 1
+silent mpforce $n get gcoat1
+silent mpforce $n drop psuit13
+silent mpforce $n wear gcoat1
+mppurge psuit13
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3358
+Keywords plain looking pair boots pboot989~
+Type     armor~
+Short    &wa pair of plain looking boots&w~
+Long     &wA pair of plain looking boots have been left here.&w~
+WFlags   take feet onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3358
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pboot989
+mpoload 3334 1
+silent mpforce $n get gboots1
+silent mpforce $n drop pboot989
+silent mpforce $n wear gboots1
+mppurge pboot989
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3359
+Keywords fairy chain mail armor glistening farmor1~
+Type     armor~
+Short    &Pglistening chain mail armor&w~
+Long     &PGlistening chain mail armor has been left here.&w~
+Flags    magic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  13 2
+Stats    0 145 7 1 14 0 0
+Affect       -1 -1 5 21 0
+Affect       -1 -1 5 20 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3359
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem farmor1
+mpoload 3360 1
+silent mpforce $n get pchain1
+silent mpforce $n drop farmor1
+silent mpforce $n wear pchain1
+mppurge farmor1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3360
+Keywords chain mail armor pchain1~
+Type     armor~
+Short    chain mail armor~
+Long     Chain mail armor has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  13 2
+Stats    55 75 7 1 7 1 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3360
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pchain1
+mpoload 3359 1
+silent mpforce $n get farmor1
+silent mpforce $n drop pchain1
+silent mpforce $n wear farmor1
+mppurge pchain1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3361
+Keywords fairy leather armor glistening fleather1~
+Type     armor~
+Short    &Pglistening leather armor&w~
+Long     &PGlistening leather armor has been left here.&w~
+Flags    magic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    0 120 1 1 12 0 0
+Affect       -1 -1 5 21 0
+Affect       -1 -1 5 20 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3361
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem fleather1
+mpoload 3362 1
+silent mpforce $n get pleather1
+silent mpforce $n drop fleather1
+silent mpforce $n wear pleather1
+mppurge fleather1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3362
+Keywords leather armor pleather1~
+Type     armor~
+Short    leather armor~
+Long     Leather armor has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 10 1 1 1 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3362
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pleather1
+mpoload 3361 1
+silent mpforce $n get fleather1
+silent mpforce $n drop pleather1
+silent mpforce $n wear fleather1
+mppurge pleather1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3363
+Keywords glistening plate armor fplate222~
+Type     armor~
+Short    &Pglistening plate armor&w~
+Long     &PGlistening plate armor has been left here.&w~
+Flags    magic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  15 2
+Stats    0 800 0 1 80 0 0
+Affect       -1 -1 5 21 0
+Affect       -1 -1 5 20 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3363
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem fplate222
+mpoload 3364 1
+silent mpforce $n get pplate1
+silent mpforce $n drop fplate222
+silent mpforce $n wear pplate1
+mppurge fplate222
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3364
+Keywords plate armor pplate1~
+Type     armor~
+Short    plate armor~
+Long     Plate armor has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  15 2
+Stats    65 1500 150 1 150 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3364
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pplate1
+mpoload 3363 1
+silent mpforce $n get fplate222
+silent mpforce $n drop pplate1
+silent mpforce $n wear fplate222
+mppurge pplate1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3365
+Keywords gossamer wizard robe frobe1~
+Type     armor~
+Short    &Pa gossamer wizard's robe&w~
+Long     &PA gossamer looking wizard's robe has been left here.&w~
+Flags    magic~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  7 2
+Stats    3 350 0 1 35 0 0
+Affect       -1 -1 5 23 0
+Affect       -1 -1 5 21 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3365
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem frobe1
+mpoload 3366 1
+silent mpforce $n get probe43
+silent mpforce $n drop frobe1
+silent mpforce $n wear probe43
+mppurge frobe1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3366
+Keywords plain looking wizard robe probe43~
+Type     armor~
+Short    &wa plain looking wizard's robe&w~
+Long     &wA plain looking wizard's robe has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3366
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem probe43
+mpoload 3365 1
+silent mpforce $n get frobe1
+silent mpforce $n drop probe43
+silent mpforce $n wear frobe1
+mppurge probe43
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3367
+Keywords exquisite longsword sword fairy fsword1~
+Type     weapon~
+Short    &Pan exquisite longsword&w~
+Long     &PAn exquisite longsword has been left here.&w~
+Flags    loyal magic versatile~
+WFlags   take onehand twohand~
+Values   1 1 8 1 1 0
+Values2  0 2
+Stats    0 140 10 20 14 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3367
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem fsword1
+mpoload 3368 1
+silent mpforce $n get plong24
+silent mpforce $n drop fsword1
+silent mpforce $n wear plong24
+mppurge fsword1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3368
+Keywords longsword sword long plong24~
+Type     weapon~
+Short    a longsword~
+Long     A longsword has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   1 1 8 1 1 0
+Values2  0 2
+Stats    1 15 10 20 1 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3368
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem plong24
+mpoload 3367 1
+silent mpforce $n get fsword1
+silent mpforce $n drop plong24
+silent mpforce $n wear fsword1
+mppurge plong24
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3369
+Keywords quarterstaff staff quarter fairy exquisite crystal tip ftip1~
+Type     weapon~
+Short    &Pa quarterstaff with a &Wcrystal tip&w~
+Long     &PA quarterstaff with a crystal at the tip has been left here.&w~
+Flags    loyal magic versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 2
+Stats    0 200 0 1 20 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3369
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem ftip1
+mpoload 3370 1
+silent mpforce $n get pstaff5
+silent mpforce $n drop ftip1
+silent mpforce $n wear pstaff5
+mppurge ftip 1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3370
+Keywords quarter quarterstaff staff pstaff5~
+Type     weapon~
+Short    a quarterstaff~
+Long     A simple quarterstaff has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 2
+Stats    4 2 0 1 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3370
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pstaff5
+mpoload 3369 1
+silent mpforce $n get ftip1
+silent mpforce $n drop pstaff5
+silent mpforce $n wear ftip1
+mppurge pstaff5
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3371
+Keywords exquisite spear fairy fspear17~
+Type     weapon~
+Short    &Pan exquisite spear&w~
+Long     &PAn exquisite looking spear has been left here.&w~
+Flags    loyal magic versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    0 250 0 1 25 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3371
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem fspear17
+mpoload 3372 1
+silent mpforce $n get pspear29
+silent mpforce $n drop fspear17
+silent mpforce $n wear pspear29
+mppurge fspear17
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3372
+Keywords spear simple pspear29~
+Type     weapon~
+Short    a spear~
+Long     A simple spear has been left here.~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3372
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem pspear29
+mpoload 3371 1
+silent mpforce $n get fspear17
+silent mpforce $n drop pspear29
+silent mpforce $n wear fspear17
+mppurge pspear29
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3373
+Keywords exquisite fairy lance flance1~
+Type     weapon~
+Short    &Pan exquisite lance&w~
+Long     &PAn exquisite looking lance has been left here.&w~
+Flags    loyal magic~
+WFlags   take twohand~
+Values   12 1 12 3 20 0
+Values2  0 2
+Stats    0 400 0 0 40 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3373
+if inarea($n) != fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem flance1
+mpoload 3374 1
+silent mpforce $n get plance1
+silent mpforce $n drop flance1
+silent mpforce $n wear plance1
+mppurge flance1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3374
+Keywords lance plain simple plance1~
+Type     weapon~
+Short    a lance~
+Long     A lance has been left here.~
+WFlags   take twohand~
+Values   12 1 12 3 20 0
+Values2  0 2
+Stats    6 10 1 1 1 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   *~
+Comlist   if wearingvnum($n) == 3374
+if inarea($n) == fairyvillage1.are
+mpsleep 2
+silent mpforce $n rem plance1
+mpoload 3373 1
+silent mpforce $n get flance1
+silent mpforce $n drop plance1
+silent mpforce $n wear flance1
+mppurge plance1
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3375
+Keywords rows instruments magical silver looking~
+Type     treasure~
+Short    &wrows of magical silver instruments&w~
+Long     &wSeveral rows of magical looking silver instruments are here.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    200 0 0 0 0 0 0
+#EXDESC
+ExDescKey    instruments~
+ExDesc       &WThese rows consist of magical looking silver instruments that
+are polished and ready to play. At night they float above the floor
+and play beautiful music while during the day they are on the floor
+in neat little rows. 
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3376
+Keywords padded silk armor embroidered roses~
+Type     armor~
+Short    &Rpadded silk armor embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RSome padded silk armor embroidered with roses has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    8 15 0 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3377
+Keywords padded silk leggings embroidered roses~
+Type     armor~
+Short    &Rpadded silk leggings embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RSome padded silk leggings embroidered with roses have been left here.&w~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    8 9 0 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3378
+Keywords pair padded silk sleeves embroidered roses~
+Type     armor~
+Short    &Rpadded silk sleeves embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RA pair of padded silk sleeves embroidered with roses have been left here.&w~
+WFlags   take arms~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    8 5 2 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3379
+Keywords quilted silk boots pair~
+Type     armor~
+Short    &Ra padded pair of quilted silk boots&w~
+Long     &RA pair of quilted boots with padding has been left here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    8 6 20 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3380
+Keywords plate armor engraved roses~
+Type     armor~
+Short    &Rplate armor engraved with &rr&Ro&rs&Re&rs&w~
+Long     &RPlate armor engraved with roses has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  15 2
+Stats    65 1500 150 1 150 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3381
+Keywords metal shield engraved giant rose~
+Type     armor~
+Short    &Ra metal shield engraved with a giant &rr&Ro&rs&Re&w~
+Long     &RA metal shield engraved with a giant rose has been left here.&w~
+Flags    metal~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    6 18 1 1 1 0 0
+Affect       -1 -1 20 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3382
+Keywords metal helm engraved roses~
+Type     armor~
+Short    &Ra metal helm engraved with &rr&Ro&rs&Re&rs&w~
+Long     &RA metal helm engraved with roses has been left here.&w~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  10 2
+Stats    5 12 20 90 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3383
+Keywords flowing red cloak embroidered roses~
+Type     armor~
+Short    &Ra flowing cloak embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RA flowing cloak embroidered with roses has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 6 2 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3384
+Keywords hood embroidered roses~
+Type     armor~
+Short    &Ra hood embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RA hood embroidered with roses has been left here.&w~
+WFlags   take head onehand~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 5 4 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3385
+Keywords leather armor embroidered roses~
+Type     armor~
+Short    &Rleather armor embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RLeather armor embroidered with roses has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 13 5 10 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3386
+Keywords studded leather armor embroidered roses~
+Type     armor~
+Short    &Rstudded leather armor embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RStudded leather armor embroidered with roses has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  4 2
+Stats    13 50 4 10 5 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3387
+Keywords pair leather sleeves embroidered roses~
+Type     armor~
+Short    &Rleather sleeves embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RA pair of leather sleeves embroidered with roses have been left here.&w~
+WFlags   take arms~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 19 20 30 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3388
+Keywords leather breeches embroidered roses~
+Type     armor~
+Short    &Rleather breeches embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RA pair of leather breeches embroidered with roses has been left here.&w~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 22 20 20 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3389
+Keywords leather boots pair calf length~
+Type     armor~
+Short    &Ra pair of calf length leather boots&w~
+Long     &RA pair of calf length leather boots have been left here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 30 0 30 3 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3390
+Keywords pair silk slippers embroidered roses~
+Type     armor~
+Short    &Ra pair of silk slippers embroidered with &rr&Ro&rs&Re&rs&w~
+Long     &RA pair of silk slippers embroidered with roses has been left here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 6 10 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3391
+Keywords evening gown low cut high side slits~
+Type     armor~
+Short    &Ra low cut evening gown with high side slits&w~
+Long     &RAn evening gown has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 30 20 10 3 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3392
+Keywords plate armor guard disappears~
+Type     armor~
+Short    &Rplate armor engraved with &rr&Ro&rs&Re&rs&w~
+Long     &RPlate armor engraved with roses has been left here.&w~
+Flags    inventory~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  15 2
+Stats    65 1500 150 1 150 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3393
+Keywords clergy mace inventory~
+Type     weapon~
+Short    &Ra mace&w~
+Long     &RA mace has been left here.&w~
+Flags    inventory~
+WFlags   take onehand~
+Values   12 1 6 2 8 0
+Values2  0 2
+Stats    4 5 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3394
+Keywords glowing beautiful rose large~
+Type     treasure~
+Short    &Ra large beautiful rose&w~
+Long     &RA large beautiful rose has been left here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3395
+Keywords glowing wild fey odd looking mushroom feymush1~
+Type     food~
+Short    &Pan odd looking mushroom&w~
+Long     &PA rather odd looking mushroom is here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3396
+Keywords armor guard inventory~
+Type     armor~
+Short    &Pglistening chain mail armor&w~
+Long     &PGlistening chain mail armor has been left here.&w~
+Flags    magic inventory~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  13 2
+Stats    0 145 7 1 14 0 0
+Affect       -1 -1 5 21 0
+Affect       -1 -1 5 20 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3397
+Keywords spear guard inventory fairy~
+Type     weapon~
+Short    &Pan exquisite spear&w~
+Long     &PAn exquisite looking spear has been left here.&w~
+Flags    loyal magic inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    0 250 0 1 25 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3399
+Keywords incredibly large ancient tree pink leaves~
+Type     treasure~
+Short    &Oan ancient fey tree&w~
+Long     &OAn incredibly large ancient tree with pink leaves is here.&w~
+Lore   &PYour vision shifts and you see a group of wild looking fairy people
+gathering in a forest. They seem to be praying over a seed before it
+is planted. There is a rustling in the forest and the fairies look
+out with fear until they disappear as a tree erupts from the
+ground...&w
+~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 5
+Stats    8000 0 0 0 0 0 0
+#EXDESC
+ExDescKey    tree~
+ExDesc       &OThis tree is large with roots growing above and below the ground here.
+Its leaves are a unique shade of pink and have very soft edges. The
+tree seems to have been growing here for quite some time and shows
+no sign of ill health.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum     3300
+Name     &GBefore a Small Forest&w~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    3301
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      19
+MapY      10
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if race($n) == feyborn
+mpsleep 2
+mea $n &PYou are too far away from the forest...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3301
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3321
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3316
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3300
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3302
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3323
+mpat 3323 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3323 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+mpat 3323 mpecho &zA dark shadow passes below your feet...&w
+else
+mpat 3323 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3300
+if race($n) == feyborn
+mea $n &PA voice speaks to your mind suddenly:&w
+mea $n &p"Come to the pond that is within this forest. You are
+mea $n &palmost home. Come join your true family..."&w
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3302
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3301
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3303
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3324
+mpat 3324 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3324 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3324 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3324 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3303
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3304
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3302
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3325
+mpat 3325 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3325 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3325 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3325 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3304
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3305
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3303
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3326
+mpat 3326 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3326 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3326 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3326 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3305
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3306
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3317
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3304
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3327
+mpat 3327 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3327 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3327 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3327 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3306
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3307
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3305
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3328
+mpat 3328 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3328 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3328 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3328 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3307
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3308
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3306
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3329
+mpat 3329 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3329 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3329 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3329 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3308
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3309
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3307
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3330
+mpat 3330 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3330 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3330 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3330 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3309
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3310
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3320
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3308
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3331
+mpat 3331 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3331 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3331 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3331 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3310
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3311
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3309
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3332
+mpat 3332 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3332 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3332 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3332 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3311
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    3312
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3310
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3333
+mpat 3333 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3333 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3333 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3333 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3312
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3311
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3313
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3334
+mpat 3334 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3334 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3334 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3334 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3313
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3312
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3314
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3319
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3335
+mpat 3335 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3335 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3335 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3335 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3314
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3313
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3315
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3336
+mpat 3336 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3336 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3336 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3336 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3315
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3314
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3316
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3337
+mpat 3337 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3337 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3337 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3337 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3316
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3315
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3301
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3338
+mpat 3338 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3338 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3338 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3338 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3317
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3318
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3305
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3342
+mpat 3342 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3342 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3342 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3342 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3318
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3320
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3319
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3321
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3317
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3340
+mpat 3340 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3340 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3340 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3340 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3319
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    3313
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3344
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3318
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3343
+mpat 3343 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3343 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3343 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3343 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3320
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3309
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3318
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3341
+mpat 3341 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3341 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3341 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3341 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3321
+Name     &GA Small Forest&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3318
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3301
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3339
+mpat 3339 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3339 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3339 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3339 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3322
+Name     &PA Glowing Field&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3323
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3300
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(621) <= 3
+mpoload 621 1
+mposet circlet timer 75
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3300
+mpat 3300 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3300 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3323
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3339
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3338
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3322
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3324
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3301
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3301
+mpat 3301 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3301 mpasound &PYou see a quick flash of light from somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3324
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3348
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3323
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3325
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3302
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 3324 0 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3302
+mpat 3302 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3302 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3325
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3326
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3324
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3303
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3303
+mpat 3303 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3303 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3326
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3327
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3373
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3325
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3377
+Keywords  'circular door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3304
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 3326 3 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3304
+mpat 3304 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3304 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3327
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3328
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3342
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3326
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3305
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset M 0 3326 2 3327
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3305
+mpat 3305 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3305 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3328
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3329
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3362
+Keywords  'large circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3327
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3306
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 3328 1 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3306
+mpat 3306 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3306 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3329
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3330
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3328
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3307
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3307
+mpat 3307 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3307 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3330
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3346
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3331
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3329
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3308
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3308
+mpat 3308 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3308 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3331
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3332
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3341
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3330
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3309
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3309
+mpat 3309 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3309 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3332
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3371
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3333
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3360
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3331
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3310
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset M 0 3326 2 3332
+Reset D 0 3332 0 1
+Reset D 0 3332 2 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3310
+mpat 3310 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3310 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3333
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    3334
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3332
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3311
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3380
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 3333 6 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3311
+mpat 3311 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3311 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3334
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3333
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3356
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3335
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3379
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3312
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 3334 1 1
+Reset D 0 3334 3 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3312
+mpat 3312 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3312 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3335
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3334
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3378
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3336
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3343
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3313
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3313
+mpat 3313 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3313 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3336
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3335
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3350
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3337
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3314
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 3336 1 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3314
+mpat 3314 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3314 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3337
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3336
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3338
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3315
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset M 0 3325 1 3337
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3315
+mpat 3315 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3315 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3338
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3337
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3358
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3323
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3316
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3316
+mpat 3316 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3316 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3339
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3340
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3354
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3323
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3363
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3321
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 3339 1 1
+Reset D 0 3339 3 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3321
+mpat 3321 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3321 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3340
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3341
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3343
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3339
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3342
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3318
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset M 0 3325 2 3340
+Reset O 0 3399 1 3340
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3318
+mpat 3318 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3318 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3341
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3331
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3372
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3340
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3370
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3320
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset M 0 3327 1 3341
+Reset D 0 3341 1 1
+Reset D 0 3341 3 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3320
+mpat 3320 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3320 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3342
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3351
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3340
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3352
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3327
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3317
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 3342 0 1
+Reset D 0 3342 2 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3317
+mpat 3317 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3317 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3343
+Name     &PA Glowing Forest&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3364
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3335
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3345
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3340
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3319
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3319
+mpat 3319 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3319 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3344
+Name     &CBefore a Pond&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    3319
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyhome~
+Comlist   if hasqbit($n) == 3300
+if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3345
+mpat 3345 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3345 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+If isevil($n)
+Mpat 3345 mpecho &zA dark shadow passes below your feet...&w
+else
+Mpat 3345 mpecho &wA soft shadow passes below your feet...&w
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+Mpsleep 2
+Mea $n &BYou see swirling blue energy all around you here.
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3300
+if race($n) == feyborn
+mea $n &PA voice speaks to your mind suddenly as your approach the pond:&w
+mea $n &p"Come home to us, $n&p. Step into the waters of the pond
+mea $n &pand return to your true family..." &P(ENTERPOND)&w
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p enterpond~
+Comlist   if hasqbit($n) != 3300
+if race($n) == feyborn
+mea $n &PAs you enter the pond the waters begin to glow and hum
+mea $n &Pwith magical energy. You suddenly submerge yourself and
+mea $n &Pyour world turns upside down before you appear in a glowing
+mea $n &Pworld...
+mer $n &C$n enters the pond and disappears under the water.&w
+mptransfer $n 3345
+mpsleep 2
+mpat 3345 mer $n &P$n&P emerges from the waters of the glowing pond...&w
+mpat 3345 mea $n &PA voice speaks to your mind suddenly:
+mpat 3345 mea $n &pSeek out Elder Nyzra to learn about who you truly are...&w
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate pond~
+Comlist   if nature($n) >= 16
+mea $n You survey the pond and notice that the depths of the water
+mea $n get very dark.. until you notice a small shimmering of light
+mea $n coming from beyond the darkness. The pond looks very swimmable
+mea $n and refreshing on a warm day (SWIMPOND).
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p swimpond~
+Comlist   if wearingvnum($n) == 621
+mea $n &PAs you swim into the pond the water begins to swirl and
+mea $n &Pyou are sucked down below. Darkness envelopes you and
+mea $n &Pwhen you open your eyes you are laying on the banks of
+mea $n &Pa glowing pool of water in a magical place...
+mer $n &CThe water around $n swirls wildly as $e vanishes!&w
+mptransfer $n 3345
+mpat 3345 mer $n &P$n emerges from the pond and is placed on the shore.&w
+else 
+mea $n &CThe water feels cool against your skin as you swim here.
+mer $n &C$n swims a bit in the refreshing waters of the pond.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3345
+Name     &PBefore a Glowing Pond&w~
+Sector   field~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3343
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3344
+Flags     hidden window can_look~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feyexit~
+Comlist   if race($n) == feyborn
+if isaffected($n) == curse
+Mea $n &PYou seem unable to channel your fey powers.
+else
+mea $n &PYou feel your body hum with energy before a burst of light
+mea $n &Pblinds you momentarily. When you open your eyes you are
+mea $n &Psomewhere else...
+mer $n &P$n&P disappears in a sudden flash of light!&w
+mptransfer $n 3344
+mpat 3344 mer $n &P$n&P suddenly appears in a flash of light!&w
+mpat 3344 mpasound &PYou see a quick flash of light happen somewhere nearby.
+Endif
+Else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p swimpond~
+Comlist   if wearingvnum($n) == 621
+mea $n &PAs you swim into the glowing pond the water begins to swirl
+mea $n &Pand you are sucked down below. Darkness envelopes you and
+mea $n &Pyou emerge at the surface of a small pond in a forest.
+mptransfer $n 3344
+mpat 3344 mer $n &C$n emerges from deep within the pond.&w
+else
+mea $n &PThe water feels cool against your skin as you swim here.&w
+mer $n &P$n swims a bit in the refreshing waters of the glowing pond.&w
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate pond~
+Comlist   if arcana($n) >= 14
+mea $n You survey the glowing waters of the pond and notice that you
+mea $n can see a normal looking forest past the darkest depths
+mea $n of this pond. The pond looks very swimmable and refreshing
+mea $n on a warm day (SWIMPOND).
+else 
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3346
+Name     &pBefore a Large Acorn House&w~
+Sector   indoors~
+Flags    nomob safe~
+#EXIT
+Direction north~
+ToRoom    3347
+Keywords  'circle shaped door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3330
+#ENDEXIT
+
+Reset D 0 3346 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3347
+Name     &pElder Nyzra's Home&w~
+Sector   indoors~
+Flags    nomob safe~
+#EXIT
+Direction south~
+ToRoom    3346
+Keywords  'circle shaped door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3300 1 3347
+Reset D 0 3347 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3348
+Name     &pThe Silver Mushroom Tavern &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3349
+Keywords  'shimmering curtains'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3324
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3315 1 3348
+  Reset G 0 3319 1
+  Reset G 0 3317 1
+  Reset G 0 3320 1
+  Reset G 0 3318 1
+Reset D 0 3348 1 0
+Reset D 0 3348 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3349
+Name     &pA Private Booth &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob private safe nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3348
+Keywords  'shimmering curtains'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset D 0 3349 3 0
+#ENDROOM
+
+#ROOM
+Vnum     3350
+Name     &pTiscan's Gems&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3336
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3308 1 3350
+  Reset G 0 236 1
+  Reset G 0 209 1
+  Reset G 0 218 1
+  Reset G 0 232 1
+  Reset G 0 251 1
+  Reset G 0 216 1
+  Reset G 0 239 1
+  Reset G 0 226 1
+  Reset G 0 229 1
+Reset D 0 3350 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3351
+Name     &pByzdrar's Magical Trinkets&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    3342
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3310 1 3351
+  Reset G 0 4499 1
+  Reset G 0 3340 1
+  Reset G 0 3343 1
+  Reset G 0 3342 1
+  Reset G 0 3341 1
+Reset D 0 3351 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3352
+Name     &pLypnie's Magic Pills&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3342
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3311 1 3352
+  Reset G 0 3345 1
+  Reset G 0 3348 1
+  Reset G 0 3344 1
+  Reset G 0 3346 1
+  Reset G 0 3349 1
+  Reset G 0 3347 1
+  Reset G 0 3350 1
+Reset D 0 3352 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3354
+Name     &pGrindelle's Wands&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3339
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3309 1 3354
+  Reset G 0 3335 1
+  Reset G 0 3338 1
+  Reset G 0 3336 1
+  Reset G 0 3337 1
+  Reset G 0 3339 1
+Reset D 0 3354 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3356
+Name     &pKizmi's Exotic Pets&w~
+Sector   indoors~
+Flags    nomob safe petshop nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3334
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3313 1 3356
+Reset D 0 3356 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3357
+Name     &RKIZMI'S PET STORAGE&w~
+Sector   city~
+Flags    nomob nomagic safe norecall nosummon noastral~
+Desc     You do not belong here. Please contact a member of the admin staff in
+order to get out. Thanks!
+~
+Reset M 0 3312 1 3357
+Reset M 0 3314 1 3357
+#ENDROOM
+
+#ROOM
+Vnum     3358
+Name     &pThe Weeping Willow Inn&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3338
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3316 1 3358
+Reset D 0 3358 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3359
+Name     &pA Cozy Bedroom&w~
+Sector   city~
+Flags    safe nosummon noastral~
+#EXIT
+Direction down~
+ToRoom    3358
+Keywords  'small circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 3359 5 1
+#ENDROOM
+
+#ROOM
+Vnum     3360
+Name     &pTonshe's Fine Clothing&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3332
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3361
+#ENDEXIT
+
+Reset M 0 3306 1 3360
+  Reset G 0 3331 1
+  Reset G 0 3325 1
+  Reset G 0 3332 1
+  Reset G 0 3333 1
+  Reset G 0 3328 1
+  Reset G 0 3327 1
+  Reset G 0 3334 1
+  Reset G 0 3330 1
+  Reset G 0 3329 1
+Reset D 0 3360 0 1
+#ENDROOM
+
+#ROOM
+Vnum     3361
+Name     &pTonshe's Clothing Repair&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3360
+#ENDEXIT
+
+Reset M 0 3307 1 3361
+#ENDROOM
+
+#ROOM
+Vnum     3362
+Name     &pA Large Dancehall&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3328
+Keywords  'large circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 0 3375 1 3362
+Reset D 0 3362 3 1
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpecho &PThe instruments finish playing a waltz and begin to play
+mpecho &Pa lively song as they slowly float to the floor. Once
+mpecho &Pthey land they finish the song and the dancehall closes.
+mpasound &PYou hear some music coming from nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpecho &PThe instruments slow down and begin playing a romantic waltz.
+mpasound &PYou hear some soft music coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   mpecho &PThe instruments continue to play lively music for everyone.
+mpasound &PYou hear some lively music coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   mpecho &PThe instruments finish playing a waltz and start playing
+mpecho &Panother lively tune.
+mpasound &PYou hear some lively music coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   mpecho &PThe instruments slow down and begin playing a romantic waltz.
+mpasound &PYou hear some soft music coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   mpecho &PThe instruments continue to play lively music for everyone.
+mpasound &PYou hear some lively music coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   24~
+Comlist   mpecho &PThe instruments continue to play lively music for everyone.
+mpasound &PYou hear some lively music coming from nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   mpecho &PThe bard cues the instruments, which begin to float. Suddenly the
+mpecho &Phall erupts with lively music and some villagers take to
+mpecho &Pthe dance floor to enjoy themselves.
+mpasound &PYou hear some lively music coming from nearby.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3363
+Name     &pLiror's Scrolls&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3339
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3305 1 3363
+  Reset G 0 1613 1
+  Reset G 0 3321 1
+  Reset G 0 3324 1
+  Reset G 0 3323 1
+  Reset G 0 3322 1
+Reset D 0 3363 1 1
+#ENDROOM
+
+#ROOM
+Vnum     3364
+Name     &RA Temple of Aerilaya&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3365
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3366
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3343
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3386
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3383
+#ENDEXIT
+
+Reset M 0 3323 1 3364
+#ENDROOM
+
+#ROOM
+Vnum     3365
+Name     &RBefore a Large Altar&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    3364
+#ENDEXIT
+
+Reset M 0 3321 1 3365
+#ENDROOM
+
+#ROOM
+Vnum     3366
+Name     &RA Glowing Rose Garden&w~
+Sector   field~
+Flags    safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3368
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3364
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pickrose~
+Comlist   if deity($n) == aerilaya
+mea $n &RYou easily remove a rose from a bush nearby.
+mer $n &R$n&R removes a rose from a bush nearby.
+mpoload 3394 1
+silent mpforce $n get rose
+else
+mea $n &REvery bush dodges your attempt to remove a rose somehow!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate garden~
+Comlist   if investigation($n) >= 16
+mea $n The garden is full of rose plants full of fresh roses that
+mea $n can be picked and given to one's true love (PICKROSE).
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3367
+Name     &RA Temple Supply Store&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3381
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3383
+#ENDEXIT
+
+Reset M 0 3320 1 3367
+  Reset G 0 1748 1
+  Reset G 0 99 1
+  Reset G 0 1916 1
+  Reset G 0 1797 1
+  Reset G 0 1798 1
+  Reset G 0 1789 1
+  Reset G 0 1788 1
+  Reset G 0 1787 1
+  Reset G 0 1653 1
+  Reset G 0 3391 1
+  Reset G 0 3390 1
+#ENDROOM
+
+#ROOM
+Vnum     3368
+Name     &RA Glowing Rose Garden&w~
+Sector   field~
+Flags    safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3369
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3382
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3366
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pickrose~
+Comlist   if deity($n) == aerilaya
+mea $n &RYou easily remove a rose from a bush nearby.
+mer $n &R$n&R removes a rose from a bush nearby.
+mpoload 3394 1
+silent mpforce $n get rose
+else
+mea $n &REvery bush dodges your attempt to remove a rose somehow!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate garden~
+Comlist   if investigation($n) >= 16
+mea $n The garden is full of rose plants full of fresh roses that
+mea $n can be picked and given to one's true love (PICKROSE).
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3369
+Name     &RA Meditation Glade&w~
+Sector   field~
+Flags    tunnel safe nosummon noastral~
+Stats    0 0 3 0 0 0
+#EXIT
+Direction south~
+ToRoom    3368
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3370
+Name     &pZhara's Spell Components&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3341
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3303 1 3370
+  Reset G 0 4158 1
+  Reset G 0 1798 1
+  Reset G 0 232 1
+  Reset G 0 4157 1
+  Reset G 0 4155 1
+  Reset G 0 1926 1
+  Reset G 0 3309 1
+  Reset G 0 3314 1
+  Reset G 0 1924 1
+  Reset G 0 1931 1
+  Reset G 0 3310 1
+  Reset G 0 3315 1
+  Reset G 0 3312 1
+  Reset G 0 1920 1
+  Reset G 0 3313 1
+  Reset G 0 3308 1
+  Reset G 0 3311 1
+  Reset G 0 3316 1
+  Reset G 0 3307 1
+Reset D 0 3370 1 1
+#ENDROOM
+
+#ROOM
+Vnum     3371
+Name     &pThe Singing Rose Tavern&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    3332
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3304 1 3371
+  Reset G 0 3319 1
+  Reset G 0 3317 1
+  Reset G 0 3320 1
+  Reset G 0 3318 1
+Reset D 0 3371 2 1
+#ENDROOM
+
+#ROOM
+Vnum     3372
+Name     &pBypin's Treasures&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3341
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3302 1 3372
+  Reset G 0 318 1
+  Reset G 0 314 1
+Reset D 0 3372 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3373
+Name     &PA Glowing Garden&w~
+Sector   field~
+Flags    safe~
+#EXIT
+Direction north~
+ToRoom    3374
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3375
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3326
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3374
+Name     &PA Glowing Garden&w~
+Sector   field~
+Flags    safe~
+#EXIT
+Direction east~
+ToRoom    3376
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3373
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3375
+Name     &PA Glowing Garden&w~
+Sector   field~
+Flags    safe~
+#EXIT
+Direction north~
+ToRoom    3376
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3373
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3376
+Name     &PA Glowing Garden&w~
+Sector   field~
+Flags    safe~
+#EXIT
+Direction south~
+ToRoom    3375
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3374
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3377
+Name     &pThe Village Guardhouse&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3326
+Keywords  'circular door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 3324 2 3377
+  Reset E 0 3397 1 26
+  Reset E 0 3396 1 5
+Reset M 0 3324 2 3377
+  Reset E 0 3397 1 26
+  Reset E 0 3396 1 5
+Reset D 0 3377 1 0
+#ENDROOM
+
+#ROOM
+Vnum     3378
+Name     &PA Mushroom Forest&w~
+Sector   forest~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3335
+#ENDEXIT
+
+Reset O 0 3395 1 3378
+#ENDROOM
+
+#ROOM
+Vnum     3379
+Name     &pFiria's Potions&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3334
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3301 1 3379
+  Reset G 0 3306 1
+  Reset G 0 3301 1
+  Reset G 0 3300 1
+  Reset G 0 3305 1
+  Reset G 0 3303 1
+  Reset G 0 3304 1
+  Reset G 0 3302 1
+Reset D 0 3379 1 1
+#ENDROOM
+
+#ROOM
+Vnum     3380
+Name     &pWyrlow's Weapons & Armor&w~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction southwest~
+ToRoom    3333
+Keywords  'circular door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 3317 1 3380
+  Reset G 0 3365 1
+  Reset G 0 3369 1
+  Reset G 0 3373 1
+  Reset G 0 3367 1
+  Reset G 0 3371 1
+  Reset G 0 3359 1
+  Reset G 0 3361 1
+  Reset G 0 3363 1
+Reset D 0 3380 9 1
+#ENDROOM
+
+#ROOM
+Vnum     3381
+Name     &RA Temple Supply Store&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    3367
+#ENDEXIT
+
+Reset M 0 3319 1 3381
+  Reset G 0 3383 1
+  Reset G 0 3384 1
+  Reset G 0 3382 1
+  Reset G 0 3381 1
+  Reset G 0 3379 1
+  Reset G 0 3389 1
+  Reset G 0 3385 1
+  Reset G 0 3388 1
+  Reset G 0 3387 1
+  Reset G 0 3376 1
+  Reset G 0 3377 1
+  Reset G 0 3378 1
+  Reset G 0 3380 1
+  Reset G 0 3386 1
+#ENDROOM
+
+#ROOM
+Vnum     3382
+Name     &RA Glowing Hot Spring&w~
+Sector   ice~
+Flags    nomob safe nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    3368
+#ENDEXIT
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpe &RThe glowing waters seem to hum with magical energy for a few moments.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p rises~
+Comlist   mpasound &BYou hear the something emerge from some water nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p sprawls out haphazardly.~
+Comlist   mea $n &RThe hot, glowing water helps your muscles relax as you rest.
+mpasound &BYou hear something enter some water nearby.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3383
+Name     &RA Short Hallway&w~
+Sector   indoors~
+#EXIT
+Direction north~
+ToRoom    3367
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3385
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3387
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3384
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3364
+#ENDEXIT
+
+Reset M 0 3322 1 3383
+  Reset E 0 3392 1 5
+  Reset E 0 3393 1 26
+  Reset E 0 3382 1 6
+  Reset E 0 3381 1 27
+Reset D 0 3383 1 1
+Reset D 0 3383 3 1
+#ENDROOM
+
+#ROOM
+Vnum     3384
+Name     &RA Large Meeting Room&w~
+Sector   indoors~
+#EXIT
+Direction east~
+ToRoom    3383
+Flags     isdoor closed~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3385
+Name     &RA Visiting Clergy Bedroom&w~
+Sector   indoors~
+Flags    nomob safe solitary nosummon noastral~
+#EXIT
+Direction west~
+ToRoom    3383
+Flags     isdoor closed~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3386
+Name     &RA Large Art Gallery~
+Sector   indoors~
+Flags    safe nosummon noastral~
+#EXIT
+Direction east~
+ToRoom    3364
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3387
+Name     &RA Stone Balcony&w~
+Sector   indoors~
+#EXIT
+Direction north~
+ToRoom    3383
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3399
+Name     &RFAIRY VILLAGE MOB STORAGE&W~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+Desc     You do not belong here. Please contact a member of the admin team
+in order to get out.
+~
+Reset M 0 3318 1 3399
+#ENDROOM
+
+#ENDAREA

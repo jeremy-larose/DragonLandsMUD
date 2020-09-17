@@ -1,0 +1,7279 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The New Darkhaven College of Adventuring~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 50
+Economy      0 31250000
+ResetMsg     &YYour hear students in the hallways heading to their classes...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2500
+Keywords   tysinth new darkhaven college head headmistress reviewing papers woman~
+Short      &RTysinth&w~
+Long       &RThe New Darkhaven College Headmistress is here reviewing papers at her desk.&w
+~
+Desc       &RThe woman working at the desk here is a very tall elf with long
+jet black hair that is showing its first signs of silver. Her eyes
+are a piercingly violet-blue, which sparkle against her light beige
+skin. She is dressed in a flowing red dress that has long draped
+sleeves and a slight train to the back.
+~
+Lore       &RYou see Tysinth look up in horror as something flies over her. She
+regains her composure and releases a powerful spell at her target...
+~
+Race       high-elf~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 50 0 0 0 10000 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2599
+if hasqbit($n) != 2501
+if hasqbit($n) == 2500
+emote smiles as she looks up from her paperwork
+mpsleep 3
+sayto $n Greetings $n, I was informed of your enrollment recently.
+sayto $n Let us begin the enrollment process...
+mpsleep 3
+emote looks over a piece of paper and hmms to herself
+mpsleep 3
+sayto $n You first need to pick the dormitory that you will reside
+sayto $n in.. would you like to be a Sword, a Wand, a Shield,
+sayto $n or a Dagger?
+mpsleep 3
+emote points to a banner behind her with a smile
+sayto $n The banner here will provide information if you need help.
+else
+sayto $n Greetings. Enrollment here at the New Darkhaven College of
+sayto $n Adventuring costs 75 gold coins.
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p shields~
+Comlist   If hasqbit($n) != 2599
+If hasqbit($n) == 2500
+If isevil($n)
+sayto $n I'm sorry, but you should consider a different dormitory.
+Else
+Smile $n
+Sayto $n Welcome to the New Darkhaven Academy and to the Shields Dormitory!
+Sayto $n One moment while I compile your entrance pack
+Emote open a pack and begins rummaging through it quickly
+Mpoload 2519 1
+Mpoload 2511 1
+Mpoload 2512 1
+Mpoload 2513 1
+Mpoload 2516 1
+Mpoload 2507 1
+mpoload 2500 1
+Silent Put all newdarkpark11
+Mpoload 2520 1
+Silent put all newdarkpack11
+Mpoload 2521 1
+Mpoload 2522 1
+Mpoload 2523 1
+Silent put all newdarkpack11
+Silent put all newdarkpack11
+sayto $n I think everything is in there! There is a student store located
+Sayto $n on campus in case you would like some other equipment.
+Give newdarkpack11 $n
+sayto $n And here is some money in case you need to purchase
+Sayto $n additional resources.
+Give 10 gold $n
+Mpoload 2525 1 
+Give newbie $n
+sayto $n Your first course is with Professor Opal. Classes are held during
+sayto $n various times of the day so please consult your textbook for
+Sayto $n the class schedules.
+sayto $n I wish you all the best with your studies here.
+Mpqset $n 2500
+Mpqset $n 2501
+Mpqset $n 2504
+Mpqset $n 2506
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 75 gold coins.~
+Comlist   if hasqbit($n) != 2599
+if hasqbit($n) != 2500
+mpqset $n 2500
+smile $n
+sayto $n Welcome to the New Darkhaven College of Adventuring!
+sayto $n Let us begin the enrollment process...
+mpsleep 3
+emote looks over a piece of paper and hmms to herself
+mpsleep 3
+sayto $n You first need to pick the dormitory that you will reside
+sayto $n in.. would you like to be a Sword, a Wand, a Shield,
+sayto $n or a Dagger?
+mpsleep 3
+emote points to a banner behind her with a smile
+sayto $n The banner here will provide information if you need help.
+else
+eye $n
+give 75 gold $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p daggers~
+Comlist   If hasqbit($n) != 2599
+If hasqbit($n) == 2500
+If isgood($n)
+sayto $n I'm sorry, but you should consider a different dormitory.
+Else
+Smile $n
+Sayto $n Welcome to the New Darkhaven Academy and to the Daggers Dormitory!
+Sayto $n One moment while I compile your entrance pack
+Emote open a pack and begins rummaging through it quickly
+Mpoload 2519 1
+Mpoload 2511 1
+Mpoload 2512 1
+Mpoload 2513 1
+Mpoload 2515 1
+Mpoload 2506 1
+mpoload 2500 1
+Silent Put all newdarkpark11
+Mpoload 2520 1
+Silent put all newdarkpack11
+Mpoload 2521 1
+Mpoload 2522 1
+Mpoload 2523 1
+Silent put all newdarkpack11
+Silent put all newdarkpack11
+sayto $n I think everything is in there! There is a student store located
+Sayto $n on campus in case you would like some other equipment.
+Give newdarkpack11 $n
+sayto $n And here is some money in case you need to purchase
+Sayto $n additional resources.
+Give 10 gold $n
+Mpoload 2525 1 
+Give newbie $n
+sayto $n Your first course is with Professor Opal. Classes are held during
+sayto $n various times of the day so please consult your textbook for
+Sayto $n the class schedules.
+sayto $n I wish you all the best with your studies here.
+Mpqset $n 2500
+Mpqset $n 2501
+Mpqset $n 2505
+Mpqset $n 2506
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p swords~
+Comlist   If hasqbit($n) != 2599
+If hasqbit($n) == 2500
+Smile $n
+Sayto $n Welcome to the New Darkhaven Academy and to the Swords Dormitory!
+Sayto $n One moment while I compile your entrance pack
+Emote open a pack and begins rummaging through it quickly
+Mpoload 2519 1
+Mpoload 2511 1
+Mpoload 2512 1
+Mpoload 2513 1
+Mpoload 2514 1
+Mpoload 2505 1
+mpoload 2500 1
+Silent Put all newdarkpark11
+Mpoload 2520 1
+Silent put all newdarkpack11
+Mpoload 2521 1
+Mpoload 2522 1
+Mpoload 2523 1
+Silent put all newdarkpack11
+Silent put all newdarkpack11
+sayto $n I think everything is in there! There is a student store located
+Sayto $n on campus in case you would like some other equipment.
+Give newdarkpack11 $n
+sayto $n And here is some money in case you need to purchase
+Sayto $n additional resources.
+Give 10 gold $n
+Mpoload 2525 1 
+Give newbie $n
+sayto $n Your first course is with Professor Opal. Classes are held during
+sayto $n various times of the day so please consult your textbook for
+Sayto $n the class schedules.
+sayto $n I wish you all the best with your studies here.
+Mpqset $n 2500
+Mpqset $n 2501
+mpqset $n 2502
+Mpqset $n 2506
+else
+sayto $n I'm sorry, but you must be enrolled first.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p wands~
+Comlist   If hasqbit($n) != 2599
+If hasqbit($n) == 2500
+Smile $n
+Sayto $n Welcome to the New Darkhaven Academy and to the Wands Dormitory!
+Sayto $n One moment while I compile your entrance pack
+mpsleep 5
+Emote open a pack and begins rummaging through it quickly
+mpsleep 5
+Mpoload 2519 1
+Mpoload 2511 1
+Mpoload 2512 1
+Mpoload 2513 1
+Mpoload 2517 1
+Mpoload 2504 1
+mpoload 2500 1
+Silent Put all newdarkpark11
+Mpoload 2520 1
+Silent put all newdarkpack11
+Mpoload 2521 1
+Mpoload 2522 1
+Mpoload 2523 1
+Silent put all newdarkpack11
+Silent put all newdarkpack11
+sayto $n I think everything is in there! There is a student store located
+Sayto $n on campus in case you would like some other equipment.
+mpsleep 5
+Give newdarkpack11 $n
+mpsleep 5
+sayto $n And here is some money in case you need to purchase
+Sayto $n additional resources.
+Give 10 gold $n
+mpsleep 5
+Mpoload 2525 1 
+Give newbie $n
+sayto $n Your first course is with Professor Opal. Classes are held during
+sayto $n various times of the day so please consult your textbook for
+Sayto $n the class schedules.
+mpsleep 5
+sayto $n I wish you all the best with your studies here.
+Mpqset $n 2500
+Mpqset $n 2501
+Mpqset $n 2503
+Mpqset $n 2506
+else
+sayto $n I'm sorry, but you must be enrolled first.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2530
+if hasqbit($n) == 2529
+if hasqbit($n) == 2503
+clap $n
+mpsleep 3
+sayto $n Congratulations on completing all of the coursework
+sayto $n and training here at the college. I am very proud of
+sayto $n your progress and I cannot wait to hear what amazing
+sayto $n things you do in the realms.
+mpsleep 5
+sayto $n As an alumni you will have access to the the alumni
+sayto $n training area. I suggest going there after you have
+sayto $n gained some experience first. You can also enter the
+sayto $n the alumni areas... which is located at the same location
+sayto $n as the dorms.
+mpsleep 5
+sayto $n I wish you all of the best and may you have the grandest
+sayto $n adventures.
+mpsleep 5
+mpqset $n 2503
+mpqset $n 2529
+mpqset $n 2530
+mpqset $n 2501
+mpqset $n 2599
+mpqset $n 2594
+mpqset $n 2597
+mpadvance $n 300
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2530
+if hasqbit($n) == 2529
+if hasqbit($n) == 2505
+clap $n
+mpsleep 3
+sayto $n Congratulations on completing all of the coursework
+sayto $n and training here at the college. I am very proud of
+sayto $n your progress and I cannot wait to hear what amazing
+sayto $n things you do in the realms.
+mpsleep 5
+sayto $n As an alumni you will have access to the the alumni
+sayto $n training area. I suggest going there after you have
+sayto $n gained some experience first. You can also enter the
+sayto $n the alumni areas... which is located at the same location
+sayto $n as the dorms.
+mpsleep 5
+sayto $n I wish you all of the best and may you have the grandest
+sayto $n adventures.
+mpsleep 5
+mpqset $n 2505
+mpqset $n 2529
+mpqset $n 2530
+mpqset $n 2501
+mpqset $n 2599
+mpqset $n 2594
+mpqset $n 2595
+mpadvance $n 300
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2530
+if hasqbit($n) == 2529
+if hasqbit($n) == 2502
+clap $n
+mpsleep 3
+sayto $n Congratulations on completing all of the coursework
+sayto $n and training here at the college. I am very proud of
+sayto $n your progress and I cannot wait to hear what amazing
+sayto $n things you do in the realms.
+mpsleep 5
+sayto $n As an alumni you will have access to the the alumni
+sayto $n training area. I suggest going there after you have
+sayto $n gained some experience first. You can also enter the
+sayto $n the alumni areas... which is located at the same location
+sayto $n as the dorms.
+mpsleep 5
+sayto $n I wish you all of the best and may you have the grandest
+sayto $n adventures.
+mpsleep 5
+mpqset $n 2502
+mpqset $n 2529
+mpqset $n 2530
+mpqset $n 2501
+mpqset $n 2599
+mpqset $n 2594
+mpqset $n 2598
+mpadvance $n 300
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2530
+if hasqbit($n) == 2529
+if hasqbit($n) == 2504
+clap $n
+mpsleep 3
+sayto $n Congratulations on completing all of the coursework
+sayto $n and training here at the college. I am very proud of
+sayto $n your progress and I cannot wait to hear what amazing
+sayto $n things you do in the realms.
+mpsleep 5
+sayto $n As an alumni you will have access to the the alumni
+sayto $n training area. I suggest going there after you have
+sayto $n gained some experience first. You can also enter the
+sayto $n the alumni areas... which is located at the same location
+sayto $n as the dorms.
+mpsleep 5
+sayto $n I wish you all of the best and may you have the grandest
+sayto $n adventures.
+mpsleep 5
+mpqset $n 2504
+mpqset $n 2529
+mpqset $n 2530
+mpqset $n 2501
+mpqset $n 2599
+mpqset $n 2594
+mpqset $n 2596
+mpadvance $n 300
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2501
+Keywords   campus guard~
+Short      &Ra campus guard&w~
+Long       &RA guard is here ensuring the safety of the campus.&w
+~
+Desc       This guard is a young human man dressed in simple leather armor dyed
+in the colors of the school. He patrols the school and grounds ensuring
+everyone is safe or to report dangerous activity.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2599
+if hasqbit($n) == 2500
+nod $n
+else
+endif
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2502
+Keywords   storekeeper campus ~
+Short      &Ra campus storekeeper&w~
+Long       &RA storekeeper is here running the campus supply store.&w
+~
+Desc       This storekeeper is a middle aged human female with bright blonde
+hair that has been placed into a bun at the back of her head. She is
+curvaceous and wears a revealing red yellow dress that is cut to 
+show off her bust and two slits up the sides that end at her knees.
+~
+Race       rock-gnome~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 96 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+sayto $n How can I help you today?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2503
+Keywords   cafeteria clerk college new darkhaven~
+Short      &Ya cafeteria clerk&w~
+Long       &YA cafeteria clerk is here selling food to students.&w
+~
+Desc       This elven male is here serving food to students who come to eat in
+between classes and studying. He is fairly young and moves about
+the cafeteria quickly.
+~
+Race       wood-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     900 50 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 6 20
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+sayto $n What can I serve you today?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2504
+Keywords   training center healer healing students~
+Short      &Ya healer&w~
+Long       &YA healer is here offering her services to wounded students.&w
+~
+Desc       This avariel healer is here offering healing service. She is dressed
+in the robes of a Priestess of Hycra. She can be asked for HEALing
+whenever a student requires such.
+~
+Race       avariel~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     800 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2501
+sayto $n Let me know if you need any HEALING. I can offer
+sayto $n this to current students only.
+else
+sayto $n My services are for current students only.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p healing~
+Comlist   if hasqbit($n) == 2501
+c 'cure light wounds' $n
+else
+sayto $n I am sorry.. my services are for current students only.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2505
+Keywords   tiny dummy combat~
+Short      &Ra tiny sized dummy&w~
+Long       &RA tiny dummy is here being used for training purposes.&w
+~
+Desc       This dummy has been created using a magical spells to animate the
+stuffed dummy. It is made from fabric scraps and filled with straw.
+It moves about in odd ways as if it were a puppet missing its
+strings.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel noassist~
+Stats1     0 1 1 0 12 0 0 0 0 0
+Stats2     1 4 10
+Stats3     1 4 0
+Stats4     0 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2526
+mea $n &RYou notice a tiny red orb appear on the ground!
+mpoload 2538 1
+silent drop orb
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2506
+Keywords   small dummy combat~
+Short      &Ra small sized dummy&w~
+Long       &RA small dummy is here being used for training purposes.&w
+~
+Desc       This dummy has been created using a magical spells to animate the
+stuffed dummy. It is made from fabric scraps and filled with straw.
+It moves about in odd ways as if it were a puppet missing its
+strings.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel noassist~
+Stats1     0 1 2 0 12 0 0 0 0 0
+Stats2     1 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2527
+mea $n &YYou notice a small yellow orb appear on the ground!
+mpoload 2539 1
+silent drop orb
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2507
+Keywords   medium dummy combat~
+Short      &Ra medium sized dummy&w~
+Long       &RA medium sized dummy is here moving around this area looking for a target.
+~
+Desc       &RThis dummy has been constructed using magic and serves to help
+the students of the School of Combat train their skills. This 
+dummy is medium and wears scale mail armor.&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel aggressive stayarea noassist~
+Stats1     0 1 2 0 12 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 2 0 0 0 6
+Attribs    14 14 14 14 14 14 14
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2528
+mea $n &RYou notice a medium sized orb appear on the ground!&w
+mpoload 2540 1
+silent drop orb
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2508
+Keywords   metal golem hunting ruins~
+Short      &wa Battle Golem&w~
+Long       &wA large metal golem is here hunting through the ruins.&w
+~
+Desc       &wThis golem stands about fifteen feet in height and is very
+strong looking. It's metal exterior is colored with silver
+and purple. On the middle of the chest is a "MARK I" that
+is engraved, which announces the make of the golem. It's
+eyes are black except for when it is looking at something,
+which the eyes then glow a bright purple in color.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Affected   infrared~
+Stats1     -1000 35 19 0 18 0 0 0 0 0
+Stats2     20 10 100
+Stats3     3 8 7
+Stats4     3 3 2 0 0 0 6
+Attribs    24 16 16 12 20 9 13
+Saves      0 0 0 0 0 0
+Resist     fire nonmagic~
+Immune     poison charm paralysis psychic thunder~
+Attacks    poison~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == Wizard
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing arcane energies within target.
+mpecho &RGolem: Target is of immediate threat to this unit.
+mpecho &RGolem: Preparing countermeasure for quick termination of target.
+Mpsleep 5
+c 'feeblemind' $n
+else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == Cleric
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!&w
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing divine energies within target.
+mpecho &RGolem: Target is capable of resisting termination.
+mpecho &RGolem: Preparing battle strategies for quick termination of target.
+mpsleep 4
+c 'ray of enfeeblement' $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == rogue
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming target. &YSensing target with incredible stealth.
+mpecho &RGolem: Target is of extreme threat to this unit.
+mpecho &RGolem: Preparing countermeasures for quick termination of target.
+mpsleep 5
+mpmset golem affected Detect_hidden
+mpecho &RGolem: Adjusting visual parameters to counter target's stealth.
+mpsleep 3
+c 'ray of enfeeblement' $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == fighter
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming target. &YSensing target with incredible strength.
+mpecho &RGolem: Target is capable of extreme damage to this unit.
+mpecho &RGolem: Preparing armor defenses before target's termination.
+mpsleep 5
+mpmset golem basearmor 25
+mpecho &RGolem: Defensive armor systems raised. Begin termination.
+mpsleep 3
+c 'ray of enfeeblement' $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == Paladin
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing divine energy and strength.
+mpecho &RGolem: Target is of immediate threat to this unit.
+Mpsleep 5
+mpecho &RGolem: Preparing armor defenses before target termination.
+Mpmset golem basearmor 25
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == ranger
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing great strength within target.
+mpecho &RGolem: Target is a moderate threat to this unit.
+Mpsleep 5
+mpecho &RGolem: Preparing armor defenses before target termination.
+Mpmset golem basearmor 25
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == barbarian
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing incredible strength in target.
+mpecho &RGolem: Target is an immediate threat to this unit.
+Mpsleep 5
+mpecho &RGolem: Preparing armor defenses before target termination.
+Mpmset golem basearmor 25
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == druid
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing nature based energies.
+mpecho &RGolem: Target is an immediate threat to this unit.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == bard
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing mid-level arcane energies.
+mpecho &RGolem: Target is a moderate threat to this unit.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == monk
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing powerful maneuvers and energy.
+mpecho &RGolem: Target is a moderate threat to this unit.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == sorcerer
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing unknown energies...
+mpecho &RGolem: Target is an immediate threat to this unit.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == warlock
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing unknown energies...
+mpecho &RGolem: Target is an immediate threat to this unit.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == mystic
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing strong psychic energies.
+mpecho &RGolem: Target is a low level threat to this unit.
+mpecho &RGolem: Mark I Golem is immune to psychic energies.
+mpsleep 3
+mpecho &RGolem: Target is still scheduled for termination.
+Mpsleep 5
+c 'feeblemind' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == artificer
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing strong intellect and technologies.
+mpecho &RGolem: Target is a mid-level threat to this unit.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == swordmage
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YSensing arcane energies and weaponry.
+mpecho &RGolem: Target is a mid-level threat to this unit.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == adventurer
+mer $n &wThe metal golem turns and looks at $n intently.
+mea $n &wThe metal golem turns and looks at you intently...
+mpsleep 3
+mea $n &WYou feel warm and tingly as energy passes about you suddenly!
+mpsleep 4
+mpecho &RGolem: Incoming Target. &YTarget is a low level threat. 
+Mpsleep 3
+Mpecho &RGolem: Target is still scheduled for termination.
+Mpsleep 5
+c 'ray of enfeeblement' $n
+Else
+endif              
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   mpecho &RGolem: Engaging countermeasure 22B.
+mpsleep 3
+c 'waves of exhaustion'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpecho &RGolem: Engaging battle technique 112F.
+mpsleep 3
+c 'lightning bolt' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   mpecho &RGolem: Engaging battle technique 6M.
+mpsleep 3
+c 'magic missile' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   mpecho &RGolem: Engaging countermeasure 50J.
+mpsleep 3
+c 'dispel magic' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   mpecho &RGolem: Engaging battle technique 17K.
+mpsleep 3
+stun $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2509
+Keywords   opal professor elven woman long blonde hair book~
+Short      &COpal&w~
+Long       &CAn elven woman with long blonde hair is here reviewing a book in her hands.&w
+~
+Desc       This professor is a female elf with long blonde hair that hits
+just under her rear. She has it center parted and placed behind
+each long elven ear. Her skin is pale and eyes the color of bright
+sapphires sparkle like water.
+~
+Race       high-elf~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2507
+if hasqbit($n) == 2506
+smile $n
+sayto $n Welcome to my class. I will be teaching you about how to
+sayto $n learn spells and skills from trainers. We will also be going
+sayto $n over your own record keeping.
+mpsleep 3
+sayto $n When you are ready please tell me to continue.
+else
+smile $n
+endif
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p continue~
+Comlist   if hasqbit($n) == 2506
+sayto $n In order to learn a skill or spell from someone you can simply
+sayto $n see if they offer anything to learn (TRAIN). Certain people
+sayto $n will offer different things for different types of adventurers
+sayto $n to learn.
+mpsleep 5
+sayto $n In order to learn from that trainer you must specify what
+sayto $n you would like to learn and to pay the price if they charge.
+sayto $n Some trainers are cheaper than others and I've heard of
+sayto $n some haggling with their teachers.
+mpsleep 3
+mea $n &COpal writes on the board with chalk the words "&WHELP TRAIN&C" for you
+to see.
+sayto $n Please review what I wrote on the board for you for more information.
+mpsleep 3
+sayto $n Are you ready for me to continue?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2506
+emote nods her head as she pulls down an illustration from a shelf
+sayto $n Now let us discuss how you will keep track of your own personal
+sayto $n information. Most adventurers know to keep track of their
+sayto $n personal growth through record keeping. Let's see what you have...
+mpsleep 3
+mpforce $n score
+mpsleep 3
+sayto $n I see you've started taking very good records! Remember to
+sayto $n check this and update it as needed. 
+mea $n &COOC: See "&WHELP SCORE&C" for more information.
+mpsleep 3
+sayto $n Now... you are finished with this lesson. Please check
+sayto $n your schedule for your next lesson and good luck!
+mpqset $n 2506
+mpqset $n 2507
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2511
+emote enters the classroom and begins setting up for her class
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   emote gathers up her papers and textbooks before leaving the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2510
+Keywords   runi professor gnome man writing parchment desk~
+Short      &GRuni&w~
+Long       &GAn gnomish man is here writing on some parchment at a desk by the window.&w
+~
+Desc       This gnome has short curly brown hair and tan skin. He seems a
+bit young to be a professor, but his winning smile seems to
+erase all doubts.
+~
+Race       forest-gnome~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Speaks     common gnomish deepspeech~
+Speaking   common gnomish deepspeech~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2507
+emote stops writing and nods his head
+speak deepspeech
+sayto $n Tduumoxtw! O lecu kuux usvujmoxt iya!
+mpsleep 3
+chuckle
+speak common
+sayto $n I apologize! I was writing a letter to a friend who lives
+sayto $n where the deepspeech language is common. I am Runi and
+sayto $n I will be instructing you on languages. Currently, I am
+sayto $n speaking the "common" tongue, which is a shared language
+sayto $n with many different races. It is also the primary language
+sayto $n of humans!
+mpsleep 3
+mea $n &GRuni holds up a list of languages for you to see.
+mea $n &GOOC: Please see the &WHELP LANGUAGES&G helpfile for more information.
+mpsleep 3
+sayto $n There are rumors of ancient languages or even local ones
+sayto $n of certain areas. It can be hard to learn a language,
+sayto $n but with much practice you can become rather fluent in it.
+mpsleep 3
+sayto $n When you wish to speak a language you need to know the
+sayto $n the basics first.. then you can SPEAK that language.
+sayto $n You can also see what languages you can currently speak
+sayto $n by check your private list. &G(Command: Languages)&w
+mpsleep 3
+mpforce $n languages
+sayto $n The one you have highlighted on the list is the one you
+sayto $n are currently speaking now.
+mpsleep 3
+sayto $n That is all I have for you. Check your schedule for your
+sayto $n next course and I wish you good luck with your other studies.
+emote resumes writing his letter with a smile on his face.
+mpqset $n 2507
+mpqset $n 2508
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2510
+emote enters the classroom and begins setting up for his class
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   emote gathers up his supplies and leaves the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2511
+Keywords   thunril professor climbing rope wall dwarf~
+Short      &RThunril&w~
+Long       &RA dwarven man is here climbing a rope against the west wall of the classroom.
+~
+Desc       This male dwarf appears to be a rather grouchy professor and his
+personality matches his red hair. His beard is the same fiery
+color and seems to get lighter at the end. His skin is a deep
+bronze from spending time outdoors.
+~
+Race       hill-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2508
+emote quickly climbs down the rope and lands with a bow at the waist
+sayto $n Greetings. In my younger days I took it upon myself to learn
+sayto $n how to climb quickly and it has served me well. As an
+sayto $n adventurer you will have several moments where you will
+sayto $n be able to either better yourself physically or to forgo
+sayto $n that to learn something specific.. which we call a feat.
+mpsleep 3
+sayto $n Some types of adventurers have five times in their life
+sayto $n where they will have these opportunities and some have
+sayto $n have more. To see when you will have an opportunity you
+sayto $n should refer to the information about the class you
+sayto $n chose in this life. &R(See help classes or class name)&w
+mpsleep 3
+sayto $n When you are ready to learn a feat or enhance your
+sayto $n body you will need to find a trainer who offers
+sayto $n such instruction. Remember that when you become
+sayto $n trained with either option it is permanent. You
+sayto $n can learn more about feats on that list on the wall.
+mpsleep 3
+mea $n &RThunril points to a list with a smile on his face.
+mea $n &ROOC: For more information see the &WHELP FEATS&R helpfile.
+mpsleep 3
+sayto $n That's all I have for you. Good luck out there!
+emote quickly climbs back up the rope and waves cheerfully
+mpqset $n 2508
+mpqset $n 2509
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   mpgoto 2512
+emote enters the classroom with a grumpy look on his face
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   emote gathers up his books with a sigh before leaving the room
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2512
+Keywords   ivarn professor sword practicing human male~
+Short      &YIvarn&w~
+Long       &YA human male is here practicing with a sword with a variety of battle techniques.&w
+~
+Desc       This professor has crazy white blonde hair that seems very whispy
+and floats wildly as he walks around the classroom. He is very 
+tall and has a golden skintone. His eyes are a deep hazel that
+shine with curiosity.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2509
+emote stops swinging his blade and bows slightly
+sayto $n Greetings. Are you ready to learn about weapons?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2509
+nod $n
+sayto $n Weapons come in a variety of sizes and styles. The first
+sayto $n important bit of information is that there are two major
+sayto $n types of weapons.. &Ysimple&w and &Ymartial&w. Simple
+sayto $n weapons can be used by pretty much everyone and include
+sayto $n weapons such as maces, daggers, and even spears. Martial
+sayto $n weapons require a higher skill level to use correctly.
+sayto $n Examples of such are swords, axes, and morningstars.
+mpsleep 3
+sayto $n A commoner might be able to swing a club, but it takes
+sayto $n a great warrior training and experience to battle with
+sayto $n a sword!
+mpsleep 3
+emote twirls his blade quickly until it become a blur
+chuckle $n
+mpsleep 3
+sayto $n Let me know if you wish for me to continue.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p continue~
+Comlist   if hasqbit($n) == 2509
+grin $n
+sayto $n Now that you know about simple and martial weapons the
+sayto $n next important thing is that weapons can have additional
+sayto $n things that specialize them. A weapon can cause a lot of
+sayto $n damage, but be too &Yheavy&w for smaller adventurers to
+sayto $n use. A weapon can require some &Yfinesse&w and weapons
+sayto $n that are &Ylight&w can be be ideal for dual weapon fighting.
+mpsleep 3
+sayto $n Some weapons can be &Ythrown&w at your opponent, some
+sayto $n can require &Ytwo hands&w to wield it, and my favorite
+sayto $n are weapons that can be used with one or two hands.
+mpsleep 3
+sayto $n Weapons that are used for ranged attacks such as bows
+sayto $n or slings require ammunition and can be fired from
+sayto $n a safe distance. Those with great skill can fire
+sayto $n their ranged weapon from a close range.
+mpsleep 3
+sayto $n For more information please view your textbook
+sayto $n and good luck with the rest of your studies.
+bow $n
+mpsleep 3
+mea $n &YOCC: Please see the &WHELP WEAPONS&Y helpfile for more information.
+mpqset $n 2509
+mpqset $n 2510
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   mpgoto 2513
+emote arrives to the classroom and begins to stretch his muscles
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote stops practicing and gathes his supplies as he leaves
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2513
+Keywords   tannir professor inspecting suit ringmail female halfelf~
+Short      &CTannir&w~
+Long       &CA female half-elf is here inspecting a suit of ringmail armor on a table.&w
+~
+Desc       This professor has long chestnut colored hair that she has braided
+back to help her work un-interrupted. She seems very preoccupied
+with her work analyzing various armor components. 
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2510
+emote looks up from inspecting the armor and nods her head
+sayto $n Welcome. I am Tannir and I am to teach you about armor.
+mea $n &CTannir beckons you to the table, which you approach.
+mpsleep 3
+sayto $n Armor is essential for some adventurers to protect themselves.
+sayto $n The ringmail armor on this table saved the life of a dear
+sayto $n friend many winters ago. All armor can be broken down
+sayto $n into three categories.. &Clight&w, &Cmedium&w, and &Cheavy.&w
+mpsleep 3
+sayto $n This ringmail armor falls into the heavy category. Heavy
+sayto $n armor can require great strength in order to wear it and
+sayto $n it can effect your weight overall. Heavy armor will also
+sayto $n hinder your attempts to hide, which may or may not save
+sayto $n your life one day.
+mpsleep 3
+sayto $n Now medium armor includes hide based armor, a chain shirt,
+sayto $n scale mail, or even half plate armor. It works better
+sayto $n with one's dexterity to provide reasonable protection.
+mpsleep 3
+sayto $n And light armor includes padded to studded leather,
+sayto $n which is a favorite of those that require stealth.
+mpsleep 3
+sayto $n Would you like me to continue?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2510
+nod $n
+mpsleep 3
+sayto $n Now when armor is worn on the &Cbody&W that is when you
+sayto $n receive it's protective qualities. &C(Armor class)&w
+mpsleep 3
+sayto $n Adventurers who have chosen the Wizardly route cannot
+sayto $n wear armor. However, their spells can help them achieve
+sayto $n a high level of protection. Other types of adventurers
+sayto $n can only wear certain types of armor. You will need to
+sayto $n check on this before purchasing any armor for yourself.
+mpsleep 3
+sayto $n If you are able to use a shield it can be valuable as
+sayto $n it adds to your protection. &C(Armor Class)&w
+mpsleep 3
+sayto $n And helmets can help block critical strikes from your
+sayto $n enemies and can be worth the purchase.
+mpsleep 3
+sayto $n I have taught you everything you need to know. If you
+sayto $n need more information please check your textbook.
+nod $n
+mpsleep 3
+mea $n &COOC: Please see the &WHELP ARMOR&C helpfile for more information.&w
+mpqset $n 2510
+mpqset $n 2511
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   mpgoto 2515
+emote arrives to the classroom and begins practicing immediately
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote ends her practice session and leaves the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2514
+Keywords   polly professor grading papers desk halfling blonde female~
+Short      &PPolly&w~
+Long       &PA blonde female halfling is grading some papers at her desk here.&w
+~
+Desc       This joyful looking professor is seated at her desk grading with
+a big smile on her face. She has her long brunette hair braided
+into an intricate style. She is wearing long silky robes in a
+bright pink color.
+~
+Race       lightfoot-halfing~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2511
+smile $n
+sayto $n Hello! Let's play a little game to get things started.
+sayto $n Tell me if you can see what I have hidden in this room.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2511
+giggle
+sayto $n And is it a sword, paper, or a stuffed animal?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p paper~
+Comlist   if hasqbit($n) == 2511
+emote giggles a bit more
+sayto $n Correct! Now is it round or square?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p round~
+Comlist   if hasqbit($n) == 2511
+sayto $n Yes!
+clap
+sayto $n Now finally... what is the color?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p pink~
+Comlist   if hasqbit($n) == 2511
+giggle
+sayto $n My favorite color! Now what you have done is use your own
+sayto $n powers of perception to see hidden things in a space.
+sayto $n As an adventurer you will encounter some things that are
+sayto $n harder to see than others. You can keep looking to see if
+sayto $n you discover such, but some may be out of your perceptive
+sayto $n range.
+mpsleep 3
+sayto $n Those who are trained to use their wisdom often have
+sayto $n a better chance of seeing hard to find things... but
+sayto $n You can always try! It doesn't hurt and you never know
+sayto $n what you will see!
+smile $n
+mpsleep 3
+sayto $n Good luck out there! And remember to look around often!
+mpsleep 3
+mea $n &POOC: Please see the &WHELP PERCEPTION&P helpfile for more information.
+mpqset $n 2511
+mpqset $n 2512
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p square~
+Comlist   if hasqbit($n) == 2511
+tsk $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p sword~
+Comlist   if hasqbit($n) == 2511
+shake $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p stuffed animal~
+Comlist   if hasqbit($n) == 2511
+chuckle
+sayto $n No. Look again.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p no~
+Comlist   if hasqbit($n) == 2511
+giggle
+sayto $n Keep looking!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 2516
+emote giggles as she enters the classroom and begins setting up
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   emote cleans up the classroom and heads out
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2515
+Keywords   wasen professor skinny male human~
+Short      &cWasen&w~
+Long       &cA skinny looking male human is here examining the giant rock with a magnifying lens.&w
+~
+Desc       This human professor is quite tall and very skinny. He wears a pair
+of thin wire frame glasses, which exaggerate his large nose. He
+is dressed in a simple outfit consisting of all beige garments.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2512
+emote stops examining the rock and waves
+sayto $n Come! It is time to learn the opposite of random perception
+sayto $n and to truly search the world for meaning! All adventurers
+sayto $n should learn how to "investigate" their surroundings, 
+sayto $n whether it be a person.. an object.. or the very space
+sayto $n they are in.
+mpsleep 3
+sayto $n Why don't you investigate this rock and tell me what
+sayto $n you have discovered? Keep trying till you find something.
+mpsleep 3
+mea $n &cOOC: Try "&WInvestigate Rock&c" to see what is on it.&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p sigils~
+Comlist   if hasqbit($n) == 2512
+sayto $n Those sigils are quite tiny, right?
+grin $n
+mpsleep 3
+sayto $n You can use your investigative powers to find various clues
+sayto $n and such around you. Those who train their intellect will
+sayto $n always notice things faster and more easily. You can always
+sayto $n try and see if you get luck with finding something too!
+mpsleep 3
+sayto $n Good luck and have fun with your next class!
+mpqset $n 2512
+mpqset $n 2513
+mpsleep 2
+emote resumes looking at the giant rock with his magnifying lens.
+mpsleep 2
+mea $n &cOOC: Please see the &WHELP INVESTIGATE&c helpfile for more information.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   mpgoto 2517
+emote arrives and begins setting up for his class
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   emote begins cleaning up the classroom and heads out
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2516
+Keywords   raelie professor avariel elf woman blonde chalkboard~
+Short      &YRaelie&w~
+Long       &YA female skyelf with long blonde hair is here writing on a chalkboard.&w
+~
+Desc       Long waves of sunny blonde dance past the shoulders of this
+young looking professor. Her wings are pure white and look
+very soft to the touch.  She is dressed in a simple green tunic
+and leggings.
+~
+Race       avariel~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2513
+grin
+mpsleep 3
+sayto $n Welcome dear! It is time for your lesson on proficiencies.
+sayto $n Are you ready?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2513
+nod
+sayto $n Good! Now.. you have already encountered two proficiencies
+sayto $n in your previous courses - perception and investigation.
+sayto $n However.. there are sixteen more of them for you to learn.
+mpsleep 5
+sayto $n There are proficiencies that deal with strength.. such as
+sayto $n &Yathletics&w. There are also some the deal with dexterity
+sayto $n such as &Yacrobatics&w.
+mpsleep 5
+sayto $n We tend to use a few daily while others we encounter
+sayto $n briefly. One who has chosen the Druid's path may use
+sayto $n such proficiencies like &Yanimal handling&w, &Ynature&w,
+sayto $n and &Ysurvival&w more than &Ystealth&w or &Yperformance.&w
+mpsleep 5
+sayto $n Depending on your &Ybackground&w you may have already become
+sayto $n very proficient with certain types. This means that you will
+sayto $n succeed better with those when you use them. 
+mpsleep 3
+sayto $n Now... tell me the type of person who would use a proficiency
+sayto $n such as &Yarcana&w quite often? A Wizard, Bard, Cleric, or Rogue?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p wizard~
+Comlist   if hasqbit($n) == 2513
+clap $n
+mpsleep 3
+sayto $n Exactly. While a Bard or Cleric may have need of it a Wizard
+sayto $n truly is the master of such a proficiency. While your
+sayto $n background may conflict with your chosen adventuring path
+sayto $n it can also aid you when used.
+mpsleep 3
+sayto $n Take for example myself.. I am a trained Wizard.. but
+sayto $n until I became an apprentice I was what some would call
+sayto $n an "outlander." I had to survive in a harsh climate so
+sayto $n I'm very survival minded and rather athletic, which
+sayto $n can be unexpected for some given my wizardly training.
+mpsleep 5
+sayto $n Well, that concludes our lesson. You can learn more
+sayto $n by reviewing your textbook. Good luck with your classes!
+mpsleep 3
+mea $n &YOOC: Please see the &WHELP PROFICIENCIES&Y helpfile for more info.
+mpqset $n 2513
+mpqset $n 2514
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   mpgoto 2519
+emote arrives and begins setting up for her class
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote begins cleaning up her classroom before she leaves
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2517
+Keywords   tonia professor pink haired female human sitting desk~
+Short      &PTonia&w~
+Long       &PA pink haired female human is here sitting on a desk.&w
+~
+Desc       &PThis professor has wild short pink hair that she keeps styled
+like she just woke up. Her skin is quite pale and she has very
+dark brown eyes that contrast with her skin and hair color.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2514
+chuckle $n
+sayto $n You're the new student, hmmm? Well, my class is rather short,
+sayto $n but it is very important information!
+mpsleep 3
+sayto $n Now, let us enter into &ROOC&w mode.. or "Out of Character."
+sayto $n OOC means that we are speaking as the player and not as
+sayto $n the character. Now here at "DLoC" or "Dragonlands of Chaos"
+sayto $n we like our game to be &RIC&w, or "In Character."
+mpsleep 3
+chuckle
+mpsleep 3
+sayto $n Now.. that doesn't mean you need to sound like you finally
+sayto $n get to use that medieval language information you obtained
+sayto $n from some college course. IC means that you are properly
+sayto $n playing who your character -is- and not responding as
+sayto $n you the -player-. 
+mpsleep 3
+sayto $n Character communication channels deemed for RP/IC
+sayto $n usage is tell (telepathy), say, sayto, whisper, yell,
+sayto $n sayto, smote, socials, and emotes.
+mpsleep 3
+sayto $n Are you ready for more?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2514
+nod
+mpsleep 3
+sayto $n Communication channels deemed for OOC usage are otell,
+sayto $n osay, chat, and &Pask&w. The ask chat line is when you need
+sayto $n assistance from the admin team on something such as reporting
+sayto $n a bug, game disputes, or general aid.
+mpsleep 3
+sayto $n The OOC based communication channels can only be used
+sayto $n in OOC based locations as I will explain next...
+mpsleep 3
+sayto $n We have also established &ROOC Taverns&w where players who
+sayto $n just want to sit and chat OOC can go and "disappear" from
+sayto $n regular game play. While there you can use any of the OOC
+sayto $n communication channels.
+mpsleep 5
+sayto $n Please remember that going into OOC taverns to hide or
+sayto $n usage of OOC communication channels to share game related
+sayto $n data is breaking the rules.
+mpsleep 3
+sayto $n When you type &YWHO&w you will see &R(OOC)&w next to any
+sayto $n names of players who are taking a break from the game.
+sayto $n And any rooms used for OOC are labeled with &R-{(OOC)}-&w.
+sayto $n When a player is in these OOC rooms they are unavailable
+sayto $n and any conversations wondering where they went can be
+sayto $n answered with something vague such as "He must have wandered
+sayto $n off to some tavern for the night," which can be code they
+sayto $n have gone OOC for the moment.
+mpsleep 3
+sayto $n Finally.. there is no length of time for OOC taverns. A
+sayto $n player can stay there for as long as possible. The taverns
+sayto $n are for fun and a place to unwind with your DLoc pals. All
+sayto $n character related roleplay is checked at the door.
+mpsleep 4
+sayto $n Now, that's all I have. Good luck on your next class.
+mpqset $n 2514
+mpqset $n 2515
+mpsleep 3
+mea $n &POOC: Please see the &WHELP ROLEPLAY&P helpfile for more info.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   mpgoto 2518
+emote arrives and climbs on top of her desk while she waits
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote hops off her desk and smiles as she leaves her classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2518
+Keywords   grugar half-orc male notes strong~
+Short      &OGrugar&w~
+Long       &OA strong looking male half-orc is here making notes in front of rock.&w
+~
+Desc       This half-orc is not very tall for his race and seems rather skinny.
+He has mousy brown hair and his skin has a chalky appearance to it.
+He is dressed in a simple tunic and pants while preferring to walk
+around the classroom without shoes.
+~
+Race       half-orc~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2515
+nod $n
+mpsleep 4
+sayto $n Greetings. Let us begin with your lesson. Now you learned to
+sayto $n investigate for clues.. sometimes investigating a room or
+sayto $n an object will tell you how to use or do something that
+sayto $n is located there.. You can also see if investigating reveals
+sayto $n clues about a person and leads you to do something.
+mpsleep 5
+sayto $n Let's begin with the rock in this room. I want you to see
+sayto $n what you can do with it.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2520
+emote arrives and begins setting up the classroom for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   emote cleans up the classroom before he heads out
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2519
+Keywords   annath beautiful woman reading book desk feyborn~
+Short      &pAnnath&w~
+Long       &pA beautiful woman reading a book at her desk is here.&w
+~
+Desc       This woman is very beautiful and her features seem otherworldly. Her
+eyes are very seductive and almond shaped. Cheekbones that could cut
+glass contrast with a very sharp pointed chin and ears. She is dressed
+in a velvet gown as she works at her desk.
+~
+Race       feyborn~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2516
+emote closes her book with a smile
+mpsleep 4
+sayto $n Time for your lesson already?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2516
+nod $n
+mpsleep 3
+sayto $n There are many races that are &PHumanoid&w based that live
+sayto $n in the great cities and small villages in the world. Humanoids
+sayto $n are the ones you will often adventure with, share meals,
+sayto $n or even battle. Humanoids are the largest racial group.
+mpsleep 5
+sayto $n There are even "&PHalf-Humanoid&w" types where their parentage 
+sayto $n or ancestry contains another race. I myself am &PFeyborn&w,
+sayto $n which my mother was one of the &PFey&w. 
+mpsleep 5
+sayto $nThere are races that are alien-like such as &PAberrations&w,
+sayto $n which include creatures such as Beholders. Opposite of
+sayto $n such odd creatures are &PBeasts&w or what we call animals.
+sayto $n Simple birds, bears, and giant dogs fall into this category.
+mpsleep 5
+sayto $n &PCelestials&w are servants of the deities and are often called
+sayto $n "Angels" by humans. Opposite of them are &PFiends&w who live
+sayto $n on the Lower Planes and are very demonic. 
+mpsleep 5
+sayto $n &PDragons&w have not been seen much since the great event...
+sayto $n but their "Children" the &PDragonborn&w carry their bloodlines
+sayto $n and are often seen on their island nations. You may encounter
+sayto $n one or more during your adventures.
+mpsleep 5
+sayto $n &PConstructs&w are the products of magic or science depending
+sayto $n on the viewpoint. They are created somehow. &PGiants&w can be
+sayto $n dangerous foes due to their immense size and strength.
+mpsleep 5
+sayto $n &PMonsters&w are the other common racial group like humanoids
+sayto $n as many fall into this category such as Owlbears. &POozes&w
+sayto $n can be dangerous and hard to fight. They can be found in
+sayto $n dark locations like the infamous &PUnderdark&w. 
+mpsleep 5
+sayto $n And the last category is the &PUndead&w. This category can be
+sayto $n touchy for some and others very exciting.
+mpsleep 5
+sayto $n Let me know if wish for me to &Rcontinue&w...&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p continue~
+Comlist   if hasqbit($n) == 2516
+sayto $n Now one of the most important thing is all of the races
+sayto $n have their own weaknesses, strengths, and even special
+sayto $n talents. Some spells may impact one race, but do nothing
+sayto $n to another. So keep in mind who you are interacting with or
+sayto $n even battling because that could save your life one day.
+mpsleep 5
+sayto $n That is all I have for you. You can view more information
+sayto $n in your textbook. I wish you all of the luck with your
+sayto $n studies and stay safe out there!
+mpsleep 4
+mea $n &POOC: Please see the &WHELP RACE&P helpfile for more info.&w
+mpqset $n 2516
+mpqset $n 2517
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2522
+emote arrives and begins setting up her classroom for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   emote begins cleaning up her classroom before leaving 
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2520
+Keywords   vhou gnome man smoking pipe elderly~
+Short      &gVhou&w~
+Long       &gAn elderly gnome man is here smoking a pipe at his desk.&w
+~
+Desc       This gnomish professor seems quite content to sit and smoke his 
+pipe. He is going bald and is missing the hair on the top of his head
+while the side have been cut to maintain some length. His large
+nose seems to always be very red and his cheeks often match
+when he is embarrassed.
+~
+Race       forest-gnome~
+Class      bard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2517
+emote takes a drag off his pipe and sighs to himself
+mpsleep 4
+nod $n
+mpsleep 3
+sayto $n It is time for us to discuss the different types of people
+sayto $n who you will encounter. First is the &GWizard&w who is the
+sayto $n master of the arcane arts. The &GCleric&w is the servant of
+sayto $n the very deities themselves and represent them in the realm.
+mpsleep 5
+sayto $n The &GDruid&w is the nature based version of the Cleric
+sayto $n and serves the deities of the forest, agriculture, and
+sayto $n even the wilds. 
+mpsleep 5
+sayto $n Similar to Wizards are the &GWarlocks&w and &GSorcerers&w
+sayto $n who use the arcane in different ways...
+mpsleep 5
+emote takes another drag off his pipe and blows a smoke ring
+mpsleep 5
+sayto $n Are we ready for more?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2517
+nod $n
+mpsleep 3
+sayto $n Now the &GFighter&w is the master of physical combat and its
+sayto $n opposite is the stealthy &GRogue&w. The &GBarbarian&w relies
+sayto $n on strength and rage to surpass their physical limits in battle.
+sayto $n The &GRanger&w is a combination of Druid and Fighter. They
+sayto $n are survivalists in the wild and serve the deities of nature.
+mpsleep 5
+sayto $n &GPaladins&w are a holy fighter and serve the gods along
+sayto $n with the clergy. Sometimes we hear of Paladins who revoke
+sayto $n their oaths and go down a dark path...
+mpsleep 5
+sayto $n Moving on the next example is the &GMonk&w, who uses a calm
+sayto $n mentality and quick attacks. &GBards&w are a jack of all trades
+sayto $n types and like to use different types of spells that can often
+sayto $n be seen with Clerics and Wizards.
+mpsleep 5
+sayto $n And last is someone who never specialized and often learned 
+sayto $n everything on their own.. &GAdventurers&w. While not reaching
+sayto $n into powerful techniques they can be very handy in the most
+sayto $n dangerous of places.
+mpsleep 5
+emote takes a drag off his pipe and sighs as he releases a puff of smoke
+mpsleep 3
+sayto $n Are we ready to continue with the last part of this lecture?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ready~
+Comlist   if hasqbit($n) == 2517
+emote taps his pipe out on the floor and shrugs
+mpsleep 3
+sayto $n All classes have their positives and negatives. Some cannot
+sayto $n wear armor, some cannot cast spells.. some cast in odd ways.
+sayto $n Remember these when you are teamed up with others and use
+sayto $n everyone to the best of their ability. 
+mpsleep 2
+sayto $n And there are of course those that have trained in more
+sayto $n than one class.. often called &Gmulticlassing&w, which
+sayto $n is an interesting topic all on its own. You can find out
+sayto $n more on that later.
+mpsleep 5
+sayto $n I wish you all of the luck out there. Your textbook has
+sayto $n a lot of information you can review later as well.
+mpsleep 4
+mea $n &GOOC: Please see the &WHELP CLASSES&G help file for more info.
+mea $n &GOOC: Please see the &WHELP MULTICLASS&G help file for more info.
+mpqset $n 2517
+mpqset $n 2518
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   mpgoto 2521
+emote arrives and begins arranging the classroom to his liking
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2521
+Keywords   fhurn old human man sage long robes monk~
+Short      &CFhurn&w~
+Long       &CAn elderly human man dressed in long robes is here meditating.&w
+~
+Desc       This professor has short white hair and matching beard, which are
+groomed to excellence. He seems to be in good physical shape despite
+his age. He wears a long robe and is meditating here surrounded
+by incense.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2518
+smile
+mpsleep 5
+sayto $n Even now as we begin this lesson the gods and goddesses
+sayto $n are watching. I am Fhurn and I am a Cleric of the Goddess
+sayto $n &COmunae&w, who rules over the divine portfolios of knowledge,
+sayto $n scholars, monks, inner wisdom, psychics, and the element of
+sayto $n air. Some deities have many &Cportfolios&w, which are
+sayto $n topics, ideas, things, or emotions that a deity has
+sayto $n dominion over. These portfolios are managed by the deity
+sayto $n and the clerics that serve the deity.
+mpsleep 5
+sayto $n There are many deities and portfolios.. such as &CAmunar&w
+sayto $n who is the &CGoddess of Agriculture&w,&C Growth&w, &CHerbs&w,
+sayto $n &CCommunity&w, &CCooking&w, and the &CEarth&w elemental
+sayto $n portfolio. Deities will have allies and enemies. An
+sayto $n example is &CAkemis&w, whose portfolios of &CDestruction&w,
+sayto $n &CStorms&w, &CTempests&w, and the &CFire&w elemental
+sayto $n portfolio. Akemis or the "Storm King" goes against
+sayto $n everything Amunar represents.
+mpsleep 5
+sayto $n It is a choice whether or not to follow a deity.
+sayto $n However, there are many benefits such as using some
+sayto $n of the &Cfavor&w you have earned to retrieve blessings
+sayto $n or assistance.
+mpsleep 5
+sayto $n Clerics in order to cast spells must keep their &Cfavor&w
+sayto $n with a deity at a positive level or their deity may
+sayto $n ignore their prayers.
+mpsleep 5
+sayto $n There are three &CCongregations&w located here in New
+sayto $n Darkhaven where representatives of various deities are
+sayto $n located. Their jobs are to tell you about their faith
+sayto $n so that you can decide which deity to follow. I suggest
+sayto $n that you go and visit all three.
+mpsleep 5
+sayto $n Are you ready to hear more?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2518
+sayto $n Now.. Clerics will need to maintain a positive level of
+sayto $n favor with their deity in order to have their spells
+sayto $n and prayer be successful.
+mpsleep 5
+sayto $n There are three &CCongregations&w located here in the
+sayto $n city of New Darkhaven. These temples have representatives
+sayto $n from all of the faiths and they will tell you about their
+sayto $n deity if you ask. This can help you decide which god or
+sayto $n goddess to follow one day if you decide. I suggest you
+sayto $n go there and visit all three.
+mpsleep 5
+sayto $n However... a word of caution... temples outside of this
+sayto $n city may not be so welcoming and rather dangerous. The
+sayto $n faiths have all agreed to be lawful here &Conly&w. So
+sayto $n watch yourself when not in this city.
+mpsleep 5
+sayto $n That concludes our lesson. Your textbook has more
+sayto $n information and I suggest visiting the temples here
+sayto $n in the city. May the gods and goddesses watch over you.
+c bless $n
+mpsleep 5
+mea $n &COOC: For more information see &WHELP FAITH&C for more info.
+mpqset $n 2518
+mpqset $n 2519
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   mpgoto 2524
+emote arrives for his class and begins setting up
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote stands up and begins cleaning his classroom before leaving
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2522
+Keywords   orilla professor female human drawing map~
+Short      &YOrilla&w~
+Long       &YA female human is here drawing on a large map on the wall.&w
+~
+Desc       This woman is very busy working with a large map on the main wall
+of the classroom. She has drawn all over it with various drawing
+implementsn. She has let her features wane while working on this
+pursuit. Her hair is dirty and in need of a haircut yet she has
+found the time to apply some clean clothes for the day.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2519
+emote stops drawing on the map and nods her head
+mpsleep 5
+sayto $n Welcome. Let us get started so I can return to my research.
+mpsleep 5
+sayto $n Many many many many manyyyy years ago there was the &YGreat Rift&w
+sayto $n which destroyed much of the realms and reshaped it the way we
+sayto $n know it today. Gods battle gods, races battled races, and dragons
+sayto $n battled dragons. The whole realm had fallen into chaos.
+mpsleep 5
+sayto $n That is when the realms began to fall away into the
+sayto $n other planes and we almost lost everything. A group
+sayto $n of adventurers here at what was once the city of Darkhaven
+sayto $n devised a plan at the tower owned by &YSoronys&w. These
+sayto $n adventurers worked with the gods and good dragons to change
+sayto $n the tower into an anchor that would hold the planes together.
+mpsleep 5
+sayto $n Are you ready to continue?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2519
+nod $n
+mpsleep 5
+sayto $n Now the tower stands as the anchor of the all the planes
+sayto $n of existence. This conduit of power keeps us from flying
+sayto $n into oblivion! Four dragons and the racial deities gave
+sayto $n their lives to empower this structure.
+mpsleep 5
+sayto $n Entrance into this tower is very rare and it is said that
+sayto $n those who can enter it can find themselves capable of
+sayto $n planar travel! The keys to the tower have been lost for
+sayto $n quite some time so it is doubtful we will ever know if
+sayto $n this is true or not.
+mpsleep 3
+sayto $n Now the Great Rift destroyed much of our realms and
+sayto $n reshaped other parts of it. The village of Skyfall was
+sayto $n originally much bigger and parts of it flew into oblivion
+sayto $n during a battle between two gods there. The elven homeland
+sayto $n was cut off from the main continent and is now its own
+sayto $n island. After some time we have adjusted to these changes.
+mpsleep 5
+sayto $n Who knows what will become of the realms next
+sayto $n or what major event will happen. All we know is
+sayto $n that right now we have peace.
+mpsleep 5
+sayto $n That is all I have for you now. Good luck.
+mpsleep 3
+mea $n &YOOC: You can read more of the history at &WHELP AERIX.&w
+mea $n &ROOC: You are now permitted to use the Combat Training Facility.
+mpqset $n 2525
+mpqset $n 2519
+mpqset $n 2520
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2523
+emote arrives and begins working on her map project
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   emote begins cleaning up the classroom and begins to leave
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2523
+Keywords   kanus professor stern looking~
+Short      &RKanus&w~
+Long       &RA stern looking human male is here practicing spell invocations at his desk.&w
+~
+Desc       This wizardly professor has a stern looking face that is creased
+with wrinkles. He keeps his thinning silver hair short and his
+goatee well trimmed. He is dressed in flowing red robes and he
+always seems to be practicing spell invocations with his long
+spidery fingers.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2520
+nod $n
+mpsleep 3
+sayto $n Greetings. While most students who get to my lessons and beyond
+sayto $n may not be dedicated magic users.. it is good to know
+sayto $n the basics so that you may help those that wield
+sayto $n such energies. 
+mpsleep 5
+sayto $n Casting a spell requires a great deal of concentration
+sayto $n and intent. Some spells require the usage of &Rcomponents&w
+sayto $n to release the spell. 
+mpsleep 5
+sayto $n To cast a spell one must &RCast '&WSpell name&R' <Target name>&w.
+sayto $n Once you cast it you cannot take the spell back
+sayto $n so you must be careful with casting spells. Some
+sayto $n spells are &Roffensive&w, in which they will cause
+sayto $n damage to your foes. Other spells are &Rdefensive&w
+sayto $n in which it can bolster your allies or yourself.
+sayto $n Spells such as Mage Armor or Barkskin are examples
+sayto $n of abjuration spells that raise one's defenses.
+mpsleep 5
+sayto $n You need to know ahead of time before you cast
+sayto $n so research into the spells is crucial. Some
+sayto $n spells grow with time. All spells except
+sayto $n &Rcantrips&w require study and memorization
+sayto $n before casting. Cantrips are spells that are easy
+sayto $n for magic users to use and they do not require
+sayto $n any study to prepare. They can also help you
+sayto $n save your powerful spells for when you need them.
+mpsleep 5
+sayto $n Are you ready for more?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2520
+sayto $n Now.. let us discuss the different types of magic schools.
+sayto $n Knowing these schools can help you in the future. The
+sayto $n schools of magic are &REvocation&w, &RAbjuration&w, &RIllusion&w,
+sayto $n &RNecromancy&w, &RConjuration&w, &RDivination&w, &REnchantment&w,
+sayto $n &wand &RTransmutation&w. There are three other types, but
+sayto $n they are derived from a combination of various schools.
+sayto &RTheurgy&w, &RInvention&w, and &RWar&w are the examples of such.
+mpsleep 5
+sayto $n Each school is part type of magic such as evocation
+sayto $n being involved with spells that have an elemental
+sayto $n basis.. spells such as &RFireball&w are a great
+sayto $n example of spells from this school of magic.
+mpsleep 5
+sayto $n An important thing to consider when casting spells is
+sayto $n the type of damage it creates. Some foes you may
+sayto $n encounter can have &Rimmunities&w, &Rresistances&w, or
+sayto $n &Rsusceptibilities to types of spell damage. An
+sayto $n example is Beholders have a high level of resistance
+sayto $n to &Rpsychic&w based spells due to their own psychic
+sayto $n nature. It is important to learn about these and
+sayto $n use that knowledge to overcome challenging foes.
+mpsleep 5
+sayto $n The types of spell damage types are &Rfire&w, &Rcold&w,
+sayto $n &Racid&w, &Rbludgeoning&w, &Rforce&w,&R lightning&w,
+sayto $n &Rnecrotic&w, &Rpiercing&w, &Rpoison&w, &Rpsychic&w,
+sayto $n &Rthunder&w,&R slashing&w, and &Rradiant.
+mpsleep 5
+sayto $n Knowledge is power and those that wield magic
+sayto $n must constantly be learning and experimenting to
+sayto $n push the craft of magic further.
+mpsleep 5
+sayto $n Good luck out there and may Crisma watch over you.
+mpqset $n 2520
+mpqset $n 2521
+mpsleep 3
+mea $n &ROOC: Please see the &WHELP CAST&R help file for more info.
+mea $n &ROOC: Please see the &WHELP SPELLS&R help file for more info.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2525
+emote arrives and begins setting up his supplies
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   emote collects his supplies and leaves the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2524
+Keywords   Thyrin professor gnome male meditating~
+Short      &GThyrin&w~
+Long       &GA gnome male is here meditating in the middle of the classroom.&w
+~
+Desc       Before you is a large gnome man dressed in flowing yellow robes.
+He has a kind looking face with twinkling grey eyes. He seems
+to be very peaceful while meditating in the middle of the classroom.
+~
+Race       rock-gnome~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2521
+grin $n
+mpsleep 3
+sayto $n Hello! It's time to learn how magic users prepare their
+sayto $n spells. As your previous class instructed you all spells
+sayto $n except cantrips need to be prepared through studying
+sayto $n and &Rmemorization&w.
+mpsleep 5
+sayto $n You can see what spells you have memorized and how
+sayto $n many spells you have studied by using &RMEMORIZATION&w or
+sayto $n &RMEM&w as a short version. You will need your spellbook
+sayto $n in order to see this information and to prepare any spells.
+mpsleep 5
+sayto $n In order to memorize a spell you must know th spell first
+sayto $n whether having learned it from a scroll or from a teacher.
+sayto $n When you're ready you will memorize it such as &RMEM FIREBALL&w
+sayto $n and if you know that spell it will be memorized into
+sayto $n your third circle of spells.
+mpsleep 5
+sayto $n You can only memorize a certain number of spells and
+sayto $n if you have additional slots you can use those slots to
+sayto $n cast a prepared spell. 
+mpsleep 5
+sayto $n Are you ready for more?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2521
+sayto $n Now once you have a spell prepared or if you need to
+sayto $n remove it you can simply &RFORGET&w it. You would
+sayto $n do something like &RFORGET FIREBALL&w and that
+sayto $n remove the prepared fireball spell. 
+mpsleep 5
+sayto $n Studying a spell can take time and the more powerful
+sayto $n the spell the longer it will take. Also the more
+sayto $n spells you prepare the longer it can take.
+mpsleep 5
+sayto $n And finally do not forget to bring your spellbook with
+sayto $n you at all times.
+mpsleep 5
+sayto $n And that concludes our lesson. Good luck!
+mpqset $n 2521
+mpqset $n 2522
+mpsleep 3
+mea &GOOC: Please see the &WHELP MEMORIZATION&G helpfile for more info.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 2526
+emote arrives and begins to set up the classroom before meditating
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote packs up and leaves the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2525
+Keywords   Runath professor female halfling mixing ingredients~
+Short      &cRunath&w~
+Long       &cA female halfling is here mixing some ingredients at a table.&w
+~
+Desc       You smell an incredible aroma wafting about this female halfling
+as she is covered in various components while she teaches. Her 
+sandy blonde hair has been tied back to reveal a very young
+looking face and hazel eyes. She is very tiny and has the
+tables in the classroom lowered to her height.
+~
+Race       stout-halfling~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2522
+smile $n
+mpsleep 3
+sayto $n Welcome! Are you ready to hear about my favorite thing..
+mpsleep 3
+emote holds up an assortment of random objects and giggles
+mpsleep 3
+sayto $n Components!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ready~
+Comlist   if hasqbit($n) == 2522
+cheer $n
+mpsleep 3
+sayto $n Components are needed to direct the energy of some spells.
+sayto $n Such as &Rcharcoal&w to make the &RNeutralize Poison&w
+sayto $n spell work. Spell components can be purchased, but some
+sayto $n can be made by crafty spellcasters. I like to cut my own
+sayto $n wood and collect the bark for usage in spells.
+mpsleep 5
+sayto $n Making or collecting your own spell components will save
+sayto $n you money in the long run... which is nice since being a
+sayto $n magic user can be expensive sometimes. 
+mpsleep 5
+emote holds up a spellbook covered in stains
+mpsleep 3
+sayto $n Your spellbook is where you record components that are
+sayto $n needed for the spells you know. You can simple do
+sayto $n &RSPELLBOOK COMPONENTS&w in order to see them. 
+mpsleep 5
+sayto $n You can store your components in a spell component bag
+sayto $n or you can have them in your inventory. Just make sure
+sayto $n to keep track because you do not want to be in the 
+sayto $n middle of a dark dungeon and run out of an important
+sayto $n spell's components. 
+mpsleep 5
+sayto $n Good luck on your spellcasting and enjoy the world
+sayto $n of components!
+mpsleep 3
+mea $n &ROOC: Please see the &WHELP SPELLBOOK&R help file for more info.
+mpqset $n 2522
+mpqset $n 2523
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 2527
+emote giggles as she arrives and begins playing with components on a table
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   emote frowns as she packs up her grading and leaves the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2526
+Keywords   Nhumir professor inventory human male~
+Short      &CNhumir&w~
+Long       &CA human male is here taking inventory of the classroom materials.&w
+~
+Desc       This wizardly professor has long shaggy brown hair that shows
+signs of age with silver streaks. He is dressed in a long brown
+robe and has the sleeves rolled up as he works. He seems to
+be a rather quiet person who enjoys the peaceful task
+of brewing.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2523
+bow $n
+mpsleep 3
+sayto $n Greetings. Let us begin the lesson on brewing, hmm?
+mpsleep 3
+emote swishes a glass bottle and smiles as it turns purple
+mpsleep 5
+sayto $n Brewing is an art. It takes great concentration, the
+sayto $n ability to cast the spell, and sometimes lots and lots
+sayto $n of money. Brewing is not a cheap process so be prepared
+sayto $n for that.
+mpsleep 5
+sayto $n In order to brew you must have the spell prepared
+sayto $n and memorized. You must have the correct spell components
+sayto $n available as well. And you must have a fire to brew
+sayto $n with, the container for the potion, and water in order
+sayto $n to create the potion.
+mpsleep 5
+sayto $n An important factor is that there are different types
+sayto $n of potion bottles.. which allow you to brew even more
+sayto $n powerful spells. These bottles can get increasingly
+sayto $n expensive so beware.
+mpsleep 5
+sayto $n When you have everything ready and available you
+sayto $n simple &RBREW <SPELLNAME>&w. Such as &RBrew
+sayto $n &R'Mage Armor'&w will brew you a potion of that
+sayto $n spell.
+mpsleep 5
+sayto $n Are you ready for more?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2523
+sayto $n Good. Now some final notes is to protect yourself during
+sayto $n brewing. There can be a chance of failure that results in
+sayto $n an acidic explosion. This can ruin your clothing and such
+sayto $n so take proper precautions.
+mpsleep 5
+sayto $n You will also need a lot of time put aside when brewing
+sayto $n since it can take a lot to get the potion correct.
+mpsleep 5
+sayto $n That is all I have to teach you. The rest will come from
+sayto $n you practicing and experimenting. You can come up with
+sayto $n unique combinations as you grow in skill and are able
+sayto $n to brew more than one spell per bottle.
+mpsleep 5
+sayto $n Good luck.
+mpsleep 3
+emote resumes taking inventory of some ingredients
+mpsleep 5
+mea $n &ROOC: Please see the &WHELP BREW&R help file for more info.
+mpqset $n 2523
+mpqset $n 2524
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   mpgoto 2581
+emote arrives and begins counting some items on a shelf
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   emote stops taking inventory and sighs as he leaves the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2527
+Keywords   Quinnis professor human male refilling~
+Short      &BQuinnis&w~
+Long       &BA human male is here refilling several small bottles of ink at a table.&w
+~
+Desc       This wizardly professor is a human male with a very dark skintone
+and dark curly black hair. His eyes are a warm honey brown
+that shine with friendliness. He is dressed in flowing
+sapphire robes and has his sleeves rolled up as he works.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2524
+emote looks up from refilling some bottles of ink and nods his head
+mpsleep 3
+sayto $n Greetings! Our lesson is actually fairly short as scribing
+sayto $n is similar to its sister, brewing. You must have the
+sayto $n spell prepared and memorized, parchment to scribe the
+sayto $n spell on, ink, and a quill.
+mpsleep 5
+sayto $n Similar to brewing there are different types of parchment
+sayto $n that allow you to craft even more powerful spells on to
+sayto $n the paper.
+mpsleep 5
+sayto $n In order to do it you simply &RSCRIBE <SPELL NAME>&w
+sayto such as &RScribe Fireball&w. Speaking of fire you must
+sayto $n be careful since a failure can set you on fire... so
+sayto $n take care and protect yourself. 
+mpsleep 5
+sayto $n Now unlike brewing a scroll with a spell scribed on it
+sayto $n can be used by fellow Wizards and other magic users to
+sayto $n learn spells. Some wizards charge for this and others
+sayto $n like to give it at the end of a lesson to their
+sayto $n apprentices. If you have a scroll and wish to learn
+sayto $n the spell you can &RWRITE SCROLL&w to attempt to learn
+sayto $n the spell. You must have a quill, ink, and your spellbook
+sayto $n handy in order to do this.
+mpsleep 5
+sayto $n That is all I have to teach you. I wish you all the best
+sayto $n and if you have completed your combat training you may
+sayto $n speak with the Headmistress of the College in order
+sayto $n to graduate. If you have not finished your combat
+sayto $n training you will need to have that done.
+mpsleep 5
+smile $n
+sayto $n Good luck and may Crisma watch over you!
+mpsleep 5
+mea $n &ROOC: Please see the &WHELP SCRIBE&R help file for more info.&w
+mpqset $n 2524
+mpqset $n 2530
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2582
+emote begins refilling some bottles as he waits for his students
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   emote finishes refilling some bottles before leaving the classroom
+mpgoto 2599
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2528
+Keywords   Dasieth professor human female muscular combat redhead ~
+Short      &RDasieth&w~
+Long       &RA muscular female human with bright red hair is here practicing her combat techniques.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2525
+grin $n
+mpsleep 3
+sayto $n It's about time I get to train you! Now we will take all of
+sayto $n that knowledge from upstairs and apply it in order to
+sayto $n survive in the real world.. not the one where the scholars
+sayto $n live with their books and such.
+mpsleep 5
+grin $n
+mpsleep 5
+sayto $n Now... the art of battle is quite easy really.. You
+sayto $n simply need to &Rattack&w or try to &Rkill&w your
+sayto $n opponent.. it depends on your battle philosophy
+sayto really. I prefer to attack and disable my opponent. I am
+sayto $n not a fan of killing.
+mpsleep 5
+sayto $n Those of you that are magically inclined can start
+sayto $n your battle by targeting your opponent with a spell.
+sayto $n That will also &Rstart a battle&w.
+mpsleep 5
+sayto $n Let us test this by having you go and fight one of
+sayto $n the tiny dummies nearby. They will be easy and bring
+sayto $n me the orb you receive from taking one out. I will
+sayto $n only need &Rone&w orb.
+mpsleep 3
+c 'mage armor' $n
+mpqset $n 2525
+mpqset $n 2526
+mpsleep 4
+mea $n &RPlease read &WHELP KILL&R or &WHELP ATTACK&R for more info.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2538) == 1
+if hasqbit($n) == 2526
+mpjunk tiny
+grin $n
+mpsleep 3
+sayto $n Well done! Now those dummies are not overly strong
+sayto $n it at least shows you the flow of battle, which is
+sayto $n like a dance. It can also go very quickly and you
+sayto $n must be observant during it. Magic users should
+sayto $n be strategic with their spellcasting and those
+sayto $n who are fighting based should focus on a quick
+sayto $n take down of the opponent.
+mpsleep 5
+sayto $n Also if you are in a group those that are magic
+sayto $n inclined should be guarded. Clerics and Druids can
+sayto $n handle themselves well.. but if you should lose your
+sayto $n source of healing it could provide a problem later.
+mpsleep 5
+sayto $n Wizards and other magic users provide exceptional
+sayto $n attacks with magic and take the time to prepare such.
+sayto $n Their spells can prove to be a saving grace!
+mpsleep 5
+sayto $n Now.. I want you to retrieve for me a yellow orb
+sayto $n from the small dummies nearby. I will only need
+sayto $n &Rone orb&w for this lesson. The dummies it
+sayto $n comes from are a bit stronger than the tiny ones
+sayto $n so beware!
+mpqset $n 2526
+mpqset $n 2527
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2539) == 1
+if hasqbit($n) == 2527
+pat $n
+mpjunk yellow
+mpsleep 3
+sayto $n Well done! Now I will need you to retrieve a medium
+sayto $n sized orb.. just &Rone orb&w as before. This foe
+sayto $n you will meet is one that is &Raggressive&w, which
+sayto $n means it will attack instantly when it sees you.
+mpsleep 5
+sayto $n Now.. enemies like this can be very dangerous as
+sayto $n they can attack in packs and overwhelm even an
+sayto $n experienced adventurer. You should always look
+sayto $n around your surroundings and move as they move
+sayto $n as to avoid being attacked with a pack. 
+mpsleep 5
+sayto $n My tip is to lure one away at a time with a &Rranged
+sayto $n &Rweapon&w or a &Rspell&w, which will slowly lower
+sayto $n the amount of enemies you will have to face at
+sayto $n once. 
+mpsleep 5
+sayto $n I have seen Wizards sneak by with spells of
+sayto $n invisibility or Rogues sneak or hide. Be careful
+sayto $n with this tactic as some creatures can see through
+sayto $n such and leave you wide open for attacks.
+mpsleep 3
+mpoload 2013 1
+c 'barkskin' $n
+mpjunk bark
+mpqset $n 2527
+mpqset $n 2528
+mpsleep 3
+sayto $n Good luck and I will await here for the orb.
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2540) == 1
+if hasqbit($n) == 2528
+mpjunk speckled
+clap $n
+mpsleep 3
+sayto $n Well done! While all of these combat scenarios have
+sayto $n been fairly simple.. the real world can be very
+sayto $n dangerous. You should always plan for anything to
+sayto $n happen. Bring enough supplies such as food, water,
+sayto $n and make sure to take the time regain spells through
+sayto $n rest and preparation. This is vital in order to
+sayto $n survive.
+mpsleep 5
+sayto $n This completes all of your combat training. Once
+sayto $n you graduate and have achieved a great level of
+sayto $n skill you can try your hand at the advanced course
+sayto $n located at the end of the hall here. It is a feat
+sayto $n of technology and illusion magics... The terrain changes
+sayto $n and the opponents in there change to be hard to
+sayto $n fight. They also scan you with divinatory magic to
+sayto $n find the best way to defeat you. I suggest going in
+sayto $n there with a group.
+mpsleep 5
+sayto $n I wish you all of the best in your adventures to
+sayto $n come and I cannot wait to hear your stories.
+mpadvance $n 2000
+mpqset $n 2529
+mpqset $n 2528
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2529
+Keywords   librarian grumpy male gnome~
+Short      &Ba librarian&w~
+Long       &BA grumpy looking male gnome is here arranging books on some shelves.
+~
+Desc       This older gnomish man is here working in the library. He seems very
+serious about his job and comes off as rather grumpy. His steel
+grey eyes tend to look at everyone critically and he is very serious
+about the rules in the library.
+~
+Race       forest-gnome~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea pacifist~
+Affected   detect_hidden~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   peer $n
+sayto $n Shhhhh..
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2530
+Keywords   college stablehand young woman human~
+Short      &Ra stablehand&w~
+Long       &RA young woman is here cleaning the stables and tending to the horses.&w
+~
+Desc       &RThis young human woman is quite tall standing at around six feet,
+four inches in height. She has short white blonde hair and bright
+green eyes. She seems very happy as she work around the stables
+and takes extra time petting each horse that's staying there.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2599
+if hasqbit($n) == 2501
+smile $n
+sayto $n You can leave your horse here and I will watch them for you.
+else
+endif
+else
+smile $n
+sayto $n You can leave your horse here and I will watch them for you.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2599
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     2500
+Keywords new darkhaven college knit scarf~
+Type     armor~
+Short    &Ra New &YDarkhaven &zCollege &Wknit scarf&w~
+Long     &WA knit scarf in the colors of New Darkhaven college has been left here.&w~
+WFlags   take neck arms waist~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 10 0 1 12
+#ENDOBJECT
+
+#OBJECT
+Vnum     2501
+Keywords new darkhaven college padded armor~
+Type     armor~
+Short    &RNew &YDarkhaven &zCollege &Wpadded armor&w~
+Long     &WA suit of padded armor in the New Darkhaven College colors has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    8 3 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2502
+Keywords new darkhaven college padded sleeves~
+Type     armor~
+Short    &RNew &YDarkhaven &zCollege &Wpadded sleeves&w~
+Long     &WA pair of padded sleeves in the New Darkhaven College colors are here.~
+WFlags   take arms~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    1 1 15 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2503
+Keywords new darkhaven college padded leggings~
+Type     armor~
+Short    &RNew &YDarkhaven &zCollege &Wpadded leggings&w~
+Long     &WA pair of padded leggings in the New Darkhaven College colors is here.&w~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    8 2 0 20 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2504
+Keywords wands cloak yellow embroidered~
+Type     armor~
+Short    &Ya yellow cloak embroidered with wands&w~
+Long     &YA yellow cloak embroidered with wands has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 4 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2505
+Keywords swords cloak red embroidered~
+Type     armor~
+Short    &Ra red cloak embroidered with swords&w~
+Long     &RA red cloak embroidered with swords has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 4 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2506
+Keywords cloak black embroidered daggers~
+Type     armor~
+Short    &za black cloak embroidered with daggers&w~
+Long     &zA black cloak embroidered with daggers has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 4 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2507
+Keywords shields cloak white embroidered~
+Type     armor~
+Short    &Wa white cloak embroidered with shields&w~
+Long     &WA white cloak embroidered with shields has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 4 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2508
+Keywords new darkhaven college padded boots~
+Type     armor~
+Short    &RNew &YDarkhaven &zCollege &Wpadded boots&w~
+Long     &WA pair of padded boots in the New Darkhaven College colors are here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  2 2
+Stats    8 2 20 30 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2509
+Keywords new darkhaven college student robe~
+Type     armor~
+Short    &Ra New &YDarkhaven &zCollege &Wstudent robe&w~
+Long     &WA robe in the New Darkhaven College colors has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2510
+Keywords new darkhaven college sleeves~
+Type     armor~
+Short    &RNew &YDarkhaven &zCollege &Wsleeves&w~
+Long     &WA pair of sleeves in the New Darkhaven College colors are here.&w~
+WFlags   take arms~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2511
+Keywords new darkhaven college tunic long~
+Type     armor~
+Short    &Ra New &YDarkhaven &zCollege &Wlong tunic&w~
+Long     &WA long tunic in the New Darkhaven College colors has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 2 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2512
+Keywords new darkhaven college leggings~
+Type     armor~
+Short    &Ra pair of New &YDarkhaven &zCollege &Wleggings&w~
+Long     &WA pair of leggings in the New Darkhaven College colors is here.&w~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 2 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2513
+Keywords new darkhaven college suede boots~
+Type     armor~
+Short    &Ra pair of New &YDarkhaven &zCollege &Wsuede boots&w~
+Long     &WA pair of suede boots in the New Darkhaven College colors are here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 24 15 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2514
+Keywords belt red cloth~
+Type     armor~
+Short    &Ra red cloth belt&w~
+Long     &RA red cloth belt has been left here.&w~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2515
+Keywords belt black cloth~
+Type     armor~
+Short    &za black cloth belt&w~
+Long     &zA black cloth belt has been left here.&w~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2516
+Keywords belt white cloth~
+Type     armor~
+Short    &Wa white cloth belt&w~
+Long     &WA white cloth belt has been left here.&w~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2517
+Keywords belt yellow cloth~
+Type     armor~
+Short    &Ya yellow cloth belt&w~
+Long     &YA yellow cloth belt has been left here.&w~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2518
+Keywords new darkhaven college spell component bag~
+Type     container~
+Short    &Ra New &YDarkhaven &zCollege &Wspell component bag&w~
+Long     &WA New Darkhaven College spell component bag has been left here.&w~
+WFlags   take belt~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 1 30 55 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2519
+Keywords new darkhaven college leather pack newdarkpack11~
+Type     container~
+Short    &Ra New &YDarkhaven &zCollege &Wleather pack&w~
+Long     &WA New Darkhaven College leather pack has been left here.&w~
+WFlags   take about back~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    1 4 30 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2520
+Keywords yellow vial healing~
+Type     potion~
+Short    &Ya yellow vial labeled "healing"&w~
+Long     &YA small yellow vial labeled "healing" has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   50 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+Spells   'cure critical wounds' 'cure critical wounds' 'cure critical wounds'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2521
+Keywords white vial protection~
+Type     potion~
+Short    &Wa white vial labeled "protection"&w~
+Long     &WA small white vial labeled "protection" has been left here.~
+Flags    magic~
+WFlags   take onehand~
+Values   25 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Spells   'barkskin' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2522
+Keywords black vial enhancement~
+Type     potion~
+Short    &za black vial labeled "enhancement"&w~
+Long     &zA small black vial labelled "enhancement" has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   25 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+Spells   'bulls strength' 'cats grace' 'bears endurance'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2523
+Keywords red vial confidence~
+Type     potion~
+Short    &Ra red vial labeled "confidence"&w~
+Long     &RA small red vial labeled "Confidence" has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   25 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+Spells   'greater heroism' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2524
+Keywords alumni pass new darkhaven college~
+Type     trash~
+Short    a newly created alumni pass new darkhaven college~
+Long     Some god dropped a newly created alumni pass new darkhaven college here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2525
+Keywords new darkhaven college newbie textbook~
+Type     book~
+Short    &Ra New &YDarkhaven &zCollege &Wtextbook&w~
+Long     &WA New Darkhaven College textbook labeled "Newbie" has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 2 25 90 0 0 0
+#EXDESC
+ExDescKey    textbook~
+ExDesc       &YThis textbook is used by the students at the New Darkhaven College
+of Adventuring. Two pages have been bookmarked as important for
+all students - &wNEWBIE&Y and &wSCHEDULE&Y.
+ 
+&YIn order to see these pages type &wLOOK <Page Name>&Y.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    schedule~
+ExDesc       &YGeneral Class Schedules:
+
+&OCourse 1 &Y/&w Practicing & Scoresheet&Y /&w Professor Opal&Y /&w 10am to 1pm
+&OCourse 2 &Y/&w Languages&Y /&w Professor Runi&Y /&w 10am to 1pm
+&OCourse 3&Y /&w Feats & Stats&Y /&w Professor Thunril&Y /&w 2pm to 4pm
+&OCourse 4&Y /&w Weapons&Y /&w Professor Ivarn&Y /&w 5pm to 8pm
+&OCourse 5&Y /&w Armor&Y /&w Professor Tannir&Y /&w 10am to 1pm
+&OCourse 6&Y / &wPerception&Y /&w Professor Polly&Y /&w 8am to 10am
+&OCourse 7&Y /&w Investigate&Y /&w Professor Wasen &Y/&w 11am to 4pm
+&OCourse 8&Y / &wProficiencies&Y /&w Professor Raelie&Y /&w 3pm to 6pm
+&OCourse 9&Y /&w IC, OOC, & Roleplaying &Y/&w Professor Tonia&Y /&w 10am to 5pm
+&OCourse 10&Y /&w Special Commands&Y /&w Professor Grugar&Y /&w 10am to 1pm
+&OCourse 11&Y /&w Races of the Realms&Y /&w Professor Annath&Y /&w 10am to 1pm
+&OCourse 12 &Y/&w Classes of Adventurers&Y /&w Professor Vhou &Y/&w 2pm to 4pm
+&OCourse 13&Y /&w Faiths & Pantheons&Y /&w Professor Fhurn &Y/&w 3pm to 6pm
+&OCourse 14&Y /&w History of the Realms &Y/&w Professor Orilla &Y/&w 10am to 5pm
+ 
+&PArcane Class Schedules:
+
+&pCourse 15&P /&w Spell Casting &P/&w Professor Kanus&P /&w 10pm to 1am
+&pCourse 16&P /&w Spell Preparation&P /&w Professor Thyrin&P /&w 8pm to 10pm
+&pCourse 17&P /&w Spell Components &P/&w Professor Runath&P /&w 6pm to 9pm
+&pCourse 18&P /&w Brewing Potions&P /&w Professor Nhumir&P /&w 1am to 3am
+
+ 
+&YAll students are required to complete all 19 courses and their
+combat training before they can graduate.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    newbie~
+ExDesc       &YIf you are new to &WDragonlands of Chaos&Y, here are a few help files 
+that will help you become acquainted with our world. If you should need
+further help you can use the &WASK&Y command (&WHELP ASK&Y) to ask a
+question that an Admin/Staff or Newbie Council Member will answer
+for you.
+ 
+ 
+&YGeneral help files to read over:
+&WRULES&Y, &WSPAM&Y, &WCONFIG&Y, &WMOVEMENT&Y, &WOBJECTS&Y, &WCONTAINER&Y,
+&WCHANNELS&Y, &WGROUP&Y, &WCOMBAT&Y,&W DEATH&Y, &WQLOG
+ 
+
+&YHelp files to be covered at the College:
+&WSCORE&Y, &WLANGUAGES&Y, &WFEATS&Y, &WWEAPONS&Y, &WARMOR&Y, &WPERCEPTION&Y,
+&WINVESTIGATE&Y, &WROLEPLAY&Y, &WPROFICIENCIES&Y, &WRACES&Y, &WCLASSES&Y, &W
+&WFAITH&Y, &WHISTORY&Y, &WCAST&Y, &WSPELLS&Y, &WMEMORIZATION&Y, &WSPELLBOOK&Y,
+&WBREW&Y, &WSCRIBE
+ 
+
+&YTo see these help file type &WHELP <TOPIC>&Y or type &WHELP&Y to
+see general commands.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2526
+Keywords wooden shield engraved wand~
+Type     trash~
+Short    &Ya wooden shield engraved with a wand motif&w~
+Long     &YA wooden shield engraved with a wand motif has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 3 10 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2527
+Keywords wooden shield engraved sword~
+Type     trash~
+Short    &Ra wooden shield engraved with a sword motif&w~
+Long     &RA wooden shield engraved with a sword motif has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 3 10 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2528
+Keywords wooden shield engraved dagger~
+Type     trash~
+Short    &za wooden shield engraved with a dagger motif&w~
+Long     &zA wooden shield engraved with a dagger motif has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 3 10 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2529
+Keywords wooden shield engrave shield motif~
+Type     trash~
+Short    &Wa wooden shield engraved with a shield motif&w~
+Long     &WA wooden shield engraved with a shield motif has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 3 10 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2530
+Keywords bowl large chef salad~
+Type     food~
+Short    &Ga large &wchef's&G salad&w~
+Long     &GA large bowl of chef's salad has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2531
+Keywords plate roasted chicken vegetables~
+Type     food~
+Short    &wa plate of &Oroast chicken&w with &Gvegetables&w~
+Long     &wA plate of roast chicken with vegetables has been left here.&w~
+WFlags   take onehand~
+Values   7 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 45 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2532
+Keywords plate liver onions~
+Type     food~
+Short    &wa plate of &rliver&w and &Wonions&w~
+Long     &wA plate of liver and onions has been left here.&w~
+WFlags   take onehand~
+Values   4 0 0 0 0 0
+Values2  0 2
+Stats    1 0 4 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2533
+Keywords vanilla piece cake~
+Type     food~
+Short    &Ya piece of &Wvanilla&Y cake&w~
+Long     &YA piece of vanilla cake has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 5 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2534
+Keywords fruit salad bowl~
+Type     food~
+Short    &wa bowl of &Rfruit &Gsalad&w~
+Long     &wA bowl of fruit salad has been left here.&w~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 2 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2535
+Keywords hot lemon tea cup~
+Type     drinkcon~
+Short    &wa cup of hot &Otea&w with &Ylemon&w~
+Long     &wA cup of hot tea with lemon has been left here.&w~
+WFlags   take onehand~
+Values   0 3 11 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2536
+Keywords large shimmering rock middle room~
+Type     furniture~
+Short    &Wa shimmering giant rock&w~
+Long     &WA shimmering giant rock is here in the middle of the classroom.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    24464 0 0 0 0 0 0
+#EXDESC
+ExDescKey    rock~
+ExDesc       &WThis giant chunk of shimmering rock has been placed in the middle
+of this room by the school. It shimmers with a strange light every
+few moments before resuming a dull appearance before the next
+shimmering.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2537
+Keywords rock handle middle room shiny~
+Type     furniture~
+Short    &Wa shiny rock&w~
+Long     &WA shiny rock with a handle built into it is here in the middle of the classroom.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    100 0 0 0 0 1 0
+#EXDESC
+ExDescKey    rock~
+ExDesc       &WThis rock has been carved into so that it has a handle that perhaps
+someone could use to life it up.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2538
+Keywords tiny red orb~
+Type     trash~
+Short    &Ra tiny red orb&w~
+Long     &RA tiny red orb has been left here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2539
+Keywords small yellow orb~
+Type     trash~
+Short    &Ya small yellow orb&w~
+Long     &YA small yellow orb has been left here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2540
+Keywords speckled medium sized orb~
+Type     trash~
+Short    &Wa s&zp&We&zc&Wk&zl&We&zd&W medium sized orb&w~
+Long     &WA medium sized s&zp&We&zc&Wk&zl&We&zd&W orb has been left here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2541
+Keywords crystal large orb~
+Type     rune~
+Short    &Ca large crystal orb&w~
+Long     &CA large crystal orb is here floating in the middle of the room.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    9000 0 0 0 0 0 0
+#EXDESC
+ExDescKey    crystal~
+ExDesc       &CThis crystal orb is quite large and is floating in the middle of
+the room here. It is clear and you can see through it, which reveal
+complex matrices inside it. The orb seems to softly shimmer from
+time to time as well.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    orb~
+ExDesc       &CThis crystal orb is quite large and is floating in the middle of
+the room here. It is clear and you can see through it, which reveal
+complex matrices inside it. The orb seems to softly shimmer from
+time to time as well.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2542
+Keywords danger room trap catapult hidden~
+Type     trap~
+Short    &ga catapult trap&w~
+Long     &gA catapult attached to the ground is here hidden by some leaves and brush.&w~
+Flags    hidden~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    200 0 0 0 0 0 0
+#EXDESC
+ExDescKey    catapult~
+ExDesc       This is a trap set in the training center to send someone flying. It
+is a complex looking contraption that is covered with leaves and 
+brush in order to hide it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2543
+Keywords danger room trap small metal box~
+Type     trap~
+Short    &za small metal box&w~
+Long     &zA small metal box has been concealed here.~
+Flags    hidden~
+Values   5 9 10 4 2 10
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2544
+Keywords glowing orb dorm teleporter~
+Type     rune~
+Short    &Wa glowing orb&w~
+Long     &WA glowing orb is floating in the middle of the room here.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    orb~
+ExDesc       &WThis orb is made of magical energies and acts as a teleportation
+device for the students and alumni of the college.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2599
+Keywords diploma new darkhaven college~
+Type     book~
+Short    &Ra New &YDarkhaven &zCollege &Wdiploma&w~
+Long     &WA diploma from New Darkhaven College has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2500
+Name     A Large Courtyard~
+Sector   city~
+Flags    nomob~
+Desc     This is a large courtyard in front of a large college. To the north
+is a huge stone building consisting of several layers. The windows
+are quite large and framed with black stained wood. The sounds of
+the city streets can heard to the south. A small stone building can
+be found to the west with a sign hung above the door with the
+label "Administration." A large stone stable house is towards
+the east where students house their horses during class. A large
+wooden door that has been stained black to match the window
+frames can be found towards the north leading inside the school.
+~
+#EXIT
+Direction north~
+ToRoom    2501
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2583
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1556
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2580
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2500 0 1
+Reset D 0 2500 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2501
+Name     A Long Hallway~
+Sector   indoors~
+Desc     The hallway here is long, wide, and finely decorated. Statues of
+previous students who became legends can be seen along this hallway
+and painting of various landscapes from across the realms are
+on the walls. A long woven rug runs from here to the very end
+of the hall towards the north. Classrooms dot the hallway on
+the left and right where students go for various lessons
+on adventuring.
+~
+#EXIT
+Direction north~
+ToRoom    2502
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2510
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2500
+Keywords  'large wooden door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2511
+#ENDEXIT
+
+Reset M 0 2501 1 2501
+Reset D 0 2501 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2502
+Name     A Long Hallway~
+Sector   indoors~
+Desc     The hallway here is long, wide, and finely decorated. Statues of
+previous students who became legends can be seen along this hallway
+and painting of various landscapes from across the realms are
+on the walls. A long woven rug runs from here to the very end
+of the hall towards the north. Classrooms dot the hallway on
+the left and right where students go for various lessons
+on adventuring. You can see a large chandelier hanging above,
+which illuminates the hallway with candles in the school
+colors - red, yellow, black, and white.
+~
+#EXIT
+Direction north~
+ToRoom    2503
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2513
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2501
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2512
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2503
+Name     A Long Hallway~
+Sector   indoors~
+Desc     The hallway here is long, wide, and finely decorated. Statues of
+previous students who became legends can be seen along this hallway
+and painting of various landscapes from across the realms are
+on the walls. A long woven rug runs from here to the very end
+of the hall towards the north. Classrooms dot the hallway on
+the left and right where students go for various lessons
+on adventuring. A large space for students to get something to
+eat and study can be seen to the west.
+~
+#EXIT
+Direction north~
+ToRoom    2584
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2515
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2502
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2514
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2504
+Name     A Long Hallway~
+Sector   indoors~
+Desc     This is the beginning of the second floor main hallway, which ends at
+the top of the stairs leading to the first floor. Several classrooms
+can be found on each side of the hallway where students go to learn
+various topics from investigating strange rooms to using exotic objects.
+Above are several chandeliers that hang above the hallway and provide
+light during the night time hours. Paintings and decorations are hung
+on the walls including items from the adventures of alumni students.
+~
+#EXIT
+Direction north~
+ToRoom    2505
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2517
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2516
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2584
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2505
+Name     A Long Hallway~
+Sector   indoors~
+Desc     This is the second floor main hallway, which ends to the south at the
+top of the stairs leading down to the first floor. Several classrooms
+can be found on each side of the hallway where students go to learn
+about various topics pertaining to adventuring. Above are several 
+chandeliers, which provide light during the night time hours. Several
+paintings and decorations can be seen on the walls here along with
+items from the adventures of alumni students. You see the hallway
+turning up ahead as it leads towards more classrooms.
+~
+#EXIT
+Direction north~
+ToRoom    2506
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2519
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2504
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2518
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2506
+Name     A Long Hallway~
+Sector   indoors~
+Desc     This is the second floor main hallway, which ends at the south at the
+top of the stairs leading down to the first floor. A classroom can be
+seen to the north of here and the hallway continues to the east. On the
+west wall is a large mirror, which features arcane etchings along its
+silver border. The mirror reaches from ceiling to floor and is an 
+interesting oval shape. You see several chandeliers continuing to
+the east, which are hung to provide light during the night time for
+those with late night courses.
+~
+#EXIT
+Direction north~
+ToRoom    2520
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2507
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2505
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate mirror~
+Comlist   if investigation($n) <= 16
+if arcana($n) <= 18
+mea $n &PYou notice a pattern to the runes, but are unable to decipher it.
+else
+mea $n &wYou fail to find anything.
+endif
+else
+mea $n &wYou fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2507
+Name     A Long Hallway~
+Sector   indoors~
+Desc     This is the second floor main hallway, which turns at an intersection
+at the west. Classrooms can be seen along each side of the hallway 
+where students go to learn about different topics pertaining to 
+adventuring. Chandeliers can be seen hung above, which provide light
+during the night time hours for those with late classes. An ancient
+looking suit of armor can be seen displayed to the southwest with
+its arms in a saluting pose.
+~
+#EXIT
+Direction north~
+ToRoom    2521
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2508
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2522
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2506
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2508
+Name     A Long Hallway~
+Sector   indoors~
+Desc     This is the second floor main hallway, which turns at an intersection
+at the far west from here. Classrooms can be seen along each side of
+the hallway where students go to learn about different topics pertaining
+to adventuring. Chandeliers have been hung above to provide light during
+the night time for those with late classes. You see the hallway ends
+to the east with a small staircase going up and down so students can
+reach the classrooms located there.
+~
+#EXIT
+Direction north~
+ToRoom    2523
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2509
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2524
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2507
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2509
+Name     End of the Hallway~
+Sector   indoors~
+Desc     This is the end of the second floor main hallway, which turns at an
+intersection at the very far west of here. Three classrooms are located
+at the north, south, and east. A small staircase leads up and down to
+two different classrooms. There is an odd aura here and strange smells
+coming from the east and from above. Various paintings of famous wizards
+and magic users can be found on the walls here.
+~
+#EXIT
+Direction north~
+ToRoom    2526
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2527
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2525
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2508
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2581
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2582
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2510
+Name     A Small Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom is quite small and has been set up in a standard class
+layout with rows of desks and chairs facing the eastern wall. A desk
+for the teacher has been set to the southeast and a large chalkboard
+features writing from a previous class in elven words and language.
+Diagrams of different alphabets from various languages can be seen
+on the walls of the classroom.
+~
+#EXIT
+Direction west~
+ToRoom    2501
+#ENDEXIT
+
+Reset M 0 2510 1 2510
+#ENDROOM
+
+#ROOM
+Vnum     2511
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom has been set us so that all of the chairs and desks are
+aligned in a circle. A chair and small table has been placed in the
+center of the room for the teacher to sit and facilitate discussions
+during class. A desk has been placed at the northwest corner of the
+classroom for the teacher to grade and prepare.
+~
+#EXIT
+Direction east~
+ToRoom    2501
+#ENDEXIT
+
+Reset M 0 2509 1 2511
+#ENDROOM
+
+#ROOM
+Vnum     2512
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom has several rows of desks and chairs for students to sit
+while the teacher lectures at the west end of the room. Several diagrams
+of various abilities that adventurers can learn have been placed along
+the north and south walls. A large chalkboard is located behind the desk
+used by the teacher on the west wall. Previous chalk drawings and key
+words have been written for students from a recent class.
+~
+#EXIT
+Direction east~
+ToRoom    2502
+#ENDEXIT
+
+Reset M 0 2511 1 2512
+#ENDROOM
+
+#ROOM
+Vnum     2513
+Name     A Weapons Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     The walls of this classroom have various weapons hung up as examples for
+the students who attend this class on weapons. Diagrams of various combat
+techniques with different types of weapons to how certain weapons are
+constructed can also be found on the walls. A large wooden table is located
+in the middle of the room where weapons are placed and examined by the
+students. A large chalkboard on the eastern wall has drawings from a 
+previous class where the topic was morningstars. There is no desk for
+the teacher here and all of the chairs are placed along the central table.
+~
+#EXIT
+Direction west~
+ToRoom    2502
+#ENDEXIT
+
+Reset M 0 2512 1 2513
+#ENDROOM
+
+#ROOM
+Vnum     2514
+Name     A Large Cafeteria~
+Sector   indoors~
+Flags    nomob~
+Desc     The cafeteria here is a popular spot for students to come and get 
+something to eat in between classes. The cafeteria has many tables and
+chairs for people to sit and eat. A large counter can be found towards
+the south, which displays the food for sale and is the location for
+purchasing food. Long glass windows from floor to ceiling provide a 
+lot of natural light. A glass door leads out into a small enclosed
+garden, which students often take their food to eat.
+~
+#EXIT
+Direction north~
+ToRoom    2579
+Keywords  'glass door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2503
+#ENDEXIT
+
+Reset M 0 2503 1 2514
+  Reset G 0 2530 1
+  Reset G 0 2533 1
+  Reset G 0 2534 1
+  Reset G 0 2535 1
+  Reset G 0 2531 1
+  Reset G 0 2532 1
+Reset D 0 2514 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2515
+Name     An Armor Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     The walls of this classroom have various suits of armor hung up as
+examples for the students who attend this class on armor. Diagrams of
+various defense moves to use during battle to the way armor is constructed
+can be also found hung on the walls. A large chalkboard has drawings
+used in a previous class to highlight the effectiveness of plate mail
+armor. There are no tables in the room as this class seem to be about
+observing and moving about the room. The teacher's desk can be seen 
+pushed against the southeast wall.
+~
+#EXIT
+Direction west~
+ToRoom    2503
+#ENDEXIT
+
+Reset M 0 2513 1 2515
+#ENDROOM
+
+#ROOM
+Vnum     2516
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 18 0
+Desc     This classroom has been set up with rows of chairs and a desk for the
+teacher at the western end of the classroom. A chalkboard is behind
+the desk and has been recently cleaned off. The room lacks decorations
+and things on the walls, which could be considered distracting. The
+classroom is almost minimalistic in its layout with an effort to focus
+the student to see what is truly in the room.
+~
+Perdesc  &PYou see a round pink piece of paper hidden behind the professor's desk.&w
+~
+#EXIT
+Direction east~
+ToRoom    2504
+#ENDEXIT
+
+Reset M 0 2514 1 2516
+#ENDROOM
+
+#ROOM
+Vnum     2517
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This room has been stripped of all furniture and distractions to create
+a very minimalistic style. In the center of the room is a giant rock
+that has been placed here. This classroom lacks windows, which can be
+a further distraction to students. The main focus for students here is
+seeing what is truly here.
+~
+#EXIT
+Direction west~
+ToRoom    2504
+#ENDEXIT
+
+Reset M 0 2515 1 2517
+Reset O 0 2536 1 2517
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate classroom~
+Comlist   if investigation($n) >= 15
+mea $n &WYou see a regular classroom, but all of the chairs and tables
+mea $n &Whave been placed against the walls. In the middle of the 
+mea $n &Wroom is a giant chunk of shimmering rock.
+else
+mea $n &wYou fail to discover anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate wasen~
+Comlist   if mobinroom(2515) == 1
+if investigation($n) >= 14
+mpforce Wasen chuckle
+mpforce Wasen sayto $n I see you investigating me.
+else
+mea $n &wYou fail to find anything.
+endif
+else
+mea $n &wThere is no one here by that name...&w
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rock~
+Comlist   if investigation($n) >= 17
+mea $n &WYou notice tiny arcane sigils etched into the surface of the rock.
+else
+mea $n &wYou fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2518
+Name     A Small Theater Room~
+Sector   indoors~
+Flags    nomob~
+Desc     The furniture in this room has been set up in a traditional classroom
+layout with desks and chairs facing the teacher's desk. The desk is
+located at the western end of the classroom with a chalkboard hung
+directly behind it. A large window on the north wall looks down at
+the college's private gardens.
+~
+#EXIT
+Direction north~
+ToRoom    2579
+Flags     secret hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2505
+#ENDEXIT
+
+Reset M 0 2517 1 2518
+#ENDROOM
+
+#ROOM
+Vnum     2519
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     The furniture given to this classroom has been pushed against the walls,
+which leaves the middle of the room open for the teacher to instruct.
+Diagrams and illustrations have been hung on the walls, which detail
+the various techniques that an adventurer can have and how they can
+use them to survive. A desk for the teacher has been pushed against the
+far southwest corner of the room.
+~
+#EXIT
+Direction west~
+ToRoom    2505
+#ENDEXIT
+
+Reset M 0 2516 1 2519
+#ENDROOM
+
+#ROOM
+Vnum     2520
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom lacks furniture and the only thing in the room besides
+a few tables pushed against the wall is a shiny rock in the center
+of the room. A large window overlooks the college's gardens below
+and you can see some of the city too. The classroom does not have
+any diagrams or illustrations hung up like other classrooms. The
+style of the room is very minimalistic.
+~
+#EXIT
+Direction south~
+ToRoom    2506
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2579
+Flags     secret hidden window can_look~
+#ENDEXIT
+
+Reset M 0 2518 1 2520
+Reset O 0 2537 1 2520
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rock~
+Comlist   if investigation($n) >= 12
+mea $n &WThe handle looks like it can help you lift it. Why don't
+mea $n &Wyou try to LIFTROCK?
+else
+mea $n &wYou fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p liftrock~
+Comlist   if mobinroom(2518) == 1
+if athletics($n) >= 10
+mea $n &WYou use the handle to lift the rock up.
+mer $n &W$n uses the handle on the rock to lift it up.
+mpforce grugar clap $n
+mpsleep 4
+mpforce grugar sayto $n Now.. let's have you search this classroom. Sometimes
+mpforce grugar sayto $n what the room is can lead you in your investigation
+mpforce grugar sayto $n investigation. Such as this room.. it's a
+mpforce grugar sayto $n classroom.. so you could &Oinvestigate classroom&w
+sayto $n to see if there is anything here worth using.
+else
+mea $n &wYou fail to lift up the rock by the handle.
+mer $n &w$n fails to lift up the rock by the handle.
+mpsleep 4
+mpforce grugar sayto $n Keep tryin'!
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate classroom~
+Comlist   if investigation($n) >= 14
+mea $n &WYou notice a switch on the wall that perhaps you can pull.
+mea $n &WWhy don't you try to PULLSWITCH?
+else
+mea $n &wYou fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pullswitch~
+Comlist   if mobinroom(2518) == 1
+if athletics($n) >= 9
+mea $n &WAs you pull the switch you see a bucket of water suspended by
+mea $n &Wa cable above tilt and dump water on the teacher!
+mer $n &WA bucket of water above tilts and dumps on the teacher as
+mer $n &W$n pulls a switch on the wall!
+mpsleep 3
+mpforce grugar scowl
+mpsleep 3
+mpforce grugar sayto $n I see Tonia has been messing with my stuff
+mpforce grugar sayto $n again.. now.. I want you to see if I am
+mpforce grugar sayto $n hiding anything of interest.
+else
+mea $n &WYou fail to pull the switch correctly.
+endif
+else
+mea $n &wNothing happens when you pull the switch...&w
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate grugar~
+Comlist   if mobinroom(2518) == 1
+if investigation($n) >= 15
+mea $n &WYou notice that Grugar is wearing a mask. Perhaps you can
+mea $n &Wquickly REMOVEMASK and see what he is hiding?
+else
+mea $n &wYou fail to find anything.
+endif
+else
+mea $n &wThere is no one here by that name.&w
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p removemask~
+Comlist   if mobinroom(2518) == 1
+if sleight($n) >= 15
+mea $n &WYou quickly remove Grugar's mask to reveal he is not a half-orc
+mea $n &Wat all, but a human wearing a very well made mask!
+mer $n &W$n quickly removes a mask that the teacher is wearing!
+mpforce grugar gasp
+mpsleep 3
+mpforce grugar sayto $n Well done! That is all I have for you.
+mpforce grugar sayto $n Good luck with your next lesson!
+mpsleep 3
+mea $n &WGrugar puts on the mask and grins.
+mer $n &WGrugar puts on the mask that $n took off of him with a grin.
+mpqset $n 2515
+mpqset $n 2516
+else
+mea $n &wYou fail to remove the mask...
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2521
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom features a traditional layout of desks and chairs that
+face the north where the teacher's desk and a large chalkboard are
+located. The walls of the classroom feature illustrations of the various
+types of adventurers there are such as Priests, Fighters, and Bards. The
+classroom is very clean and organized. The bookshelves of this classroom
+feature books on the different types of classes and have been organized
+alphabetically by the teacher.
+~
+#EXIT
+Direction south~
+ToRoom    2507
+#ENDEXIT
+
+Reset M 0 2520 1 2521
+#ENDROOM
+
+#ROOM
+Vnum     2522
+Name     A Small Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     There are no desks or chairs in this classroom and the only things
+touching the floor are the various stone statues installed here. Each
+statue depicts a different race and the teacher usually tours the 
+students to different statues and explains about the race. A few 
+diagrams and illustrations have been hung on the walls detailing 
+the histories of some races and cultural traditions.
+~
+#EXIT
+Direction north~
+ToRoom    2507
+#ENDEXIT
+
+Reset M 0 2519 1 2522
+#ENDROOM
+
+#ROOM
+Vnum     2523
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom features rows of chairs with no desks that faces the north
+wall where a large tapestry and map have been hung. This classroom is
+clearly set up for a lecture format with students and the bookshelves
+full of history books offer clues at to the topic this class covers. The
+map at the front of the class appears to be constantly worked on with
+several quills and ink located near it. 
+~
+#EXIT
+Direction south~
+ToRoom    2508
+#ENDEXIT
+
+Reset M 0 2522 1 2523
+#EXDESC
+ExDescKey    map~
+ExDesc       -Place a link or drawn map in here-
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2524
+Name     A Large Shrine~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a large shrine that has been set up for both worship and as
+a classroom on the various gods and goddesses. Pews have replaced the
+traditional classroom furniture and a large podium at the south end
+of the shrine is used for religious worship and as a lecture spot
+for the teacher. Tapestries illustrating the various deities can be
+seen hung on the walls of this shrine.
+~
+#EXIT
+Direction north~
+ToRoom    2508
+#ENDEXIT
+
+Reset M 0 2521 1 2524
+#ENDROOM
+
+#ROOM
+Vnum     2525
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     The classroom here is set up in a traditional layout with rows of
+desks and chairs facing a large desk to the south. A chalkboard is
+behind the desk on the wall and contains chalk drawings of arcane
+runes and spell incantations from a previous class. The east wall has
+rows of bookshelves that are full of old spellbooks and samples for
+students to look over while the west desk is decorated with diagrams
+of proper spellcasting techniques.
+~
+#EXIT
+Direction north~
+ToRoom    2509
+#ENDEXIT
+
+Reset M 0 2523 1 2525
+#ENDROOM
+
+#ROOM
+Vnum     2526
+Name     A Large Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom does not have any seats or desks located in it as
+the students are requird to sit on padded cushions in a meditative
+style. The lighting of the room is kept low to help students achieve
+successful spell preparation. Incense has been lit on an altar to
+Crisma on the north wall. The classroom is very peaceful and you can
+seen students here lost in meditation when class is not even in
+session.
+~
+#EXIT
+Direction south~
+ToRoom    2509
+#ENDEXIT
+
+Reset M 0 2524 1 2526
+#ENDROOM
+
+#ROOM
+Vnum     2527
+Name     A Large Laboratory~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom has quite the pungent aroma from when you first enter.
+Inspection of the walls leads to the source of the smell as the wall
+has been decorated with various components used in spellcasting from
+simple herbs to the organs of monsters. The room has been kept clean
+except for a center table that is covered in components that are 
+placed for students to observe during lectures.
+~
+#EXIT
+Direction west~
+ToRoom    2509
+#ENDEXIT
+
+Reset M 0 2525 1 2527
+#ENDROOM
+
+#ROOM
+Vnum     2528
+Name     A Wide Hallway~
+Sector   indoors~
+Flags    nomob~
+Desc     This is the main hallway of the combat training facility located under
+the college. It has been carved into the rock in an arch format. Above
+are magical globes of light that provide illumination for those that are
+down here. You see several students heading towards their training
+session here. Some of the students are wearing various types of armor
+and some are wearing robes. You see the entrance to a training pod
+to the south of here.
+~
+#EXIT
+Direction east~
+ToRoom    2529
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2532
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2531
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2529
+Name     A Wide Hallway~
+Sector   indoors~
+Flags    nomob~
+Desc     This is the main hallway of the combat training facility located under
+the college. It has been carved into the rock in an arch format. Above
+are magical globes of light that provide illumination for those that are
+down here. You see several students heading towards their training
+session here. Some of the students are wearing various forms of armor
+and some are wearing robes. You see the entrance to a training pod to
+the north. The hallway ends towards the east where you see a floating
+crystal orb in the middle of the hallway there.
+~
+#EXIT
+Direction north~
+ToRoom    2538
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2530
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2530
+Name     End of the Hallway~
+Sector   indoors~
+Flags    nomob~
+Desc     The main hallway of the combat training facility ends here at a dead
+end. In the middle of the hallway here is a large crystal orb that
+floats silently. The crystal has been shaped into a smooth orb and
+shimmers slightly under the light of a magical globe hung above. You
+feel a magical power here, which seems to radiate from the orb. The
+hallways continues back to the west from here.
+~
+#EXIT
+Direction west~
+ToRoom    2529
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2551
+Flags     secret hidden window can_look~
+#ENDEXIT
+
+Reset O 0 2541 1 2530
+#EXDESC
+ExDescKey    etching~
+ExDesc       &CIn order to enter the program you must simple say, &WBEGIN.
+ 
+&cWarning:&C This program is very advanced and the constructs
+         are designed and set to kill their opponents. This
+         program is best done with a group. Be prepared for
+         &Ctraps and other dangers.
+ 
+&CThis Danger Center was created with the help of the New Darkhaven
+Guild of Wizards and the Guild of Artificers working together.
+ 
+&cOOC: This advanced training center is for alumni level 30+.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate orb~
+Comlist   if investigation($n) >= 10
+mea $n &CYou see ETCHING on the crystal that details how to use it.
+else
+mea $n &wYou fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p begin~
+Comlist   if level($n) >= 30
+if hasqbit($n) == 2594
+mea $n &RYou slip through the floor onto a new platform suddenly!
+mer $n &R$n passes through the floor and vanishes suddenly!
+mptransfer $n 2545
+else
+mea $n &RThe crystal orb before you does not respond to your command.
+endif
+else
+mea $n &RYou are not powerful enough to command the crystal orb.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2531
+Name     The College Training Center~
+Sector   indoors~
+Flags    nomob~
+Desc     This is the basement level of the college where the training facilities
+are located for students to train their skills and spells. The hallway
+here leads to the east and has been carved out of stone. Magical globes
+of light float near the ceiling, which provide light down here. Rooms
+can be seen to the north and south of here. You see students walking
+along this hallway as they head to train. Some are wearing simple
+clothing and the more advanced students are wearing various forms of
+armor for protection.
+~
+#EXIT
+Direction north~
+ToRoom    2536
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2528
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2541
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2584
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2532
+Name     The Novice Training Center~
+Sector   indoors~
+Flags    nomob safe~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction north~
+ToRoom    2528
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2534
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2533
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2599
+if hasqbit($n) == 2501
+else
+mea $n &RA guard spots you and takes you back to the entrance.&w
+mer $n &RA guard removes $n from the training center.&w
+mpforce $n n
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2533
+Name     The Novice Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction east~
+ToRoom    2532
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2537
+#ENDEXIT
+
+Reset M 0 2505 6 2533
+Reset M 0 2505 6 2533
+Reset M 0 2505 6 2533
+#ENDROOM
+
+#ROOM
+Vnum     2534
+Name     The Novice Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction south~
+ToRoom    2535
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2532
+#ENDEXIT
+
+Reset M 0 2505 6 2534
+Reset M 0 2505 6 2534
+Reset M 0 2505 6 2534
+#ENDROOM
+
+#ROOM
+Vnum     2535
+Name     The Novice Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction north~
+ToRoom    2534
+#ENDEXIT
+
+Reset M 0 2506 6 2535
+Reset M 0 2506 6 2535
+Reset M 0 2506 6 2535
+#ENDROOM
+
+#ROOM
+Vnum     2536
+Name     A Healing Room~
+Sector   indoors~
+Desc     This room has been dedicated for healing of wounds that may occur
+during training. A table has been placed in the middle where injured
+students can lay on while they are attended to. An altar to Hycra has
+been established on the northern wall, which lends to the healing
+energies of the shrine. Candles and incense have been lit on several
+floating glass shelves on the walls of this room.
+~
+#EXIT
+Direction south~
+ToRoom    2531
+#ENDEXIT
+
+Reset M 0 2504 1 2536
+#ENDROOM
+
+#ROOM
+Vnum     2537
+Name     The Novice Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction north~
+ToRoom    2533
+#ENDEXIT
+
+Reset M 0 2506 6 2537
+Reset M 0 2506 6 2537
+Reset M 0 2506 6 2537
+#ENDROOM
+
+#ROOM
+Vnum     2538
+Name     The Intermediate Training Center~
+Sector   indoors~
+Flags    nomob safe~
+Stats    0 0 0 0 1 0
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+Perdesc  &RA small wooden sign has been hung here announcing warnings.
+~
+#EXIT
+Direction east~
+ToRoom    2544
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2529
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2539
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &RWarning: The animated dummies here will attack anyone they see at
+first sight and have the opportunity to gang up on a student.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2599
+if hasqbit($n) == 2501
+else
+mea $n &RA guard spots you and takes you back to the entrance.&w
+mer $n &RA guard removes $n from the training center.&w
+mpforce $n s
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2539
+Name     The Intermediate Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction north~
+ToRoom    2540
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2538
+#ENDEXIT
+
+Reset M 0 2507 2 2539
+#ENDROOM
+
+#ROOM
+Vnum     2540
+Name     The Intermediate Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction east~
+ToRoom    2543
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2539
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2541
+Name     A Large Open Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This is the underground training center's classroom and it has been set
+up in a circle format. The desks and chairs have been set in a circle
+that face the middle of the room where the instructor stands. Diagrams
+and illustrations of battle techniques and movements has been hung on
+the rocky walls of the classroom. A desk for the teacher has been pushed
+against the southeastern wall of the classroom. Weapons and armor have
+also been hung from the wall and a dummy to show different combat
+moves has been hung from the ceiling.
+~
+#EXIT
+Direction north~
+ToRoom    2531
+#ENDEXIT
+
+Reset M 0 2528 1 2541
+#ENDROOM
+
+#ROOM
+Vnum     2542
+Name     The Intermediate Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction south~
+ToRoom    2544
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2543
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2543
+Name     The Intermediate Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction east~
+ToRoom    2542
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2540
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2544
+Name     The Intermediate Training Center~
+Sector   indoors~
+Desc     This is a small cavern carved under the college and is used for training
+purposes. The pathway here curves around a central pillar of stone
+and several torches provide light to those training here. You can here
+the odd noises of the animated training dummies moving around here.
+~
+#EXIT
+Direction north~
+ToRoom    2542
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2538
+#ENDEXIT
+
+Reset M 0 2507 2 2544
+#ENDROOM
+
+#ROOM
+Vnum     2545
+Name     The Advanced Training Center~
+Sector   indoors~
+Flags    safe~
+Stats    0 0 0 0 1 0
+Desc     This is a large metal platform that overlooks what appears to be a
+destroyed city. You see smoke and fire emanating from several buildings
+and there appears to be no one down below. A metal staircase leads down
+towards the ruins. You can hear the odd sounds of something moving about
+the ruins and the occasional burst of light.
+~
+Perdesc  &RThere is a large sign located nearby explaining the training grounds.
+~
+#EXIT
+Direction down~
+ToRoom    2546
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WWARNING! &RThe constructs in this area are designed to eliminate their
+enemies. They will attempt to disable you before attacking. Going in
+with a group is advised and suggested.
+ 
+&RThere are several traps and other dangers that you should watch out
+for while in the training center.
+
+If at any time you need to escape simply say: &WEND PROGRAM&R anywhere
+in the training center to return to this point.
+ 
+&RTo return to the main floor of the college training grounds 
+say: &WRETURN&R.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p return~
+Comlist   mea $n &RYou rise and pass through the ceiling suddenly!&w
+mer $n &R$n rises and passes through the ceiling...
+mptransfer $n 2530
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2546
+Name     A Destroyed City Street~
+Sector   city~
+Flags    nomob~
+Desc     The streets here have been completely destroyed by some force and rubble
+is everywhere. The remnants of buildings that have been destroyed by
+fire and other forces can be seen to the east and west of here. The
+are some scorch marks showing the outlines of humanoids that there 
+disintegrated by some energy. There doesn't seem to be anyone alive
+in this city.
+~
+#EXIT
+Direction south~
+ToRoom    2547
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p End Program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2547
+Name     A Destroyed City Street~
+Sector   city~
+Desc     The streets here have been completely destroyed by some force and rubble
+is everywhere. The remnants of buildings that have been destroyed by fire
+and other forces can be seen to the east and west of here. You see the
+skeletons of people that were completely burned alive by some energy
+source nearby. Rats crawl inside the bones seeking food in this desolate
+place.
+~
+#EXIT
+Direction north~
+ToRoom    2546
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2548
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2548
+Name     A Destroyed City Street~
+Sector   city~
+Flags    nomob~
+Desc     The streets here have been completely destroyed by some force and rubble
+is everywhere. The remnants of buildings can be seen everywhere as this
+part of the street is on a slight hill. You can see what is left of
+a park to the southwest of here. Several tall buildings can be seen
+to the east and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2547
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2551
+#ENDEXIT
+
+Reset O 0 2543 1 2548
+  Reset H 1 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2549
+Name     A Destroyed Park~
+Sector   field~
+Desc     This is part of the park that has been recently destroyed. You notice
+the skeletons of a few humanoids that were burned completely until
+there was no flesh left on the ground here. The smoke is particularly
+strong here and it can be hard to see or smell anything besides burning
+trees.
+~
+#EXIT
+Direction south~
+ToRoom    2550
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2550
+Name     A Destroyed Park~
+Sector   field~
+Desc     The park here has been completely destroyed by some sort of battle or
+war. The trees are either blackened charcoal silhouettes or on fire
+currently. A small path leads to a northern section of the park while
+the path here leads to towards a large destroyed building that was
+once a castle or noble's home until its recent destruction.
+~
+#EXIT
+Direction north~
+ToRoom    2549
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2560
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2551
+#ENDEXIT
+
+Reset O 0 2542 1 2550
+  Reset H 1 0 0 0
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ovnumroom(2542) == 1
+if isaffected($n) != fly
+if perception($n) < 16
+if acrobatics($n) < 16
+mea $n &gYou feel something under your feet lift you up and send you
+mea $n &gflying through the window of a nearby building!!
+mpdamage $n 2 10
+mer $n &gSomething under $n's feet sends them flying to the east!!
+silent mptransfer $n 2556
+mpat 2556 mer $n &g$n comes flying through a window and crashes here!
+else
+endif
+else
+endif
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2551
+Name     A Destroyed City Street~
+Sector   city~
+Desc     The streets here have been completely destroyed by some force and rubble
+is everywhere. You can see a small path leading into a park that has
+seen better days. The trees are either charcoal remnants or currently
+on fire. The smell of smoke is strong in this part of the city and
+it can be hard to see the area around. The city streets continue to
+the south from here and you see more destroyed homes all about.
+~
+#EXIT
+Direction north~
+ToRoom    2548
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2550
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2552
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2552
+Name     A Destroyed City Street~
+Sector   city~
+Desc     The streets here have been completely destroyed by some force and rubble
+is everywhere. You can see the street continues to the north and east
+of here. Another part of the street leading to the west has been 
+completely destroyed and several buildings have collapsed upon it 
+making it impossible to walk through. You can see several other buildings
+have collapsed to the west and south from here. The overall landscape
+of this place is hellish and desolate.
+~
+#EXIT
+Direction north~
+ToRoom    2551
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2553
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2553
+Name     A Destroyed City Street~
+Sector   city~
+Desc     The streets here have been completely destroyed by some force and rubble
+is everywhere. The street here has a large hole from something falling
+from the sky and crashing here. Fire emanates from the center as if
+whatever it was did not survive the impact. A large building that once
+resembled a castle or a noble's home can be see to the northeast from
+here. 
+~
+#EXIT
+Direction east~
+ToRoom    2554
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2552
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2554
+Name     A Destroyed City Street~
+Sector   city~
+Desc     The destroyed street ends here before a large building that was once
+a castle or noble's home. The street would have continued to the east,
+but the collapse of buildings obscures the street from continuing. The
+doors of the building have been blown off and you can see there is
+nothing inside the building but destroyed furniture and belongings.
+~
+#EXIT
+Direction north~
+ToRoom    2555
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2553
+#ENDEXIT
+
+Reset M 0 2508 3 2554
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2555
+Name     Inside a Destroyed Building~
+Sector   indoors~
+Flags    nomob~
+Desc     This was once a parlor or entry room for a large home or castle. The
+stone walls of the building are charred and blackened from fire
+and bursts of energy. You see the silhouettes of humanoids that were
+blasted on some parts of the stone walls. Furniture has been completely
+destroyed and pieces lay everywhere.
+~
+#EXIT
+Direction north~
+ToRoom    2556
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2554
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2562
+#ENDEXIT
+
+Reset O 0 2543 1 2555
+  Reset H 1 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2556
+Name     Inside a Destroyed Building~
+Sector   indoors~
+Desc     There is not distinction of what this part of the building was used
+for due to everything being destroyed. There are is no furniture
+left in the room besides the burnt remains of a large chair that has
+been pushed against the north wall. A hallway leads to the east and
+is almost obscured by part of the second floor caving in.
+~
+#EXIT
+Direction east~
+ToRoom    2557
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2555
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2561
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2557
+Name     Inside a Destroyed Building~
+Sector   indoors~
+Desc     This is a small pathway in the destroyed building that was caused by
+a cave in from the second floor falling onto the first. A few items
+of clothing can be seen on the ground here, which have fallen from
+the second floor. A broken mirror is here with its pieces scattered
+all over.
+~
+#EXIT
+Direction north~
+ToRoom    2558
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2556
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2558
+Name     Inside a Destroyed Building~
+Sector   indoors~
+Desc     The hallway here has been partially caved in with part of the second
+floor landing onto the first. You can see part of the second floor from
+here and it appears like you could climb up there from here. You see
+a few paintings here that have been partially scorched and scrapped
+when the second floor collapsed. 
+~
+#EXIT
+Direction south~
+ToRoom    2557
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2559
+Flags     climb~
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2559
+Name     A Destroyed Second Story~
+Sector   indoors~
+Desc     This room appears to have been a bedroom before the destruction of
+the building. A large bed has been torched and left to crumble with
+time. A few other pieces of furniture have been torched and destroyed
+by some sort of explosion. A large window has been blown out and 
+glass is strewn about the room.
+~
+#EXIT
+Direction down~
+ToRoom    2558
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 2508 5 2559
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2560
+Name     A Destroyed City Street~
+Sector   city~
+Desc     This is the remnant of a street that ran north and south. The rest
+of the road has been destroyed and several collapsed buildings have
+obscurred the north and south portions. A large building that once
+resembled either a castle or a noble's home can be seen to the east
+of here. The doorway has been blown open and you can see inside there
+is nothing but charred furniture. The windows except for a few have
+been blown out or destroyed completely.
+~
+#EXIT
+Direction east~
+ToRoom    2561
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2550
+Flags     nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2561
+Name     Inside A Destroyed Building~
+Sector   indoors~
+Desc     This is what remains of an entry room for the large building. All of
+the furniture in the room have been completely destroyed or burnt to
+ashes. A crystal chandelier that once hung above has crashed and 
+shattered to pieces on the floor here. A small pathway leads to the
+south and another leads to the east.
+~
+#EXIT
+Direction east~
+ToRoom    2556
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2562
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2560
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2562
+Name     Inside A Destroyed Building~
+Sector   indoors~
+Desc     A collapse from the second floor of the building has closed off part
+of the building to the west and south. A destroyed path leads north
+and south from here to other parts of the building. The burnt remains
+of a large painting are on the floor here, which appears to have 
+been a family portrait.
+~
+#EXIT
+Direction north~
+ToRoom    2561
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2555
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2563
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2563
+Name     A Destroyed Second Story~
+Sector   city~
+#EXIT
+Direction down~
+ToRoom    2562
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p end program~
+Comlist   Mea $n &RYou are surrounded by an energy field suddenly...
+Mer $n &REnergy surrounds $n before $e disappears suddenly...
+Mptransfer $n 2545
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2564
+Name     &zA Large Study Hall&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a very cozy study room with a large fireplace that features
+a large roaring fire inside. Paintings and tapestries showing
+alumni from the Daggers dormitory have been hung on the walls of
+this study including the founder, Ghourm the Black Mask. The chairs
+are furbished with plush fabrics that many of the students
+enjoy sitting on during meetings and while studying.
+~
+#EXIT
+Direction east~
+ToRoom    2567
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2565
+Name     A Large Auditorium~
+Sector   indoors~
+Flags    nomob~
+Desc     The auditorium here can house several hundred students for performances
+or student body meetings. The flags of each dorm hang above the wooden
+stage to the west. There are several levels of seating and some are
+designated for certain dorms only. A large glass skylight is above
+and it features beautiful stain glass depicting each dorm.
+~
+#EXIT
+Direction east~
+ToRoom    2578
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2566
+Name     Entrance to the Dorms~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 1 0
+Desc     In the middle of this room is a glowing orb that seems to respond
+to the voices in the room. You see students enter the room and say
+something before vanishing suddenly. All four walls are decorated with
+the symbols and colors of each major dorm - Shields, Daggers, Wands,
+and Swords. Statues of the founders for each dorm have been placed in
+front of the corresponding wall. These statues have been carved with
+very fine detail and from white stone. 
+~
+Perdesc  &RYou notice a sign next to the glowing orb.&w
+~
+#EXIT
+Direction south~
+ToRoom    2578
+#ENDEXIT
+
+Reset O 0 2544 1 2566
+#EXDESC
+ExDescKey    sign~
+ExDesc       &YStudents: &WYou may enter your dorm by simply speaking its name
+such as "Dagger" or "Shield."
+ 
+&RAlumni:&W You may enter your dorm's alumni area by speaking its
+name.
+ 
+     &zGuests are not allowed in the dorms or alumni areas.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p sword~
+Comlist   if hasqbit($n) == 2502
+mea $n &RThe room gets hazy before you realize you are somewhere else...
+mer $n &R$n disappears suddenly...
+mptransfer $n 2589
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p wand~
+Comlist   if hasqbit($n) == 2503
+mea $n &YThe room gets hazy before you realize you are somewhere else...
+mer $n &Y$n disappears suddenly...
+mptransfer $n 2590
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p shield~
+Comlist   if hasqbit($n) == 2504
+mea $n &WThe room gets hazy before you realize you are somewhere else...&w
+mer $n &W$n disappears suddenly...&w
+mptransfer $n 2591
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p dagger~
+Comlist   if hasqbit($n) == 2505
+mea $n &zThe room gets hazy before you realize you are somewhere else...
+mer $n &z$n disappears suddenly...&w
+silent mptransfer 2570
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p sword~
+Comlist   if hasqbit($n) == 2598
+mea $n &RThe room gets hazy as you watch the room shift and disappear...
+mer $n &R$n disappears suddenly...&w
+mptransfer $n 1295
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p wand~
+Comlist   if hasqbit($n) == 2597
+mea $n &YThe room gets hazy as you watch the room shift and disappear...&w
+mer $n &Y$n disappears suddenly...&w
+mptransfer $n 1296
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p shield~
+Comlist   if hasqbit($n) == 2596
+mea $n &WThe room gets hazy as you watch the room shift and disappear...&w
+mer $n &W$n disappears suddenly...&w
+mptransfer $n 1297
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p dagger~
+Comlist   if hasqbit($n) == 2595
+mea $n &zThe room gets hazy as you watch the room shift and disappear...&w
+mer $n &z$n disappears suddenly...&w
+mptransfer $n 1298
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate statues~
+Comlist   if investigation($n) >= 14
+mea $n You see statues of the various founders of the dorms here at
+mea $n the college. To the north wall is the founder of the Shields
+mea $n dorm, Nhimaeri, who was a human woman that became a legendary
+mea $n Paladin. To the east wall is the statue of the founder of the
+mea $n Daggers dorm, Ghourm, a tricky looking halfling who became
+mea $n a legendary spy and thief. To the south wall is a statue of
+mea $n the Swords dorm founder, Fynar, who worked as a mercenary
+mea $n before becoming the chosen of his deity until death. And on
+mea $n the west wall is a statue of an elven woman dressed in
+mea $n flowing robes. This is the founder of the Wands dormitory,
+mea $n Azuren, who became a powerful Archmage and created many
+mea $n spells before her passing. Each statue is carved from
+mea $n white stone and quite immaculately. 
+else
+mea $n &wYou fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2567
+Name     &zA Small Hallway&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The hallway here has been decorated quite elaborately with Daggers
+related motifs from the draperies to the rug on the floor. Two
+large oak doors can be seen to the north and south from here
+where the men and women's sleeping quarters are located. To
+the west is a large study space that the students here also
+use as a meeting space.
+~
+#EXIT
+Direction north~
+ToRoom    2568
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2570
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2569
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2564
+#ENDEXIT
+
+Reset D 0 2567 0 1
+Reset D 0 2567 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2568
+Name     &zThe Men's Sleeping Quarters&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the men of the Daggers dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction south~
+ToRoom    2567
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2568 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 1
+mer $n &z$n disappears as $e tries to enter...
+silent mptransfer $n 2567
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2569
+Name     &zThe Women's Sleeping Quarters&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the women of the Daggers dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction north~
+ToRoom    2567
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2569 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 2
+mer $n &z$n disappears as $e tries to enter...
+silent mptransfer $n 2567
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2570
+Name     &zThe Daggers Dorm Entrance&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a large entrance to the Daggers dormitory where students who
+belong to this dorm reside during their studies here at the college.
+A motif of daggers can be seen throughout the entrance and the dorms
+itself. The doorway into a small hallway here is decorated with 
+daggers that have been hung and outline the shape of the doorway.
+~
+#EXIT
+Direction west~
+ToRoom    2567
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2571
+Name     &YThe Women's Sleeping Quarters&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the women of the Wands dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction north~
+ToRoom    2596
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2571 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 2
+mer $n &Y$n disappears as $e tries to enter...
+silent mptransfer $n 2596
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2572
+Name     &YA Large Study Room&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a very cozy study room with a large fireplace that features
+a large roaring fire inside. Paintings and tapestries showing
+alumni from the Swords dormitory have been hung on the walls of
+this study including the founder, Azuren. The chairs
+are furbished with plush fabrics that many of the students
+enjoy sitting on during meetings and while studying.
+~
+#EXIT
+Direction east~
+ToRoom    2596
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2573
+Name     &WA Small Hallway&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The hallway here has been decorated quite elaborately with Shields
+related motifs from the draperies to the rug on the floor. Two
+large oak doors can be seen to the north and south from here
+where the men and women's sleeping quarters are located. To
+the west is a large study space that the students here also
+use as a meeting space.
+~
+#EXIT
+Direction north~
+ToRoom    2574
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2591
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2575
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2576
+#ENDEXIT
+
+Reset D 0 2573 0 1
+Reset D 0 2573 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2574
+Name     The Men's Sleeping Quarters~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the men of the Shields dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction south~
+ToRoom    2573
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2574 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 1
+mer $n &w$n disappears as $e tries to enter...
+silent mptransfer $n 2573
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2575
+Name     The Women's Sleeping Quarters~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the women of the Shields dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction north~
+ToRoom    2573
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2575 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 2
+mer $n &w$n disappears as $e tries to enter...
+silent mptransfer $n 2573
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2576
+Name     &WA Large Study Room&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a very cozy study room with a large fireplace that features
+a large roaring fire inside. Paintings and tapestries showing
+alumni from the Shields dormitory have been hung on the walls of
+this study including the founder, Nhimaeri Crestmer. The chairs
+are furbished with plush fabrics that many of the students
+enjoy sitting on during meetings and while studying.
+~
+#EXIT
+Direction east~
+ToRoom    2573
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2577
+Name     The College Supply Store~
+Sector   indoors~
+Flags    nomob~
+Desc     The store here is stocked with supplies for students such as practice
+armor to things that visiting families can purchase as a memento. A
+countertop to the south is for transactions and it is manned by
+a campus storekeeper at all times. A glowing magical orb floats
+above and is used to illuminate the store during the night.
+~
+#EXIT
+Direction north~
+ToRoom    2588
+#ENDEXIT
+
+Reset M 0 2502 1 2577
+  Reset G 0 2502 1
+  Reset G 0 2501 1
+  Reset G 0 2508 1
+  Reset G 0 2503 1
+  Reset G 0 2527 1
+  Reset G 0 2529 1
+  Reset G 0 2528 1
+  Reset G 0 2525 1
+  Reset G 0 2526 1
+#ENDROOM
+
+#ROOM
+Vnum     2578
+Name     A Small Hallway~
+Sector   indoors~
+Desc     The hallway ends here at the entrance to a large student auditorium,
+which is located to the west. To the north is the entrance of the
+student dorms. A large chandelier is hung above with candles in
+the school colors of red, yellow, black, and white. A large mirror
+is located on the south wall, which has an ornate gold frame
+that is quite old. 
+~
+#EXIT
+Direction north~
+ToRoom    2566
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2588
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2565
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2579
+Name     &GA Small Garden&w~
+Sector   field~
+Desc     &gThis is a well manicured garden that has been provided for students
+to eat, relax, and socialize. Several benches and tables can be found
+here. Several old trees has been considered during the construction of
+this garden. Several flower beds full of fragrant plants can be found
+throughout the garden. To the south is the glass windows of the cafeteria
+and a door leading back inside.
+~
+#EXIT
+Direction south~
+ToRoom    2514
+Keywords  'glass door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2579 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2580
+Name     The College Administration Office~
+Sector   indoors~
+Desc     The smell of old books and ink wafts about this office heavily. Many
+of the walls contain ceiling to floor bookshelves that are built in. 
+Books covering various topics from magic to gardening can be found
+here. Towards the back of the office is a large desk where the
+headmistress of the college works. New students can be found
+waiting to meet with her during various times of the day.
+~
+#EXIT
+Direction east~
+ToRoom    2500
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2500 1 2580
+Reset D 0 2580 1 1
+#EXDESC
+ExDescKey    banner~
+ExDesc       &Y-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=&Y-=-=-=-=-=-=-=-
+
+                    &RThe New Darkhaven College of Adventuring&w
+                                &WDormitory Options&Y
+
+                      &Y======={:&OO     &YWands     &OO&Y:}=======
+                           &YSample Personality Traits:
+                  &OLearning&Y,&O Creative&Y/&OInnovative&Y,&O Intelligence
+ 
+                     &R=={&r-------     &RSwords&r     -------&R}==&R
+                           &RSample Personality Traits:
+                          &rCourage&R,&r Hardwork&R,&r Strength&w
+ 
+                            &w[&WV&w]     &WShields     &w[&WV&w]&w
+                           &WSample Personality Traits:
+                            &wChivalry&W,&w Caring&W, &wWisdom&w
+ 
+                          &z-[&w---     &zDaggers&w     ---&z]-&w
+                           &zSample Personality Traits:
+                          &wCunning&z, &wAmbition&z,&w Dexterity&w
+ 
+&Y-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=&Y-=-=-=-=-=-=-=-
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2581
+Name     A Brewing Laboratory~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom has been set up like a small laboratory for magic users
+to experiment and brew potions for consumption. The tables contain
+tools for mixing and a wall to the north features rows of shelves
+full of glass bottles. Each table features a ball of floating fire
+that is used by the students to concoct their potions. Diagrams of
+how to mix ingredients to proper technique while brewing can be seen
+on the walls of the classroom.
+on the walls of the classroom. Several of the tables feature acidic
+burns on the surface from brewing accidents.
+~
+#EXIT
+Direction down~
+ToRoom    2509
+#ENDEXIT
+
+Reset M 0 2526 1 2581
+#ENDROOM
+
+#ROOM
+Vnum     2582
+Name     A Scribing Classroom~
+Sector   indoors~
+Flags    nomob~
+Desc     This classroom features rows and rows of drafting tables with a small
+table located next to each one to place scribing tools upon. A desk
+can be found to the north where the teacher sits while the students
+work on scribing spells into paper. The remnants of a drafting table
+that caught fire from a scribing accident can be seen displayed in
+the northeast corner with a sign warning about the possibilities of
+fire related accidents while scribing and how to avoid such. Shelves
+containing paper for scribing can be seen on the west wall and a
+shelf next to it contains ink and quills.
+~
+#EXIT
+Direction up~
+ToRoom    2509
+#ENDEXIT
+
+Reset M 0 2527 1 2582
+#ENDROOM
+
+#ROOM
+Vnum     2583
+Name     The College Stables~
+Sector   indoors~
+Desc     The stable house here is quite tall and open with lots of adequate
+stalls for horses. Students who attend this school leave their
+horses with the stablehands who feed, water, and tend to the
+horses. A second story above is where hay and straw is housed
+and waiting to be used.
+~
+#EXIT
+Direction west~
+ToRoom    2500
+#ENDEXIT
+
+Reset M 0 2530 1 2583
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2599
+if hasqbit($n) == 2501
+else
+mea $n &RA guard spots you and takes you back to the entrance.&w
+mpforce $n w
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2584
+Name     An Intersection of Hallways~
+Sector   indoors~
+Desc     This is the end of the main hall of the first floor of the school
+where it intersects with two smaller hallways that run east and west.
+A large stone staircase leading up to the second floor can be seen
+to the north of here. A large library is towards the east while
+a small hallway runs to the west. A large statue of the founder of
+the college to the northeast of here. The statue depicts a 
+woman of a wizardly background holding a spellbook while reciting
+an incantation. 
+~
+#EXIT
+Direction east~
+ToRoom    2585
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2503
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2588
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2504
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2531
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2585
+Name     The College Library~
+Sector   indoors~
+Desc     This is the college library and it is a popular spot for students who
+are studying for tests or gathering information. The ceiling of the
+library is very tall and vaulted. Exposed wood beams have been stained 
+a very dark brown, which contrasts against the white ceiling and walls.
+Shelves full of books can be found throughout the library and on
+several levels. Ladders lead up into the various levels and you
+can occasionally see a magic user floating up or down instead of using
+a ladder, which is against the rules. A statue of Omunae can be
+seen in the middle of the library as this is a place of knowledge
+and learning.
+~
+#EXIT
+Direction east~
+ToRoom    2586
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2584
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2529 1 2585
+#ENDROOM
+
+#ROOM
+Vnum     2586
+Name     A Large Study Hall~
+Sector   indoors~
+Desc     This is a dedicated spot for students to come and sit at the tables that
+can be found here and work. Floating globes of magical light are centered
+at each table for the night time hours for those that work late into
+the night. A private study room can be seen to the north of here where
+two people can work in privacy on coursework. 
+~
+#EXIT
+Direction north~
+ToRoom    2587
+Flags     isdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2585
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2587
+Name     A Private Study~
+Sector   indoors~
+Flags    nomob private~
+Desc     The study here has about enough room for two people to comfortable work
+together. A central table has two seats for people to sit and a magical
+globe of light has been placed above the table to illuminate during 
+the night time hours. Some bookshelves have been supplied to whoever is
+using this room to store objects and books they are using. A door made
+from oak can be closed to give even more privacy.
+~
+#EXIT
+Direction south~
+ToRoom    2586
+Flags     isdoor nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2588
+Name     A Small Hallway~
+Sector   indoors~
+Desc     The hallway here is small and not as wide as the main hall to the east
+of here. This hallway leads towards a large auditorium towards the
+far west of here. The walls of this hallway are heavily decorated
+with paintings of various famous adventurers that once attended
+this college. A small student supply store is located to the
+south of here. 
+~
+#EXIT
+Direction east~
+ToRoom    2584
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2577
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2578
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2589
+Name     &RThe Swords Dorm Entrance&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a large entrance to the Swords dormitory where students who
+belong to this dorm reside during their studies here at the college.
+A motif of swords can be seen throughout the entrance and the dorms
+itself. The doorway into a small hallway here is decorated with 
+swords that have been hung and outline the shape of the doorway.
+~
+#EXIT
+Direction west~
+ToRoom    2592
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2590
+Name     &YThe Wands Dorm Entrance&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a large entrance to the Wands dormitory where students who
+belong to this dorm reside during their studies here at the college.
+A motif of wands can be seen throughout the entrance and the dorms
+itself. The doorway into a small hallway here is decorated with 
+wands that have been hung and outline the shape of the doorway.
+~
+#EXIT
+Direction west~
+ToRoom    2596
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2591
+Name     &WThe Shields Dorm Entrance&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a large entrance to the Shields dormitory where students who
+belong to this dorm reside during their studies here at the college.
+A motif of tiny shields can be seen throughout the entrance and the dorms
+itself. The doorway into a small hallway here is decorated with 
+shields that have been hung and outline the shape of the doorway.
+~
+#EXIT
+Direction west~
+ToRoom    2573
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2592
+Name     &RA Small Hallway&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The hallway here has been decorated quite elaborately with Swords
+related motifs from the draperies to the rug on the floor. Two
+large oak doors can be seen to the north and south from here
+where the men and women's sleeping quarters are located. To
+the west is a large study space that the students here also
+use as a meeting space.
+~
+#EXIT
+Direction north~
+ToRoom    2593
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2589
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2594
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2595
+#ENDEXIT
+
+Reset D 0 2592 0 1
+Reset D 0 2592 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2593
+Name     &RThe Men's Sleeping Quarters&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the men of the Swords dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction south~
+ToRoom    2592
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2593 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 1
+mer $n &R$n disappears as $e tries to enter...
+silent mptransfer $n 2592
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2594
+Name     &RThe Women's Sleeping Quarters&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the women of the Swords dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction north~
+ToRoom    2592
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2594 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 2
+mer $n &R$n disappears as $e tries to enter...
+silent mptransfer $n 2592
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2595
+Name     &RA Large Study Room&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     This is a very cozy study room with a large fireplace that features
+a large roaring fire inside. Paintings and tapestries showing
+alumni from the Swords dormitory have been hung on the walls of
+this study including the founder, Fynar Silverfish. The chairs
+are furbished with plush fabrics that many of the students
+enjoy sitting on during meetings and while studying.
+~
+#EXIT
+Direction east~
+ToRoom    2592
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2596
+Name     &YA Small Hallway&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The hallway here has been decorated quite elaborately with Wands
+related motifs from the draperies to the rug on the floor. Two
+large oak doors can be seen to the north and south from here
+where the men and women's sleeping quarters are located. To
+the west is a large study space that the students here also
+use as a meeting space.
+~
+#EXIT
+Direction north~
+ToRoom    2597
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2590
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2571
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2572
+#ENDEXIT
+
+Reset D 0 2596 0 1
+Reset D 0 2596 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2597
+Name     &YThe Men's Sleeping Quarters&w~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     The room here is set up for the men of the Wands dormitory to sleep
+and relax. Several levels of sleeping cubes feature a bed and a wardrobe
+for students to place their clothing. Several of the students skip the
+ladders and use magic to float up to their bed area. A large crystal
+chandelier hangs in the middle of the impossibly large space
+and offers soft light during the night time hours.
+~
+#EXIT
+Direction south~
+ToRoom    2596
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2597 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) != 1
+mer $n &Y$n disappears as $e tries to enter...
+silent mptransfer $n 2596
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2598
+Name     &CThe New Darkhaven Tourist Center&w~
+Sector   indoors~
+#EXIT
+Direction north~
+ToRoom    1556
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2599
+Name     &RMOB STORAGE&w~
+Sector   city~
+Flags    nomob safe norecall nosummon noastral~
+Desc     You should not be in here. Please contact the admin staff to get help
+with getting out or simply say: "Oops" in order to be removed from
+this room.
+~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p oops~
+Comlist   mptransfer $n 1554
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

@@ -1,0 +1,2051 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         A Hobgoblin Fort~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 25 0 0
+Economy      0 2457370
+ResetMsg     &OYou feel a soft breeze waft past you.&w~
+Lore         &OYou see a small army of hobgoblin overtake a human mining settlement
+as they establish it as their small fort...&w
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2300
+Keywords   hobgoblin guard~
+Short      &Ra hobgoblin guard&w~
+Long       &RA hobgoblin is here guarding the entrance to a fort.&w
+~
+Desc       &RThis hobgoblin is dressed in some crude looking chainmail as it stands
+guard here. It has a serious face as it look around the area for
+intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 4 0 17 0 0 0 0 0
+Stats2     3 9 10
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Speaking   goblin~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2301
+Keywords   hobgoblin warrior wandering~
+Short      &Ra hobgoblin warrior&w~
+Long       &RA hobgoblin warrior is here wandering around.&w
+~
+Desc       &RThis hobgoblin is dressed in some crude looking chaimail as it
+wanders around this fort and surrounding area. It has a serious
+look on its face as it searches for intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -600 1 5 0 17 0 0 1 5 0
+Stats2     3 10 20
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2302
+Keywords   hobgoblin cave guard~
+Short      &Ra hobgoblin guard&w~
+Long       &RA hobgoblin is here guarding the entrance to a cave.&w
+~
+Desc       &RThis hobgoblin is dressed in some crude looking chainmail as it stands
+guard here. It has a serious face as it look around the area for
+intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 4 0 17 0 0 0 0 0
+Stats2     3 9 10
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2303
+Keywords   hobgoblin bridge guard~
+Short      &ra hobgoblin guard&w~
+Long       &rA hobgoblin is here before a bridge looking for intruders.&w
+~
+Desc       &rThis hobgoblin is dressed in some crude looking chainmail as it stands
+guard here before a bridge. It has a serious look on its face as it
+searches for signs of intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 6 0 17 0 0 0 0 0
+Stats2     3 10 20
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2304
+Keywords   strong hobgoblin warrior elite wandering~
+Short      &ran elite hobgoblin warrior&w~
+Long       &rA strong looking hobgoblin is wandering about here.&w
+~
+Desc       &rThis hobgoblin looks very strong and is dressed in some crude looking
+chainmail armor. It moves about here looking for intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -600 1 6 0 17 0 0 1 5 0
+Stats2     4 10 30
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2305
+Keywords   hobgoblin lieutenant large~
+Short      &Ra hobgoblin lieutenant&w~
+Long       &RA large hobgoblin is sitting at a makeshift table here.&w
+~
+Desc       &RThis large hobgoblin is dressed in crude looking chainmail as he
+sits at a makeshift looking table. It is larger than the other
+hobgoblins and seems to be in control here.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 7 0 17 0 0 1 5 0
+Stats2     6 10 45
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2306
+Keywords   hobgoblin general guard~
+Short      &ra hobgoblin guard&w~
+Long       &rA hobgoblin is here guarding the entrance to a small cavern ahead.&w
+~
+Desc       &rThis hobgoblin is dressed in some crude looking chainmail as it stands
+guard here before a bridge. It has a serious look on its face as it
+searches for signs of intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 6 0 17 0 0 0 0 0
+Stats2     3 10 20
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2307
+Keywords   hobgoblin shaman dressed feathers~
+Short      &Ra hobgoblin shaman&w~
+Long       &RA hobgoblin dressed in feather embellished tattered robes is here.&w
+~
+Desc       &RThis hobgoblin is dressed in tattered looking robes that have
+been embellished wildly with lots and lots of feathers. It has
+a crazy look in its eyes and seems to know magic.
+~
+Race       goblin~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 15 6 0 17 0 0 1 5 0
+Stats2     3 10 30
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c firebolt
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   mpoload 1901 1
+c 'stoneskin'
+mpjunk stone
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   c 'acid splash'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2308
+Keywords   strong elite hobgoblin general guard~
+Short      &ran elite hobgoblin warrior&w~
+Long       &rA strong looking hobgoblin is here guarding this cavern from intruders.&w
+~
+Desc       &rThis hobgoblin looks very strong and is dressed in some crude looking
+chainmail armor. It moves about here looking for intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 6 0 17 0 0 1 5 0
+Stats2     4 10 30
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2309
+Keywords   large hobgoblin general~
+Short      &Ra hobgoblin general&w~
+Long       &RA large hobgoblin is here looking over some maps hung on a cavern wall.
+~
+Desc       &RThis large hobgoblin is dressed in crude looking chainmail as he
+sits at a makeshift looking table. It is larger than the other
+hobgoblins and seems to be in control here.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 8 0 17 0 0 1 5 0
+Stats2     6 7 50
+Stats3     1 8 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2310
+Keywords   hobgoblin general guard~
+Short      &ra hobgoblin guard&w~
+Long       &rA hobgoblin is here guarding the entrance to a large cavern ahead.&w
+~
+Desc       &rThis hobgoblin is dressed in some crude looking chainmail as it stands
+guard here before a bridge. It has a serious look on its face as it
+searches for signs of intruders.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 6 0 17 0 0 0 0 0
+Stats2     3 10 20
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2311
+Keywords   human slave mining worker~
+Short      &Ra slave&w~
+Long       &RA human male is here working as a mining slave.&w
+~
+Desc       &RThis human male has been captured and is being force to mine these
+caves by the hobgoblins that live here. He is heavily chained and
+is forced to work long hours.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpasound &OYou hear the sounds of something hitting rock nearby...&w
+emote hits some rock with his miner's pick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate slave~
+Comlist   if investigation($n) >= 17
+mea $n You see that the slave is chained down with rusty looking
+mea $n chains. Perhaps if you are strong enough you can break
+mea $n the chains and free the slave (BREAKCHAINS).
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p breakchains~
+Comlist   if athletics($n) >= 16
+if str($n) >= 14
+mea $n You manage to break the chains and set the slave free. He nods
+mea $n his head and sneaks off to freedom.
+mer $n $n breaks the chains holding a slave in captivity. The slave
+mer $n nods his head at $n before sneaking off to freedom.
+mpadvance $n 100
+mpgoto 1897
+else
+mea $n You fail to break the chains.
+endif
+else
+mea $n You fail to break the chains.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n The slave looks at you with pleading eyes for help.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2312
+Keywords   hobgoblin slave overseer~
+Short      &Ra hobgoblin&w~
+Long       &RA hobgoblin is here overseeing the slaves as they mine the caves.&w
+~
+Desc       &RThis large hobgoblin is dressed in crude looking chainmail as he
+sits at a makeshift looking table. It is larger than the other
+hobgoblins and seems to be in control here.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -600 1 7 0 17 0 0 1 5 0
+Stats2     6 10 45
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote cracks a whip at slave with a scowl on its face
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2313
+Keywords   zombie corpse body human male cut open abdomen~
+Short      &Ra zombie&w~
+Long       &RThe corpse of a human male with his abdomen cut open is here.&w
+~
+Desc       &RThis is the undead remains of what was a human male. His abdomen has
+been viciously cut open and much of his internal organs are missing.
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -1000 1 5 0 14 0 0 0 0 0
+Stats2     4 10 15
+Stats3     1 6 1
+Stats4     2 13 1 0 0 0 6
+Attribs    13 3 6 6 16 3 13
+Saves      0 0 0 0 0 0
+Immune     poison sleep charm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpasound &rYou hear the sounds of moaning coming from nearby.&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2314
+Keywords   hobgoblin necromancer raven feathers robe~
+Short      &za hobgoblin necromancer&w~
+Long       &zA hobgoblin dressed in raven feather embellished tattered robes is here.&w
+~
+Desc       &zThis hobgoblin is dressed in a tattered looking robe that has
+been embellished wildly with lots of raven feathers. Tiny bones
+also dangle from the robe. It has a crazy look in its eyes and 
+seems to know magic.
+~
+Race       goblin~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -1000 15 6 0 17 0 0 1 5 0
+Stats2     3 10 30
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 10 12 12 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'chill touch'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   c 'vampiric touch'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'acid splash'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ovnumroom(2308) == 1
+emote hisses angrily and begins chanting while pointing at a table.
+mpsleep 3
+mpecho &RThe corpse on the table stirs and rises to defend its master!
+mpmload 2313
+mppurge table2
+else
+emote hisses angrily and begins to chant something
+c 'chill touch' $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2349
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     2300
+Keywords longsword rusty~
+Type     weapon~
+Short    &Oa rusty longsword&w~
+Long     &OA rusty longsword has been left here.&w~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 1 0
+Values2  0 2
+Stats    3 2 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2301
+Keywords crude looking spear~
+Type     weapon~
+Short    &Oa crude looking spear&w~
+Long     &OA crude looking spear has been left here.&w~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2302
+Keywords rusty battleaxe~
+Type     weapon~
+Short    &Oa rusty battleaxe&w~
+Long     &OA rusty looking battleaxe has been left here.&w~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 13 0
+Values2  0 2
+Stats    4 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2303
+Keywords wooden club~
+Type     weapon~
+Short    &Oa wooden club&w~
+Long     &OA wooden club has been left here.&w~
+Flags    inventory lightweight~
+WFlags   take onehand~
+Values   12 1 4 2 19 0
+Values2  0 2
+Stats    2 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2304
+Keywords rusty greataxe~
+Type     weapon~
+Short    &Oa rusty greataxe&w~
+Long     &OA rusty greataxe has been left here.&w~
+Flags    inventory heavy~
+WFlags   take twohand~
+Values   12 1 12 1 13 0
+Values2  0 2
+Stats    7 0 3 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2305
+Keywords rusty dagger~
+Type     weapon~
+Short    &Oa rusty dagger&w~
+Long     &OA rusty looking dagger has been left here.&w~
+Flags    inventory finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2306
+Keywords miners pick rusty~
+Type     trash~
+Short    &Oa rusty miner's pick&w~
+Long     &OA rusty looking miner's pick has been left here.&w~
+Flags    inventory~
+WFlags   take twohand~
+Values   35 0 0 0 0 0
+Values2  0 2
+Stats    1 8 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2307
+Keywords tattered looking whip~
+Type     weapon~
+Short    &Oa tattered whip&w~
+Long     &OA tattered looking whip has been left here.&w~
+Flags    inventory finesse~
+WFlags   take onehand~
+Values   12 1 4 1 6 0
+Values2  0 2
+Stats    3 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2308
+Keywords human body corpse male table table2 cut open~
+Type     trash~
+Short    &Ra human corpse&w~
+Long     &RThe corpse of a human male is cut open on a table here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    150 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2349
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2300
+Name     A Rocky Path~
+Sector   hills~
+Flags    nomob~
+Stats    0 0 0 0 14 0
+Desc     This is a rocky path up the side of a mountain. The path was carved here
+many years ago by someone as it leads north. Large boulders can be
+seen on the sides of the path having been moved to clear the way.
+~
+Perdesc  &OYou spot an old &Ysign&O near the start of the path.&w
+~
+#EXIT
+Direction north~
+ToRoom    2301
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     overland~
+MapX      438
+MapY      638
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign is quite old and the original words have mostly faded
+except for the the word "Mines." The sign has freshly painted
+words in red that read "Danger Ahead"
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     2301
+Name     A Rocky Path~
+Sector   hills~
+Desc     This is a rocky path up the side of a mountain. The path was carved here
+many years ago by someone as it leads to the west or south. Large
+boulders can be seen on the sides of the path having been moved to
+clear the way. 
+~
+#EXIT
+Direction south~
+ToRoom    2300
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2302
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2302
+Name     A Rocky Path~
+Sector   hills~
+Desc     This is a rocky path up the side of a mountain. The path was carved here
+many years ago by someone as it leads to the north or east. Large
+boulders can be seen on the sides of the path having been moved to
+clear the way. 
+~
+#EXIT
+Direction north~
+ToRoom    2303
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2301
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2303
+Name     A Rocky Path~
+Sector   hills~
+Desc     This is a rocky path up the side of a mountain. The path was carved here
+many years ago by someone as it leads to the north or south. Large
+boulders can be seen on the sides of the path having been moved to
+clear the way. To the north is a small fortress created by large
+rocks arranged to create thick walls. A small entrance inside the
+fort is ahead, which appears to be guarded. 
+~
+#EXIT
+Direction north~
+ToRoom    2304
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2302
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2304
+Name     A Makeshift Fort Entrance~
+Sector   hills~
+Desc     This is a small entryway into a small rocky fort. The walls of the fort
+are made from large boulders and rocks, which make the wall almost
+impenetrable. The walls stand over eight feet in height, which makes
+it hard to see inside. Beyond the entryway to the north is a small
+courtyard built into the side the mountain here.
+~
+#EXIT
+Direction north~
+ToRoom    2305
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2303
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2300 2 2304
+  Reset E 0 2300 1 26
+Reset M 0 2300 2 2304
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2305
+Name     A Courtyard~
+Sector   field~
+Desc     The courtyard here is a small enclosed space that is right against
+the side of a mountain. The walls of the fort stand tall and also
+connect with the mountainside. There is not much in this courtyard and
+a small cave entrance can be seen to the far northwest.
+~
+#EXIT
+Direction north~
+ToRoom    2310
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2307
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2304
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2306
+#ENDEXIT
+
+Reset M 0 2301 2 2305
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2306
+Name     A Courtyard~
+Sector   field~
+Desc     The courtyard here is a small enclosed space that is right against
+the side of a mountain. The walls of the fort stand tall and also
+connect with the mountainside. There is not much in this courtyard and
+a small cave entrance can be seen to the far north.
+~
+#EXIT
+Direction north~
+ToRoom    2309
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2305
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2307
+Name     A Courtyard~
+Sector   field~
+Desc     The courtyard here is a small enclosed space that is right against
+the side of a mountain. The walls of the fort stand tall and also
+connect with the mountainside. There is not much in this courtyard and
+a small cave entrance can be seen to the far northwest.
+~
+#EXIT
+Direction north~
+ToRoom    2308
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2305
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2308
+Name     A Courtyard~
+Sector   field~
+Desc     The courtyard here is a small enclosed space that is right against
+the side of a mountain. The walls of the fort stand tall and also
+connect with the mountainside. There is not much in this courtyard and
+a small cave entrance can be seen to the far northwest.
+~
+#EXIT
+Direction south~
+ToRoom    2307
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2310
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2309
+Name     A Courtyard~
+Sector   field~
+Desc     The courtyard here is a small enclosed space that is right against
+the side of a mountain. The walls of the fort stand tall and also
+connect with the mountainside. There is not much in this courtyard and
+a small cave entrance can be seen to the north.
+~
+#EXIT
+Direction north~
+ToRoom    2311
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2310
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2306
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2310
+Name     A Courtyard~
+Sector   field~
+Desc     The courtyard here is a small enclosed space that is right against
+the side of a mountain. The walls of the fort stand tall and also
+connect with the mountainside. There is not much in this courtyard and
+a small cave entrance can be seen to the near northwest.
+~
+#EXIT
+Direction east~
+ToRoom    2308
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2305
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2309
+#ENDEXIT
+
+Reset M 0 2301 1 2310
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2311
+Name     Before a Cave Entrance~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is an entrance to a cave that has been dug into the side of the
+mountain many years ago. The entrance is quite large and has been
+cleared of any loose stones or boulders. Placeholders for torches have
+been set on each side of the entrance to provide light when needed.
+~
+#EXIT
+Direction north~
+ToRoom    2312
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2309
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2302 2 2311
+  Reset E 0 2300 1 26
+Reset M 0 2302 2 2311
+  Reset E 0 2301 1 28
+#ENDROOM
+
+#ROOM
+Vnum     2312
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the west and south from here.
+~
+#EXIT
+Direction south~
+ToRoom    2311
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2313
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2313
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the west and east from here. A small cavern can
+be seen to the south of here.
+~
+#EXIT
+Direction east~
+ToRoom    2312
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2343
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2314
+#ENDEXIT
+
+Reset M 0 2301 3 2313
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2314
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the east and north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2315
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2313
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2315
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel forks here as it goes to the west and east. The tunnel
+also continues back to the south.
+~
+#EXIT
+Direction east~
+ToRoom    2316
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2314
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2342
+#ENDEXIT
+
+Reset M 0 2301 4 2315
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2316
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues from here to the north or back to the west.
+~
+#EXIT
+Direction north~
+ToRoom    2317
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2315
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2317
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues from here towards the south or west as it snakes
+around a few corners.
+~
+#EXIT
+Direction south~
+ToRoom    2316
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2318
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2318
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues back to the east from here or further on
+towards the north.
+~
+#EXIT
+Direction north~
+ToRoom    2319
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2317
+#ENDEXIT
+
+Reset M 0 2301 5 2318
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2319
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and five feet in width along here. Torches have been
+lit and placed along the walls of the tunnel to provide light. 
+The tunnel here is much more narrow than in previous parts back
+towards the south. An opening to the east reveal a small cavern
+while the tunnel heads further north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2320
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2341
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2318
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2320
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and five feet in width along here. Torches have been
+lit and placed along the walls of the tunnel to provide light. 
+The tunnel here is much more narrow than in previous parts back
+towards the south. An opening to the east reveals a small cavern
+while the tunnel heads further west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2349
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2319
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2321
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2321
+Name     A Cave Tunnel~
+Sector   indoors~
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the east and north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2322
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2320
+#ENDEXIT
+
+Reset M 0 2301 6 2321
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2322
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 2 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and four feet in width along this part. Torches have been
+light and places along the walls of the tunnel to provide light. This
+part of the tunnel is much more narrow than previous parts and allows
+for only a few to pass by. Large boulders that are part of the walls
+pinch off the tunnel here making it hard for groups to pass through
+together. The tunnel continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2323
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2321
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2323
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the north and south here while a small
+tunnel leads east from here.
+~
+#EXIT
+Direction north~
+ToRoom    2324
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2345
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2322
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2324
+Name     A Cave Tunnel~
+Sector   indoors~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the north and south from here.
+This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues back to the south while to the north the tunnel
+arrives at a large chasm where a bridge has been established.
+~
+#EXIT
+Direction north~
+ToRoom    2325
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2323
+#ENDEXIT
+
+Reset M 0 2301 7 2324
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2325
+Name     Before a Chasm~
+Sector   indoors~
+Flags    nomob tunnel~
+Stats    0 0 10 0 0 0
+Desc     This is a large chasm that runs very deep below where a source of
+underground water can be heard rushing by. A rope bridge has been
+established ahead to help get across the large chasm. The ceiling
+of this part of the tunnel is very high where not even torch
+light can penetrate the darkness above. Past the bridge is another
+set of tunnels created by miners long ago.
+~
+#EXIT
+Direction north~
+ToRoom    2326
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2324
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2303 2 2325
+  Reset E 0 2301 1 26
+Reset M 0 2303 2 2325
+  Reset E 0 2301 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2326
+Name     A Rope Bridge~
+Sector   indoors~
+Desc     This rope bridge is very rickety and is starting to show signs of
+age as the rope is slowly untwisting. Wood slats have been used
+at the base of the bridge for people to walk on as they cross the
+chasm below. The sounds of a roaring river can be heard down
+below, but cannot be seen due to the thick darkness. 
+~
+#EXIT
+Direction north~
+ToRoom    2327
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2325
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2327
+Name     A Large Cavern~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 8 0 0 0
+Desc     This is a large cavern on the other side of a deep chasm. This part
+of the mining network is not as refined as the previous areas with
+large boulders and other rocks still found along the ground here. The
+earthen ground here is not as level either with large rocks creating
+bumpy spots.
+~
+#EXIT
+Direction north~
+ToRoom    2331
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2328
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2326
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2330
+#ENDEXIT
+
+Reset M 0 2304 1 2327
+  Reset E 0 2302 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2328
+Name     A Large Cavern~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 8 0 0 0
+Desc     This is a large cavern on the other side of a deep chasm. This part
+of the mining network is not as refined as the previous areas with
+large boulders and other rocks still found along the ground here. The
+earthen ground here is not as level either with large rocks creating
+bumpy spots.
+~
+#EXIT
+Direction north~
+ToRoom    2332
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2327
+#ENDEXIT
+
+Reset M 0 2304 6 2328
+  Reset E 0 2302 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2329
+Name     A Large Cavern~
+Sector   indoors~
+#EXIT
+Direction south~
+ToRoom    2327
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2330
+Name     A Large Cavern~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 8 0 0 0
+Desc     This is a large cavern on the other side of a deep chasm. This part
+of the mining network is not as refined as the previous areas with
+large boulders and other rocks still found along the ground here. The
+earthen ground here is not as level either with large rocks creating
+bumpy spots.
+~
+#EXIT
+Direction north~
+ToRoom    2333
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2327
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2331
+Name     A Large Cavern~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 8 0 0 0
+Desc     This is a large cavern on the other side of a deep chasm. This part
+of the mining network is not as refined as the previous areas with
+large boulders and other rocks still found along the ground here. The
+earthen ground here is not as level either with large rocks creating
+bumpy spots.
+~
+#EXIT
+Direction east~
+ToRoom    2332
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2327
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2333
+#ENDEXIT
+
+Reset M 0 2304 3 2331
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2332
+Name     A Large Cavern~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 8 0 0 0
+Desc     This is a large cavern on the other side of a deep chasm. This part
+of the mining network is not as refined as the previous areas with
+large boulders and other rocks still found along the ground here. The
+earthen ground here is not as level either with large rocks creating
+bumpy spots. A tunnel lit with torches can be seen towards the
+north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2334
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2328
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2331
+#ENDEXIT
+
+Reset M 0 2304 3 2332
+  Reset E 0 2301 1 28
+#ENDROOM
+
+#ROOM
+Vnum     2333
+Name     A Large Cavern~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 8 0 0 0
+Desc     This is a large cavern on the other side of a deep chasm. This part
+of the mining network is not as refined as the previous areas with
+large boulders and other rocks still found along the ground here. The
+earthen ground here is not as level either with large rocks creating
+bumpy spots. A tunnel begins to the northwest from here, which
+is lined with torches to help with illumination
+~
+#EXIT
+Direction east~
+ToRoom    2331
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2330
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2338
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2334
+Name     A Large Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the north and south from here where it
+spills into a large cavern.
+~
+#EXIT
+Direction north~
+ToRoom    2335
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2332
+#ENDEXIT
+
+Reset M 0 2304 5 2334
+  Reset E 0 2303 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2335
+Name     A Large Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the east and south from here.
+~
+#EXIT
+Direction east~
+ToRoom    2336
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2334
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2336
+Name     A Large Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2337
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2335
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2337
+Name     A Large Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the north where it ends at a large cavern
+or back to the west.
+~
+#EXIT
+Direction north~
+ToRoom    2340
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2336
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2310 2 2337
+  Reset E 0 2300 1 26
+Reset M 0 2310 2 2337
+  Reset E 0 2303 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2338
+Name     A Small Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around eight feet in
+height and five feet in width at most points here. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the north where it ends at a small cavern or 
+back to the southeast where it exits into a larger cavern.
+~
+#EXIT
+Direction north~
+ToRoom    2339
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2333
+#ENDEXIT
+
+Reset M 0 2306 2 2338
+  Reset E 0 2300 1 26
+Reset M 0 2306 2 2338
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2339
+Name     A Small Cavern~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 7 0 0 0
+Desc     This small cavern is full of various objects gathered from the
+mine and surrounding area. Furniture such as lavish looking chairs to
+art with broken frames can be found here. These various items are the
+product of theft and pillaging local villages. A large makeshift table
+made from books and a large piece of wood can be found in the middle
+of the cavern. 
+~
+#EXIT
+Direction south~
+ToRoom    2338
+#ENDEXIT
+
+Reset M 0 2305 1 2339
+  Reset E 0 2302 1 26
+Reset M 0 2307 4 2339
+  Reset E 0 2303 1 26
+Reset M 0 2308 3 2339
+  Reset E 0 2300 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2340
+Name     A Large Cavern~
+Sector   indoors~
+Desc     This is a large cavern that is used to make plans as illustrated
+by the amount of maps on the rocky walls here. Parts of the maps have
+been circled with red chalk. A large table and chairs set has been placed
+in the middle of the cavern where plans can be further developed. There
+are more lavish items here from recent thefts and pillaging such as
+art, furniture, and other goods. 
+~
+#EXIT
+Direction south~
+ToRoom    2337
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2309 1 2340
+  Reset E 0 2304 1 28
+Reset M 0 2307 2 2340
+  Reset E 0 2305 1 26
+Reset M 0 2308 3 2340
+  Reset E 0 2301 1 28
+Reset M 0 2308 3 2340
+  Reset E 0 2300 1 28
+#ENDROOM
+
+#ROOM
+Vnum     2341
+Name     A Small Cavern~
+Sector   indoors~
+Flags    nomob~
+Desc     This small cavern was once a storage area, but all remnants of that
+are gone or destroyed. This space now has various odd implements hanging
+on the rocky walsl from herbs to pieces of animal organs. A long
+table has been placed in the middle of this cavern. The table is 
+stained from blood dripping from sacrifices. Much of the earthen floor
+around the table is also stained from the copious amounts of blood
+that have been released here.
+~
+#EXIT
+Direction west~
+ToRoom    2319
+#ENDEXIT
+
+Reset M 0 2314 1 2341
+  Reset E 0 2305 1 26
+Reset O 0 2308 1 2341
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+mea $n &BYou detect the faint remnants of magic in this cavern.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2342
+Name     A Cave Tunnel~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 5 0 0 0
+Desc     This is a moderately sized tunnel that has been dug into the side of
+the mountain. The tunnel is quite tall standing around ten feet in
+height and eight feet in width at most points. Torches have been
+lit and placed along the walls of the tunnel to provide light. The
+tunnel continues to the north where it ends at a small cavern or
+back towards the east.
+~
+#EXIT
+Direction north~
+ToRoom    2344
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2315
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2343
+Name     A Small Cavern~
+Sector   indoors~
+Desc     This is a small cavern that was used for storage when these tunnels
+were used for mining. Remnants of crates and other wooden storage
+structures can be found scattered along the earthen floor here.
+A few crates have been left in their original shape, but are empty and
+full of cobwebs now.
+~
+#EXIT
+Direction north~
+ToRoom    2313
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2344
+Name     A Small Cavern~
+Sector   indoors~
+Desc     This small cavern was once a storage area, but all remnants of that
+are gone or destroyed. This space now has various odd implements hanging
+on the rocky walls from herbs to pieces of animal organs. A small
+table has been selvaged and put in the middle of the cavern. The table
+is covered in various fluids from blood to oils that have dried on
+the surface of the table. 
+~
+#EXIT
+Direction south~
+ToRoom    2342
+#ENDEXIT
+
+Reset M 0 2307 4 2344
+  Reset E 0 2305 1 26
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+mea $n &BYou detect the faint remnants of magic in this cavern.&w
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2345
+Name     A Mining Shaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This is a small mining shaft that is still in production as the creatures
+occupying this set of tunnels use humans as slaves. There are several
+lengths of chain that are used to keep the humans from escaping
+to be found along this mining shaft. The ceiling here is not as 
+high as the other tunnels and the shaft is not very wide either.
+~
+#EXIT
+Direction east~
+ToRoom    2346
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2323
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2311 2 2345
+  Reset E 0 2306 1 28
+#ENDROOM
+
+#ROOM
+Vnum     2346
+Name     A Mining Shaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 3 0 0 0
+Desc     This is a small mining shaft that is still in production as the creatures
+occupying this set of tunnels use humans as slaves. There are several
+lengths of chain that are used to keep the humans from escaping
+to be found along this mining shaft. The ceiling here is not as 
+high as the other tunnels and the shaft is not very wide either.
+~
+#EXIT
+Direction north~
+ToRoom    2347
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2345
+#ENDEXIT
+
+Reset M 0 2311 3 2346
+  Reset E 0 2306 1 28
+Reset M 0 2312 1 2346
+  Reset E 0 2307 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2347
+Name     A Mining Shaft~
+Sector   indoors~
+Flags    tunnel~
+Stats    0 0 4 0 0 0
+Desc     This is a small mining shaft that is still in production as the creatures
+occupying this set of tunnels use humans as slaves. There are several
+lengths of chain that are used to keep the humans from escaping
+to be found along this mining shaft. The ceiling here is not as 
+high as the other tunnels and the shaft is not very wide either.
+~
+#EXIT
+Direction east~
+ToRoom    2348
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2346
+#ENDEXIT
+
+Reset M 0 2311 3 2347
+  Reset E 0 2306 1 28
+#ENDROOM
+
+#ROOM
+Vnum     2348
+Name     End of the Mining Shaft~
+Sector   indoors~
+Desc     This is the end of the mining shaft which ends abruptly at a wall of
+sleek looking black rock. The mining force here must have discovered it
+many years ago and have stayed away since. The black rock is framed almost
+in a circular pattern of normal rock like a giant mirror. The surface
+of the black rock is smooth with veins of deep purple running through
+it.
+~
+#EXIT
+Direction west~
+ToRoom    2347
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate markings~
+Comlist   if arcana($n) >= 19
+if isaffected($n) == detect_magic
+mea $n &BYou are able to decipher that the markings are ancient runes
+mea $n &Bthat allow for magical transportation to another plane of
+mea $n &Bexistence...&w
+else
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+mpsleep 3
+mea $n &BAs you enter this portion of the mining shaft the sleek
+mea $n &Blooking wall of black rock glows as your magical sight
+mea $n &Breveals &Wmarkings&B on its surface...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2349
+Name     A Small Cavern~
+Sector   indoors~
+Flags    nomob~
+Desc     This small cavern was once a storage area, but all remnants of that
+are gone or destroyed. This space now has various odd implements hanging
+on the rocky walls from hersb to pieces of animal organs. A small rug
+has been placed on the floor here. All around the rug are ornaments
+from skulls to candles. A small incense burner has tipped over and
+spewed its ashes all over the earthen floor here.
+~
+#EXIT
+Direction west~
+ToRoom    2320
+#ENDEXIT
+
+Reset M 0 2307 3 2349
+  Reset E 0 2303 1 26
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+mea $n &BYou detect the faint remnants of magic in this cavern.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

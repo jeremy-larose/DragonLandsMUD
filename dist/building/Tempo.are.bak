@@ -1,0 +1,2058 @@
+#FUSSAREA
+#AREADATA
+Version      1
+Name         {PROTO} Tempo's area in progress~
+Author       Tempo~
+WeatherX     0
+WeatherY     0
+Ranges       0 0 0 0
+Flags        prototype~
+#ENDAREADATA
+
+#MOBILE
+Vnum       3300
+Keywords   felrast tourism clerk dwarven female~
+Short      &wa Felrast tourism clerk&w~
+Long       &wA dwarven woman dressed in fur is here seated at a desk.&w
+~
+Desc       This dwarven woman is bundled up in a lovely fur coat and heavy gown
+that keeps her warm. Her thick reddish hair has been pulled into
+an interesting style and she dons a fur hat on top.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 1 0 0 10 0 10 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 2
+sayto $n Welcan tae th'tourism center of Felrast. Howfur kin
+sayto $n ah hulp ye?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3301
+Keywords   felrast artificer ship working dwarven man~
+Short      &wan air ship artificer~
+Long       &wAn artificer is here working on some parts for the Sky Dragon.&w
+~
+Desc       This dwarven man is here working on some parts for the Sky Dragon. He
+is dressed in thick clothing lined with fur to stay warm. He seems
+very busy doing his work and hates to be disturbed.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 1 0 0 10 0 10 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+emote resumes hammering on a small piece of metal
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3302
+Keywords   frosty beard innkeeper female dwarf~
+Short      &wan innkeeper&w~
+Long       &wAn innkeeper is here greeting guests and checking in customers.&w
+~
+Desc       &wThis female dwarf has a pleasant face and is dressed in a sky blue 
+dress and a fur shawl. Her greying black hair has been swept up into
+a thick bun at the back of her head while she works. A pair of thin
+silver frame glasses hang off her nose.
+~
+Race       hill-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   sayto $n Welcan tae th'Frosty Beard! If yi'll want t'room let me ken.
+mpsleep 2
+emote points to the west and smiles
+sayto $n If yer keekin fur drink heid tae our tavern thare.
+mpsleep 2
+emote points to the east and wrinkles her nose
+sayto $n If ye smoke ye kin uise our sittin room ower thare. Enjoy
+sayto $n yer stay here at tae Frosty Beard!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3303
+Keywords   frosty beard bartender tavern female dwarf~
+Short      &wa bartender&w~
+Long       &wA female dwarf is here running the tavern's bar and serving drinks.&w
+~
+Desc       &wThis female dwarf looks very young for this line of work, but seems
+to be holding her own. She has rosy cheeks and thick blonde hair. She
+moves about the tavern serving drinks and keeping the patrons in order.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 50 0 0 10 0 10 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 13 3
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   wink $n
+mpsleep 3
+sayto $n Whit kin ah git ye?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3304
+Keywords   frosty beard smoking lounge clerk male dwarf~
+Short      &wa smoking lounge clerk&w~
+Long       &wA male dwarf is here cleaning the lounge and providing wares to customers.&w
+~
+Desc       &wThis male dwarf is dressed in thick woolen clothes and is wearing a
+fur hat to stay warm. He has a youthful face and seems very busy keeping
+this lounge clean and organized.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 50 0 0 10 0 10 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 15 3
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+sayto $n Is thare anythin' ah kin git ye?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3305
+Keywords   artik male dwarf feeding foxes large white~
+Short      &WArtik&w~
+Long       &wA male dwarf is here tending to some large white foxes.&w
+~
+Desc       &wThis elderly male dwarf is dressed in white fur and woolen clothing
+to help keep warm. He owns and maintains this business as he has for
+much of his life. He is very nice and always greeting customers who
+enter this building.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 50 0 0 10 0 10 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 110 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Welcan! Wid ye lik'tae hurl th'snaw wit ease? Mah foxes are
+sayto $n th'best oan Felfarthen!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3306
+Keywords   large snow fox white mountable~
+Short      &Wa large snow fox&w~
+Long       &WA large white fox is here.&w
+~
+Desc       &WThis fox is quite large and has a very soft looking fur the color
+of pure snow. It's sky blue eyes contrast against the white of its
+fur. It is large enough for a small or meduim sized humanoid to ride.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc pet mountable prototype~
+Affected   detect_hidden infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     4 10 4
+Stats3     2 6 3
+Stats4     3 1 2 0 0
+Attribs    14 6 15 16 14 12 13
+Saves      0 0 0 0 0 0
+Resist     cold~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3307
+Keywords   felrast sky dragon clerk female dwarf~
+Short      &wa ticket clerk&w~
+Long       &wA female dwarf is here selling tickets for the Sky Dragon.&w
+~
+Desc       This dwarven woman is bundled up in a lovely fur coat and heavy gown
+that keeps her warm. Her thick reddish hair has been pulled into
+an interesting style and she dons a fur hat on top.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 1 0 0 10 0 10 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Welcan tae th'Sky Dragon Express. We offah comfortable travel
+sayto $n o'er th'stoatin rifts fur a'body. If yer curious about th'twa
+sayto $n types o' tickets shored juist ask me aboot dem!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p general ticket~
+Comlist   nod $n
+mpsleep 3
+sayto $n Splendid choice! Th'general tickeh allows ye yun hurl to
+sayto $n wherever yer gaun. Wance ye depairt th'Sky Dragon you will
+sayto $n need tae purchase anither tae continue tae anither steid.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p gold ticket~
+Comlist   smile $n
+mpsleep 3
+sayto $n Th'gowd tickeh is th'best option tae fur those that require a
+sayto $n lot o' gawin. It's a permanent tickeh 'n' allows you unlimited
+sayto $n rides a' ower th'realm. It's pricey sur, bit it will save ye
+sayto $n dosh in th'lang run!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3308
+Keywords   felrast young dwarven girl merchant~
+Short      &wa young dwarven girl&w~
+Long       &wA young dwarven girl is here selling cups of hot chocolate to visitors.&w
+~
+Desc       &wThis young dwarven girl is making quite the business here as she
+greets visitors and offers cups of hot chocolate. She is bundled up
+in thick woolen clothing and fur as she works.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea pacifist prototype~
+Stats1     0 1 0 0 10 0 5 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   wave $n
+mpsleep 2
+sayto $n Hullo! Wid ye lik' a cup o' het chocolate wi wee marshies?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 3301
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   mpgoto 3399
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3309
+Keywords   meridian tourism clerk human male elderly~
+Short      &ga Meridian tourism clerk&w~
+Long       &gAn elderly human man is here seated at a desk playing cards.
+~
+Desc       &gThis elderly human man is dressed in a completely grey ensemble
+consisting of a cloak, tunic, and pants. He has long silver hair
+that is pulled away from his face with a piece of leather.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 1 0 0 10 0 10 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote stops playing cards and looks up with a smile
+mpsleep 3
+sayto $n Hello there child.. would you like to purchase some information
+sayto $n or perhaps a trinket?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3399
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc prototype~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3300
+Keywords large ice statue dwarf battle axe~
+Type     trash~
+Short    &Wan ice statue&w~
+Long     &WA massive ice statue of a dwarf wielding a battle axe has been erected here.&w~
+Flags    prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    statue~
+ExDesc       &WThis statue has been carved from a massive block of ice and has been
+erected here to greet visitors to Felfarthen. The dwarf has been
+depicted in full battle armor and is wielding an incredible looking
+battle axes. He stands ready to greet an attack as he faces towards
+the west.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3301
+Keywords large cobblestone fountain~
+Type     fountain~
+Short    &Oa large cobblestone fountain&w~
+Long     &OA large cobblestone fountain is here offering fresh water to travelers.&w~
+Flags    prototype~
+Values   1000 1000 6 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3302
+Keywords stone pit blazing fire~
+Type     fire~
+Short    &Ra fire in a stone pit&w~
+Long     &RA blazing fire is here contained in a large stone pit.&w~
+Flags    prototype~
+Values   0 0 -1 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3303
+Keywords felrast tourist pamphlet~
+Type     scroll~
+Short    &wa Felrast tourism pamphlet&w~
+Long     &wA pamphlet entitled 'Felrast' has been left here.&w~
+Flags    prototype~
+WFlags   take onehand~
+Values   1 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 0 1 25 0 0 0
+Spells   'NONE' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    felrast~
+ExDesc       &wThis pamphlet has been illustrated with images of dwarves braving
+the cold mountains and building a strong society there. The pamphlet
+is entitled 'Felrast,' which is the main city on this frozen continent. 
+ 
+The next page outlines that this continent is known as Felfarthen, which
+means "Frost Father" in ancient Dwarven. The continent was dedicated
+to the ancient Dwarven god, Felforik, who was killed during the "Great
+Splintering" along with many of the other racial based deities.
+ 
+The pamphlet shows a map of a frozen continent consisting of mountains known
+as the "Teeth of the Father." There are four ranges - North, East, South,
+and west. The middle of the continent is known as the "Father's Belly,"
+which consists of rolling tundra created by a massive impact many
+years ago.
+ 
+The Frozen Sea is located around Felfarthen and there are three notable
+locations indicated on it. One is "Wyrmfang," a dormat volcano that
+is home to the Dragonborn located to the west. To the east is the
+island of Frostmeet, which is home to a city of the same name that is
+home to humans and dwarves. The final spot in the Frozen Sea is the
+dangerous Ice Pass that is located to the south. It connects with the
+Darkhaven Sea, but has become very dangerous since the "Great Splintering."
+ 
+The final page discusses traditions of Felrast such as a love for thick
+soup, riding large snow foxes, drinking, and being incredibly loud.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    pamphlet~
+ExDesc       This pamphlet has been illustrated with images of dwarves braving
+the cold mountains and building a strong society there. The pamphlet
+is entitled 'Felrast,' which is the main city on this frozen continent. 
+ 
+The next page outlines that this continent is known as Felfarthen, which
+means "Frost Father" in ancient Dwarven. The continent was dedicated
+to the ancient Dwarven god, Felforik, who was killed during the "Great
+Splintering" along with many of the other racial based deities.
+ 
+The pamphlet shows a map of a frozen continent consisting of mountains known
+as the "Teeth of the Father." There are four ranges - North, East, South,
+and west. The middle of the continent is known as the "Father's Belly,"
+which consists of rolling tundra created by a massive impact many
+years ago.
+
+The Frozen Sea is located around Felfarthen and there are three notable
+locations indicated on it. One is "Wyrmfang," a dormat volcano that
+is home to the Dragonborn located to the west. To the east is the
+island of Frostmeet, which is home to a city of the same name that is
+home to humans and dwarves. The final spot in the Frozen Sea is the
+dangerous Ice Pass that is located to the south. It connects with the
+Darkhaven Sea, but has become very dangerous since the "Great Splintering."
+ 
+The final page discusses traditions of Felrast such as a love for thick
+soup, riding large snow foxes, drinking, and being incredibly loud.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate pamphlet~
+Comlist   if investigation($n) >= 10
+mea $n You find that this pamphlet was created by the Felrast Tourism
+mea $n Center and is a pamphlet that summarizes the Dwarven homeland.
+else
+mea $n You find nothing.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3304
+Keywords snow globe felfarthen~
+Type     trash~
+Short    &Wa Felfarthen snow globe&w~
+Long     &WA snow globe depicting Felfarthen has been left here.&w~
+Flags    prototype~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 10 5 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate globe~
+Comlist   if investigation($n) >= 12
+mea $n Perhaps you could SHAKEGLOBE to see if it does something?
+else
+mea $n You find nothing.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shakeglobe~
+Comlist   if wearingvnum($n) == 3304
+mea $n &WOnce shook the globe begins to quickly snow artificially on the tiny
+mea $n &Wcontinent of Felfarthen with its tiny mountain range and frozen sea.
+mer $n &W$n shakes a snow globe and watches it artificially snow.
+else
+mea $n You need to be holding the globe first.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3305
+Keywords flagon house ale~
+Type     drinkcon~
+Short    &Oa flagon of house ale&w~
+Long     &OA flagon of house ale has been left here.&W~
+Flags    prototype~
+WFlags   take hold~
+Values   3 3 4 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3306
+Keywords flagon dark dwarven ale~
+Type     drinkcon~
+Short    &wa flagon of &Odark dwarven ale&w~
+Long     &wA flagon of dark dwarven ale has been left here.&w~
+Flags    prototype~
+WFlags   take onehand~
+Values   6 6 4 0 0 0
+Values2  0 2
+Stats    1 0 0 75 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3307
+Keywords bottle dwarven battle axe~
+Type     drinkcon~
+Short    &wa bottle of "&RDwarven Battle Axe&w"&w~
+Long     &wA bottle of ale labeled "Dwarven Battle Axe" has been left here.&w~
+Flags    prototype~
+WFlags   take hold~
+Values   0 5 1 0 0 0
+Values2  0 2
+Stats    1 0 1 90 0 1 0
+#EXDESC
+ExDescKey    bottle~
+ExDesc       &RThis bottle has been shaped in glass like a regular bottle used for
+ales and beers. A slick looking paper label has been applied to the
+front of the bottle with an illustration of an angry looking dwarf
+swinging a vicious looking battle axe. The words "Dwarven Battle Axe"
+have been written on the front of the label with the logo of the 
+Warhorse Brewing Company.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3308
+Keywords bowl cheese soup~
+Type     trash~
+Short    &Ya bowl of cheese soup&w~
+Long     &YA bowl of cheese soup has been left here.&W~
+Flags    prototype~
+WFlags   take hold~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3309
+Keywords bowl goat cavern roots stew~
+Type     food~
+Short    &wa bowl of &Ogoat&w and &zcavern roots&w stew&w~
+Long     &wA bowl of a strange stew has been left here.&W~
+Flags    prototype~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3310
+Keywords bowl hearty beef root vegetable stew~
+Type     food~
+Short    &Oa hearty beef and root vegetable stew&w~
+Long     &OA hearty beef stew in a bowl has been left here.&W~
+Flags    prototype~
+WFlags   take hold~
+Values   5 9 0 0 0 0
+Values2  0 2
+Stats    1 0 1 90 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3311
+Keywords ornate dwarven smoking pipe bronze~
+Type     pipe~
+Short    &Oan ornate bronze dwarven pipe&w~
+Long     &OA bronze smoking pipe with dwarven symbols etched into it has been left here.&w~
+Flags    prototype~
+WFlags   take onehand~
+Values   5 5 0 0 0 0
+Values2  0 2
+Stats    1 10 15 0 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3312
+Keywords tobacco~
+Type     herb~
+Short    &Osome tobacco&w~
+Long     &OA small amount of smoking tobacco has been left here.&W~
+Flags    prototype~
+WFlags   take onehand~
+Values   0 3 6 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3313
+Keywords frostweed white colored leaf herb~
+Type     herb~
+Short    &Wsome frostweed&w~
+Long     &WA small white leaf has been left here.&w~
+Flags    prototype~
+WFlags   take onehand~
+Values   0 3 9 0 0 0
+Values2  0 2
+Stats    1 0 5 90 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3314
+Keywords hot chocolate cup marshmallows~
+Type     drinkcon~
+Short    &Wa cup of &Ohot chocolate&W with &wmarshmallows&w~
+Long     &WA cup of hot chocolate and marshmallows has been left here.&w~
+Flags    prototype~
+WFlags   take onehand~
+Values   2 2 10 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3399
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Flags    prototype~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3300
+Name     &WThe Sky Dragon Loading Dock~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3301
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3315
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3301
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3300
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3302
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3316
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3308 1 3301
+  Reset G 0 3314 1
+Reset O 0 3300 1 3301
+#ENDROOM
+
+#ROOM
+Vnum     3302
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3301
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3303
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3307
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3303
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3308
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3304
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3302
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3304
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3305
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3380
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3303
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3305
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3313
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3306
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3312
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3304
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3306
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3305
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3307
+Name     &wA Workshop&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3302
+#ENDEXIT
+
+Reset M 0 3301 1 3307
+#ENDROOM
+
+#ROOM
+Vnum     3308
+Name     &wThe Frosty Beard Tavern & Inn&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3310
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3303
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3311
+#ENDEXIT
+
+Reset M 0 3302 1 3308
+#ENDROOM
+
+#ROOM
+Vnum     3309
+Name     &WA Warm Bedroom&w~
+Sector   indoors~
+Flags    nomob prototype~
+#EXIT
+Direction down~
+ToRoom    3308
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3310
+Name     &wA Smoking Lounge&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3308
+#ENDEXIT
+
+Reset M 0 3304 1 3310
+  Reset G 0 3312 1
+  Reset G 0 3311 1
+  Reset G 0 3313 1
+#ENDROOM
+
+#ROOM
+Vnum     3311
+Name     &wA Loud Tavern&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3308
+#ENDEXIT
+
+Reset M 0 3303 1 3311
+  Reset G 0 3308 1
+  Reset G 0 3305 1
+  Reset G 0 3307 1
+  Reset G 0 3309 1
+  Reset G 0 3306 1
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &WThe sounds of dwarves laughing and yelling can be heard nearby.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3312
+Name     &wThe Sky Dragon Express Ticket Office&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3305
+#ENDEXIT
+
+Reset M 0 3307 1 3312
+#ENDROOM
+
+#ROOM
+Vnum     3313
+Name     &wArtik's Travel Company&w~
+Sector   indoors~
+Flags    petshop prototype~
+#EXIT
+Direction south~
+ToRoom    3305
+#ENDEXIT
+
+Reset M 0 3305 1 3313
+#ENDROOM
+
+#ROOM
+Vnum     3314
+Name     &RArtik's Mob Storage&w~
+Sector   city~
+Flags    nomob norecall nosummon noastral nosupplicate prototype~
+Desc     You should not be in here, silly. Please contact the admins to get
+out of here. :)
+~
+Reset M 0 3306 1 3314
+#ENDROOM
+
+#ROOM
+Vnum     3315
+Name     &wA Warming Station&w~
+Sector   indoors~
+Flags    prototype~
+Desc     A place for passengers to wait and to avoid the cold. Place a fire here.
+~
+#EXIT
+Direction east~
+ToRoom    3300
+#ENDEXIT
+
+Reset O 0 3302 1 3315
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &RThe fire crackles and pops for a few moments...&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3316
+Name     &wThe Felrast Tourism Center&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3301
+#ENDEXIT
+
+Reset M 0 3300 1 3316
+  Reset G 0 3304 1
+  Reset G 0 3303 1
+#ENDROOM
+
+#ROOM
+Vnum     3317
+Name     &OThe Sky Dragon Loading Dock&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3318
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3318
+Name     &OA Cobblestone Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3324
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3319
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3317
+#ENDEXIT
+
+Reset O 0 3301 1 3318
+#ENDROOM
+
+#ROOM
+Vnum     3319
+Name     &OA Cobblestone Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3325
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3320
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3318
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3320
+Name     &OA Cobblestone Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3321
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3326
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3319
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3321
+Name     &OA Cobblestone Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3328
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3322
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3320
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3322
+Name     &OA Cobblestone Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3327
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3323
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3321
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3323
+Name     &OA Cobblestone Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3322
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3324
+Name     &gThe Meridian Tourism Center&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3318
+#ENDEXIT
+
+Reset M 1 3309 1 3324
+#ENDROOM
+
+#ROOM
+Vnum     3325
+Name     &gA Workshop&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3319
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3326
+Name     &gA Small Druid's Grove&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3320
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3327
+Name     &gThe Sky Dragon Express Ticket Office&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3322
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3328
+Name     &gThe Ivy Heart Tavern & Inn&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3321
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3330
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3329
+Name     &gA Small Bedroom&w~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     3330
+Name     &gA Cozy Tavern&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3328
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3331
+Name     &YThe Sky Dragon Loading Dock&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction down~
+ToRoom    3332
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3332
+Name     &YA Sandy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3341
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3333
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3331
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3333
+Name     &YA Sandy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3332
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3343
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3334
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3334
+Name     &YA Sandy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3337
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3333
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3335
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3335
+Name     &YA Sandy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3344
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3334
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3336
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3342
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3336
+Name     &YA Sandy Path&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3335
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3337
+Name     &RThe Rising Sun Tavern & Inn&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3340
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3334
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3339
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3338
+Name     &RA Small Bedroom&w~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     3339
+Name     &RA Small Tavern&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3337
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3340
+Name     &RA Smoking Lounge&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3337
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3341
+Name     &RThe Temos Tourism Center&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3332
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3342
+Name     &RThe Sky Dragon Express Ticket Office&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3335
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3343
+Name     &RA Workshop&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3333
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3344
+Name     &RHulip's Travel Service&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3335
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3345
+Name     &RHulip's MOB STORAGE&w~
+Sector   city~
+Flags    nomob safe norecall nosummon noastral nosupplicate prototype~
+Desc     This is a mob storage area. You shouldn't be in here. Contact an admin to
+get out. :)
+~
+#ENDROOM
+
+#ROOM
+Vnum     3346
+Name     &GThe Sky Dragon Loading Dock~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3347
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3362
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3347
+Name     &GA Wooden Suspension Footbridge&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3346
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3349
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3348
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3348
+Name     &GA Courtyard&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3358
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3347
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3356
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3355
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3349
+Name     &GA Wooden Suspension Footbridge&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3347
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3350
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3350
+Name     &GA Wooden Suspension Footbridge&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3351
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3349
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3351
+Name     &GA Wooden Suspension Footbridge&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3350
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3352
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3352
+Name     &GA Large Wooden Staircase&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction up~
+ToRoom    3351
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3353
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3353
+Name     &GA Wooden Platform&w~
+Sector   city~
+Flags    prototype~
+Desc     This will be a cable car service that drops the person off at the
+jungle ground floor.
+~
+#EXIT
+Direction up~
+ToRoom    3352
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3354
+Name     &GA Small Wooden Platform&w~
+Sector   city~
+Flags    nomob prototype~
+Desc     This is the jungle base location that will take them up to the Sky Dragon area.
+~
+#ENDROOM
+
+#ROOM
+Vnum     3355
+Name     &YThe Sky Dragon Express Ticket Office&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3348
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3356
+Name     &YThe Silap Tourism Center&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3348
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3357
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3357
+Name     &YThe Cloud Cafe&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3356
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3358
+Name     &PThe Pink Panther Tavern & Inn&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3361
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3348
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3360
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3359
+Name     &PA Bedroom&w~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     3360
+Name     &PA Glass Enclosed Tavern&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3358
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3361
+Name     &PA Greenhouse&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3358
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3362
+Name     &YA Workshop&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction up~
+ToRoom    3346
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3363
+Name     &CThe Sky Dragon Loading Dock&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3364
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3364
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3363
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3365
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3379
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3365
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3364
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3366
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3366
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3374
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3367
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3365
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3367
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3368
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3366
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3368
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3369
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3367
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3369
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3370
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3368
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3370
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3372
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3371
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3373
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3369
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3371
+Name     &CA Beautiful Forest Path&w~
+Sector   forest~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3370
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3372
+Name     &cThe Sky Dragon Express Ticket Office&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction south~
+ToRoom    3370
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3373
+Name     &cThe Edheleska Tourism Center&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3370
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3374
+Name     &GA Beautiful Garden&w~
+Sector   field~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3375
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3366
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3375
+Name     &cThe Lovely Dream Inn&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3377
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3374
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3378
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3376
+Name     &cAn Exquisite Bedroom&w~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     3377
+Name     &cAn Elegant Parlor&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction west~
+ToRoom    3375
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3378
+Name     &cA Quaint Cafe&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3375
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3379
+Name     &cA Workshop&w~
+Sector   indoors~
+Flags    prototype~
+#EXIT
+Direction east~
+ToRoom    3364
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3380
+Name     &wAn ice Garden&w~
+Sector   city~
+Flags    prototype~
+#EXIT
+Direction north~
+ToRoom    3304
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3381
+Name     Floating in a void~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     3399
+Name     &RMOB STORAGE&w~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ENDAREA

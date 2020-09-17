@@ -1,0 +1,61 @@
+Name        Rock-Gnome~
+Race        11
+Classes     0
+Str_Plus    0
+Dex_Plus    0
+Wis_Plus    0
+Int_Plus    0
+Con_Plus    0
+Cha_Plus    0
+Lck_Plus    0
+Hit         0
+Speed       25
+Affected    0
+Resist      0
+Suscept     0
+Language    0
+Align       0
+Min_Align  0
+Max_Align	0
+AC_Plus    0
+Exp_Mult   100
+Attacks    0
+Defenses   0
+Height     0
+Weight     0
+Hunger_Mod  0
+Thirst_mod  0
+Mana_Regen  0
+HP_Regen    0
+Race_Recall 0
+Size        0
+WhereName  &G[&YUsed as light    &G]&w ~
+WhereName  &G[&wWorn on finger   &G]&w ~
+WhereName  &G[&wWorn on finger   &G]&w ~
+WhereName  &G[&wWorn around neck &G]&w ~
+WhereName  &G[&wWorn around neck &G]&w ~
+WhereName  &G[&wWorn on body     &G]&w ~
+WhereName  &G[&wWorn on head     &G]&w ~
+WhereName  &G[&wWorn on legs     &G]&w ~
+WhereName  &G[&wWorn on feet     &G]&w ~
+WhereName  &G[&wWorn on hands    &G]&w ~
+WhereName  &G[&wWorn on arms     &G]&w ~
+WhereName  &G[&wWorn as shield   &G]&w ~
+WhereName  &G[&wWorn about body  &G]&w ~
+WhereName  &G[&wWorn about waist &G]&w ~
+WhereName  &G[&wWorn around wrist&G]&w ~
+WhereName  &G[&wWorn around wrist&G]&w ~
+WhereName  &G[&wWielded          &G]&w ~
+WhereName  &G[&wHeld             &G]&w ~
+WhereName  &G[&wDual-wielded     &G]&w ~
+WhereName  &G[&wWorn on ears     &G]&w ~
+WhereName  &G[&wWorn on eyes     &G]&w ~
+WhereName  &G[&wMissile wielded  &G]&w ~
+WhereName  &G[&wWorn on back     &G]&w ~
+WhereName  &G[&wWorn over face   &G]&w ~
+WhereName  &G[&wWorn around ankle&G]&w ~
+WhereName  &G[&wWorn around ankle&G]&w ~
+WhereName  [BUG Inform Nivek ] ~
+WhereName  [BUG Inform Nivek ] ~
+WhereName  [BUG Inform Nivek ] ~
+End

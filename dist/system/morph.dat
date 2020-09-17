@@ -1,0 +1,30 @@
+Morph           	cat
+Vnum 1000
+Description This cat is an ordinary shade of grey with soft hazel eyes looking
+at the world. The cat appears to weigh about nine pounds and is very
+petite for its size.
+~
+Keywords        	cat~
+Longdesc        	An ordinary looking cat is here.
+~
+MorphOther      	yes~
+MorphSelf       	50~
+ShortDesc       	a cat~
+Affected        	512
+Class           	Wizard Rogue Fighter Paladin Ranger Barbarian Druid Monk Sorcerer Warlock Mystic Artificer~
+Timer		100
+Used       	13
+Pkill		1
+Armor        	-10
+Charisma        	1
+Constitution    	-10
+Dexterity       	2
+Dodge        	9
+Intelligence    	-1
+Luck        	9
+Strength        	-10
+Wisdom          	-1
+NoCast          	1
+End
+
+#END

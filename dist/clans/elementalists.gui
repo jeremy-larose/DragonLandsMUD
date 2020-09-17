@@ -1,0 +1,49 @@
+#CLAN
+Name         Elementalist Monks~
+Abbrev       ~
+Filename     elementalists.gui~
+Motto        ~
+Description  ~
+Deity        none~
+Leader       none~
+NumberOne    ~
+NumberTwo    ~
+Badge        ~
+Leadrank     ~
+Onerank      ~
+Tworank      ~
+PKillRangeNew   0 0 0 0 0 0 0
+PDeathRangeNew  0 0 0 0 0 0 0
+MKills       5
+MDeaths      0
+IllegalPK    0
+Score        0
+Type         14
+Class        9
+Favour       0
+Strikes      0
+Members      2
+MemLimit     1000
+Alignment    0
+Board        0
+ClanObjOne   0
+ClanObjTwo   0
+ClanObjThree 0
+ClanObjFour  0
+ClanObjFive  0
+Recall       0
+Storeroom    0
+GuardOne     0
+GuardTwo     0
+End
+
+#ROSTER
+Name      Dumbo~
+Joined    1539135467
+Class     monk~
+Level     45
+Kills     7
+Deaths    1
+End
+
+#END

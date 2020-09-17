@@ -1,0 +1,2054 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Wolf Lake~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 10 0 0
+Economy      0 420100
+ResetMsg     &cYou can hear the water of the small lake nearby...&w~
+Lore         &zYou can hear the dark chanting of a man dressed in black robes and
+you see the lake become defiled by his chanting...&w
+~
+ResetFreq    30
+#ENDAREADATA
+
+#MOBILE
+Vnum       3550
+Keywords   large dire wolf dire11~
+Short      &ca dire wolf&w~
+Long       &cA large looking wolf is here hunting around the lake and forest.&w
+~
+Desc       &cThis wolf is quite large with grey and white fur. His eyes are sky
+blue that look very kind. Long fangs jut out from his lips and they
+look like they could pierce armor.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 4 0 12 0 0 0 0 0
+Stats2     5 10 10
+Stats3     2 6 3
+Stats4     3 1 1 0 0 0 6
+Attribs    17 3 12 15 15 7 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 3551
+snarl dire12
+k dire12
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3551
+Keywords   large wolf dire enchanted glowing eyes dire12~
+Short      &zan enchanted dire wolf&w~
+Long       &zA large wolf with glowing eyes is here hunting for prey.&w
+~
+Desc       &zThis wolf has undergone some transformation through magic. It has glowing
+red eyes that blaze with anger. The wolf's fur is black and shimmers with
+purple under sunlight or moonlight. Its fangs are tinged with red and
+look like they have recently fed on something.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive~
+Affected   detect_hidden infrared~
+Stats1     -1000 1 5 0 12 0 0 0 0 0
+Stats2     5 10 20
+Stats3     2 6 5
+Stats4     3 1 2 0 0 0 6
+Attribs    19 3 12 18 15 7 10
+Saves      0 0 0 0 0 0
+Resist     pierce acid necrotic~
+Attacks    poison~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 3556
+snarl dire14
+k dire14
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3552
+Keywords   shadow druid shadowdruid32 druid man dressed dark clothing~
+Short      &za shadow druid&w~
+Long       &zA man dressed in dark clothing is here chanting in a low voice.&w
+~
+Desc       &zThe man before you is dressed in dark robes that have been ripped
+and worn roughly over the years. His hood has been drawn up over his
+head to cover much of his face. You see a scraggly looking dark beard
+and a long nose while much of the face is obscured. He walks about
+this shrine chanting something.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     -1000 1 5 0 15 0 1 10 5 0
+Stats2     6 9 15
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    10 14 16 12 14 12 10
+Saves      0 0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 3554
+mea $n You notice a scroll on the corpse of the Shadow Druid.
+mpoload 3552 1
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 3555
+if hasqbit($n) != 3552
+if hasqbit($n) != 3554
+if hasqbit($n) != 3550
+emote stops chanting and looks up
+mpsleep 3
+sayto $n Greetings... I could use your assistance. This lake has
+sayto $n has grown out of control and must be.. removed.
+mpsleep 3
+sayto $n I can tell you more if you would like.. but we cannot
+sayto $n waste any time.. there is someone who opposes us.
+else
+sayto $n Were you successful in stopping that old hag?
+endif
+else
+peer $n
+sayto $n I sense that old hag has blessed you in an effort to stop
+sayto $n me. Well then child.. let us see what you are truly made of!
+mpoload 2978 1
+c 'vampiric touch' $n
+endif
+else
+sayto $n Thank you for aiding me to purge this blight from the lands.
+endif
+else
+sneer
+sayto $n You may have stopped my brother, but I will not go down so easily!
+c 'drown' $n
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 3550
+grin $n
+sayto $n I offer you the chance to join the Shadow Druids and assist us
+sayto $n whenever possible. Our group has been targeted by hateful
+sayto $n Druids that seek to stop us from removing things that no longer
+sayto $n serve the lands.. such as this lake. It has become full of
+sayto $n wolves and the water is not pure anymore. Help us remove
+sayto $n this blight and join our holy cause? Do you &Rswear&w to join us?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p I swear~
+Comlist   if hasqbit($n) != 3550
+mea $n &zYou feel an wave of energy tingle from your head to your toes...&w
+mpsleep 3
+sayto $n You have been branded as one of us. If you should encounter one
+sayto $n of your fellow Shadow Druids in the lands you will be required
+sayto $n to assist them. Now.. I need you to find a meddling old hag in
+sayto $n the forest near the lake. She is trying to stop me. I require
+sayto $n the staff she is using.. it detects us and it must be destroyed.
+sayto $n Bring it to me after you have removed her.. permanently.
+mpqset $n 3550
+mpqset $n 3551
+else
+bow $n
+sayto $n You have already been sworn as one of us.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 3555
+if hasqbit($n) == 3551
+if ovnuminv(3551) == 1
+emote cackles softly from underneath his hood
+sayto $n You have done well my little shadow. This staff will be destroyed
+sayto $n and I can now carry out my mission. Your new brothers and
+sayto $n sisters look forward to working with you again. May the
+sayto $n shadows guide you.
+mpoload 2013 1
+c 'barkskin' $n
+mpadvance $n 2000
+mpqset $n 3551
+mpqset $n 3552
+mpjunk staff
+mpoload 3553 1
+hold scroll
+emote holds a scroll as it begins to glow as he chants loudly.
+mpasound You hear the sounds of chanting coming from nearby.
+mpecho &zThere is a sudden buzzing noise in the arm as the shadows
+mpecho &zcollect and form a large creature...
+laugh
+say It is done! Go forth and destroy Wolf Lake!!!
+mpmload 3554
+mptransfer conjured 3556
+mpecho &zThe shadowy creature fades from sight and leaves the stone circle.
+else
+sayto $n This is not what I am looking for.
+endif
+else
+sayto $n Another staff? Thank you for bringing this to me.
+mpoload 2013 1
+c 'barkskin' $n
+mpjunk staff
+endif
+else
+sayto $n Another staff? Thank you for bringing this to me.
+mpoload 2013 1
+c 'barkskin' $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3553
+Keywords   druid amunar elderly woman green robes~
+Short      &Ga druid&w~
+Long       &GAn elderly woman is here tending to a small shrine to Amunar.&w
+~
+Desc       &GThis elderly woman is dressed in soft looking green robes and matching
+cloak. Her salt and pepper hair has been braided into a thick fish
+tail style braid that ends just above her waist. She is not very tall
+and is very curvy in silhouette. She has a happy face with twinkling
+sapphire colored eyes.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared~
+Stats1     0 39 5 0 15 0 1 10 5 0
+Stats2     6 9 15
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    9 16 19 12 14 16 10
+Saves      0 0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 3555
+if hasqbit($n) != 3550
+if hasqbit($n) != 3553
+emote holds up a hand in greeting
+mpsleep 3
+sayto $n Greetings child. I could use your assistance in protecting Wolf Lake.
+mpsleep 3
+sayto $n I can tell you more if interested? We must hurry though as time
+sayto $n is of the essence!
+else
+sayto $n Have you been successful in rooting out the evil one?
+endif
+else
+mpecho &gThe emerald on the elderly druid's staff begins to glow suddenly.&w
+emote looks at her staff and then scowls angrily
+sayto $n You are assisting that wretched dark one! I will not let
+sayto $n you succeed in your task! Amunar guide me!!
+mpoload 2978 1
+c 'drown' $n
+endif
+else
+sayto $n Thank you again for helping me stop the Shadow Druid.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure serious wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   65~
+Comlist   c 'thorn whip'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   c 'drown' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 3553
+nod $n
+sayto $n This is Wolf Lake.. which is home to a peaceful breed of dire wolves. 
+sayto $n My job is to protect the wolves and this area from harm,
+sayto $n which is my sacred duty from my goddess, Amunar. This place has
+sayto $n been marked as a site to be defiled and destroyed by the dark
+sayto $n Shadow Druids. They have come to ruin the water and enchant the
+sayto $n wolves to be violent and evil. I need your help to stop them. Will
+sayto $n you &Rjoin&w me in this fight?&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p join~
+Comlist   if hasqbit($n) != 3553
+smile $n
+sayto $n The Druids of Amunar appreciate you helping us. The Shadow Druid
+sayto $n is located here by the lake. There is an old stone circle that
+sayto $n we use for festivals and ceremonies. I believe he is there. I
+sayto $n need you to bring me the scroll he is using to destroy the
+sayto $n the lake. Only then will the threat be removed!
+mpqset $n 3553
+mpqset $n 3554
+else
+sayto $n Have you stopped the Shadow Druid?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 3555
+if hasqbit($n) == 3554
+if ovnuminv(3552) == 1
+emote sighs with relief and looks over the scroll with disgust
+sayto $n This is an ancient scroll created by a group that did not
+sayto $n know the consequences of their actions. I will see that this
+sayto $n is destroyed as it should have been many moons ago. I 
+sayto $n cannot thank you enough for helping save these lands. May
+sayto $n Amunar bless you wherever you may walk.
+mpadvance $n 2000
+mpoload 2013 1
+c 'barkskin' $n
+mpjunk scroll
+mpqset $n 3555
+mpqset $n 3554
+mpqset $n 3553
+else
+sayto $n This is not what I am looking for.
+endif
+else
+sayto $n Another scroll? I knew they made copies, but now I wonder
+sayto $n how many more are out there. Thank you for bringing this
+sayto $n to me. May Amunar bless you!
+mpoload 2013 1
+c 'barkskin' $n
+mpjunk scroll
+endif
+else
+sayto $n Another scroll? I knew they made copies, but now I wonder
+sayto $n how many more are out there. Thank you for bringing this
+sayto $n to me. May Amunar bless you!
+mpoload 2013 1
+c 'barkskin' $n
+mpjunk scroll
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3554
+Keywords   shadow large creature conjured~
+Short      &zA large shadow creature&w~
+Long       &zA conjured shadow creature is here lurking about the lake and forests.&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running~
+Affected   invisible detect_hidden infrared sneak hide flying~
+Stats1     -1000 1 4 0 10 0 0 0 0 0
+Stats2     3 8 3
+Stats3     2 6 6
+Stats4     3 13 2 0 0 0 6
+Attribs    6 10 10 16 14 8 10
+Saves      0 0 0 0 0 0
+Resist     fire cold lightning blunt pierce slash nonmagic thunder~
+Immune     acid poison necrotic sleep charm psychic~
+Suscept    radiant~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if ovnumroom(3555) == 1
+mpoload 3555
+silent drop plant
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   if ovnumroom(3554) == 1
+mpoload 3554
+silent drop tree
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 3550
+mpecho &zThe shadows nearby begin to swirl around the dire wolf suddenly!&w
+mptransfer dire11 3599
+mpsleep 3
+mpecho &zOnce the shadows depart the wolf has changed completely!&w
+mpmload 3551
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 3555
+mptransfer dire13 3599
+mpecho &zThe shadows nearby begin to swirl around the dire wolf suddenly!
+mpsleep 3
+mpecho &zOnce the shadows depart the wolf has changed completely!&w
+mpmload 3551
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 3556
+mptransfer dire14 3599
+mpecho &zThe shadows nearby begin to swirl around the wolf cub suddenly!
+mpsleep 3
+mpecho &zOnce the shadows depart the wolf cub has changed completely!&w
+mpmload 3551
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if ovnumroom(3557) == 1
+mppurge bubbleweed
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   60~
+Comlist   if ovnumroom(3555) == 0
+mpoload 3555
+silent drop plant
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   55~
+Comlist   if ovnumroom(3554) == 0
+mpoload 3554
+silent drop tree
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3555
+Keywords   large dire wolf dire13 female~
+Short      &Ca dire wolf&w~
+Long       &CA large looking wolf is here walking around the lake and forest.&w
+~
+Desc       &CThis wolf is quite large with mostly white fur. She has light green
+eyes that look very kind despite her features. Long fangs jut out from
+her lips and they look like they could pierce armor.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 4 0 12 0 0 0 0 0
+Stats2     5 10 10
+Stats3     2 6 3
+Stats4     3 1 1 0 0 0 6
+Attribs    17 3 12 15 15 7 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 3551
+snarl dire12
+k dire12
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3556
+Keywords   small dire wolf cub dire14~
+Short      &Wa dire wolf cub&w~
+Long       &WA small white wolf cub is here playing around the lake and forest.&w
+~
+Desc       &WThis little wolf cub is covered in fluffy white fur. He seems to
+enjoy playing around the forest and lake. He has bright blue eyes and
+tiny little fangs that barely escape his lips.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 2 0 12 0 0 0 0 0
+Stats2     2 10 0
+Stats3     1 6 2
+Stats4     1 0 1 0 0 0 6
+Attribs    10 3 12 13 15 7 10
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       3599
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3550
+Keywords shillelagh dark colored~
+Type     weapon~
+Short    &za dark colored shillelagh&w~
+Long     &zA dark colored wooden club has been left here.&w~
+Flags    magic inventory lightweight~
+WFlags   take onehand~
+Values   12 1 8 2 19 0
+Values2  0 2
+Stats    2 0 0 0 0 0 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3551
+Keywords staff quarterstaff polished wood set emerald~
+Type     weapon~
+Short    &Oa polished quarterstaff set with an &Gemerald&w~
+Long     &OA polished wooden quarterstaff set with an emerald has been left here.&w~
+Lore   &GYour vision reveals that this is a Quarterstaff +1, which was crafted
+by a circle of Druids many many years ago. Most recently the staff
+has been in the hands of an elderly druidess who fights against the
+evil of the Shadow Druids...&w
+~
+Flags    magic versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 2 15 0
+Values2  0 2
+Stats    4 2 0 1 0 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3552
+Keywords ancient looking druid scroll~
+Type     scroll~
+Short    &gan ancient looking druidic scroll&w~
+Long     &gAn ancient looking druidic scroll has been left here.&w~
+Lore   &rYour vision twists and turns until you see a circle of Druids chanting. 
+The altar in which they work with has a young woman tied to it and
+they cut her slowly and use the blood to write upon a piece of
+parchment. The grove where the druids work trembles...&w
+~
+WFlags   take onehand~
+Values   20 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 90 0 0 9 1 0
+Spells   'horrid wilting' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    scroll~
+ExDesc       &gThis scroll has been crafted using papyrus and the ink in which the
+druidic symbols have been written with appears to be blood.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3553
+Keywords scroll glowing ancient looking druid~
+Type     trash~
+Short    &gan ancient looking druidic scroll&w~
+Long     &gAn ancient looking druidic scroll has been left here.&w~
+Flags    glow evil magic inventory~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3554
+Keywords tree decaying tree covered dark patches~
+Type     trash~
+Short    &za decaying tree&w~
+Long     &zA decaying tree covered in dark patches is here crumbling apart.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    100 0 0 0 0 0 0
+#EXDESC
+ExDescKey    tree~
+ExDesc       &zThe tree before you has been struck with some sort of blight as
+black patches grow along its bark. The branches of the tree have begun
+to fall off and the tree seems to be crumbling apart from the inside.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3555
+Keywords dying plants bordering lake~
+Type     trash~
+Short    &zsome dying plants&w~
+Long     &zA patch of dying plants is here crumbling apart slowly.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    20 0 0 0 0 0 0
+#EXDESC
+ExDescKey    plants~
+ExDesc       &zThis patch of vegetation has been struck with some sort of blight as
+the plants are covered in black patches. The plants seem to be crumbling
+apart as bits of leaves and flowers lie around the patch.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3556
+Keywords wooden sign old~
+Type     trash~
+Short    &Oan old wooden sign&w~
+Long     &OAn old wooden sign has been nailed to a nearby tree here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OWelcome to Wolf Lake. This area is protected by the Druids of Amunar
+and all wildlife is deemed sacred here. Please do not harm the peaceful
+wolves here.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3557
+Keywords bubbleweed herb long bluish grass~
+Type     herb~
+Short    &Bsome bubbleweed&w~
+Long     &BSome long bluish colored grass is here growing along the water.&w~
+WFlags   take onehand~
+Values   0 3 8 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3599
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3550
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the northeast from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction north~
+ToRoom    3551
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3571
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      440
+MapY      809
+#ENDEXIT
+
+Reset O 0 3556 1 3550
+#ENDROOM
+
+#ROOM
+Vnum     3551
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the northeast from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction south~
+ToRoom    3550
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3552
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3552
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the nearby north as it borders along the small lake. The forest is not
+very thick you can see a small shrine erected inside it.
+~
+#EXIT
+Direction east~
+ToRoom    3553
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3551
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3553
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the nearby north as it borders along the small lake. The forest is not
+very thick you can see a small shrine erected inside it.
+~
+#EXIT
+Direction east~
+ToRoom    3554
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3552
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3554
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the nearby north as it borders along the small lake. The forest is not
+very thick and a small northern path from here leads towards it.
+~
+#EXIT
+Direction north~
+ToRoom    3577
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3555
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3553
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3555
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the nearby north as it borders along the small lake. The forest is not
+very thick and appears to made from various types of trees from oak to
+pine. The forest is not very flat and there is a few hills located deep inside.
+~
+#EXIT
+Direction west~
+ToRoom    3554
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3556
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3556
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the northwest from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction south~
+ToRoom    3557
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3555
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3557
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the northwest from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction north~
+ToRoom    3556
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3558
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3558
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction north~
+ToRoom    3557
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3596
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3559
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A large field of tall grasses can be
+seen to the south and the makings of a stone circle can be seen just barely
+standing above the tall grass. A forest can be seen towards the north as it
+borders along the edge of the small lake.
+~
+#EXIT
+Direction east~
+ToRoom    3598
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3560
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3560
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A large field of tall grasses can be
+seen to the south and the makings of a stone circle can be seen just barely
+standing above the tall grass. A forest can be seen towards the north as it
+borders along the edge of the small lake.
+~
+#EXIT
+Direction west~
+ToRoom    3561
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3559
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3561
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A large field of tall grasses can be
+seen to the south and the makings of a stone circle can be seen just barely
+standing above the tall grass. A forest can be seen towards the north as it
+borders along the edge of the small lake.
+~
+#EXIT
+Direction east~
+ToRoom    3560
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3562
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3562
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction west~
+ToRoom    3563
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3561
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3563
+Name     &cAlong a Lake&w~
+Sector   field~
+Stats    0 0 0 0 16 0
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+Perdesc  &gYou spot a faint grassy path towards the southeast from here...&w
+~
+#EXIT
+Direction north~
+ToRoom    3564
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3562
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3572
+Flags     hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3564
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction south~
+ToRoom    3563
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3565
+#ENDEXIT
+
+Reset O 0 3557 1 3564
+#ENDROOM
+
+#ROOM
+Vnum     3565
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction north~
+ToRoom    3566
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3564
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3566
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction north~
+ToRoom    3567
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3565
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3567
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the far northeast from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction south~
+ToRoom    3566
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3568
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3568
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the far northeast from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction east~
+ToRoom    3567
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3569
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3569
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the far northeast from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction east~
+ToRoom    3568
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3570
+#ENDEXIT
+
+Reset O 0 3557 1 3569
+#ENDROOM
+
+#ROOM
+Vnum     3570
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the far northeast from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction north~
+ToRoom    3571
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3569
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3571
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. A small forest can be seen 
+to the northeast from here as it borders the northern edge of the lake.
+~
+#EXIT
+Direction north~
+ToRoom    3550
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3570
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3572
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     This is a thick field of long grasses that stand high above five feet
+and have allowed to grow their natural height. These grasses sway in
+the breeze and obscure the vision of those that travel in it. A small
+but faint path leads to the east and northwest from here.
+~
+#EXIT
+Direction east~
+ToRoom    3573
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3563
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3573
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     This is a thick field of long grasses that stand high above five feet
+and have allowed to grow their natural height. These grasses sway in
+the breeze and obscure the vision of those that travel in it. A small
+but faint path leads to the south and west from here.
+~
+#EXIT
+Direction south~
+ToRoom    3574
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3572
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3574
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     This is a thick field of long grasses that stand high above five feet
+and have allowed to grow their natural height. These grasses sway in
+the breeze and obscure the vision of those that travel in it. A small
+but faint path leads to the north and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    3573
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3575
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3575
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     This is a thick field of long grasses that stand high above five feet
+and have allowed to grow their natural height. These grasses sway in
+the breeze and obscure the vision of those that travel in it. A small
+but faint path leads to the north and west from here. The makings of
+a small stone circle can be seen towards the north where the path ends.
+~
+#EXIT
+Direction north~
+ToRoom    3576
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3574
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3576
+Name     &gA Stone Circle&w~
+Sector   field~
+Desc     &wThe stone circle here has been created using stones moved from the
+nearby mountains and stacked to a height of around five feet. This 
+height helps the stone circle appear hidden when the grasses nearby
+are at their natural height. The stones that form the circle are 
+covered in moss and other plants that grow nearby. A stone altar
+is located in the center of the circle and is bare with no offerings
+left on it.
+~
+#EXIT
+Direction south~
+ToRoom    3575
+#ENDEXIT
+
+Reset M 0 3552 2 3576
+  Reset E 0 3550 1 26
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if number($n) == 3554
+mptransfer shadowdruid32 3599
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3577
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. A large hillside can be seen
+to the north from here while a large shrine is towards the west. This
+part of the woods is mainly oak and pine trees that provide ample
+shade to those moving about the forest.
+~
+#EXIT
+Direction north~
+ToRoom    3578
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3554
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3595
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3578
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction north~
+ToRoom    3582
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3580
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3577
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3579
+#ENDEXIT
+
+Reset M 0 3550 5 3578
+Reset M 0 3550 5 3578
+Reset M 0 3550 5 3578
+#ENDROOM
+
+#ROOM
+Vnum     3579
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction north~
+ToRoom    3583
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3578
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3595
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3593
+#ENDEXIT
+
+Reset M 0 3550 2 3579
+Reset M 0 3550 2 3579
+#ENDROOM
+
+#ROOM
+Vnum     3580
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction north~
+ToRoom    3581
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3578
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3581
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. The forest floor dips low here
+as large tree covered hills can be found nearby. Thick patches of moss
+and herbs grow on the slopes of the hills as they offer their earthy
+scents. The remnants of fallen trees can be found down here before
+they were replaced by newer and younger saplings.
+~
+#EXIT
+Direction north~
+ToRoom    3586
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3580
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3582
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3582
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction north~
+ToRoom    3585
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3581
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3578
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3583
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3583
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. The forest floor dips low here
+as large tree covered hills can be found nearby. Thick patches of moss
+and herbs grow on the slopes of the hills as they offer their earthy
+scents. The remnants of fallen trees can be found down here before
+they were replaced by newer and younger saplings.
+~
+#EXIT
+Direction north~
+ToRoom    3584
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3582
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3579
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3592
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3584
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction north~
+ToRoom    3589
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3585
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3583
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3591
+#ENDEXIT
+
+Reset M 0 3555 2 3584
+Reset M 0 3555 2 3584
+Reset M 0 3556 1 3584
+#ENDROOM
+
+#ROOM
+Vnum     3585
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. The forest floor dips low here
+as large tree covered hills can be found nearby. Thick patches of moss
+and herbs grow on the slopes of the hills as they offer their earthy
+scents. The remnants of fallen trees can be found down here before
+they were replaced by newer and younger saplings.
+~
+#EXIT
+Direction north~
+ToRoom    3588
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3586
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3582
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3584
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3586
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction north~
+ToRoom    3587
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3581
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3585
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3587
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. The forest floor dips low here
+as large tree covered hills can be found nearby. Thick patches of moss
+and herbs grow on the slopes of the hills as they offer their earthy
+scents. The remnants of fallen trees can be found down here before
+they were replaced by newer and younger saplings.
+~
+#EXIT
+Direction south~
+ToRoom    3586
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3588
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3588
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction east~
+ToRoom    3587
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3585
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3589
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3589
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. The forest floor dips low here
+as large tree covered hills can be found nearby. Thick patches of moss
+and herbs grow on the slopes of the hills as they offer their earthy
+scents. The remnants of fallen trees can be found down here before
+they were replaced by newer and younger saplings.
+~
+#EXIT
+Direction east~
+ToRoom    3588
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3584
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3590
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3590
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction east~
+ToRoom    3589
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3591
+#ENDEXIT
+
+Reset M 0 3555 4 3590
+Reset M 0 3555 4 3590
+Reset M 0 3556 2 3590
+#ENDROOM
+
+#ROOM
+Vnum     3591
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. The forest floor dips low here
+as large tree covered hills can be found nearby. Thick patches of moss
+and herbs grow on the slopes of the hills as they offer their earthy
+scents. The remnants of fallen trees can be found down here before
+they were replaced by newer and younger saplings.
+~
+#EXIT
+Direction north~
+ToRoom    3590
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3584
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3592
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3592
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. The forest floor dips low here
+as large tree covered hills can be found nearby. Thick patches of moss
+and herbs grow on the slopes of the hills as they offer their earthy
+scents. The remnants of fallen trees can be found down here before
+they were replaced by newer and younger saplings.
+~
+#EXIT
+Direction north~
+ToRoom    3591
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3583
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3593
+#ENDEXIT
+
+Reset M 0 3555 5 3592
+Reset M 0 3556 3 3592
+#ENDROOM
+
+#ROOM
+Vnum     3593
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. This part of the forest is hilly
+and this is the top of one of the hills. The forest floor is covered in moss
+and other flowering plants that offer an earthy fragrance all around.
+Large oak trees that appear to be extremely old provide shade in the
+forest as their limbs interlock with one another.
+~
+#EXIT
+Direction north~
+ToRoom    3592
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3579
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3594
+Name     &GA Small Shrine&w~
+Sector   forest~
+Desc     &gThe shrine that has been created here was established with large stones
+moved here from the nearby mountains. The stones have arranged in a large circle
+with a small altar in the middle. A little cottage is located outside of the circfor the druid in cfor the druid in charge of this area to reside. The altar in the middle of
+the shrine features a stone statue of Amunar and various herbs strewn about.
+~
+#EXIT
+Direction east~
+ToRoom    3595
+#ENDEXIT
+
+Reset M 0 3553 1 3594
+  Reset E 0 3551 1 28
+  Reset G 0 2013 1
+  Reset G 0 2013 1
+  Reset G 0 2978 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if mobinroom(3553) == 1
+if mobinroom(3551) >= 1
+mpforce dire12 snarl druid
+mpforce dire12 k druid
+mpforce druid scream
+mpasound &rYou hear screaming coming from nearby!&w
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if mobinroom(3553) == 1
+if mobinroom(3554) == 1
+mpecho &GThe druid suddenly begins to wave her staff and chant wildly!
+mpsleep 3
+mpecho &zThe shadows nearby are thrown far away from the shrine suddenly!
+mpsleep 3
+mpforce druid say The darkness has come.. we must destroy the dark spirit!
+silent mpforce conjured e
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3595
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This forest is small in size and is home to various creatures including
+the wolves that the lake is named after. A large hillside can be seen
+to the north from here while a large shrine is towards the west. This
+part of the woods is mainly oak and pine trees that provide ample
+shade to those moving about the forest.
+~
+#EXIT
+Direction north~
+ToRoom    3579
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3577
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3594
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3596
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction south~
+ToRoom    3597
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3558
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3597
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction north~
+ToRoom    3596
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3598
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3598
+Name     &cAlong a Lake&w~
+Sector   field~
+Desc     &gA small pristine looking lake is nearby, which has glistening water
+and is surrounded by lush foliage. Large oak trees stand tall and offer
+shade throughout the area. The grounds here appear well maintained while
+still having a natural looking appearance. The area around this part of the
+lake is bordered by large grasses ranging in colors of blue and green.
+~
+#EXIT
+Direction north~
+ToRoom    3597
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3559
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3599
+Name     &RWOLF LAKE MOB STORAGE AREA&w~
+Sector   city~
+Flags    nomob nomagic safe norecall noastral nosupplicate~
+Desc     &YYou do not belong in here. If you end up here please seek help from
+an admin to get out. Thank you!
+~
+#ENDROOM
+
+#ENDAREA

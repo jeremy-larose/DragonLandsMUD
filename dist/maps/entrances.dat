@@ -1,0 +1,1497 @@
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      722 855
+There	      -1 -1
+Vnum	      1588
+Prevsector   26
+Area	      ~
+Description  &PAn impressive gatehouse to a large walled city is nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      645 873
+There	      -1 -1
+Vnum	      3449
+Prevsector   26
+Area	      khantul.are~
+Description  &OA winding path is ahead leading towards a walled manor.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      669 832
+There	      -1 -1
+Vnum	      1400
+Prevsector   26
+Area	      ~
+Description  &cA dirt path breaks ahead through a swamp, leading into the darkness.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      682 832
+There	      -1 -1
+Vnum	      1406
+Prevsector   26
+Area	      ~
+Description  &cA dirt path breaks ahead through a swamp, leading into the darkness.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      736 812
+There	      -1 -1
+Vnum	      2724
+Prevsector   26
+Area	      newlight.are~
+Description  &YThe dilapidated remains of an ancient lighthouse lies ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      735 817
+There	      -1 -1
+Vnum	      2700
+Prevsector   26
+Area	      newlight.are~
+Description  &YLarge dunes of warm sand weave up and down towards the sea here.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      755 837
+There	      -1 -1
+Vnum	      2712
+Prevsector   26
+Area	      ~
+Description  &YLarge dunes of warm sand weave up and down towards the sea here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      735 827
+There	      -1 -1
+Vnum	      2130
+Prevsector   33
+Area	      ~
+Description  &gA path here leads deep into the forest nearby.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      758 883
+There	      -1 -1
+Vnum	      2152
+Prevsector   33
+Area	      ~
+Description  &gA small path leads into the darkness of the thick forest ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      720 886
+There	      -1 -1
+Vnum	      2018
+Prevsector   33
+Area	      ~
+Description  &gA small path leads into the darkness of the thick forest ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      0
+OnMap	      0
+Here	      683 891
+There	      683 891
+Vnum	      2900
+Prevsector   26
+Area	      skyfall.are~
+Description  &CA small dirt road leading towards a quaint fishing village is here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      677 891
+There	      -1 -1
+Vnum	      2922
+Prevsector   26
+Area	      skyfall.are~
+Description  &wA path towards an airship landing site has been established here.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      677 894
+There	      -1 -1
+Vnum	      2920
+Prevsector   20
+Area	      skyfall.are~
+Description  &CA small path from the shore to the nearby fishing village is here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      646 857
+There	      -1 -1
+Vnum	      2054
+Prevsector   33
+Area	      ~
+Description  &gA path here leads deep into the forest nearby.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      761 884
+There	      -1 -1
+Vnum	      2452
+Prevsector   29
+Area	      ~
+Description  &gThe sound of something rustling in the tall grasses nearby is heard here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      774 887
+There	      -1 -1
+Vnum	      2400
+Prevsector   26
+Area	      ~
+Description  &YWarm bells can be heard nearby from within the walls of a large abbey.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      722 851
+There	      -1 -1
+Vnum	      2099
+Prevsector   26
+Area	      ~
+Description  &gA small path leads into the darkness of the thick forest ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      713 859
+There	      -1 -1
+Vnum	      2067
+Prevsector   26
+Area	      ~
+Description  &gA small path leads into the darkness of the thick forest ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      717 859
+There	      -1 -1
+Vnum	      1570
+Prevsector   26
+Area	      ~
+Description  &PAn impressive gatehouse to a large walled city is nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      722 863
+There	      -1 -1
+Vnum	      1500
+Prevsector   26
+Area	      ~
+Description  &PAn impressive gatehouse to a large walled city is nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      722 868
+There	      -1 -1
+Vnum	      2000
+Prevsector   26
+Area	      ~
+Description  &gA small path leads into the darkness of the thick forest ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      726 860
+There	      -1 -1
+Vnum	      1523
+Prevsector   26
+Area	      ~
+Description  &PAn impressive gatehouse to a large walled city is nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      731 860
+There	      -1 -1
+Vnum	      2164
+Prevsector   26
+Area	      ~
+Description  &gA small path leads into the darkness of the thick forest ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      475 846
+There	      -1 -1
+Vnum	      3462
+Prevsector   26
+Area	      ~
+Description  &YA large inn with golden yellow walls contrasts with the forest here.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      626 837
+There	      -1 -1
+Vnum	      3450
+Prevsector   26
+Area	      ~
+Description  &wA path here leads up a rocky hill towards an inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      349 870
+There	      -1 -1
+Vnum	      4000
+Prevsector   26
+Area	      ~
+Description  &CA large path leads north towards a walled city by a large bay.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      815 43
+There	      -1 -1
+Vnum	      4600
+Prevsector   26
+Area	      ~
+Description  &WA path here leads to the north where a stone circle can be found.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      414 744
+There	      -1 -1
+Vnum	      1900
+Prevsector   26
+Area	      dales.are~
+Description  &OA small dirt path here leads north towards a small village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      416 742
+There	      -1 -1
+Vnum	      1916
+Prevsector   26
+Area	      dales.are~
+Description  &OA small dirt path here leads west towards a small village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      306 764
+There	      -1 -1
+Vnum	      1950
+Prevsector   26
+Area	      dales.are~
+Description  &gA small forest path to the east leads to a village here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      456 680
+There	      -1 -1
+Vnum	      2297
+Prevsector   26
+Area	      ~
+Description  &gA path leading deep into the swamp here...&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      443 651
+There	      -1 -1
+Vnum	      2200
+Prevsector   26
+Area	      ~
+Description  &gA path leading deep into the swamp here...&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      426 677
+There	      -1 -1
+Vnum	      2256
+Prevsector   26
+Area	      ~
+Description  &gA path leading deep into the swamp here...&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      689 784
+There	      -1 -1
+Vnum	      2300
+Prevsector   26
+Area	      ~
+Description  &OA rocky path leading towards a makeshift fort.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      561 693
+There	      -1 -1
+Vnum	      2600
+Prevsector   26
+Area	      ~
+Description  &OA small dirt path leading into a small village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      555 690
+There	      -1 -1
+Vnum	      2627
+Prevsector   26
+Area	      ~
+Description  &OA small dirt path here leads into a small village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      697 666
+There	      -1 -1
+Vnum	      3600
+Prevsector   26
+Area	      demonmarsh.are~
+Description  &cA path leading into a strange swampy forest is here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      704 404
+There	      -1 -1
+Vnum	      3000
+Prevsector   26
+Area	      friswood.are~
+Description  &OA dirt path here leads into a forest village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      707 404
+There	      -1 -1
+Vnum	      3022
+Prevsector   26
+Area	      friswood.are~
+Description  &OA dirt path here leads into a forest village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      559 691
+There	      -1 -1
+Vnum	      2600
+Prevsector   26
+Area	      temos.are~
+Description  &OA dirt path here leads toward a village near a river.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      505 609
+There	      -1 -1
+Vnum	      3495
+Prevsector   26
+Area	      taverns1.are~
+Description  &wA rocky path here leads to the east towards a large inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      466 472
+There	      -1 -1
+Vnum	      3492
+Prevsector   26
+Area	      taverns1.are~
+Description  &OA small dirt path here leads to a small inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      535 381
+There	      -1 -1
+Vnum	      3489
+Prevsector   26
+Area	      taverns1.are~
+Description  &OA rocky path here leads east to a small rustic looking inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      603 735
+There	      -1 -1
+Vnum	      3475
+Prevsector   26
+Area	      taverns1.are~
+Description  &gA small path here leads south towards a small inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      656 723
+There	      -1 -1
+Vnum	      3483
+Prevsector   26
+Area	      taverns1.are~
+Description  &wA small path here leads south towards a large inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      625 828
+There	      -1 -1
+Vnum	      3500
+Prevsector   26
+Area	      whisperinggiants.are~
+Description  &wA rocky path is here leading into the mountains.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      480 841
+There	      -1 -1
+Vnum	      3200
+Prevsector   26
+Area	      pbandits.are~
+Description  &gA faint path leads into the surrounding forest here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      641 886
+There	      -1 -1
+Vnum	      3550
+Prevsector   26
+Area	      wolflake.are~
+Description  &OA small dirt path here leads to the east towards a lake.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      760 884
+There	      -1 -1
+Vnum	      2452
+Prevsector   26
+Area	      goldenfields.are~
+Description  &gYou can see a path leading into some rolling fields here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      757 883
+There	      -1 -1
+Vnum	      2152
+Prevsector   26
+Area	      newdarkforest.are~
+Description  &gA path here leads deep into the forest nearby.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      721 886
+There	      -1 -1
+Vnum	      2018
+Prevsector   26
+Area	      newdarkforest.are~
+Description  &gA path here leads deep into the forest nearby.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      739 888
+There	      -1 -1
+Vnum	      4550
+Prevsector   26
+Area	      newdarkspider.are~
+Description  &gA faint path here leads deep into the forest.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      640 803
+There	      -1 -1
+Vnum	      4800
+Prevsector   26
+Area	      whisperingpeakmines.are~
+Description  &wA rocky trail here leads up to a cave at the base of a summit.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      581 468
+There	      -1 -1
+Vnum	      5000
+Prevsector   26
+Area	      meridan.are~
+Description  &wA cobbled stone road leads towards a city gatehouse here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      572 460
+There	      -1 -1
+Vnum	      5070
+Prevsector   26
+Area	      meridan.are~
+Description  &wA cobbled stone road leads towards a city gatehouse here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      590 460
+There	      -1 -1
+Vnum	      5064
+Prevsector   26
+Area	      meridan.are~
+Description  &wA cobbled stone road leads towards a city gatehouse here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      701 689
+There	      -1 -1
+Vnum	      5600
+Prevsector   26
+Area	      darkhold.are~
+Description  &OA muddy path leads toward a walled village ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      702 686
+There	      -1 -1
+Vnum	      5629
+Prevsector   26
+Area	      darkhold.are~
+Description  &OA muddy path leads toward a walled village ahead.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      346 901
+There	      -1 -1
+Vnum	      2350
+Prevsector   26
+Area	      ~
+Description  &gYou see a path leading deep into the woods here.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      430 894
+There	      -1 -1
+Vnum	      5800
+Prevsector   26
+Area	      daven.are~
+Description  &OA small path in the forest here leads towards a farm.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      622 776
+There	      -1 -1
+Vnum	      6008
+Prevsector   26
+Area	      ~
+Description  &gA faint path leads into the surrounding forest here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      525 806
+There	      -1 -1
+Vnum	      6026
+Prevsector   26
+Area	      ~
+Description  &gA faint path leads into the surrounding forest here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      449 824
+There	      -1 -1
+Vnum	      6053
+Prevsector   26
+Area	      ~
+Description  &gA faint path leads into the surrounding forest here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      400 855
+There	      -1 -1
+Vnum	      6069
+Prevsector   26
+Area	      ~
+Description  &gA faint path leads into the surrounding forest here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      327 717
+There	      -1 -1
+Vnum	      6093
+Prevsector   26
+Area	      ~
+Description  &gA faint path leads into the surrounding forest here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      315 611
+There	      -1 -1
+Vnum	      6119
+Prevsector   26
+Area	      ~
+Description  &gA faint path leads into the surrounding forest here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      19 10
+There	      -1 -1
+Vnum	      3300
+Prevsector   26
+Area	      ~
+Description  &gA path here leads into an odd looking forest nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      500 612
+There	      -1 -1
+Vnum	      5600
+Prevsector   26
+Area	      ~
+Description  &OA muddy path leads towards the gatehouse of a small city here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      501 609
+There	      -1 -1
+Vnum	      5629
+Prevsector   26
+Area	      ~
+Description  &OA muddy path leads towards the gatehouse of a small city here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      455 646
+There	      -1 -1
+Vnum	      3483
+Prevsector   26
+Area	      ~
+Description  &OA muddy path leads south towards an inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      424 751
+There	      -1 -1
+Vnum	      4800
+Prevsector   26
+Area	      ~
+Description  &wA rocky path here leads toward the base of a summit.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      425 760
+There	      -1 -1
+Vnum	      3450
+Prevsector   26
+Area	      ~
+Description  &wA rocky path here leads towards a small inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      445 780
+There	      -1 -1
+Vnum	      2054
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      534 750
+There	      -1 -1
+Vnum	      2130
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      556 806
+There	      -1 -1
+Vnum	      2152
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      538 811
+There	      -1 -1
+Vnum	      4550
+Prevsector   26
+Area	      ~
+Description  ~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      520 809
+There	      -1 -1
+Vnum	      2018
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      521 791
+There	      -1 -1
+Vnum	      2000
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      530 783
+There	      -1 -1
+Vnum	      2164
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      521 774
+There	      -1 -1
+Vnum	      2099
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      512 782
+There	      -1 -1
+Vnum	      2067
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      521 778
+There	      -1 -1
+Vnum	      1588
+Prevsector   26
+Area	      ~
+Description  &wA dirt path leads towards the gatehouse of a walled city here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      525 783
+There	      -1 -1
+Vnum	      1523
+Prevsector   26
+Area	      ~
+Description  &wA dirt path leads towards the gatehouse of a walled city here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      521 786
+There	      -1 -1
+Vnum	      1500
+Prevsector   26
+Area	      ~
+Description  &wA dirt path leads towards the gatehouse of a walled city here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      516 782
+There	      -1 -1
+Vnum	      1570
+Prevsector   26
+Area	      ~
+Description  &wA dirt path leads towards the gatehouse of a walled city here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      440 809
+There	      -1 -1
+Vnum	      3550
+Prevsector   26
+Area	      ~
+Description  &cA faint path leads towards the small lake here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      444 796
+There	      -1 -1
+Vnum	      3449
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      482 814
+There	      -1 -1
+Vnum	      2900
+Prevsector   26
+Area	      ~
+Description  &OA dirt path leads to a village nearby here.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      476 814
+There	      -1 -1
+Vnum	      2922
+Prevsector   26
+Area	      ~
+Description  &OA sandy path here leads towards an air field nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      476 817
+There	      -1 -1
+Vnum	      2920
+Prevsector   26
+Area	      ~
+Description  &OA sandy path here leads north towards a small village.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      559 807
+There	      -1 -1
+Vnum	      2452
+Prevsector   26
+Area	      ~
+Description  &gA grassy path here leads towards some rolling fields.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      573 810
+There	      -1 -1
+Vnum	      2400
+Prevsector   26
+Area	      ~
+Description  &OA dirt path here leads towards an abbey nearby.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      468 755
+There	      -1 -1
+Vnum	      1400
+Prevsector   26
+Area	      ~
+Description  &gA grassy path here leads towards a large marsh nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      481 755
+There	      -1 -1
+Vnum	      1406
+Prevsector   26
+Area	      ~
+Description  &gA grassy path here leads towards a large marsh nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      535 735
+There	      -1 -1
+Vnum	      2724
+Prevsector   26
+Area	      ~
+Description  &YA sandy path here leads towards an abandoned lighthouse.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      554 760
+There	      -1 -1
+Vnum	      2712
+Prevsector   26
+Area	      ~
+Description  &YA path here leads to the beach nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      509 745
+There	      -1 -1
+Vnum	      2755
+Prevsector   26
+Area	      ~
+Description  &YA path here leads to the beach nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      488 707
+There	      -1 -1
+Vnum	      3500
+Prevsector   26
+Area	      ~
+Description  &wA rocky path here leads up into the nearby mountains.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      279 764
+There	      -1 -1
+Vnum	      3200
+Prevsector   26
+Area	      ~
+Description  &gA path here leads into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      274 769
+There	      -1 -1
+Vnum	      3462
+Prevsector   26
+Area	      ~
+Description  &gA forested path here leads towards a large inn nearby.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      229 817
+There	      -1 -1
+Vnum	      5800
+Prevsector   26
+Area	      ~
+Description  &gA faint forest path here leads towards a small farm.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      150 815
+There	      -1 -1
+Vnum	      2350
+Prevsector   26
+Area	      ~
+Description  &gA small path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      148 793
+There	      -1 -1
+Vnum	      4000
+Prevsector   26
+Area	      ~
+Description  &OA road here leads north to the gatehouse of a large city by the sea.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      143 786
+There	      -1 -1
+Vnum	      4203
+Prevsector   26
+Area	      ~
+Description  &BA large wooden dock is here leading into the ports of a large city.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      146 785
+There	      -1 -1
+Vnum	      4206
+Prevsector   26
+Area	      ~
+Description  &BA large wooden dock is here leading into the ports of a large city.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      148 783
+There	      -1 -1
+Vnum	      4203
+Prevsector   26
+Area	      ~
+Description  &BA large wooden dock is here leading into the ports of a large city.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      213 667
+There	      -1 -1
+Vnum	      1900
+Prevsector   26
+Area	      ~
+Description  &OA grassy path leads to the southern entrance of a village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      214 666
+There	      -1 -1
+Vnum	      1916
+Prevsector   26
+Area	      ~
+Description  &OA dirt road here leads towards the eastern entrance of a village.~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      108 687
+There	      -1 -1
+Vnum	      1950
+Prevsector   26
+Area	      ~
+Description  &gA small forest covered road here leads south to a village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      108 689
+There	      -1 -1
+Vnum	      1987
+Prevsector   26
+Area	      ~
+Description  &BA wooden dock here leads into a village located to the north.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      105 527
+There	      -1 -1
+Vnum	      6119
+Prevsector   26
+Area	      ~
+Description  &gA recently cleared path here leads into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      126 640
+There	      -1 -1
+Vnum	      6093
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      118 721
+There	      -1 -1
+Vnum	      6085
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      248 747
+There	      -1 -1
+Vnum	      6069
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      199 778
+There	      -1 -1
+Vnum	      6053
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      309 783
+There	      -1 -1
+Vnum	      6037
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      324 729
+There	      -1 -1
+Vnum	      6026
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      368 722
+There	      -1 -1
+Vnum	      6015
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      421 699
+There	      -1 -1
+Vnum	      6008
+Prevsector   26
+Area	      ~
+Description  &gA path here leads deep into the surrounding forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      402 658
+There	      -1 -1
+Vnum	      3475
+Prevsector   26
+Area	      ~
+Description  &OA dirt path leads south towards a rustic looking inn.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      358 614
+There	      -1 -1
+Vnum	      2600
+Prevsector   26
+Area	      ~
+Description  &GA grass lined dirt path here leads towards a walled village.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      354 613
+There	      -1 -1
+Vnum	      2627
+Prevsector   26
+Area	      ~
+Description  &GA grassy path here leads to a walled village on an island.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      242 574
+There	      -1 -1
+Vnum	      2200
+Prevsector   26
+Area	      ~
+Description  &cA slightly obscured path here leads deep into the surrounding swamp.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      255 603
+There	      -1 -1
+Vnum	      2297
+Prevsector   26
+Area	      ~
+Description  &cA slightly obscured path here leads deep into the surrounding swamp.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      225 600
+There	      -1 -1
+Vnum	      2256
+Prevsector   26
+Area	      ~
+Description  &cA slightly obscured path here leads deep into the surrounding swamp.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      304 532
+There	      -1 -1
+Vnum	      3495
+Prevsector   26
+Area	      ~
+Description  &wA rocky path here leads towards a large inn nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      265 395
+There	      -1 -1
+Vnum	      3489
+Prevsector   26
+Area	      ~
+Description  &OA dirt path here leads towards a small inn nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      370 381
+There	      -1 -1
+Vnum	      5400
+Prevsector   26
+Area	      ~
+Description  &OA dirt path here leads towards a large circus established nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      371 383
+There	      -1 -1
+Vnum	      5070
+Prevsector   26
+Area	      ~
+Description  &OA cobbled road here leads to the gatehouse of a large city nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      380 391
+There	      -1 -1
+Vnum	      5000
+Prevsector   26
+Area	      ~
+Description  &OA cobbled road here leads to the gatehouse of a large city nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      389 383
+There	      -1 -1
+Vnum	      5064
+Prevsector   26
+Area	      ~
+Description  &OA cobbled road here leads to the gatehouse of a large city nearby.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      503 327
+There	      -1 -1
+Vnum	      3000
+Prevsector   26
+Area	      ~
+Description  &gA path here leads towards a village in a nearby forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      506 327
+There	      -1 -1
+Vnum	      3022
+Prevsector   26
+Area	      ~
+Description  &gA path here leads towards a village in a nearby forest.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      614 32
+There	      -1 -1
+Vnum	      4600
+Prevsector   26
+Area	      ~
+Description  &cA snowy path here leads to a nearby stone circle before a large icy tower.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      496 589
+There	      -1 -1
+Vnum	      3600
+Prevsector   26
+Area	      ~
+Description  &cA faded path here leads into a nearby dark forest and marsh.&w~
+End
+
+#ENTRANCE
+ToMap	      -1
+OnMap	      0
+Here	      438 638
+There	      -1 -1
+Vnum	      2300
+Prevsector   26
+Area	      ~
+Description  &wA rocky path here leads up into the nearby mountains.&w~
+End
+
+#END

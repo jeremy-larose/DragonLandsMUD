@@ -1,0 +1,4216 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Kidale and Pardale~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 202816150
+ResetMsg     &gYou feel a soft breeze waft past you...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       1900
+Keywords   shyma grand wizardess archmage gnome female elderly~
+Short      &pShyma&w~
+Long       &pAn elderly female gnome is here knitting by the fireplace.&w
+~
+Desc       &pThis wise looking female gnome is dressed in ornate silk robes and
+a cloak as she sits by the fireplace here. She has long white hair
+that is swept up into an impressive bun on the top of her head. She
+seem content knitting by the fire and singing songs as she does it.
+~
+Lore       &pYou see a younger looking female gnome approach a cave as a giant
+spider readies itself to launch at the gnome. The gnome begins a
+series of incantations and the sky is lit with fire as orbs of energy
+fall from the sky and crash into the cave's entrance...
+~
+Race       forest-gnome~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   truesight~
+Stats1     0 50 15 0 15 0 0 0 0 0
+Stats2     20 0 50
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 6
+Attribs    12 25 18 16 12 20 13
+Saves      0 0 0 0 0 0
+Resist     nonmagic magic psychic~
+Immune     poison sleep charm paralysis~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpoload 1901
+c 'stoneskin'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'horrid wilting'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   55~
+Comlist   c 'firebolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   mpoload 1900 1
+c 'polar ray'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   smile $n
+mpsleep 3
+sayto $n Hello dear! I hope you are enjoying my store!
+mpsleep 2
+emote returns to her knitting by the fire as she hums a little song.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from below.~
+Comlist   mea $n &pShyma winks at you and returns to her knitting.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   mpgoto 1921
+emote arrives and begins knitting by the fire
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote stops knitting and heads upstairs to rest for the evening
+mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1901
+Keywords   young gnome wizard shop clerk male~
+Short      &pa shop clerk&w~
+Long       &pA young gnome wizard is here serving as a shop clerk and apprentice.&w
+~
+Desc       &pThis young gnome wizard is working here as a shop clerk and as
+an apprentice to the owner, Shyma. He is dressed in simple purple
+robes and works to keep the store clean.
+~
+Race       forest-gnome~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Stats1     0 50 9 0 10 0 200 0 0 0
+Stats2     10 8 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 16 12 14 12 12 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 8 22
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   smile $n 
+sayto $n Welcome to Shyma's Spell Supplies! How can I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   sayto $n Have you found what you are looking for?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   sayto $n Have you found what you are looking for?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   smile $n
+mpsleep 2
+sayto $n Isn't Shyma great? Do you need any help still?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   close e
+yawn
+mpgoto 1999
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 1915
+yawn
+open e
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1902
+Keywords   young human wizard female shop clerk~
+Short      &pa shop clerk&w~
+Long       &pA young human wizard is here serving as a shop clerk and apprentice.&w
+~
+Desc       &pThis young female wizard is working here as a shop clerk and as
+an apprentice to the owner, Shyma. She is dressed in simple purple
+robes and helps customers find what they are looking for.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Stats1     0 50 9 0 10 0 200 0 0 0
+Stats2     10 8 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 16 12 14 12 12 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 8 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+sayto $n Is there something I can help you find?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 1999
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 1920
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1903
+Keywords   young human wizard male shop clerk~
+Short      &pa shop clerk&w~
+Long       &pA young human wizard is here serving as a shop clerk and apprentice.&w
+~
+Desc       &pThis young male wizard is working here as a shop clerk and as
+an apprentice to the owner, Shyma. He is dressed in simple purple
+robes and helps customers find what they are looking for.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Stats1     1000 50 9 0 10 0 200 0 0 0
+Stats2     10 8 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 16 12 14 12 12 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 8 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   grin $n
+mpsleep 3
+sayto $n Hello! How can I help you today?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 1919
+yawn
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1904
+Keywords   young gnome wizard shop clerk female~
+Short      &pa shop clerk&w~
+Long       &pA young gnome wizard is here serving as a shop clerk and apprentice.&w
+~
+Desc       &pThis young female gnome wizard is working here as a shop clerk and as
+an apprentice to the owner, Shyma. She is dressed in simple purple 
+robes and helps customers find what they are looking for.
+~
+Race       forest-gnome~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Stats1     1000 50 9 0 10 0 200 0 0 0
+Stats2     10 8 10
+Stats3     1 4 1
+Stats4     1 0 1 0 0 0 6
+Attribs    30 16 12 14 12 12 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 8 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+sayto $n How can I help you today?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 1924
+yawn
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   yawn
+mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1905
+Keywords   young human wizard male shop clerk clerk2~
+Short      &pa shop clerk&w~
+Long       &pA young human wizard is here serving as a shop clerk and apprentice.&w
+~
+Desc       &pThis young male wizard is working here as a shop clerk and as
+an apprentice to the owner, Shyma. He is dressed in simple purple
+robes and helps customers find what they are looking for.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Stats1     1000 50 9 0 10 0 200 0 0 0
+Stats2     10 8 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 16 12 14 12 12 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 8 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Do you need any help today?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 1923
+yawn
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1906
+Keywords   priestess hycra white garments~
+Short      &Wa priestess&w~
+Long       &WA priestess of Hycra is here tending to the sick and poor.&w
+~
+Desc       &WThis human priestess is dressed in white garments that cover much of
+her body. She does her best to keep her clothing clean as she tends 
+to various people who are injured and sick.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   truesight~
+Stats1     1000 35 0 0 14 0 0 10 10 0
+Stats2     5 12 15
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    10 13 20 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+sayto $n Greetings! Let me know if you need my services.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 10 silver coins.~
+Comlist   c 'cure light wounds' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 35 silver coins.~
+Comlist   c 'cure moderate wounds' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 70 silver coins.~
+Comlist   c 'cure serious wounds' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 15 gold coins.~
+Comlist   c 'heal' $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1907
+Keywords   inn innkeeper human man counter~
+Short      &Wan innkeeper&w~
+Long       &WA human man is seated behind a counter here while reading a book.&w
+~
+Desc       This innkeeper is a middle aged human man dressed in simple clothing.
+He is seated behind the counter reading a book until someone comes
+to use the Inn's services.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 100 0 0 0
+Stats2     1 10 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   emote looks up from his book he is reading
+mpsleep 3
+sayto $n Welcome to the Pardale Inn. How may I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   nod $n
+mpsleep 3
+sayto $n I hope you enjoyed your stay.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   close w
+yawn
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1908
+Keywords   stable owner hefty looking human man~
+Short      &Ga stable owner&w~
+Long       &GA hefty looking man is here cleaning up a stall.&w
+~
+Desc       This overweight man runs and owns the stables here in the village. He
+spends much of his time cleaning and preparing stalls for customers.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Let me know if you wish to stable your mount here.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1909
+Keywords   barkeep young man cleaning tables~
+Short      &wa barkeep&w~
+Long       &wA barkeep is here cleaning some tables in the tavern.&w
+~
+Desc       This young man is here working as the barkeep. He is dressed in a black
+outfit from tunic to pants, which helps minimize the looks of stains
+earned while working.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     10 9 0
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote looks up from cleaning a table
+mpsleep 3
+sayto $n Holler if you'd like something to eat or drink!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   close s
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1910
+Keywords   general store clerk human woman~
+Short      a store clerk~
+Long       A woman is here working as a store clerk in the general store.
+~
+Desc       This woman is dressed in simple cotton garments and has her hair
+tied back to allow her to work. She has a warm smile and seems to
+have worked here for a long time.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 100 0 0 0
+Stats2     1 20 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 6 20
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 1917
+emote arrives and begins setting up for the day
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   close s
+emote finishes up her tasks and heads home for the evening
+mpgoto 1999
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+sayto $n How can I help you today?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1911
+Keywords   pardale night watch guard~
+Short      &za Pardale night watch guard&w~
+Long       &zA Pardale night watch guard is here patrolling the village.&w
+~
+Desc       &zThis guard is dressed in simple leather armor and carries with him
+a long sword as he patrols the village of Pardale.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 15 0 0 1 5 0
+Stats2     3 8 9
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 0
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 1903
+emote arrives to begin his shift of protecting the village.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   emote sees the sun coming and heads home
+mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1912
+Keywords   female villager~
+Short      a female villager~
+Long       A female villager is here walking around the village.
+~
+Desc       This woman is walking around the village with boots covered in mud.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 0 0 0 5 0 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   emote screams as she tries to fight back
+mpasound &RYou hear the sounds of screaming coming from nearby...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 1908
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1913
+Keywords   general store clerk human man kidale~
+Short      a store clerk~
+Long       A man is here stocking some shelves in the general store.
+~
+Desc       This man is dressed in simple cotton garments as he works around
+the general store. He seems to be in his late middle age and there
+is signs of greying in his hair and beard.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 100 0 0 0
+Stats2     1 20 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 0
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 6 22
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 1969
+open w
+yawn
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote yawns as he cleans up and heads home for the evening
+close w
+mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1914
+Keywords   barkeep young man talking regular~
+Short      &wa barkeep&w~
+Long       A barkeep is here talking to some regulars at the bar.
+~
+Desc       This man is here working as a barkeep. He is dressed in simple leather
+armor and cotton clothing. 
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 20 0 0 0
+Stats2     10 9 0
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 0
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 7 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sayto $n Let me know if you want anything..
+mpsleep 2
+emote goes back to talking to a regular about something
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   close e
+yawn
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1915
+Keywords   tough looking woman female stable owner ~
+Short      &Ra stable owner&w~
+Long       &RA tough looking woman is here brushing a customer's horse.&w
+~
+Desc       This tough looking woman is rippling with muscles from long years of
+cleaning and maintaining these stables. She could care less about
+appearances as her work takes precedence.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote spits and nods her head as she brushes a horse
+mpsleep 3
+sayto $n Need to board here? Let me know if you do or git out.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1916
+Keywords   inn innkeeper elderly halfelf woman~
+Short      &wan innkeeper&w~
+Long       &wAn elderly woman is here folding some linens as she helps customers.
+~
+Desc       This innkeeper is an elderly half-elven woman with long greying brunette
+hair. She is dressed in a soft brown colored cotton dress as she folds
+linens.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 100 0 0 0
+Stats2     1 10 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   smile $n
+sayto $n I hope you enjoyed your stay.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   smile $n
+sayto $n Welcome to the Woodland Dream. How can I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   open s
+smile
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote yawns as she folds some linens and closes the door for the night
+close s
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1917
+Keywords   leather store clerk handsome man ranger~
+Short      &ga handsome clerk&w~
+Long       &gA handsome man is here oiling some leather armor.&w
+~
+Desc       This handsome human man is dressed in the armor he sells in this
+store. His long blonde hair is tied back with a simple piece of
+leather while he works to preserve his pieces for sale.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 100 0 0 0
+Stats2     1 20 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 0
+Attribs    30 13 13 13 13 18 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   9 5 8 0 0 120 90 6 20
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+mpsleep 3
+sayto $n Welcome! How can I help you today?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 1968
+yawn
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   yawn
+close w
+mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1918
+Keywords   Tamu tack supply store clerk owner man rugged looking~
+Short      &gTamu&w~
+Long       &gA rugged looking man is here working on a new bridle.&w
+~
+Desc       &gThis rugged looking man is here working on new pieces for his store.
+He looks like he hasn't bathed in a few days and is covered in sweat
+and grime.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 100 0 0 0
+Stats2     1 20 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 0
+Attribs    30 13 13 13 13 18 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 8 20
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   nod $n
+mpsleep 3
+emote returns to working on a new bridle.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 1965
+emote arrives and begins opening up his store for the day
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   yawn
+close s
+emote packs up and heads home for the evening
+mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1919
+Keywords   elderly ranger clybon shop shopkeeper store clerk~
+Short      &GClybon&w~
+Long       &GAn elderly ranger is here restringing a longbow.&w
+~
+Desc       &GThe elderly ranger before you is rugged looking with deep wrinkles
+from long days of traveling over his lifetime. He seems incredibly
+strong despite his advanced years.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 10 0 100 0 0 0
+Stats2     1 20 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 18 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   6 7 8 10 0 120 90 6 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if class($n) == ranger
+emote smiles warmly and nods his head in greeting
+sayto $n Welcome friend. How can I help you today?
+else
+nod $n
+sayto $n How can I help you?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 1962
+open n
+emote smiles as he begins his work for the day
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   close n
+emote yawns and heads home for the evening
+mpgoto 1999
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1920
+Keywords   archery target humanoid construct straw~
+Short      &Oa straw construct&w~
+Long       &OA straw construct of a humanoid is here being used as a target.&w
+~
+Desc       &OThis construct has been created by magic to animate the humanoid 
+shape made by straw, mud, and other natural materials. The construct
+is used as target practice by archers.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel noattack~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 300 200
+Stats3     0 0 0
+Stats4     2 3 1 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1921
+Keywords   priest jeridon orinan rugged looking man brown robes~
+Short      &Oa priest&w~
+Long       &OA rugged looking man in brown robes is here standing in front of a lodge.
+~
+Desc       &OThis priest is very rugged looking with a long beard. He is dressed
+in a simple brown robe as he stands guard here.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden truesight~
+Stats1     400 30 3 0 12 1000 0 0 0 0
+Stats2     10 9 20
+Stats3     1 8 1
+Stats4     2 0 1 0 0 0 6
+Attribs    16 12 16 16 18 10 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   if ispc($n)
+if deity($n) == Jeridon
+bow $n
+sayto $n Welcome to Great Lodge of the Lone Wolf. You are welcome here.
+else
+sayto $n Only those that follow the Lone Wolf are permitted access.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'cure serious wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   mpoload 1226 1
+c 'spirit guardians'
+mpjunk amulet
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'sacred flame'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   if deity($n) == Jeridon
+bow $n
+else
+peer $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1922
+Keywords   priestess jeridon orinan wandering woman female simple brown robes~
+Short      &Oa priestess&w~
+Long       &OA young woman dressed in simple brown robes is here.&w
+~
+Desc       &OThis young woman has her wild curls pulled back with a piece of 
+leather cording. She is dressed in simple brown robes and walks 
+around the lodge and grounds looking for signs of trouble.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   detect_hidden infrared~
+Stats1     400 25 3 0 12 1000 0 0 0 0
+Stats2     10 9 20
+Stats3     1 8 1
+Stats4     2 0 1 0 0 0 6
+Attribs    16 12 16 16 18 10 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpoload 2978 1
+c 'thorn whip'
+mpjunk vine
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if deity($n) == jeridon
+nod $n
+else
+sayto $n Halt! You do not belong here! Come with me!
+mea $n &gThe woman grabs you and drags you out of the area...
+mer $n &gThe woman grabs $n and drags $m out of the area.
+silent mptransfer $n 1961
+mpat 1961 mer $n &gA woman drops off $n before running off into the forest.
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1923
+Keywords   priest jeridon orinan wandering man simple brown robes~
+Short      &Oa priest&w~
+Long       &OA young man dressed in simple brown robes is here.
+~
+Desc       &OThis young man has the beginnings of a beard growing on his
+young face. He has long hair that is tied back and he wears
+simple brown robes.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_hidden infrared~
+Stats1     400 29 3 0 12 1000 0 0 0 0
+Stats2     10 9 20
+Stats3     1 8 1
+Stats4     2 0 1 0 0 0 0
+Attribs    16 12 16 16 18 10 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if deity($n) == jeridon
+nod $n
+else
+sayto $n Halt! You do not belong here! Come with me!
+mea $n &gThe man grabs you and drags you out of the area...
+mer $n &gThe man grabs $n and drags $m out of the area.
+silent mptransfer $n 1961
+mpat 1961 mer $n &gA man drops off $n before running off into the forest.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'cure light wounds'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpoload 2978 1
+c 'thorn whip'
+mpjunk vine
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1924
+Keywords   priestess woman jeridon healer mob tending sick injured~
+Short      &Oa priestess&w~
+Long       &OA woman is here tending to the sick and injured.&w
+~
+Desc       &OThis mature looking woman is the acting healer of the temple. She
+has slowly greying hair and is dressed in simple brown robes.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared~
+Stats1     400 25 3 0 12 1000 10 0 0 0
+Stats2     10 9 20
+Stats3     1 8 1
+Stats4     2 0 1 0 0 0 0
+Attribs    16 12 16 16 18 10 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if deity($n) == jeridon
+smile $n
+sayto $n Allow me to help with any wounds or ailments.
+else
+sayto $n You do not belong here.
+mea $n &gThe priestess makes a motion and you are sent backwards!
+mer $n &gThe priestess makes a motion and $n is sent backwards!
+mpforce $n e
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1925
+Keywords   priest shopkeeper jeridon orinan older man~
+Short      &Oa priest&w~
+Long       &OAn older looking man is here tidying up the store here.&w
+~
+Desc       &OThis mature looking older priest is very rugged with a curly 
+beard with hints of white. He works here in the supply store helping
+the faithful find what they need.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden~
+Stats1     400 30 3 0 12 1000 5 0 0 0
+Stats2     10 9 20
+Stats3     1 8 1
+Stats4     2 0 1 0 0 0 0
+Attribs    16 12 16 16 18 10 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+Defenses   dodge~
+ShopData   0 0 0 0 0 120 90 5 22
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if deity($n) == jeridon
+nod $n
+sayto $n How can I help you today?
+else
+sayto $n You do not belong here! Out!
+mea $n &gThe priest makes a motion and you are sent backwards!&w
+mer $n &gThe priest makes a motion and $n is sent backwards!&w
+mpforce $n w
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1999
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     1900
+Keywords white ceramic cone tiny~
+Type     trash~
+Short    &Wa tiny white ceramic cone&w~
+Long     &WA tiny white ceramic cone has been left here.&w~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 2
+Stats    1 5 10 30 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1901
+Keywords earthstone earth stone small polished rock~
+Type     gem~
+Short    &Oan earthstone&w~
+Long     &OA small polished rock has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 1 25 15 0 1 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p brightstonecreate~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 20
+If otypehere(fire) == 1
+If ovnumroom(5631) == 1
+If ovnumroom(5636) == 1
+If ovnumroom(5637) == 1
+If carryingvnum($n) == 1901
+Mea $n &OYou take some forceps from your kit and grasp the earthstone.
+Mea $n &zAfter grasping the stone you douse it with the contents of the
+mea $n &Wboth tubes before plunging it into the fire. Sparks and burst of
+Mea $n &Wlight shoot from the fire until you withdraw a glowing gem and
+Mea $n &Wfinish your alchemical process.
+Mer $n &W$n&W plunges a stone doused from the contents of two
+Mer $n &Wvials into the fire here. Moments later $e withdraws a
+Mer $n &Wshimmering, glowing stone from the fire.
+Silent mpforce $n drop earthstone
+Mpoload 995 1
+Silent mpforce $n get brightstone
+Mppurge ntube
+Mppurge ptube
+Mppurge earthstone
+Else
+Mea $n You need to be carrying an earthstone first.
+Endif
+Else 
+Mea $n You need to put a vial of negative element on the ground.
+Endif
+Else
+Mea $n You need to put a vial of positive element on the ground.
+endif
+Else
+Mea $n You need to put your kit on the ground and set it up.
+Endif
+Else 
+Mea $n You need to have a fire ready.
+Endif
+Else
+Mea $n &RYou fail the alchemical process and something goes wrong... 
+Mpecho &RThe entire area is hit with a fiery, magical blast!!!&w
+Mpdamage all 1 35
+Mppurge ntube
+Mppurge ptube
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1902
+Keywords small silver key spellcomponent~
+Type     trash~
+Short    &wa small silver key&w~
+Long     &wA small silver key has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    0 0 90 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1903
+Keywords wisp smoke small jar~
+Type     trash~
+Short    &Oa wisp of &zsmoke&O in a glass jar&w~
+Long     &OA small glass jar with some smoke trapped inside it has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    0 0 1 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1904
+Keywords twig tree struck lightning burnt~
+Type     trash~
+Short    &za twig from a lightning struck tree&w~
+Long     &zA burnt looking twig has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    0 0 5 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1906
+Keywords yew leaf small~
+Type     trash~
+Short    &ga small yew leaf&w~
+Long     &gA small leaf has been left here.&w~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1907
+Keywords piece wood wychwood small~
+Type     trash~
+Short    &pa small piece of wychwood&w~
+Long     &pA small piece of wood has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 1 1 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1908
+Keywords jar squid tentacles small~
+Type     trash~
+Short    &ra small jar of octopus tentacles&w~
+Long     &rA small jar full of octopus tentacles has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 0 20 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1909
+Keywords glass sphere small~
+Type     trash~
+Short    &Wa small glass sphere&w~
+Long     &WA small glass sphere has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 10 10 0 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1910
+Keywords vial sweet oil~
+Type     trash~
+Short    &Pa vial of sweet oil&w~
+Long     &PA vial of sweet smelling oil has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 2 50 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1911
+Keywords small silver whistle~
+Type     trash~
+Short    &wa small silver whistle&w~
+Long     &wA small silver whistle has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 5 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1912
+Keywords sponge small~
+Type     trash~
+Short    &Oa small sponge&w~
+Long     &OA small sponge has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 15 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1913
+Keywords skunk cabbage small~
+Type     trash~
+Short    &ga small skunk cabbage&w~
+Long     &gA small skunk cabbage has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 50 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1914
+Keywords small silver bar ornately carved~
+Type     trash~
+Short    &wa small ornately carved silver bar&w~
+Long     &wA small ornately carved silver bar has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    0 10 20 40 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1915
+Keywords pouch powdered mixture silver iron~
+Type     trash~
+Short    &wa pouch containing a powdered mixture of silver and iron&w~
+Long     &wA pouch containing a powdered mixture of silver and iron has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 10 10 20 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1916
+Keywords jar full rose petals~
+Type     trash~
+Short    &Ra jar full of rose petals&w~
+Long     &RA jar full of rose petals has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1917
+Keywords white rock chip~
+Type     trash~
+Short    &Wa chip of white colored rock&w~
+Long     &WA chip of white colored rock has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 0 10 40 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1918
+Keywords pouch powdered rhubarb~
+Type     trash~
+Short    &pa pouch of powdered rhubarb&w~
+Long     &pA pouch containing a powdered substance has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    0 1 10 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1919
+Keywords quill plucked sleeping bird long~
+Type     trash~
+Short    &Oa quill plucked from a sleeping bird&w~
+Long     &OA long quill from a bird has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    0 10 5 0 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1920
+Keywords pinch phosphorus~
+Type     trash~
+Short    &Ya pinch of phosphorus&w~
+Long     &YA pinch of phosphorus has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 2 25 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1921
+Keywords petrified eye newt~
+Type     trash~
+Short    &ga petrified &ceye of newt&w~
+Long     &gA petrified eye of newt has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 1 10 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1922
+Keywords handful small nut shells~
+Type     trash~
+Short    &Oa handful of small nut shells&w~
+Long     &OA handful of small nut shells have been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1923
+Keywords vial liquid mercury~
+Type     trash~
+Short    &za vial of liquid mercury&w~
+Long     &za vial of liquid mercury&w~
+WFlags   take onehand~
+Values   25 0 0 0 0 0
+Values2  0 2
+Stats    0 10 10 20 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1924
+Keywords mandrake root~
+Type     trash~
+Short    &Ra mandrake root&w~
+Long     &RA mandrake root has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 1 10 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1925
+Keywords lodestone small~
+Type     trash~
+Short    &za small lodestone&w~
+Long     &zA small lodestone has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 5 10 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1926
+Keywords pouch jade dust~
+Type     trash~
+Short    &Ga pouch of jade dust&w~
+Long     &GA pouch of jade dust has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    0 25 10 10 2 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1927
+Keywords jar hen heart hens small~
+Type     trash~
+Short    &ra small jar containing a hen's heart&w~
+Long     &rA jar containing a small heart has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1928
+Keywords bat guano dried handful~
+Type     trash~
+Short    &Oa handful of dried bat guano&w~
+Long     &OA handful of dried bat guano has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1929
+Keywords large dried carrot~
+Type     trash~
+Short    &Oa dried carrot&w~
+Long     &OA large dried carrot has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1930
+Keywords bowl earth wood water mixture~
+Type     trash~
+Short    &Oa bowl containing a mixture of earth, wood, and water&w~
+Long     &OA bowl containing a mixture of earth, wood, and water has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    0 1 25 40 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1931
+Keywords piece fresh red clay~
+Type     trash~
+Short    &Ra piece of fresh red clay&w~
+Long     &RA piece of fresh red clay has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 30 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1932
+Keywords small caterpillar cocoon~
+Type     trash~
+Short    &Pa small caterpillar cocoon&w~
+Long     &PA small cocoon has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1933
+Keywords hair bull bag small~
+Type     trash~
+Short    &Oa small bag of bull's hair&w~
+Long     &OAsmall bag of hair has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 0 5 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1934
+Keywords small piece copper~
+Type     trash~
+Short    &Oa small piece of copper&w~
+Long     &OA small piece of copper has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 1 10 40 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1935
+Keywords small piece fur animal pelt~
+Type     trash~
+Short    &za small piece of animal fur&w~
+Long     &zA small piece of animal fur has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1936
+Keywords small crystal bead~
+Type     trash~
+Short    &Wa small crystal bead&w~
+Long     &WA small bead has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    0 0 1 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1937
+Keywords small piece gold golden wire~
+Type     trash~
+Short    &Ya small piece of golden wire&w~
+Long     &YA piece of golden wire has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    0 1 5 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1938
+Keywords jar grasshopper hind legs small~
+Type     trash~
+Short    &Wa jar full of &Ggrasshopper hind legs&w~
+Long     &WA jar full of grasshopper hind legs has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    0 1 40 40 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1939
+Keywords plate roast venison potatoes potato~
+Type     food~
+Short    &Oroast venison with &Wpotatoes&w~
+Long     &OA plate of roast venison with potatoes has been left here.~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 25 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1940
+Keywords simple leather sling missileweapon~
+Type     missileweapon~
+Short    &Oa simple leather sling&w~
+Long     &OA simple leather sling has been left here.&w~
+WFlags   take onehand~
+Values   12 1 4 2 12 3
+Values2  0 2
+Stats    1 4 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1941
+Keywords small stone sling bullet~
+Type     projectile~
+Short    &wa sling bullet&w~
+Long     &wA small stone used as a projectile for a sling has been left here.&w~
+WFlags   take onehand~
+Values   12 1 4 2 3 0
+Values2  0 2
+Stats    0 0 0 3 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1942
+Keywords large village well~
+Type     fountain~
+Short    &ca large village well&w~
+Long     &cA large stone well is here in the middle of the village.&w~
+Values   1000 1000 0 0 0 0
+Values2  0 3
+Stats    1 0 0 50 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1943
+Keywords simple looking wooden club~
+Type     weapon~
+Short    &Oa simple wooden club&w~
+Long     &OA simple looking wooden club has been left here.&w~
+Flags    inventory lightweight~
+WFlags   take onehand~
+Values   12 1 4 2 19 0
+Values2  0 2
+Stats    2 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1944
+Keywords large campfire carefully maintained~
+Type     fire~
+Short    &Ra large campfire&w~
+Long     &RA large campfire has been carefully maintained here.&w~
+Flags    glow~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1945
+Keywords jeridon faith board notes parchment wooden~
+Type     furniture~
+Short    &Oa noteboard&w~
+Long     &OA wooden note board has been hung on the wall here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1946
+Keywords scabbard leather etched wolves~
+Type     container~
+Short    &Oa leather scabbard etched with &Rwolves&w~
+Long     &OA leather scabbard etched with wolves has been left here.&w~
+WFlags   take back belt onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 5 10 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1947
+Keywords leather armor trimmed crimson~
+Type     armor~
+Short    &Ostudded armor trimmed with &Rcrimson bindings&w~
+Long     &OStudded leather armor that has crimson bindings has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  4 2
+Stats    13 30 4 1 3 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1948
+Keywords leather pack etched wolves~
+Type     container~
+Short    &Oa leather pack etched with &Rwolves&w~
+Long     &OA leather pack etched with wolves has been left here.&w~
+WFlags   take back belt onehand~
+Values   25 0 0 0 0 0
+Values2  0 2
+Stats    1 15 0 0 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1949
+Keywords leather quiver etched wolves~
+Type     quiver~
+Short    &Oa leather quiver etched with &Rwolves&w~
+Long     &OA leather quiver etched with wolves has been left here.&w~
+WFlags   take back belt onehand~
+Values   50 0 0 12 0 0
+Values2  0 2
+Stats    1 9 85 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1950
+Keywords leather armor crimson bindings~
+Type     armor~
+Short    &Oleather armor with &Rcrimson bindings&w~
+Long     &OLeather armor with crimson bindings has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 7 1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1951
+Keywords leather helm shaped wolf head wolves~
+Type     armor~
+Short    &Oa leather helm shaped like a &Rwolf's head&w~
+Long     &OA leather helm shaped like a wolf's head has been left here.&w~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 3 15 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1952
+Keywords simple brown robe crimson trimming trim~
+Type     armor~
+Short    &Oa simple brown robe with &Rcrimson trimming&w~
+Long     &OA simple brown robe with crimson trimming has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    2 7 1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1953
+Keywords travelers vial vitality olive green small~
+Type     potion~
+Short    &ga small olive green vial&w~
+Long     &gA small olive green vial has been left here.&w~
+Lore   &gThe vial in your hands is revealed to be a "Vial of Traveler's
+Vitality." It is a secret recipe created by the faith of Jeridon
+Orinan to keep their faithful healthy during long travels...&w
+~
+Flags    magic~
+WFlags   take onehand~
+Values   15 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 10 25 0 1 0 0
+Spells   'refreshing vitality' 'cure light wounds' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     1954
+Keywords adder adders stomach spell component~
+Type     trash~
+Short    &ran adder's stomach&w~
+Long     &rAn adder's stomach has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 0
+Stats    0 0 1 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1955
+Keywords small empty vial vialg300~
+Type     trash~
+Short    &wa small empty vial&w~
+Long     &wA small empty vial has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 5 0 0 0
+#EXDESC
+ExDescKey    vial~
+ExDesc       &wThis vial is empty and perhaps you can FILL it with liquid that
+is nearby. Perhaps investigating this vial will help you use it
+efficiently.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillectoplasm~
+Comlist   if ovnumroom(1098) >= 1
+mea $n You fill a small vial with some of the ectoplasm here.
+mer $n $n fills a small vial with an odd glowing substance.
+silent mpforce $n drop vialg300
+mpoload 1097 1
+Mposet viale303 timer 1000
+silent mpforce $n get viale303
+mppurge vialg300
+else
+mea $n There is no ectoplasm to collect with a small empty vial.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillocean~
+Comlist   if sector($n) == 18
+mea $n You fill a small vial with some salty water.
+mer $n $n fills a small vial with some salty water.
+silent mpforce $n drop vialg300
+mpoload 1957 1
+silent mpforce $n get vialg302
+mppurge vialg300
+else
+mea $n There is no ocean water here to fill a vial with.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillswamp~
+Comlist   if sector($n) == 15
+mea $n You fill a small vial with some swampy water.
+mer $n $n fills a small vial with some swampy water.
+silent mpforce $n drop vialg300
+mpoload 1956 1
+silent mpforce $n get vialg301
+mppurge vialg300
+else
+mea $n There is no swamp near here to fill a vial with.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillriver~
+Comlist   if sector($n) == 11
+mea $n You fill a small vial with some water.
+mer $n $n fills a small vial with some water.
+silent mpforce $n drop vialg300
+mpoload 1780 1
+silent mpforce $n get cvialg300
+mppurge vialg300
+else
+mea $n There is no river near here to fill a vial with.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p filldeep~
+Comlist   if sector($n) == 7
+mea $n You fill a small vial with some water.
+mer $n $n fills a small vial with some water.
+silent mpforce $n drop vialg300
+mpoload 1780 1
+silent mpforce $n get cvialg300
+mppurge vialg300
+else
+mea $n There is no deep water source near here to fill a vial with.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillwater~
+Comlist   if sector($n) == 6
+mea $n You fill a small vial with some water.
+mer $n $n fills a small vial with some water.
+silent mpforce $n drop vialg300
+mpoload 1780 1
+silent mpforce $n get cvialg300
+mppurge vialg300
+else
+mea $n There is no water source near here to fill a vial with.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillfountain~
+Comlist   if otyperoom(fountain) == 1
+mea $n You fill a small vial with some water.
+mer $n $n fills a small vial with some water.
+silent mpforce $n drop vialg300
+mpoload 1780 1
+silent mpforce $n get cvialg300
+mppurge vialg300
+else
+mea $n There is no water source near here to fill a vial with.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillblood~
+Comlist   if ovnumroom(17) >= 1
+mea $n &wYou fill a small vial with some of the spilled blood here.
+mer $n &w$n&w fills a small vial with some of the spilled blood here.
+silent mpforce $n drop vialg300
+mpoload 1527 1
+silent mpforce $n get bvialg300
+mppurge vialg300
+else
+mea $n There is no blood to collect with a small empty vial.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate vial~
+Comlist   if investigation($n) >= 12
+mea $n You can use this vial to take samples of liquid that can be
+mea $n found nearby such as blood and water. You just need to use
+mea $n the vial to FILLBLOOD, FILLFOUNTAIN, FILLWATER, FILLDEEP, FILLRIVER,
+mea $n FILLSWAMP, or FILLOCEAN in order to collect a sample.
+mpsleep 2
+mea $n Perhaps you can find other substances to FILL<NAME> later?
+else
+mea $n You fail to find anything
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1956
+Keywords small vial swamp water swampy looking vialg301~
+Type     trash~
+Short    &ga vial of swamp water&w~
+Long     &gA small vial of swampy looking water has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1957
+Keywords small vial salt water vialg302~
+Type     trash~
+Short    &Wa vial of salt water&w~
+Long     &WA small vial of salt water has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 2 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1999
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     1900
+Name     A Village Road~
+Sector   city~
+Desc     The road here is made from dark soil that is constantly tilled by
+carts, horses, and people traveling to the small village nearby. There
+are very little rocks on the main part of the road as they have been
+pushed to the sides creating a rudimentary outline. The road continues
+to the north towards the village or to the south away from it.
+~
+#EXIT
+Direction north~
+ToRoom    1901
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      213
+MapY      667
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1901
+Name     A Village Road~
+Sector   city~
+Stats    0 0 0 0 12 0
+Desc     The road here is made from dark soil that is constantly tilled by
+carts, horses, and people traveling to the small village nearby. There
+are very little rocks on the main part of the road as they have been
+pushed to the sides creating a rudimentary outline. The road continues
+to the north towards the village or to the south away from it. The
+village itself can be seen to the north and northwest. It consists of
+several stone and log buildings constituting homes and shops for the
+locals who dwell here.
+~
+Perdesc  &gYou see a &Gsign&g near the path as it heads north from here...&w
+~
+#EXIT
+Direction north~
+ToRoom    1902
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1900
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &cWelcome to the Village of Pardale
+ 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1902
+Name     A Village Road~
+Sector   city~
+Desc     The road here divides into a north and eastern route through the
+beginnings of the village. Small stone and log homes can be found
+throughout the small village with the stone homes being the oldest
+of this settlement. The smell of salt water can be smelled as this
+village is near a large bay connected to the ocean.
+~
+#EXIT
+Direction north~
+ToRoom    1903
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1909
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1901
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1903
+Name     A Village Road~
+Sector   city~
+Stats    0 0 0 0 14 0
+Desc     The road here continues to the north and to the south with small homes
+aligned near it. A strange looking purple home is located to the west
+and it features stained glass windows depicting magical spells. A sign
+is hung in front of the home with the font on the sign looking quite
+elegant. The home sticks out amongst the ordinary stone and log homes
+located throughout the village.
+~
+Perdesc  &pYou spot a &Psign&p in front of a purple colored home.&w
+~
+#EXIT
+Direction north~
+ToRoom    1904
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1902
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1915
+Keywords  'purple shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1903 3 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &pWelcome to Shyma's Spell Supplies!&w
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1904
+Name     A Village Road~
+Sector   city~
+Desc     This road continues to the east and south from here. A small dirt path
+leads to a construction site towards the north where a rather large
+stone building is building constructed slowly. There are several larger
+homes located along this part of the village road denoting some wealth
+in the area.
+~
+#EXIT
+Direction north~
+ToRoom    1918
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1905
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1903
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1905
+Name     A Village Road~
+Sector   city~
+Desc     The road that cuts around this village continues to the east and west
+from here while a quaint looking store can be seen to the north. It
+appears to be a general store selling various common wares to the
+locals and visitors to this village. It's wooden walls have been
+painted a bright, clean looking white, which helps it stand out
+amongst all the other structures in the village.
+~
+#EXIT
+Direction north~
+ToRoom    1917
+Keywords  'general store door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1906
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1904
+#ENDEXIT
+
+Reset D 0 1905 0 0
+#ENDROOM
+
+#ROOM
+Vnum     1906
+Name     A Village Road~
+Sector   city~
+Desc     The road here continues to the west and south as it moves along the
+village. A small wooden temple can be seen to the east, which is a 
+dedicated missionary devoted to the goddess Hycra. The missionaries
+erected this building to help serve the locals and those traveling
+here. The building seems fairly new and parts of it are still
+under construction.
+~
+#EXIT
+Direction east~
+ToRoom    1925
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1907
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1905
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1907
+Name     A Village Road~
+Sector   city~
+Desc     The village road here winds towards the north and to the south from
+here. A large looking inn can be found to the east, which looks very
+old and must be one of the original buildings in this settlement. The
+base of the inn is stone and the upper half is made from clean cut
+wood. The style of the building shows that it has gone through several
+renovations over the many years.
+~
+#EXIT
+Direction north~
+ToRoom    1906
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1913
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1908
+#ENDEXIT
+
+Reset D 0 1907 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1908
+Name     A Village Road~
+Sector   city~
+Desc     There are numerous smaller homes on this side of the village with some
+newer homes being constructed. The village road continues to the north
+and to the west from here while the path leading to the east leads
+outside of the village. This part of the village is on a slight hill
+and one can see a river to the east that flows near the village.
+~
+#EXIT
+Direction north~
+ToRoom    1907
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1916
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1909
+#ENDEXIT
+
+Reset M 0 1912 1 1908
+#ENDROOM
+
+#ROOM
+Vnum     1909
+Name     A Village Road~
+Sector   city~
+Desc     The village road here continues to the east and west as it creates
+a loop around the village. To the north is a large old looking tavern,
+which appears to be one of the first major buildings constructed in
+this area. A large village stables can be found towards the south
+of this road where visitors can stable their mounts for a short time.
+~
+#EXIT
+Direction north~
+ToRoom    1910
+Keywords  'tavern door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1908
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1911
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1902
+#ENDEXIT
+
+Reset D 0 1909 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1910
+Name     The Quick River Tavern~
+Sector   indoors~
+Desc     This tavern is quite old with very squeaky floorboards that seem to
+bend slightly with each step placed on them. There are several tables
+and chairs for people to sit at while drinking or eating. A large counter
+is where the barkeep serves drinks to his loyal customers. A large stone
+fireplace supplies heat and light during the night time hours when customers
+are still enjoying themselves. The tavern is not very decorated and is
+very simple in terms of decor.
+~
+#EXIT
+Direction south~
+ToRoom    1909
+Keywords  'tavern door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1909 1 1910
+  Reset G 0 4112 1
+  Reset G 0 4027 1
+  Reset G 0 1569 1
+  Reset G 0 1744 1
+Reset D 0 1910 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1911
+Name     The Pardale Stables~
+Sector   indoors~
+Desc     The stables here are rough looking and not well maintained. There are
+several stables in this space for guests of the village to stable their
+mount during their visit. Large stacks of hay and bags of grain can be
+seen along the west wall of stables, which are used to feed the horses. A
+large pasture to the south is where the horses are turned out to get
+some fresh air from time to time.
+~
+#EXIT
+Direction north~
+ToRoom    1909
+#ENDEXIT
+
+Reset M 0 1908 1 1911
+#ENDROOM
+
+#ROOM
+Vnum     1912
+Name     &RTHE PARDALE STABLES MOB STORAGE&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall noastral~
+Desc     You should not be in here. Please contact an admin to get out.
+~
+#ENDROOM
+
+#ROOM
+Vnum     1913
+Name     The Pardale Inn~
+Sector   indoors~
+Desc     The floorboards of this old inn creak whenever someone walks on them
+whether here or above in one of the tiny guest rooms. A staircase leads
+up to where guests sleep while a counter against the western wall is
+where the innkeeper helps new customers settle in. There are several
+old paintings on the wall used to help spruce up the decor on this
+old establishment.
+~
+#EXIT
+Direction west~
+ToRoom    1907
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1907 1 1913
+Reset D 0 1913 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1914
+Name     A Small Bedroom~
+Sector   indoors~
+Desc     This bedroom is quite small and can only accommodate one person. There
+is a small bed against the wall where a window overlooks the village and
+the bay of water nearby. A small dresser has a pitcher of water and a 
+basin to freshen up. The decor is kept simple and the room is perfect
+to get a good night's rest.
+~
+#EXIT
+Direction down~
+ToRoom    1913
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1915
+Name     Shyma's Spell Supplies~
+Sector   indoors~
+Desc     &pThe interior of this home has been renovated to be a large store
+that supplies magical ingredients. This room was once a parlor and is
+now the beginning of the store. There are several tables and bookshelves
+full of ingredients for sale. A fireplace here burns with an interesting
+lilac colored fire, which fills the room with a sweet smell.
+~
+#EXIT
+Direction north~
+ToRoom    1920
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1903
+Keywords  'purple shop door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1919
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1921
+#ENDEXIT
+
+Reset M 0 1901 1 1915
+  Reset G 0 1903 1
+  Reset G 0 4158 1
+  Reset G 0 4157 1
+  Reset G 0 1747 1
+  Reset G 0 1751 1
+  Reset G 0 1753 1
+  Reset G 0 1909 1
+  Reset G 0 2980 1
+  Reset G 0 1906 1
+  Reset G 0 1907 1
+  Reset G 0 1908 1
+  Reset G 0 1954 1
+  Reset G 0 1905 1
+  Reset G 0 1904 1
+Reset D 0 1915 1 0
+#ENDROOM
+
+#ROOM
+Vnum     1916
+Name     A Village Road~
+Sector   city~
+Stats    0 0 0 0 12 0
+Desc     The road here is made from dark soil that is constantly tilled by
+carts, horses, and people traveling to the small village nearby. There
+are very little rocks on the main part of the road as they have been
+pushed to the sides creating a rudimentary outline. The road continues
+to the west towards the village or to the east away from it.
+~
+Perdesc  &gYou see a &Gsign&g near the path as it heads west from here...&w
+~
+#EXIT
+Direction east~
+ToRoom    30000
+Flags     nomob overland~
+MapX      214
+MapY      666
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1908
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &cWelcome to the Village of Pardale&w
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1917
+Name     The Pardale General Store~
+Sector   indoors~
+Desc     The interior of this store is kept clean and immaculate despite the
+rugged surroundings of the village itself. There are shelves full
+of clean glass jars along with tables lined with general goods. A long
+wooden counter is used by the clerk to help the customer make purchases
+and pay for them. A small metal stove in the room helps keep it warm
+during the cold months.
+~
+#EXIT
+Direction south~
+ToRoom    1905
+Keywords  'general store door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1910 1 1917
+  Reset G 0 36 1
+  Reset G 0 1661 1
+  Reset G 0 1651 1
+  Reset G 0 1427 1
+  Reset G 0 2011 1
+  Reset G 0 1649 1
+  Reset G 0 1660 1
+  Reset G 0 1654 1
+  Reset G 0 1652 1
+  Reset G 0 3467 1
+  Reset G 0 1657 1
+Reset D 0 1917 2 0
+#ENDROOM
+
+#ROOM
+Vnum     1918
+Name     A Construction Site~
+Sector   field~
+Stats    0 0 0 0 12 0
+Desc     The plot of land here is located at the top of a small hill where a
+stone building is being constructed. During the day this area is full
+of workers slowly piecing together the structure. There are building
+materials located all over the area from wood, stone, and building
+tools.
+~
+Perdesc  &OThere is a &Ysign&O posted at the entrance of the construction site.
+~
+#EXIT
+Direction south~
+ToRoom    1904
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &YFuture site of a Sanara's Sewing Supplies!&w
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1919
+Name     Shyma's Spell Supplies~
+Sector   indoors~
+Desc     &pThis room was once a dining room and now has been transformed into
+a large space for selling spell ingredients. A large central table boasts
+a plethora of components from stones to jars full of odd ingredients. The
+decor of the entire store continues with its purple theme from curtains
+to furnishings. A doorway to the west leads into a kitchen that has also
+been changed into a store for customers.
+~
+#EXIT
+Direction north~
+ToRoom    1915
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1924
+#ENDEXIT
+
+Reset M 0 1903 1 1919
+  Reset G 0 1756 1
+  Reset G 0 4162 1
+  Reset G 0 1760 1
+  Reset G 0 1854 1
+  Reset G 0 1869 1
+  Reset G 0 1955 1
+  Reset G 0 4186 1
+  Reset G 0 2975 1
+  Reset G 0 1912 1
+  Reset G 0 1910 1
+  Reset G 0 1913 1
+  Reset G 0 1915 1
+  Reset G 0 1914 1
+  Reset G 0 1911 1
+#ENDROOM
+
+#ROOM
+Vnum     1920
+Name     Shyma's Spell Supplies~
+Sector   indoors~
+Desc     &pThis room was once a library and now has been converted into another
+shopping area for customers. The bookshelves are full of ingredients
+and jars that customers can look at before buying. A few tables can be
+found in the room dedicated to interesting spell ingredients that must
+be laid out a certain way. The library continues to the west where more
+shopping can be done.
+~
+#EXIT
+Direction south~
+ToRoom    1915
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1923
+#ENDEXIT
+
+Reset M 0 1902 1 1920
+  Reset G 0 1780 1
+  Reset G 0 1750 1
+  Reset G 0 1901 1
+  Reset G 0 1781 1
+  Reset G 0 1759 1
+  Reset G 0 1784 1
+  Reset G 0 1900 1
+  Reset G 0 1757 1
+  Reset G 0 1527 1
+  Reset G 0 1779 1
+  Reset G 0 1816 1
+  Reset G 0 1683 1
+  Reset G 0 1902 1
+#ENDROOM
+
+#ROOM
+Vnum     1921
+Name     A Wizardly Parlor~
+Sector   indoors~
+Stats    0 0 0 0 15 0
+Desc     &pThis room was once a large living space and now has been converted
+into a large parlor space for entertaining. The entire decor is purple
+colored from the furniture to the walls. A painting of a beautiful gnomish
+woman with dark raven hair can be found above the fireplace, which has
+a lilac colored flame burning inside it. There are several seats in this
+room where customers can relax and unwind while thinking about purchasing
+more wares.
+~
+Perdesc  &pYou spot a cellar door entrance near the southern wall of this parlor.
+~
+#EXIT
+Direction east~
+ToRoom    1915
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1922
+Key       3700
+Keywords  'cellar door'~
+Flags     isdoor closed locked pickproof nopassdoor hidden bashproof~
+#ENDEXIT
+
+Reset M 0 1900 1 1921
+Reset O 0 5222 1 1921
+Reset D 0 1921 5 2
+#ENDROOM
+
+#ROOM
+Vnum     1922
+Name     &BA Magic Circle&w~
+Sector   indoors~
+Stats    0 0 0 0 16 0
+Desc     This room is dedicated to the usage of magic and has been cleared of
+all furnishings. The walls have magical glyphs painted on them and on
+the floor is a large circle drawn in chalk. Sigils can be found on the
+interior the circle, which helps the magic user channel their energies
+for a desired purpose.
+~
+Perdesc  &pYou spot a cellar door leading upstairs near the northern end of this room.
+~
+#EXIT
+Direction up~
+ToRoom    1921
+Key       3700
+Keywords  'cellar door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset D 0 1922 4 2
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p enterpath~
+Comlist   if class($n) == wizard
+if wearingvnum($n) == 3700
+mea $n &BYou feel the energy of the room swirl around you as a large
+mea $n &Bgateway appears before you. You are drawn inside the gateway
+mea $n &Band arrive in a new destination far from the magic circle...
+mer $n &B$n&B holds up a glowing stone before disappearing through a gateway.
+silent mptransfer $n 3710
+mpat 3710 mer $n &B$n&B appears in a flash of light!&w
+else
+mea $n &BYou need to be holding the magestone first.
+endif
+else
+mea $n Nothing happens.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if arcana($n) > 18
+mea $n &CYou decipher the sigils here as ones used for magical travel across
+mea $n &Cgreat distances both to and from here...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1923
+Name     Shyma's Spell Supplies~
+Sector   indoors~
+Desc     &pThis is the end of a library that has been converted into a shopping
+area for those seeking spell ingredients. There are less bookshelves
+here full of components and more tables dedicated towards that purpose.
+The tables are full of spell ingredients, jars, and potions that lure
+customers and their curiosity.
+~
+#EXIT
+Direction east~
+ToRoom    1920
+#ENDEXIT
+
+Reset M 0 1905 1 1923
+  Reset G 0 1781 1
+  Reset G 0 1930 1
+  Reset G 0 1929 1
+  Reset G 0 1928 1
+  Reset G 0 513 1
+  Reset G 0 1933 1
+  Reset G 0 1934 1
+  Reset G 0 1932 1
+  Reset G 0 1931 1
+  Reset G 0 1938 1
+  Reset G 0 1936 1
+  Reset G 0 1937 1
+  Reset G 0 1927 1
+  Reset G 0 1935 1
+#ENDROOM
+
+#ROOM
+Vnum     1924
+Name     Shyma's Spell Supplies~
+Sector   indoors~
+Desc     &pThis space was once a kitchen and is now part of a large shopping
+experience for those seeking spell ingredients. All of the tables and
+counter spaces in this kitchen have been used to display exotic spell
+ingredients. A fireplace once used for cooking is now used to burn an
+interesting wood that gives off a lilac colored flame.
+~
+#EXIT
+Direction east~
+ToRoom    1919
+#ENDEXIT
+
+Reset M 0 1904 1 1924
+  Reset G 0 1916 1
+  Reset G 0 232 1
+  Reset G 0 1749 1
+  Reset G 0 1758 1
+  Reset G 0 1926 1
+  Reset G 0 1922 1
+  Reset G 0 1919 1
+  Reset G 0 1924 1
+  Reset G 0 1917 1
+  Reset G 0 1920 1
+  Reset G 0 1921 1
+  Reset G 0 1918 1
+  Reset G 0 1925 1
+  Reset G 0 1923 1
+#ENDROOM
+
+#ROOM
+Vnum     1925
+Name     &YA Hycran Missionary&w~
+Sector   indoors~
+Stats    0 0 0 0 12 0
+Desc     The interior of this missionary temple is still rugged looking as the
+construction on it is not quite done. Despite the rugged looking
+aesthetic the Hycrian missionaries continue their diligent work serving
+the people of the village and nearby. There are several places where
+the missionaries take the injured or sick to evaluate them before
+figuring out how to treat them. The smell of incense permeates the
+air in this temple and it smells very strong.
+~
+Perdesc  &OYou see a &Ysign&O located near the main altar of the missionary.&w
+~
+#EXIT
+Direction west~
+ToRoom    1906
+#ENDEXIT
+
+Reset M 0 1906 1 1925
+#EXDESC
+ExDescKey    sign~
+ExDesc       &YThis missionary offers the following services:
+ 
+&WCure Light Wounds&Y...............................&W10 silver coins
+&WCure Moderate Wounds&Y............................&W35 silver coins
+&WCure Serious Wounds&Y.............................&W70 silver coins
+&WCure Critical Wounds&Y............................&W90 silver coins
+&WHeal&Y............................................&W15 gold coins
+ 
+&YTo receive any of the above please give the Priestess the amount
+requested and she will perform the service for you.
+ 
+Additional services or changes to this menu may occur so check
+this sign before giving your money.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1950
+Name     A Village Road~
+Sector   city~
+Stats    0 0 0 0 12 0
+Desc     This is a small dirt and stone path that leads east into a small
+village of stone and wood homes. The village is nestled inside a 
+large forest that spans north, south, and east from here. To the south
+of here is a large pond that is located near the village. Its crystal
+like waters reflect the mountain range to the east of the forest. The
+path here leads east into the village while west leads away from it.
+~
+Perdesc  &gYou spot a &Gsign&g near a path as it heads to the east from here.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      108
+MapY      687
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1951
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &gWelcome to the Village of Kidale
+ 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1951
+Name     A Village Road~
+Sector   city~
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in.
+A large stable house is located to the north where visitors and locals
+can stable their mounts.
+~
+#EXIT
+Direction north~
+ToRoom    1966
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1952
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1958
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1950
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1952
+Name     A Village Road~
+Sector   city~
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in. A
+quaint looking inn is located to the north in a small glade of trees.
+~
+#EXIT
+Direction north~
+ToRoom    1963
+Keywords  'wooden door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1953
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1959
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1951
+#ENDEXIT
+
+Reset D 0 1952 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1953
+Name     A Village Road~
+Sector   city~
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in.
+A small store selling tack and supplies for horses can be seen to
+the north from this dirt path while the path continues to the south
+or west from here.
+~
+#EXIT
+Direction north~
+ToRoom    1965
+Keywords  'shop door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1954
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1952
+#ENDEXIT
+
+Reset D 0 1953 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1954
+Name     A Village Road~
+Sector   city~
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in. A
+small store to the east sells a variety of leather goods for those 
+who need protection during their travels. 
+~
+#EXIT
+Direction north~
+ToRoom    1953
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1968
+Keywords  'shop door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1955
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1959
+#ENDEXIT
+
+Reset D 0 1954 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1955
+Name     A Village Road~
+Sector   city~
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in. A
+small general store is located to the east inside a small grey colored
+wooden building. The road continues to the north and to the west as it
+cuts through the forest.
+~
+#EXIT
+Direction north~
+ToRoom    1954
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1969
+Keywords  'general store door'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1956
+#ENDEXIT
+
+Reset D 0 1955 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1956
+Name     A Village Road~
+Sector   city~
+Stats    0 0 0 0 14 0
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in.
+~
+Perdesc  &gYou spot a small forest path to the south from here...&w
+~
+#EXIT
+Direction north~
+ToRoom    1959
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1955
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1961
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1957
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1957
+Name     A Village Road~
+Sector   city~
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in. A
+small store that sells various bows and types of arrows is located
+to the west from here in a small stone cottage. A dock leads out to the
+pond located near the village to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1958
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1956
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1987
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1962
+Keywords  'shop door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset D 0 1957 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1958
+Name     A Village Road~
+Sector   city~
+Desc     This dirt path cuts through a forest where a small village has been
+established. Much of the original forest has been left in its original
+condition while the homes and other buildings have been worked around
+the natural setting in perfect harmony. Houses are either built into
+small forested hillsides or near them. A few homes are built up into
+large trees with ladders helping people climb down or up. The overall
+village is very rustic and well attuned to the forest it resides in. A
+lovely looking tavern can be seen to the west of here. It is nestled
+around some large pine trees that are taller than the tavern itself.
+~
+#EXIT
+Direction north~
+ToRoom    1951
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1959
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1957
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1960
+Keywords  'tavern door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset D 0 1958 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1959
+Name     A Village Square~
+Sector   field~
+Desc     All of the main paths of the village converge here to form a rustic
+looking village square. At the center of the village is a large stone
+well made from various stones sourced from the mountains nearby. The 
+square is used for meetings of the village as well as other social
+events. The paths of the village continue to the north, south, east,
+and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    1952
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1954
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1956
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1958
+#ENDEXIT
+
+Reset O 0 1942 1 1959
+#ENDROOM
+
+#ROOM
+Vnum     1960
+Name     The Creeping Ivy Tavern~
+Sector   indoors~
+Desc     This tavern is quite large and is a favorite location for the locals
+to come at night for something to eat and drink while chatting. The
+building is made from fresh timber and is more modern despite the
+other buildings situated near it. A large stone fireplace located at
+the west wall provides light and warmth during all hours of the day
+or night. There is a small dance area located near a small stage
+where traveling bards are capable of getting the locals to dance
+and party long into the night.
+~
+#EXIT
+Direction east~
+ToRoom    1958
+Keywords  'tavern door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1914 1 1960
+  Reset G 0 4027 1
+  Reset G 0 1569 1
+  Reset G 0 1744 1
+  Reset G 0 1939 1
+  Reset G 0 4111 1
+  Reset G 0 2934 1
+Reset D 0 1960 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1961
+Name     A Forest Path~
+Sector   forest~
+Stats    0 0 0 0 25 0
+Desc     This forest path is barely visible except for those that are very
+perceptive. The path leads south towards what appears to be a large
+wooden lodge. The path continues to the north back into the main part
+of the village there. 
+~
+Perdesc  &gYou see the faint markings of a trail leading to the east from here...
+~
+#EXIT
+Direction north~
+ToRoom    1956
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1977
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1970
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1962
+Name     Clybon's Ranger Supply~
+Sector   indoors~
+Desc     The rustic nature of the village is carried through to the interior of
+this store, which sells tools and other gear that are essential for
+those of the ranger trade. The store is made from a renovated home
+and has ancient looking stone walls. A small metal cookstove helps
+provide heat during the cold wintery months and also light at night.
+~
+#EXIT
+Direction east~
+ToRoom    1957
+Keywords  'shop door'~
+Flags     closed~
+#ENDEXIT
+
+Reset M 0 1919 1 1962
+  Reset G 0 1627 1
+  Reset G 0 1626 1
+  Reset G 0 1940 1
+  Reset G 0 1624 1
+  Reset G 0 1625 1
+  Reset G 0 4009 1
+  Reset G 0 1941 1
+Reset D 0 1962 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1963
+Name     The Woodland Dream Inn~
+Sector   indoors~
+Desc     This inn has been created with wood sourced from the local forest along
+with stones from the mountain range to the east. The inn is very simple
+and not very decorated. A few exotic glass pieces can be seen on a table,
+which come from a far off place. A desk located near the door is where
+the innkeeper greets guests and current customers. A small metal cookstove
+provides heat in this part of the inn during the colder months.
+~
+#EXIT
+Direction south~
+ToRoom    1952
+Keywords  'wooden door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1916 1 1963
+Reset D 0 1963 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1964
+Name     A Small Bedroom~
+Sector   indoors~
+Desc     This is a very small bedroom, which only has a single bed, dresser, and
+no window. A small vent allows heat from downstairs to come up and heat
+the room during the cold months. A small painting of a fox can be found
+on the northern wall, which is exquisitely rendered by a fine artist.
+~
+#EXIT
+Direction down~
+ToRoom    1963
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1965
+Name     Tamu's Tack & Supply~
+Sector   indoors~
+Desc     The store here is dedicated to supplying tack and tools for riding
+horses. There is a central table where saddles and other pieces
+are located for customers to look over. Bridles and other tools are
+hung on the walls in size groupings. A work table is located to the
+back of the store where new pieces are made before being sold.
+~
+#EXIT
+Direction south~
+ToRoom    1953
+Keywords  'shop door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1918 1 1965
+  Reset G 0 4034 1
+  Reset G 0 4038 1
+  Reset G 0 1553 1
+  Reset G 0 4036 1
+  Reset G 0 4037 1
+  Reset G 0 1550 1
+  Reset G 0 1552 1
+  Reset G 0 4039 1
+Reset D 0 1965 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1966
+Name     The Kidale Stables~
+Sector   indoors~
+Desc     This stable house has been created by draping a leather and cloth canopy
+from the trees. This creates a structure with no formal walls as all
+horses are tied to the various trees that keep the canopy up above. A
+small space is dedicated for hay and grain, which is kept off the ground
+to keep it dry. The ground has been smashed until no plants grow there
+anymore. The dirt floor of the stable house makes it easier to clean
+for the owner and her workers.
+~
+#EXIT
+Direction south~
+ToRoom    1951
+#ENDEXIT
+
+Reset M 0 1915 1 1966
+#ENDROOM
+
+#ROOM
+Vnum     1967
+Name     &RTHE KIDALE STABLES MOB STORAGE&w~
+Sector   city~
+Flags    nomob nomagic safe norecall noastral~
+Desc     You should not be in here. Please contact an admin to get out.
+~
+#ENDROOM
+
+#ROOM
+Vnum     1968
+Name     The Kidale Leather Store~
+Sector   indoors~
+Desc     The smell of leather is highly prevalent here as the entire store sells
+only leather goods from armor to packing. A few rough looking wooden
+mannequins help display various types of armor while a work area can
+be seen through a door to east. A few tanned skins can be found on
+the walls, which are bought from local hunters.
+~
+#EXIT
+Direction west~
+ToRoom    1954
+Keywords  'shop door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1917 1 1968
+  Reset G 0 1543 1
+  Reset G 0 1542 1
+  Reset G 0 1536 1
+  Reset G 0 2406 1
+  Reset G 0 1539 1
+  Reset G 0 1537 1
+  Reset G 0 1538 1
+  Reset G 0 1540 1
+  Reset G 0 1535 1
+Reset D 0 1968 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1969
+Name     The Kidale General Store~
+Sector   indoors~
+Desc     This general store is quite simple and carries in stock only the base
+essentials needed by the locals or visitors to the village. A few shelves
+carry the items while a small counter is where transactions are carried
+out. The store is kept clean and organized by the family who owns the
+store. A back storage area can be seen through a doorway to the south
+where bags of grain and other stock is stored.
+~
+#EXIT
+Direction west~
+ToRoom    1955
+Keywords  'general store door'~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 1913 1 1969
+  Reset G 0 1649 1
+  Reset G 0 1651 1
+  Reset G 0 1427 1
+  Reset G 0 36 1
+  Reset G 0 1661 1
+  Reset G 0 2011 1
+  Reset G 0 1660 1
+  Reset G 0 1654 1
+  Reset G 0 1652 1
+  Reset G 0 3467 1
+  Reset G 0 1657 1
+Reset D 0 1969 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1970
+Name     &GBefore a Grand Lodge&w~
+Sector   forest~
+Desc     The forest path here ends at the entrance of a grand lodge that has
+been made by bending trees and then covering them with wooden shingles.
+The shape is very rustic with holes in the roof to allow smoke and heat
+to escape. There are a few windows and one main door located here that
+leads inside. A symbol is located above the front door, which appears
+to be holy in origin.
+~
+#EXIT
+Direction north~
+ToRoom    1961
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1971
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1921 1 1970
+  Reset E 0 1943 1 26
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate symbol~
+Comlist   if religion($n) >= 12
+mea $n You recognize the symbol as that of Jeridon Orinan, God of
+mea $n hunters, rangers, wolves, and rebels.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1971
+Name     &OA Corridor&w~
+Sector   indoors~
+Desc     This is a long hallway leading south deep into the great lodge. The
+lodge itself is made from several trees that have been bent physically
+and magically to create a capsule like shape. The trees form a skeletal
+frame above with holes every so often to allow smoke out of the lodge.
+A small doorway to the north leads to a private part of the forest
+used by the lodge. A small doorway to the east leads into a large sized
+room used as a meeting space.
+~
+#EXIT
+Direction north~
+ToRoom    1977
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1976
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1972
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1970
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1922 1 1971
+  Reset E 0 1943 1 26
+#ENDROOM
+
+#ROOM
+Vnum     1972
+Name     &OA Corridor&w~
+Sector   indoors~
+Desc     This is a long hallway leading south deep into the great lodge. The
+lodge itself is made from several trees that have been bent physically
+and magically to create a capsule like shape. The trees form a skeletal
+frame above with holes every so often to allow smoke out of the lodge.
+Two doorways to the east and west lead into medium sized rooms used 
+by the people of the lodge. A great hall can be seen at the end of
+this hallway to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1971
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1975
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1973
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1974
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1973
+Name     &OA Great Hall&w~
+Sector   indoors~
+Desc     This is the main part of the lodge and is used as a great hall for
+social events, eating, and other types of meetings. There are several
+log tables and benches located in this hall for people to sit. A large
+stone fireplace has been installed at the very southern end of the
+hall for warmth and light during the night time. Animal heads hang
+from the walls here as trophies from hard worked hunts.
+~
+#EXIT
+Direction north~
+ToRoom    1972
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1974
+Name     &OA Healing Space&w~
+Sector   indoors~
+Desc     This space is used for sick or injured people to come and rest while
+being tended to. There are several cloth cots for people to lay on
+while they are cared for. A small well has been dug at the southern
+end of the lodge to provide fresh water for healing usages such
+as cleaning cuts or bathing.
+~
+#EXIT
+Direction east~
+ToRoom    1972
+#ENDEXIT
+
+Reset M 0 1924 1 1974
+  Reset E 0 1943 1 26
+#ENDROOM
+
+#ROOM
+Vnum     1975
+Name     &OA Temple Supply&w~
+Sector   indoors~
+Desc     The room here is used as a supply store for those that frequent this
+place. There are several tables displaying wares for sale, which the
+funds are used to maintain this place. Animal heads from various hunts
+are hunt from the walls here from bears to deer.
+~
+#EXIT
+Direction west~
+ToRoom    1972
+#ENDEXIT
+
+Reset M 0 1925 1 1975
+  Reset E 0 1943 1 26
+  Reset G 0 1951 1
+  Reset G 0 1946 1
+  Reset G 0 1948 1
+  Reset G 0 1949 1
+  Reset G 0 1952 1
+  Reset G 0 1950 1
+  Reset G 0 1947 1
+  Reset G 0 1953 1
+#ENDROOM
+
+#ROOM
+Vnum     1976
+Name     &OA Meeting Room&w~
+Sector   indoors~
+#EXIT
+Direction west~
+ToRoom    1971
+#ENDEXIT
+
+Reset O 0 1945 1 1976
+#EXDESC
+ExDescKey    board~
+ExDesc       &OThis note board is used by the faithful of Jeridon Orinan to convey
+messages to one another. The board is made from solid oak and is covered
+with parchment notes.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1977
+Name     &RA Bonfire Space&w~
+Sector   field~
+Desc     This part of the forest has been cleared so that it can be used for
+a bonfire place. Several logs and large rocks are placed around the
+fire for people to sit and enjoy the fire. A small forest path leads
+north and to the east from here while a huge lodge is located to the
+south. 
+~
+#EXIT
+Direction north~
+ToRoom    1979
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1978
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1971
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1961
+Flags     secret hidden nomob~
+#ENDEXIT
+
+Reset O 0 1944 1 1977
+#ENDROOM
+
+#ROOM
+Vnum     1978
+Name     &GA Forest Path&w~
+Sector   forest~
+Desc     This is a forest path that follows along the edge of a huge wooden
+lodge. The forest around the path is very dense and hard to see through.
+The path is partially obscurred by the foliage around it and those who
+are perceptive will be able to find it and navigate this pathway.
+~
+#EXIT
+Direction east~
+ToRoom    1981
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1977
+#ENDEXIT
+
+Reset M 0 1923 1 1978
+  Reset E 0 1943 1 26
+#ENDROOM
+
+#ROOM
+Vnum     1979
+Name     &GAn Archery Practice Area&w~
+Sector   forest~
+Flags    nomob~
+Desc     The forest here has been cleared to create a straight forward path towards
+the north where some targets are located. This area is used for archery 
+practice by those that frequent the lodge. There are different places
+for those practicing to stand to get different angles while firing at
+the targets at the north.
+~
+#EXIT
+Direction north~
+ToRoom    1980
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1977
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1980
+Name     &GSome Archery Targets&w~
+Sector   forest~
+Flags    nomob~
+Desc     This is a location where targets for archery are placed. The targets are
+are placed in various configurations to make shooting at them hard. The
+targets are created using natural materials and methods with a little
+magical application. The target also moved every so often, which makes
+shooting at them even harder.
+~
+#EXIT
+Direction south~
+ToRoom    1979
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1920 3 1980
+Reset M 0 1920 3 1980
+Reset M 0 1920 3 1980
+#ENDROOM
+
+#ROOM
+Vnum     1981
+Name     &GA Forest Path&w~
+Sector   forest~
+Desc     This is a forest path that follows along the edge of a huge wooden
+lodge. The forest around the path is very dense and hard to see through.
+The path is partially obscurred by the foliage around it and those who
+are perceptive will be able to find it and navigate this pathway.
+~
+#EXIT
+Direction south~
+ToRoom    1982
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1978
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1982
+Name     &GA Forest Path&w~
+Sector   forest~
+Desc     This is a forest path that follows along the edge of a huge wooden
+lodge. The forest around the path is very dense and hard to see through.
+The path is partially obscurred by the foliage around it and those who
+are perceptive will be able to find it and navigate this pathway. A small
+glade can be seen to the west while the path divides and also heads
+to the south and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    1981
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1985
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1983
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1984
+#ENDEXIT
+
+Reset M 0 1922 2 1982
+  Reset E 0 1943 1 26
+#ENDROOM
+
+#ROOM
+Vnum     1983
+Name     &GAn Outdoor Temple Space&w~
+Sector   forest~
+Desc     The area here has been cleared and turned into a temple space. The space
+is circular in shape with large stones used to create a border. A large
+stone can be used as an altar in the center of the circle. There is 
+places in the boundary stones for torches to be placed during a night
+time ceremony and you can see the makings of a lake through the foliage
+to the south from here.
+~
+#EXIT
+Direction north~
+ToRoom    1982
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1984
+Name     &GA Private Meditation Space&w~
+Sector   forest~
+Flags    nomob solitary~
+Desc     This is a very small glade that has enough room for one person to enter.
+The long forest grasses have been worked so that they spiral around
+a large stone in the middle where someone is to sit and meditate. Above
+the stone the trees and foliage have been shaped magically to create
+a ceiling above.
+~
+#EXIT
+Direction east~
+ToRoom    1982
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1985
+Name     &GA Forest Path&w~
+Sector   forest~
+Desc     This is a forest path that follows along the edge of a huge wooden
+lodge. The forest around the path is very dense and hard to see through.
+The path is partially obscurred by the foliage around it and those who
+are perceptive will be able to find it and navigate this pathway.
+~
+#EXIT
+Direction south~
+ToRoom    1986
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1982
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1986
+Name     &CBefore a Large Pond&w~
+Sector   field~
+Desc     &GThe forest path ends here at the banks of a large pond that borders
+against a dense forest. The pond has almost crystal clear waters where one
+can see all the way to the bottom. The pond itself seems very deep
+towards the middle as the gradient of the water turns black at
+the bottom. A small path leads out along the pond to the south
+while a path leading north into the forest is here.
+~
+#EXIT
+Direction north~
+ToRoom    1985
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      111
+MapY      690
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1987
+Name     &OA Wooden Dock&w~
+Sector   city~
+Flags    nomob prototype~
+Desc     This is a public dock used by the local villagers to fish off from or
+to set out their boats prior to sailing about. The water of the pond
+looks almost clear and refreshing as it sparkles in the light during
+the sun's reign. The dock seems to be new and recently crafted from
+wood sourced locally.
+~
+#EXIT
+Direction north~
+ToRoom    1957
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      108
+MapY      689
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1999
+Name     &RPARDALE AND KIDALE MOB STORAGE&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall noastral~
+Desc     You should not be here. Please contact an admin to get out.
+~
+Reset M 0 1911 1 1999
+  Reset E 0 1631 1 26
+#ENDROOM
+
+#ENDAREA

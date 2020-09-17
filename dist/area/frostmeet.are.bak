@@ -1,0 +1,5161 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Village of Frostmeet~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 31250020
+ResetMsg     &WYou feel a cold breeze waft past you...&w~
+Lore         &WYou see a hooded figure raise a hand and a snowy world is
+created before your very eyes...
+~
+ResetFreq    25
+#ENDAREADATA
+
+#MOBILE
+Vnum       1000
+Keywords   spirit male human greet~
+Short      &Wa spirit&w~
+Long       &WA spirit of a male human is here greeting newcomers.&w
+~
+Desc       &WThe spirit here is a glowing form a male human whose features
+are not very distinguishable to the eye. He is here greeting
+those that are new to the village.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+sayto $n Greetings. I heard that you were coming and I am here to
+sayto $n help you understand what comes next. You have many options
+sayto $n available to you.
+mpsleep 2
+sayto $n You can return back to the material or mortal plane via the
+sayto $n following methods...
+mpsleep 2
+mea $n &YSupplication&w
+mea $n &YReincarnation&w
+mea $n &YPacts&w
+mea $n &YSpells&w
+mea $n &YOrb Hunting&w
+mea $n &YCorpse Hunting&w
+mer $n &WThe spirit shows &W$n&W some options.
+mpsleep 2
+sayto $n Let me know which option you would like to hear about first.
+mpsleep 2
+sayto $n Once you hear all the options let me know if you
+sayto $n would like to also hear about your new &YSpirit Life&W.
+else
+chuckle
+sayto $n Welcome to Frostmeet, warmblood.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p supplication~
+Comlist   If isaffected($n) == spirit
+Sayto $n If you are following a deity and are in good favor
+Sayto $n with them there is a chance you can use the 
+Sayto $n supplicate command to bring yourself back to the
+Sayto $n living. 
+Mpsleep 2
+Sayto $n Deity supplication uses FAVOR and you will need to
+Sayto $n have enough before you can use supplication.
+Mpsleep 2
+Sayto $n If you lack the favor required you may try praying at
+Sayto $n the temple nearby to see if your deity is listening.
+Mpsleep 2
+Sayto $n For more information check out HELP SUPPLICATE
+Sayto $n and HELP PRAY.
+Else
+Chuckle
+Sayto $n You do not need that information, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p reincarnation~
+Comlist   If isaffected($n) == spirit
+Sayto $n Reincarnation should be considered a last resort
+Sayto $n for those trying to return to the living. When one
+sayto $n chooses to reincarnate they give up one stat point
+Sayto $n that is randomly chosen by fate.
+Mpsleep 2
+sayto $n You return to the living, but you could be weaker,
+Sayto $n less attractive, or less intelligent.
+Mpsleep 2
+Sayto $n You are advised to use this when all of the other
+Sayto $n options are unavailable.
+Else
+Chuckle
+Sayto $n You do not need that information, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p pacts~
+Comlist   If isaffected($n) == spirit
+Sayto $n Often a mortal will make a pact with some sort of
+Sayto $n patron, which can help that mortal return to the
+Sayto $n living. Often these patrons will require you to do
+Sayto $n something in the mortal realm that will complete
+Sayto $n the pact.
+Mpsleep 2
+Sayto $n Patrons can be found hiding in this village despite
+Sayto $n our efforts to drive them out. Their offers can be
+Sayto $n dangerous or even go against your moral code so
+Sayto $n if you choose this route you are warned.
+Mpsleep 2
+Sayto $n If you did not complete the pact and return here again
+Sayto $n you will find that patron to be very upset with you. It
+Sayto $n is possible that they will refuse to help you until the
+Sayto $n original pact is complete. This often results in a few
+Sayto $n unprepared souls becoming permanent residents here.
+mpsleep 2
+sayto $n Only agree to a pact if you will complete it right
+sayto $n away upon being returned to the material plane.
+Mpsleep 2
+Sayto $n For more information you check out HELP DEATHPACTS.
+Else
+Chuckle
+Sayto $n You do not need that information, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p spells~
+Comlist   If isaffected($n) == spirit
+Sayto $n If you were traveling with a skilled healer then perhaps
+Sayto $n they are currently working to use a spell such as RAISE
+Sayto $n DEAD or RESURRECTION to bring you back to life. They
+Sayto $n could also take you to a temple and have the Cleric there
+Sayto $n bring you back. These are the more Qylain accepted
+Sayto $n methods of being brought back to life
+Mpsleep 2
+Sayto $n The other more.. nefarious way.. Is to use a spell like
+Sayto $n CLONE, which allows a magic user to awaken in a new
+Sayto $n body somewhere else upon death. There are a few others
+Sayto $n that ward off death or conditions that stop it from happening.
+Sayto $n Many of the Qylain faith seek to stop such practices as it
+Sayto $n interferes with the natural order of things.
+Mpsleep 2
+Sayto $n If you know someone is going to bring you back you are
+Sayto $n welcome to visit around the village until then. You need to
+Sayto $n stay out of the &ROOC&W tavern if you are waiting or else
+Sayto $n their spell will fail upon casting.
+Else
+Sayto $n For more information you can seek out the help files on
+Sayto $n the spells discussed such as RAISE DEAD.
+Chuckle
+Sayto $n You do not need that information, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p orb hunting~
+Comlist   If isaffected($n) == spirit
+Sayto $n Those that seek a way back to the living can be
+sayto $n employed by our local ranger. Soul orbs are residual
+Sayto $n necrotic energy that comes from the act of dying on the
+Sayto $n material plane. If left where it is it can infect the area 
+Sayto $n surrounding it causing decay. We recycle this energy to 
+Sayto $n maintain this plane.
+Mpsleep 2
+Sayto $n The amount of orbs needed to be collected by someone
+Sayto $n is dependent on how advanced of an adventurer they are.
+Mpsleep 2
+Sayto $n You will find that the more advanced the longer this hunting
+Sayto $n can take while young adventurers just starting out can be
+Sayto $n done much quicker.
+Mpsleep 2
+Sayto $n Seek out Martivus at his home here in the village if you
+Sayto $n wish to hunt orbs for the village. He is our hunter and will
+Sayto $n have much more to say on this task.
+Else
+Sayto $n For more information check out HELP ORBHUNTING.
+Chuckle
+Sayto $n You do not need that information, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p Corpse Hunting~
+Comlist   If isaffected($n) == spirit
+Whistle
+Sayto $n Now that is an advanced method and requires a skilled
+Sayto $n adventurer. This method requires a spirit such as yourself
+Sayto $n to find a way off of Icynth and back to the material plane.
+Mpsleep 2
+Sayto $n Once there you would need to navigate the realms until
+Sayto $n you find your body where you would re-enter it.
+Mpsleep 2
+Sayto $n However, you do not have a large window of opportunity
+Sayto $n here. Upon death the spiritual cord between you and your
+Sayto $n corpse begins to diminish until it fades away permanently. 
+Sayto $n If you do not make it to your body in time you will become 
+Sayto $n stuck on that plane as what the warmbloods call a ghost.
+Mpsleep 2
+Sayto $n You can still be brought back by warmblood spells while
+Sayto $n stuck on the material plane, but you must be in the same
+Sayto $n area in order for it to work. While in Icynth you can be
+Sayto $n anywhere and their spells will bring you to them, which is
+Sayto $n the benefit of being here versus the material plane as a
+Sayto $n ghost.
+Mpsleep 2
+Sayto $n Also while you are on the material plane as a ghost, you
+Sayto $n will need to avoid soul hunters. These trained spirits are on
+Sayto $n the material plane with the task of returning wayward souls
+Sayto $n back here to Icynth. If you are caught you will be sent back
+Sayto $n and imprisoned for some time. While imprisoned you cannot
+Sayto $n return to the living until the sentence is finished. Being a 
+Sayto $n ghost is frowned upon by Qylaith and those that worship her.
+Else
+Sayto $n For more information check out HELP DEATH.
+Chuckle
+Sayto $n You do not need that information, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p spirit life~
+Comlist   if isaffected($n) == spirit
+nod $n
+sayto $n Until you are returned to life you will roam the planes as
+sayto $n a spirit. Some choose after some time to stay here and live in
+sayto $n peace while others like to return to the material plane of
+sayto $n of the "Warmbloods."
+mpsleep 2
+sayto $n As a spirit you can fly, walk through doors that are
+sayto $n not enchanted to block such, and travel great distances.
+sayto $n Mortals will need to cast the spell SPEAK WITH DEAD in
+sayto $n order to see you if you go to the mortal plane. They will
+sayto $n see you just fine if they visit here.
+mpsleep 2
+sayto $n That spell also allows them to talk to you and also hear what
+sayto $n you say back. Some spirits have been known to possess
+sayto $n warmbloods or create hauntings.
+mpsleep 2
+sayto $n As a spirit you will not have hunger or require something
+sayto $n to drink... although we have some great taverns here in the
+sayto $n village. You will also have no need to sleep as well.
+mpsleep 2
+sayto $n I hope you enjoy your stay here whether it is short or forever.
+else
+sayto $n I have nothing to offer you, warmblood.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1001
+Keywords   spirit bar bartender serving drinks~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving drinks to its patrons.&w
+~
+Desc       &WThis spirit is here serving drinks and running the tavern here. Its
+features are hard to distinguish such as gender and race. The spirit
+seems to glow a bit as it moves around the tavern.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Speaks     halfling~
+Speaking   halfling~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+mpsleep 2
+sayto $n A drink will cost you one silver qylain coin.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(1006) == 1
+mpjunk qcoin1983
+mpoload 1008 1
+mposet flagon timer 15
+give flagon $n
+sayto $n Enjoy.
+else
+drop all
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1002
+Keywords   spirit banker counting silver glowing coins~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving as a banker as it counts stacks of glowing coins.&w
+~
+Desc       &WThis spirit is here serving as the village banker. It seems to
+be very busy counting what seems to be endless amounts of
+glowing silver coins. Its features are blurred due to the
+amount of time it has been here. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+emote stops counting and bows its head in greeting.
+sayto $n Welcome. If you are here to receive some spending money
+sayto $n just let me know... our residents do not need to worry
+sayto $n about money and all those warmblood trappings.
+else
+smirk $n
+sayto $n And what can I do for you, warmblood?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if isaffected($n) == spirit
+smile $n
+sayto $n One moment while I prepare a bag for you...
+emote reaches over and grabs a small silver money bag.
+mpoload 1007 1
+mposet sbag3891 timer 10
+mpsleep 2
+emote starts counting out some coins before putting them in the bag.
+mpoload 1006 1
+mposet qcoin1983 timer 10
+mpoload 1006 1
+mposet qcoin1983 timer 10
+mpoload 1006 1
+mposet qcoin1983 timer 10
+mpoload 1006 1
+mposet qcoin1983 timer 10
+mpoload 1006 1
+mposet qcoin1983 timer 10
+put all.coin bag
+mpsleep 2
+give bag $n
+mpsleep 1
+sayto $n This should be enough for now. These coins do
+sayto $n disintegrate after some time if not spent so
+sayto $n do come back if you need more. Qylaith bless!
+else
+chuckle
+sayto $n You have no need for our money, warmblood.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1003
+Keywords   spirit woman matron orphanage~
+Short      &Wa spirit&w~
+Long       &WA spirit serving as the matron of the orphanage is here.&w
+~
+Desc       &WThe spirit is of an older looking human woman that takes
+care of the spirits of little children. Her features are
+hard to distinguish and she seems to be wearing a white
+dress.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+smile $n
+sayto $n Greetings! Is there something I can help you with?
+else
+peer $n
+sayto $n There is no reason for you to be here, warmblood.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1004
+Keywords   spirit child playing ~
+Short      &Wa spirit&w~
+Long       &WThe spirit of a child is here playing around.&w
+~
+Desc       &WThis spirit is quite small and seems to be a child. Their features
+are hard to distinguish and they seem to enjoy playing here.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running pacifist~
+Affected   invisible truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   giggle
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1005
+Keywords   spirit bar bartender serving drinks aasimar~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving drinks to its patrons.&w
+~
+Desc       &WThis spirit is here serving drinks and running the tavern here. Its
+features are hard to distinguish such as gender and race. The spirit
+seems to glow a bit as it moves around the tavern.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(1006) == 1
+mpjunk qcoin1983
+mpoload 1009 1
+mposet flagon timer 15
+give flagon $n
+sayto $n Enjoy.
+else
+drop all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+mpsleep 2
+sayto $n A drink will cost you one silver qylain coin.
+else
+nod $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1006
+Keywords   spirit bar bartender serving drinks alltypes~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving drinks to its patrons.&w
+~
+Desc       &WThis spirit is here serving drinks and running the tavern here. Its
+features are hard to distinguish such as gender and race. The spirit
+seems to glow a bit as it moves around the tavern.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+mpsleep 2
+sayto $n It is one qylain coin for a drink.
+else
+sayto $n I do have a small stock of warmblood brew if interested.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(1006) == 1
+mpjunk qcoin1983
+mpoload 1009 1
+mposet flagon1983 timer 15
+give flagon1983 $n
+sayto $n Enjoy.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1007
+Keywords   spirit bar bartender serving drinks orc~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving drinks to its patrons.&w
+~
+Desc       &WThis spirit is here serving drinks and running the tavern here. Its
+features are hard to distinguish such as gender and race. The spirit
+seems to glow a bit as it moves around the tavern.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+mpsleep 2
+sayto $n A drink will cost you one silver qylain coin.
+else
+nod $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(1006) == 1
+mpjunk qcoin1983
+mpoload 1012 1
+mposet oflagon1983 timer 15
+give oflagon1983 $n
+Nod $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1008
+Keywords   spirit bar bartender serving drinks dwarf~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving drinks to its patrons.&w
+~
+Desc       &WThis spirit is here serving drinks and running the tavern here. Its
+features are hard to distinguish such as gender and race. The spirit
+seems to glow a bit as it moves around the tavern.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Speaks     dwarven~
+Speaking   dwarven~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+mpsleep 2
+sayto $n if isaffected($n) == spirit
+mpsleep 2
+sayto $n A drank wull cost ye yin silver qylain coin.
+Else
+Chuckle $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(1006) == 1
+mpjunk qcoin1983
+mpoload 1010 1
+mposet dflagon1983 timer 15
+give dflagon1983 $n
+sayto $n Enjoy.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1009
+Keywords   spirit bar bartender serving drinks elf~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving drinks to its patrons.&w
+~
+Desc       &WThis spirit is here serving drinks and running the tavern here. Its
+features are hard to distinguish such as gender and race. The spirit
+seems to glow a bit as it moves around the tavern.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(1006) == 1
+mpjunk qcoin1983
+mpoload 1011 1
+mposet ewine1983 timer 15
+give ewine1983 $n
+sayto $n Enjoy.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+mpsleep 2
+Bow $n
+sayto $n A drink will cost you one silver qylain coin.
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1010
+Keywords   spirit martivus orb hunter ranger elderly long beard~
+Short      &WMartivus&w~
+Long       &WA spirit of an elderly ranger with a long beard is here.&w
+~
+Desc       &WThis spirit is clearly defined as a softly glowing old human
+ranger with a very long beard. He has kind looking eyes and seems
+to be very content with his life here.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 50 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+sayto $n Have you come to help me collect wayward orbs? Let me
+sayto $n know if you wish to &CLEARN&W more or already &CAGREE&W to help.
+else
+sayto $n I'm afraid I have no use for you, warmblood. Enjoy your life
+sayto $n while you have it!
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1011
+Keywords   spirit wandering villager~
+Short      &Wa spirit&w~
+Long       &WA spirit is here wandering around the village.&w
+~
+Desc       &WThis spirit is hard to determine what its original gender and race
+were since its features have blurred over time. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Affected   infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if isaffected($n) == spirit
+nod $n
+else
+mea $n &wYou feel the spirit studying you as it passes by.
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1012
+Keywords   spirit guard village patrolling~
+Short      &Wa spirit guard&w~
+Long       &WA spirit guard is here patrolling around the village.&w
+~
+Desc       &WThis spirit is hard to determine its original gender and race. It moves
+about the village as it patrols for danger or for wayward criminals.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running pacifist~
+Affected   infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if isaffected($n) == spirit
+salute $n
+else
+peer $n
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1013
+Keywords   spirit ice skating ~
+Short      &Wa spirit&w~
+Long       &WA spirit is here gliding on the ice for fun.
+~
+Desc       &WThis spirit is very hard to distinguish in terms of gender
+and race since its features have blurred over time. The
+spirit seems content to skate over the ice here, but upon
+further inspection you see it has no skates on and is
+merely gliding on the ice with its feet.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &WThe spirit twirls for a few moments on the ice.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+wave $n
+else
+mea $n &WThe spirit stops skating for a brief moment to stare at you.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1014
+Keywords   spirit ice sculpture artist sculpting~
+Short      &Wa spirit&w~
+Long       &WA spirit is here sculpting some ice into a new sculpture.&w
+~
+Desc       &WThis spirit is here carving ice into a sculpture for others to
+enjoy. Its features are hard to distinguish such as gender
+and race. The spirit seems to glow brightly here as it
+works.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+smile $n
+else
+smirk $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &WThe spirit loudly hacks and carves into a large block of ice.
+mpasound &WYou hear some loud sounds coming from nearby.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1015
+Keywords   spirit snow sculpture artist sculpting~
+Short      &Wa spirit&w~
+Long       &WA spirit is here molding some snow into a new sculpture.&w
+~
+Desc       &WThis spirit is here molding snow into a sculpture for others to
+enjoy. Its features are hard to distinguish such as gender
+and race. The spirit seems to glow brightly here as it
+works.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+wave $n
+else
+eye $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &WThe spirit loudly carves and molds some snow here.
+mpasound &WYou hear some loud sounds coming from somewhere.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1016
+Keywords   spirit wandering villager invisible~
+Short      &Wa spirit&w~
+Long       &WA spirit is here wandering around the village.&w
+~
+Desc       &WThis spirit is hard to determine what its original gender and race
+were since its features have blurred over time. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Affected   invisible infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       1017
+Keywords   spirit cafe clerk serving coffee ~
+Short      &Wa spirit&w~
+Long       &WA spirit is here serving glowing cups of coffee.&w
+~
+Desc       &WThis spirit is here serving coffee and running the cafe here. Its
+features are hard to distinguish such as gender and race. The spirit
+seems to glow a bit as it moves around the tavern.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+sayto $n Let me know if you want a cup of coffee or a latte
+sayto $n with milk and sugar added. There is no charge here.
+else
+smile $n
+sayto $n I'm sorry, but we do not have anything to serve you with.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p coffee~
+Comlist   If isaffected($n) == spirit
+mpoload 1013 1
+mposet scoffee1983 timer 15
+give scoffee1983 $n
+Nod $n
+Else
+Sayto $n I cannot serve you anything here, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p latte~
+Comlist   If isaffected($n) == spirit
+mpoload 1014 1
+mposet smilk1983 timer 15
+give smilk1983 $n
+Nod $n
+Else
+Sayto $n I cannot serve you anything here, warmblood.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &WThe spirit wipes down a few empty tables and the cafe counter.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1018
+Keywords   deva angel glowing male wings white skin~
+Short      &Ya deva&w~
+Long       &YAn angelic man with white skin and wings is seated here.&w
+~
+Desc       &YThis angel is very muscular and has pearly white skin
+and white feathery wings. He wears silken trousers and
+no shirt as he is seated in this private booth.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     1000 50 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 2 1 0 0 0 15
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isgood($n)
+if isaffected($n) == spirit
+smile $n
+sayto $n Greetings. If you desire to return to the mortal plane.. perhaps
+sayto $n you would like to make an agreement with me?
+else
+sayto $n I have no use for you, mortal.
+endif
+else
+scowl $n
+sayto $n Begone foul one.
+mea $n &YYou feel a force send you back into the tavern!&w
+mpforce $n w
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1019
+Keywords   pit fiend red scaled monster bat wings~
+Short      &ra pit fiend&w~
+Long       &rA large red scaled fiend with bat wings is seated here.&w
+~
+Desc       &RThis fiend is quite large and heavily muscled. Its skin is
+covered in red scales and on its back are two large reddish
+colored bat-like wings. It has sharp looking claws on each
+hand and it seems to be seated comfortably here.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     -1000 50 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     3 7 1 0 0 0 9
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isevil($n)
+if isaffected($n) == spirit
+grin $n
+sayto $n Welcome... do you desire to return to the mortal plane? I can
+sayto $n help you achieve this, but you would need to do something for me..
+else
+sayto $n Begone mortal or you will be entertaining my stomach soon.
+endif
+else
+growl
+sayto $n Begone from my sight!
+mea $n &RYou feel a force send you back into the tavern!&w
+mpforce $n e
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1020
+Keywords   archfey beautiful fey woman white hair~
+Short      &Pan archfey&w~
+Long       &PA beautiful fey woman with white hair is seated here.&w
+~
+Desc       &PThis fey woman is dressed in a shimmering gown of silver silk that has
+been cut to be very form fitting. Her eyes are black and her skin is
+porcelain in tone. Her long white blonde hair has been braided into
+two separate thick braids that she puts over each shoulder.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_magic infrared truesight~
+Stats1     50 50 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 6 1 0 0 0 13
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm psychic~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isneutral($n)
+if isaffected($n) == spirit
+emote takes a sip from her goblet and bows her head in greeting.
+mpsleep 1
+sayto $n Greetings. I am here to help you with the task of returning
+sayto $n back to the mortal plane. In order to do so you would
+sayto $n need to do something for me in exchange.
+else
+smile $n
+sayto $n I have nothing for you right now, mortal.
+endif
+else
+emote sighs and waves a slender looking hand.
+mea $n &PYou feel a force send you back into the tavern!
+mpforce $n e
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1021
+Keywords   djinni djinn genie blue skin man black beard wispy looking noble~
+Short      &Ca noble djinni&w~
+Long       &CA wispy looking man with black beard and blue skin is seated here.
+~
+Desc       &CThis man is quite large and has skin the color of sapphires. His beard
+and hair is pitch black and his eyes are varying shades of blue that
+seem to shift constantly. His features seem wispy and almost
+smoke like at times. He wears silken clothing and has a bejeweled turban
+on his head.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_magic infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 5 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+emote claps his hands with a grin on his face.
+sayto $n Welcome little one.. do you desire to return back to the
+sayto $n mortal realm? I can help you with such..  you would
+sayto $n need to do one little thing for me in exchange.
+else
+chuckle
+sayto $n Return to me as a spirit, mortal, and then I can help you.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1022
+Keywords   spirit studying spectral spellbook~
+Short      &Wa spirit&w~
+Long       &WA spirit is here studying a spectral looking spellbook.&w
+~
+Desc       &WThis spirit is here studying a glowing spellbook as it walks
+throughout the tower. Its features are hard to distinguish such as
+its gender and race.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Affected   detect_magic infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+if class($n) == wizard
+sayto $n Greetings. Is there something I can help you with?
+else
+sayto $n Greetings.
+emote returns to reading its glowing spellbook.
+endif
+else
+smile $n
+sayto $n Greetings warmblood.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1023
+Keywords   spirit greeter museum visitors~
+Short      &Wa spirit&w~
+Long       &WA spirit is here greeting visitors to the museum.
+~
+Desc       &WThe spirit here is a glowing form a male human whose features
+are not very distinguishable to the eye. He is here greeting
+those that are new to the village.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+bow $n
+sayto $n Welcome to the Qylain Museum of the Dead. Admission is free.
+else
+sigh $n
+sayto $n Sorry warmblood - you are not allowed in here. Come back later.
+open w
+mea $n &WA strange force pushes you out of the museum!&w
+mpforce $n w
+close w
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1024
+Keywords   spirit queen flowing gown young looking~
+Short      &Wa queen's spirit&w~
+Long       &WThe spirit of a young looking queen is here wandering about.
+~
+Desc       &WThis spirit resembles a very young looking queen. She is wearing
+a flowing gown and her hair seems to move by some sort of
+invisible breeze. She has a calm looking face and kind eyes.
+~
+Lore       &WYou see this Queen trying to defend herself from attackers in what
+appears to be her bedroom. She is pinned down and one of the assassins
+strikes down upon her several times before they all flee out her
+window...
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea pacifist~
+Affected   infrared truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if isaffected($n) == spirit
+smile $n
+else
+chuckle $n
+sayto $n You definitely stick out amongst us here don't you?
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 1009
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote suddenly screams and clutches her chest before disappearing.
+mpasound &WYou hear a scream coming from somewhere nearby!&w
+mpgoto 1099
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1025
+Keywords   spirit high priest hooded robe praying altar~
+Short      &Wa high priest&w~
+Long       &WA spirit of a high priest is here praying at an altar.&w
+~
+Desc       &WThis spirit once served as a high priest in his mortal life and
+now serves as one here. He wears a flowing hooded robe as he
+prays before an altar.
+~
+Race       magical~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 50 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 13 1 0 0 0 15
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if deity($n) == qylaith
+mpsleep 3
+bow $n
+sayto $n Let me know if I can be of service to you.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1026
+Keywords   spirit little boy playing~
+Short      &Wa little boy's spirit&w~
+Long       &WThe spirit of a little boy is playing here in the snow.&w
+~
+Desc       &WThe spirit of this little boy seems to be having a great time
+as he plays in the snow here. His features have not yet blurred like
+many of the others that come to live here. You can see he has
+blue eyes and blonde hair that is cut in a bowl type style.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 15
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote giggles as he pushes some snow around as he builds a fort here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+smile $n
+else
+eye $n
+sayto $n You look weird...
+emote shrugs and returns to playing in the snow.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 1051
+giggle
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   giggle
+mpgoto 1099
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1098
+Keywords   soul hunter shadowy black shadow creature long legs and arms red eyes~
+Short      &za soul hunter&w~
+Long       &zA shadowy black creature with long arms and legs is here.&w
+~
+Desc       &zThis creature is made of shadow magic and has long appendages for
+arms and legs. It is very skinny and can move quickly across great
+distances. It has bright red eyes, which seem to help it seek out
+its prey wherever it goes.
+~
+Lore       &zYour vision goes completely dark before slowly returning
+to normal...
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc running mobinvis noassist pacifist~
+Affected   infrared pass_door truesight~
+Stats1     0 51 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     3 13 1 0 0 0 6
+Attribs    30 12 14 30 20 9 20
+Saves      0 0 0 0 0 0
+Immune     sleep charm paralysis~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1099
+Keywords   soul orb dark necrotic energy sorb1983~
+Short      &za soul orb&w~
+Long       &zA dark orb of necrotic energy is here floating around.&w
+~
+Desc       &zThis orb floats about and wherever it goes it leaves blackened
+snow or ice. It pulses with energy every few moments before
+it relaxes and floats away.
+~
+Lore       &zYou get an overwhelming sense of death before your senses
+return to normal...&w
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running pacifist~
+Affected   invisible infrared truesight~
+Stats1     -1000 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 13 1 0 0 0 15
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     1000
+Keywords large stone fountain statue qylaith goddess hooded cloak~
+Type     fountain~
+Short    &ca large stone fountain&w~
+Long     &cA large stone fountain with a statue of a goddess is here.&w~
+Values   1000000 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    statue~
+ExDesc       This fountain is made of shiny iridescent stones and the water is
+crystal clear. The water seems to glow a bit and is extremely cold
+to the touch. In the center of the fountain is a statue of Qylaith with
+her hands reaching up to the sky above. Her facial features are
+hidden by a large oversized hood.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    fountain~
+ExDesc       This fountain is made of shiny iridescent stones and the water is
+crystal clear. The water seems to glow a bit and is extremely cold
+to the touch. In the center of the fountain is a statue of Qylaith with
+her hands reaching up to the sky above. Her facial features are
+hidden by a large oversized hood.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  use_prog~
+Arglist   100~
+Comlist   if isaffected($n) == curse
+mea $n &CThe water feels cold as you drink.
+mer $n &C$n&C drinks the icy cold water of the fountain.
+else
+mea $n &CThe water is extremely cold as you drink and your body shivers.&w
+mer $n &C$n&C shivers as $e drinks the icy cold water of the fountain.
+mpmset $n affected curse
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1001
+Keywords bucket glowing drinking water ice cold~
+Type     drinkcon~
+Short    &Wa bucket of glowing water&w~
+Long     &WA bucket of glowing ice cold water is here for drinking.&w~
+Values   1000 20 0 0 0 0
+Values2  0 0
+Stats    45 0 0 0 0 0 0
+#MUDPROG
+Progtype  use_prog~
+Arglist   100~
+Comlist   if isaffected($n) == curse
+mea $n &CThe water feels cold as you drink.
+mer $n &C$n&C drinks the icy cold water of the fountain.
+else
+mea $n &CThe water is extremely cold as you drink and your body shivers.
+mer $n &C$n&C shivers as $e drinks the icy cold water of the fountain.
+mpmset $n affected curse
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1002
+Keywords frostmeet jail key cell ice frostkey666~
+Type     key~
+Short    &Wa key made of ice&w~
+Long     &WA key made of ice has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1003
+Keywords small petrified wood wooden table~
+Type     container~
+Short    &ca wooden table&w~
+Long     &cA small table made of petrified wood is here.&w~
+Flags    magic~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    table~
+ExDesc       &cThis table is made from petrified wood and is used for food
+to be placed for prisoners. (LOOK IN TABLE)
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1004
+Keywords small loaf frost covered bread~
+Type     food~
+Short    &ca frost covered loaf of bread&w~
+Long     &cA loaf of bread covered in frost has been left here.&w~
+Flags    magic spirit~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1005
+Keywords large bonfire blue flames fire~
+Type     fire~
+Short    &Ca bonfire&w~
+Long     &CA large bonfire of blue flames is here.&w~
+Flags    magic~
+Values   10000 0 0 0 0 0
+Values2  0 2
+Stats    10 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1006
+Keywords qylain qylaith coin glowing silver coin qcoin1983~
+Type     treasure~
+Short    &wa qylain silver coin&w~
+Long     &wA small silver coin with the goddess Qylaith on it is here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    0 0 0 0 0 0 0
+#EXDESC
+ExDescKey    coin~
+ExDesc       &wThis small silver coin glows with magical energy. On both sides is a
+side profile of the goddess Qylaith with a hood up. You only
+see a few facial features such as full lips and a pointed looking
+nose. The words "In Qylaith We Finally Rest" have also been engraved on
+the coin. 
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1007
+Keywords small silver bag money sbag3891~
+Type     container~
+Short    &wa small silver money bag&w~
+Long     &wA small silver money bag has been left here.&w~
+Flags    magic spirit~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    2 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1008
+Keywords glowing flagon house ale halfling hflagon1983~
+Type     drinkcon~
+Short    &Wa flagon of halfling ale&w~
+Long     &WA flagon of ale has been left here.&w~
+Flags    glow magic spirit~
+WFlags   take onehand~
+Values   5 5 4 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1009
+Keywords glowing flagon house ale flagon1983~
+Type     drinkcon~
+Short    &Wa flagon of house ale&w~
+Long     &WA flagon of ale has been left here.&w~
+Flags    glow magic spirit~
+WFlags   take onehand~
+Values   5 5 4 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1010
+Keywords flagon dark dwarven ale glowing dflagon1983~
+Type     drinkcon~
+Short    &Wa flagon of dark dwarven ale&w~
+Long     &WA flagon of dark ale has been left here.&w~
+Flags    glow magic spirit~
+WFlags   take onehand~
+Values   8 8 4 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1011
+Keywords glowing goblet elven wine ewine1983~
+Type     drinkcon~
+Short    &Wa goblet of elven wine&w~
+Long     &WA goblet of wine has been left here.&w~
+Flags    spirit~
+WFlags   take hold~
+Values   5 5 2 0 0 0
+Values2  0 1
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1012
+Keywords glowing flagon orcish ale oflagon1983~
+Type     drinkcon~
+Short    &Wa flagon of orcish ale&w~
+Long     &WA flagon of ale has been left here.&w~
+Flags    glow magic spirit~
+WFlags   take onehand~
+Values   10 10 4 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1013
+Keywords cup glowing hot coffee scoffee1983~
+Type     drinkcon~
+Short    &Wa cup of coffee&w~
+Long     &WA cup of glowing hot coffee has been left here.&w~
+Flags    glow magic spirit~
+WFlags   take onehand~
+Values   5 5 12 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1014
+Keywords cup glowing hot coffee milk sugar smilk1983~
+Type     drinkcon~
+Short    &Wa cup of coffee with milk and sugar&w~
+Long     &WA cup of glowing coffee with milk and sugar has been left here.&w~
+Flags    glow magic spirit~
+WFlags   take onehand~
+Values   5 5 12 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1015
+Keywords cluster statues deities dead gods~
+Type     treasure~
+Short    &Wa cluster of statues&w~
+Long     &WA cluster of statues depicting dead gods is here.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1016
+Keywords cluster statues dead heroes~
+Type     treasure~
+Short    &Wa cluster of statues&w~
+Long     &WA cluster of statues depicting dead heroes is here.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1017
+Keywords cluster statues dead villains~
+Type     treasure~
+Short    &Wa cluster of statues&w~
+Long     &WA cluster of statues depicting dead villains is here.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1018
+Keywords cluster statues dead legendary creatures~
+Type     treasure~
+Short    &Wa cluster of statues&w~
+Long     &WA cluster of statues depicting dead legendary creatures is here.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1019
+Keywords cluster mini statues depicting dead cities kingdoms layouts~
+Type     treasure~
+Short    &Wa cluster of statues&w~
+Long     &WA cluster of stone models of city and kingdom layouts is here.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1020
+Keywords several ice sculptures display~
+Type     treasure~
+Short    &Wsome ice sculptures&w~
+Long     &WSeveral large ice sculptures are here on display for the public.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1021
+Keywords several snow sculptures display~
+Type     trash~
+Short    &Wsome snow sculptures&w~
+Long     &WSeveral large snow sculptures are here on display for the public.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1097
+Keywords vial ectoplasm thick glowing substance viale303~
+Type     trash~
+Short    &Wa small vial of ectoplasm&w~
+Long     &WA small vial of an odd glowing substance is here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 10 10 50 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1098
+Keywords ectoplasm glowing substance ghost ghostly puddle small~
+Type     trash~
+Short    &Wa puddle of ectoplasm&w~
+Long     &WA small puddle of an odd glowing substance is here.&w~
+Flags    glow invis magic~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    puddle~
+ExDesc       &WThis small puddle consists of an odd, glowing thick substance. It
+has no smell and is very sticky to the touch.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1099
+Keywords flowing white robe~
+Type     armor~
+Short    &Wa flowing white robe&w~
+Long     &WA flowing white robe has been left here.&w~
+Flags    magic noremove inventory spirit~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     1000
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    nosummon noastral~
+Desc     &wThe path here has been cleared recently so that the path is
+defined for someone traveling here. Large mounds of snow can be
+found on either side of the path as it heads north from here
+or back to a river towards the south. In the far distance you
+can see a snow covered village that seems very welcoming.
+~
+#EXIT
+Direction north~
+ToRoom    1001
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    999
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1001
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    nosummon noastral~
+Desc     &wThe path here has been cleared recently so that the path is
+defined for someone traveling here. Large mounds of snow can be
+found on either side of the path as it heads north from here
+or back to a river towards the far south. In the far distance you
+can see a snow covered village that seems very welcoming.
+~
+#EXIT
+Direction north~
+ToRoom    1002
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1000
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1002
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    nosummon noastral~
+Desc     &wThe path here has been cleared recently so that the path is
+defined for someone traveling here. Large mounds of snow can be
+found on either side of the path as it heads north towards an
+intersection or back south where it eventually ends at the
+side of an icy river. In the distance to the east is a small
+snow covered village that appears to be very welcoming.
+~
+#EXIT
+Direction north~
+ToRoom    1003
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1001
+#ENDEXIT
+
+Reset M 0 1099 2 1002
+#ENDROOM
+
+#ROOM
+Vnum     1003
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    nosummon noastral~
+Stats    0 0 0 0 10 0
+Desc     &wThis is a small intersection of two paths that have been recently
+cleared of snow. The snow from the paths has been tossed along either
+side of each path, which has created small artificial hills. To
+the south the path heads towards the side of an icy river nearby.
+The path that intersects here heads to the west, which leads into
+a snowy looking tundra while the east path heads into a village.
+~
+Perdesc  &wYou see a partially snow covered &Wsign&w is posted here.&w
+~
+#EXIT
+Direction east~
+ToRoom    1005
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1002
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1004
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WA wooden sign made from petrified wood has been posted here:&w
+ 
+                   &CFrostmeet Village &W---->
+ 
+                  &W<---- &CTundra of the Dead
+ 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     1004
+Name     &WA Snowy Path&w~
+Sector   city~
+Flags    nosummon noastral~
+Desc     &wThis is a dirt path that has been recently cleared of snow. The
+snow that was removed has been placed along the sides of the path,
+which creates small artificial hills of snow. The path here continues
+to the east where it ends at the start of a village. 
+~
+#EXIT
+Direction east~
+ToRoom    1003
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1005
+Name     &WBefore a Small Village&w~
+Sector   city~
+Flags    nosummon noastral~
+Desc     &wThe path here has been recently cleared of all snow, which reveals
+a wet looking dirt path. The path ends here as a small village can be
+seen to the direct east of here. The path also heads back to the
+west as it exits this area and heads into a snowy tundra. The
+village ahead seems very quaint and inviting.
+~
+#EXIT
+Direction east~
+ToRoom    1006
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1003
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate dome~
+Comlist   if isaffected($n) == detect_magic
+if arcana($n) >= 20
+mea $n You hold your hand out as you investigate the dome...
+mer $n $n holds $s hand out for a few moments...
+mpsleep 2
+mea $n You are able to discern that the dome is magical in origin
+mea $n and it was created a very long time ago. The magics feel
+mea $n ancient to you and perhaps a bit divine as well...
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+mpsleep 2
+mea $n &BYou briefly see a magical blue dome over the entire village
+mea $n &Bahead that blocks the usage of magic there...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1006
+Name     &CArctic Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 10 0
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. Odd humanoids move about the village as they
+greet one another and seem to forget the passing of time. The street
+here is made of shimmering cobblestone that is lightly dusted with
+snow. The street goes north and south from here with a building to
+the east that seems to never change its location unlike many of
+the cottages here in the village.
+~
+Perdesc  &wA small &Wsign&w has been posted outside of a building to the east of here.
+~
+#EXIT
+Direction north~
+ToRoom    1007
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1030
+Keywords  'frost covered door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1022
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1005
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1099 1 1006
+Reset D 0 1006 1 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &wA small sign reads as follows:
+ 
+         &WLost? Recently deceased? Recently murdered?
+ 
+        &WAll of these questions can be answered inside!
+ 
+ 
+&ROOC: New players that have recently died should seek out the info
+      provided in the building towards the east of here.
+ 
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   if level($n) <= 5
+mea $n &CYou feel a strange desire to enter the building to the east of here.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1007
+Name     &CIntersection of Arctic & Blizzard&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. Odd humanoids move about the village as they
+greet one another and seem to forget the passing of time. The street
+here is made of shimmering cobblestone that is lightly dusted with
+snow. There is an intersection of two streets here with one going to
+the north and south and another heading to the east. To the west is
+a building that never changes its location unlike many of the cottages
+here in the village.
+~
+#EXIT
+Direction north~
+ToRoom    1008
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1027
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1006
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1077
+Keywords  'bank door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1016 2 1007
+Reset D 0 1007 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1008
+Name     &CArctic Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north and south from
+here with a building to the west that resembles a tavern and a large 
+outdoor amphitheater can be seen to the east from here.
+~
+#EXIT
+Direction north~
+ToRoom    1009
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1028
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1007
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1066
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1011 4 1008
+Reset D 0 1008 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1009
+Name     &CIntersection of Arctic & Iceberg&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes south from here with 
+another street heading east. A building off to the northwest resembles 
+a large tavern.
+~
+#EXIT
+Direction east~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1008
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1064
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1009 7 1
+#ENDROOM
+
+#ROOM
+Vnum     1010
+Name     &CIceberg Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west from 
+here. A building off to the south resembles a quaint looking cafe.
+~
+#EXIT
+Direction east~
+ToRoom    1011
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1034
+Keywords  'cafe door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1009
+#ENDEXIT
+
+Reset M 0 1011 10 1010
+Reset M 0 1016 3 1010
+Reset D 0 1010 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1011
+Name     &CIntersection of Iceberg & Market&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west with
+another street heading to the south. A building that resembles a large
+Tavern can be seen to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1037
+Keywords  'white tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1012
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1024
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1010
+#ENDEXIT
+
+Reset D 0 1011 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1012
+Name     &CIceberg Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west from 
+here. A building off to the north looks like a large cottage with a
+silver front door.
+~
+#EXIT
+Direction north~
+ToRoom    1045
+Keywords  'silver door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1013
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1011
+#ENDEXIT
+
+Reset D 0 1012 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1013
+Name     &CIntersection of Iceberg & Storm&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east with another 
+street heading to the south. Strange looking humanoids pass by here
+as they float about the village.
+~
+#EXIT
+Direction south~
+ToRoom    1014
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1012
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1014
+Name     &CStorm Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north and south with 
+strange looking humanoids passing by here as they float about the village.
+A strange white building can be seen to the east of here, which consists
+of many stained glass windows.
+~
+#EXIT
+Direction north~
+ToRoom    1013
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1048
+Keywords  'museum door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1015
+#ENDEXIT
+
+Reset M 0 1011 10 1014
+Reset M 0 1016 4 1014
+Reset D 0 1014 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1015
+Name     &CStorm Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north and south with 
+strange looking humanoids passing by here as they float about the village.
+A building that resembles a large tavern can be seen to the east of here.
+~
+#EXIT
+Direction north~
+ToRoom    1014
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1062
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1016
+#ENDEXIT
+
+Reset D 0 1015 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1016
+Name     &CIntersection of Storm & Blizzard&w~
+Sector   city~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north and south while
+another street heads off to the west. A rustic looking cottage made of
+shimmering stone can be seen to the east.
+~
+#EXIT
+Direction north~
+ToRoom    1015
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1078
+Keywords  'cottage door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1017
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1026
+#ENDEXIT
+
+Reset D 0 1016 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1017
+Name     &CStorm Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north and south from 
+here. A large building that resembles a tavern can be seen to the
+west while a tower covered in ice lies to the east.
+~
+#EXIT
+Direction north~
+ToRoom    1016
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1046
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1018
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1068
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1017 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1018
+Name     &CCorner of Storm & Frostbite&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north while another 
+street heads off to the west. A large looking tavern can be seen to
+the southeast from here.
+~
+#EXIT
+Direction north~
+ToRoom    1017
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1019
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1065
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1018 8 1
+#ENDROOM
+
+#ROOM
+Vnum     1019
+Name     &CFrostbite Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west from 
+here. A large building made of silvery metal and glass can be
+found to the south while a path leading into a snow-covered park
+is located to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1052
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1018
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1029
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1020
+#ENDEXIT
+
+Reset M 0 1011 10 1019
+Reset M 0 1016 5 1019
+#ENDROOM
+
+#ROOM
+Vnum     1020
+Name     &CIntersection of Frostbite & Market&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west from 
+here while another street leads north. A large looking tavern can be
+found to the south with a black wooden front door.
+~
+#EXIT
+Direction north~
+ToRoom    1023
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1019
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1038
+Keywords  'black tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1021
+#ENDEXIT
+
+Reset D 0 1020 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1021
+Name     &CFrostbite Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west as
+strange looking humanoids pass by. A large looking tavern with
+broken windows can be found to the south. To the north is a very
+large temple made of mixed white, grey, and black stones.
+~
+#EXIT
+Direction north~
+ToRoom    1044
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1020
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1067
+Keywords  'damaged tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1022
+#ENDEXIT
+
+Reset M 0 1011 1 1021
+Reset D 0 1021 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1022
+Name     &CCorner of Arctic & Frostbite&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north from here with 
+another street heading east. A building off to the west is quite large
+and the sounds of children can be heard coming from it.
+~
+#EXIT
+Direction north~
+ToRoom    1006
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1021
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1075
+Keywords  'large wooden door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset D 0 1022 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1023
+Name     &CMarket Street &w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north and south as
+strange looking humanoids pass by. A large tavern is to the west
+while a path to the east leads into a snowy park.
+~
+#EXIT
+Direction north~
+ToRoom    1025
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1055
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1020
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1049
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1011 2 1023
+Reset D 0 1023 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1024
+Name     &CMarket Street &w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes north and south as
+strange looking humanoids pass by. A large tavern is to the west
+while a small white stone building is to the east of here.
+~
+#EXIT
+Direction north~
+ToRoom    1011
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1031
+Keywords  'library door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1025
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1063
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1024 1 1
+Reset D 0 1024 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1025
+Name     &cThe Village Square&w~
+Sector   city~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. This intersection of two streets running north,
+east, south, and west also serves as the direct center of the village.
+This village square features a large stone fountain with a statue of
+a goddess in it.
+~
+#EXIT
+Direction north~
+ToRoom    1024
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1026
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1023
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1027
+#ENDEXIT
+
+Reset M 0 1016 5 1025
+Reset O 0 1000 1 1025
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+mpsleep 2
+mea $n &BYou notice with your magically enhanced vision that the
+mea $n &Bwater of the fountain is tainted with magic...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1026
+Name     &CBlizzard Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west as
+strange looking humanoids pass by. A large looking tavern can be
+seen to the north while a path to the south leads into a snowy park.
+~
+#EXIT
+Direction north~
+ToRoom    1035
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1016
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1050
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1025
+#ENDEXIT
+
+Reset M 0 1011 8 1026
+Reset D 0 1026 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1027
+Name     &CBlizzard Street&w~
+Sector   city~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This is a quaint looking village that consists of many little stone
+cottages and buildings. At first glance all of the buildings seem
+very solid and static. When one glances again it seems that the
+buildings seem to shift and more buildings emerge in an endless
+loop. There is an odd chill in the air here as well, which lends
+a mysterious vibe. The street here is made of shimmering cobblestone 
+that is lightly dusted with snow. The street goes east and west as
+strange looking humanoids pass by. Two large looking taverns can
+be found to the north and south of this location.
+~
+#EXIT
+Direction north~
+ToRoom    1036
+Keywords  'grey tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1025
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1039
+Keywords  'rainbow colored tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1007
+#ENDEXIT
+
+Reset M 0 1011 7 1027
+Reset D 0 1027 0 1
+Reset D 0 1027 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1028
+Name     &WA Snow Covered Amphitheater&w~
+Sector   city~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis amphitheater consists of several rows of seating that also
+act as stairs that lead down to a circular shaped stone stage. Several
+odd looking humanoids come here at several times in the day to enjoy
+music or a play performed by strange looking bards. Day and night there
+are performances done here, which makes this one of the busiest places
+in the village.
+~
+#EXIT
+Direction west~
+ToRoom    1008
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1029
+Name     &WThe Frostmeet Village Guard Post&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis building is used as the home for the guards of this village.
+Several beds that have never been used line the walls of this building
+along with small dressers that seem to have never been opened. A small
+entrance leading to a small shrine can be found on the west wall of
+this room. A trapdoor leads down into a jail cell where criminals are
+housed.
+~
+#EXIT
+Direction north~
+ToRoom    1019
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1033
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1032
+Key       1002
+Keywords  'jail door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+Reset M 0 1012 4 1029
+Reset M 0 1012 4 1029
+Reset M 0 1012 4 1029
+Reset M 0 1012 4 1029
+Reset D 0 1029 5 2
+#ENDROOM
+
+#ROOM
+Vnum     1030
+Name     &WThe Frostmeet Village Greeting Center&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis building is made from shimmering wood and stone. The inside is
+very cold with no source of heat provided in the fireplace. A large
+wooden table made from petrified wood is in the middle of the building,
+which has many glowing pamphlets on it. The windows of this building
+are completely frosted over in intricate patterns.
+~
+#EXIT
+Direction west~
+ToRoom    1006
+Keywords  'frost covered door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1000 1 1030
+Reset D 0 1030 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1031
+Name     &WThe Frostmeet Village Library&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis building serves as a library for the village. There are rows
+and rows of book shelves full of glowing tomes. The library is well
+lit due to an extensive amount of windows that allows the cool tinged
+from outside to enter. Several strange looking humanoids that often
+glow move about this library as they take books from the shelves
+and head to a quiet location to read.
+~
+#EXIT
+Direction west~
+ToRoom    1024
+Keywords  'library door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1031 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1032
+Name     &WThe Frostmeet Village Jail&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis jail cell is quite cold and there is no windows that allow one
+to view outside. A glowing orb of cold blue light floats about the
+cell and provides the only source of light here. A few pieces of
+furniture can be found here such as a bed and a table.
+~
+#EXIT
+Direction up~
+ToRoom    1029
+Key       1002
+Keywords  'jail door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+Reset O 0 1001 1 1032
+Reset O 0 5016 1 1032
+Reset O 0 1003 1 1032
+  Reset P 0 1004 3 1003
+Reset D 0 1032 4 2
+#ENDROOM
+
+#ROOM
+Vnum     1033
+Name     &WA Small Qylain Shrine&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis is a small shrine to the goddess of death, Qylaith. In the
+middle of the shrine is a statue of the goddess as she is normally
+depicted - wearing draped robes and a hood that covers her face.
+Incense has been lit here and fills the small space with its
+exotic scent.
+~
+#EXIT
+Direction east~
+ToRoom    1029
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pray key~
+Comlist   If level($n) >= 25
+If deity($n) == Qylaith
+If class($n) == Cleric
+If favor($n) >= 250
+Mea $n &WYou hold out a hand with palm up before speaking... 
+Mer $n &W$n holds out a hand before $e speaks... 
+Mpsleep 2 
+mpforce $n say Qylaith audi me...
+Mpsleep 2
+mpforce $n say Clavis ad me...
+Mpsleep 2
+Mpforce $n say Invenient me dignus calceamenta portare sumptus!
+Mpsleep 2
+Mea $n &WYou feel a bitter cold creep across your body as you pray... 
+Mpsleep 7
+Mea $n &WThe chill slowly moves across your body to your hand... 
+Mpsleep 7
+Mea $n &WA small key slowly materializes in your hand!
+Mer $n &WA small key appears in &W$n&Ws hand!
+Mpfavor $n -50
+Mpoload 1002 1
+mposet frostkey666 timer 10
+Silent mpforce $n get frostkey666
+Else
+Mea $n &WYour prayer goes unanswered... 
+Endif
+Else
+Mea $n &wNothing happens.
+Endif
+Else
+Mea $n &wNothing happens.
+Endif
+Else
+Mea $n &wNothing happens.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if deity($n) == qylaith
+mpsleep 2
+mea $n &WYou feel a bitter cold brush past you as you enter this shrine.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1034
+Name     &WLe Chill Cafe&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis cafe is quaintly decorated with petrified wooden tables and
+chairs along with a counter where drinks are made. A few of the walls
+have paintings of various landscapes that are rather otherworldly.
+The floor, walls, and ceiling have been painted white, which can be
+disorienting at first.
+~
+#EXIT
+Direction north~
+ToRoom    1010
+Keywords  'cafe door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1017 1 1034
+Reset D 0 1034 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1035
+Name     &WThe Laughing Dead Tavern &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 10 0
+Desc     &WThis tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. 
+~
+Perdesc  &wYou see a large &Wsign&w posted above the tavern's bar here&w.
+~
+#EXIT
+Direction south~
+ToRoom    1026
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1006 2 1035
+  Reset G 0 1569 1
+  Reset G 0 1570 1
+  Reset G 0 2934 1
+Reset D 0 1035 2 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WHello!
+
+&wThis location is one of many &R-{(OOC)}-&w locations across the lands.
+Each major civilization and some minor villages have such locations
+where you will be able to see/use the global &RChat&w command along with
+the OOC channel &ROsay&w. While at these locations you can enjoy 
+the company of other characters taking a break from RP and 
+talk OOC. 
+
+Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. Please review &RHELP OOCTAVERNS&w for more information 
+on the rules.
+
+Please note that while in an OOC tavern you &Rcannot&w be raised or 
+resurrected. If you are awaiting such you will need to go 
+somewhere else. Do not use this location to pander for raise 
+dead/resurrection help using the Chat command. Death is considered 
+a role playing scenario.
+
+And when anyone last saw you.. you were "headed off to some
+tavern or inn in town."
+ 
+Thanks!
+&WThe DLoC Admin Team
+ 
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 5
+mea $n &WAs you enter the tavern a sign by the bar catches your eye...
+mpsleep 2
+mpforce $n l sign
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1036
+Name     &WThe Neutral Way Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. A small entrance to the west leads to a
+private booth.
+~
+#EXIT
+Direction south~
+ToRoom    1027
+Keywords  'grey tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1041
+#ENDEXIT
+
+Reset M 0 1005 3 1036
+Reset D 0 1036 2 1
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   If isneutral($n)
+Mpsleep 1
+Mea $n &wA couple of spirits raise a glass to you as you enter.
+Else
+Mea $n &wA strange force expels you from the tavern suddenly!&w
+Mer $n &w$n&w vanishes as $e tries to enter the tavern.
+Mptransfer $n 1027
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1037
+Name     &WThe Good Way Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. A small entrance to the east leads to a
+private booth.
+~
+#EXIT
+Direction east~
+ToRoom    1043
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1011
+Keywords  'white tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1005 2 1037
+Reset D 0 1037 2 1
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   If isgood($n)
+Mpsleep 1
+Mea $n &WA couple of spirits raise a glass to you as you enter.
+Else
+Mea $n &WA strange force expels you from the tavern suddenly!&w
+Mer $n &W$n&W vanishes as $e tries to enter the tavern.
+Mptransfer $n 1011
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1038
+Name     &WThe Evil Way Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. A small entrance to the west leads to a
+private booth.
+~
+#EXIT
+Direction north~
+ToRoom    1020
+Keywords  'black tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1042
+#ENDEXIT
+
+Reset M 0 1005 5 1038
+Reset D 0 1038 0 1
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   If isevil($n)
+Mpsleep 1
+Mea $n &zA couple of spirits raise a glass to you as you enter.
+Else
+Mea $n &zA strange force expels you from the tavern suddenly!&w
+Mer $n &z$n&z vanishes as $e tries to enter the tavern.
+mptransfer $n 1020
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1039
+Name     &WThe Melting Pot Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. A small entrance to the east leads to a
+private booth.
+~
+#EXIT
+Direction north~
+ToRoom    1027
+Keywords  'rainbow colored tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1040
+#ENDEXIT
+
+Reset M 0 1006 2 1039
+  Reset G 0 1569 1
+  Reset G 0 1570 1
+  Reset G 0 4044 1
+Reset D 0 1039 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == spirit
+mpsleep 1
+mea $n &wA couple of spirits raise a glass in your honor as you enter.
+mer $n A couple of spirits raise a glass in $n's honor as $e enters.
+else
+mea $n &wYou feel some of the spirits watching you as you enter.
+mer $n &wSome of the spirits start watching $n as $e enters.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1040
+Name     &WA Private Booth&w~
+Sector   indoors~
+Flags    nomagic private safe norecall nosummon noastral nosupplicate~
+Desc     &WThis booth consists of one table and two chairs made of petrified
+wood. The table has a few candles arranged together and they have
+been lit to provide some light here. The flames on the candles are
+blue in tone and provide no heat.
+~
+#EXIT
+Direction west~
+ToRoom    1039
+#ENDEXIT
+
+Reset M 0 1021 1 1040
+#ENDROOM
+
+#ROOM
+Vnum     1041
+Name     &WA Private Booth&w~
+Sector   indoors~
+Flags    nomagic private safe norecall nosummon noastral nosupplicate~
+Desc     &WThis booth consists of one table and two chairs made of petrified
+wood. The table has a few candles arranged together and they have
+been lit to provide some light here. The flames on the candles are
+blue in tone and provide no heat.
+~
+#EXIT
+Direction east~
+ToRoom    1036
+#ENDEXIT
+
+Reset M 0 1020 1 1041
+#ENDROOM
+
+#ROOM
+Vnum     1042
+Name     &WA Private Booth&w~
+Sector   indoors~
+Flags    nomagic private safe norecall nosummon noastral nosupplicate~
+Desc     This booth consists of one table and two chairs made of petrified
+wood. The table has a few candles arranged together and they have
+been lit to provide some light here. The flames on the candles are
+blue in tone and provide no heat.
+~
+#EXIT
+Direction east~
+ToRoom    1038
+#ENDEXIT
+
+Reset M 0 1019 1 1042
+#ENDROOM
+
+#ROOM
+Vnum     1043
+Name     &WA Private Booth&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis booth consists of one table and two chairs made of petrified
+wood. The table has a few candles arranged together and they have
+been lit to provide some light here. The flames on the candles are
+blue in tone and provide no heat.
+~
+#EXIT
+Direction west~
+ToRoom    1037
+#ENDEXIT
+
+Reset M 0 1018 1 1043
+#ENDROOM
+
+#ROOM
+Vnum     1044
+Name     &WA Massive Temple&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     The walls of this temple are a mix of black, white, and grey stones
+that create interesting patterns. There are three large doorways
+to the north, east, and west while a staircase leads upstairs
+and downstairs. There are a large amount of candles that have
+been lit here as they offer their blue tinged flames to this
+space. 
+~
+#EXIT
+Direction north~
+ToRoom    1079
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1080
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1021
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1081
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1082
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1083
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1045
+Name     &WThe Village Mayor's Home&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis cottage looks like it was once well furnished, but all of the
+furniture has been destroyed and even burnt. A fireplace is devoid of
+a fire and some of the windows have been broken. A large metal chain
+that comes from the base of the floor is used to anchor someone
+or something here in this cottage.
+~
+#EXIT
+Direction south~
+ToRoom    1012
+Keywords  'silver door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1045 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1046
+Name     &CBefore a Large Tower&w~
+Sector   city~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     The tower ahead is covered in thick layers of ice and snow that
+upon first glance the tower might look like a small mountain. The
+tower is constructed of large stones and the front door is made
+of solid wood. The path here leading up to the tower has been
+cleared recently to help people get to it.
+~
+#EXIT
+Direction east~
+ToRoom    1047
+Keywords  'tower door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1017
+#ENDEXIT
+
+Reset D 0 1046 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1047
+Name     &WThe Tower of Necromantic Studies&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 25 0
+Desc     This tower is used for magical studies and there are several robed
+humanoids that float about here as they study large spellbooks. A 
+giant fireplace has a roaring blue fire in it along with a cauldron
+that is being heated up. There are several doorways that go into
+rooms at the north, east, and south. A staircase leads up into
+a large space above at the top of the tower.
+~
+Perdesc  &wYou spot a partially hidden &Wtrapdoor&w under a rug here.&w
+~
+#EXIT
+Direction north~
+ToRoom    1069
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1072
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1073
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1046
+Keywords  'tower door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1071
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1070
+Keywords  'trapdoor'~
+Flags     isdoor closed locked nopassdoor hidden bashproof~
+#ENDEXIT
+
+Reset M 0 1022 1 1047
+Reset D 0 1047 3 1
+Reset D 0 1047 5 2
+#ENDROOM
+
+#ROOM
+Vnum     1048
+Name     &WThe Qylain Museum of the Dead&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     The walls of this museum are stark white with almost a blue tinge. Large
+stained glass windows offer the only other colors in this building. Each
+window depicts Qylaith watching over the death of something. A long
+hallway heads to the east where exhibitions are set up. A doorway to 
+the north leads towards another hallway in the museum with exhibitions.
+~
+#EXIT
+Direction north~
+ToRoom    1061
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1057
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1014
+Keywords  'museum door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1023 1 1048
+Reset D 0 1048 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1049
+Name     &WThe Frozen Beard Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. Some of the furniture is destroyed from fights
+that often occur from some of the drunk patrons.
+~
+#EXIT
+Direction east~
+ToRoom    1023
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1008 1 1049
+Reset D 0 1049 1 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) == dwarf
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+Mptransfer $n 1023
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1050
+Name     &cA Snowy Village Park&w~
+Sector   field~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction north~
+ToRoom    1026
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1076
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1051
+#ENDEXIT
+
+Reset M 0 1011 10 1050
+Reset M 0 1011 10 1050
+#ENDROOM
+
+#ROOM
+Vnum     1051
+Name     &cA Snowy Village Park&w~
+Sector   field~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction north~
+ToRoom    1050
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1054
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1052
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1055
+#ENDEXIT
+
+Reset M 0 1026 1 1051
+#ENDROOM
+
+#ROOM
+Vnum     1052
+Name     &cA Snowy Village Park&w~
+Sector   field~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction north~
+ToRoom    1051
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1019
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1053
+Name     &cAn Ice Sculpture Exhibit&w~
+Sector   field~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction south~
+ToRoom    1055
+#ENDEXIT
+
+Reset M 0 1014 1 1053
+Reset O 0 1020 1 1053
+#ENDROOM
+
+#ROOM
+Vnum     1054
+Name     &cA Frozen Ice Skating Pond&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction west~
+ToRoom    1051
+#ENDEXIT
+
+Reset M 0 1013 1 1054
+#ENDROOM
+
+#ROOM
+Vnum     1055
+Name     &cA Snowy Village Park&w~
+Sector   field~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction north~
+ToRoom    1053
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1051
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1056
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1023
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1056
+Name     &cA Snow Sculpture Exhibit&w~
+Sector   field~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction north~
+ToRoom    1055
+#ENDEXIT
+
+Reset M 0 1015 1 1056
+Reset O 0 1021 1 1056
+#ENDROOM
+
+#ROOM
+Vnum     1057
+Name     &WMuseum Exhibition: Dead Cities & Kingdoms&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 12 0
+Desc     &WThis exhibition area is dedicated to the lost cities, kingdoms,
+and special buildings that were once part of the material plane. 
+A large stained glass window nearby depicts Qylaith watching
+as various cities fall and disappear. Many models of what some of
+these places looked like can be found here.
+~
+Perdesc  &wYou see further information next to the &Wmodels&w of dead cities.
+~
+#EXIT
+Direction east~
+ToRoom    1058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1048
+#ENDEXIT
+
+Reset O 0 1019 1 1057
+#EXDESC
+ExDescKey    zhyran~
+ExDesc       &CYou see a large model of a city that had curved styling in terms
+of walls, buildings, and even the castle. All of the architecture
+was known for its rhythm and wild looking shapes. Zhyran was known
+as the "City of Sound," which is attributed to its love of bards
+and the arts - especially music. The city was once in the Crystal
+Mountains until during the Great Rift it was destroyed when the
+elder bards there tried to use song to protect the city. The magics
+backfired and drove the city deep into the mountains where it was
+never seen or heard from again...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    Kaltas~
+ExDesc       &YYou see a large kingdom set upon the sands of a desert. The buildings
+in the city portion are trimmed with gold and the city seems to
+shine. The ancient kingdom of Kaltas was known for its vast riches
+and being a mecca of trade. It amassed a great fortune until the day
+it was destroyed. The ruling family of Kaltas had waged war upon the
+city of Parinath. In a vain attempt to harness magic from an unknown
+source the city was obliterated by this experimentation. Some say that
+they were punished by Crisma for tainting a source of ancient
+magic. The city was swallowed by the desert over time and forgotten...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    zyndale~
+ExDesc       &GThe lost village of Zyndale was once part of the network of human
+villages referred to as "The Dales." This particular village was
+home to the gnome Archmage Rhemig Helvel. Helvel was a well established
+illusionist and was experimenting with an ancient source of travel
+magic when it destroyed the village. Some say that at night the village
+restores itself and the villagers walk till dawn comes...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    llekwyn~
+ExDesc       &PYou see a large stone model of a library that also served as a
+temple for the goddess Omunae. The exterior was painted a deep
+shade of purple and was trimmed in gold. As you walk around the model
+you see the interior view, which shows it had many floors and each
+floor was dedicated to a various study. At the top of the library
+was the temple space and home of the clergy. When the great city of
+Kaltas was destroyed this library was moved by Omunae to somewhere
+in the desert to avoid its knowledge from being used again to wage
+war. Omunae buried the library and also entrusted a servant to
+watch over the library from intruders...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    models~
+ExDesc       &wYou see various models and each has a plaque with information
+attached. Perhaps you can investigate the models to learn more...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate models~
+Comlist   if investigation($n) >= 12
+mea $n You examine the models and discover the following...
+mpsleep 2
+mea $n You see that each model has a plaque with info. You can learn
+mea $n more about the following places:
+mpsleep 2
+mea $n &CZhyran: The City of Sound&w
+mea $n &YThe Kingdom of Kaltas
+mea $n &wThe Village of Zyndale
+mea $n &pThe Great Library of Llekwyn&w
+mpsleep 2
+mea $n To learn more simply LOOK <NAME> such as LOOK ZHYRAN.
+mer $n $n examines a plaque near the models.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1058
+Name     &WMuseum Exhibition: Dead Gods&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 12 0
+Desc     &WThis exhibition area is dedicated to deities who have been destroyed
+or died during some tragic event. A large stained glass window nearby
+depicts Qylaith welcoming home dead gods. There are several groupings
+of statues here depicting these fallen gods.
+~
+Perdesc  &wYou see further information next to the &Wstatues&w of dead gods.
+~
+#EXIT
+Direction north~
+ToRoom    1059
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1057
+#ENDEXIT
+
+Reset O 0 1015 1 1058
+#EXDESC
+ExDescKey    statues~
+ExDesc       &wYou see various statues and each has a plaque with information
+attached. Perhaps you can investigate the statues to learn more...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    Thudrin~
+ExDesc       &YThe dwarven god Thudrin was the patron of dwarves and smithing. He
+was a stern god who did not enjoy failure. He was known for his white hair
+and beard as well as an eye patch to hide the missing eye he lost during
+a battle with the orcish god Urkmash. His wife Genda was known for
+soothing his ego and anger by merely touching him.
+ 
+Thudrin sacrificed himself during the Great Rift to help stabilize
+the realm and save his dwarven children from annihilation. He gave
+part of his essence to the dwarven engineer, Dhordolim, whom he charged
+with watching over his children.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    genda~
+ExDesc       &YThe dwarven goddess Genda was the matron of the dwarves and 
+was the goddess of dwarven love, aesthetics, and the family. She
+was a calm, nuturing goddess with a very powerful temper that
+she rarely showed. She was a beautiful goddess who was known
+for her fiery red mane that touched the floor lightly.
+ 
+&YGenda sacrificed herself during the Great Rift to help stabilize
+the realm and save her dwarven children from annihilation. She
+gave part of her essence to the new god Dhordolim, whom she charged
+with watching over her children.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    raarg~
+ExDesc       &YThe dwarven god Raarg was the child of Thudrin and Genda. He was
+the dwarven god of war and protection. He was a wild god who
+was the epitome of the "dwarven temper." He had his mother's red
+hair and his beard was said to be stained with the blood of his
+enemies.
+ 
+&YRaarg was forced by his parents to sacrifice himself during the
+Great Rift to help stabilize the realm and save the dwarves. He
+gave part of his essence to Dhordolim, whom he charged with
+watching over the dwarves. It is said this essence is what made
+Dhordolim a bit more aggressive in his pursuits.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    lolth~
+ExDesc       &zThe drow spider goddess Lolth was known for driving her followers
+to fight amongst themselves and with the surface dwellers of Aerix. She
+was a vengeful goddess with a jealous streak and loved to sacrifice
+her own followers.
+ 
+&zDuring the Great Rift the goddess watched from her Underdark
+prison as the other gods and legendary creatures battled. Using
+their weakeness she broke the divine magics that kept her and
+her drow from reaching the surface. She led them into battle
+against the human kingdoms until she was driven back with the
+help of the human patron god, Soarin, and the elven pantheon
+of gods. Unknown to Lolth was that the goddess Khaersyx had
+snuck into the Underdark and awaited for the weakened Spider
+Queen to be sent back. Khaersyx murdered Lolth and took over
+her divine portfolios and escaped the Underdark before it
+was resealed.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    urkmash~
+ExDesc       &RThe orc god Urkmash was known for his bloodthirst and attempts to
+lead his followers against the elven kingdom of Elheleska. Urkmash
+would appear to his followers as a red skinned orc with bright
+green eyes. He also helped create Half-Orcs by willing his followers
+to take capture and take human mates. It is said that these
+half-orcs can still hear him or something whispering to them.
+ 
+Urkmash was an ancient deity and was destroyed during the great
+100 year war with the elven gods. During these wars Urkmash
+was successful in taking out one of Thudrin the dwarven god's eyes
+as he tried to protect the elven god Lornas. It is said that
+Thudrin never forgave Lornas for this maiming and may be the
+root of dislike between elves and dwarves. By their combined
+might the elven and dwarven gods destroyed Urkmash. However, he
+willed his divine portfolios and essence to Theuros and lives
+on in the god of war.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    rowyrm~
+ExDesc       &OThe dragonborn god Rowyrm was once a powerful dragon who rose
+to divine levels. His wife Vhirmeath and him gave birth to the
+dragonborn and he was their patron god. He was a noble god who
+saw the potential of his children to rise up and thwart evil.
+ 
+Rowyrm met his end while his wife and him battled against the
+evil gods and creatures who started the Great Rift. Rowyrm used
+his divine essence to block his wife from sacrificing herself
+as well and to help stabilize the tower of Soronys. He willed
+the last of his divine portfolios to his wife as he faded
+away.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    grimvia~
+ExDesc       &OThe halfling goddess Grimvia Gladewell was a lighthearted matron of
+the halflings. She was known to be very supportive of their efforts to
+meet other races and advance their own communities. This goddess
+was known for her love of music and laughter.
+ 
+Sadly the goddess perished during the Great Rift - She used her body to
+combine with the tower of Soronys in what was once the city called
+Darkhaven. This was the final act that helped make the tower become
+an anchor for all of the planes. The act also bonded her with the
+tower and it was said that those who enter it can sometimes hear her
+charmful giggle. Once the Great Rift was over the remaining gods
+elected the halfling ranger, Shamis, to godhood and gave him
+her divine portfolios to watch over.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    grimvia gladewell~
+ExDesc       &OThe halfling goddess Grimvia Gladewell was a lighthearted matron of
+the halflings. She was known to be very supportive of their efforts to
+meet other races and advance their own communities. This goddess
+was known for her love of music and laughter.
+ 
+Sadly the goddess perished during the Great Rift - She used her body to
+combine with the tower of Soronys in what was once the city called
+Darkhaven. This was the final act that helped make the tower become
+an anchor for all of the planes. The act also bonded her with the
+tower and it was said that those who enter it can sometimes hear her
+charmful giggle. Once the Great Rift was over the remaining gods
+elected the halfling true friend, Shamis, to godhood and gave him
+her divine portfolios to watch over.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    sacuth~
+ExDesc       &WThe gnome patron god Sacuth was a jester like god who taught
+gnomes how to be mischievous, playful, and curious. He was also
+the gnome god of illusions and illusionists. He would play tricks
+on his followers to keep their wits sharp.
+ 
+Sacuth and his wife Triasen were the first victims of the dark gods
+and creatures that started the Great Rift. Their divine energies
+were used to start tearing apart the bonds of the planes by having
+their divine blood spilled over those energy connections. Once the
+Great Rift was over the remaining gods chose the High Priestess of
+the gnome faiths, Phywa Manypurse, to assume the role of gnome
+patron along with some other divine portfolios.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    triasen~
+ExDesc       &WTriasen was the gnome goddess of jewels, money, wealth, and fair
+deals. She was known to always wear extravagant clothing and jewelry
+made from the rarest stones. She was the stern voice in the relationship
+with her trickster husband Sacuth.
+ 
+Triasen and Sacuth were the first to be murdered during the Great Rift
+and their divine blood was used as a spell component. Triasen tried
+to save her husband from death, but was killed first and drained of
+all her blood. It is said that some rare jewels of potent divine
+magic made from her solidified blood exist and can be found.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    lornas~
+ExDesc       &CLornas was the main elven patron and was known as the "King of the
+Fair." He was a stern, stoic deity while his wife, Elenrian, was known
+as the softer side. He had a great working relationship with the
+dwarven god Thudrin and the two often hunted together. This friendship
+lasted until Thudrin was maimed trying to save Lornas from the
+orc god Urkmash.
+ 
+&CLornas, like all of the elven gods, sacrificed himself to save
+the realms during the Great Rift. He lent his energies to stabilize
+the planes and his last act was to select the elven priestess
+Aerilaya to take his divine portfolios. Aerilaya was also given
+some additional portfolios by the human pantheon as they
+welcomed her to their universal pantheon.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    elenrian~
+ExDesc       &CThe elven goddess of love and the arts was known for her soothing
+nature, which she used on her stern husband Lornas. She was known
+as the most beautiful elf to have ever existed and let that 
+charisma to her children. She had long golden tresses that seemed
+to have a life of their own. Her name is still honored as part
+of the Elheleska name.
+ 
+Elenrian sacrificed herself along with the other elven gods to
+help save the realms during the Great Rift. She lent the last of
+her divine portfolio to the chosen new goddess Aerilaya before
+she disappeared. It is said that all musical instruments and
+artistic tools such as paint or brushes failed to work for
+almost a year after she died.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    grimvia gladewell~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    fynar~
+ExDesc       &CThe elven god of nature, rangers, and the balance was known
+for his odd sense of humor. Fynar would often appear to his
+followers as a beast with an strange color such as a lilac colored
+bear. He was a fair minded deity and charged his followers with
+being open minded.
+ 
+Fynar met his end during the Great Rift when he murdered by the
+dark gods and creatures that were using divine blood to rip
+apart the bonds between the planes. In his dying act he gave
+his divine essence and portfolios to the other elven gods in
+attempt to strengthen them.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    rilawen~
+ExDesc       The elven goddess of elven magic was known for her eclectic personality.
+She charged her followers with researching ancient texts to find long
+lost magic. During her life elven magic flourished and was strong.
+ 
+Rilawen was fatally injured during the battle to drive Lolth back
+into the Underdark during the Great Rift. Dying of a fast poison
+injected into her by the Spider Queen she used her last act to
+bolster the goddess Crisma with her divine portfolio. The act was
+seen by the elven people as the "True Trust," which ended elven
+hostilities towards humans. For many years after her death all
+elven magic was unable to work until Crisma was able to master it.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    Weletar~
+ExDesc       &CThe elven god of justice, law, and knights was known for his
+judgemental personality. He had a very black and white view of the
+realms and did not tolerate vagueness. He was not overly liked by
+the other elven gods, but was understood to be very vital none the less.
+ 
+Weletar was defeated as he tried to protect the remaining elven gods
+as they lent their energies to stop the Great Rift. His last act was
+to give his remaining divine essence to the Lornas and Elenrian before
+disappearing. Upon his death the elven "Order of Weletar" were found
+dead in their temple as they had sent their life force to Weletar to
+help him in his final act.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    vorpix~
+ExDesc       &zThe dark god Vorpix was a demigod revered by evil humans that committed
+dark acts to please their lord. Vorpix was a powerful wizard and was
+known as the "Laughing Skull," which was attributed to the fact he was
+a lich before ascending to demigod status. He did so with the help of his
+goddess Khaersyx. The goddess viewed him as a "son" and sought to raise
+him to power during the Great Rift. 
+ 
+During the Great Rift Vorpix helped Khaersyx kill the goddess Lloth, which
+he siphoned some of her divine essence to rise to godhood. At some point
+before the Great Rift was over he was stopped and destroyed by Honeth
+before he could take more divine energy. This act branded Honeth the number
+one enemy of Khaersyx forever.
+ 
+It is said that a powerful cult has risen to help raise the Laughing Skull
+back to life and to godhood again...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate statues~
+Comlist   if investigation($n) >= 12
+mea $n You examine the statues and discover the following...
+mpsleep 2
+mea $n You see that each statue has a plaque with info. You can learn
+mea $n more about the following gods:
+Mpsleep 2
+Mea $n &YThe dwarven gods Thudrin, Genda, and Raarg.
+Mea $n &CThe elven gods Lornas, Elenrian, Fynar, Rilawen, and Weletar.
+Mea $n &PThe halfling goddess Grimvia Gladewell.
+Mea $n &WThe gnome gods Sacuth and Triasen.
+Mea $n &RThe orc god Urkmash.
+Mea $n &zThe drow goddess Lolth.
+Mea $n &OThe dragonborn god Rowyrm.
+mea $n &gThe human god Vorpix.
+mpsleep 2
+mea $n To learn more simply LOOK <NAME> such as LOOK SACUTH.
+mer $n $n examines a plaque near the statues.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1059
+Name     &WMuseum Exhibition: Dead Heroes&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 12 0
+Desc     &WThis exhibition area is dedicated to the heroes that helped save
+the material plane. A large stained glass window depicts these
+heroes fighting off darkness before being called on by Qylaith
+when they died. There are several statues here that have been
+created to look like these heroes.
+~
+Perdesc  &wYou see further information next to the &Wstatues&w of dead heroes.
+~
+#EXIT
+Direction south~
+ToRoom    1058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1060
+#ENDEXIT
+
+Reset O 0 1016 1 1059
+#EXDESC
+ExDescKey    statues~
+ExDesc       &wYou see various statues and each has a plaque with information
+attached. Perhaps you can investigate the statues to learn more...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate statues~
+Comlist   if investigation($n) >= 12
+mea $n You examine the statues and discover the following...
+mpsleep 2
+mea $n You see that each statue has a plaque with info. You can learn
+mea $n more about the following heroes:
+Mpsleep 2
+Mea $n &YSoronys the Archmage
+Mea $n &ODremi the Wise
+Mea $n &pVurta the Quick
+Mea $n &WTemrose the Pure
+Mea $n &CRaloquinal Skyfall
+Mea $n &GThe Darkhold Druids
+mpsleep 2
+mea $n To learn more simply LOOK <NAME> such as LOOK SORONYS.
+mer $n $n examines a plaque near the statues.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1060
+Name     &WMuseum Exhibition: Dead Villains&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 12 0
+Desc     &WThis exhibition area is dedicated to the villains that famously
+tried to destroy, rule, or change the material plane. A large
+stained glass window nearby depicts Qylaith watching these
+villains as they tried to enact their plans before falling. Several
+stone statues can be found in this area depicting these villains.
+~
+Perdesc  &wYou see further information next to the &Wstatues&w of dead villains.
+~
+#EXIT
+Direction east~
+ToRoom    1059
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1061
+#ENDEXIT
+
+Reset O 0 1017 1 1060
+#EXDESC
+ExDescKey    statues~
+ExDesc       &wYou see various statues and each has a plaque with information
+attached. Perhaps you can investigate the statues to learn more...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate statues~
+Comlist   if investigation($n) >= 12
+mea $n You examine the statues and discover the following...
+mpsleep 2
+mea $n You see that each statue has a plaque with info. You can learn
+mea $n more about the following heroes:
+Mpsleep 2
+Mea $n &RThe Demonlord
+Mea $n &zCount Strahd von Zarovich
+Mea $n &cSinrix the Lich King
+Mea $n &gKing Basan Drostar
+Mea $n &pThe Witch Queen
+Mea $n &rKrogac the Elfshredder&w
+mpsleep 2
+mea $n To learn more simply LOOK <NAME> such as LOOK DEMONLORD.
+mer $n $n examines a plaque near the statues.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1061
+Name     &WMuseum Exhibition: Dead Legendary Creatures&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Stats    0 0 0 0 12 0
+Desc     This exhibition area is dedicated to some of the most famous
+creatures that once roamed the material plane. A large stained
+glass window can be found nearby depicting these creatures
+attacking castles, ships, and other locations. Several large
+statues take up this entire space as they depict these fallen
+creatures.
+~
+Perdesc  &wYou see further information next to the &Wstatues&w of dead creatures.
+~
+#EXIT
+Direction east~
+ToRoom    1060
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1048
+#ENDEXIT
+
+Reset O 0 1018 1 1061
+#EXDESC
+ExDescKey    statues~
+ExDesc       &wYou see various statues and each has a plaque with information
+attached. Perhaps you can investigate the statues to learn more...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate statues~
+Comlist   if investigation($n) >= 12
+mea $n You examine the statues and discover the following...
+mpsleep 2
+mea $n You see that each statue has a plaque with info. You can learn
+mea $n more about the following creatures:
+Mpsleep 2
+Mea $n &RFlassago the Red Dragon
+Mea $n &OTarion the Brass Dragon
+Mea $n &wBesylha the Silver Dragon
+Mea $n &GTipaskus the Green Dragon
+Mea $n &BFyremion the Blue Dragon
+Mea $n &YRhaevalrin the Gold Dragon
+Mea $n &cThe Leviathan&w
+mea $n &zThe Kraken&w
+mpsleep 2
+mea $n To learn more simply LOOK <NAME> such as LOOK FLASSAGO.
+mer $n $n examines a plaque near the statues.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1062
+Name     &WThe Last Reverie Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. 
+~
+#EXIT
+Direction west~
+ToRoom    1015
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1009 1 1062
+Reset D 0 1062 3 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) == elf
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+Mptransfer $n 1015
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1063
+Name     &WThe Glittering Spirit Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. 
+~
+#EXIT
+Direction east~
+ToRoom    1024
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1005 7 1063
+Reset D 0 1063 1 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) == gnome
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+Mptransfer $n 1024
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1064
+Name     &WThe Radiant Soul Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. 
+~
+#EXIT
+Direction southeast~
+ToRoom    1009
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1005 6 1064
+Reset D 0 1064 8 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) == aasimar
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+Mptransfer $n 1009
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1065
+Name     &WThe Infernal Soul Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. 
+~
+#EXIT
+Direction northwest~
+ToRoom    1018
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1005 6 1065
+Reset D 0 1065 7 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) == tiefling
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+mptransfer $n 1018
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1066
+Name     &WThe Eternal Friend Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. 
+~
+#EXIT
+Direction east~
+ToRoom    1008
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1001 2 1066
+Reset D 0 1066 1 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) == halfling
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+Mptransfer $n 1008
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1067
+Name     &WThe Glorious End Tavern&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. However, much of the furniture in this
+tavern has been destroyed by the drunk patrons who often get
+into fights here as they drink the day and night away.
+~
+#EXIT
+Direction north~
+ToRoom    1021
+Keywords  'damaged tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1007 1 1067
+Reset D 0 1067 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) != half-orc
+If race($n) == orc
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+Mptransfer $n 1021
+Endif
+Else
+Mea $n A couple of spirits raise a glass to you as you enter.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1068
+Name     &WThe Soulfire Tavern&w~
+Sector   indoors~
+Desc     &WThis tavern is quite busy and full of odd looking humanoids who
+are enjoying flagons of glowing ale. There is a fireplace that has
+an odd looking blue fire inside that offers cool colored light and
+no heat. All of the tables and wooden furniture are made from solid
+looking petrified wood. 
+~
+#EXIT
+Direction east~
+ToRoom    1017
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1005 7 1068
+Reset D 0 1068 1 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If race($n) == dragonborn
+Mpsleep 1
+Mea $n A couple of spirits raise a glass to you as you enter.
+Else
+Mea $n A strange force expels you from the tavern suddenly!
+Mer $n $n vanishes as $e tries to enter the tavern.
+Mptransfer $n 1023
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1069
+Name     &WA Small Arcane Library&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis is a small library with only a few rows of bookshelves that
+are built into the circular walls. In the middle of the room is 
+a long table for people to sit and read. A glowing suit of armor
+is display on the western wall and it seems to be very ancient
+looking.
+~
+#EXIT
+Direction south~
+ToRoom    1047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1070
+Name     &WAn Arcane Laboratory&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     The laboratory here is lit with glowing magical orbs that emit a
+cool blue light. There are multiple tables where some experimentation
+has been started. A fireplace with a blue fire can be found on the
+southern wall of this room. A cauldron has been hung inside and is
+currently cooking up something. 
+~
+#EXIT
+Direction up~
+ToRoom    1047
+Keywords  'trapdoor'~
+Flags     isdoor closed locked nopassdoor~
+#ENDEXIT
+
+Reset O 0 5222 1 1070
+Reset D 0 1070 4 2
+#ENDROOM
+
+#ROOM
+Vnum     1071
+Name     &WA Ritual Space&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThere is no furniture in this space save for a small wooden table
+that can be found in the center. The floors have been chalked with
+arcane symbols and a ring of candles defines a circle. This space
+is often used for rituals or arcane spells that require a special
+location in order to achieve something.
+~
+#EXIT
+Direction north~
+ToRoom    1074
+Keywords  'closet door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1047
+#ENDEXIT
+
+Reset D 0 1071 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1072
+Name     &WA Small Kitchen&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThe kitchen here is quite small with enough room for a cooking
+fireplace and a preparation table. The fire in the fireplace is
+an odd shade of blue and it offers no heat. Two windows here
+provide natural light and they are covered in intricate frost
+patterns.
+~
+#EXIT
+Direction west~
+ToRoom    1047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1073
+Name     &WA Small Study&w~
+Sector   indoors~
+Flags    nomagic tunnel safe norecall nosummon noastral nosupplicate~
+Stats    0 0 4 0 0 0
+Desc     The decor in this small study is made from polished petrified
+wood. There are several seats with velvet cushions along with
+a petrified wooden desk. A large stained glass window of a skeletal
+hand holding a white rose can be found on the southern wall of
+this space.
+~
+#EXIT
+Direction north~
+ToRoom    1047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1074
+Name     &WA Spell Components Closet&w~
+Sector   indoors~
+Desc     This is a small closet with many wooden shelves where spell
+components are kept. Many of the shelves are barren of any
+components while a few glass jars contain some odd looking
+ingredients. The smell of this closet is an odd mix of staleness
+with exotic herbs.
+~
+#EXIT
+Direction south~
+ToRoom    1071
+Keywords  'closet door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1074 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1075
+Name     &WThe Frostmeet Village Orphanage&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis large building consists of several levels and when one looks
+up the levels seem to go on forever. Each level has a bedroom for
+a small child sized humanoid to reside. On the first level of this
+building is a large fireplace and the front door that leads back
+to the village. There are several landscape paintings that help
+to warm up the decor of this area.
+~
+#EXIT
+Direction east~
+ToRoom    1022
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1004 5 1075
+Reset M 0 1004 5 1075
+Reset M 0 1004 5 1075
+Reset M 0 1004 5 1075
+Reset M 0 1004 5 1075
+Reset M 0 1003 1 1075
+Reset D 0 1075 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1076
+Name     &CA Large Bonfire&w~
+Sector   field~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+#EXIT
+Direction west~
+ToRoom    1050
+#ENDEXIT
+
+Reset O 0 1005 1 1076
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if ovnumroom(1005) > 0
+mpecho &CThe bonfire crackles and pops for a few moments.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1077
+Name     &WThe Frostmeet Village Bank&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThis building resembles a bank, but those that come here are offered
+money for free instead of using their own. There is a wooden counter
+made out of petrified wood where an odd looking humanoid can be found
+handing out money to other odd looking humanoids. All of the windows
+are frosted over and the frost has made intricate patterns on the glass.
+~
+#EXIT
+Direction east~
+ToRoom    1007
+Keywords  'bank door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1002 1 1077
+Reset D 0 1077 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1078
+Name     &WThe Home of Martivus&w~
+Sector   indoors~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &WThe entire of this cottage is decorated with various heads of animals
+hung as trophies and a large bearskin rug covers the cold stone floor.
+A large fireplace has a roaring blue fire that adds a cool light to
+the room and no additional heat. The windows of this cottage are frosted
+over with intricate frost patterns. A wooden rocking chair made of polished
+petrified wood.
+~
+#EXIT
+Direction west~
+ToRoom    1016
+Keywords  'cottage door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 1010 1 1078
+Reset D 0 1078 3 1
+#ENDROOM
+
+#ROOM
+Vnum     1079
+Name     &wA Congregation of Neutrality&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This section of the temple is dedicated to more neutral aligned
+gods and goddesses. The walls of this temple space are mostly
+grey colored to match with the neutrality. Rows of statues line
+the northern wall and each have a small altar in front of it.
+~
+#EXIT
+Direction south~
+ToRoom    1044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1080
+Name     &WA Congregation of Light&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This section of the temple is dedicated to the more light aligned gods
+and goddesses. The walls of this temple space are mostly white
+colored to match with the light. Rows of statues line the eastern
+wall and each have a small altar in front of it.
+~
+#EXIT
+Direction west~
+ToRoom    1044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1081
+Name     &zA Congregation of Darkness&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     This section of the temple is dedicated to the more dark aligned gods
+and goddesses. The walls of this temple space are mostly black
+colored to match with the darkness. Rows of statues line the western
+wall and each have a small altar in front of it.
+~
+#EXIT
+Direction east~
+ToRoom    1044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1082
+Name     &gA Congregation of Nature&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     &GThis part of the temple is completely covered in plants, but they
+are softly dusted with frost. The frost does not seem to hurt the plants
+and they seem to thrive here. Along the northern wall of this temple
+space is a row of statues depicting the gods and goddesses of nature
+and each have a small altar in front of it.
+~
+#EXIT
+Direction down~
+ToRoom    1044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1083
+Name     &wA Qylain Temple&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate nospirit~
+Desc     This part of the temple is used as a sacred space for those that
+worship the goddess Qylaith. A large statue of her can be found
+on the northern wall of this space along with an altar at the
+base of her feet. Candles adorn the walls here with their blue
+flames offering cool tinged light.
+~
+#EXIT
+Direction up~
+ToRoom    1044
+#ENDEXIT
+
+Reset M 0 1025 1 1083
+  Reset G 0 1787 1
+  Reset G 0 1888 1
+  Reset G 0 1886 1
+  Reset G 0 1097 1
+  Reset G 0 1890 1
+  Reset G 0 1099 1
+  Reset G 0 1887 1
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p pray symbol~
+Comlist   If deity($n) == qylaith
+If favor($n) >= 100
+Mea $n You close your eyes and start praying to your deity... 
+Mer $n $n closes $s eyes and begins to pray.
+Mpsleep 20
+Mea $n Your prayer is answered as a symbol appears in your hands!
+Mer $n A symbol suddenly appears in $ns hands suddenly!
+Mpfavor $n -50
+Mpoload 1217 1
+Silent mpforce $n get holysymbol
+Else
+Mea $n Your prayer goes unanswered... 
+Endif
+Else
+Mea $n Nothing happens.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if deity($n) == qylaith
+mea $n &wYou feel a cold breeze waft past you...&w
+else
+mea $n &wA strong force drives you back upstairs suddenly!&w
+mpforce $n u
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1099
+Name     &RFROSTMEET MOB HIDEAWAY&W~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     You are definitely in the wrong location. Please contact an admin to
+get out or head down into the village.
+~
+#EXIT
+Direction down~
+ToRoom    1003
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1024 1 1099
+#ENDROOM
+
+#ENDAREA

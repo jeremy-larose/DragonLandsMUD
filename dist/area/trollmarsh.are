@@ -1,0 +1,3895 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Troll Marsh~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       15 30 0 0
+Economy      0 13950000
+ResetMsg     &gYou hear the sounds of mud splashing nearby...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2200
+Keywords   troll wandering swamp large troll1~
+Short      &ga troll&w~
+Long       &gA large troll is here wandering around the swamp.&w
+~
+Desc       This giant has skin the color of mossy green, which helps it hide in
+the swamp around it. It has long limbs with very sharp claws and it
+is barely dressed. Its mouth reveals rows of sharp teeth, which are
+used to shred flesh from its victims. It lurks about the swamp
+hunting for food and sport.
+~
+Race       troll~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 8 0 14 0 0 0 0 0
+Stats2     8 10 40
+Stats3     2 6 4
+Stats4     3 8 3 0 0 0 6
+Attribs    18 7 9 13 20 7 13
+Saves      0 0 0 0 0 0
+Suscept    fire acid~
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   trollregen
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == halfling
+mea $n &GThe troll roars with rage at the sight of you!&w
+mer $n &GThe troll roars with rage as it sees $n&G!&w
+k $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 2201
+growl
+k halfling
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2206 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2201
+Keywords   seedling halfling hunter male~
+Short      &Oa halfling hunter&w~
+Long       &OA halfling dressed in leather and feathers is here hunting for trolls.&w
+~
+Desc       &OThis halfling is dressed in leather armor that has been softly dyed
+to match the surrounding of the swamp. This helps the young hunter
+hide from what he hunts - trolls. Feathers have been decoratively placed
+on the armor and denote the skill of the hunter. He has covered his
+face and exposed limbs in mud to help hide himself.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared sneak hide~
+Stats1     500 15 4 0 12 0 0 0 0 0
+Stats2     3 8 10
+Stats3     1 4 0
+Stats4     1 0 2 0 0 0 6
+Attribs    11 11 13 15 12 11 13
+Saves      0 0 0 0 0 0
+Speaks     halfling~
+Speaking   halfling~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   mudkick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 2200
+mpecho &RYou hear a warcry suddenly as something approaches!&w
+mpasound &RYou hear the sounds of a warcry coming from nearby!&w
+mudkick troll
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2209
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   if hasqbit($n) == 2208
+mpoload 2212 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2202
+Keywords   seedling halfling hunter female~
+Short      &Ya halfling hunter&w~
+Long       &YA halfling dressed in leather and feathers is here checking some tracks in the mud.&w
+~
+Desc       &YThis halfling is dressed in leather armor that has been softly dyed
+to match the surroundings of the swamp. This helps the young hunter
+hide from what she hunts - trolls. Feathers and beading has been used
+to decorate her armor and denotes her skill. She has covered her face
+and exposed limbs in mud to help hide herself.&w
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   infrared sneak hide~
+Stats1     760 15 4 0 12 0 0 0 0 0
+Stats2     3 8 10
+Stats3     1 4 0
+Stats4     1 0 2 0 0 0 6
+Attribs    11 11 13 15 12 11 13
+Saves      0 0 0 0 0 0
+Speaks     halfling~
+Speaking   halfling~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   mudkick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 2200
+mpecho &RYou hear a warcry suddenly as something approaches!&w
+mpasound &RYou hear the sounds of a warcry coming from nearby!
+mudkick troll
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2250
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2208
+mpoload 2212 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2203
+Keywords   seedling halfling hunter female Quisti grand~
+Short      &YQuisti&w~
+Long       &YA female halfling dressed in leather and feathers is here cleaning a blade.&w
+~
+Desc       &YThis halfling is dressed in leather armor that has been softly dyed to
+match the surroundings of the swamp. She has long reddish copper hair that
+is swept into a wild looking bun at the back of her head. Her armor is
+heavily decorated in feathers and beading, which denotes her as a hunter
+of high status. 
+~
+Lore       &YYou see a young redheaded halfling girl running from a giant creature
+that seeks to kill her...&w
+~
+Race       lightfoot-halfing~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   detect_hidden infrared sneak~
+Stats1     760 15 9 0 12 0 5 0 0 0
+Stats2     10 8 45
+Stats3     1 4 0
+Stats4     1 0 3 0 0 0 6
+Attribs    14 11 13 25 12 11 13
+Saves      0 0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     charm~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   mudkick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2222
+if hasqbit($n) != 2201
+if hasqbit($n) != 2202
+if hasqbit($n) != 2200
+if race($n) == lightfoot-halfli
+nod $n
+sayto $n Greetings friend. I am Quisti and I lead our people against
+sayto $n the greenies here in the marsh. If you are willing we could use
+sayto $n your aid against them. To do so would grant you the honor of
+sayto $n true warrior with our people.
+else
+emote stops cleaning a blade and stands up
+sayto $n Greetings. I am Quisti and I lead my clan as we hunt down
+sayto $n the Trolls that live here. If you are willing we could use
+sayto $n your aid. Are you able to help us?
+endif
+else
+sayto $n Welcome back. Have you defeated the greenie Chieftain yet?
+endif
+else
+bow $n
+sayto $n We will always be grateful for your help.
+endif
+else
+smile $n
+sayto $n We will always be grateful for your help.
+endif
+else
+mea $n The female halfling looks at you in disgust before departing.
+mer $n The female halfling looks at $n in disgust before departing.
+mpgoto 2299
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   if hasqbit($n) != 2222
+if hasqbit($n) != 2200
+emote bows her head and smiles
+sayto $n If you can help us stop the latest and powerful Troll Chieftain
+sayto $n we can have peace in the Great Prairie. This new Chieftain is trying
+sayto $n to raise an army of greenies against us. They've already wiped
+sayto $n out a smaller settlement just a few days ago.
+mpsleep 3
+sigh
+sayto $n They can be avenged. Bring me his head and I will reward you.
+mpsleep 3
+sayto $n Will you do this for me? Kill the Chieftain?
+else
+sayto $n You have already accepted my offer.
+endif
+else
+mea $n The female halfling looks at you in disgust before departing.
+mpgoto 2299
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2222
+if hasqbit($n) != 2200
+sayto $n Then it is agreed. Bring me the head and you will be rewarded.
+mpqset $n 2200
+mpsleep 3
+emote returns to cleaning her blades as she looks out in the forest
+else
+sayto $n You have already accepted my offer.
+endif
+else
+mea $n The female halfling looks at you in disgust before departing.
+mpgoto 2299
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if hasqbit($n) != 2202
+if ovnuminv(2201) == 1
+if hasqbit($n) == 2200
+if race($n) != lightfoot-halfli
+Mer $n Quisti and all the other Seedlings in the camp bow before $n.
+Mea $n Quisti and all the other Seedlings in the camp bow before you.
+sayto $n You have done us a great favor today. I bestow upon you a badge
+sayto $n of honor. You may now enter our homes as a true friend and this
+sayto $n badge will diminish any doubts. 
+mpsleep 3
+mpoload 2299 1
+give badge $n
+mpadvance $n 2000
+sayto $n May the gods watch over you.
+mpqset $n 2200
+mpqset $n 2201
+mpqset $n 2202
+mpjunk head
+else
+Mer $n Quisti and all the other Seedlings in the camp bow before $n.
+Mea $n Quisti and all the other Seedlings in the camp bow before you.
+sayto $n You are now a true warrior of our people. I now bestow upon
+sayto $n you a sacred badge of honor to wear proudly.
+mpoload 2299 1
+give badge $n
+Mpadvance $n 3000
+sayto $n May Shamis bless you, true friend.
+mpqset $n 2200
+mpqset $n 2201
+mpqset $n 2223
+mpjunk head
+endif
+else
+sayto $n This is not what I asked for...
+drop all
+endif
+else
+sayto $n Another Chieftain? The fools seem to crown anyone these days...
+bow $n
+endif
+else
+sayto $n This is not what I asked for...
+drop all
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2222
+if hasqbit($n) != 2200
+if hasqbit($n) != 2201
+mea $n The female halfling groans as she gets out her last words...
+sayto $n Hear my last words.. m-murderer.. you are cursed now. You
+sayto $n will never step foot in my homeland.. ever again!
+mpqset $n 2222
+mea $n &GYou feel your guts twist a bit as something passes over you.&w
+else
+mea $n The female halfling groans as she gets out her last words...
+sayto $n You t-traitor! You are c-cursed now! You will never step
+sayto $n foot in my h-homeland.. ever a-again!!
+mpqset $n 2222
+mpqset $n 2201
+mpqset $n 2202
+mea $n &GYou feel your guts twist a bit as something passes over you.&w
+endif
+else
+mea $n The female halfling groans as she gets out her last words...
+sayto $n You t-traitor! You are c-cursed now! You will never step
+sayto $n foot in my h-homeland.. ever a-again!!
+mpqset $n 2200
+mpqset $n 2222
+mea $n &GYou feel your guts twists a bit as something passes over you.&w
+endif
+else
+mea $n The halfling spits at you as her last act before dying!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2298
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2204
+Keywords   troll chieftain swamp huge troll1~
+Short      &Ga troll chieftain&w~
+Long       &GA huge troll is here sitting on a rock like throne.&w
+~
+Desc       This giant has skin the color of mossy green, which helps it hide in
+the swamp around it. It has long limbs with very sharp claws and it
+is barely dressed. Its mouth reveals rows of sharp teeth, which are
+used to shred flesh from its victims. This troll seems to be very
+comfortable on a rock like throne and barking orders at the other trolls.
+~
+Race       troll~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -1000 1 10 0 14 0 0 0 0 0
+Stats2     9 10 75
+Stats3     2 8 4
+Stats4     3 0 4 0 0 0 6
+Attribs    18 7 9 13 20 7 13
+Saves      0 0 0 0 0 0
+Speaks     giant~
+Speaking   giant~
+Immune     charm~
+Suscept    fire acid~
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   trollregen
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mea $n &RYou swiftly sever the head of the chieftain after he dies.
+mer $n &R$n switftly severs the head of the chieftain after he dies.
+mpoload 2201 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   scowl 
+say Intruder! Kill it!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2205
+Keywords   troll guard~
+Short      &ga troll guard&w~
+Long       &gA large troll is here guarding the area from intruders.&w
+~
+Desc       This giant has skin the color of mossy green, which helps it hide in
+the swamp around it. It has long limbs with very sharp claws and it
+is barely dressed. Its mouth reveals rows of sharp teeth, which are
+used to shred flesh from its victims. It lurks around this giant rock
+as it searches for intruders.
+~
+Race       troll~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -1000 1 8 0 14 0 0 0 0 0
+Stats2     8 10 40
+Stats3     2 6 4
+Stats4     3 0 3 0 0 0 6
+Attribs    18 7 9 13 20 7 13
+Saves      0 0 0 0 0 0
+Speaks     giant~
+Speaking   giant~
+Suscept    fire acid~
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   trollregen
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2206
+Keywords   troll mutated freak two heads wandering forest~
+Short      &ga troll freak&w~
+Long       &gA troll with two heads is here lurking about the forest.&w
+~
+Desc       This giant has skin the color of mossy green, which helps it hide in
+the swamp around it. It has long limbs with very sharp claws and it
+is barely dressed. Something has happened to this troll as a deep scar
+around its neck reveals that it was also beheaded. From the neck now
+sit are two large troll heads, which were freakishly regenerated from
+the strike.
+~
+Race       troll~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 9 0 14 0 0 0 0 0
+Stats2     8 10 65
+Stats3     2 8 4
+Stats4     3 0 3 0 0 0 6
+Attribs    18 7 9 13 20 7 13
+Saves      0 0 0 0 0 0
+Suscept    fire acid~
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   trollregen
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2207
+Keywords   troll mutated freak four arms wandering forest~
+Short      &ga troll freak&w~
+Long       &gA troll with two heads is here lurking about the forest.&w
+~
+Desc       This giant has skin the color of mossy green, which helps it hide in
+the swamp around it. It has long limbs with very sharp claws and it
+is barely dressed. Something has happened to this troll as it has managed
+to sprout two extra arms. There are scars where it is evident the original
+pair were severed and something happened when it regenerated.
+~
+Race       troll~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 9 0 14 0 0 0 0 0
+Stats2     8 10 65
+Stats3     2 8 4
+Stats4     3 0 4 0 0 0 6
+Attribs    18 7 9 13 20 7 13
+Saves      0 0 0 0 0 0
+Suscept    fire acid~
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   trollregen
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2207 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2208
+Keywords   troll wandering forest large troll2~
+Short      &ga troll&w~
+Long       &gA large troll is here wandering the forest.&w
+~
+Desc       This giant has skin the color of mossy green, which helps it hide in
+the swamp around it. It has long limbs with very sharp claws and it
+is barely dressed. Its mouth reveals rows of sharp teeth, which are
+used to shred flesh from its victims. It has several scars on its body
+as it lurks about the forest here.
+~
+Race       troll~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 9 0 14 0 0 0 0 0
+Stats2     8 10 55
+Stats3     2 7 4
+Stats4     3 0 3 0 0 0 6
+Attribs    18 7 9 13 20 7 13
+Saves      0 0 0 0 0 0
+Suscept    fire acid~
+Attacks    bite~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   trollregen
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2209
+Keywords   giant crocodile huge beast swimming pond~
+Short      &ga giant crocodile&w~
+Long       &gA huge beast can be seen swimming in the dark waters of the pond here.&w
+~
+Desc       &gThis beast is quite huge and swims about the waters of the pond looking
+for food. It has a long head, four legs, and a long tail. Its body is
+covered in scales that offer it protection.
+~
+Race       reptile~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak aqua_breath~
+Stats1     0 1 9 0 15 0 0 0 0 0
+Stats2     9 12 27
+Stats3     3 10 5
+Stats4     4 1 2 0 0 0 6
+Attribs    21 2 10 9 17 7 13
+Saves      0 0 0 0 0 0
+Attacks    tail~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2203 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2210
+Keywords   odd woman covered mud looking~
+Short      &Gan odd woman&w~
+Long       &GAn odd looking woman covered in mud is here looking around the swamp.&w
+~
+Desc       &GThis woman is dressed in simple clothing that is covered in layers
+of thick mud. She walks about the swamp barefoot looking for something.
+Her frizzy brown hair is very thick and acts like a cloud that floats
+about her as she moves about.
+~
+Race       magical~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   infrared truesight~
+Stats1     -400 50 0 0 10 0 100 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 6 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2212
+if hasqbit($n) != 2210
+if hasqbit($n) != 2211
+cackle
+sayto $n Hello you! Would you like to help me find things? Yes?
+else
+giggle $n
+endif
+else
+wink $n
+endif
+else
+scowl $n
+mea $n &gAt the sight of you the odd woman runs off into the swamp!&w
+mer $n &gAt the sight of &g$n&g the odd woman runs off into the swamp!&w
+mpgoto 2299
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2210
+if hasqbit($n) != 2211
+if hasqbit($n) != 2203
+clap
+sayto $n Wonderful! Wonderful!!! Find me bubbleweed. It grows near a
+sayto $n a dark pond here...
+mpqset $n 2211
+mpqset $n 2203
+else
+drop all
+giggle $n
+endif
+else
+giggle $n
+drop all
+endif
+else
+giggle $n
+drop all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if hasqbit($n) == 2203
+if ovnuminv(3557) == 1
+cheer
+sayto $n Yes! Yes yes yes! Now find me the scale of a crocodile. I think
+sayto $n I saw one swimming in that pond where you found this herb...
+mpqset $n 2204
+mpqset $n 2203
+mpjunk bubbleweed
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if ovnuminv(2203) == 1
+if hasqbit($n) == 2204
+sing
+sayto $n How lovely it is! Now! Find me some greenie flesh! It will stink!
+mpqset $n 2204
+mpqset $n 2205
+mpjunk scale
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if hasqbit($n) == 2205
+if ovnuminv(2206) == 1
+emote cackles after taking a big whiff of the troll flesh
+sayto $n Glorious! Now find me the wings of a swamp pixie! She
+sayto $n likes to hide in the forest during the day... lazy beast!
+mpqset $n 2205
+mpqset $n 2206
+mpjunk flesh
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if hasqbit($n) == 2206
+if ovnuminv(2211) == 1
+emote giggles as she dangles the wings for a few moments
+sayto $n Precious babies these are! I am now wanting you to find
+sayto $n the head of a greenie king man! Sits all pretty on his rock!
+mpqset $n 2206
+mpqset $n 2207
+mpjunk wings
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if hasqbit($n) == 2207
+if ovnuminv(2201) == 1
+emote sighs as she kisses the head on its cheek
+sayto $n Who is high and mighty now? Hmm? Good work, dearie. Now
+sayto $n I seek a scalp of a tiny greenie hunter. They hunt in these parts
+sayto $n during the night.. sneaky little seeds that they are!
+mpqset $n 2207
+mpqset $n 2208
+mpjunk head
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if hasqbit($n) == 2208
+if ovnuminv(2212) == 1
+cackle
+sayto $n Pretty! So pretty! Now to finish you will need to get me a
+sayto $n greenie eye! The best ones come from those that are very
+sayto $n mutated! Such pretty eyes they have!
+mpqset $n 2208
+mpqset $n 2209
+mpjunk scalp
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives~
+Comlist   if hasqbit($n) == 2209
+if ovnuminv(2207) == 1
+emote slaps the muddy ground with glee as she looks at the eye
+sayto $n You are lovely! Thank you so much for helping me. Now my
+sayto $n spell shall surely not fail this time!
+mpqset $n 2209
+mpqset $n 2211
+mpqset $n 2210
+mpadvance $n 1000
+mpjunk eye
+mpsleep 3
+sayto $n Now I must return to my sisters in our cavern home. Farewell!
+Mpecho &GThe odd woman slowly changes into a greenish colored hag
+Mpecho &Gbefore she disappears in a cloud of light and dark smoke!
+Mpgoto 2299
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate woman~
+Comlist   if deception($n) >= 16
+mea $n You notice that this odd woman is not what she appears to be...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p no~
+Comlist   if hasqbit($n) != 2211
+if hasqbit($n) != 2210
+if hasqbit($n) != 2212
+growl
+mpqset $n 2212
+sayto $n What! How dare you reject me! I shall show you what
+sayto $n happens to those that reject my wishes! Behold!
+Mpecho &GThe odd woman is bathed in light as she transforms into
+Mpecho &Ga green hag! The hag smiles sinisterly before casting a spell...
+Mpmload 2212
+Mpgoto 2299
+Mpsleep 3
+Mpat 2201 mpforce hag c waves of exhaustion
+else
+endif
+else
+wink $n
+endif
+else
+giggle $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p why~
+Comlist   giggle
+sayto $n Because I need things to help me and my sisters...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p sisters~
+Comlist   sayto $n Oh yes! My sisters are lovely! We live together and such.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2201
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   emote wanders off into the swamp singing a little song
+mpgoto 2299
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2211
+Keywords   swamp pixie small flying female~
+Short      &ga swamp pixie&w~
+Long       &gA pixie dressed in mud and swamp flowers flies about here.&w
+~
+Desc       &GThis tiny creature is dressed in mud and flowers that create a 
+makeshift garment on her tiny body. Her shimmering wings match the
+surrounding colors of the swampy forest, which allows her to hide
+from most creatures.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Affected   sneak hide flying truesight~
+Stats1     400 1 2 0 10 0 0 0 0 0
+Stats2     1 5 1
+Stats3     1 2 1
+Stats4     2 0 1 0 0 0 6
+Attribs    2 10 14 20 8 16 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 2299
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2261
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2211 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2212
+Keywords   green hag dark fey dark robe~
+Short      &Ga green hag&w~
+Long       &GA green hag is here dressed in a flowing dark robe.&w
+~
+Desc       &GThis dark fey has bright green skin and a haggish appearance. Her nose
+is long and crooked with many bumps on it. She is dressed in a long
+flowing dark robe that shimmers purple in the light.
+~
+Race       magical~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   truesight~
+Stats1     -700 1 8 0 16 0 10 0 0 0
+Stats2     11 8 35
+Stats3     2 8 4
+Stats4     2 6 2 0 0 0 6
+Attribs    18 13 14 12 16 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2213
+Keywords   will o wisp ball light~
+Short      &Wa will o' wisp&w~
+Long       &WA floating ball of light is here dancing along the waters of the pond.&w
+~
+Desc       &WThis ball of light seems harmless as it floats along the waters of
+the pond here. It glows with a bright white light...&w
+~
+Race       undead~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   invisible detect_hidden infrared flying~
+Stats1     -1000 1 5 0 10 0 0 0 0 0
+Stats2     1 1 22
+Stats3     2 8 0
+Stats4     0 13 1 0 0 0 6
+Attribs    1 13 14 28 10 11 13
+Saves      0 0 0 0 0 0
+Speaking   magical~
+Resist     fire cold acid necrotic nonmagic thunder~
+Immune     lightning poison sleep charm paralysis psychic~
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   mpgoto 2270
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2299
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2214
+Keywords   shambling mound large bush~
+Short      &ga shambling mound&w~
+Long       &gA rather large bush is here with thick vines and foliage.&w
+~
+Desc       &gThis large bush seems to be very alive. Every so often its vines move
+and foliage seems to sway as if looking for something.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     0 1 8 0 16 0 0 0 0 0
+Stats2     16 10 48
+Stats3     2 8 4
+Stats4     2 12 2 0 0 0 6
+Attribs    18 5 10 8 16 5 13
+Saves      0 0 0 0 0 0
+Resist     fire cold~
+Immune     lightning charm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2299
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     2200
+Keywords crude looking shortsword~
+Type     weapon~
+Short    &Oa crude shortsword&w~
+Long     &OA crude looking shortsword has been left here.&w~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 1
+Stats    2 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2201
+Keywords head troll chieftain~
+Type     trash~
+Short    &Ra troll chieftain's head&w~
+Long     &RThe head of a troll has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    25 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2202
+Keywords greatclub giant~
+Type     weapon~
+Short    &Oa giant greatclub&w~
+Long     A greatclub has been left here.~
+Flags    inventory heavy~
+WFlags   take twohand~
+Values   12 1 12 2 19 0
+Values2  0 3
+Stats    10 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2203
+Keywords crocodile scale piece~
+Type     trash~
+Short    &ga piece of crocodile scale&w~
+Long     &gA piece of crocodile scale has been left here.&w~
+WFlags   take onehand~
+Values   25 0 0 0 0 0
+Values2  0 2
+Stats    1 2 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2204
+Keywords small campfire~
+Type     fire~
+Short    &Ra small campfire&w~
+Long     &RA small campfire is here offering warmth.&w~
+Values   35 0 0 0 0 0
+Values2  0 1
+Stats    10 10 1 1 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2205
+Keywords rain water basin container wooden rain water~
+Type     drinkcon~
+Short    &Oa rain water basin&w~
+Long     &OA wooden container is here catching rain water for drinking.&w~
+Values   100 100 0 0 0 0
+Values2  0 2
+Stats    45 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2206
+Keywords troll flesh stinky piece~
+Type     trash~
+Short    &ga stinky piece of troll flesh&w~
+Long     &gA stinky piece of flesh has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2207
+Keywords troll eye squishy looking~
+Type     trash~
+Short    &ga squishy looking troll's eye&w~
+Long     &gA squishy looking eye has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2211
+Keywords swamp pixie wings pair tiny shimmering~
+Type     trash~
+Short    &ga pair of swamp pixie wings&w~
+Long     &gA pair of tiny shimmering wings have been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   25 0 0 0 0 0
+Values2  0 0
+Stats    1 2 10 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2212
+Keywords bloody scalp halfling hunter seedling~
+Type     trash~
+Short    &ra halfling hunter's scalp&w~
+Long     &rA bloody looking scalp has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2299
+Keywords seedling hunting badge honor feathers beads~
+Type     treasure~
+Short    &ga hunting badge of honor&w~
+Long     &gA badge covered in feathers and beads has been left here.&w~
+Lore   &gYou see someone take down a powerful troll and was rewarded this
+badge in honor of defeating that monster...&w
+~
+Flags    magic~
+WFlags   take arms belt onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 9
+Affect       -1 -1 1 18 0
+#EXDESC
+ExDescKey    badge~
+ExDesc       &YThis badge has been crafted with numerous feathers of various colors
+along with beading on a knitted band. It is quite decorative and shows
+a high level of skill in its construction.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum     2200
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Flags    nomob~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     overland~
+MapX      242
+MapY      574
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2201
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2201
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Flags    nomob~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2200
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2202
+#ENDEXIT
+
+Reset M 0 2210 1 2201
+#ENDROOM
+
+#ROOM
+Vnum     2202
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Stats    0 0 0 0 20 0
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot. A large rotting oak is here with most of its
+limbs broken off due to being hit by lightning, wind, and rot.
+~
+Perdesc  &zYou spot a lightning struck &woak&z tree nearby here...
+~
+#EXIT
+Direction north~
+ToRoom    2201
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2203
+#ENDEXIT
+
+#EXDESC
+ExDescKey    oak~
+ExDesc       &zThe oak tree here has been struck by lightning a long time ago. Its
+limbs have exploded all over the area and now the tree is rotting away.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate oak~
+Comlist   if nature($n) >= 14
+mea $n You notice a few twigs here from the tree after it was hit
+mea $n by lightning. Perhaps you can take some of them (HARVESTTWIG).
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvesttwig~
+Comlist   if nature($n) >= 15
+mea $n You manage to get a twig from the singed oak tree.
+mpoload 1904 1
+silent mpforce $n get twig
+else
+mea $n You fail to find any twigs here.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2203
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction south~
+ToRoom    2204
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2202
+#ENDEXIT
+
+Reset M 0 2214 1 2203
+#ENDROOM
+
+#ROOM
+Vnum     2204
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2203
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2205
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2216
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2205
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction south~
+ToRoom    2206
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2204
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2206
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2205
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2207
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2207
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2206
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2208
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2208
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2207
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2209
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2209
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2208
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2210
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2210
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2211
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2284
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2209
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2211
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2212
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2285
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2210
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2212
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2213
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2211
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2213
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2214
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2212
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2214
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2215
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2213
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2215
+Name     &wA Stone Circle&w~
+Sector   swamp~
+Flags    nomob safe noastral~
+Desc     &GThis area has been cleared of all long grasses from the surrounding
+marsh to allow the stone circle to stand prominent. The circle is
+comprised of seven large stone slabs that are covered in swamp moss
+and vines. The middle of the circle has a floor made of set stones that
+create a spiral patterns towards the middle of the circle itself where
+a small stone altar is present. This circle seems very ancient and almost
+as old as the marsh itself.
+~
+#EXIT
+Direction south~
+ToRoom    2214
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+mea $n &BYou see glowing protective sigils on the stone slabs around
+mea $n &Bthe circle...
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate circle~
+Comlist   if history($n) >= 18
+mea $n You recall from history lessons that this is an ancient druidic
+mea $n circle used by druidic orders to gain insight into swamp magic
+mea $n and teachings. This circle may seem abandoned, but it is 
+mea $n still frequented by druids and rangers alike today.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if class($n) != ranger
+if class($n) == druid
+mea $n &GYou feel a surge of energy as you approach the circle.
+else
+endif
+else
+mea $n &GYou feel a surge of energy as you approach the circle.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2216
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2204
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2217
+#ENDEXIT
+
+Reset M 0 2200 3 2216
+Reset M 0 2200 3 2216
+Reset M 0 2200 3 2216
+#ENDROOM
+
+#ROOM
+Vnum     2217
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2218
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2216
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2221
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2218
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction south~
+ToRoom    2217
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2219
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2219
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2218
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2220
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2220
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2219
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2221
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2221
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2217
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2222
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2220
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2222
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2223
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2221
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2223
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction south~
+ToRoom    2224
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2222
+#ENDEXIT
+
+Reset M 0 2200 6 2223
+Reset M 0 2200 6 2223
+Reset M 0 2200 6 2223
+#ENDROOM
+
+#ROOM
+Vnum     2224
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2223
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2225
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2225
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2224
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2226
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2225
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2227
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2227
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction south~
+ToRoom    2228
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2228
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2227
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2229
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2241
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2229
+Name     &OBefore a Swampy Forest&w~
+Sector   swamp~
+Desc     The long and vision obscuring grasses of the marsh diminish suddenly
+as a small swampy forest appears ahead. The forest is comprised of
+some decaying, skeletal like trees along with a few that are managing
+to thrive in this area of decay. The marsh with its long grasses and
+muddy ground continues on to the south while the forest lays ahead
+to the east.
+~
+#EXIT
+Direction north~
+ToRoom    2228
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2230
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2230
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction north~
+ToRoom    2229
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2231
+#ENDEXIT
+
+Reset M 0 2208 5 2230
+#ENDROOM
+
+#ROOM
+Vnum     2231
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction east~
+ToRoom    2232
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2230
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2232
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction south~
+ToRoom    2233
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2231
+#ENDEXIT
+
+Reset M 0 2208 4 2232
+Reset M 0 2208 4 2232
+#ENDROOM
+
+#ROOM
+Vnum     2233
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction north~
+ToRoom    2232
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2259
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2234
+#ENDEXIT
+
+Reset M 0 2208 6 2233
+#ENDROOM
+
+#ROOM
+Vnum     2234
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction east~
+ToRoom    2233
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2260
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2235
+#ENDEXIT
+
+Reset M 0 2208 7 2234
+Reset M 0 2207 1 2234
+#ENDROOM
+
+#ROOM
+Vnum     2235
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction east~
+ToRoom    2234
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2236
+#ENDEXIT
+
+Reset M 0 2208 2 2235
+#ENDROOM
+
+#ROOM
+Vnum     2236
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction north~
+ToRoom    2237
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2235
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2237
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction south~
+ToRoom    2236
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2238
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2238
+Name     &OBefore a Swampy Forest&w~
+Sector   swamp~
+Desc     The long and vision obscuring grasses of the marsh diminish suddenly
+as a small swampy forest appears ahead. The forest is comprised of
+some decaying, skeletal like trees along with a few that are managing
+to thrive in this area of decay. The marsh with its long grasses and
+muddy ground continues on to the south while the forest lays ahead
+to the east.
+~
+#EXIT
+Direction east~
+ToRoom    2237
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2249
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2239
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2240
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2246
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2240
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2242
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2241
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2239
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2245
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2241
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2228
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2240
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2242
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2243
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2240
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2243
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction south~
+ToRoom    2242
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2244
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2244
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot. There is a small patch of decaying trees here
+that look like skeletons swaying in the wind.
+~
+#EXIT
+Direction east~
+ToRoom    2243
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2245
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2240
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2246
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2254
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2246
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2245
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2239
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2247
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2247
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2246
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2248
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2252
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2248
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2247
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2249
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2250
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2249
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2238
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2248
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2250
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2251
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2248
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2251
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Stats    0 0 0 0 16 0
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+Perdesc  &wYou spot a large &Wboulder&w to west of here, which towers over the weeds.
+~
+#EXIT
+Direction south~
+ToRoom    2250
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2258
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate boulder~
+Comlist   if investigation($n) >= 16
+if mobinarea(2204) == 1
+mea $n You crouch in the weeds and try to spot more details about
+mea $n the boulder, which seems out of place here in the marsh. You
+mea $n notice that the boulder is home to a small group of trolls.
+mea $n You see one troll sitting on the top of the boulder while
+mea $n a small group seems to guard him.
+mer $n &g$n crouches low as $e investigates something nearby.&w
+else
+mea $n You crouch in the weeds and try to spot more details about
+mea $n the boulder. It seems very quiet over there with no sort of
+mea $n activity.
+mer $n &g$n crouches low as $e investigates something nearby.&w
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2252
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2253
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2257
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2247
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2253
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2254
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2252
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2254
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2245
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2253
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2255
+#ENDEXIT
+
+Reset M 0 2200 9 2254
+Reset M 0 2200 9 2254
+Reset M 0 2200 9 2254
+#ENDROOM
+
+#ROOM
+Vnum     2255
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot. A small path in the marsh leads north from here
+and out of the thickest part of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    2256
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2254
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2257
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2256
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Flags    nomob~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot. A path leading north leads out of the thickest
+part of the surrounding marsh.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     overland~
+MapX      225
+MapY      600
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2255
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2257
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2255
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2252
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2258
+Name     &OBefore a Large Boulder&w~
+Sector   swamp~
+Flags    nomob~
+Desc     &wThe surrounding marsh has grown around a large boulder that must have
+rolled down the mountainside nearby a very long time ago. Small carvings
+into the side of the boulder serve as steps to a seat like spot on the
+top. This boulder is used by the local trolls of the marsh as a throne
+for which their leader resides. 
+~
+#EXIT
+Direction east~
+ToRoom    2251
+#ENDEXIT
+
+Reset M 0 2204 1 2258
+  Reset E 0 2202 1 28
+Reset M 0 2205 3 2258
+Reset M 0 2205 3 2258
+Reset M 0 2205 3 2258
+#ENDROOM
+
+#ROOM
+Vnum     2259
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction north~
+ToRoom    2233
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2266
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2260
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2260
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction north~
+ToRoom    2234
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2259
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2265
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2261
+#ENDEXIT
+
+Reset M 0 2206 1 2260
+#ENDROOM
+
+#ROOM
+Vnum     2261
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction east~
+ToRoom    2260
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2262
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2262
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction east~
+ToRoom    2261
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2263
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2263
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction north~
+ToRoom    2262
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2264
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2264
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction east~
+ToRoom    2265
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2263
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2265
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off.
+~
+#EXIT
+Direction north~
+ToRoom    2260
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2266
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2264
+#ENDEXIT
+
+Reset M 0 2207 1 2265
+#ENDROOM
+
+#ROOM
+Vnum     2266
+Name     &gA Swampy Forest&w~
+Sector   forest~
+Desc     This forest has a haunting vibe as the trees here are a combination
+of rotting skeletal like trees and some that are managing to thrive
+in this harsh environment. The ground here is muddy, but also covered
+in moss, vines, and other creeping foliage. There are few birds and
+animals here as if something has driven them off. A small path down a
+hillside towards the south leads towards a very dark looking pond.
+~
+#EXIT
+Direction north~
+ToRoom    2259
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2267
+Flags     climb nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2265
+#ENDEXIT
+
+Reset M 0 2208 6 2266
+#ENDROOM
+
+#ROOM
+Vnum     2267
+Name     &cBefore a Dark Pond&w~
+Sector   swamp~
+Flags    nomob~
+Desc     This is a small shoreline area at the base of a steep hill towards the
+north. The hillside is very hard to climb down with long roots and
+vines covering it. The pond here is very dark in terms of color of the
+water. The pond itself doesn't seem deep in some parts and in others
+it seems to go very low. Some long bluish colored grasses can be seen
+growing along the edge of the pond, which serves as nutrients for it. A
+small path can be seen to a spot easily concealed under the ledge of
+a hill. 
+~
+#EXIT
+Direction north~
+ToRoom    2266
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2270
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2268
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2298
+#ENDEXIT
+
+Reset O 0 3557 1 2267
+#ENDROOM
+
+#ROOM
+Vnum     2268
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction east~
+ToRoom    2267
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2269
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2269
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction north~
+ToRoom    2268
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2270
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2271
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2270
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Flags    nomob~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction north~
+ToRoom    2267
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2271
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2269
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    2272
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2271
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction north~
+ToRoom    2270
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2272
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2278
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2269
+#ENDEXIT
+
+Reset M 0 2209 3 2271
+#ENDROOM
+
+#ROOM
+Vnum     2272
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction east~
+ToRoom    2273
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2277
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2271
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2274
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    2270
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2273
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction north~
+ToRoom    2274
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2276
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2272
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2275
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2274
+Name     &cA Dark Pond&w~
+Sector   water_noswim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others. The water here is especially deep and very dark in color.
+~
+#EXIT
+Direction east~
+ToRoom    2275
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2273
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2272
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2275
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction west~
+ToRoom    2274
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2273
+#ENDEXIT
+
+Reset M 0 2209 2 2275
+#ENDROOM
+
+#ROOM
+Vnum     2276
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction north~
+ToRoom    2273
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2277
+#ENDEXIT
+
+Reset M 0 2209 1 2276
+#ENDROOM
+
+#ROOM
+Vnum     2277
+Name     &cA Dark Pond&w~
+Sector   water_swim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others.
+~
+#EXIT
+Direction north~
+ToRoom    2272
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2276
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2278
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2278
+Name     &cA Dark Pond&w~
+Sector   water_noswim~
+Desc     The pond is quite dark and the water has a blackish tone when played
+with. The pond is as dark as it is due to the amount of decaying tree
+limbs that are in it. The pond is quite deep in some spot and shallow
+in others. The water here is especially deep and very dark in color.
+~
+#EXIT
+Direction north~
+ToRoom    2271
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2277
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2279
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2280
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2280
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2281
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2279
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2281
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2282
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2280
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2282
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2283
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2281
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2283
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2284
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2292
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2282
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2284
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2285
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2283
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2210
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2285
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2286
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2284
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2211
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2286
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2287
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2285
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2287
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction south~
+ToRoom    2288
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2286
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2288
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2287
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2290
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2289
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2289
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2288
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2291
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2290
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2288
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2295
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2291
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2291
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2290
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2294
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2292
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2289
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2292
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction east~
+ToRoom    2291
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2293
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2283
+#ENDEXIT
+
+Reset M 0 2200 12 2292
+Reset M 0 2200 12 2292
+Reset M 0 2200 12 2292
+#ENDROOM
+
+#ROOM
+Vnum     2293
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2292
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2294
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2294
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2291
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2295
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2293
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2295
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot.
+~
+#EXIT
+Direction north~
+ToRoom    2290
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2296
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2294
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2296
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot. A small path to the southwest leads out of the
+thickest part of the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    2295
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2297
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2297
+Name     &OThe Troll Marsh&w~
+Sector   swamp~
+Flags    nomob~
+Desc     This marsh seems to go on forever as it engulfs a huge portion of the
+great prairie like a plague. There are few areas with thriving trees
+as most are decaying due to the marsh. The weeds are high here which
+makes it hard to see around the area. The sounds of mud being treaded
+can be heard for many miles. The smell of the marsh is very pungent and
+reeks of decay and rot. A small path so the south leads out of the thick
+part of the marsh.
+~
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      255
+MapY      603
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2296
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2298
+Name     &OA Hunting Campsite~
+Sector   swamp~
+Flags    safe~
+Desc     This site has been established under the curved ledge of a hill, which
+creates a small pocket of space below it. Above you is a lengthy network
+of roots from the plants growing above you. This site has been turned into
+a hunting campsite with small tents, a campfire, and places to sit.
+~
+#EXIT
+Direction southwest~
+ToRoom    2267
+#ENDEXIT
+
+Reset M 0 2203 1 2298
+Reset O 0 2204 1 2298
+Reset O 0 2205 1 2298
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If isaffected($n) == detect_magic
+mpsleep 3
+mea $n &BYou see glowing protective sigils on some trinkets hung
+mea $n &Ball about the campsite here...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2299
+Name     &RThe Troll Marsh Mob Storage&w~
+Sector   city~
+Flags    nomob nomagic safe norecall noastral nosupplicate~
+Desc     You do not belong in here. Please contact the admin team in order to
+get out. Thanks!
+~
+Reset M 0 2213 1 2299
+Reset M 0 2201 1 2299
+  Reset E 0 2200 1 26
+Reset M 0 2202 1 2299
+  Reset E 0 2200 1 26
+#ENDROOM
+
+#ENDAREA

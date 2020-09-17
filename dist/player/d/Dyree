@@ -1,0 +1,300 @@
+#PLAYER
+Version      5
+Name         Dyree~
+Sex          1
+Class        6
+Multiclass 6 1
+Race         0
+Adjective    a muscular, dark-haired male human~
+Age          0 23 4 677
+Languages    1 1
+Level        2
+Played       2861
+Room         2580
+HpManaMove   37 27 100 100 40 40
+Gold         12
+Silver       0
+Copper       21
+Exp          2850
+Height          60
+Weight          142
+Act          1644168776
+Position     113
+Style     2
+Practice     0
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    168
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -2102
+Speechcolor  6
+Mentalstate  0
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Title         the Not set.~
+Flags        32768
+PKills       0
+PDeaths      0
+MKills       2
+MDeaths      0
+IllegalPK    0
+Timezone     -1
+AttrPerm     16 13 11 14 15 9 11
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 
+Condition    0 48 3 10
+Background    0
+Greeted        Saeris~
+Site         75.38.141.125
+Tongue       100 'common'
+Killed       996 2
+Coordinates	-1 -1 -1 -1
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+Qbit        904 &RNewbie: You learned about the history of the planes (HELP AERIX).&w~
+Qbit        905 &RNewbie: You learned about descriptions (HELP DESC).&w~
+Qbit        906 &RNewbie: You learned about adjectives (HELP ADJECTIVE).&w~
+Qbit        907 &RNewbie: You learned about alignments (HELP ALIGNMENT).&w~
+Qbit        908 &RNewbie: You learned about weapons and weapon types (HELP WEAPONS).&w~
+Qbit        909 &RNewbie: You learned about tools and tool kits (HELP TOOLKITS).&w~
+Qbit        911 &RNewbie: You learned about armor and armor types (HELP ARMOR).&w~
+Qbit        910 &RNewbie: You learned about banking (HELP BANKING).&w~
+Qbit        913 &RNewbie: You learned how to use an Inn (HELP INN).&w~
+Qbit        912 &RNewbie: You learned how to practice new spell/skills/languages (HELP PRACTICE).&w~
+Qbit        914 &RNewbie: You learned about deities and the benefits of faith (HELP DEITIES).&w~
+Qbit        902 &RNewbie: You learned about fighting and spells from a wise wizard.&w~
+Qbit        903 &RNewbie: You won your first battle against a kobold on a rocky path!~
+Qbit        901 &RNewbie: You helped a treasure hunter and were rewarded for aiding her.&w~
+Qbit        2501 &WYou are officially enrolled at the &RNe&Yw D&zark&Whave&zn C&Yolle&Rge&W of Adventuring.~
+Qbit        2502 &RYou are a student resident of the Swords Dormitory.&w~
+Qbit        2506 &WYour first course is with Professor Opal. Check your textbook for the schedule.&w~
+End
+
+#OBJECT
+Vnum         118
+WearLoc      28
+Level        1
+Coords	-1 -1 -1
+Values       12 2 12 1 -1 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         139
+WearLoc      5
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      3 2
+End
+
+#OBJECT
+Vnum         157
+WearLoc      6
+Level        1
+Coords	-1 -1 -1
+Values       3 3 0 0 0 0
+Values2      10 2
+End
+
+#OBJECT
+Vnum         853
+WearLoc      1
+Coords	-1 -1 -1
+Values2      0 2
+End
+
+#OBJECT
+Vnum         2519
+Level        1
+Coords	-1 -1 -1
+Values       20 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2511
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         2520
+Level        1
+Coords	-1 -1 -1
+Values       48 121 121 121 0 0
+Values2      0 2
+Spell 1      'cure critical wounds'
+Spell 2      'cure critical wounds'
+Spell 3      'cure critical wounds'
+End
+
+#OBJECT
+Nest         1
+Vnum         2521
+Level        1
+Coords	-1 -1 -1
+Values       26 41 -1 -1 0 0
+Values2      0 2
+Spell 1      'barkskin'
+End
+
+#OBJECT
+Nest         1
+Vnum         2522
+Level        1
+Coords	-1 -1 -1
+Values       24 74 77 43 0 0
+Values2      0 2
+Spell 1      'bulls strength'
+Spell 2      'cats grace'
+Spell 3      'bears endurance'
+End
+
+#OBJECT
+Nest         1
+Vnum         2523
+Level        1
+Coords	-1 -1 -1
+Values       25 253 -1 -1 0 0
+Values2      0 2
+Spell 1      'greater heroism'
+End
+
+#OBJECT
+Nest         1
+Vnum         860
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         858
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         859
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         861
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         857
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         856
+Level        1
+Coords	-1 -1 -1
+Values       3 3 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Nest         1
+Vnum         854
+Level        1
+Coords	-1 -1 -1
+Values       15 126 -1 -1 0 0
+Values2      0 2
+Spell 1      'cure serious wounds'
+End
+
+#OBJECT
+Nest         1
+Vnum         854
+Level        1
+Coords	-1 -1 -1
+Values       14 126 -1 -1 0 0
+Values2      0 2
+Spell 1      'cure serious wounds'
+End
+
+#OBJECT
+Nest         1
+Vnum         204
+Level        1
+Coords	-1 -1 -1
+Values       5 0 0 0 0 0
+Values2      0 2
+End
+
+#OBJECT
+Vnum         2513
+WearLoc      8
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2514
+WearLoc      13
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2500
+WearLoc      3
+Level        1
+Coords	-1 -1 -1
+Values       1 1 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2505
+WearLoc      12
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#OBJECT
+Vnum         2512
+WearLoc      7
+Level        1
+Coords	-1 -1 -1
+Values       2 2 0 0 0 0
+Values2      1 2
+End
+
+#END

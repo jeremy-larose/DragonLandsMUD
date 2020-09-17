@@ -1,0 +1,146 @@
+#PLAYER
+Version      5
+Name         Dumbo~
+Sex          0
+Class        9
+Race         0
+Adjective    a wild-looking male feyborn~
+Age          0 4 4 608
+Languages    1 1
+Level        45
+Played       46078
+Room         999
+HpManaMove   255 255 259 259 480 480
+ClassValues  1 1
+BondedWeapon 0 0
+Gold         20
+Silver       0
+Copper       0
+Exp          2857075
+Height          61
+Weight          124
+Act          1644172872
+Position     113
+Style     2
+Practice     47
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    -466
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 -10
+Speechcolor  6
+Mentalstate  0
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Bestowments  holylight~
+Title         the Not set.~
+Clan         Elementalist Monks~
+Flags        32768
+PKills       0
+PDeaths      0
+MKills       7
+MDeaths      1
+IllegalPK    0
+Timezone     -1
+AttrPerm     16 16 13 30 13 9 13
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Condition    0 48 43 55
+Background    0
+Prepped       'mage armor' 1 -1
+Site         24.247.13.30
+Tongue       95 'abyssal'
+Tongue       95 'aquan'
+Tongue       95 'auran'
+Weapon       95 'axes'
+Weapon       95 'bows'
+Spell        95 'breath of winter'
+Tongue       95 'celestial'
+Skill        95 'climb'
+Weapon       95 'clubs'
+Tongue       95 'common'
+Skill        95 'cook'
+Weapon       95 'crossbows'
+Weapon       95 'daggers'
+Weapon       95 'darts'
+Skill        95 'dash'
+Tongue       95 'deep speech'
+Spell        95 'diamond soul'
+Skill        95 'dig'
+Tongue       95 'draconic'
+Skill        95 'dual wield'
+Tongue       95 'dwarven'
+Tongue       95 'elvish'
+Spell        95 'empty body'
+Skill        95 'flipkick'
+Skill        95 'forage'
+Tongue       95 'giant'
+Tongue       95 'gnomish'
+Tongue       95 'goblin'
+Skill        95 'grapple'
+Tongue       95 'halfling'
+Weapon       95 'hammers'
+Skill        95 'headbutt'
+Skill        95 'holdbreath'
+Tongue       95 'ignan'
+Tongue       95 'infernal'
+Weapon       95 'javelins'
+Skill        95 'kick'
+Weapon       95 'maces'
+Skill        95 'meditate'
+Skill        95 'mount'
+Tongue       95 'orc'
+Tongue       95 'primordial'
+Skill        95 'punch'
+Spell        95 'pure body'
+Spell        95 'quivering palm'
+Skill        95 'rescue'
+Skill        95 'scan'
+Skill        95 'search'
+Weapon       95 'short swords'
+Skill        95 'shove'
+Weapon       95 'sickles'
+Skill        95 'sidekick'
+Weapon       95 'slings'
+Skill        95 'spinkick'
+Skill        95 'stabilize'
+Weapon       95 'staves'
+Spell        95 'still mind'
+Spell        95 'stunning strike'
+Tongue       95 'sylvan'
+Tongue       95 'terran'
+Spell        95 'tranquility'
+Tongue       95 'troll'
+Skill        95 'twisterkick'
+Tongue       95 'undercommon'
+Skill        95 'veiled steps'
+Weapon       95 'whips'
+Killed       6031 1
+Killed       3100 1
+Killed       4552 1
+Killed       1399 2
+Killed       2000 2
+Coordinates	-1 -1 -1 0
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 7 7 12 10 14 15 7 7 11 7 7 7 12 7 7 2 6 7 7 12 7 7 7 9 7 12 13 7 7 11 7 7 3 12 9 7 7 10 2 2 3 7 9 7 2 9 12 9 6 11 13 2 13 15 12 12 12 10 7 10 10 11 8 10 13 2 6 9 15 12 2 6 1 9 2 10 7 10 15 10 10 10 10 
+Qbit        2000 &gYou are helping a city guard clean out the New Darkhaven Forest from bandits.~
+Qbit        2501 &WYou are officially enrolled at the &RNe&Yw D&zark&Whave&zn C&Yolle&Rge&W of Adventuring.~
+Qbit        2508 &WYour third course is with Professor Thunril. Check your textbook for the schedule.&w~
+Qbit        4551 &WYou saved a gypsy's wife and must now lead her back to her husband.&w~
+Qbit        6001 &zYou killed a logging boss for a Shadow Druid nearby.&w~
+End
+
+#OBJECT
+Vnum         5406
+WearLoc      26
+Level        1
+Coords	-1 -1 -1
+Values       1 1 8 1 1 0
+Values2      0 2
+End
+
+#END

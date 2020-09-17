@@ -1,0 +1,1885 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The New Darkhaven Forest Spider Nest~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 10 0 0
+Economy      0 801070
+ResetMsg     &gYou hear something rustling in the trees...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       4550
+Keywords   giant spider hunting prey~
+Short      &Oa giant spider&w~
+Long       &OA giant spider is here hunting for prey.&w
+~
+Desc       &OThis spider is quite large and it moves around this forest quickly as
+it hunts for something to eat.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     0 1 4 0 11 0 0 0 0 0
+Stats2     4 10 4
+Stats3     1 8 3
+Stats4     3 1 1 0 0 0 6
+Attribs    14 2 11 16 12 4 13
+Saves      0 0 0 0 0 0
+Attacks    poison~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1669 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   mpasound &OYou hear something rustling in the nearby trees...&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4551
+Keywords   phase spider giant blue spider bspidey2~
+Short      &Ba phase spider&w~
+Long       &BA giant blue spider is here hunting for some prey.&w
+~
+Desc       &BThis spider is quite interesting as well as large. Its exterior is
+a unique shade of blue that shimmers when light touches it.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea running~
+Affected   infrared~
+Stats1     0 1 6 0 11 0 0 0 0 0
+Stats2     5 10 5
+Stats3     1 10 2
+Stats4     3 1 1 0 0 0 6
+Attribs    15 6 10 15 12 6 13
+Saves      0 0 0 0 0 0
+Attacks    poison~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   mpecho &BThe spider suddenly vanishes in a flash of light!&w
+mpscatter bspidey2 4589 4597
+mpecho &BA spider appears in a flash of light!&w
+mpasound &BYou see a flash of light happen nearby!&w
+stand
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1669 1
+mpoload 1669 1
+mpoload 1669 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4552
+Keywords   spider queen giant purple colored spider queen668~
+Short      &pa spider queen&w~
+Long       &pA giant purple colored spider is here webbing up her latest victim.&w
+~
+Desc       &pThis spider is quite huge and is a deep purple color. It has silvery hairs
+that project from its body and long slender legs.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel aggressive~
+Affected   infrared sneak~
+Stats1     -1000 1 8 0 11 0 0 0 0 0
+Stats2     10 7 25
+Stats3     1 8 2
+Stats4     4 1 2 0 0 0 6
+Attribs    15 6 10 15 12 6 13
+Saves      0 0 0 0 0 0
+Resist     nonmagic psychic~
+Immune     poison sleep charm paralysis~
+Attacks    stun poison~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 1669 1
+mpoload 1669 1
+mpoload 1669 1
+mpoload 1669 1
+mpoload 1669 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4553
+Keywords   female gypsy scared looking fgyp22~
+Short      &Ya female gypsy&w~
+Long       &YA female gypsy is standing here looking very scared.&w
+~
+Desc       &YThis female gypsy is wearing a loose fitting dress that she has
+belted with a braided cord. Her blonde hair has been tied back
+behind her head and she looks very scared.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea pacifist~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 1 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       4554
+Keywords   male gypsy hiding caravan torch mgyp22~
+Short      &Ya male gypsy&w~
+Long       &YA male gypsy is hiding here by his caravan with a torch in his trembling hand.&w
+~
+Desc       &YThis male gypsy is dressed in a simple cotton outfit that has been
+cut up by something. He looks very scared as he holds on to a torch tightly.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden infrared~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 4552
+if hasqbit($n) != 4550
+emote sighs with relief suddenly and peers around before speaking.
+mpsleep 2
+sayto $n H-hello there.. I need your help if you can. I was attacked
+sayto $n by large spiders.. t-t-they took my wife and drug her into
+sayto $n the f-f-f-forest! Can you help me? Can you go save her? My
+sayto $n leg was wounded during the fight and I was able to scare them
+sayto $n away with this torch. Please... can you &Yhelp&w me?&w
+else
+endif
+else
+nod $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p help~
+Comlist   if hasqbit($n) != 4552
+if hasqbit($n) != 4551
+if hasqbit($n) != 4550
+smile $n
+mpsleep 2
+sayto $n T-t-thank you so much! Please hurry... I fear they will not
+sayto $n wait to... e-e-eat her..
+emote wipes away some tears as he looks out into the forest ahead.
+mpqset $n 4550
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if mobinroom(4553) == 1
+if hasqbit($n) != 4552
+if hasqbit($n) == 4550
+if hasqbit($n) == 4551
+hug fgyp22
+sayto $n T-t-thank you so much! We will be forever thankful
+sayto $n to you and we do not have much.. but this has been
+sayto $n in my family for many generations. Please take it.
+mpgift 212 236
+give gem $n
+sayto $n Thank you again.. may the gods watch over you!
+kiss fgyp22
+mpsleep 2
+mpadvance $n 2500
+mpqset $n 4550
+mpqset $n 4551
+mpqset $n 4552
+mpsleep 2
+mpforce fgyp22 fol self
+mpecho &GThe two gypsies clasp hands as they run off towards the south.&w
+mptransfer fgyp22 4599
+mpgoto 4599
+mppurge fgyp22
+mppurge mgyp22
+else
+endif
+nod $n
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == monster
+mpecho &RThe gypsy wildly waves a torch which manages to scare off the spider!&w
+mpforce spider n
+mpsleep 2
+sigh
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       4599
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     4550
+Keywords spider web wall blocking nest entrance wweb123~
+Type     trash~
+Short    &wa wall of spider's webbing&w~
+Long     &wA wall of spider's webbing is here blocking the entrance into a large nest.&w~
+Values   10 0 0 0 0 0
+Values2  0 3
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p strikeweb~
+Comlist   if athletics($n) >= 16
+mea $n You strike the wall of webbing several times and manage to
+mea $n cause a hole in it big enough to enter!
+mer $n $n strikes at the web a few times and manages to tear it open!
+mpopenpassage 4588 4598 5
+mpoload 1669 1
+mpoload 1669 1
+mpoload 1669 1
+mppurge wweb123
+mpat 4598 mpecho &wSomething pierces the wall of webbing from the other side!&w
+mpat 4598 mppurge wweb321
+mpat 4598 mpopenpassage 4598 4588 4
+else
+mea $n You strike at the web and fail to tear it open!
+mer $n $n strikes at the webbing and fails to tear it open.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate wall~
+Comlist   if nature($n) >= 16
+if investigation($n) >= 14
+mea $n You test the strands of webbing on the wall and find that if
+mea $n it is struck hard enough it should be easy to open. Perhaps
+mea $n if you strike at it with your weapon you can unblock the
+mea $n the way? (STRIKEWEB)
+mer $n &w$n&w examines the wall of webbing carefully.&w
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4551
+Keywords spider web wall block nest exit wweb321~
+Type     trash~
+Short    &wa wall of spider's webbing&w~
+Long     &wA wall of spider's webbing is here blocking the exit out of a large nest.&w~
+Values   10 0 0 0 0 0
+Values2  0 3
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate wall~
+Comlist   if nature($n) >= 16
+if investigation($n) >= 14
+mea $n You test the strands of webbing on the wall and find that if
+mea $n it is struck hard enough it should be easy to open. Perhaps
+mea $n if you strike at it with your weapon you can unblock the
+mea $n the way? (STRIKEWEB)
+mer $n $n examines the wall of webbing carefully.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p strikeweb~
+Comlist   if athletics($n) >= 16
+mea $n You strike the wall of webbing several times and manage to
+mea $n cause a hole in it big enough to enter!
+mer $n $n strikes at the web a few times and manages to tear it open!
+mpopenpassage 4598 4588 4
+mpoload 1669 1
+mpoload 1669 1
+mpoload 1669 1
+mppurge wweb321
+mpat 4588 mpecho Something pierces the wall of webbing from the other side!
+mpat 4588 mppurge wweb123
+mpat 4598 mpopenpassage 4588 4598 5
+else
+mea $n You strike at the web and fail to tear it open!
+mer $n $n strikes at the webbing and fails to tear it open.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4552
+Keywords large webbed cocoon rustling cocoon2~
+Type     trash~
+Short    &wA large webbed cocoon&w~
+Long     &wA large webbed cocoon is here rustling slightly.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate cocoon~
+Comlist   if nature($n) >= 14
+if investigation($n) >= 14
+mea $n You notice that the cocoon is large enough for a body to
+mea $n be inside. You also notice that the cocoon is wiggling
+mea $n and you can hear the muffled screams of someone inside.
+mea $n Perhaps you can tear the cocoon open? (TEAROPEN)
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4553
+Keywords tipped over caravan traveling~
+Type     container~
+Short    &Oa tipped over caravan&w~
+Long     &OA caravan has been tipped over next to a large tree here.&w~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    300 0 0 0 0 0 0
+#EXDESC
+ExDescKey    caravan~
+ExDesc       &OThis caravan has been tipped over and the horses are missing. It appears
+to have been attacked by something large.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     4554
+Keywords large wooden torch~
+Type     light~
+Short    &Ra large wooden torch&w~
+Long     &RA large wooden torch has been left here.&w~
+Flags    glow inventory versatile~
+WFlags   take onehand twohand~
+Values   0 0 200 0 0 0
+Values2  0 2
+Stats    1 5 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     4599
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     4550
+Name     A Dense Forest~
+Sector   forest~
+Flags    nomob~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. A few tracks from a caravan can be seen here
+leading to the north.
+~
+#EXIT
+Direction north~
+ToRoom    4551
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      538
+MapY      811
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4551
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. The tracks from a caravan end abruptly here.
+~
+#EXIT
+Direction north~
+ToRoom    4552
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4550
+#ENDEXIT
+
+Reset M 0 4554 1 4551
+  Reset E 0 4554 1 27
+Reset O 0 4553 1 4551
+Reset O 0 1429 1 4551
+#ENDROOM
+
+#ROOM
+Vnum     4552
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4553
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4551
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4553
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4554
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4552
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4554
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction east~
+ToRoom    4555
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4553
+#ENDEXIT
+
+Reset M 0 4550 7 4554
+#ENDROOM
+
+#ROOM
+Vnum     4555
+Name     A Dense Forest~
+Sector   forest~
+Stats    0 0 0 0 14 0
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. A path leads to the north where the forest
+becomes less dense and more sunlight penetrates the forest.
+~
+Perdesc  &gYou notice that the forest lightens up towards the north and the
+trees there are not covered in thick spider's webbing...
+~
+#EXIT
+Direction north~
+ToRoom    2177
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4556
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4554
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4556
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction east~
+ToRoom    4557
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4555
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4557
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction south~
+ToRoom    4558
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4556
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4558
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4557
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4559
+#ENDEXIT
+
+Reset M 0 4550 8 4558
+#ENDROOM
+
+#ROOM
+Vnum     4559
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction east~
+ToRoom    4558
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4564
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4560
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4560
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction east~
+ToRoom    4559
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4561
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4561
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4560
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4562
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4552
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4562
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4561
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4563
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4563
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4564
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4562
+#ENDEXIT
+
+Reset M 0 4550 6 4563
+#ENDROOM
+
+#ROOM
+Vnum     4564
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4559
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4565
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4563
+#ENDEXIT
+
+Reset M 0 4550 5 4564
+#ENDROOM
+
+#ROOM
+Vnum     4565
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction south~
+ToRoom    4566
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4564
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4566
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. Many of the trees here are covered
+in silvery strands of webbing from the local large spiders that
+hunt here. The trees grow tightly together and knit away much of
+the sunshine above. 
+~
+#EXIT
+Direction north~
+ToRoom    4565
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4567
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4567
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4566
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4568
+#ENDEXIT
+
+Reset M 0 4550 9 4567
+#ENDROOM
+
+#ROOM
+Vnum     4568
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4567
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4569
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4569
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction east~
+ToRoom    4570
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4568
+#ENDEXIT
+
+Reset M 0 4550 1 4569
+#ENDROOM
+
+#ROOM
+Vnum     4570
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction east~
+ToRoom    4571
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4569
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4571
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction east~
+ToRoom    4572
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4570
+#ENDEXIT
+
+Reset M 0 4550 2 4571
+#ENDROOM
+
+#ROOM
+Vnum     4572
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction west~
+ToRoom    4571
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    4573
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4573
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4574
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    4572
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4574
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4575
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4573
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4575
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4576
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4574
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4576
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4577
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4575
+#ENDEXIT
+
+Reset M 0 4550 3 4576
+#ENDROOM
+
+#ROOM
+Vnum     4577
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction south~
+ToRoom    4576
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4578
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4578
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction east~
+ToRoom    4577
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4584
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4579
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4579
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction east~
+ToRoom    4578
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4580
+#ENDEXIT
+
+Reset M 0 4550 10 4579
+#ENDROOM
+
+#ROOM
+Vnum     4580
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction east~
+ToRoom    4579
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4581
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4581
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4580
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4582
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4582
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4581
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4583
+#ENDEXIT
+
+Reset M 0 4550 4 4582
+#ENDROOM
+
+#ROOM
+Vnum     4583
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4582
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4584
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4578
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4585
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4585
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4584
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4586
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4586
+Name     A Dense Forest~
+Sector   forest~
+Desc     This part of the New Darkhaven forest is incredibly dense where
+there is barely any space in between trees and thick vegetation
+which covers the ground here. The trees here are covered in thick
+silvery strands of spider's webbing. Several of the trees are
+so covered that they resemble willow trees when a breeze comes
+through. Several spider's nests can be seen above, which are
+attached to several branches. The forest has grown increasingly
+quiet and the only noise that can be heard is a bird flying above
+the trees.
+~
+#EXIT
+Direction north~
+ToRoom    4585
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    4587
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4587
+Name     &WBefore a Large Spider's Nest&w~
+Sector   forest~
+Desc     The forest opens up slightly to reveal an incredibly massive spider's
+nest that resembles a large bulb. The sounds of spiders can be heard
+inside it as they move around through the various layers inside it. The
+webbing is connected to a fallen tree, which makes it possible for
+someone to climb to the top of the nest.
+~
+#EXIT
+Direction north~
+ToRoom    4588
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    4586
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 4552
+if hasqbit($n) != 4551
+if hasqbit($n) == 4550
+mpecho &RYou hear screaming coming from inside the nest ahead!&w
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4588
+Name     &WOn Top of a Large Spider's Nest&w~
+Sector   forest~
+Desc     This is the top of a large sturdy spider's nest. A few trees have fallen
+around the nest, which helps support it. The nest itself also seems
+to have been here for a very long time. The sound of spiders can be heard
+coming from inside the nest as they move around the various layers inside.
+The nest itself stands about two stories in height and it is hard to see
+inside the nest due to the many layers of webbing.
+~
+#EXIT
+Direction south~
+ToRoom    4587
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4598
+Flags     passage~
+#ENDEXIT
+
+Reset O 0 4550 1 4588
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   if ispassage($n) == down
+if ovnumroom(4550) != 1
+mpclosepassage 4588 5
+mpoload 4550 1
+mpecho &wThe entrance to the nest is suddenly sealed up!&w
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4589
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction east~
+ToRoom    4590
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4598
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4596
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 4551 1 4589
+#ENDROOM
+
+#ROOM
+Vnum     4590
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction east~
+ToRoom    4591
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4589
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4597
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 4550 12 4590
+#ENDROOM
+
+#ROOM
+Vnum     4591
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction south~
+ToRoom    4592
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4590
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4590
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4592
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction north~
+ToRoom    4591
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4593
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4597
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 4550 11 4592
+#ENDROOM
+
+#ROOM
+Vnum     4593
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction north~
+ToRoom    4592
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4594
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4594
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction west~
+ToRoom    4595
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4597
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4593
+Flags     climb~
+#ENDEXIT
+
+Reset M 0 4551 1 4594
+#ENDROOM
+
+#ROOM
+Vnum     4595
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction north~
+ToRoom    4596
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4594
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4596
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction east~
+ToRoom    4597
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4595
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4589
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     4597
+Name     &WInside a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis nest is quite large and consists of various platforms made
+from webbing. It is very dark inside as not much sunlight penetrates
+the webbing. The nest has various levels and one must climb in
+order to get around this nest.
+~
+#EXIT
+Direction east~
+ToRoom    4592
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4596
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4590
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4594
+Flags     climb~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if mobinroom(4552) == 0
+if hasqbit($n) != 4551
+if hasqbit($n) == 4550
+mea $n &WAs you enter you see a giant purple spider wrapping a young
+mea $n &Wwoman until she is a large webbed cocoon. The spider turns
+mea $n &Wand faces you as the cocoon rustles on the floor of the
+mea $n &Wnest here. The spider rears upwards before attacking!
+mpmload 4552 
+mpforce queen668 kill $n
+mpoload 4552 1
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p tearopen~
+Comlist   if ovnumroom(4552) == 1
+if athletics($n) >= 15
+if hasqbit($n) == 4550
+mea $n You manage to tear open the cocoon and out rolls a scared
+mea $n looking female gypsy!
+mpmload 4553
+mpforce gypsy say Oh t-thank you! Please take me back to my love!
+mpforce fgyp22 follow $n
+mpoload 1669 1
+mpoload 1669 1
+mpoload 1669 1
+mpqset $n 4551
+mppurge cocoon2
+else
+mea $n You fail to open the cocoon.
+endif
+else
+mea $n You fail to open the cocoon.
+endif
+else
+mea $n There is no cocoon to tear open here.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4598
+Name     &WDescending into a Spider's Nest&w~
+Sector   indoors~
+Flags    dark~
+Desc     &wThis is a small tunnel like structure that leads either out of
+the nest or further inside below. The webbing here is not very
+sticky and seems to have been matted down due to the spiders
+coming in and out quite often dragging in prey. It is hard to
+see outside and not much light penetrates the webbing.
+~
+#EXIT
+Direction up~
+ToRoom    4588
+Flags     passage~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4589
+Flags     climb~
+#ENDEXIT
+
+Reset O 0 4551 1 4598
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   if ispassage($n) == down
+if ovnumroom(4551) != 1
+mpclosepassage 4588 5
+mpoload 4551 1
+mpecho &wThe exit to the nest is suddenly sealed up!&w
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     4599
+Name     &RNEW DARKHAVEN SPIDER NEST MOB HIDEOUT&W~
+Sector   city~
+Flags    nomob~
+Desc     You do not belong here. Please contact an admin to get out. Thank you!
+~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   mppurge mgyp22
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

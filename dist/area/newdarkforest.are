@@ -1,0 +1,7368 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The New Darkhaven Forest~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 50 0 0
+Economy      1 434275558
+ResetMsg     &gYou hear the sounds of animals deep in the forest.&w~
+Lore         &gYou see nothing as your divination unfolds...
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2000
+Keywords   forest bandit rugged looking man hiding forest~
+Short      &ga forest bandit&w~
+Long       &gA rugged looking man is here hiding in forest.
+~
+Desc       &gThis young man is dressed in old leather armor that has been dyed
+to match the forest to ensure he can hide well. He keeps looking around
+the forest as if waiting for someone to walk by...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   hide~
+Stats1     -600 1 4 0 0 0 0 5 0 0
+Stats2     2 18 10
+Stats3     1 6 1
+Stats4     2 0 1 0 0 0 6
+Attribs    11 10 10 15 12 10 13
+Saves      0 0 0 0 0 0
+Attacks    kick~
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2000
+mpoload 2002 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2001
+Keywords   city guard clean up hunting hunter scalp~
+Short      &ga city guard&w~
+Long       &gA city guard is here scouting for bandits in the New Darkhaven forest.
+~
+Desc       &gThis guard has been charged with cleaning up the forest from 
+the bandits that are preying on people in the woods. He has a
+very serious looking face and he wears armor that allows him
+to blend with the forest. 
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   infrared~
+Stats1     1000 1 3 0 0 -31072 10000 0 0 0
+Stats2     9 8 18
+Stats3     1 10 3
+Stats4     2 0 3 0 0 0 6
+Attribs    16 10 11 13 14 10 13
+Saves      0 0 0 0 0 0
+Attacks    kick stun~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2000
+emote holds up a hand in greeting
+sayto $n Hello there. I am looking for able adventurers to help me
+sayto $n with my task here in the forest. Would you like to help me?
+else
+nod $n
+sayto $n Have you brought me anymore bandit scalps?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2000
+smile $n
+sayto $n I need you to help relieve the forest from the recent bandit
+sayto $n infestation. Bring me proof of each bandit you have taken
+sayto $n down and I will pay you for it. If you should meet their
+sayto $n leader I will offer even more. Be careful.. he is very strong.
+mpqset $n 2000
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2002) == 1
+if hasqbit($n) == 2000
+nod $n
+sayto $n Good work. Here is your reward for bringing me this scalp.
+give 1 gold $n
+mpjunk scalp
+else
+mpjunk scalp
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2003) == 1
+if hasqbit($n) == 2000
+grin $n
+sayto $n Excellent work! That will help thin the herd a bit without
+sayto $n their leader! Here is your reward.
+mpreward $n 2189 2198
+give 10 gold $n
+mpjunk scalp
+else
+mpjunk scalp
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2002
+Keywords   bandit leader muscular man~
+Short      &ga bandit leader&w~
+Long       &gA muscular man is here ordering bandits and taking inventory of some stolen goods.
+~
+Desc       &gThis man ripples with muscles and is the leader of this group of
+bandits. He moves about the camp ordering people around and checking
+on any new stolen goods brought in. He is very charismatic and seems
+to think life is a big game.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Stats1     -1000 1 5 0 0 0 5 5 0 0
+Stats2     4 8 20
+Stats3     1 6 3
+Stats4     2 0 2 0 0 0 6
+Attribs    15 14 11 16 14 14 16
+Saves      0 0 0 0 0 0
+Attacks    kick~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2000
+scowl $n
+sayto $n So you're the one ruining all of my fun these days...
+mpsleep 5
+emote unsheathes a scimitar and chuckles to himself
+sayto $n Well then.. I guess I will just have to deal with you myself.
+kill $n
+murder $n
+else
+eye
+sayto $n What can I do for you?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2000
+if hasqbit($n) != 2009
+mpreward $n 2160 2179
+mpreward $n 2180 2188
+mpreward $n 2189 2198
+mpqset $n 2009
+mpoload 2003 1
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2003
+Keywords   bandit wizard dirty robes~
+Short      &Ga bandit wizard&w~
+Long       &GA woman dressed in dirty robes is here watching over the camp.&w
+~
+Desc       &GThis woman is dressed in dirty brown robes and has made all attempts
+to camouflage herself with the woods. She walks about keeping watch
+over the camp and offering her magics whenever needed.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea~
+Affected   detect_hidden hide truesight~
+Stats1     -600 1 4 0 0 0 5 0 0 0
+Stats2     9 8 15
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'firebolt' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   c 'magic missile' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   c 'mage armor'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2000
+mpoload 2002 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2004
+Keywords   forest bandit sentry guard~
+Short      &ga forest bandit guard&w~
+Long       &gA guard is here watching over a small camp nearby.&w
+~
+Desc       &gThis man is dressed in old leather armor that has been dyed to match
+the forest to ensure he can hide well when needed. He stands here
+protecting the entrance to a small camp nearby.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   detect_hidden~
+Stats1     -600 1 4 0 0 0 0 5 0 0
+Stats2     2 18 25
+Stats3     1 6 1
+Stats4     2 0 2 0 0 0 6
+Attribs    15 10 10 18 16 10 13
+Saves      0 0 0 0 0 0
+Attacks    kick~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2005
+Keywords   black bear forest~
+Short      &za black bear&w~
+Long       &zA black bear is here wandering around the forest.&w
+~
+Desc       &zThis bear is quite large and moves about the forest slowly. He seems
+to be seeking food or something to do.
+~
+Race       mammal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 3 0 0 0 0 0 0 0
+Stats2     3 8 6
+Stats3     2 4 2
+Stats4     2 0 2 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Attacks    bite~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   if hasqbit($n) == 2001
+mea $n &OYou manage to get a pelt from the bear after it dies.
+mpoload 2199 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2006
+Keywords   rabbit wild forest~
+Short      &Oa wild rabbit&w~
+Long       &OA small wild rabbit is here nibbling on some weeds.&w
+~
+Desc       &OThis tiny rabbit is here eating various weeds and grass. She has
+a speckled coat of greys and browns.
+~
+Race       hill-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running~
+Affected   sneak~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 3 1
+Stats3     1 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 19 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   25~
+Comlist   if hasqbit($n) == 2001
+mea $n &OYou manage to obtain a pelt from the dead rabbit.
+mpoload 2199 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2007
+Keywords   deer white tail antlers~
+Short      &Oa white tail deer&w~
+Long       &OA white tail deer with large antlers is here.&w
+~
+Race       mammal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   sneak~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 15 0
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   if hasqbit($n) == 2001
+mea $n &OYou manage to obtain a pelt from the dead deer.
+mpoload 2199 1
+else
+mpoload 2006 1
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2008
+Keywords   dryad tending large tree beautiful woman~
+Short      &Oa dryad&w~
+Long       &OA beautiful woman is here tending to the large tree in this grove.&w
+~
+Desc       &OThis beautiful woman seems to grow leaves and twigs out of her
+body, which seem to cover necessary places. Her hair upon closer
+inspection is made from long grasses that has been pushed back
+to reveal her fey-like features.
+~
+Race       magical~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared truesight~
+Stats1     0 1 4 0 0 0 0 0 0 0
+Stats2     5 8 20
+Stats3     0 0 0
+Stats4     2 6 1 0 0 0 6
+Attribs    10 14 15 12 11 18 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2006
+if hasqbit($n) != 2007
+if hasqbit($n) != 2008
+if hasqbit($n) != 2003
+if hasqbit($n) != 2004
+if hasqbit($n) != 2005
+emote smiles with a worried look on her face
+sayto $n Could you please help me, young adventurer? I have need
+sayto $n of your skills with someone who wishes to hurt the forest...
+else
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2006
+if hasqbit($n) != 2007
+if hasqbit($n) != 2008
+if hasqbit($n) != 2003
+if hasqbit($n) != 2004
+if hasqbit($n) != 2005
+emote sighs with relief as she bows at the waist solemnly
+sayto $n There is a Hag.. a dark fey.. located in the eastern part
+sayto $n of the woods who wish to kill the forest and myself. I
+sayto $n am one of the guardians of this forest and we must stop
+sayto $n her. She stole one of my golden acorns and hopes to use
+sayto $n it in her upcoming great curse...
+mpsleep 6
+sigh
+mpsleep 5
+sayto $n I need you to eliminate her and bring back to me the
+sayto $n golden acorn. I shall await you here.
+mpqset $n 2003
+c bless $n
+mpsleep 5
+sayto $n May Amunar watch over you.
+else
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 2005
+if hasqbit($n) != 2003
+if hasqbit($n) != 2006
+if hasqbit($n) != 2007
+if hasqbit($n) != 2008
+if hasqbit($n) == 2004
+hug $n 
+sayto $n You have saved the forest this day!! Now allow me to reward
+sayto $n you for such courage.. this acorn will be safe with you and
+sayto $n while you are in a forest it will aid you...
+emote begins crafting something with a vine she pulls from the ground
+mpsleep 10
+mpjunk acorn989
+mpoload 2009 1
+smile
+give dryadlocket22 $n
+sayto $n May Amunar smile upon you, adventurer.
+mpqset $n 2004
+mpqset $n 2005
+else
+mpjunk acorn
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2006
+mea $n &OYou manage to savagely retrieve a heart from the dying dryad!
+silent mpoload 2008 1
+silent give dryadheart22 $n
+mpqset $n 2006
+mpqset $n 2007
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'charm person' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   c 'barkskin'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   c 'cure critical wounds'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2009
+Keywords   small bird~
+Short      a small bird~
+Long       A small bird is here flying around the forest.
+~
+Desc       This small bird is brown and black in coloring with a tiny beak
+and graceful wings.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc running~
+Affected   infrared flying~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 2 1
+Stats3     1 2 0
+Stats4     0 1 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 2159 1
+mpoload 2159 1
+mpoload 2159 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2010
+Keywords   old woman fallen apples hag green skin~
+Short      &Gan old woman&w~
+Long       &GAn old woman is here picking up fallen apples from a nearby tree.
+~
+Desc       &GThis old woman has long white hair that she lets roam free as
+she picks apples that have fallen from a tree. She has a slight
+hunchback due to her age and a long crooked nose. Her dark brown
+eyes almost look like pools of darkness under her droopy eyelids.
+~
+Lore       &GYou see this woman escaping into the realms through a small pool
+of shadows...
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared truesight~
+Stats1     -900 1 6 0 0 0 0 0 0 0
+Stats2     11 8 33
+Stats3     2 8 4
+Stats4     2 6 1 0 0 0 6
+Attribs    18 13 14 12 16 14 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'magic missile' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2003
+if hasqbit($n) != 2004
+if hasqbit($n) != 2005
+if hasqbit($n) != 2006
+if hasqbit($n) != 2007
+if hasqbit($n) != 2008
+mea $n &YYou see a small golden acorn fall next to the body of the Hag.
+mpoload 2007 1
+silent drop acorn
+mpqset $n 2003
+mpqset $n 2004
+else
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2003
+if hasqbit($n) != 2004
+if hasqbit($n) != 2005
+if hasqbit($n) != 2006
+if hasqbit($n) != 2007
+if hasqbit($n) != 2008
+eye
+sayto $n Why hello there dearie.. might you be interested in helping
+sayto $n this old woman with something important?
+else
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p looks at you.~
+Comlist   if investigation($n) >= 20
+mea $n &GYou notice an odd green tint to the old woman's skin for a moment.&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2003
+if hasqbit($n) != 2004
+if hasqbit($n) != 2005
+if hasqbit($n) != 2006
+if hasqbit($n) != 2007
+if hasqbit($n) != 2008
+smile $n
+sayto $n I appreciate your help! I have been plagued by a local
+sayto $n woodland spirit since my husband passed. I have no fight
+sayto $n with Dryads, but this one wants to kill me. A local Druid
+sayto $n said that a way to ensure she does not come back is to
+sayto $n bring him her heart, which he can use to plant somewhere
+sayto $n else and relocate her.
+sigh
+mpsleep 10
+sayto $n I know that seems harsh to kill such a beautiful spirit
+sayto $n but she is going to hurt me. We can relocate her and all
+sayto $n will be well again. Bring me her heart and I will
+sayto $n give it to my Druid friend nearby.
+mpqset $n 2006
+else
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 2007
+if hasqbit($n) != 2006
+if hasqbit($n) != 2008
+if hasqbit($n) != 2003
+if hasqbit($n) != 2004
+if hasqbit($n) != 2005
+emote sighs with relief and examines the heart for a moment
+mpsleep 6
+cackle
+sayto $n I thank you for helping me obtain the final ingredient
+sayto $n for my curse! Now the forest will be mine!!!
+cackle
+mpsleep 5
+mea $n &GFor a brief moment you see the old woman turn into
+mea $n &Gan evil look Hag with green skin and fangs.
+mpsleep 5
+sayto $n For your reward you may keep your life! Farewell!
+mpadvance $n 650
+mpjunk heart
+mpecho &GThe old woman waves a hand and disappears suddenly!&w
+mpqset $n 2007
+mpqset $n 2008
+mpgoto 1897
+else
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2199
+Keywords   retired ranger older man chopping wood~
+Short      &Ga retired ranger&w~
+Long       &GAn older man is here chopping wood near his log cabin home.&w
+~
+Desc       &GAn older human male is here chopping wood for his cabin nearby. Despite
+his age his body is very muscular and strong looking. He has silver
+colored stubble growing on his face and silver wavy colored hair.
+~
+Lore       &GYou see this ranger in his younger years running along a forest
+edge hunting something large nearby...
+~
+Race       human~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden infrared~
+Stats1     0 50 0 0 0 10000 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2002
+if hasqbit($n) == 2001
+emote stops chopping some wood and smiles warmly
+sayto $n Have you brought me any new pelts?
+else 
+emote stops chopping some wood and wipes his brow
+sayto $n Greetings. Would you be interested in helping an old ranger?
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2001
+if hasqbit($n) != 2002
+nod
+sayto $n Well you see.. I retired from being a full time ranger a
+sayto $n few months ago. My eyesight isn't what it was and I cannot
+sayto $n hunt as well.. I was wondering if you could do some hunting
+sayto $n for me and bring me some animal pelts? I will reward you
+sayto $n very well if you can get me five pelts.
+mpsleep 2
+sayto $n And make sure to give me the five pelts all at once.
+mpqset $n 2001
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 2002
+if hasqbit($n) == 2001
+if ovnuminv(2199) == 5
+grin $n
+sayto $n Thank you so much! I can now make my winter pajamas!
+sayto $n Stay right here while I get your reward.
+mpjunk pelt
+mpjunk pelt
+mpjunk pelt
+mpjunk pelt
+mpjunk pelt
+open e
+e
+emote rummages in some chests for a few moments before heading outside
+mpsleep 10
+open w
+w
+grin
+mpoload 2016 1
+mpoload 2011 1
+give flint $n
+give axe $n
+mpqset $n 2002
+mpqset $n 2001
+give 10 gold $n
+sayto $n This axe and flint and steel can be used to warm yourself
+sayto $n at night. When you get a chance take a look at the axe.
+sayto $n I hope it serves you well for a very long time!
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2441) == 1
+if hasqbit($n) == 2416
+salute $n
+sayto $n A volunteer at the abbey, hmm? Thank you for bringing this to me.
+mpsleep 4
+emote opens the box with a key and looks inside for a few moments
+mpsleep 4
+sayto $n I need you to do me a favor.. this box needs to be seen by
+sayto $n the Mayor of New Darkhaven. Bring this to him, please.
+mpqset $n 2416
+mpqset $n 2417
+give box $n
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     2000
+Keywords bandit scimitar~
+Type     weapon~
+Short    &Oa bandit's scimitar&w~
+Long     &OA scimitar used by a bandit has been left here.&w~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 1 4 0
+Values2  0 2
+Stats    3 1 2 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2001
+Keywords forest green bandit leather armor~
+Type     armor~
+Short    &gforest green leather armor&w~
+Long     &gSome leather armor that's been dyed forest green has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    10 1 10 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2002
+Keywords forest bandit scalp deceased~
+Type     trash~
+Short    &ga forest bandit's scalp&w~
+Long     &gA scalp from a deceased forest bandit lies here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2003
+Keywords forest bandit leader scalp deceased~
+Type     trash~
+Short    &ga forest bandit leader's scalp&w~
+Long     &gA scalp from a deceased forest bandit leader lies here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2004
+Keywords slim dagger~
+Type     weapon~
+Short    a slim dagger~
+Long     A slim dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2005
+Keywords dirty robe wizard~
+Type     armor~
+Short    &Oa dirty wizard robe&w~
+Long     &OA dirty wizard robe has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    2 1 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2006
+Keywords piece antler deer~
+Type     trash~
+Short    &Oa piece of deer antler&w~
+Long     &OA piece of a deer antler has been left here.&w~
+WFlags   take onehand~
+Values   15 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 25 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2007
+Keywords golden acorn small acorn989~
+Type     rune~
+Short    &Ya small golden acorn&w~
+Long     &YA small acorn made of solid gold has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   300 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2008
+Keywords dryad bark encrusted heart organ dryadheart22~
+Type     rune~
+Short    &Oa bark encrusted dryad heart&w~
+Long     &OA small organ encrusted with bark has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   300 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2009
+Keywords golden acorn vine necklace dryadlocket22~
+Type     armor~
+Short    &ga vine necklace with a &Ygolden acorn&w~
+Long     &gA golden acorn on a necklace made from a vine has been left here.&w~
+Lore   &GThis necklace reveals itself to be an item crafted by a Dryad
+for someone they trust. It was created from a sacred golden acorn
+and has been attached to a vine that never seems to die.
+~
+Flags    magic~
+WFlags   take neck~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2005
+mea $n &gYou feel the power of the forest infuse into you.
+else
+mea $n &gThe necklace begins choking you suddenly before falling off!
+mpdamage $n 1 5
+silent mpforce $n rem dryadlocket22
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if sector($n) == 3
+mea $n &gYou feel yourself draw energy from the surrounding forest...
+mprefresh $n 1 4
+mpheal $n 1 4
+else
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2010
+Keywords club wooden~
+Type     weapon~
+Short    &Oa wooden club&w~
+Long     &OA wooden club has been left here.&w~
+Flags    lightweight~
+WFlags   take onehand~
+Values   12 1 4 2 19 0
+Values2  0 2
+Stats    2 1 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2011
+Keywords woodsman axe old~
+Type     weapon~
+Short    &ga woodsman's axe&w~
+Long     &gA woodsman's axe has been left here.&w~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   12 1 4 1 13 0
+Values2  0 2
+Stats    2 5 1 1 0 1 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate axe~
+Comlist   if investigation($n) >= 12
+mea $n &gThis axe is not truly meant for combat and is more of a tool
+mea $n &gto take down trees (CHOP) to help create logs for a fire.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p refinelog~
+Comlist   if wearingvnum($n) == 2011
+if ovnumhere(2014) > 0
+if survival($n) >= 16
+mea $n &OYou manage to create some pieces of firewood from the log.&w
+mpechoaround $n &O$n manages to split the log into pieces of firewood.&w
+mppurge log
+mpoload 2012 1
+mpoload 2012 1
+mpoload 2012 1
+mpoload 2012 1
+silent mpforce $n drop firewood
+silent mpforce $n drop firewood
+silent mpforce $n drop firewood
+silent mpforce $n drop firewood
+mpoload 2013 1
+mpoload 2013 1
+silent mpforce $n drop bark
+silent mpforce $n drop bark
+else
+mea $n &OYou fail to split the log into some firewood.&w
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p chop~
+Comlist   if sector($n) == 3
+if wearingvnum($n) == 2011
+if survival($n) >= 16
+mea $n &OYou manage to fell a medium sized tree and cut it into logs.
+mpechoaround $n &O$n manages to fell a tree and begins to cut it into logs.&w
+mpoload 2014 1
+mpoload 2014 1
+mpoload 2014 1
+silent mpforce $n drop log
+silent mpforce $n drop log
+silent mpforce $n drop log
+else
+mea $n Your axe swing glances off a nearby tree and almost cuts your foot off!
+endif
+else
+mea $n You aren't holding an axe to cut with.
+endif
+else
+mea $n You swing the axe wildly, but there are no trees to cut...
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2012
+Keywords firewood piece small~
+Type     trash~
+Short    &Oa small piece of firewood&w~
+Long     &OA small piece of firewood has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    2 0 0 5 0 1 0
+#EXDESC
+ExDescKey    firewood~
+ExDesc       &OThis is a piece of firewood that can be used to create a fire. To
+create a decent fire you will need four pieces and to ARRANGEWOOD
+prior to lighting (LIGHTWOOD) the wood with a fire starting tool like a
+flint and steel in hand. This piece of firewood can also be
+used to keep a fire going (FEEDFIRE) if holding the firewood to
+be used.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p arrangewood~
+Comlist   if ovnumhere(2012) >= 4
+mea $n &OYou arrange the wood in preparation for a fire.
+mppurge firewood
+mppurge firewood
+mppurge firewood
+mppurge firewood
+mpoload 2015
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p feedfire~
+Comlist   if ovnumhere(2017) >= 1
+if ovnumhere(2012) >= 1
+mea $n &RYou refresh the fire with a piece of firewood.
+mer $n &R$n refreshes the fire with a piece of firewood.&w
+mposet campfire timer 20
+mppurge firewood
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2013
+Keywords small piece bark~
+Type     trash~
+Short    &Oa small piece of bark&w~
+Long     &OA small piece of bark has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 2 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2014
+Keywords chopped log wood~
+Type     trash~
+Short    &Oa chopped log of wood&w~
+Long     &OA chopped log of wood has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    5 0 0 10 0 1 0
+#EXDESC
+ExDescKey    log~
+ExDesc       &OThis is a recently chopped log from a tree. In order to use it to
+create a fire one must REFINELOG with an appropriate axe wielded
+to create pieces of firewood.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2015
+Keywords arranged pile firewood fire~
+Type     furniture~
+Short    &Oan arranged pile of firewood&w~
+Long     &OAn arranged pile of firewood is here ready to be lit.&w~
+Values   200 0 0 0 0 0
+Values2  0 2
+Stats    8 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p lightwood~
+Comlist   if wearingvnum($n) == 2016
+if survival($n) >= 17
+mea $n &RYou manage to light the arrangement and create a campfire!&w
+mer $n &R$n manages to light the arrangement and create a campfire!&w
+mpoload 2017
+mposet campfire timer 20
+mppurge arranged
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2016
+Keywords flint steel small pieces~
+Type     trash~
+Short    &wa small piece of &zflint&w and steel&w~
+Long     &wA small piece of flint and steel has been left here.&w~
+WFlags   take onehand~
+Values   100000 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 1 0
+#EXDESC
+ExDescKey    flint~
+ExDesc       &wThese two small pieces of flint and steel are used to light an
+arranged pile of cut firewood (LIGHTWOOD).
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p lightwood~
+Comlist   if ovnumwear(2016) == 1
+if ovnumhere(2015) == 1
+if survival($n) >= 18
+mea $n &RYou use the flint and steel to light the arranged firewood!&w
+mpechoaround $n &R$n uses a flint and steel to light the firewood!
+mpjunk arranged
+mpoload 2017 1
+mposet campfire timer 50
+else
+mea $n &wYou fail to light a fire with a flint and steel.
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2017
+Keywords fire campfire small~
+Type     fire~
+Short    &Ra small campfire&w~
+Long     &RA small crackling campfire has been set up here.~
+Flags    glow~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpecho &RThe campfire crackles and pops for a few moments.
+mpasound &RYou hear the sounds of a campfire nearby...&w
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2018
+Keywords wooden sign south gate~
+Type     trash~
+Short    &Oa wooden sign&w~
+Long     &OA wooden sign has been placed here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    90 0 0 0 0 0 0
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OThe city of New Darkhaven is located to the north of here.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2019
+Keywords wooden sign west gate~
+Type     trash~
+Short    &Oa wooden sign&w~
+Long     &OA wooden sign has been placed here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    90 0 0 0 0 0 0
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OThe city of New Darkhaven is located to the east of here.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2020
+Keywords wooden sign north gate~
+Type     trash~
+Short    &Oa wooden sign&w~
+Long     &OA wooden sign has been placed here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    90 0 0 0 0 0 0
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OThe city of New Darkhaven is located to the south of here.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2021
+Keywords wooden sign east gate~
+Type     trash~
+Short    &Oa wooden sign&w~
+Long     &OA wooden sign has been placed here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    90 0 0 0 0 0 0
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OThe city of New Darkhaven is located to the west of here.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2149
+Keywords pipeweed long fragrant grass~
+Type     trash~
+Short    &Gsome pipeweed&w~
+Long     &GA long fragrant herbal grass is here growing along the path.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2150
+Keywords ancient tower key seven facets silver chain soronys ancient3283~
+Type     trash~
+Short    &wan ancient tower key on a silver chain&w~
+Long     &wAn ancient looking key on a silver chain has been left here.&w~
+Flags    magic~
+WFlags   take neck belt onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 75 0 0 7 0 0
+#EXDESC
+ExDescKey    key~
+ExDesc       &wThis key has several spots for seven gemstones to be placed. It is
+a long and slender key on a thin silver chain. It is also very
+ancient and its style has passed many centuries ago.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2705
+mea $n &wYou feel the faint pulse of magic surrounding the key...
+else
+silent mpforce $n rem ancient3283
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2151
+Keywords box costumes updated~
+Type     trash~
+Short    a box of updated costumes&w~
+Long     A box of updated costumes has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    4 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2152
+Keywords rusty key ancient looking~
+Type     key~
+Short    &ra rusty ancient looking key&w~
+Long     &rA rusty ancient looking key has been left here.&w~
+Flags    magic buried~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    key~
+ExDesc       &rThis key looks like it is something very important. It has several
+spots where some gems are missing. It could really use a blacksmith
+to clean it up and make it usable again.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate key~
+Comlist   if investigation($n) >= 18
+mea $n &WYou can barely see the symbols on the key, but one appears to
+mea $n &Wbe a star shape...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2153
+Keywords red box delivery~
+Type     trash~
+Short    &Ra red delivery box&w~
+Long     &RA red delivery box has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    3 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2154
+Keywords massage oil order~
+Type     trash~
+Short    &Pa massage oil order&w~
+Long     &PAn order of massage oil has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2155
+Keywords box costumes theater wynda~
+Type     trash~
+Short    &Oa box of costumes&w~
+Long     &OA box of costumes has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2156
+Keywords package herbs apothecary~
+Type     trash~
+Short    &Ga package full of herbs&w~
+Long     &GA package full of herbs from the apothecary has been left here.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    2 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2157
+Keywords bundle parchment mayor~
+Type     trash~
+Short    &Oa bundle of parchment&w~
+Long     &OA bundle of fresh parchment has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    5 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2158
+Keywords mossflower wild flowering herb tree~
+Type     trash~
+Short    &gsome mossflower&w~
+Long     &gA flowering wild herb is here growing on the side of a tree.~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2159
+Keywords small bird feather~
+Type     trash~
+Short    &za small bird &Ofeather&w~
+Long     &zA feather from a small bird has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2160
+Keywords striated ioun stone glowing~
+Type     rune~
+Short    &Ba s&Ct&Br&Ci&Ba&Ct&Be&Cd&B ioun stone&w~
+Long     &BA s&Ct&Br&Ci&Ba&Ct&Be&Cd&B ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 2 24 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2161
+Keywords speckled ioun stone glowing~
+Type     rune~
+Short    &Pa s&pp&ce&wc&pk&Pl&we&Pd ioun stone&w~
+Long     &PA s&pp&ce&wc&pk&Pl&we&Pd ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 50 0 0 5 1 0
+Affect       -1 -1 1 6 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n &PYou feel your features change suddenly...
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2162
+Keywords silver ioun stone glowing~
+Type     rune~
+Short    &wa s&Wil&wve&Wr&w ioun stone&w~
+Long     &wA s&Wil&wve&Wr&w ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 100 0 0 10 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2163
+Keywords gold ioun stone glowing~
+Type     rune~
+Short    &Ya g&Oo&Wl&Yd ioun stone&w~
+Long     &YA gold ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 75 0 0 7 0 0
+Affect       -1 -1 20 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2164
+Keywords grey ioun stone glowing~
+Type     rune~
+Short    &wa grey ioun stone&w~
+Long     &wA grey ioun stone has been left here.~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 12 81 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2165
+Keywords dark red ioun stone glowing~
+Type     rune~
+Short    &ra dark red ioun stone&w~
+Long     &rA dark red ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 11 81 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2166
+Keywords striated ioun stone glowing~
+Type     rune~
+Short    &wa &rs&Rt&rr&ri&Ra&rt&Re&rd&w ioun stone&w~
+Long     &wA &rs&Rt&rr&ri&Ra&rt&Re&rd&w ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 1 25 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2167
+Keywords black ioun stone glowing~
+Type     rune~
+Short    &za black ioun stone&w~
+Long     &zA black ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+Affect       -1 -1 1 2 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2168
+Keywords bronze ioun stone glowing~
+Type     rune~
+Short    &Oa &Ybr&Oon&Yze&O ioun stone&w~
+Long     &OA bronze ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 2 20 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2169
+Keywords light blue ioun stone glowing~
+Type     rune~
+Short    &Ca light blue ioun stone&w~
+Long     &CA light blue ioun stone has been left here.~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 1 4 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2170
+Keywords white ioun stone glowing~
+Type     rune~
+Short    &Wa white ioun stone&w~
+Long     &WA white ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 1 3 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2171
+Keywords dark green ioun stone glowing~
+Type     rune~
+Short    &ga dark green ioun stone&w~
+Long     &gA dark green ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 15 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2172
+Keywords ioun stone glowing blue~
+Type     rune~
+Short    &Ba blue ioun stone&w~
+Long     &BA blue ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 15 14 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2173
+Keywords ioun stone glowing pink~
+Type     rune~
+Short    &Pa pink ioun stone&w~
+Long     &PA pink ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 2 23 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2174
+Keywords speckled ioun stone glowing~
+Type     rune~
+Short    &ca s&Cp&ge&cc&Ck&Yl&ge&cd ioun stone&w~
+Long     &cA speckled ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 80 0 0 8 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2175
+Keywords ioun stone glowing yellow~
+Type     rune~
+Short    &Ya yellow ioun stone&w~
+Long     &YA yellow ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 1 3 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2176
+Keywords ioun stone glowing brown~
+Type     rune~
+Short    &Oa brown ioun stone&w~
+Long     &OA brown ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 2 22 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2177
+Keywords ioun stone glowing teal~
+Type     rune~
+Short    &ca teal ioun stone&w~
+Long     &cA teal ioun stone has been left here.&w~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 65 0 0 6 1 0
+Affect       -1 -1 2 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2178
+Keywords ioun stone glowing red~
+Type     rune~
+Short    &Ra red ioun stone&w~
+Long     &RA red ioun stone has been left here.&w~
+Flags    magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 50 0 0 5 1 0
+Affect       -1 -1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2179
+Keywords ioun stone glowing green~
+Type     rune~
+Short    &Ga green ioun stone&w~
+Long     &GA green ioun stone has been left here.&w~
+Flags    magic~
+WFlags   take~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 50 0 0 5 1 0
+Affect       -1 -1 1 3 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2180
+Keywords scroll bright flames depicting~
+Type     scroll~
+Short    &Ra scroll depicting &Ybright&R flames&w~
+Long     &RA scroll depicting bright flames has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 25 0 0 2 1 0
+Spells   'aganazzars scorcher' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2181
+Keywords scroll depicting fish~
+Type     scroll~
+Short    &ca scroll depicting a fish&w~
+Long     &cA scroll depicting a fish has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 25 0 0 2 0 0
+Spells   'water breathing' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2182
+Keywords scroll depicting screaming face~
+Type     scroll~
+Short    &pa scroll depicting a screaming face&w~
+Long     &pA scroll depicting a screaming face has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 30 0 0 3 1 0
+Spells   'touch of idiocy' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2183
+Keywords potion blue glass bottle~
+Type     potion~
+Short    &Ba blue potion&w~
+Long     &BA potion bottle made from blue glass has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 30 40 0 3 1 0
+Spells   'cure serious wounds' 'cure serious wounds' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2184
+Keywords potion green glass bottle~
+Type     potion~
+Short    &Ga green potion&w~
+Long     &GA potion made from green glass has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 20 0 0 2 1 0
+Spells   'remove poison' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2185
+Keywords potion purple glass bottle~
+Type     potion~
+Short    &pa purple potion&w~
+Long     &pA potion bottle made from purple glass has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 45 0 0 4 1 0
+Spells   'detect hidden' 'detect magic' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2186
+Keywords red potion glass bottle~
+Type     potion~
+Short    &Ra red potion&w~
+Long     &RA potion bottle made from red glass has been left here.~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 45 0 0 4 1 0
+Spells   'bulls strength' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2187
+Keywords silver potion glass bottle~
+Type     potion~
+Short    &wa silver potion&w~
+Long     &wA glass bottle made from silver glass has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+Spells   'foxs cunning' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2188
+Keywords yellow potion bottle glass~
+Type     potion~
+Short    &Ya yellow potion&w~
+Long     &YA potion made from yellow glass has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 35 0 0 3 1 0
+Spells   'owls wisdom' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2189
+Keywords silver hammer magical blue handled~
+Type     weapon~
+Short    &wa silver hammer with a &Bblue handle&w~
+Long     &wA silver hammer with a blue handle has been left here.7w~
+Flags    magic lightweight~
+WFlags   take onehand~
+Values   12 1 4 2 21 0
+Values2  0 2
+Stats    2 20 0 1 2 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2190
+Keywords scimitar silver blue handle~
+Type     weapon~
+Short    &wa silver scimitar with a &Bblue handle&w~
+Long     &wA silver scimitar with a blue handle has been left here.&w~
+Flags    magic finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 1 4 0
+Values2  0 2
+Stats    3 30 2 1 3 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2191
+Keywords greataxe silver blue handle~
+Type     weapon~
+Short    &wa silver greataxe with a &Bblue handle&w~
+Long     &wA silver greataxe with a blue handle has been left here.&w~
+Flags    magic heavy~
+WFlags   take twohand~
+Values   12 1 12 1 13 0
+Values2  0 2
+Stats    7 50 3 1 5 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2192
+Keywords silver javelin blue handle~
+Type     weapon~
+Short    &wa silver javelin with a &Bblue handle&w~
+Long     &wA silver javelin with a blue handle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   12 1 6 3 16 0
+Values2  0 2
+Stats    2 35 0 1 3 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2193
+Keywords silver dagger blue handle~
+Type     weapon~
+Short    &wa silver dagger with a &Bblue handle&w~
+Long     &wA silver dagger with a blue handle has been left here.&w~
+Flags    magic finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 2
+Stats    1 25 0 1 2 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2194
+Keywords silver whip blue handle~
+Type     weapon~
+Short    &wa silver whip with a &Bblue handle&w~
+Long     &wA silver whip with a blue handle has been left here.&w~
+Flags    magic finesse~
+WFlags   take onehand~
+Values   12 1 4 1 6 0
+Values2  0 2
+Stats    3 30 10 1 3 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2195
+Keywords longsword silver blue handle~
+Type     weapon~
+Short    &wa silver longsword with a &Bblue handle&w~
+Long     &wA silver longsword with a blue handle has been left here.&w~
+Flags    magic versatile~
+WFlags   take onehand twohand~
+Values   12 1 8 1 1 0
+Values2  0 2
+Stats    3 50 1 1 5 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2196
+Keywords club silver blue handle~
+Type     weapon~
+Short    &wa silver club with a &Bblue handle&w~
+Long     &wA silver club with a blue handle has been left here.&w~
+Flags    lightweight~
+WFlags   take onehand~
+Values   12 1 4 2 19 0
+Values2  0 2
+Stats    2 40 0 1 4 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2197
+Keywords silver mace blue handle~
+Type     weapon~
+Short    &wa silver mace with a &Bblue handle&w~
+Long     &wA silver mace with a blue handle has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   12 1 6 2 8 0
+Values2  0 2
+Stats    4 45 0 1 4 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2198
+Keywords silver spear blue handle~
+Type     weapon~
+Short    &wa silver spear with a &Bblue handle&w~
+Long     &wA silver spear with a blue handle has been left here.&w~
+Flags    magic versatile~
+WFlags   take onehand twohand~
+Values   12 1 6 3 14 0
+Values2  0 2
+Stats    3 50 0 1 5 1 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2199
+Keywords animal pelt~
+Type     trash~
+Short    &Oan animal pelt&w~
+Long     &OAn animal pelt has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2000
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it heads deep inside the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. To the north you see the walls of New Darkhaven, which
+contrast with the plants outside due to the gleaming white stone.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      521
+MapY      791
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2001
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2001
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it heads deep inside the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. To the far north you see the walls of New Darkhaven, which
+peek out through the trees and plants. Its gleaming white walls
+contrast with the natural colors of the forest. The path continues
+to the north and to the east and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2000
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2002
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2027
+#ENDEXIT
+
+Reset O 0 2018 1 2001
+#ENDROOM
+
+#ROOM
+Vnum     2002
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2003
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2001
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2003
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2004
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2028
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2002
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2004
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2005
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2003
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2005
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Birds fly about
+overhead as they move about the forest playfully.
+~
+#EXIT
+Direction north~
+ToRoom    2173
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2006
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2006
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2005
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2007
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2007
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. A small glade
+can be seen to the east.
+~
+#EXIT
+Direction north~
+ToRoom    2006
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2008
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2009
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2008
+Name     &GA Small Glade&w~
+Sector   field~
+Flags    nomob~
+Desc     &gThis glade is quite small and contains very tall grasses that
+shimmer in the sunlight. The grasses make an interesting noise as
+the wind blows and while they rub together. The glade seems to
+be circular in shape with tall trees creating a perimeter.
+~
+#EXIT
+Direction west~
+ToRoom    2007
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2009
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2007
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2010
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2010
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2009
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2011
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2011
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2010
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2012
+#ENDEXIT
+
+Reset M 0 2000 22 2011
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2012
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see some of
+the forest transitioning into sand and dunes to the south.
+~
+#EXIT
+Direction east~
+ToRoom    2011
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2013
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2013
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see some of
+the forest transitioning into sand and dunes to the south.
+~
+#EXIT
+Direction north~
+ToRoom    2031
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2012
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2014
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2014
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see some of
+the forest transitioning into sand and dunes to the south.
+~
+#EXIT
+Direction east~
+ToRoom    2013
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2015
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see some of
+the forest transitioning into the sand and dunes to the south. You
+can hear the crash of waves nearby.
+~
+#EXIT
+Direction north~
+ToRoom    2034
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2014
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2016
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2016
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see some of
+the forest transitioning into the sand and dunes to the south. You
+can hear the crash of waves nearby.
+~
+#EXIT
+Direction east~
+ToRoom    2015
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2017
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2017
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see a faint
+path leading south, which leads one out of the forest and on to
+a more established roadway.
+~
+#EXIT
+Direction east~
+ToRoom    2016
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2018
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2019
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2018
+Name     &GThe Edge of the Forest&w~
+Sector   field~
+Desc     &gThis is a part of the forest that has begun to slowly thin itself
+of trees and one can see rolling fields to the east from here. A
+well established road can be seen to the west from here as it
+cuts through the forest. A small village can be seen to the far
+west near the shores of the sea. The forest path continues back
+to the north as it goes deep into the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2017
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      520
+MapY      809
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2019
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see some of
+the forest transitioning into the sand and dunes to the south. You
+can hear the crash of waves nearby.
+~
+#EXIT
+Direction east~
+ToRoom    2017
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2020
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2020
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see some of
+the forest transitioning into sand and dunes to the south.
+~
+#EXIT
+Direction east~
+ToRoom    2019
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2021
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2021
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and north from here. You see some of
+the forest transitioning into sand and dunes to the south.
+~
+#EXIT
+Direction north~
+ToRoom    2022
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2020
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2022
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. You see some of
+the forest transitioning into hills and dunes to the far south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2023
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2021
+#ENDEXIT
+
+Reset M 0 2000 22 2022
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2023
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Birds fly about
+overhead as they move about the forest playfully.
+~
+#EXIT
+Direction north~
+ToRoom    2024
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2037
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2022
+#ENDEXIT
+
+Reset M 0 2000 23 2023
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2024
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2025
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2023
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2025
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south, east, and west from here. An
+additional well traveled path leads to the north towards a large
+campfire and encampment.
+~
+#EXIT
+Direction east~
+ToRoom    2026
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2024
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2038
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2026
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2027
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2025
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2027
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. You see the stone
+walls of a city towards the north, which contrasts with the greenery.
+~
+#EXIT
+Direction east~
+ToRoom    2001
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2035
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2026
+#ENDEXIT
+
+Reset M 0 2009 3 2027
+#ENDROOM
+
+#ROOM
+Vnum     2028
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2003
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2029
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2029
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2028
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2030
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2032
+#ENDEXIT
+
+Reset M 0 2000 22 2029
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2030
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2029
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2031
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2031
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2030
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2013
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2032
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2029
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2033
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2033
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2032
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2034
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2034
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2033
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2035
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2027
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2036
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2036
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2035
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2037
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2037
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2036
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2023
+#ENDEXIT
+
+Reset M 0 2000 22 2037
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2038
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2025
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2039
+#ENDEXIT
+
+Reset M 0 2000 22 2038
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2039
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the east and south from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2038
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2040
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2040
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north and west from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2039
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2041
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2041
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2040
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2042
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 17
+mea $n &gYou notice the path to the west leads into the western woods.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2042
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the east and north from here. A small wooden
+bridge is located to the north as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2043
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2041
+#ENDEXIT
+
+Reset M 0 2000 22 2042
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2043
+Name     &cA Small Wooden Bridge&w~
+Sector   forest~
+Desc     A rough looking bridge made with long cut logs to help people cross
+the river below. The waters of the river move very slowly here
+and various flying insects dance along its surface during the
+day time. At night the river sparkles with the light of the moon.
+The bridge is made from bound cords and wooden nails by someone
+a long time ago. The forest path continues to the north and south
+from here.
+~
+#EXIT
+Direction north~
+ToRoom    2044
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2042
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2190
+Flags     nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 15
+mea $n &BYou discern that the water below the bridge is the Toric River.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2044
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north and south from here. A small wooden
+bridge is located to the south as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2045
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2043
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2045
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Birds fly about
+overhead as they move about the forest playfully. A log cabin can
+be seen to the east from here.
+~
+#EXIT
+Direction north~
+ToRoom    2046
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2065
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2046
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. You spot a cabin
+to the southeast from here at the base of some hills.
+~
+#EXIT
+Direction north~
+ToRoom    2047
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2045
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2047
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path meets at an intersection here where it heads to the north,
+south, east, and west from here. The tracks in this part of the path
+are very clear especially towards the east.
+~
+#EXIT
+Direction north~
+ToRoom    2068
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2067
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2046
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2048
+#ENDEXIT
+
+Reset O 0 2019 1 2047
+#ENDROOM
+
+#ROOM
+Vnum     2048
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and the west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2047
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2049
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2049
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south, east, and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2048
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2062
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2050
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. Several hills merge and can be seen throughout this area
+like earthen waves.
+~
+#EXIT
+Direction east~
+ToRoom    2049
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2051
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2051
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction north~
+ToRoom    2085
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2050
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2052
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2052
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2051
+#ENDEXIT
+
+Reset M 0 2000 22 2052
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2053
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. Several hills merge and can be seen throughout this area
+like earthen waves.
+~
+#EXIT
+Direction south~
+ToRoom    2054
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2054
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and south from here. Several hills
+can be seen throughout the forest, which are covered with plants
+and fallen trees.
+~
+#EXIT
+Direction north~
+ToRoom    2053
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2064
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2055
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      445
+MapY      780
+#ENDEXIT
+
+Reset M 0 2000 22 2054
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2055
+Name     &GA Path in the New Darkhaven Forest~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north and south from here. A small wooden
+bridge is located to the south as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2054
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2056
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2056
+Name     &cA Small Wooden Bridge&w~
+Sector   forest~
+Desc     A rough looking bridge made with long cut logs to help people cross
+the river below. The waters of the river move very slowly here
+and various flying insects dance along its surface during the
+day time. At night the river sparkles with the light of the moon.
+The bridge is made from bound cords and wooden nails by someone
+a long time ago. The forest path continues to the north and south
+from here.
+~
+#EXIT
+Direction north~
+ToRoom    2055
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2057
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2193
+Flags     nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 15
+mea $n &BYou discern that the water below the bridge is the Toric River.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2057
+Name     &GA Path in the New Darkhaven Forest~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north from here. A small wooden
+bridge is located to the north as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2056
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2058
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north from here. A small wooden
+bridge is located to the north as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2059
+Name     &cA Small Wooden Bridge&w~
+Sector   forest~
+Desc     A rough looking bridge made with long cut logs to help people cross
+the river below. The waters of the river move very slowly here
+and various flying insects dance along its surface during the
+day time. At night the river sparkles with the light of the moon.
+The bridge is made from bound cords and wooden nails by someone
+a long time ago. The forest path continues to the north and south
+from here.
+~
+#EXIT
+Direction north~
+ToRoom    2060
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2058
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2192
+Flags     nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 15
+mea $n &BYou discern that the water below the bridge is the Toric River.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2060
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north and south from here. A small wooden
+bridge is located to the south as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2061
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2061
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north, south, and west from here. Several hills
+can be seen throughout the forest, which are covered with plants
+and fallen trees.
+~
+#EXIT
+Direction north~
+ToRoom    2062
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2060
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2063
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2062
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Several hills
+merge here as the path moves through it.
+~
+#EXIT
+Direction north~
+ToRoom    2049
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2063
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. Several hills
+can be seen throughout the forest, which are covered with plants
+and fallen trees.
+~
+#EXIT
+Direction east~
+ToRoom    2061
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2064
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2064
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. Several hills
+can be seen throughout the forest, which are covered with plants
+and fallen trees.
+~
+#EXIT
+Direction east~
+ToRoom    2063
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2054
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2065
+Name     &YBefore a Log Cabin&w~
+Sector   forest~
+Desc     &gA moderately sized log cabin can be seen to the nearby east from
+here at the base of some hills. The area has been cleared by hand
+and turned into firewood for the cabin. A chopping area can be
+seen near the front door of the cabin and it appears to be used
+quite frequently.
+~
+#EXIT
+Direction east~
+ToRoom    2066
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2045
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2199 1 2065
+Reset D 0 2065 1 0
+#ENDROOM
+
+#ROOM
+Vnum     2066
+Name     &YInside a Log Cabin&w~
+Sector   indoors~
+Desc     &wThis cabin has been minimally decorated with things you would 
+normally see in a city home. The walls display various hunting
+trophies and there are some windows without curtains that look
+out into the surrounding forest. A metal cookstove is located
+near the center of the cabin and is used for warmth and cooking
+purposes. A small twin bed is to the north for whoever lives
+here. The cabin smells of pine and bread that has recently
+been pulled from the cookstove.
+~
+#EXIT
+Direction west~
+ToRoom    2065
+Flags     isdoor~
+#ENDEXIT
+
+Reset D 0 2066 3 0
+#ENDROOM
+
+#ROOM
+Vnum     2067
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Flags    nomob~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. To the east you 
+can see the white stone walls of a city as the trees thin slightly. 
+~
+#EXIT
+Direction east~
+ToRoom    30000
+Flags     nomob overland~
+MapX      512
+MapY      782
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2047
+#ENDEXIT
+
+Reset M 0 2001 1 2067
+#ENDROOM
+
+#ROOM
+Vnum     2068
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2069
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2069
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2070
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2068
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2070
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2071
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2069
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2071
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Birds fly about 
+overhead as they move about the forest playfully.
+~
+#EXIT
+Direction north~
+ToRoom    2072
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2070
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2072
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east, west, and south from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2088
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2071
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2073
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2073
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. There are several
+fallen trees to the west of here, which appear to have been taken
+down during a storm.
+~
+#EXIT
+Direction east~
+ToRoom    2072
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2074
+#ENDEXIT
+
+Reset M 0 2006 2 2073
+Reset M 0 2006 2 2073
+#ENDROOM
+
+#ROOM
+Vnum     2074
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. There are several
+fallen trees here, which appear to have been taken down during a 
+strong storm at some point.
+~
+#EXIT
+Direction east~
+ToRoom    2073
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2075
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2075
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. There are several
+fallen trees here, which appear to have been taken down during a 
+strong storm at some point.
+~
+#EXIT
+Direction east~
+ToRoom    2074
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2076
+#ENDEXIT
+
+Reset M 0 2000 22 2075
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2076
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Stats    0 0 0 0 15 0
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east  from here. Birds fly about overhead 
+as they move about the forest playfully.
+~
+Perdesc  &gYou spot a hidden forest path to the west from here...&w
+~
+#EXIT
+Direction east~
+ToRoom    2075
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2083
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2077
+Flags     hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2077
+Name     A Path in the Forest~
+Sector   forest~
+Desc     &gThis is path is not used often and has been overtaken almost by
+the thick vegetation of the forest. Large towering trees provide 
+lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path shows the remnants of old wagon wheel tracks that
+create deep grooves in the earth. Long grasses obscure parts of the
+path as it continues to the west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2076
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2078
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2078
+Name     A Path in the Forest~
+Sector   forest~
+Desc     &gThis is path is not used often and has been overtaken almost by
+the thick vegetation of the forest. Large towering trees provide 
+lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path shows the remnants of old wagon wheel tracks that
+create deep grooves in the earth. Long grasses obscure parts of the
+path as it continues to the north and west from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2079
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2077
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2079
+Name     A Path in the Forest~
+Sector   forest~
+Desc     &gThis is path is not used often and has been overtaken almost by
+the thick vegetation of the forest. Large towering trees provide 
+lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path shows the remnants of old wagon wheel tracks that
+create deep grooves in the earth. Long grasses obscure parts of the
+path as it continues to the north and west from here. The ground
+here has also begun to get rather squishy as a large source of
+water can be detected nearby.
+~
+#EXIT
+Direction north~
+ToRoom    2080
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2078
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2080
+Name     A Path in the Forest~
+Sector   forest~
+Stats    0 0 0 0 16 0
+Desc     &gThis is path is not used often and has been overtaken almost by
+the thick vegetation of the forest. Large towering trees provide 
+lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path shows the remnants of old wagon wheel tracks that
+create deep grooves in the earth. Long grasses obscure parts of the
+path as it continues to the north and west from here. The ground
+here has also begun to get rather squishy as a large source of
+water can be detected nearby.
+~
+Perdesc  &cYou see a barely visible path leading into a marsh towards the west.
+~
+#EXIT
+Direction south~
+ToRoom    2079
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1408
+Flags     hidden nomob~
+#ENDEXIT
+
+Reset O 0 2149 1 2080
+Reset O 0 2149 2 2080
+#ENDROOM
+
+#ROOM
+Vnum     2081
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction north~
+ToRoom    2197
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2082
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction north~
+ToRoom    2198
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2195
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2081
+#ENDEXIT
+
+Reset M 0 2000 22 2082
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2083
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction north~
+ToRoom    2076
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2084
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2084
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. A small forest glade with a rather large tree can be
+seen to the east of here.
+~
+#EXIT
+Direction north~
+ToRoom    2083
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2086
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2085
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2085
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction north~
+ToRoom    2084
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2051
+#ENDEXIT
+
+Reset M 0 2005 1 2085
+#ENDROOM
+
+#ROOM
+Vnum     2086
+Name     &GA Small Forest Glade&w~
+Sector   forest~
+Desc     &gThis small glade seems to sparkle in the sunlight or moonlight
+depending on the time of day. The grass is remarkably short and
+well maintained, which helps show the details of the glade. In the
+direct center of the glade is a very large ancient tree that has
+a strong presence. 
+~
+#EXIT
+Direction east~
+ToRoom    2087
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2084
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2087
+Name     &OBefore a Large Tree&w~
+Sector   field~
+Flags    nomob~
+Desc     &YThis location is dominated by an extremely large ancient tree
+that has an impressive presence. Parts of the tree's roots have
+uprooted themselves like giant cords. The roots create curved
+door like portals or places to sit near the tree. The leaves of
+the tree are an unusual gold color. The area is quite silent as
+if the animals in this part of the forest know to be solemn
+and quiet.
+~
+Nightdesc  &YThis location is dominated by an extremely large ancient tree
+that has an impressive presence. Parts of the tree's roots have
+uprooted themselves like giant cords. The roots create curved door
+like portals or places to sit under the tree. The leaves of the tree
+are an unusual gold color, which shimmers in the night time. This
+shimmering illuminates the area around the tree.
+~
+#EXIT
+Direction west~
+ToRoom    2086
+#ENDEXIT
+
+Reset M 0 2008 1 2087
+  Reset E 0 2010 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2088
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2089
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2072
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 17
+mea $n &gYou notice the path to the east leads into the northern woods.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2089
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2090
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2088
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2090
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. A large forested
+hill can be seen to the far northeast.
+~
+#EXIT
+Direction east~
+ToRoom    2091
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2089
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2091
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Stats    0 0 0 0 18 0
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the west and south from here. A large forested
+hill can be seen to the northeast.
+~
+Perdesc  &gYou see a slightly hidden forest path to the northeast from here.
+~
+#EXIT
+Direction south~
+ToRoom    2092
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2090
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2131
+Flags     hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2092
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and east from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2091
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2127
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2093
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2093
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2092
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2094
+#ENDEXIT
+
+Reset M 0 2000 22 2093
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2094
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2093
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2095
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2095
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest. You see the white stone walls of a city to the
+south from here as the trees begin to thin out.
+~
+#EXIT
+Direction east~
+ToRoom    2096
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2094
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2096
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest. You see the white stone walls of a city to the
+south from here as the trees begin to thin out.
+~
+#EXIT
+Direction east~
+ToRoom    2097
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2095
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2097
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest. You see the white stone walls of a city to the
+south from here as the trees begin to thin out.
+~
+#EXIT
+Direction east~
+ToRoom    2098
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2096
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2098
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south and north from here. You spot the walls
+of a city to the south as the forest begins to thin slightly here.
+~
+#EXIT
+Direction north~
+ToRoom    2124
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2100
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2099
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2097
+#ENDEXIT
+
+Reset O 0 2020 1 2098
+#ENDROOM
+
+#ROOM
+Vnum     2099
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south and north from here. You spot the walls
+of a city to the south as the forest begins to thin slightly here.
+~
+#EXIT
+Direction north~
+ToRoom    2098
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      521
+MapY      774
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2100
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest. You see the white stone walls of a city to the
+south from here as the trees begin to thin out.
+~
+#EXIT
+Direction east~
+ToRoom    2101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2098
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2101
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest. You see the white stone walls of a city to the
+south from here as the trees begin to thin out.
+~
+#EXIT
+Direction east~
+ToRoom    2102
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2100
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2102
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2103
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2101
+#ENDEXIT
+
+Reset M 0 2009 3 2102
+#ENDROOM
+
+#ROOM
+Vnum     2103
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2104
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2102
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2104
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2105
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2103
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2105
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2106
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2104
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2129
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2106
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2107
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2105
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2107
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    2108
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2133
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2106
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2108
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction north~
+ToRoom    2109
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2107
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2109
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction south~
+ToRoom    2108
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2110
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2110
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2109
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2111
+#ENDEXIT
+
+Reset O 0 2158 1 2110
+#ENDROOM
+
+#ROOM
+Vnum     2111
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and west from here. The forest begins
+to thin out heavily here.
+~
+#EXIT
+Direction north~
+ToRoom    2130
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2110
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2112
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2112
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. The forest begins
+to thin out heavily here.
+~
+#EXIT
+Direction east~
+ToRoom    2111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2113
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2113
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    2112
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2118
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2114
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2114
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2113
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2115
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2115
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2114
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2116
+#ENDEXIT
+
+Reset O 0 2158 1 2115
+#ENDROOM
+
+#ROOM
+Vnum     2116
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2115
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2117
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2117
+Name     &GThe New Darkhaven Forest~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2116
+#ENDEXIT
+
+Reset O 0 2158 1 2117
+#ENDROOM
+
+#ROOM
+Vnum     2118
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2113
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2119
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2119
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    2118
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2120
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2120
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and west from here.
+~
+#EXIT
+Direction south~
+ToRoom    2121
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2119
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2121
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Birds fly about 
+overhead as they move about the forest playfully.
+~
+#EXIT
+Direction north~
+ToRoom    2120
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2122
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2122
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south and north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2121
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2123
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2123
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path meets at an intersection here where it heads to the north,
+south, east, and west from here. The tracks in this part of the path
+are very clear especially towards the south.
+~
+#EXIT
+Direction north~
+ToRoom    2122
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2128
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2124
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2125
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2124
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south and north from here. You spot the walls
+of a city to the south as the forest begins to thin slightly here.
+~
+#EXIT
+Direction north~
+ToRoom    2123
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2098
+#ENDEXIT
+
+Reset M 0 2000 22 2124
+  Reset G 0 2001 1
+  Reset G 0 2000 1
+#ENDROOM
+
+#ROOM
+Vnum     2125
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2123
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2126
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2126
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. An abundant
+amount of moss can be seen here growing on various trees.
+~
+#EXIT
+Direction east~
+ToRoom    2125
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2127
+#ENDEXIT
+
+Reset O 0 2158 1 2126
+#ENDROOM
+
+#ROOM
+Vnum     2127
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2126
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2092
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2128
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. Birds fly about
+playfully overhead as they move about the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2129
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2123
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2129
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. Birds fly about
+playfully overhead as they move about the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2105
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2128
+#ENDEXIT
+
+Reset M 0 2000 22 2129
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2130
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south from here. The forest begins
+to thin out heavily here and there is patches of sandy ground
+that has begun to appear. A small grassy path leads towards some
+sand dunes to the north.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      534
+MapY      750
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2111
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2131
+Name     &GA Small Forest Path&w~
+Sector   forest~
+Flags    nomob~
+Desc     &gThis is a small forest path that runs alongside a large hill. You
+can see this path has been made to be hidden from those that are
+very unobservant. The path winds up the hill towards the northeast
+and there appears to be some sort of camp at the very top of the
+hill that is occupied.
+~
+#EXIT
+Direction northeast~
+ToRoom    2132
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2091
+Flags     hidden nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2132
+Name     &GA Small Forest Path~
+Sector   forest~
+Flags    nomob~
+Desc     &gThe forest path ends here at the top of a large forested hill. A
+large encampment can be seen to the east from here with various
+tents and campfires about the area. This is a secured location here
+that seems to be manned by guards at all times. It appears every
+attempt to keep this camp from being discovered has been attempted.
+~
+#EXIT
+Direction east~
+ToRoom    2197
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2131
+#ENDEXIT
+
+Reset M 0 2004 2 2132
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+Reset M 0 2004 2 2132
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2133
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. Various trees in
+this area are covered in flowering moss.
+~
+#EXIT
+Direction east~
+ToRoom    2134
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2107
+#ENDEXIT
+
+Reset M 0 2000 22 2133
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2134
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the south and west from here. Various trees in
+this area are covered in flowering moss.
+~
+#EXIT
+Direction south~
+ToRoom    2135
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2133
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2135
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Various trees in
+this area are covered in flowering moss.
+~
+#EXIT
+Direction north~
+ToRoom    2134
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2136
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2136
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Various trees in
+this area are covered in flowering moss.
+~
+#EXIT
+Direction north~
+ToRoom    2135
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2137
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 17
+mea $n &gYou notice the path to south leads into the eastern woods.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2137
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north and south from here. A small wooden
+bridge is located to the south as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2136
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2138
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2138
+Name     &cA Small Wooden Bridge~
+Sector   forest~
+Desc     A rough looking bridge made with long cut logs to help people cross
+the river below. The waters of the river move very slowly here
+and various flying insects dance along its surface during the
+day time. At night the river sparkles with the light of the moon.
+The bridge is made from bound cords and wooden nails by someone
+a long time ago. The forest path continues to the north and south
+from here.
+~
+#EXIT
+Direction north~
+ToRoom    2137
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2139
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2184
+Flags     nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 15
+mea $n &BYou discern that the water below the bridge is the Toric River.&w
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2139
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm. The
+ground here is very squishy indicating a source of water is nearby.
+The path continues to the north and east from here. A small wooden
+bridge is located to the north as it crosses a medium size river.
+~
+#EXIT
+Direction north~
+ToRoom    2138
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2140
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2140
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the west and south from here. You hear the the
+trickling of water coming from nearby.
+~
+#EXIT
+Direction east~
+ToRoom    2141
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2159
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2139
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2141
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2142
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2140
+#ENDEXIT
+
+Reset M 0 2009 2 2141
+#ENDROOM
+
+#ROOM
+Vnum     2142
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2143
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2141
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2143
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2144
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2142
+#ENDEXIT
+
+Reset M 0 2000 22 2143
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2144
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Stats    0 0 0 0 18 0
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+Perdesc  &gYou see a small field past some high grasses to the east from here.
+~
+#EXIT
+Direction east~
+ToRoom    2145
+Flags     hidden~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2147
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2143
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2145
+Name     &GA Small Field&w~
+Sector   forest~
+Flags    nomob~
+Desc     &YThis field has been down for gardening usages. The field has been
+plowed in various spots and planted. You see a structure that 
+looks like a home to the north. The field looks not complete, but
+it serves its owner well.
+~
+#EXIT
+Direction north~
+ToRoom    2146
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2144
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2146
+Name     &YBefore a Small Hut&w~
+Sector   forest~
+Desc     &gThis small hut is located near the northern back corner of a large
+field. The hut has been created with stone and has a thatched
+roof on top. A small stone chimney allows smoke to escape from
+the fire lit inside the hut. Two large apple trees can be found
+right next to the hut for gathering and eating of the fruit.
+~
+#EXIT
+Direction south~
+ToRoom    2145
+#ENDEXIT
+
+Reset M 0 2010 1 2146
+#ENDROOM
+
+#ROOM
+Vnum     2147
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2144
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2148
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2148
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2147
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2149
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2149
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues only to the west from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2148
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2150
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2153
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2150
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2149
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2151
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2151
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2150
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2152
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2152
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest. A grassy path can be seen towards the east from here
+leading out into a large field outside of the forest.
+~
+#EXIT
+Direction east~
+ToRoom    30000
+Flags     nomob overland~
+MapX      556
+MapY      806
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2151
+#ENDEXIT
+
+Reset M 0 2007 2 2152
+Reset M 0 2007 2 2152
+#ENDROOM
+
+#ROOM
+Vnum     2153
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2149
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2154
+#ENDEXIT
+
+Reset M 0 2000 22 2153
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2154
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2153
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2155
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2155
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2154
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2156
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2156
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2155
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2157
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2157
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north, east, and west from here. Birds fly about
+playfully overhead as they move about the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2158
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2156
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2160
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2158
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2159
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2157
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2159
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2140
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2158
+#ENDEXIT
+
+Reset M 0 2000 22 2159
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2160
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2157
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2170
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2161
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2161
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2160
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2162
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2162
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. 
+~
+#EXIT
+Direction east~
+ToRoom    2161
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2163
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2163
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the east and west from here. White stone walls
+can be seen to the west peeking out from behind some trees.
+~
+#EXIT
+Direction east~
+ToRoom    2162
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2165
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2164
+#ENDEXIT
+
+Reset O 0 2021 1 2163
+#ENDROOM
+
+#ROOM
+Vnum     2164
+Name     &GA Path in the New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the west towards the white stone walls of a city
+while the east path leads back into the forest.
+~
+#EXIT
+Direction east~
+ToRoom    2163
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      530
+MapY      783
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2165
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. Birds fly about
+playfully overhead as they move about the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2163
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2166
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2166
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2165
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2167
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2171
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2167
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2168
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2166
+#ENDEXIT
+
+Reset M 0 2000 22 2167
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2168
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction east~
+ToRoom    2169
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2167
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2169
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction north~
+ToRoom    2170
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2174
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2168
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2170
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThe tree cover in this part of the forest is lighter than other parts that
+are more densely concentrated. You can see the sky from here during
+the day and night. Various types of wildflowers can be seen growing
+around here, which provide pops of color against the greenery. Moss 
+grows rapidly all over the base of trees and on the trees that have
+fallen down. 
+~
+#EXIT
+Direction north~
+ToRoom    2160
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2169
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2171
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2166
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2172
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2172
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2171
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2173
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2173
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis is a well worn path that leads through the New Darkhaven forest
+as it winds deep within the thick vegetation. Large towering trees
+provide lots of shade while inside the forest. You can hear the
+calls of various animals at all times of the day and night out
+here. The path is narrowly defined with old wagon wheel tracks that
+create deep grooves in the earth where water collects after a storm.
+The path continues to the north and south from here. 
+~
+#EXIT
+Direction north~
+ToRoom    2172
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2005
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) >= 17
+mea $n &gYou notice the path to the south leads into the southern woods.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2174
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2169
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2175
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2175
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    2174
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2176
+#ENDEXIT
+
+Reset M 0 2000 22 2175
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2176
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest.
+~
+#EXIT
+Direction south~
+ToRoom    2177
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2175
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2177
+Name     &GThe New Darkhaven Forest&w~
+Sector   forest~
+Stats    0 0 0 0 12 0
+Desc     &gThis an area of the forest that is deep concentrated with vegetation. Large
+trees loom overhead, which completely block out the sun. During the
+day it provides cool shade and during the night it creates a completely
+dark area that moonlight barely penetrates. Various types of plants from
+thick grasses and vines to large shrubs can be found throughout this
+part of the forest. To the south the forest becomes increasingly dense and
+many of the trees are covered in silvery spider's webbing.
+~
+Perdesc  &wYou notice that the part of the forest to the south is covered in
+thick spider's webbing as the forest there become very dense with
+trees and other vegetation.
+~
+#EXIT
+Direction north~
+ToRoom    2176
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4555
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2000 22 2177
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2178
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Flags    nomob~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them. The tent
+located here is the largest in all of the camp and has a nice
+campfire in front of it.
+~
+#EXIT
+Direction south~
+ToRoom    2179
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2199
+#ENDEXIT
+
+Reset M 0 2002 1 2178
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2179
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction north~
+ToRoom    2178
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2195
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2198
+#ENDEXIT
+
+Reset M 0 2000 22 2179
+  Reset E 0 2000 1 26
+  Reset E 0 2001 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2180
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThis is where the Toric River enters a stone portal for the
+city of New Darkhaven. The river winds through via a river canal
+and reenters nature to the southwest of here. The water is quick 
+moving and not very serene as it moves through the forest. Long 
+grasses border the river and obscure it from sight for those who are 
+unobservant. The river continues to the east and west from here.
+~
+#EXIT
+Direction east~
+ToRoom    2181
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1529
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2181
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is quick moving and not very serene as it moves through 
+the forest. Small air bubbles appear on the surface of the water 
+indicating fish swimming below. Long grasses border the river and 
+obscure it from sight for those who are unobservant. The river 
+continues to the north and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2182
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2180
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2182
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is quick moving and not very serene as it moves through 
+the forest. Small air bubbles appear on the surface of the water 
+indicating fish swimming below. Long grasses border the river and 
+obscure it from sight for those who are unobservant. The river 
+continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2183
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2181
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2183
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is quick moving and not very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the east 
+and west from here. A bridge has been made from various wooden 
+logs and nailed together with wooden nails can be seen to the east.
+~
+#EXIT
+Direction east~
+ToRoom    2184
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2182
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2184
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and serene as it moves through the 
+forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the east 
+and west from here. Above you is a wooden bridge which has a 
+ladder extended down for those that need to climb up onto the 
+bridge. The bridge has been made from various wooden logs and
+nailed together with wooden nails.
+~
+#EXIT
+Direction east~
+ToRoom    2185
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2183
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2138
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2185
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is quick moving and not very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the west and
+north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2186
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2184
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2186
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is quick moving and not very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the south
+from here. You see a small bridge nearby to the southwest that
+is used to cross the river.
+~
+#EXIT
+Direction south~
+ToRoom    2185
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2187
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThis is where the Toric River leaves the portal exit from the
+city of New Darkhaven. The river winds through via a river canal
+and reenters nature here. The water is slow moving and you
+can often find fishermen here trying to catch something
+during the day. Long grasses border the river and obscure it
+from sight for those who are unobservant. The river continues
+to the west from here.
+~
+#EXIT
+Direction east~
+ToRoom    1636
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2188
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2188
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the east and 
+south from here.
+~
+#EXIT
+Direction east~
+ToRoom    2187
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2189
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2189
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the north and 
+south from here. You see a wooden bridge made from logs to the south
+of here.
+~
+#EXIT
+Direction north~
+ToRoom    2188
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2190
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2190
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the north
+and west from here. Above you is a wooden bridge which has a ladder 
+extended down for those that need to climb up onto the bridge. 
+~
+#EXIT
+Direction north~
+ToRoom    2189
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2191
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2043
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2191
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the north and 
+south from here. You see a wooden bridge made from logs to the west
+of here.
+~
+#EXIT
+Direction east~
+ToRoom    2190
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2192
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2192
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the south
+from here. Above you is a wooden bridge which has a ladder 
+extended down for those that need to climb up onto the bridge. 
+~
+#EXIT
+Direction east~
+ToRoom    2191
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2193
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2059
+Flags     climb nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2193
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the south
+from here. Above you is a wooden bridge which has a ladder 
+extended down for those that need to climb up onto the bridge. 
+~
+#EXIT
+Direction east~
+ToRoom    2192
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2194
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2056
+Flags     climb nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2194
+Name     &BThe Toric River~
+Sector   indoors~
+Desc     &CThe water is slow moving and very serene as it moves in 
+the forest. Long grasses border the river and obscure it from sight 
+for those who are unobservant. The river continues to the east only 
+from here. You see a wooden bridge made from logs to the east
+of here.
+~
+#EXIT
+Direction east~
+ToRoom    2193
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2195
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction north~
+ToRoom    2179
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2082
+#ENDEXIT
+
+Reset M 0 2003 1 2195
+  Reset E 0 2004 1 26
+  Reset E 0 2005 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2196
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction east~
+ToRoom    2199
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2197
+#ENDEXIT
+
+Reset M 0 2000 22 2196
+  Reset E 0 2001 1 5
+  Reset E 0 2000 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2197
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction north~
+ToRoom    2196
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2198
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2081
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2132
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2198
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction north~
+ToRoom    2199
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2179
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2082
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2197
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2199
+Name     &YA Bandit Camp&w~
+Sector   forest~
+Desc     &gThis camp is heavily camouflaged to protect it from outsiders. All
+of the tents in the camp have been painted to resemble the ground
+of the forest by an expert artist. Campfire are kept small and
+are burnt to avoid too much smoke or smell. Various people move
+about the camp attending to chores assigned to them.
+~
+#EXIT
+Direction east~
+ToRoom    2178
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2198
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2196
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

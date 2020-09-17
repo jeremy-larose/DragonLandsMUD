@@ -1,0 +1,63 @@
+#SYSTEM
+MudName	     Dragonlands of Chaos~
+PortName	     mud~
+AdminEmail     (not set)~
+Highplayers    6
+Highplayertime Sun Jan 22 21:15:45 2017~
+CheckImmHost   1
+Nameresolving  1
+Waitforauth    0
+Readallmail    51
+Readmailfree   51
+Writemailfree  51
+Takeothersmail 51
+Muse           51
+Think          60
+Build          60
+Log            60
+Protoflag      60
+Overridepriv   51
+Msetplayer     60
+Stunplrvsplr   80
+Stunregular    15
+Gougepvp       40
+Gougenontank   80
+Bashpvp        40
+Bashnontank    80
+Dodgemod       2
+Parrymod       2
+Tumblemod      4
+Tumblepk	     5
+Damplrvsplr    100
+Damplrvsmob    100
+Dammobvsplr    100
+Dammobvsmob    100
+Damnonavvsmob  100
+Dammobvsnonav  100
+Peaceexpmod    100
+Deadlyexpmod   100
+Forcepc        51
+Guildoverseer  ~
+Guildadvisor   ~
+Saveflags      1445
+Savefreq       20
+Bestowdif      10
+BanSiteLevel   65
+BanRaceLevel   65
+BanClassLevel  65
+MorphOpt       1
+PetSave	     1
+Pkloot	        1
+Pkchannels     1
+Pksilence	     0
+Wizlock        0
+Maxholiday     0
+Secpertick     70
+Pulsepersec    4
+Hoursperday    24
+Daysperweek    7
+Dayspermonth   31
+Monthsperyear  12
+End
+
+#END

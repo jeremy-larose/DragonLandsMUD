@@ -1,0 +1,6495 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Goldenfields Abbey~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       5 15 0 0
+Economy      0 34750000
+ResetMsg     &YYou hear a large bell ringing over the rolling fields...&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2400
+Keywords   druid baking bread fireplace ~
+Short      &ga druid&w~
+Long       &gA druid is here baking some bread in a fireplace.&w
+~
+Desc       This druid is relatively new to the abbey and darts about the
+kitchen as he prepares meals as well as take inventory.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist prototype~
+Stats1     0 50 0 0 0 10 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2400
+if hasqbit($n) == 2406
+if hasqbit($n) != 2499
+smile $n 
+mpsleep 5
+sayto $n The field manager sent you? Good! We have run low on some
+sayto $n corn to use here in the kitchen. I need you to bring in
+sayto $n some more for us to store... can you get us four bushels?
+pat $n
+mpqset $n 2406
+mpqset $n 2407
+else
+smile $n
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2427) == 4
+if hasqbit($n) != 2499
+if hasqbit($n) != 2405
+if hasqbit($n) == 2407
+grin $n
+mpsleep 3
+sayto $n Thank you so much! I need you to head to the berry garden
+sayto $n and bring to me five boxes of berries.
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpqset $n 2407
+mpqset $n 2408
+else
+smile $n
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2438) == 5
+if hasqbit($n) == 2408
+smile $n 
+mpsleep 3
+sayto $n Wonderful! Thank you so much. Your next assignment is in
+sayto $n the livestock barn. May Amunar bless you.
+c bless $n
+mpqset $n 2409
+mpqset $n 2408
+mpjunk box
+mpjunk box
+mpjunk box
+mpjunk box
+mpjunk box
+else
+smile $n
+mpjunk box
+mpjunk box
+mpjunk box
+mpjunk box
+mpjunk box
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2439) == 5
+if hasqbit($n) == 2400
+if hasqbit($n) == 2409
+cheer $n
+sayto $n I was just going to ask the barn to send up some milk!
+sayto $n Thank you so much!
+mpsleep 3
+emote puts the milk on a counter and then bows her head
+sayto $n I believe you are wanted by the artificer located near
+sayto $n the fields. He has been having trouble with the water tank.
+mpjunk jug
+mpjunk jug
+mpjunk jug
+mpjunk jug
+mpjunk jug
+mpqset $n 2409
+mpqset $n 2411
+else
+smile $n
+mpjunk jug
+mpjunk jug
+mpjunk jug
+mpjunk jug
+mpjunk jug
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2499
+grin $n
+mpsleep 3
+mea $n The druid peers around the kitchen for a few moments.
+mpsleep 4
+mea $n The druid holds up a finger to be quiet as he hands you some cornbread.
+mpoload 2403 1
+silent give loaf $n
+mpsleep 3
+wink $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2401
+Keywords   elderly druid store~
+Short      &gan elderly druid&w~
+Long       &gAn elderly druid is here attending to the various abbey volunteers.&w
+~
+Desc       This druid has seen many seasons here at the abbey. His weathered
+hands stock the shelves and assist the various adventurers who
+have come to help the abbey.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 0 10 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 6 19
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2415
+squint $n
+mpsleep 3
+nod
+sayto $n Yes, you are the one I was looking for! I need you to make
+sayto $n a delivery for our ally in the western New Darkhaven forest.
+sayto $n He is a retired ranger that has built a home there and he
+sayto $n needs this delivery. Return to me when you deliver this.
+mpoload 2441 1
+give box $n
+mpqset $n 2415
+mpqset $n 2416
+else
+squint $n
+mpsleep 3
+sayto $n How can I help you today?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2442) == 1
+if hasqbit($n) == 2419
+squint $n
+mpsleep 3
+smile
+sayto $n Thank you for making all of these deliveries. Now you need
+sayto $n report to the High Druid. He wishes to speak to you about
+sayto $n your volunteering activities here at the abbey.
+mpqset $n 2420
+mpqset $n 2419
+mpjunk large239
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2402
+Keywords   tholgar Onuvien older man desk~
+Short      &GTholgar Onuvien&w~
+Long       &GAn older man is here watching the fields from a large window.&w
+~
+Desc       &GHere stands Tholgar Onuvien, a famed adventurer 
+in his younger days. Tholgar has turned Goldenfields 
+from a small farm into the large abbey it is known as today. 
+Tholgar stands at a height of six feet, two inches, and is 
+heavily muscled despite having given up his adventuring days 
+many seasons ago. His dark chestnut hair is slowly turning 
+white, having begun at both sides of his head and a streak 
+in his widows peak. Dark blue eyes twinkle with pride as 
+he watches the fields being tended to in the name of his 
+goddess, Amunar. 
+~
+Lore       &GYou see a younger Tholgar racing towards a large monster as he chants
+the words of power. His prayer is answered and the sky is lit with
+flaming orbs of energy that streak down upon the monster...
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 50 0 0 0 5 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2499
+if hasqbit($n) != 2400
+if hasqbit($n) != 2405
+smile $n
+sayto $n Welcome! Are you here to volunteer for our abbey? We are 
+sayto $n always looking for young adventurers to help us provide
+sayto $n food and comfort to the realms. Would you like to help us?
+else
+smile $n
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2499
+grin $n
+sayto $n It is always a pleasure to see you. May Amunar bless you!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2499
+if hasqbit($n) != 2400
+if hasqbit($n) != 2405
+grin
+sayto $n We appreciate all who come here to help us feed the lands.
+sayto $n Your first task will be to meet one of our elder druids in
+sayto $n the library located nearby.
+mpsleep 3
+sayto $n We also require that all current and very capable volunteers work
+sayto $n to help us clear the borders of our abbey from those that
+sayto $n wish it harm. You can bring evidence of any intruders to
+sayto $n our guard posted at the gates.
+mpsleep 4
+bow $n
+sayto $n May Amunar bless you and thank you again for helping us.
+mpqset $n 2400
+mpqset $n 2401
+mpqset $n 2402
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2420
+if hasqbit($n) != 2405
+pat $n
+mpsleep 5
+sayto $n I was just informed of all of the great things you have done
+sayto $n while helping us here at the abbey. I want to formally 
+sayto $n reward you with this magical badge that we give all of
+mpsleep 5
+goto 11
+mpsleep 5
+mpoload 2499 1
+give badge $n
+mpsleep 5
+sayto $n I cannot thank you enough for everything you have done
+sayto $n here at Goldenfields. We hope to see you again here one
+sayto $n day as you are always welcome here.
+mpqset $n 2420
+mpqset $n 2499
+mpqset $n 2400
+mpqset $n 2401
+mpadvance $n 3500
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2403
+Keywords   druid water can tending crops~
+Short      &Ga druid&w~
+Long       &GA druid is here with a watering can tending to some of the crops.&w
+~
+Desc       This female elven druid is here tending to some of the crops with her
+watering can. She is dressed in simple brown robes and wears a straw
+hat to protect her head and face while she works outside.
+~
+Race       wood-elf~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea pacifist~
+Affected   infrared~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   45~
+Comlist   If ovnumroom(2419) == 1
+Mpecho &CThe druid waters a patch of planted soil with a water can.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote whistles a little song as she waters some of the crops
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2400
+smile $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2433
+emote arrives and stretches a bit before she gets to work
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote yawns and begins heading towards the abbey for dinner
+mpgoto 2492
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2404
+Keywords   small plant elemental amunar~
+Short      &Ga plant elemental&w~
+Long       &GA small sized plant elemental is here carrying out its duties.&w
+~
+Desc       This elemental is made of shimmering leaves and it flies about this
+area blessing the crops for its goddess. It is very frail looking
+but is very dutiful. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis pacifist~
+Affected   infrared flying truesight~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     1 10 0
+Stats3     1 4 0
+Stats4     1 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if ovnumroom(2418) == 1
+mpoload 2422
+mppurge watered11
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2437
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   mpgoto 2492
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2405
+Keywords   medium plant elemental amunar~
+Short      &Ga plant elemental&w~
+Long       &GA medium sized plant elemental is here carrying out its duties.&w
+~
+Desc       This elemental is made of shimmering leaves and it flies about this
+area blessing the crops for its goddess. It is very frail looking
+but is very dutiful. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis~
+Affected   infrared flying truesight~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     1 10 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If ovnumroom(2422) == 1
+Mpoload 2423
+Mppurge sprouted11
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   mpgoto 2432
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   mpgoto 2492
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2406
+Keywords   large plant elemental amunar~
+Short      &Ga plant elemental&w~
+Long       &GA large sized plant elemental is here carrying out its duties.&w
+~
+Desc       This elemental is made of shimmering leaves and it flies about this
+area blessing the crops for its goddess. It is very frail looking
+but is very dutiful. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis~
+Affected   infrared flying truesight~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     1 10 0
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If ovnumroom(2424) == 1
+Mpoload 2425
+Mppurge medium11
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 2437
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   mpgoto 2492
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2407
+Keywords   massive plant elemental amunar~
+Short      &Ga plant elemental&w~
+Long       &GA massive sized plant elemental is here carrying out its duties.&w
+~
+Desc       This elemental is made of shimmering leaves and it flies about this
+area blessing the crops for its goddess. It is very frail looking
+but is very dutiful. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis~
+Affected   infrared flying truesight~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     1 10 0
+Stats3     1 4 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   mpgoto 2438
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   mpgoto 2492
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If ovnumroom(2424) == 1
+Mpoload 2425
+Mppurge medium11
+Else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2408
+Keywords   tiny plant elemental amunar~
+Short      &Ga plant elemental&w~
+Long       &GA tiny sized plant elemental is here carrying out its duties.&w
+~
+Desc       This elemental is made of shimmering leaves and it flies about this
+area blessing the crops for its goddess. It is very frail looking
+but is very dutiful. 
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis~
+Affected   infrared flying truesight~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     1 10 0
+Stats3     1 4 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   If ovnumroom(2425) == 1
+Mpoload 2426
+Mppurge large11
+Else
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 2440
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   mpgoto 2492
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2409
+Keywords   field manager druid serious looking~
+Short      &ga field manager&w~
+Long       &gA serious looking druid is here ordering some of the volunteers.
+~
+Desc       &gA stern looking druid who takes her job very seriously.
+Her face shows signs of wrinkling due to her constant serious
+expressions on her face and streaks of silver radiate from her
+dark brunette hair.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden infrared~
+Stats1     0 50 0 0 0 -31072 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 5 18
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2405
+if hasqbit($n) == 2403
+if hasqbit($n) != 2404
+if hasqbit($n) != 2499
+nod $n
+mpsleep 3
+sayto $n Tholgar said you were coming. I need some assistance in
+sayto $n the fields. All volunteers need to bring to me eight
+sayto $n bushels of corn that they helped plant. It helps when
+sayto $n young adventurers like yourself come since our druids
+sayto $n are not getting any younger. I supply all of the tools
+sayto $n you will need here.
+emote pulls out a small leather bound book from her robe
+mpsleep 3
+mpoload 2429 1
+give guide $n
+sayto $n This guide will help you learn how to farm. We like
+sayto $n self guided and independent people here. I will await
+sayto $n your delivery of corn here.
+mpqset $n 2404
+mpqset $n 2403
+else
+sayto $n Have you produced your eight bushels of corn yet?
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote yawns and begins heading into the abbey for the night
+mpgoto 2492
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2423
+yawn
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   prog gives you~
+Comlist   if ovnuminv(2427) == 8
+if hasqbit($n) != 2499
+if hasqbit($n) != 2405
+if hasqbit($n) == 2404
+emote smiles briefly before nodding her head
+sayto $n Good work! I shall put this into storage for the kitchen staff.
+give 10 gold $n
+mpsleep 3
+sayto $n Your next assignment is with the kitchen staff. Head there now.
+mpqset $n 2405
+mpqset $n 2404
+mpqset $n 2406
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+else
+sayto $n Thank you and good work.
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+mpjunk bushel
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2427) == 8
+if hasqbit($n) == 2499
+smile $n
+sayto $n I appreciate you coming back and helping us whenever you can.
+give 2 gold $n
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2499
+salute $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2410
+Keywords   druid guard gates abbey~
+Short      &ga guard&w~
+Long       &gA druid is here watching over the gates to an abbey.
+~
+Desc       &gThis young man is standing here watching over the gates to the abbey
+located ahead of him. He has a freshly clean shaven face that reveals
+his boyish features. He keeps his hood up at all times, which can make
+him appear ominous and powerful.. or so he thinks.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden~
+Stats1     0 50 0 0 0 10000 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2405
+if hasqbit($n) != 2499
+if hasqbit($n) == 2400
+nod $n
+sayto $n Welcome back to Goldenfields. It is good to see you again.
+else
+emote holds up a hand in greeting
+sayto $n Greetings! Welcome to Goldenfields Abbey. All new visitors
+sayto $n are to meet with the High Druid, Tholgar Onuvien.
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2499
+salute $n
+sayto $n Well met! It is wonderful to see you here again.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2432) == 1
+if hasqbit($n) == 2401
+nod $n
+give 2 gold $n
+mpjunk ear
+else
+mpjunk ear
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2411
+Keywords   bugbear warrior intruder trying climb walls~
+Short      &Oa bugbear warrior&w~
+Long       &OA bugbear warrior is here trying to climb the walls of the abbey.&w
+~
+Desc       &OThis hairy goblinoid is rippling with muscle and stands at around 
+five feet, five inches. It is dressed in tattered leather armor
+and is trying to raid the abbey.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 5 0 0 0 0 0 0 0
+Stats2     5 8 15
+Stats3     2 8 2
+Stats4     2 0 1 0 0 0 6
+Attribs    15 8 11 14 13 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2401
+mpoload 2432 1
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2412
+Keywords   elder druid library dusting shelves~
+Short      &gan elder druid&w~
+Long       &gAn elder druid in old brown robes is here dusting some shelves.&w
+~
+Desc       &gThis druid has a long silvery beard and no hair on the top of his
+head. He is dressed in old brown robes and has some old silver wire
+frame glasses on his face. He seems content to walk about the library
+while dusting the shelves.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 50 0 0 0 10000 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   sneeze
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2400
+if hasqbit($n) != 2499
+if hasqbit($n) == 2402
+if hasqbit($n) != 2405
+sneeze
+mpsleep 5
+mea $n The elder druid notices you and nods his head solemnly.
+sayto $n Tholgar must have sent you to me, hmm? You must be
+sayto $n versed in the history of our Abbey before you can truly
+sayto $n appreciate it for what it is and what it does. Are you
+sayto $n ready for your lesson?
+else
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) == 2400
+if hasqbit($n) != 2499
+if hasqbit($n) == 2402
+if hasqbit($n) != 2403
+if hasqbit($n) != 2405
+mea $n The elder druid smiles softly for a brief moment before speaking.
+mpsleep 3
+sayto $n Goldenfields Abbey began as a small farming settlement just east
+sayto $n of the original city of Darkhaven. Upon the great disaster that
+sayto $n that fell upon the lands and destroyed much of Darkhaven this
+sayto $n community led by an avatar of Amunar fed much of the land.
+mpsleep 5
+sayto $n Slowly the villagers began to move to what became the new
+sayto $n city of New Darkhaven for opportunities. The local druids
+sayto $n here began to acquire the land and this abbey sits on
+sayto $n what was originally the small village of Goldenfields.
+mpsleep 5
+sayto $n It is our duty to help the island of Darkhaven with
+sayto $n food and protection. Since we are cut off from the other
+sayto $n other lands our duty is mainly to this island. All
+sayto $n volunteers here are charged with the duty of helping us
+sayto $n farm and protect this abbey from those that seek to
+sayto $n destroy it.
+mpsleep 5
+sayto $n Do you accept your position to help us here or do you
+sayto $n decline?
+else
+sayto $n Your first assignment is with the field manager.
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p accept~
+Comlist   if hasqbit($n) == 2400
+if hasqbit($n) != 2499
+if hasqbit($n) == 2402
+if hasqbit($n) != 2405
+smile $n
+sayto $n Well met indeed young adventurer. We are very happy to have
+sayto $n you here at Goldenfields Abbey. Your first assignment is
+sayto $n with the field manager. She does retire at night and farming
+sayto $n should really not be done out in the fields during night
+sayto $n as to give the land rest and growth. 
+emote bows his head and resumes his dusting
+mpqset $n 2403
+mpqset $n 2402
+else
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p decline~
+Comlist   if hasqbit($n) == 2400
+if hasqbit($n) != 2499
+if hasqbit($n) == 2402
+if hasqbit($n) != 2405
+frown
+sayto $n I am sorry to hear that. You are still welcome to visit
+sayto $n as we do not turn away anyone unless they try to harm
+sayto $n this place. Please do not interfere with any of the farming
+sayto $n processes or other volunteers.
+emote turns and resumes dusting the shelves of the library
+mpqset $n 2400
+mpqset $n 2401
+mpqset $n 2402
+mpqset $n 2405
+else
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2499
+smile $n
+mpsleep 3
+sayto $n Welcome back.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2413
+Keywords   druid boxing berries tending~
+Short      &ga druid&w~
+Long       &gA druid is here boxing up raspberries for the abbey.&w
+~
+Desc       &gThis female dwarven druid is here boxing up berries for the abbey. She
+has reddish brown hair and dark chocolate brown eyes. She is wearing
+a dark brown robe with the hood down.
+~
+Race       hill-dwarf~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   infrared~
+Stats1     0 50 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2408
+sayto $n Hello there. I hear you are working for the kitchen. Once you
+sayto $n pick enough berries as requested just hand them to me and I
+sayto $n will pack them up for you. The kitchen staff prefer nicely
+sayto $n packaged berries, which are easier to store.
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnuminv(2437) == 5
+if hasqbit($n) == 2408
+emote places the berries in a small box and smiles
+sayto $n Take this to the kitchen when ready. May Amunar bless you.
+mpjunk raspberry
+mpjunk raspberry
+mpjunk raspberry
+mpjunk raspberry
+mpjunk raspberry
+mpoload 2438 1
+give box $n
+else
+smile $n
+mpjunk raspberry
+mpjunk raspberry
+mpjunk raspberry
+mpjunk raspberry
+mpjunk raspberry
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2414
+Keywords   cow eating hay~
+Short      &Wa cow&w~
+Long       &WA cow is here eating some hay.&w
+~
+Desc       This cow is here waiting to be milked by the farmhands in the barn. 
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 1 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote swats at a fly with her tail in annoyance
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2415
+Keywords   barnhand druid young milking cows~
+Short      &Ga young druid&w~
+Long       &GA young looking druid is here milking some cows for the abbey.&w
+~
+Desc       &GThis druid looks to be in his late teens and is dressed in a bright
+green robe as he milks several cows here. He has a long wavy blonde
+hair that has been bleached lighter with the sunlight.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2499
+if hasqbit($n) == 2409
+wave $n
+mpsleep 2
+sayto $n Welcome! I was told you were coming. Are you ready to
+sayto $n start milking some cows?
+else
+nod $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 2499
+if hasqbit($n) == 2409
+grin $n
+sayto $n Alright! You will need to be seated when you start. When you
+sayto $n are ready you will simple grab an udder and begin MILKing 
+sayto $n into a jug I will provide you. It can be difficult at times
+sayto $n but patience is crucial!
+mpsleep 3
+sayto $n Once you have five jugs I will need you to take them to
+sayto $n the kitchen for me and deliver them to the staff there!
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2499
+smile $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2416
+Keywords   artificer working water tank well dressed~
+Short      &Can artificer&w~
+Long       &CAn artificer is here working on the water tank with various tools.&w
+~
+Desc       This woman has cut her wildly red hair down a very short masculine
+style to keep it out of her face. She is slender and is dressed in
+a simple outfit with a leather apron. She is here working on her
+water tank invention.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden infrared~
+Stats1     600 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2411
+wave $n
+sayto $n I am so glad you are here. My water tank keeps getting clogged
+sayto $n and the abbey needs it since it brings in water from outside
+sayto $n of the walls. It helps keep the abbey safe while supplying water
+sayto $n to the crops. Can you climb inside and see if there is a clog?
+mpqset $n 2412
+mpqset $n 2411
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2410
+smile $n
+mpsleep 3
+sayto $n That is an odd clog you discovered. I am wondering if
+sayto $n something is happening where the water enters a pipe that
+sayto $n sends the water to the abbey?
+mpsleep 3
+sayto $n I think I will send you to see if that locatoion is clear...
+mpsleep 5
+sayto $n It is located near a bridge that you passed on the way
+sayto $n to this abbey. Let me know if you find anything suspicious.
+mpsleep 3
+sayto $n Good luck and I shall await you here!
+mpqset $n 2410
+mpqset $n 2413
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2414
+mea $n You relate your findings to the artificer who looks worried.
+mer $n $n and the artificer have a lengthy conversation...
+mpsleep 5
+sayto $n Well, that is most troubling to hear. I will have to speak
+sayto $n with Tholgar and see if we can figure out a solution. Those
+sayto $n monsters have been trying for quite awhile to ruin our
+sayto $n operations here. Thank you again for finding out for me.
+mpsleep 5
+sayto $n I believe I heard the druid running the supply store was
+sayto $n looking for you?
+mpqset $n 2414
+mpqset $n 2415
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2417
+Keywords   bugbear tampering water pipe~
+Short      &Oa bugbear warrior&w~
+Long       &OA bugbear warrior is here tampering with a partially hidden water pipe.&w
+~
+Desc       &OThis hairy goblinoid is rippling with muscle and stands at around 
+five feet, five inches. It is dressed in tattered leather armor
+and is trying to raid the abbey.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_hidden infrared truesight~
+Stats1     -1000 1 6 0 0 0 0 0 0 0
+Stats2     5 8 25
+Stats3     2 8 2
+Stats4     2 0 2 0 0 0 6
+Attribs    15 8 11 16 13 9 13
+Saves      0 0 0 0 0 0
+Defenses   parry dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2413
+mea $n &WYou should report your findings to the artificer at the abbey.
+mpqset $n 2414
+mpqset $n 2413
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2418
+Keywords   crow sneaky ruining crops crow72~
+Short      &za crow&w~
+Long       &zA crow is here sneakily ruining the crops planted here.&w
+~
+Desc       &zThis crow has glossy black feathers and a very sharp looking beak. He
+moves about the fields looking for seeds to eat. Perhaps he can be
+SHOO'd away from the fields by someone intimidating?
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared flying~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 1 2
+Stats3     1 1 1
+Stats4     2 1 1 0 0 0 6
+Attribs    6 16 12 18 6 10 14
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   35~
+Comlist   if ovnumroom(2419) == 1
+emote pecks at the freshly planted soil eating the seeds planted
+mppurge planted11
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote pecks at the ground looking for food
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 2433
+emote flies in and lands on the ground looking for food
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   emote flies off towards the rooftops of the abbey
+mpgoto 2492
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 2445
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   mpgoto 2492
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2419
+Keywords   stablehand goldenfields abbey female druid~
+Short      &ga druid&w~
+Long       &gA druid is here tending to the animals and cleaning the stables.&w
+~
+Desc       &gThis female druid has deeply tan skin and dark black hair that she
+has coiled into an intricate style. She has warm honey colored eyes
+that shine with kindness.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2499
+if hasqbit($n) == 2400
+smile $n
+mpsleep 3
+sayto $n There is a stable nearby that you can use for your companion.
+else
+sayto $n I am sorry.. this stable can only be used by those that
+sayto $n volunteer here at the abbey. Please meet with Tholgar
+sayto $n Onuvien, our High Druid, before you use the stables.
+mea $n The druid sends you out of the stables.
+mer $n The druid ushers $n out of the stables.
+mpforce $n e
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 2400
+if hasqbit($n) == 2499
+salute $n
+sayto $n You are more than welcome to use any of the stalls here for
+sayto $n your companion.
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote racks up some dirty straw into a bucket as she sings a song
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2420
+Keywords   bugbear warrior lurking fields~
+Short      &Oa bugbear warrior&w~
+Long       &OA bugbear warrior is here lurking in the rolling fields.&w
+~
+Desc       &OThis hairy goblinoid is rippling with muscle and stands at around 
+five feet, five inches. It is dressed in tattered leather armor
+and is trying to raid the abbey.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 5 0 0 0 0 0 0 0
+Stats2     5 8 15
+Stats3     2 8 2
+Stats4     2 0 1 0 0 0 6
+Attribs    15 8 11 14 13 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2421
+Keywords   small shambling mound~
+Short      &ga small shambling mound&w~
+Long       &gA small mound of animated vegetation is here hunting for its next meal.&w
+~
+Desc       &gThis is an animated mound of vegetation that upon closer inspection
+you begin to see features that resemble eyes and a mouth. It moves
+across the ground smoothly as it searches for something to eat.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak hide~
+Stats1     0 1 6 0 0 0 0 0 0 0
+Stats2     16 10 24
+Stats3     2 8 4
+Stats4     2 10 2 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &gYou hear the rustling of plants nearby...&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   if acrobatics($n) > 15
+mea $n &gYou dodge the shambling mound's attempt to engulf you!&w
+mer $n &gThe shambling mound misses $n with an attempt to engulf $m!&w
+else
+mea $n &gThe shambling mound engulfs and crushes you for a moment!
+mer $n &gYou watch as the shambling mound engulfs and crushes $n!
+mpdamage $n 1 10
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2422
+Keywords   bugbear warrior hiding grass long~
+Short      &ga bugbear warrior&w~
+Long       &gA bugbear warrior is here trying to hide in the long grass.&w
+~
+Desc       &gThis hairy goblinoid is rippling with muscles and stands at around
+five feet, five inches. It is dressed in tattered leather armor
+and is here hiding in the long grasses of the field.
+~
+Race       goblin~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -1000 1 5 0 0 0 0 0 0 0
+Stats2     5 5 20
+Stats3     2 8 2
+Stats4     2 0 1 0 0 0 6
+Attribs    15 8 11 14 13 9 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2499
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     2400
+Keywords large fieldstone fireplace~
+Type     fire~
+Short    &Oa large fieldstone fireplace&w~
+Long     &OA large fieldstone fireplace is here with a large fire roaring inside.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    24464 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2401
+Keywords small fieldstone fireplace~
+Type     fire~
+Short    &Oa small fieldstone fireplace&w~
+Long     &OA small fieldstone fireplace is here with a small fire inside.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    24464 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2402
+Keywords seasoned ear corn butter herbs~
+Type     food~
+Short    &Oa seasoned ear of &Ycorn&w~
+Long     &OA seasoned ear of corn is here covered in herbs and butter.&w~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2403
+Keywords loaf cornbread~
+Type     food~
+Short    &Ya cornbread loaf&w~
+Long     &YA loaf of cornbread has been left here.&w~
+WFlags   take onehand~
+Values   6 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 35 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2404
+Keywords bowl stewed vegetables~
+Type     food~
+Short    &wa bowl of &Ostewed &gvegetables&w~
+Long     &wA bowl of stewed vegetables has been left here.&w~
+WFlags   take onehand~
+Values   8 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 45 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2405
+Keywords cup lavender honey tea~
+Type     drinkcon~
+Short    &Pa cup of &plavender &Ptea with &Yhoney&w~
+Long     &PA cup of lavender smelling tea and honey has been left here.&w~
+WFlags   take onehand~
+Values   3 3 11 0 0 0
+Values2  0 2
+Stats    1 0 1 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2406
+Keywords leather sandals~
+Type     armor~
+Short    &Oa pair of leather sandals&w~
+Long     &OA pair of leather sandals have been left here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    1 4 10 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2407
+Keywords simple brown robes long sleeves~
+Type     armor~
+Short    &Oa simple brown robe with long sleeves&w~
+Long     &OA simple brown robe with long sleeves has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 5 10 0 1 2
+#ENDOBJECT
+
+#OBJECT
+Vnum     2408
+Keywords beige tunic~
+Type     armor~
+Short    &wa beige tunic&w~
+Long     &wA beige tunic has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 2 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2409
+Keywords beige trousers~
+Type     armor~
+Short    &wa pair of beige trousers&w~
+Long     &wA pair of beige trousers has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 5 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2410
+Keywords brown leather sandals~
+Type     armor~
+Short    &Oa pair of brown leather sandals&w~
+Long     &OA pair of leather sandals has been left here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    1 0 10 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2411
+Keywords rust dyed linen robe~
+Type     armor~
+Short    &ra rust dyed linen robe&w~
+Long     &rA rust dyed linen robe has been left here.&w~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 10 30 0 1 2
+#ENDOBJECT
+
+#OBJECT
+Vnum     2412
+Keywords brown wool hood~
+Type     armor~
+Short    &Oa brown wool hood&w~
+Long     &OA hood made from brown wool has been left here.&w~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 8 50 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2413
+Keywords wool brown open front cloak~
+Type     armor~
+Short    &Oa brown wool open front cloak&w~
+Long     &OA brown wool open front cloak has been left here.&w~
+WFlags   take about~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 12 50 0 1 6
+#ENDOBJECT
+
+#OBJECT
+Vnum     2414
+Keywords vial swirling chartreuse liquid colored~
+Type     potion~
+Short    &Ga vial of swirling chartreuse colored liquid&w~
+Long     &GA vial of swirling chartreuse colored liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   10 -1 -1 -1 0 0
+Values2  0 2
+Stats    1 20 10 0 2 1 0
+Spells   'barkskin' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2415
+Keywords leather woven belt~
+Type     armor~
+Short    &Oa belt made from woven leather&w~
+Long     &OA belt made from woven leather has been left here.&w~
+WFlags   take waist~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    1 7 25 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2416
+Keywords fieldstone fountain large refreshing water~
+Type     fountain~
+Short    &wa fieldstone fountain&w~
+Long     &wA large fountain made from fieldstone is here offering refreshing water.&w~
+Values   1000000 0 0 0 0 0
+Values2  0 2
+Stats    1000 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2417
+Keywords freshly plowed earth plowed11~
+Type     trash~
+Short    &Ofreshly plowed earth&w~
+Long     &OThe earth here has been freshly plowed and prepared for planting.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2418
+Keywords recently watered plowed soil watered11~
+Type     trash~
+Short    &Cwatered soil&w~
+Long     &CA patch of recently planted and watered soil is here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2419
+Keywords freshly planted earth soil planted11~
+Type     trash~
+Short    &Gfreshly planted earth&w~
+Long     &OThe earth here has been freshly planted and is ready for water.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2420
+Keywords hand plow medium size plow22~
+Type     trash~
+Short    &Oa medium size hand plow&w~
+Long     &OA medium size hand plow has been left here.&w~
+WFlags   take twohand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    10 5 25 25 0 1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if str($n) < 14
+mea $n &OYou find the plow too heavy to hold...
+silent mpforce $n rem plow22
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   plow~
+Comlist   mea $n You can't plow!
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2421
+Keywords bag seeds corn~
+Type     trash~
+Short    &Oa bag of seeds&w~
+Long     &OA bag of seeds has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 10 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2422
+Keywords sprouted earth sprouts plant soil sprouted11~
+Type     trash~
+Short    &Gsoil with fresh sprouts&w~
+Long     &GA patch of soil with tiny plant sprouts emerging is here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2423
+Keywords fresh growth small soil small11~
+Type     trash~
+Short    &Gsoil with small plant growth&w~
+Long     &GA patch of soil with small plant growth is here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2424
+Keywords fresh growth medium soil medium11~
+Type     trash~
+Short    &gsoil with medium plant growth&w~
+Long     &gA patch of soil with medium plant growth is here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2425
+Keywords fresh growth large plant soil large11~
+Type     trash~
+Short    &gsoil with large plant growth&w~
+Long     &gA patch of soil with large plant growth is here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2426
+Keywords fresh mature plant soil harvest mature11~
+Type     trash~
+Short    &gsoil wi&Gth mat&gure p&Glan&gt gr&Gowth&w~
+Long     &gA patc&Gh of soil w&gith matu&Gre plant gr&gowth is h&Gere re&gady to b&Ge harv&gested.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2427
+Keywords bushel corn fresh~
+Type     food~
+Short    &Ga bushel of fresh corn&w~
+Long     &GA bushel of fresh corn has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2428
+Keywords large water watercan can metal~
+Type     trash~
+Short    &ca large metal watercan&w~
+Long     &cA large metal watercan used to water crops has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2429
+Keywords guidebook guide book farming small~
+Type     trash~
+Short    &wa small guidebook to farming&w~
+Long     &wA small linen bound farming guidebook has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 5 0 0 0 1 0
+#EXDESC
+ExDescKey    guidebook~
+ExDesc       This is the standard book given to everyone that chooses to
+help the abbey. It has a title page and five chapters (Type look
+title, chapter1, chapter2, chapter3, and chapter4).
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    guide~
+ExDesc       This is the standard book given to everyone that chooses to
+help the abbey. It has a title page and five chapters (Type look
+title, chapter1, chapter2, chapter3, and chapter4).
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    farming~
+ExDesc       This is the standard book given to everyone that chooses to
+help the abbey. It has a title page and five chapters (Type look
+title, chapter1, chapter2, chapter3, and chapter4).
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    title~
+ExDesc       Khormast the Druid's Guide to Farming
+                       Second Edition
+ 
+ 
+ 
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    chapter1~
+ExDesc       Chapter One: Fundamentals in Farming
+
+Farming has four standard steps that cannot be missed in order
+for a proper, healthy harvest. 
+
+Step One: The fields must be PLOWed in a snake route. Start from
+the northwest corner of your field and plow east. Once you have
+reached the northeast point head south and begin plowing west. 
+Once you have reached the west head south and begin plowing east. 
+Repeat this process until the fields are plowed.
+
+Step Two: The fields are now prepared to be PLANTed
+with some seeds.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    chapter2~
+ExDesc       Chapter 2: The Next Steps
+
+Step Three: The fields need to be WATERed and tended to
+as the crop begins to grow. This is the longest of the four
+steps and requires patience. Weed the crops to ensure that 
+the crops are not destroyed by them.
+
+Step Four: The crop, once fully matured, is ready to be HARVESTed.
+It is crucial to turn the crop in for inventory and preservation
+because freshly harvested crops will decay without the proper
+Chauntean prayers. Please turn in harvested crops to the person
+in charge of inventory and harvest operations as soon as possible.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    chapter3~
+ExDesc       Chapter Three: Protecting the Fields
+
+During the day and night you must check the fields to ensure
+that pests are not interfering with the growing process. Remove
+these pests to the best of your ability. One method is to SHOO
+them away. These pests like to arrive at the night when there is
+no one around to protect the fields.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    chapter4~
+ExDesc       Chapter Five: Harvesting
+
+After your crops have developed, inspect to make sure that
+they have fully matured. Once the crops have been matured,
+one can begin harvesting in the standard zig zag method, 
+starting with the oldest planted crops at the northwest side
+of the fields. Each section of the field will yield about a bushel
+and this needs to be taken to the person in charge of the harvest.
+
+Crops that are not taken directly to this person will slowly
+begin to rot away. This cannot be allowed to happen or the
+harvest will be a wasted effort.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2430
+Keywords wide brim straw hat~
+Type     armor~
+Short    &Ya wide brim straw hat&w~
+Long     &YA wide brim straw hat has been left here.&w~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 0 15 15 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2431
+Keywords small vanilla cake drizzled honey~
+Type     food~
+Short    &Wa small vanilla cake drizzled with &Yhoney&w~
+Long     &WA small vanilla cake is here drizzled on top with sweet honey.&w~
+WFlags   take onehand~
+Values   4 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 10 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2432
+Keywords bugbear ear~
+Type     trash~
+Short    &ra bugbear ear&w~
+Long     &rA bugbear ear has been left here to rot.~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2433
+Keywords morningstar rusty looking~
+Type     weapon~
+Short    &ra rusty looking morningstar&w~
+Long     &rA rusty looking morningstar has been left here.&w~
+Flags    inventory~
+WFlags   take onehand~
+Values   12 1 8 3 8 0
+Values2  0 2
+Stats    4 2 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2434
+Keywords hide armor dirty~
+Type     armor~
+Short    &Odirty hide armor&w~
+Long     &OSome dirty hide armor has been left here.&w~
+Flags    inventory~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  5 2
+Stats    12 2 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2435
+Keywords linen cots rows~
+Type     furniture~
+Short    &wa linen cot&w~
+Long     &wRows of linen cots are here to be used by volunteers.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1000 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2436
+Keywords raspberry bush massive~
+Type     container~
+Short    &pa raspberry bush&w~
+Long     &pA massive raspberry bush is here full of fresh berries.&w~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2437
+Keywords small raspberry~
+Type     food~
+Short    &pa small raspberry&w~
+Long     &pA small raspberry has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2438
+Keywords small box raspberries~
+Type     food~
+Short    &pa small box of raspberries&w~
+Long     &pA small box of raspberries has been left here.&w~
+WFlags   take onehand~
+Values   3 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2439
+Keywords jug fresh milk~
+Type     drinkcon~
+Short    &Wa jug of fresh cow's milk&w~
+Long     &WA jug of fresh milk has been left here.&w~
+WFlags   take onehand~
+Values   10 10 10 0 0 0
+Values2  0 2
+Stats    2 0 0 25 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2440
+Keywords clog branches mud rope~
+Type     trash~
+Short    &Oa clog made of branches, mud, and rope&w~
+Long     &OA clog made of branches, mud, and rope has been left here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2441
+Keywords small239 small wooden box~
+Type     treasure~
+Short    &Oa small wooden box&w~
+Long     &OA small wooden box has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#EXDESC
+ExDescKey    box~
+ExDesc       &OThis is a small wooden box that is locked. When shook it makes little
+bell noises.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2442
+Keywords large239 large wooden box~
+Type     treasure~
+Short    &Oa large wooden box&w~
+Long     &OA large wooden box has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    box~
+ExDesc       &OThis is a large locked wooden box that makes odd rustling noises
+when shook.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2443
+Keywords large apple tree~
+Type     container~
+Short    &Ran apple tree&w~
+Long     &RA large apple tree is here full of fresh fruit.&w~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    500 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2444
+Keywords medium sized apple~
+Type     food~
+Short    &Ra medium sized apple&w~
+Long     &RA medium sized apple has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2445
+Keywords pear tree large~
+Type     container~
+Short    &ga pear tree&w~
+Long     &gA pear tree is here full of fresh fruit.&w~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    500 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2446
+Keywords small pear~
+Type     food~
+Short    &ga small pear&w~
+Long     &gA small pear has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2447
+Keywords handful straw~
+Type     trash~
+Short    &Ya handful of straw&w~
+Long     &YA handful of straw has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2499
+Keywords badge goldenfields embroidered golden22~
+Type     armor~
+Short    &ga &YGoldenfields&g badge&w~
+Long     &gA badge embroidered with the image of Goldenfields Abbey is here.&w~
+Flags    magic~
+WFlags   take neck body belt~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 1 16
+Affect       -1 -1 35 14 0
+#EXDESC
+ExDescKey    badge~
+ExDesc       This badge is a piece of circular linen that 
+has been embroidered with fine colored threads. 
+The embroidery depicts Goldenfields, leaves, and 
+a glorious sunrise behind the abbey. It has been 
+blessed by the druids who call the abbey home for
+those adventurers who come and assist them.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2499
+mea $n &YA warm feeling enters your body as you don the badge!
+else
+mea $n &YThe badge burns a little as it falls off suddenly.
+mpdamage $n 1 4
+silent mpforce $n rem golden22
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#ROOM
+Vnum     2400
+Name     Before the Abbey Gates~
+Sector   field~
+Desc     Springing forth from the fields is a worn dirt path leading towards
+the very tall walls of an abbey. The walls appears to be made from
+a combination of wood and stone, making it hard to penetrate by
+outside sources. There is a path alongside the walls that are 
+patrolled by those that work for the abbey to ensure there are 
+no dangers attempting to break inside. The gates to the abbey are 
+directly to the north - large thick doors that are heavily guarded 
+at all times.
+~
+#EXIT
+Direction north~
+ToRoom    2411
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      573
+MapY      810
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2401
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    2483
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2401
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become engrained into the ground from 
+much use by the patrol groups coming from inside the abbey.
+Long grasses grow alongside the wall and sway about in the
+wind. Large chunks of rock can be found about the abbey,
+possibly removed from outside or possibly used against the
+walls of the abbey at some point in time.
+~
+#EXIT
+Direction east~
+ToRoom    2400
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2402
+#ENDEXIT
+
+Reset M 0 2411 12 2401
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2402
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become engrained into the ground from 
+much use by the patrol groups coming from inside the abbey.
+Long grasses grow alongside the wall and sway about in the
+wind. Large chunks of rock can be found about the abbey,
+possibly removed from outside or possibly used against the
+walls of the abbey at some point in time.
+~
+#EXIT
+Direction east~
+ToRoom    2401
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2403
+#ENDEXIT
+
+Reset M 0 2411 12 2402
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2403
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become engrained into the ground from 
+much use by the patrol groups coming from inside the abbey.
+Long grasses grow alongside the wall and sway about in the
+wind. Large chunks of rock can be found about the abbey,
+possibly removed from outside or possibly used against the
+walls of the abbey at some point in time.
+~
+#EXIT
+Direction east~
+ToRoom    2402
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2404
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2404
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become less engrained into the ground from 
+less use by the patrol groups coming from inside the abbey.
+The walls of the south and west meet here as the path
+continues alongside the western wall. More shrubbery and
+long grass begins to grow alongside this part of the path. 
+~
+#EXIT
+Direction north~
+ToRoom    2405
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2403
+#ENDEXIT
+
+Reset M 0 2411 12 2404
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2405
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become less visible than along the southern
+walls of the abbey. Most patrols simply peek around to see if
+there is any danger before heading back to the main gates. Huge
+bushes and long grasses obscure the path slightly as it travels
+north along the western wall.
+~
+#EXIT
+Direction north~
+ToRoom    2406
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2404
+#ENDEXIT
+
+Reset M 0 2411 12 2405
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2406
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become less visible than along the southern
+walls of the abbey. Most patrols simply peek around to see if
+there is any danger before heading back to the main gates. Huge
+bushes and long grasses obscure the path slightly as it travels
+north along the western wall.
+~
+#EXIT
+Direction north~
+ToRoom    2407
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2405
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2407
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become less visible than along the southern
+walls of the abbey. Most patrols simply peek around to see if
+there is any danger before heading back to the main gates. Huge
+bushes and long grasses obscure the path slightly as it travels
+north along the western wall.
+~
+#EXIT
+Direction north~
+ToRoom    2408
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2406
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2408
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become less visible than along the southern
+walls of the abbey. Most patrols simply peek around to see if
+there is any danger before heading back to the main gates. Huge
+bushes and long grasses obscure the path slightly as it travels
+north along the western wall.
+~
+#EXIT
+Direction north~
+ToRoom    2409
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2407
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2409
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become less visible than along the southern
+walls of the abbey. Most patrols simply peek around to see if
+there is any danger before heading back to the main gates. Huge
+bushes and long grasses obscure the path slightly as it travels
+north along the western wall.
+~
+#EXIT
+Direction north~
+ToRoom    2410
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2408
+#ENDEXIT
+
+Reset M 0 2411 9 2409
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2410
+Name     Alongside the Abbey~
+Sector   field~
+Desc     The path here has become less visible than along the southern
+walls of the abbey. Most patrols simply peek around to see if
+there is any danger before heading back to the main gates. Huge
+bushes and long grasses obscure the path slightly as it travels
+north along the western wall.
+~
+#EXIT
+Direction south~
+ToRoom    2409
+#ENDEXIT
+
+Reset M 0 2411 9 2410
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+Reset M 0 2411 9 2410
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+Reset M 0 2411 9 2410
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+Reset M 0 2411 9 2410
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2411
+Name     The Abbey Gates~
+Sector   city~
+Desc     Large heavy oak gates are here, made from long thick pieces
+of strong oak. These doors have kept barbarian forces, monsters,
+and those that seek the abbey harm from entering. The gates have
+been built in between two large towers. The walls of the abbey are
+tall and appear to be almost two stories tall, useful against foes
+that possess great height. Two brackets are built on the side of
+each gate for torches during night patrols. A large stone symbol
+of a woman's face made out of leaves can be seen hung above
+the gates. Her face radiates warmth and compassion to anyone
+that sees it.
+~
+#EXIT
+Direction north~
+ToRoom    2412
+Keywords  'large gates'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2400
+#ENDEXIT
+
+Reset M 0 2410 1 2411
+Reset D 0 2411 0 0
+#EXDESC
+ExDescKey    gates~
+ExDesc       These gates were made from the finest oak from a
+forest nearby. At the request of the abbey, they
+were made with as little metal as possible. The
+symbol of Amunar has been etched in large scale
+so that when the doors are closed it shows the
+complete symbol.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    oak~
+ExDesc       These gates were made from the finest oak from a
+forest nearby. At the request of the abbey, they
+were made with as little metal as possible. The
+symbol of Amunar has been etched in large scale
+so that when the doors are closed it shows the
+complete symbol.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if deity($n) == amunar
+mea $n &gYou feel the warmth of your Goddess enter you suddenly...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2412
+Name     A Large Courtyard~
+Sector   city~
+Desc     The ground of this courtyard has been expertly cobbled with
+stone taken from the fields within the abbey. The fountain in
+the center was also made from the same stones as an efficient
+usage of the unwanted stone. Various hitching posts have been
+set up for travelers to let their horses rest. The central abbey
+building is impressive - a wonderous blend of field stone and 
+wood. Large stained glass windows can be seen, depicting the
+symbol of the goddess, Amunar. Two large oak doors lead inside
+the central abbey to the north of here. Various buildings are
+to the east where those that call the abbey home go to rest in
+their private quarters. The courtyard also sits on a hill and from
+here you can see the rolling acres that are farmed inside the
+walls of the abbey. A small stable is located to the west of here
+for people who are visiting to allow their horses rest.
+~
+#EXIT
+Direction north~
+ToRoom    2413
+Keywords  'large oak doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2411
+Keywords  'large gates'~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2491
+#ENDEXIT
+
+Reset O 0 2416 1 2412
+Reset D 0 2412 0 1
+Reset D 0 2412 2 0
+#ENDROOM
+
+#ROOM
+Vnum     2413
+Name     A Large Hall~
+Sector   indoors~
+Desc     There is an immediate sense of comfort and warmth in this
+part of the hallway that greets all who enter. A great hall
+with a large table can be seen through a large door to the
+north of here. The hallway itself is decorated with various
+tables and tapestries along each side to the east and
+west of here. The ceiling of the hall is tall and circular
+looking with large oak beams exposed. All of the woodwork
+in the hall has been carved with a leaf symbolism. The wood
+floors of the abbey have been polished and maintained
+beautifully so that they have a soft sheen to them.
+~
+#EXIT
+Direction north~
+ToRoom    2496
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2414
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2412
+Keywords  'large oak doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2418
+#ENDEXIT
+
+Reset D 0 2413 0 0
+Reset D 0 2413 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2414
+Name     A Large Hallway~
+Sector   indoors~
+Desc     Along this hallway, oak beams have been carved like trees as they
+reach up to touch the ceiling. The beams start from the floor, with
+branches hanging away from the walls and ceiling. Little lights have
+been attached to provide adequate lighting during the night. Every
+five feet down this hall there is two stained glass windows on each
+side of the hall. The windows depict Amunaren faith history or the
+goddess symbol. There is a large oak door to the north that leads
+outside towards the fields, where the true magic begins.
+~
+#EXIT
+Direction north~
+ToRoom    2423
+Keywords  'large oak door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2415
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2413
+#ENDEXIT
+
+Reset D 0 2414 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2415
+Name     A Large Hallway~
+Sector   indoors~
+Desc     Along this hallway, oak beams have been carved like trees as they
+reach up to touch the ceiling. The beams start from the floor, with
+branches hanging away from the walls and ceiling. Little lights have
+been attached to provide adequate lighting during the night. Every
+five feet down this hall there is two stained glass windows on each
+side of the hall. The windows depict Amunaren faith history or the
+goddess symbol. This portion of the hall is for new workers to rest
+or purchase new clothing for this next chapter of their life.
+~
+#EXIT
+Direction north~
+ToRoom    2416
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2417
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2414
+#ENDEXIT
+
+Reset D 0 2415 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2416
+Name     A Supply Store~
+Sector   indoors~
+Desc     Rows of shelves have been stocked with the basics that a new
+worker or druid will need to use while employed by the abbey.
+A long wooden desk is used by the storekeeper to accept coins
+for the equipment sold as well as putting them into bags. Glass
+cases show off some of the various treasures obtained by the
+High Druid of the abbey.
+~
+#EXIT
+Direction south~
+ToRoom    2415
+#ENDEXIT
+
+Reset M 0 2401 1 2416
+  Reset G 0 2414 1
+  Reset G 0 2415 1
+  Reset G 0 2412 1
+  Reset G 0 2413 1
+  Reset G 0 2410 1
+  Reset G 0 2407 1
+  Reset G 0 2411 1
+  Reset G 0 2408 1
+  Reset G 0 2409 1
+#ENDROOM
+
+#ROOM
+Vnum     2417
+Name     Sleeping Quarters~
+Sector   indoors~
+Desc     These sleeping quarters were designed for those that only
+work for the abbey temporarily. It is a long horizontal room
+with many cots that serve as makeshift beds. Each cot has 
+been sectioned off with white cotton screens to ensure privacy.
+Various druids work about the room, providing pillows or 
+cleaning up unused sleeping spaces. There are two large cozy
+fireplaces in this room to provide ample heat. These fireplaces
+have seating around them for people to gather around.
+~
+#EXIT
+Direction north~
+ToRoom    2415
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 0 2401 1 2417
+Reset O 0 2435 1 2417
+Reset D 0 2417 0 1
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &RThe fire inside the fireplace crackles and pops for a few moments.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2418
+Name     A Large Hallway~
+Sector   indoors~
+Desc     Along this hallway, oak beams have been carved like trees as they
+reach up to touch the ceiling. The beams start from the floor, with
+branches hanging away from the walls and ceiling. Little lights have
+been attached to provide adequate lighting during the night. Every
+five feet down this hall there is two stained glass windows on each
+side of the hall. The windows depict Amunaren faith history or the
+goddess symbol. 
+~
+#EXIT
+Direction north~
+ToRoom    2419
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2413
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2420
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2418 0 1
+Reset D 0 2418 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2419
+Name     The High Druid's Office~
+Sector   indoors~
+Desc     This large office has been created to be circular in shape, with a
+large crackling fireplace towards the eastern side. A huge stained
+glass window depicting the various sides of the harvest is on the
+northern part of the office. A large cherry wood desk resides near
+the center of the room. The western walls have book shelves carved
+into them, the personal collection of the High Druid. The heads of
+various beasts have been hung above the book shelves as a trophy
+from years gone by. An impressive weapons collection hangs above
+the fireplace, from the sharpest of axes to large broadswords. A 
+beautiful rug of the symbol of Amunar lies under the desk and
+expands several feet around it.
+~
+#EXIT
+Direction north~
+ToRoom    2446
+Flags     secret window can_look~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2418
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2402 1 2419
+Reset D 0 2419 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2420
+Name     A Large Library~
+Sector   indoors~
+Desc     The walls of this two story room have been carved out and filled
+with shelves heavy with old tomes. The abbey has an impressive
+collection of books regarding druidic knowledge to ancient farming
+techniques. The books are taken care of by elderly druids who are
+unable to work the fields. A large circular skylight allows lots of 
+natural light into the library, the borders of the skylight contain
+wild leaves stained glass symbolism. The smell of the library is thick
+with dust, earth, and ancient paper.
+~
+#EXIT
+Direction east~
+ToRoom    2418
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2412 1 2420
+Reset D 0 2420 1 1
+#ENDROOM
+
+#ROOM
+Vnum     2421
+Name     Inside a Large Livestock Barn~
+Sector   indoors~
+Desc     This large barn has been divided into various sections,
+from hay and straw occupying the north quarter to stalls
+for various animals to reside at the western walls. In the
+center are hitching posts where cows are tethered and
+milked. Several younger druids work in this barn as they
+learn about livestock and how to take care of them. Tools
+used for harvesting are hung near the entrance to the barn
+for people to grab on their way to the fields. A ladder
+leads up to a large hayloft.
+~
+#EXIT
+Direction east~
+ToRoom    2423
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2493
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2463
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 2414 1 2421
+Reset M 0 2415 1 2421
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p milk~
+Comlist   if position($n) == 9
+if acrobatics($n) >= 15
+if hasqbit($n) == 2409
+mea $n &WYou are handed a jug by the young druid as you manage to
+mea $n &Wslowly fill it with fresh milk.
+mer $n &W$n manages to milk the cow into a jug provided by the druid.
+mpoload 2439 1
+silent mpforce $n get jug
+else
+mea $n &WYou fail to milk the cow.
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2422
+Name     A Large Orchard~
+Sector   field~
+Desc     This is one of the many orchards located in the abbey. The
+druids here use the orchards to grow both tree based fruits
+as well as bush and vine fruits. Vines grow from tree to tree,
+heavy with various berries ripe for the picking. All of the trees
+and bushes in the orchard have been planted so that they grow
+in perfectly spaced out rows. This allows several workers to
+harvest from a tree or bush efficiently.
+~
+#EXIT
+Direction north~
+ToRoom    2495
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2497
+#ENDEXIT
+
+Reset O 0 2443 1 2422
+  Reset P 0 2444 6 2443
+#ENDROOM
+
+#ROOM
+Vnum     2423
+Name     A Path to the Fields~
+Sector   field~
+Flags    nomob~
+Desc     This path gives the best view of the fields here at the abbey. From
+here, one can see the vast twenty square miles of fields used for
+crops. Various parts of the land have been devoted to various types
+of produce and livestock. A large barn can be seen towards the west
+from here while a small garden area is down the path to the east.
+The path continues to the large expanse of land filled with crops
+to the north.
+~
+#EXIT
+Direction north~
+ToRoom    2445
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2495
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2414
+Keywords  'large oak door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2421
+Flags     nomob~
+#ENDEXIT
+
+Reset D 0 2423 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2424
+Name     Above the Water Tank~
+Sector   city~
+Stats    0 0 0 0 15 0
+Desc     The view from on top of the tank is impressive, where one can see
+the rolling fields of the abbey. The tank has a flat spot on top, which
+makes standing on it easier. There is a hatch located here that allows
+someone to enter or look inside the tank from here. Various pipes 
+emerge from the tank and move into the ground, helping water the
+fields in a much easier fashion. One large pipe comes from the back
+of the tank and heads towards the northern wall. A small metal ladder
+built into the side of the tank leads back to the ground level.
+~
+Perdesc  &GYou spot a hatch below you leading inside the tank that you can enter.
+~
+#EXIT
+Direction down~
+ToRoom    2449
+Flags     climb hidden~
+#ENDEXIT
+
+#EXIT
+Direction somewhere~
+ToRoom    2425
+Keywords  'hatch'~
+Flags     isdoor closed hidden can_enter can_leave~
+#ENDEXIT
+
+Reset D 0 2424 10 1
+#ENDROOM
+
+#ROOM
+Vnum     2425
+Name     &BInside the Water Tank&w~
+Sector   underwater~
+Stats    0 0 0 0 19 0
+Desc     &bThe tank is dark and full of water that is piped in from a local river.
+There is a metal gateway that allows the water to pass from this
+source into the abbey water tank. The inside of the tank is circular
+and has been binded together with long thin metal strips and rivets.
+Several pipes exit from this main tank and run along the ground of
+the fields. When the main lever is pulled, this allows the pipes to 
+let water into the crops like an underground spring. A small metal
+switch juts out near the metal gateway.
+~
+Perdesc  &BYou spot a hatch above you leading outside of the tank that you can enter.&w
+~
+#EXIT
+Direction somewhere~
+ToRoom    2424
+Keywords  hatch~
+Flags     isdoor closed hidden can_enter can_leave~
+#ENDEXIT
+
+Reset D 0 2425 10 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if investigation($n) >= 16
+if hasqbit($n) == 2412
+mea $n &BYou spot an odd shape near the grate where water enters the tank.
+mpoload 2440 1
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p unclog~
+Comlist   if ovnumhere(2440) >= 1
+if athletics($n) >= 16
+if hasqbit($n) == 2412
+mea $n &BYou manage to remove the clog by breaking it apart.
+mppurge clog
+mer $n &B$n manages to remove the clog in the water tank!
+mpqset $n 2410
+mpqset $n 2412
+else
+mppurge clog
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2426
+Name     A Burrowed Cave~
+Sector   underground~
+Stats    0 0 0 0 15 0
+Desc     This is a large cave that has been burrowed by some sort
+of creature. The top of the cave is fifteen feet above the 
+ground level, with random roots reaching down. Long 
+silvery threads lace about the cave and continue down
+the passageway to the south of here.
+~
+Perdesc  &zYou spot a small opening above that could lead out of the cave...&w
+~
+#EXIT
+Direction south~
+ToRoom    2427
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2435
+Flags     isdoor closed secret climb dig hidden searchable nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2427
+Name     Along a Narrow Passageway~
+Sector   underground~
+Desc     The passageway here is very narrow and irregular, with large boulders
+creating it hard to travel. There are several dank spots of earth 
+alongside the walls of the passageway, indicating a source of water
+nearby. Above are the long silvery strands, leading further down the 
+passageway.
+~
+#EXIT
+Direction north~
+ToRoom    2426
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2428
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2428
+Name     Along a Narrow Passageway~
+Sector   underground~
+Desc     The passageway here is very narrow and irregular, with large boulders
+creating it hard to travel. There are several dank spots of earth 
+alongside the walls of the passageway, indicating a source of water
+nearby. Above are the long silvery strands, leading further down the 
+passageway.
+~
+#EXIT
+Direction north~
+ToRoom    2427
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2429
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2429
+Name     A Corner in the Passageway~
+Sector   underground~
+Desc     The narrow passageway ends here at a roughly shaped corner.
+The long silvery strands are thicker here, creating net like 
+structures around the ceilings of the passage. A large boulder
+is here, with red markings running alongside it. The passageway
+is getting progressively more dank and the smell of mold is heavy.
+~
+#EXIT
+Direction north~
+ToRoom    2428
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2430
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2430
+Name     A Large Passageway~
+Sector   underground~
+Desc     The strands of silvery strands are getting even thicker, covering
+everything from the floor to boulders. The strands lace about the
+passage, making it hard to travel through. At the end of the 
+passage is a slight drop off into a much larger cavern.
+~
+#EXIT
+Direction east~
+ToRoom    2431
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2429
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2431
+Name     A Large Burrowed Cavern~
+Sector   underground~
+Desc     The cavern here is huge, spanning about a quarter of a mile and
+completely covered in the silver strands. The cavern smells musty
+and there is a faint scent of decay in the air. Large boulders 
+rise from under the strands like rough pillars. There are several 
+pods of silver strands dangling from the ceiling, varying in size 
+and shape. 
+~
+#EXIT
+Direction west~
+ToRoom    2430
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2432
+Name     &GThe Northwest Corner of the Fields&w~
+Sector   field~
+Desc     This is the northwest point of the cornfields where the crops
+are started in terms of planting, tending, and harvesting. From
+here, one can see across the rolling fields to the abbey located
+at the highest southern point. The walls of the abbey can be 
+seen in all directions, towering above the fields in order to
+protect the hard work of the druids.
+~
+#EXIT
+Direction east~
+ToRoom    2433
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2439
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2433
+Name     &GThe Northern Fields&w~
+Sector   field~
+Desc     This is the northern end of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to protect
+the hard work of the druids.
+~
+#EXIT
+Direction east~
+ToRoom    2434
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2438
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2432
+#ENDEXIT
+
+Reset M 0 2418 1 2433
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+else
+mea $n You drive the plow into the earth but hit a rock instead!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2434
+Name     &GThe Northern Fields&w~
+Sector   field~
+Desc     This is the northern end of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to protect
+the hard work of the druids.
+~
+#EXIT
+Direction east~
+ToRoom    2435
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2437
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2433
+#ENDEXIT
+
+Reset M 0 2403 1 2434
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2435
+Name     &GThe Northeast Corner of the Fields&w~
+Sector   field~
+Stats    0 0 0 0 18 0
+Desc     This is the northeastern point of the cornfields. From here, 
+one can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to protect
+the hard work of the druids.
+~
+Perdesc  &zYou spot a patch of disturbed earth here and a small hole...
+~
+#EXIT
+Direction south~
+ToRoom    2436
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2434
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2426
+Flags     isdoor closed secret climb dig hidden searchable nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2436
+Name     &GThe Eastern Fields&w~
+Sector   field~
+Desc     This is the eastern end of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to 
+protect the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2435
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2443
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2437
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2437
+Name     &GThe Central Fields&w~
+Sector   field~
+Desc     This is the central area of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to protect
+the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2434
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2436
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2442
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2438
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2438
+Name     &GThe Central Fields&w~
+Sector   field~
+Desc     This is the central area of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to protect
+the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2433
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2437
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2441
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2439
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2439
+Name     &GThe Western Fields&w~
+Sector   field~
+Desc     This is the western end of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to 
+protect the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2432
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2438
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2440
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2440
+Name     &GThe Western Fields&w~
+Sector   field~
+Desc     This is the western end of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to 
+protect the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2439
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2441
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2447
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2441
+Name     &GThe Central Fields&w~
+Sector   field~
+Desc     This is the central area of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to 
+protect the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2438
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2442
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2446
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2440
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2442
+Name     &GThe Central Fields&w~
+Sector   field~
+Desc     This is the central area of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to 
+protect the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2437
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2443
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2445
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2441
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2443
+Name     &GThe Eastern Fields&w~
+Sector   field~
+Desc     This is the eastern end of the cornfields. From here, one 
+can see across the rolling fields to the abbey located at the 
+highest southern point. The walls of the abbey can be seen
+in all directions, towering above the fields in order to 
+protect the hard work of the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2436
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2444
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2442
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2444
+Name     &GThe Southeastern Corner of the Fields&w~
+Sector   field~
+Desc     This is the southeastern end of the cornfields. From here, one 
+can see the end of the rolling fields and the start of the facilities
+used by the abbey. Large red livestock barns can be seen towards
+the west, orchards to the east, and the housing facilities to the
+direct south. The walls of the abbey can be seen in all directions,
+towering above the fields in order to protect the hard work of 
+the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2443
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2445
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2445
+Name     &GThe Southern Fields&w~
+Sector   field~
+Desc     This is the southern end of the cornfields. From here, one 
+can see the end of the rolling fields and the start of the facilities
+used by the abbey. Large red livestock barns can be seen towards
+the west, orchards to the east, and the housing facilities to the
+direct south. The walls of the abbey can be seen in all directions,
+towering above the fields in order to protect the hard work of 
+the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2442
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2444
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2423
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2446
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2446
+Name     &GThe Southern Fields&w~
+Sector   field~
+Desc     This is the southern end of the cornfields. From here, one 
+can see the end of the rolling fields and the start of the facilities
+used by the abbey. Large red livestock barns can be seen towards
+the west, orchards to the east, and the housing facilities to the
+direct south. The walls of the abbey can be seen in all directions,
+towering above the fields in order to protect the hard work of 
+the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2441
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2445
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2447
+#ENDEXIT
+
+Reset M 0 2418 2 2446
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2447
+Name     &GThe Southwestern Corner of the Fields&w~
+Sector   field~
+Desc     This is the southwestern end of the cornfields. From here, one 
+can see the end of the rolling fields and the start of the facilities
+used by the abbey. Large red livestock barns can be seen towards
+the southeast, orchards to the east, and the housing facilities to the
+direct south. The walls of the abbey can be seen in all directions,
+towering above the fields in order to protect the hard work of
+the druids.
+~
+#EXIT
+Direction north~
+ToRoom    2440
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2446
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2449
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plow~
+Comlist   If athletics($n) >= 16
+If wearingvnum($n) == 2420
+If ovnumroom(2417) != 1
+Mea $n &OYou manage to plow some of the earth here and prepare it for planting.
+Mer $n &O$n plows the earth here with a medium sized hand plow
+Silent Mpoload 2417
+Else
+Mea $n &OThe soil here has already been plowed.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p plant~
+Comlist   If nature($n) > 16
+If wearingvnum($n) == 2421
+if ovnumroom(2417) == 1
+mea $n &GYou plant some seeds into the newly plowed soil.
+Mer $n &G$n plants some seeds into the freshly plowed soil here.
+Mpoload 2419
+Mppurge plowed11
+Else
+Mea $n &GThere is no soil here that is ready to be planted.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p water~
+Comlist   If nature($n) > 14
+If ovnumroom(2419) == 1
+If wearingvnum($n) == 2428
+Mea $n &CYou water the freshly planted soil here.
+Mer $n &C$n waters the freshly planted soil here with a metal watercan.
+Mpoload 2418
+Silent Mppurge planted11
+Else
+Mea $n &CThere is no soil here needing water.
+Endif
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p harvest~
+Comlist   If ovnumroom(2426) == 1
+Mea $n &GYou harvest the mature crop into a bushel of corn.
+Mer $n &G$n harvests the mature crop into a bushel of corn.
+Mpoload 2427
+Mppurge mature11
+Else
+Mea $n &GThere is nothing here to harvest.&w
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p shoo~
+Comlist   If mobinroom(2418) == 1
+If intimidation($n) >= 18
+Mea $n &zYou manage to send the crow off flying to the rooftops of the abbey!
+Mer $n &z$n manages to send the crow off flying to the rooftops of the abbey.
+Mptransfer crow 2492
+Else
+Mea $n &zThe crow ignores your attempts to scare it away from the fields.
+Mer $n &z$n tries to scare away the crow and it ignores $m.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2448
+Name     An Outdoor Shrine~
+Sector   field~
+Desc     This space has been dedicated as an outdoor shrine to
+the goddess, Amunar. Several wooden trellises have
+arranged to create a circular space for the shrine. The
+trellises are covered in fruit bearing vines, several
+a functional agricultural purpose. In the center of 
+the circle is a statue of Amunar, her arms out as if
+she wants to hold you in a sweet motherly embrace. Many
+of the druids here at the abbey or those traveling come 
+to meditate at this shrine. Around the statue are flat
+circular rocks for which these druids can meditate upon.
+~
+#EXIT
+Direction west~
+ToRoom    2495
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2449
+Name     Before a Large Water Tank~
+Sector   field~
+Flags    nomob~
+Desc     Before you is a large bronze tank that was created by a local artificer
+to pump water to the fields of the Abbey. It is quite large and features
+lots of pipes and metallic pieces. A metal ladder built into the side
+of tank leads up on top of it. A large control panel of buttons and
+knobs can be seen near the front of the tank.
+~
+#EXIT
+Direction north~
+ToRoom    2447
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2424
+Flags     climb hidden~
+#ENDEXIT
+
+Reset M 0 2416 1 2449
+#ENDROOM
+
+#ROOM
+Vnum     2451
+Name     A Grassy Field~
+Sector   field~
+Flags    nomob~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see a dense forest to the west of here
+that appears dense with trees and vegetation.
+~
+#EXIT
+Direction east~
+ToRoom    2452
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2152
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2452
+Name     &GA Grassy Field&w~
+Sector   field~
+Flags    nomob~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see a dense forest to the far west of here
+that appears dense with trees and vegetation.
+~
+#EXIT
+Direction north~
+ToRoom    2453
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2457
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2454
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      559
+MapY      807
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2453
+Name     &GA Grassy Field&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+south and east from here.
+~
+#EXIT
+Direction east~
+ToRoom    2458
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2452
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2454
+Name     &GA Grassy Field&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north and east from here.
+~
+#EXIT
+Direction north~
+ToRoom    2452
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2456
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2455
+Name     A Garden Path~
+Sector   field~
+Desc     The path ends here at the crest of a small hill that overlooks the
+entire farming operations of the abbey. A large herbal garden is
+located to the west and a berry garden is located to the east of here. All
+of the gardens are well maintained by the abbey druids who spend
+a vast majority of their time keeping the grounds clear and productive.
+~
+#EXIT
+Direction east~
+ToRoom    2498
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2495
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2499
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2456
+Name     &GA Grassy Field&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2457
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2454
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2457
+Name     &GA Grassy Field&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north, south, and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    2458
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2456
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2452
+#ENDEXIT
+
+Reset M 0 2422 5 2457
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2458
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+south, east, and west from here. Some of the grass has been
+stomped on, which creates a pseudo path.
+~
+#EXIT
+Direction east~
+ToRoom    2459
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2457
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2453
+#ENDEXIT
+
+Reset M 0 2422 5 2458
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2459
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north, east, and west from here. Some of the grass has been
+stomped on, which creates a pseudo path.
+~
+#EXIT
+Direction north~
+ToRoom    2464
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2460
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2458
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2460
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north, east, and west from here. Some of the grass has been
+stomped on, which creates a pseudo path.
+~
+#EXIT
+Direction north~
+ToRoom    2486
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2461
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2459
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2461
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north, west, and south from here. Some of the grass has been
+stomped on, which creates a pseudo path.
+~
+#EXIT
+Direction north~
+ToRoom    2462
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2467
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2460
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2462
+Name     &GA Grassy Field&w~
+Sector   field~
+#EXIT
+Direction south~
+ToRoom    2461
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2486
+#ENDEXIT
+
+Reset M 0 2422 5 2462
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2463
+Name     A Hayloft~
+Sector   indoors~
+Desc     This is a large hayloft full of hay and straw to be used for the
+animals of the abbey. The farther back you go the higher the bales
+get. A ladder leads down to the barn below where various animals roam
+about eating, wandering, or resting. The loft is quite warm as 
+the bales act as insulation up here.
+~
+#EXIT
+Direction down~
+ToRoom    2421
+Flags     nomob~
+#ENDEXIT
+
+Reset O 0 2447 5 2463
+#ENDROOM
+
+#ROOM
+Vnum     2464
+Name     &GA Grassy Field&w~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    2465
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2486
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2459
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2465
+Name     &GA Grassy Field&w~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    2466
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2464
+#ENDEXIT
+
+Reset M 0 2422 5 2465
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2466
+Name     &GA Grassy Field&w~
+Sector   field~
+#EXIT
+Direction south~
+ToRoom    2486
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2465
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2467
+Name     &GA Grassy Path&w~
+Sector   field~
+Flags    nomob~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north and south from here. Some of the grass has been 
+stomped on, which create a pseudo path. You catch the sight
+of a river nearby and there is apparently a large metal
+pipe running along the river here.
+~
+#EXIT
+Direction north~
+ToRoom    2461
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2468
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 2413
+mea $n As you enter you see a bugbear warrior tampering with the water pipe
+mea $n as it creates something similar to the clog you removed earlier. As
+mea $n you try to catch a closer peek you step on a twig, which alerts
+mea $n the bugbear of your presence. He wields his weapon and begins to
+mea $n advance upon you!
+mpmload 2417
+mpoload 2433 1
+mpoload 2434 1
+silent force bugbear get morning
+silent force bugbear get hide
+silent mpforce bugbear get morning
+silent mpforce bugbear get hide
+silent mpforce bugbear wield morning
+silent mpforce bugbear wear hide
+mpforce bugbear kill $n
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2468
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north and east from here. Some of the grass has been 
+stomped on, which create a pseudo path. You catch the sight
+of a river nearby and there is apparently a large metal
+pipe running along the river here. You can see a wooden bridge
+to the east that crosses over the river.
+~
+#EXIT
+Direction north~
+ToRoom    2467
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2469
+#ENDEXIT
+
+Reset M 0 2421 2 2468
+#ENDROOM
+
+#ROOM
+Vnum     2469
+Name     &OA Wooden Bridge&w~
+Sector   field~
+Flags    nomob~
+Desc     This bridge crosses over a river that runs very slowly under the
+old planks of the bridge. The bridge is arched and going towards
+the middle you can see high above the tall grass. You can see rolling
+hills to the northeast. The grasses of the field to the west are slowly
+diminishing toward the east as one field meets another.
+~
+#EXIT
+Direction east~
+ToRoom    2470
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2468
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2470
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+east and west from here. Some of the grass has been
+stomped on, which creates a pseudo path. A bridge can be seen
+towards the west form here.
+~
+#EXIT
+Direction east~
+ToRoom    2471
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2469
+#ENDEXIT
+
+Reset M 0 2421 1 2470
+#ENDROOM
+
+#ROOM
+Vnum     2471
+Name     &GA Grassy Path&w~
+Sector   field~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north and west from here. Some of the grass has been
+stomped on, which creates a pseudo path. 
+~
+#EXIT
+Direction north~
+ToRoom    2472
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2470
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2472
+Name     &GA Grassy Path&w~
+Sector   field~
+Flags    nomob~
+Desc     The grass in this field is quite high standing at about
+five feet in height. The grass sways and dances whenever
+the wind blows. The grass also makes it very hard to see
+much of the field itself, but it can be discerned that it
+quite large. You can see that the field continues to the 
+north and south from here. Some of the grass has been
+stomped on, which creates a pseudo path. You can see rolling
+hills towards the north from here as the grass slowly begins
+to level off.
+~
+#EXIT
+Direction north~
+ToRoom    2473
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2471
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2473
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. A grassy path can be seen to the 
+south from here.
+~
+#EXIT
+Direction north~
+ToRoom    2477
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2474
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2472
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2474
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. 
+~
+#EXIT
+Direction north~
+ToRoom    2478
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2475
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2473
+#ENDEXIT
+
+Reset M 0 2420 6 2474
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2475
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. At the top of the hill here you
+can see a large stone building surrounded by walls to the far
+northeast from here.
+~
+#EXIT
+Direction north~
+ToRoom    2476
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2485
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2474
+#ENDEXIT
+
+Reset M 0 2420 6 2475
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2476
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. At the top of the hill here you
+can see a large stone building surrounded by walls to the far
+northeast from here.
+~
+#EXIT
+Direction north~
+ToRoom    2481
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2484
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2475
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2478
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2477
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. 
+~
+#EXIT
+Direction north~
+ToRoom    2479
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2478
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2473
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2478
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. 
+~
+#EXIT
+Direction north~
+ToRoom    2480
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2476
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2474
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2477
+#ENDEXIT
+
+Reset M 0 2420 6 2478
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+Reset M 0 2420 6 2478
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+Reset M 0 2420 6 2478
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2479
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. 
+~
+#EXIT
+Direction east~
+ToRoom    2480
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2477
+#ENDEXIT
+
+Reset M 0 2420 6 2479
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2480
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. 
+~
+#EXIT
+Direction east~
+ToRoom    2481
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2478
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2479
+#ENDEXIT
+
+Reset M 0 2420 6 2480
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2481
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. At the top of the hill here you
+can see a large stone building surrounded by walls to the far
+east from here.
+~
+#EXIT
+Direction east~
+ToRoom    2483
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2476
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2480
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2482
+Name     A Large Altar~
+Sector   indoors~
+Desc     This is a large altar devoted to the goddess Amunar, which has a
+large statue of the goddess that is almost as tall as the ceiling. A
+large bounty of produce has been placed around the altar as an offering
+to the goddess. Lots of candles have been placed on the altar to
+provide light during the night time. A large tapestry of Amunar
+feeding the hungry and providing friendship to the people she is
+feeding. A large podium made from fieldstone is used by the High
+Druid to conduct services here.
+~
+#EXIT
+Direction south~
+ToRoom    2496
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2483
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. At the top of the hill here you
+can see a large stone building surrounded by walls to the
+north from here.
+~
+#EXIT
+Direction south~
+ToRoom    2484
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2481
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    2400
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2484
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. At the top of the hill here you
+can see a large stone building surrounded by walls to the far
+north from here.
+~
+#EXIT
+Direction north~
+ToRoom    2483
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2485
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2476
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2485
+Name     &GRolling Fields&w~
+Sector   field~
+Desc     These are large rolling fields that are covered in soft
+grasses, weeds, and wildflowers. Different types of animals
+can be seen walking about the field peacefully. A sporadic
+tree can be found throughout the fields offering shade during
+high sun. The hills are like high waves of water, which reach
+up high and descend quickly. At the top of the hill here you
+can see a large stone building surrounded by walls to the very
+far north from here. To the south is a small sandy path that
+heads towards a beach and the ocean.
+~
+#EXIT
+Direction north~
+ToRoom    2484
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2487
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2475
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2486
+Name     &GA Grassy Field&w~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    2466
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2462
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2460
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2464
+#ENDEXIT
+
+Reset M 0 2422 5 2486
+  Reset E 0 2434 1 5
+  Reset E 0 2433 1 26
+Reset M 0 2422 5 2486
+  Reset E 0 2433 1 26
+  Reset E 0 2434 1 5
+#ENDROOM
+
+#ROOM
+Vnum     2487
+Name     &YA Sandy Path&w~
+Sector   field~
+Flags    nomob~
+Desc     &OThis sandy path is formed into a rolling hill that leads towards a
+small beach and the ocean. The sand here is warm from the sun during
+the day and various thick blades of grass border the sandy path. The
+beach to the south is a beautiful white yellow in tone having been
+bleached by the sun over a long period of time.
+~
+#EXIT
+Direction north~
+ToRoom    2485
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2488
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2488
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     &OThis beach is not very big and is a few miles in length. The beach
+borders around a small bay that leads out into the ocean. You can see
+sea gulls above flying about the bay and fishing the waters. The sand
+has been bleached a pure white yellow tone and is warm to the feet when
+the sun is out. The water of the bay is a clear blue and gets deeper
+in tone the farther it goes out before it meets the ocean.
+~
+#EXIT
+Direction north~
+ToRoom    2487
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2490
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2489
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2489
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     &OThis beach is not very big and is a few miles in length. The beach
+borders around a small bay that leads out into the ocean. You can see
+sea gulls above flying about the bay and fishing the waters. The sand
+has been bleached a pure white yellow tone and is warm to the feet when
+the sun is out. The water of the bay is a clear blue and gets deeper
+in tone the farther it goes out before it meets the ocean.
+~
+#EXIT
+Direction east~
+ToRoom    2488
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2490
+Name     &YA Sandy Beach&w~
+Sector   city~
+Desc     &OThis beach is not very big and is a few miles in length. The beach
+borders around a small bay that leads out into the ocean. You can see
+sea gulls above flying about the bay and fishing the waters. The sand
+has been bleached a pure white yellow tone and is warm to the feet when
+the sun is out. The water of the bay is a clear blue and gets deeper
+in tone the farther it goes out before it meets the ocean.
+~
+#EXIT
+Direction west~
+ToRoom    2488
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2491
+Name     A Large Stable~
+Sector   indoors~
+Desc     This stable is quite cozy and full of stalls for horses to rest after
+making the journey to this abbey. The stable has a well established
+inside to make it easier to water the animals and a loft above
+has an abundant amount of hay and straw. The stable is well
+manned with people volunteering at the abbey. A small tack room
+is nearby for saddles and such to be stored while the animals
+rest.
+~
+#EXIT
+Direction east~
+ToRoom    2412
+#ENDEXIT
+
+Reset M 0 2419 1 2491
+#ENDROOM
+
+#ROOM
+Vnum     2492
+Name     &RMOB STORAGE&W~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+Desc     You should not be in here. Please contact a member of the admin team
+in order to get out. Thanks!
+~
+Reset M 0 2408 1 2492
+Reset M 0 2407 1 2492
+Reset M 0 2406 1 2492
+Reset M 0 2405 1 2492
+Reset M 0 2404 1 2492
+Reset M 0 2409 1 2492
+  Reset G 0 2421 1
+  Reset G 0 2420 1
+  Reset G 0 2430 1
+  Reset G 0 2428 1
+  Reset G 0 2429 1
+#ENDROOM
+
+#ROOM
+Vnum     2493
+Name     A Small Pasture~
+Sector   field~
+Desc     This pasture is located outside of the livestock barn and is open
+for the animals to roam about the barn area. A wooden fence keeps
+a majority of the large animals from wandering into the fields
+and eating the crops.
+~
+#EXIT
+Direction east~
+ToRoom    2421
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2494
+Name     A Massive Kitchen~
+Sector   indoors~
+Desc     This kitchen has lots of tables and places for cooks to prepare meals
+for all of the people that work, live, and visit the abbey. Several
+large fireplaces are used for cooking and providing heat during
+the winter months. The walls are made from fieldstone as well,
+which creates a cottage like aesthetic. 
+~
+#EXIT
+Direction east~
+ToRoom    2496
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 0 2400 1 2494
+  Reset G 0 2402 1
+  Reset G 0 2405 1
+  Reset G 0 2431 1
+  Reset G 0 2403 1
+  Reset G 0 2404 1
+Reset O 0 2400 1 2494
+Reset D 0 2494 1 0
+#ENDROOM
+
+#ROOM
+Vnum     2495
+Name     A Garden Path~
+Sector   field~
+Desc     This path gives the best view of the fields here at the abbey. From
+here, one can see the vast twenty square miles of fields used for
+crops. Various parts of the land have been devoted to various types
+of produce, from orchards to specialty gardens. This path is traveled
+heavily by the druids as they plant and harvest.
+~
+#EXIT
+Direction north~
+ToRoom    2455
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2448
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2422
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2423
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2496
+Name     The Great Hall~
+Sector   indoors~
+Desc     This great hall is massive with high cathedral ceilings that showcase
+the exposed wooden beams of the hall. A large wooden table is located
+in the center of the hall and can easily seat over thirty people. A
+large fireplace made from fieldstone is located to the western wall
+and has a roaring fire inside that heats the hall perfectly. A large
+altar can be seen to the north at the end of the hall. On the other
+side of the fireplace is a doorway leading into a large kitchen area.
+~
+#EXIT
+Direction north~
+ToRoom    2482
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2413
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2494
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 0 2400 1 2496
+Reset D 0 2496 2 0
+Reset D 0 2496 3 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &RThe fire inside the fireplace crackles and pops for a few moments.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2497
+Name     A Large Orchard~
+Sector   field~
+Desc     This is one of the many orchards located in the abbey. The
+druids here use the orchards to grow both tree based fruits
+as well as bush and vine fruits. Vines grow from tree to tree,
+heavy with various berries ripe for the picking. All of the trees
+and bushes in the orchard have been planted so that they grow
+in perfectly spaced out rows. This allows several workers to
+harvest from a tree or bush efficiently.
+~
+#EXIT
+Direction west~
+ToRoom    2422
+#ENDEXIT
+
+Reset O 0 2445 1 2497
+  Reset P 0 2446 4 2445
+#ENDROOM
+
+#ROOM
+Vnum     2498
+Name     A Berry Garden~
+Sector   field~
+Desc     The garden here is divided into various types of berries with each
+sector fenced off with a small knee level fence. The fence was once
+painted white, but the paint is slowly peeling away with age. Efforts
+have been made to start repainting the fence by volunteers. The view
+of the rolling fields of crops is stunning from here and picturesque.
+~
+#EXIT
+Direction west~
+ToRoom    2455
+#ENDEXIT
+
+Reset M 0 2413 1 2498
+Reset O 0 2436 1 2498
+  Reset P 0 2437 7 2436
+#ENDROOM
+
+#ROOM
+Vnum     2499
+Name     A Large Herb Garden~
+Sector   field~
+Desc     This is a large herbal garden is divided into various types of herbs with
+each sector fenced off with a small knee level fence. The fence was
+set up to keep various small animals from coming in and eating the
+herbs. The fence here has been painted with a fresh coat of white 
+paint. From here one can see the abbey and the various rolling fields
+of crops growing.
+~
+#EXIT
+Direction east~
+ToRoom    2455
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

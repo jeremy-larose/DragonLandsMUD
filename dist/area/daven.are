@@ -1,0 +1,4992 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Ranger Daven's Farm & Rehabilitation Center~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 29338330
+ResetMsg     &gYou hear animals deep in the forest nearby.&w~
+Lore         &gYour vision fails to reveal anything...&w
+~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       5800
+Keywords   Daven ranger bearded man human male cotton clothing~
+Short      &gRanger Daven&w~
+Long       &gA bearded human man is here inspecting some of the fencing.&w
+~
+Desc       &gBefore you is a middle aged human man with a very long beard. His
+matching long hair has been piled on top of his head and he has
+secured it with a piece of leather. He wears simple cotton clothing
+and a leather vest as he works about the property.
+~
+Race       human~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   infrared~
+Stats1     400 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 10
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 5826
+if hasqbit($n) != 5825
+if hasqbit($n) != 5804
+if hasqbit($n) != 5803
+if hasqbit($n) != 5802
+if hasqbit($n) != 5801
+if hasqbit($n) != 5800
+smile $n
+sayto $n Hello there! You look like just the kind of person I could use
+sayto $n on a task.. well.. an investigation. Are you &ginterested&G at all?
+else
+sayto $n Good luck on your search and thanks!
+endif
+else
+sayto $n Have you found the culprit?
+endif
+else
+sayto $n Have you found the culprit?
+endif
+else
+sayto $n Thank you again for helping me. If you are still looking for
+sayto $n work.. I may know about some &gchores&G you could help with.
+sayto $n Let me know if you are interested.
+endif
+else
+nod $n
+endif
+else
+smile $n
+sayto $n Thank you for your help. It's taken some stress off of my
+sayto $n family and we all appreciate it. Here is a few tokens of
+sayto $n my appreciation.
+mpgift 200 218
+mpmset daven gold 50
+give 50 gold $n
+mpadvance $n 10000
+give gem $n
+mpqset $n 5825
+mpqset $n 5826
+sayto $n You are always welcome here.
+endif
+else
+smile $n
+sayto $n It is good to see you! I hope all is well.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p interested~
+Comlist   if hasqbit($n) != 5803
+if hasqbit($n) != 5800
+grin
+sayto $n Glad to hear it! So I have a small pen of animals that my
+sayto $n family and I tend to. We heal them or help rehabilitate them
+sayto $n before releasing them to the wild.. however.. something decided
+sayto $n to sneak in at night and eat all but one of them. I need you
+sayto $n to find what did it. This will help me keep track of what sort
+sayto $n of animals or creatures are in this area. I would prefer if it
+sayto $n is an animal that it was not killed. I just need to know what
+sayto $n it is that has done it.
+mpqset $n 5800
+mpsleep 2
+sayto $n The southeast gate of the pen to the south of here leads out
+sayto $n into the nearby forest. I tracked whatever it is to that
+sayto $n part of the woods. Please stay safe and report back once
+sayto $n you know what it is.
+else
+sayto $n Did you find the culprit?
+endif
+else
+sayto $n Thank you again for your help.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p dire wolf~
+Comlist   if hasqbit($n) != 5803
+if hasqbit($n) != 5802
+if hasqbit($n) == 5801
+mea $n &gYou fill in the bearded ranger on what you discovered.&w
+mer $n &g$n&g tells Ranger Daven what $e discovered.
+mpsleep 2
+hmm
+sayto $n Dire wolves hmmm? A little far from their usual territory.
+sayto $n I will have to investigate their den and make sure they
+sayto $n learn their way around here like I did with other
+sayto $n predators. I want to give my rehabilitated beasts the
+sayto $n best chance in the game of nature and survival!
+mpsleep 2
+sayto $n I thank you for helping find the culprit and not killing
+sayto $n the mother or her cubs. 
+mpadvance $n 5000
+mpqset $n 5801
+mpqset $n 5803
+else
+sayto $n Did you see any evidence? Did you actually see the culprit?
+endif
+else
+mea $n &gYou fill in the bearded ranger on what you found and killed.
+mer $n &g$n&g tells Ranger Daven what $e found and did with the culprit.
+frown $n
+sayto $n I.. did not want any natural beasts to be harmed for doing
+sayto $n what is natural to them. I appreciate you finding out what
+sayto $n did it.. but I said when I sent you to not kill it. I will
+sayto $n need to go to the den and cleanse it. Thank you for your.. help.
+mpadvance $n 500
+mpqset $n 5802
+mpqset $n 5803
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p wolf~
+Comlist   if hasqbit($n) != 5803
+if hasqbit($n) != 5802
+if hasqbit($n) == 5801
+mea $n &gYou fill in the bearded ranger on what you discovered.
+mer $n &g$n tells Ranger Daven what $e discovered.
+mpsleep 2
+hmm
+sayto $n Dire wolves hmmm? A little far from their usual territory.
+sayto $n I will have to investigate their den and make sure they
+sayto $n learn their way around here like I did with other
+sayto $n predators. I want to give my rehabilitated beasts the
+sayto $n best chance in the game of nature and survival!
+mpsleep 2
+sayto $n I thank you for helping find the culprit and not killing
+sayto $n the mother or her cubs. 
+mpadvance $n 5000
+mpqset $n 5801
+mpqset $n 5803
+else
+sayto $n Did you see any evidence? Did you actually see the culprit?
+endif
+else
+mea $n &gYou fill in the bearded ranger on what you found and killed.
+mer $n &g$n&g tells Ranger Daven what $e found and did with the culprit.
+frown $n
+sayto $n I.. did not want any natural beasts to be harmed for doing
+sayto $n what is natural to them. I appreciate you finding out what
+sayto $n did it.. but I said when I sent you to not kill it. I will
+sayto $n need to go to the den and cleanse it. Thank you for your.. help.
+mpadvance $n 500
+mpqset $n 5802
+mpqset $n 5803
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p chores~
+Comlist   if hasqbit($n) != 5826
+if hasqbit($n) != 5825
+if hasqbit($n) != 5804
+smile $n
+sayto $n I know my wife and children are in need of help with various
+sayto $n chores and errands through out the farm. Some may require
+sayto $n you to travel to other places or hunt down resources. If you
+sayto $n would like to help I can reward you at the end of it. What
+sayto $n do you say? Do you &gagree&G to help us?
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p agree~
+Comlist   if hasqbit($n) != 5826
+if hasqbit($n) != 5825
+if hasqbit($n) != 5804
+grin
+sayto $n I am very glad you will help us. I believe my wife was talking
+sayto $n about needing some supplies for her baskets. She is usually
+sayto $n found on our front porch. Thank you again.
+mpqset $n 5804
+mpqset $n 5805
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   silent wake
+emote wakes up and gets ready for the day.
+stand
+mpsleep 2
+emote heads downstairs and off to work.
+mpgoto 5821
+emote arrives and begins his daily tasks.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   emote notices the time and heads home to rest.
+mpgoto 5809
+emote arrives and heads to his bed to rest.
+silent sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   silent wake
+emote mumbles in his sleep, "No.. no more children. Nooooo..."
+silent sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   silent wake
+emote mumbles in his sleep, "Deulara.. no more.. babies..."
+silent sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   silent wake
+emote mumbles in his sleep, "Oh gods above.. babies.. everywhere.."
+silent sleep
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5801
+Keywords   Davina halfelf half elf young girl shop clerk~
+Short      &gDavina&w~
+Long       &gA young girl is here working as a shop clerk.&w
+~
+Desc       &gThis young half-elven girl is in her teenage years and seems to
+be very mature for her age. She wears simple cotton clothing as
+she works around the shop filling shelves and talking to customers.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     700 50 0 0 10 0 0 1 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if hasqbit($n) != 5884
+if hasqbit($n) != 5820
+if hasqbit($n) == 5819
+smile $n
+sayto $n Hello. I have a simple task for you.. I just need this.. l-letter
+sayto $n delivered to my f-friend, Hansel. He's a bard in the city of
+sayto $n Meridan.
+mpsleep 2
+blush
+mpsleep 2
+sayto $n I met him when I went with my Dad to Meridan once. He has a 
+sayto $n beautiful voice. Here is the letter...
+mpoload 5823 1
+mpsleep 2
+give letter $n
+mpsleep 2
+sayto $n Please don't r-read it and take it to him as soon as possible.
+mpqset $n 5819
+mpqset $n 5820
+else
+smile $n
+sayto $n How can I help you today?
+endif
+else
+sayto $n Have you taken my letter to Hansel yet?
+endif
+else
+blush
+sayto $n What did he have to say?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote hums a little song as she stocks some shelves.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p thank you~
+Comlist   if hasqbit($n) == 5884
+giggle
+sayto $n I knew he would say that! I will have to write him another
+sayto $n letter! Thank you again for taking it for me. Please see
+sayto $n my brother Dorenim in our wood workshop. He has need of you
+sayto $n on a few tasks.
+mpqset $n 5884
+mpqset $n 5821
+mpsleep 2
+emote gets out a quill and piece of paper as she starts writing a letter.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5806
+emote arrives and begins opening the shop for the day.
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote begins closing up the shop for the night and leaves.
+close s
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5802
+Keywords   Deulara mother wife elven woman elf basket weaving~
+Short      &gDeulara&w~
+Long       &gAn elven woman with deep brown hair is here weaving a basket.&w
+~
+Desc       &gThis elven woman has deep brunette hair and matching dark eyes,
+which are complimented by her green clothing. Her dress is a common
+style and practical as she works here. She has a stern face and seems
+to keep many of the tasks on schedule.
+~
+Lore       &gYou see when this elven woman was younger as she works alongside a
+younger human man in a forest. They seem to be tracking something 
+and they seem very skilled at what they are doing...
+~
+Race       high-elf~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   infrared~
+Stats1     100 1 0 0 10 0 0 0 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5825
+if hasqbit($n) != 5806
+if hasqbit($n) == 5805
+nod $n
+sayto $n Welcome. I hear my husband has drafted you to help us. Thank
+sayto $n you for agreeing to do such. My task is simple - I need more
+sayto $n reeds that I can dry to use in my basket weaving. There is
+sayto $n a particularly good spot in the forest near the farm at a
+sayto $n riverbed there. When you find a good batch bring it to me
+sayto $n and I will send you off on your next chore.
+mpqset $n 5805
+mpqset $n 5806
+else
+nod $n
+sayto $n Hello there.
+endif
+else
+sayto $n Welcome back. Did you find some reeds for me?
+endif
+else
+smile $n
+sayto $n Thank you again for helping around the farm.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote hums a little song as she works on the basket she's weaving.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 5825
+if hasqbit($n) != 5807
+if hasqbit($n) == 5806
+if ovnuminv(5812) == 1
+emote examines the reeds and nods her head approvingly after some time.
+sayto $n These will work perfectly. I think you should help my son
+sayto $n Dhimi in the barn next. He often struggles with the chores
+sayto $n there due to his size.
+mpjunk reed
+mpqset $n 5806
+mpqset $n 5807
+else
+eye $n
+endif
+endif
+endif
+else
+smile $n
+sayto $n Thank you for bringing me more reeds. I appreciate it.
+mpjunk reed
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5875
+emote arrives with two children and begins her work for the day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote collects her children and heads inside for the evening.
+mpgoto 5809
+emote arrives and heads to bed.
+silent sleep
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5803
+Keywords   Derum young man halfelf half elf shop clerk~
+Short      &gDerum&w~
+Long       &gA young man is here working as a shop clerk.&w
+~
+Desc       &gThis young half-elf teenager is dressed in simple dark green
+clothing that compliments his curly reddish colored hair. He spends
+much of his time meditating here and interacting with customers.
+~
+Race       half-elf~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     100 50 0 0 10 0 0 5 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5818
+if hasqbit($n) == 5817
+nod $n
+sayto $n I need your help. I lost a bet with my twin brother Darum
+sayto $n and now I need to buy my sister a new doll. I know there is a
+sayto $n shop in New Darkhaven that sells them. I know she wants one with
+sayto $n braided hair. If you could bring that to Darum after purchasing
+sayto $n it it will prove I fulfilled my debt.
+mpsleep 2
+mpmset derum gold 10
+give 10 gold $n
+mpqset $n 5817
+mpqset $n 5818
+mpsleep 2
+sayto $n That should cover the cost of the doll. Thank you and make sure to
+sayto $n bring it to my twin brother, Darum.
+else
+nod $n
+sayto $n How can I help you today?
+endif
+else
+sayto $n Did you take the doll to my twin brother, Darum?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5876
+emote arrives and sets up for the day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote closes up his side of the shop and leaves.
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5804
+Keywords   Darum young man halfelf half elf shop clerk~
+Short      &gDarum&w~
+Long       &gA young man is here working as a shop clerk.&w
+~
+Desc       &gThis young half-elf teenager is dressed in simple dark green
+clothing that compliments his curly reddish colored hair. He spends
+much of his time meditating here and interacting with customers.
+&gThis young half-elf teenager is dressed in simple dark brown
+clothing that compliments his curly reddish colored hair. He spends
+much of his time sharpening arrowheads and interacting with customers.
+~
+Race       half-elf~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     100 50 0 0 10 0 0 5 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit ($n) == 5818
+grin
+sayto $n Did you buy the doll and help me beat my brother?
+else
+nod $n
+sayto $n How can I help you today?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 5818
+if ovnuminv(5819) == 1
+grin
+sayto $n Perfect! I will give this to my sister later after I show
+sayto $n my brother. Thank you for doing this. I hear my sister
+sayto $n Davina is looking for someone to help her. I would
+sayto $n visit her next.
+mpjunk braided
+mpqset $n 5818
+mpqset $n 5819
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5877
+emote arrives and sets up for the day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote closes up his side of the shop and leaves.
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5805
+Keywords   Demilla halfelf half elf young girl shop clerk~
+Short      &gDemilla&w~
+Long       &gA young teenage girl is here working as a shop clerk.&w
+~
+Desc       &gThis teenage half-elven girl seems very sweet just like her long
+blonde hair that hits her waist. She wears a simple white cotton
+dress as she stocks produce and checks on goods that are baking.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     1000 50 0 0 10 0 1 1 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+blush
+sayto $n Hello t-there... how can I help you today?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5880
+emote arrives and begins opening her side of the shop for the day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote closes up her side of the shop and leaves.
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5806
+Keywords   cow large battleaxe~
+Short      &Wa cow&w~
+Long       &WA cow is here eating some hay.&w
+~
+Desc       This cow is here waiting to be milked by the farmhands in the barn. 
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 5 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote moos for a few moments before she resumes eating.
+mpasound &WYou hear the sounds of a cow mooing nearby.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   if ovnumroom(2447) < 3
+mpoload 2447 1
+silent drop straw
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p milk~
+Comlist   if ovnumroom(5817) != 1
+if ovnumroom(5816) != 1
+if ovnumroom(5815) != 1
+if ovnumroom(5814) == 1
+if sleight($n) >= 14
+mea $n You manage to get some milk into the bucket and fill it slightly.
+mer $n $n manages to milk the cow and get some milk into the bucket.
+mppurge empty1
+mpoload 5815 1
+silent drop semi1
+else
+mea $n You fail to get any milk into your bucket.
+mer $n $n fails to get any milk into $s bucket.
+endif
+else
+mea $n You seem lost on what to do first.
+endif
+else
+mea $n You manage to get some milk into the bucket and fill it more.
+mer $n $n manages to milk the cow and get some milk into the bucket.
+mppurge semi1
+mpoload 5816 1
+silent drop half1
+endif
+else
+mea $n You manage to get some milk into the bucket and fill it up.
+mer $n $n manages to milk the cow and fill up $s bucket completely.
+mppurge half1
+mpoload 5817 1
+silent drop full1
+endif
+else
+mea $n Your bucket is already as full as it can get.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5807
+Keywords   old chestnut mare ~
+Short      &Oan old chestnut mare&w~
+Long       &OAn old chestnut mare is here eating in this small pasture.&w
+~
+Desc       &OThis old mare has kind eyes and a calm personality, which is great
+for many types of riders. She has a beautiful chestnut colored
+coat and deep dark brown eyes.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc wimpy~
+Affected   infrared~
+Stats1     0 10 2 0 12 0 0 0 0 0
+Stats2     3 10 10
+Stats3     2 4 3
+Stats4     2 0 2 0 0 0 0
+Attribs    16 2 11 13 12 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   if ovnumroom(1761) <= 0
+emote cocks his tail and grunts.
+silent mpoload 1761 1
+mposet manure timer 30
+silent drop manure
+mpsleep 9
+mpecho &OThe fresh smell of manure strikes your nose suddenly.&w
+else
+Endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5808
+Keywords   hen small brown chicken~
+Short      &Oa small hen&w~
+Long       &OA small brown hen is here pecking at the ground.&w
+~
+Desc       &OThis is a small brown hen that is here laying eggs for the farm.&w
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc nowander~
+Affected   infrared~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 2 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   if ovnumroom(3039) <= 0
+emote lays down in the straw and when she stands up there is an egg.
+mpoload 3039 1
+mposet egg timer 100
+silent drop egg
+else
+emote clucks and pecks at the ground here.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote clucks as she pecks around the area.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   wake
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   sleep
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5809
+Keywords   large rooster wandering farm~
+Short      &Ra rooster&w~
+Long       &RA large rooster is here wandering the farm.&w
+~
+Desc       &RThis is a large rooster who wanders the farm causing trouble.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 10 10
+Stats3     1 2 1
+Stats4     1 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if ispc($n)
+mpsleep 2
+mea $n &RThe rooster flaps his wings angrily at the sight of you.
+mer $n &RThe rooster flaps his wings angrily at the sight of &R$n&R.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   emote senses the coming of morning and starts crowing loudly.
+mpasound &RYou hear a rooster crowing at the coming of morning.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   mpgoto 5817
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5810
+Keywords   Dhimi young boy half elf halfelf cleaning barn~
+Short      &gDhimi&w~
+Long       &gA young boy is here cleaning the barn and feeding the animals.&w
+~
+Desc       &gThis young half-elf boy is here cleaning the barn and tending to
+all of the various animals. He has tan skin and bright golden blonde
+hair and he seems to be very wise despite his age.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     500 50 0 0 10 0 0 0 1 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5825
+if hasqbit($n) != 5808
+if hasqbit($n) == 5807
+smile $n
+sayto $n Hello there! Did my mommy send you to help me?
+else
+smile $n
+endif
+else
+sayto $n Have you finished cleaning the barn yet?
+endif
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 5825
+if hasqbit($n) != 5808
+if hasqbit($n) == 5807
+grin
+sayto $n Perfect! I need help raking up all the straw here.
+mpoload 5813 1
+give rake $n
+sayto $n Once you have finished raking the barn I have another
+sayto $n thing for you to do.
+mpsleep 2
+pat $n
+sayto $n Let me know when you're done!
+mpqset $n 5807
+mpqset $n 5808
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ready~
+Comlist   if hasqbit($n) != 5825
+if hasqbit($n) != 5810
+if hasqbit($n) == 5809
+grin
+pat cow
+sayto $n This is our cow, Battleaxe. She has been with us
+sayto $n for quite some time and she has the best milk in
+sayto $n the entire area!
+mpsleep 2
+sayto $n I need you to get a full bucket of milk and then
+sayto $n take it to my sister Dospria in our house's kitchen.
+mpsleep 2
+sayto $n Sometimes it takes three milkings to get a full bucket
+sayto $n so don't be sad if it takes a bit.
+mpoload 5814 1
+mpsleep 2
+give bucket $n
+mpsleep 2
+sayto $n Battleaxe, despite her name, is a pretty easy going cow
+sayto $n so you won't have too much resistance from her.
+mpqset $n 5809
+mpqset $n 5810
+else
+endif
+else
+sayto $n Did you take the full bucket of milk to Dospria?
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5818
+emote arrives and opens up the barn for the day.
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote closes up the barn for the evening and heads home.
+close e
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5811
+Keywords   Daria young woman halfelf half elf healer~
+Short      &gDaria&w~
+Long       &gA young woman is here working as an animal healer.&w
+~
+Desc       &gThis young woman is in her early twenties and is very reserved. She
+has center parted simple brown hair and she wears silver round glasses
+on her face. Her dark brown eyes almost seem black and she wears a
+simple green and brown outfit.
+~
+Race       half-elf~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     700 50 0 0 10 0 2 1 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5825
+if hasqbit($n) != 5814
+if hasqbit($n) == 5813
+smile $n
+sayto $n I hear you are here to help me with some chores. Well, I have more
+sayto $n of an errand or two for you to run.
+mpsleep 2
+emote checks some vials on a shelf and sighs.
+mpsleep 2
+sayto $n I need you to get me some herbs that I use to help heal the
+sayto $n my patients. I need only a little so get me one bit of
+sayto $n swamp eye and one bit of ranger's heart. 
+mpsleep 2
+sayto $n And I need the fresh type.. not the type you buy in stores.
+mpqset $n 5813
+mpqset $n 5814
+mpsleep 2
+sayto $n When you have them just hand them over to me one at a time. I
+sayto $n will need to evaluate them before I start drying them for
+sayto $n healing purposes. Good luck on your search.
+else
+smile $n
+endif
+else
+sayto $n Did you find the herbs I need?
+endif
+else
+smile $n
+sayto $n Well hello there.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 5814
+if ovnuminv(605) == 1
+if ovnuminv(603) == 1
+emote takes the herbs and starts examining them carefully.
+mpsleep 2
+nod $n
+sayto $n These will work perfectly. Thank you for taking the
+sayto $n time to find these for me.
+mpsleep 2
+mpjunk swamp
+mpjunk ranger
+sayto $n I believe my sweet brother, Derand, was looking for you. He
+sayto $n usually is in our parlor.. working on his next masterpiece.
+mpqset $n 5814
+mpqset $n 5815
+else
+sayto $n Now hand me the ranger's heart herb.
+endif
+else
+sayto $n Now hand me the swamp eye herb.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5819
+emote arrives and opens up the barn for the day.
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote closes up the barn for the evening and heads home.
+close w
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5812
+Keywords   Desma little girl playing dolls~
+Short      &gDesma&w~
+Long       &gA little girl is here playing with her dolls on the porch.&w
+~
+Desc       &gThis little half-elven girl is dressed in a simple blue dress with
+a white apron as she plays with her dolls here. She has rosy cheeks
+and bright blonde hair.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     700 50 0 0 10 0 0 0 0 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote giggles as she plays with her dolls.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5875
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5813
+Keywords   Derand young man artist still life half elf halfelf~
+Short      &gDerand&w~
+Long       &gA young man is here painting a still life with some watercolor paint.&w
+~
+Desc       &gThis young half-elven man is in his mid-twenties and seeks very
+preoccupied with his painting. He has long brown hair that he has
+pulled back to reveal a handsome face. He wears glasses to help
+him see and he is currently wearing dark colored clothing.
+~
+Race       half-elf~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     100 50 0 0 10 0 0 5 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5826
+if hasqbit($n) != 5816
+if hasqbit($n) == 5815
+emote stops painting and cleans his hands before speaking.
+sayto $n Greeting. I need you to run an errand for me. I am starting
+sayto $n to run out of paint and I need you to go to the city of
+sayto $n Meridan to get more. Father usually goes to get it for me
+sayto $n but he has been rather busy.
+mpsleep 2
+mpmset derand gold 10
+give 10 gold $n
+mpqset $n 5815
+mpqset $n 5816
+mpsleep 2
+sayto $n This should cover the cost of the paint. I specifically need
+sayto $n a new watercolor paint palette. Return to me with it and thank
+sayto $n you very much for doing this.
+mpsleep 2
+emote turns and resumes painting on his current work of art.
+else
+nod $n
+endif
+else
+sayto $n Have you purchased my new watercolor paint palette yet?
+endif
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 5816
+if ovnuminv(5818) == 1
+smile
+sayto $n Perfect. I can now finish one of my other pieces. Thank you
+sayto $n for getting this for me. I hear my brother Derum is looking
+sayto $n for you. He works in our gift shop.
+mpjunk paint
+mpqset $n 5816
+mpqset $n 5817
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5810
+emote arrives and begins working on his latest masterpiece.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote heads upstairs to rest for the evening.
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5814
+Keywords   Dumu little male baby wooden crib~
+Short      &gDumu&w~
+Long       &gA little male baby is here in a small crib enjoying the outside.&w
+~
+Desc       &gThis little baby has no hair on his head and bright grey eyes. He
+seems content to lay on his back and kick his legs as he watches things
+happen around him.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote giggles and kicks his legs as he looks around from his crib.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5875
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5815
+Keywords   Dirk little boy playing fort~
+Short      &gDirk&w~
+Long       &gA little boy is here playing in his fort.&w
+~
+Desc       &gThis little half-elf boy is dressed in a simple outfit that is
+showing wear and tear from playing in his fort. He has bright red
+copper colored hair and olive green eyes.
+~
+Race       half-elf~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   infrared~
+Stats1     -200 50 0 0 10 0 0 5 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 5885
+peer $n
+sayto $n Halt! Who goes there? What business do you have
+sayto $n in my kingdom?
+else
+emote holds up a wooden shortsword and hollers loudly.
+sayto $n Hail intruder! Stay at your peril!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote pretends to have a sword fight with an enemy.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 5885
+if ovnuminv(5820) == 1
+cheer
+sayto $n You have brought me Lord Dorenim's contribution! Well met,
+sayto $n stranger. Please report back to him with my appreciation.
+emote returns to playing around his fort.
+mpqset $n 5885
+mpqset $n 5823
+mpjunk karmor
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   mpgoto 5879
+emote arrives and begins playing around his fort the day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote notices and the time and heads home for the evening.
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5816
+Keywords   three legged bear resting brown~
+Short      &Oa brown bear&w~
+Long       &OA three legged brown bear is resting here.&w
+~
+Desc       &OThis bear looks like it came across a deadly trap that took it's
+right back leg off. It has since healed and lives peacefully here.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     5 10 5
+Stats3     1 8 1
+Stats4     2 1 2 0 0 0 6
+Attribs    12 10 10 10 15 10 5
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       5817
+Keywords   small bird~
+Short      &Oa small bird&w~
+Long       &OA small bird is here flying around the forest happily.&w
+~
+Desc       This small bird is brown and black in coloring with a tiny beak
+and graceful wings.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared flying~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     1 2 1
+Stats3     1 2 0
+Stats4     0 1 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3011 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5835
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 5899
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpasound You hear the sound of a bird nearby...
+emote lands on a branch and sings for a few moments
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5818
+Keywords   white tail deer~
+Short      &Oa white tail deer&w~
+Long       &OA white tail deer with large antlers is here.&w
+~
+Desc       &OThis deer has a magnificent set of antlers on his head as he walks
+about the forest here.
+~
+Race       mammal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   sneak~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 15 0
+Stats3     1 4 1
+Stats4     2 1 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Defenses   dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2006
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 5863
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5819
+Keywords   female dire wolf~
+Short      &wa dire wolf&w~
+Long       &wA female dire wolf is here resting with her cubs.&w
+~
+Desc       &wThis female wolf is quite large with grey and white fur. Her eyes
+are a dark blue and she seems to be very tired. Long fangs jut out
+from her lips and they look like they could pierce armor.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   infrared~
+Stats1     0 1 4 0 12 0 0 0 0 0
+Stats2     5 10 10
+Stats3     2 6 3
+Stats4     3 1 1 0 0 0 6
+Attribs    17 3 12 15 15 7 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if animalhandling($n) >= 14
+mpsleep 2
+mpecho &RThe dire wolf raises her head and begins to growl.
+mpsleep 2
+mea $n You sense that the dire wolf is not going to attack and is
+mea $n merely being protective of her cubs.
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5802
+if hasqbit($n) == 5801
+mpqset $n 5801
+mpqset $n 5802
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5820
+Keywords   dire wolf cub~
+Short      &Wa dire wolf cub&w~
+Long       &WA dire wolf cub is here resting next to his mother.&w
+~
+Desc       &WThis little dire wolf cub is covered in fluffy white baby fur. He
+has bright blue eyes and tiny little "puppy" fangs that barely
+escape his lips.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     0 1 2 0 12 0 0 0 0 0
+Stats2     2 10 0
+Stats3     1 6 2
+Stats4     1 0 1 0 0 0 6
+Attribs    10 3 12 13 15 7 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if ispc($n)
+emote whimpers and tries to hide against his mother.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5821
+Keywords   fox small red female hunting~
+Short      &Ra small red fox&w~
+Long       &RA small red fox is here hunting around the forest.&w
+~
+Desc       &RThis female fox has a beautiful coat of fiery copper red fur. She
+darts about the forest as she hunts for her next meal.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea running~
+Affected   sneak hide~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 10 0
+Stats3     1 4 0
+Stats4     1 1 1 0 0 0 6
+Attribs    9 10 12 18 9 18 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 5859
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5822
+Keywords   Dorenim young man halfelf half elf woodworker male~
+Short      &gDorenim&w~
+Long       &gA young man is here working on some new wooden fencing.&w
+~
+Desc       &gThis young half-elven man is in his mid-twenties and seems very
+responsible. He is dressed in simple cotton clothing and wears a
+leather apron as he works around the shop here. He has sandy blonde
+hair and hazy grey eyes that are warmed up by his handsome smile.
+~
+Race       half-elf~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     700 50 0 0 10 0 2 5 2 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5887
+if hasqbit($n) != 5886
+if hasqbit($n) != 5824
+if hasqbit($n) != 5823
+if hasqbit($n) != 5822
+if hasqbit($n) == 5821
+smile $n
+sayto $n Hello there! Davina must have sent you, hmm? Well good! I
+sayto $n I could use a hand in here. I have two tasks.. the first
+sayto $n one requires one log of wood. If you could go out to the
+sayto $n woods and use an axe to take down one tree.. preferably
+sayto $n an old one and bring me back one log I can use it for
+sayto $n the task.
+mpsleep 2
+sayto $n If you don't have a woodsman's axe you can purchase one
+sayto $n at most general stores.
+mpqset $n 5821
+mpqset $n 5822
+else
+smile $n
+sayto $n How can I help you?
+endif
+else
+sayto $n Did you get a log of wood yet for me?
+endif
+else
+grin $n
+sayto $n I hope he likes it! He keeps growing so fast! Now for your
+sayto $n last task I will need three more logs of wood. We have to
+sayto $n repair some of Father's fencing. Please go and get some
+sayto $n more wood. When you have them just bring them here and place
+sayto $n them on the ground. Then tell me you are &Yready&G to start.
+mpqset $n 5823
+mpqset $n 5824
+endif
+else
+sayto $n Did you get the three logs I need? If so place them on the
+sayto $n ground here and tell me you are ready to start.
+endif
+else
+sayto $n Did you fix that fence yet?
+endif
+else
+grin
+sayto $n You can report to my Father now. Thank you for everything.
+mpqset $n 5804
+mpqset $n 5825
+mpqset $n 5887
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote saws and works to refine a new piece of fencing.
+mpasound &OYou hear the sound of sawing wood coming from somewhere.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 5822
+if ovnuminv(2014) == 1
+smile
+emote walks over to a machine and starts carving the log into pieces.
+mpsleep 2
+emote takes the pieces and starts constructing something.
+mpsleep 2
+hmm
+mpsleep 2
+emote makes some corrections and continues his work on something.
+mpsleep 2
+emote smiles as he finishes something and holds it up to inspect it.
+say This looks great!
+mpoload 5820 1
+give karmor $n
+mpjunk log
+sayto $n Now.. if you would take this to my brother Dirk. He has
+sayto $n outgrown his last set and was pouting. This will make him
+sayto $n happy and keep him out of trouble. Return to me once you
+sayto $n have given it to him. He has a hidden fort near the trail
+sayto $n by the house.
+mpqset $n 5822
+mpqset $n 5885
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ready~
+Comlist   If hasqbit($n) == 5824
+If ovnumroom(2014) == 3
+Nod $n
+Sayto $n These logs look great. Let me get started on making some
+Sayto $n fencing from them.
+emote takes the logs and heads over to a table to start.
+Mppurge log
+Mppurge log
+Mppurge log
+Emote begins carving into the logs quickly.
+Mpsleep 2
+Emote finishes one part of the fencing and places it on the floor.
+Mpoload 5821 1
+Silent drop wfence989
+Mpsleep 2
+Emote continues working on another piece of fencing.
+Mpsleep 2
+Emote finishes another part and places it on the floor.
+Mpoload 5821 1
+Silent drop wfence989
+Mpsleep 2
+Emote begins to finish up the last piece of fencing.
+Mpsleep 2
+Emote wipes his brow before returning to his task.
+Mpsleep 2
+Emote finishes the last piece and places it on the floor.
+Mpoload 5821 1
+Silent drop wfence989
+Sayto $n There. Now I need you to take all three pieces and
+Sayto $n go to the southern end of the pen. That is where my
+sayto $n father saw the ruined fencing. You will install them
+Sayto $n there and it should take all three pieces I made. Return
+Sayto $n to me when youre all set.
+mpqset $n 5824
+mpqset $n 5886
+Else
+Sayto $n I need three logs before we can start.
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5883
+emote arrives and opens up the shop for the day.
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote closes up the shop and heads home for the night.
+close e
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5823
+Keywords   Dospria stern looking young girl female halfelf half elf cooking~
+Short      &gDospria&w~
+Long       &gA stern looking young girl is here cooking various things.&w
+~
+Desc       &gThis young half-elven girl is in her later teenage years and seems
+to be very mature for her age. She has a stern looking a face, but
+also seems to be very cordial. She wears grey colored cotton clothing
+and a white apron as she cooks and bakes here.
+~
+Race       half-elf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 0 10 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if hasqbit($n) != 5825
+if hasqbit($n) != 5820
+if hasqbit($n) != 5812
+if hasqbit($n) == 5810
+nod $n
+sayto $n If you have the milk I need please put it in the pantry first.
+else
+eye $n
+sayto $n Yes, can I help you?
+endif
+endif
+else
+sayto $n Did you purchase the three bags of flour as I requested?
+endif
+else
+nod $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   if hasqbit($n) != 5811
+if ispc($n)
+eye
+sayto $n Were you just in our pantry?
+mpsleep 2
+mea $n &ODospria evaluates you for a few moments before returning to her work.
+mer $n &ODospria stares at &O$n&O for a few moments before returning to work.
+else
+endif
+else
+nod $n
+sayto $n Now.. I need eggs and you had better not squish them! Egg collecting
+sayto $n requires delicate hands. I will need twelve all together and you
+sayto $n will bring them to me in this basket.
+mpoload 5822 1
+give basket $n
+emote waves her hands dismissively before returning to her cooking.
+sayto $n Out you go and try not to trek mud and dirt on my clean floors!
+mpqset $n 5811
+mpqset $n 5812
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if ovnumroom(3039) == 12
+smile
+else
+frown
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5811
+emote arrives and begins cooking for the day ahead.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   emote cleans up the kitchen and heads upstairs to rest.
+mpgoto 5899
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5824
+Keywords   gibberling small lurking beast hunchback~
+Short      &Oa gibberling&w~
+Long       &OA small hunchback beast is here lurking about.&w
+~
+Desc       &OThis small beast has oily looking fur, long claws, and razor sharp
+looking teeth as it hunts here. 
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -200 1 0 0 10 0 0 0 0 0
+Stats2     2 6 0
+Stats3     1 4 0
+Stats4     1 9 1 0 0 0 3
+Attribs    9 7 7 14 11 7 9
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+snarl $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5899
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     5800
+Keywords woven basket small container~
+Type     container~
+Short    &Oa small sized woven basket&w~
+Long     &OA small sized woven basket has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 1
+Stats    1 5 10 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5801
+Keywords woven basket medium container~
+Type     container~
+Short    &Oa medium sized woven basket&w~
+Long     &OA medium sized woven basket has been left here.&w~
+WFlags   take onehand~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    1 10 20 40 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5802
+Keywords woven basket large container~
+Type     container~
+Short    &Oa large sized woven basket&w~
+Long     &OA large sized woven basket has been left here.&w~
+WFlags   take onehand~
+Values   30 0 0 0 0 0
+Values2  0 3
+Stats    1 15 30 80 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5803
+Keywords ranger daven tunic embroidered~
+Type     armor~
+Short    &ga tunic embroidered with "Ranger Daven's Animal Rescue"&w~
+Long     &gA tunic embroidered with "Ranger Daven's Animal Rescue" has been left here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Values2  1 2
+Stats    1 3 20 5 0 0 1
+#ENDOBJECT
+
+#OBJECT
+Vnum     5804
+Keywords hand carved wooden squirrel figurine~
+Type     treasure~
+Short    &Oa wooden squirrel figurine&w~
+Long     &OA hand carved wooden squirrel figurine has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 2 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5805
+Keywords wooden deer figurine hand carved~
+Type     treasure~
+Short    &Oa wooden deer figurine&w~
+Long     &OA hand carved wooden deer figurine has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 5 20 90 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5806
+Keywords wooden bear figurine hand carved~
+Type     treasure~
+Short    &Oa wooden bear figurine&w~
+Long     &OA hand carved wooden bear figurine has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 12 40 90 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5807
+Keywords wooden short sword shortsword child children small~
+Type     weapon~
+Short    &Oa child's wooden shortsword&w~
+Long     &OA shortsword used by children during play has been left here.&w~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 2 1 2 0
+Values2  0 2
+Stats    2 3 1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5808
+Keywords small well stone ringed~
+Type     fountain~
+Short    &wa small well&w~
+Long     &wA small stone ringed well has been dug and established here.&w~
+Values   500 1000 6 0 0 0
+Values2  0 3
+Stats    24464 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5809
+Keywords painting easel watercolor starting~
+Type     trash~
+Short    &Oa painting on an easel&w~
+Long     &OA watercolor painting on an easel has been set up here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    painting~
+ExDesc       &w    (  &z)&w   (   )  )
+&w     ) (   &z)&w  (  (
+&w     ( &z)&w  (    &z)&w )
+&O     _____________
+&O    <_____________> ___
+&O    |             |/ _ \
+&O    |               | | |
+&O    |               |_| |
+&W ___&O|             |\___/
+&W/    &O\___________/    &W\
+&W\_____________________/
+ 
+&OThe painting has just been started and much of it still needs work.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5810
+Keywords corpse deer missing ears~
+Type     trash~
+Short    &Oa deer's corpse&w~
+Long     &OThe savaged corpse of a deer has been left here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate corpse~
+Comlist   if investigation($n) >= 12
+mea $n &rThis corpse has been savaged and ripped open by some
+mea $n &rcreature and much of it has been eaten. The deer also
+mea $n &rlacks both of its ears and it has a small set of antlers.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5811
+Keywords pantry key small metal key~
+Type     key~
+Short    &wa small metal key&w~
+Long     &wA small metal key has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5812
+Keywords small wooden reeds growing river~
+Type     trash~
+Short    &Osome wooden reeds&w~
+Long     &OSome long wooden reeds are here growing along the side of a river.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    10 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5813
+Keywords wooden rake barn cleaning~
+Type     weapon~
+Short    &Oa wooden rake&w~
+Long     &OA wooden rake used for cleaning a barn has been left here.&w~
+Flags    lightweight~
+WFlags   take onehand twohand~
+Values   12 1 4 2 19 0
+Values2  0 2
+Stats    3 1 0 1 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rake~
+Comlist   if investigation($n) >= 10
+mea $n You simply need to use the farm tool to RAKE the straw.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p rake~
+Comlist   if hasqbit($n) != 5809
+if ovnumroom(2447) == 3
+if hasqbit($n) == 5808
+if wearingvnum($n) == 5813
+if athletics($n) >= 14
+mea $n You manage to rake up the straw and finish cleaning around
+mea $n the barn for the young half-elven boy.
+mer $n $n rakes up the loose straw around the barn.
+mppurge straw
+mppurge straw
+mppurge straw
+mpqset $n 5808
+mpqset $n 5809
+else
+mea $n You struggle and fail to clean up the barn.
+mer $n $n tries to rake and clean the barn, but fails miserably.
+endif
+else
+mea $n You need to be holding the rake first.
+endif
+else
+endif
+else
+mea $n The barn is not messy enough. Try again later.
+endif
+else
+mea $n You help clean up around the barn.
+mppurge straw
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5814
+Keywords empty milk bucket empty1~
+Type     drinkcon~
+Short    &zan empty milk bucket&w~
+Long     &zAn empty milk bucket has been left here.&w~
+WFlags   take onehand~
+Values   0 0 10 0 0 0
+Values2  0 1
+Stats    0 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate bucket~
+Comlist   if investigation($n) >= 10
+if animalhandling($n) >= 12
+mea $n You use this bucket to MILK a cow. Place the bucket on the ground
+mea $n under the cow first and then proceed with milking the cow.
+else
+mea $n You cannot seem to figure out how to start.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5815
+Keywords semi filled milk bucket semi1~
+Type     drinkcon~
+Short    &za semi-filled milk bucket&w~
+Long     &zA bucket that is semi-filled with fresh milk has been set here.&w~
+WFlags   take onehand~
+Values   2 2 10 0 0 0
+Values2  0 1
+Stats    2 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5816
+Keywords half filled milk bucket half1~
+Type     drinkcon~
+Short    &wa half-filled milk bucket&w~
+Long     &wA bucket that is half-filled with fresh milk has been set here.&w~
+WFlags   take onehand~
+Values   4 4 10 0 0 0
+Values2  0 1
+Stats    4 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5817
+Keywords bucket full fresh milk full1~
+Type     drinkcon~
+Short    &Wa bucket full of milk&w~
+Long     &WA bucket that is full of fresh milk has been set here.&w~
+WFlags   take onehand~
+Values   8 8 10 0 0 0
+Values2  0 1
+Stats    10 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5818
+Keywords watercolor paint palette~
+Type     trash~
+Short    &Wa watercolor paint palette&w~
+Long     &WA palette of watercolor paints has been left here.&w~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    1 5 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5819
+Keywords small doll braided hair~
+Type     trash~
+Short    &Pa small doll with braided hair&w~
+Long     &PA small doll with braided hair has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 2 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5820
+Keywords small wooden armor child set karmor~
+Type     trash~
+Short    &Oa small set of wooden armor&w~
+Long     &OA small set of wooden armor for a child to play in has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5821
+Keywords piece wooden fence fencing wfence989~
+Type     trash~
+Short    &Oa piece of wooden fence&w~
+Long     &OA piece of wooden fencing has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    10 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate fence~
+Comlist   if hasqbit($n) == 5886
+if investigation($n) >= 12
+mea $n Dorenim sent you to use this fencing to fix a damaged section.
+mea $n You need to simply INSTALLFENCE once you find the spot.
+else
+mea $n You fail to find anything.
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5822
+Keywords small pink basket collecting egbasket11~
+Type     container~
+Short    &Pa small pink basket&w~
+Long     &PA small pink basket used for collecting eggs has been left here.&w~
+WFlags   take onehand~
+Values   14 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5823
+Keywords small letter addressed hansel davina lletter989~
+Type     trash~
+Short    &Ga letter addressed to "Hansel"&w~
+Long     &GA small letter addressed to "Hansel" has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    letter~
+ExDesc       &GThis letter is folded and sealed with a wax emblem of a fox.&w
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5824
+Keywords karmor kid armor wood dirk~
+Type     trash~
+Short    &Oa small set of poorly fitting wooden armor&w~
+Long     &OA small set of wooden armor for a child to play in has been left here.&w~
+Flags    inventory~
+WFlags   take body onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5899
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     5800
+Name     A Small Path~
+Sector   field~
+Desc     This is a small path that cuts through some of the deep forest here. From
+here you can see the makings of a rather sizeable farm that has been
+established in the forest. Some of the terrain has been cleared for
+buildings, a pasture, and some agricultural fields. The path continues
+towards the farm at the west.
+~
+#EXIT
+Direction east~
+ToRoom    5801
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30000
+Flags     nomob overland~
+MapX      229
+MapY      817
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5801
+Name     A Small Path~
+Sector   field~
+Stats    0 0 0 0 10 0
+Desc     The small path here continues to cut through a forest and towards a
+cleared area where a farm has been established. There are several
+log buildings along with a shingled farm house that have been
+built here. The farm seems to be situated in a small glade that was
+further cleared of all unnecessary trees. The path continues south
+into the start of the farm and back to the west as it leads back into
+the forest surrounding the farm.
+~
+Perdesc  &OYou spot an old &Ysign&O near the path here.&w
+~
+#EXIT
+Direction south~
+ToRoom    5802
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5800
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       &OWelcome to Ranger Daven's Farm & Rehabilitation Center.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5802
+Name     A Small Path~
+Sector   field~
+Desc     This is a cleared path that passes through the middle of a large
+farming operation here. Several log buildings can be seen to the
+southeast from here while a farmhouse and other buildings lie to
+the east from here. The surrounding area seems peaceful and the
+sounds of the forest surrounding the farm can be still heard here.
+~
+#EXIT
+Direction north~
+ToRoom    5801
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5803
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5803
+Name     A Small Path~
+Sector   field~
+Stats    0 0 0 0 10 0
+Desc     This is an intersection of paths where one path continues east and
+west while another heads south from here. To the south are various
+log built structures along with a pasture and a wooden pen. To the
+east the path passes by a farmhouse and other buildings. Erected
+here is a stone well, which provides water for much of the operations
+here. A large log building is also located to the north of here and
+seem to operate as some kind of store.
+~
+Perdesc  &gYou spot a &Gsign&g outside of a large log building.&w
+~
+#EXIT
+Direction north~
+ToRoom    5806
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5804
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5817
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5802
+#ENDEXIT
+
+Reset O 0 5808 1 5803
+Reset D 0 5803 0 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &GRanger Daven's Shop is open from 8am to 6pm daily.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5804
+Name     A Small Path~
+Sector   field~
+Desc     The path here cuts across the back end of the large farm here. To the
+north is a large, two story shingled home. It has several large
+glass windows that provide much needed light inside the home along
+with a stone fireplace for heat. A large wrap around covered porch
+can be found along all sides of the house, which seems to be a
+popular gathering spot. The path continues to the east as it heads
+towards the perimeter of the surrounding forest.
+~
+#EXIT
+Direction north~
+ToRoom    5875
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5805
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5803
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5805
+Name     A Small Path~
+Sector   field~
+Desc     The path continues here as it heads towards the forest and a small river
+to the far east of here. A large log built barn can be seen to the
+south from here and it seems it is not used for traditional purposes
+such as storage or as an animal shelter. To the west you can see other
+structures such as a farm house.
+~
+#EXIT
+Direction north~
+ToRoom    5879
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5812
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5881
+Keywords  'barn doors'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5804
+#ENDEXIT
+
+Reset D 0 5805 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 5885
+if perception($n) >= 13
+mea $n &OYou hear the sounds of a child playing to the north of here.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5806
+Name     Ranger Daven's Gift Shop~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a pleasant looking store that has been crafted using logs. The
+interior walls have been sanded down and polished a warm honey tone. There
+are three separate shops to the north, east, and west from this central
+location. Various tables containing goods can be found all over the store
+from wooden statues to jars of herbs.
+~
+#EXIT
+Direction north~
+ToRoom    5880
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5876
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5803
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5877
+#ENDEXIT
+
+Reset M 0 5801 1 5806
+  Reset G 0 5807 1
+  Reset G 0 5803 1
+  Reset G 0 4063 1
+  Reset G 0 4062 1
+  Reset G 0 5802 1
+  Reset G 0 5801 1
+  Reset G 0 5800 1
+  Reset G 0 5806 1
+  Reset G 0 5805 1
+  Reset G 0 5804 1
+Reset D 0 5806 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5807
+Name     A Small Garden~
+Sector   field~
+#EXIT
+Direction south~
+ToRoom    5804
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5808
+Name     Inside a Farm House~
+Sector   indoors~
+Desc     The interior of this home has been minimally decorated with a few
+watercolor paintings on the wall in wooden frames. A few handwoven
+rugs can be found along the wooden floors as a hallway here leads north
+towards a kitchen or to the left at a large parlor. A staircase leads up
+to the bedrooms and other rooms used by the people who live here.
+~
+#EXIT
+Direction north~
+ToRoom    5811
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5875
+Keywords  'front door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5810
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5809
+#ENDEXIT
+
+Reset D 0 5808 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5809
+Name     Upstairs in a Farm House~
+Sector   indoors~
+Desc     The entire upstairs consists of multiple bedrooms, which are shared
+by a rather sizeable family. This main bedroom is used by the husband
+and wife to sleep. There is one large bedroom along with several pieces
+of antique looking furniture. Some of the decor and furniture is elven
+in make with intricate detailing. A large circular window on the southern
+wall looks out in front of the house.
+~
+#EXIT
+Direction south~
+ToRoom    5804
+Flags     secret hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5808
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5810
+Name     A Parlor~
+Sector   indoors~
+Desc     This parlor does not seem to be used much for entertaining guests as
+it is used more as an art studio. There are several chairs here that
+are used should guests need to be met, but most are covered in sheets
+to protect them from various types of paint. A large stone fireplace
+is located here and provides much of the heat for this room and the
+adjoining ones.
+~
+#EXIT
+Direction east~
+ToRoom    5808
+#ENDEXIT
+
+Reset M 0 5813 1 5810
+Reset O 0 5809 1 5810
+#ENDROOM
+
+#ROOM
+Vnum     5811
+Name     A Kitchen~
+Sector   indoors~
+Desc     The kitchen here is comprised mostly of mortared stone including the
+fireplace, which is used for a good majority of the cooking. Countertops
+are made from smooth polished stone and along with a small wooden table
+are the only meal preparation places. A small door to the east leads
+into a pantry that can fit about one person at a time.
+~
+#EXIT
+Direction east~
+ToRoom    5884
+Key       5811
+Keywords  'pantry door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5808
+#ENDEXIT
+
+Reset M 0 5823 1 5811
+  Reset G 0 5811 1
+Reset D 0 5811 1 2
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 5812
+if carryingvnum($n) == 5822
+if ovnumroom(3039) == 12
+if mobinroom(5823) == 1
+mea $n As soon as you enter Dospria quickly takes the eggs from you.
+mer $n As $n enters the young woman takes a basket of eggs from $m.
+mpforce dospria sigh
+mpforce dospria sayto $n It is about time! I have much cooking that
+mpforce dospria sayto $n requires such!
+silent mpforce $n drop ebasket11
+mppurge ebasket11
+mpsleep 2
+mpforce dospria emote puts the basket of eggs on a countertop.
+mpsleep 2
+mpforce dospria sayto $n That is all I have need for now. I may require
+mpforce dospria sayto $n your services again later. Please see my sister
+mpforce dospria sayto $n Daria next. I am sure she has some rather...
+mpforce dospria sayto $n disgusting and uncivilized... chores for you to
+mpforce dospria sayto $n do for her.
+mpsleep 2
+mpforce dospria emote waves a hand dismissively before counting the eggs.
+mpqset $n 5812
+mpqset $n 5813
+else
+endif
+else
+mpforce dospria sayto $n I can tell you do not have twelve eggs yet. Go
+mpforce dospria sayto $n out and get the amount I requested.
+endif
+else
+mpforce dospria sayto $n Where is your basket?
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5812
+Name     A Small Path~
+Sector   field~
+Desc     The path here reveals two minor paths that head to the north and
+south. To the north lies a small outdoor shrine that is nestled in
+the border between the surrounding forest and the cleared glade.  To
+the south is another shrine that borders a small agricultural field
+used to grow various vegetables. The path continues to the east where
+it ends slightly in the forest and before a small river.
+~
+#EXIT
+Direction north~
+ToRoom    5813
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5814
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5878
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5805
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5813
+Name     Before a Small Shrine~
+Sector   forest~
+Desc     This shrine is dedicated to the woodland deity known as Cerunon. A
+statue of a man with a stag's antlers growing out of his head has
+been carved out of stone here. It is partially covered with vines
+and the entire shrine has been allowed to be partially consumed
+by nature. A small stone altar covered in creeping ivy can be
+found at the base of the statue.
+~
+#EXIT
+Direction south~
+ToRoom    5812
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5814
+Name     Before a River~
+Sector   forest~
+Desc     The path begins to slowly disappear as it enters into the surrounding
+forest. To the direct east is a small river that runs through the local
+forest here. Various plants grow here from magical herbs to reeds used
+for a variety of purposes. The river is not very deep and someone could
+stand at least knee deep in it as it calmly moves southward.
+~
+#EXIT
+Direction east~
+ToRoom    5815
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5812
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5815
+Name     A Small River~
+Sector   water_swim~
+Desc     A small river turns here from the north as it slowly makes its way
+south along the forested perimeter of a large glade. The water is
+very clear and one can see to the muddy bottom. Large rocks can
+be found splicing the river in various sections as well as trees
+that have fallen over the years into the river. Various little fish
+can be seen swimming along the water as they move about freely.
+~
+#EXIT
+Direction west~
+ToRoom    5814
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5816
+Name     A Crop Field~
+Sector   field~
+Desc     This is a small field that is used to grow various crops from corn,
+carrots, tomatoes, potatoes, and even pumpkins. The field has been
+divided up for each type of produce being grown here with small
+wooden fencing used to create the sections. The field is well tended
+to and seems to be watered daily.
+~
+#EXIT
+Direction west~
+ToRoom    5878
+#ENDEXIT
+
+Reset O 0 3043 1 5816
+Reset O 0 3045 2 5816
+Reset O 0 3040 1 5816
+Reset O 0 3042 5 5816
+#ENDROOM
+
+#ROOM
+Vnum     5817
+Name     A Small Path~
+Sector   field~
+Desc     This small dirt path heads south as it moves through the farm where
+a majority of the barns are located. A livestock barn that also leads
+to the the pasture can be found to the west. A large building with the
+symbol of Amunar can be found to the east of here. 
+~
+#EXIT
+Direction north~
+ToRoom    5803
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5819
+Keywords  'barn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5821
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5818
+Keywords  'barn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5809 1 5817
+Reset D 0 5817 1 0
+Reset D 0 5817 3 0
+#ENDROOM
+
+#ROOM
+Vnum     5818
+Name     A Livestock Barn~
+Sector   indoors~
+Flags    nomob~
+Desc     The barn here is used for the cows and other livestock animals. There is
+straw all over the floor of the barn for the cow to sleep on. The straw
+is then cleaned up and replaced with fresh straw. There are several
+bales of hay and other goods against the south wall of the barn. A
+doorway to the west leads out to a small pasture where one horse can be found.
+~
+#EXIT
+Direction east~
+ToRoom    5817
+Keywords  'barn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5820
+Keywords  'pasture gate'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset M 0 5806 1 5818
+Reset M 0 5810 1 5818
+Reset O 0 2447 3 5818
+Reset D 0 5818 1 0
+Reset D 0 5818 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5819
+Name     A Medical Barn~
+Sector   indoors~
+Flags    nomob~
+Desc     The log building here has an open floor plan. In the middle of the
+building is a large wooden table and surrounding it are smaller
+tables with various healing implements. There are bookshelves full
+of texts on healing and a shrine to the goddess Amunar can be found
+on the southern wall of the building.
+~
+#EXIT
+Direction west~
+ToRoom    5817
+Keywords  'barn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5811 1 5819
+Reset D 0 5819 3 0
+#ENDROOM
+
+#ROOM
+Vnum     5820
+Name     A Small Pasture~
+Sector   field~
+Desc     This is a small rocky pasture, which is used for the one horse the
+the farm has. The pasture has wooden fencing and has been adjusted to
+help keep the horse inside the pasture. A doorway to the east leads
+back into the livestock barn on the large farm.
+~
+#EXIT
+Direction east~
+ToRoom    5818
+Keywords  'pasture gate'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset M 0 5807 1 5820
+Reset D 0 5820 1 1
+#ENDROOM
+
+#ROOM
+Vnum     5821
+Name     Before a Large Pen~
+Sector   field~
+Desc     The path here ends before a large wooden pen and two smaller log
+buildings. A chicken coop can be found to the east while a building
+used for wood working is to the west. The wooden pen is not very
+tall or thick, but seems to contain the animals inside. The path
+returns back to the north towards the central location of the farm.
+~
+#EXIT
+Direction north~
+ToRoom    5817
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5882
+Keywords  'chicken coop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5822
+Keywords  'pen door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5883
+Keywords  'barn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5800 1 5821
+Reset D 0 5821 1 1
+Reset D 0 5821 2 1
+Reset D 0 5821 3 0
+#ENDROOM
+
+#ROOM
+Vnum     5822
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction north~
+ToRoom    5821
+Keywords  'pen door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5823
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5830
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5829
+#ENDEXIT
+
+Reset D 0 5822 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5823
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction south~
+ToRoom    5824
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5822
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5824
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction north~
+ToRoom    5823
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5825
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5830
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5825
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction north~
+ToRoom    5824
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5831
+Keywords  'pen gate'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5826
+#ENDEXIT
+
+Reset D 0 5825 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading south.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5826
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction north~
+ToRoom    5830
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5825
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5827
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5827
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction north~
+ToRoom    5828
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5826
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if hasqbit($n) == 5886
+if perception($n) >= 14
+mpsleep 2
+mea $n &OYou spot the ruined fencing here that Dorenim sent you to fix.
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p installfence~
+Comlist   if hasqbit($n) == 5886
+if ovnumroom(5821) == 3
+if athletics($n) >= 15
+mea $n &OYou manage to fix the ruined fencing with the new pieces
+mea $n &Omade by Dorenim and discard the old fencing.
+mer $n &O$n&O replaces some old fencing with some new pieces.
+mppurge wfence989
+mppurge wfence989
+mppurge wfence989
+mpqset $n 5886
+mpqset $n 5887
+else
+mea $n &OYou fail to fix the fencing and must try again.&w
+endif
+else
+mea $n &OYou should place the new fencing on the ground first.&w
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5828
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction north~
+ToRoom    5829
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5830
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5827
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5829
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction east~
+ToRoom    5822
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5828
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5830
+Name     A Secluded Pen~
+Sector   forest~
+Desc     This is a secluded pen that is bordered with a thick wooden fence
+made from crude logs. Every so often there is a wooden post that
+helps support the fencing that has been hammered to each post. The
+pen is square in shape and there are a few trees for certain
+animals to climb up and there are troughs full of water for them
+to drink. The pen is kept very clean and as close to natural as
+possible.
+~
+#EXIT
+Direction north~
+ToRoom    5822
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5824
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5826
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5828
+#ENDEXIT
+
+Reset M 0 5816 1 5830
+#ENDROOM
+
+#ROOM
+Vnum     5831
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age. A wooden pen can be found to the north where a
+gate keeps certain animals inside.
+~
+#EXIT
+Direction north~
+ToRoom    5825
+Keywords  'pen gate'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5832
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5853
+#ENDEXIT
+
+Reset D 0 5831 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading south.&w
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5832
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5831
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5833
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5858
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5833
+Name     A Deep Forest~
+Sector   forest~
+Desc     blood trail
+The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5834
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5832
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5834
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction south~
+ToRoom    5835
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5833
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5835
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age. The slope of a small hill leads down to the
+southwest where several trees fell from bad weather at some point.
+~
+#EXIT
+Direction north~
+ToRoom    5834
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5836
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5851
+#ENDEXIT
+
+Reset M 0 5817 1 5835
+#ENDROOM
+
+#ROOM
+Vnum     5836
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5837
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5835
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5837
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5838
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5839
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5836
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5838
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5839
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5837
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5870
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5839
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5837
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5868
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5870
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5838
+#ENDEXIT
+
+Reset M 0 5824 2 5839
+#ENDROOM
+
+#ROOM
+Vnum     5840
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction south~
+ToRoom    5841
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5839
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5841
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5840
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5842
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5869
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5842
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5841
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5843
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5869
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5843
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5842
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5844
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5871
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5844
+Name     A River Bank~
+Sector   forest~
+Flags    nomob~
+Desc     The forest abruptly ends here at the bank of a slow moving river
+located to the east. The river changes in girth as it winds through
+the forest here. The portion of the river to the east is quite wide
+and a popular spot for the animals to come and bathe or drink.
+~
+#EXIT
+Direction north~
+ToRoom    5843
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5885
+#ENDEXIT
+
+Reset O 0 5812 1 5844
+Reset O 0 3557 1 5844
+#ENDROOM
+
+#ROOM
+Vnum     5845
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5871
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5846
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5846
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5845
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5867
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5847
+Name     A Deep Forest~
+Sector   forest~
+Stats    0 0 0 0 15 0
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+Perdesc  &gYou see a thick patch of vegetation to the east hiding a small cave.&w
+~
+#EXIT
+Direction north~
+ToRoom    5848
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5872
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5867
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here on some bushes.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5848
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5849
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5847
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5859
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading south.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5849
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction south~
+ToRoom    5848
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5850
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5850
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5849
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5851
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5851
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age. The slope of a small hill leads up to the
+northeast while the remains of several trees destroyed by bad
+weather can be found all over the area here.
+~
+#EXIT
+Direction east~
+ToRoom    5850
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5852
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5835
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5852
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5853
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5851
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5854
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5853
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5831
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5852
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5854
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5852
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5862
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5855
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading south.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5855
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5856
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5854
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5856
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5857
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5855
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading south.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5857
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5858
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5856
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5858
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5832
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5857
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading south.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5859
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5848
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5860
+#ENDEXIT
+
+Reset M 0 5821 1 5859
+#ENDROOM
+
+#ROOM
+Vnum     5860
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5859
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5861
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading east.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5861
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age. The slope of a hill leads down towards a lower
+level of the forest to the southeast.
+~
+#EXIT
+Direction east~
+ToRoom    5860
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5862
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5865
+#ENDEXIT
+
+Reset M 0 5824 1 5861
+#ENDROOM
+
+#ROOM
+Vnum     5862
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5854
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5861
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5863
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if perception($n) >= 14
+if hasqbit($n) == 5800
+mea $n &RYou notice a dried patch of blood here leading east.
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5863
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5862
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5864
+#ENDEXIT
+
+Reset M 0 5818 1 5863
+#ENDROOM
+
+#ROOM
+Vnum     5864
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5865
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5863
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5865
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5866
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5864
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5861
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5866
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction east~
+ToRoom    5867
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5865
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5867
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5847
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5846
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5866
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5868
+Name     A Small Glade~
+Sector   field~
+Desc     The glade here is at the base of several tree covered hills that slope
+downward to this location. The base of the glade is covered in thick
+patches of ferns, vines, and other wild plants. This seems to be a
+popular spot for animals to come and rest under the sun that beams
+down through an opening in the tree cover above.
+~
+#EXIT
+Direction east~
+ToRoom    5869
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5869
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5870
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5842
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5871
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5868
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5841
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5870
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5839
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5869
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5838
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5871
+Name     A Deep Forest~
+Sector   forest~
+Desc     The forest here is very thick with the forest floor covered in moss
+or large ferns. There is not distinct path to be found and it seems
+like much of this forest is kept in its pristine natural form. The
+trees here seem very ancient and some have bark peeling off of
+them due to their age.
+~
+#EXIT
+Direction north~
+ToRoom    5869
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5843
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5845
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5872
+Name     Before a Small Cave~
+Sector   forest~
+Flags    dark~
+Stats    0 0 2 0 0 0
+Desc     At the base of a large tree covered hill is the entrance to a small
+cave. The entrance is obscured by thick brush, which makes it hard
+to find at times. There are several paw prints embedded into the
+soft earth here leading inside.
+~
+#EXIT
+Direction east~
+ToRoom    5873
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5847
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5873
+Name     Inside a Small Cave~
+Sector   underground~
+Flags    dark tunnel~
+Stats    0 0 2 0 0 0
+Desc     This cave was mostly created by nature and then refined over the
+years by something. It is not very wide or tall in terms of dimensions
+with very little room to move about. The cave continues to the east
+where is opens up a little bit more into a den like structure.
+~
+#EXIT
+Direction east~
+ToRoom    5874
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5872
+#ENDEXIT
+
+Reset O 0 5810 1 5873
+#ENDROOM
+
+#ROOM
+Vnum     5874
+Name     Inside a Small Cave~
+Sector   underground~
+Flags    dark tunnel~
+Stats    0 0 6 0 0 0
+Desc     This part of the cave is much more open and has been refined to
+have more space. The walls have various roots growing out from the
+plants and trees established on the outside. There is not light
+source here such as a window and it is quite dark. There is a musty
+smell mixed with decay coming from somewhere inside this cave.
+~
+#EXIT
+Direction west~
+ToRoom    5873
+#ENDEXIT
+
+Reset M 0 5819 1 5874
+Reset M 0 5820 3 5874
+Reset M 0 5820 3 5874
+Reset M 0 5820 3 5874
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if mobinroom(5819) == 1
+if hasqbit($n) != 5802
+if hasqbit($n) != 5801
+if hasqbit($n) == 5800
+mpsleep 2
+mea $n &wAs you enter this part of the cave you come across a small den
+mea $n &wthat contains a female &Rdire wolf&w and the savaged corpses
+mea $n &wof various wildlife. Some of them have bandages on them that
+mea $n &wprove this is the creature that has been taking the animals
+mea $n &wfrom Ranger Daven's Farm.
+mpqset $n 5801
+mpqset $n 5800
+else
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5875
+Name     A Farm House Porch~
+Sector   indoors~
+Desc     This wrap around porch can be found all along the side of the shingled
+two story farm house. The porch has a cover, which helps block rain
+and the other elements from those that sit or work here. There are
+several chairs along the porch that look very comfortable to sit
+upon. A large oak door here leads inside the large home while to
+the south is a path that cuts across the farm.
+~
+#EXIT
+Direction north~
+ToRoom    5808
+Keywords  'front door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5804
+#ENDEXIT
+
+Reset M 0 5802 1 5875
+Reset M 0 5812 1 5875
+Reset M 0 5814 1 5875
+Reset D 0 5875 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5876
+Name     Ranger Daven's Druid Supply~
+Sector   indoors~
+Desc     This part of the store is dedicated to those of the druidic path. Various
+components can be found on tables and shelves in this store. There are
+several herbs drying above before they are sold. A small altar to the
+deities can be found on the northern wall of the shop.
+~
+#EXIT
+Direction west~
+ToRoom    5806
+#ENDEXIT
+
+Reset M 0 5803 1 5876
+  Reset G 0 1546 1
+  Reset G 0 4162 1
+  Reset G 0 1854 1
+  Reset G 0 4164 1
+  Reset G 0 4161 1
+  Reset G 0 4165 1
+  Reset G 0 4186 1
+  Reset G 0 4163 1
+  Reset G 0 2006 1
+  Reset G 0 1904 1
+#ENDROOM
+
+#ROOM
+Vnum     5877
+Name     Ranger Daven's Ranger Supply~
+Sector   indoors~
+Desc     This part of the store is dedicated to the needs of ranger types. Tables
+here display various goods from axes to kits and tackle boxes. Several
+animal heads can be seen hung from the walls here. The heads serve as
+trophies of the person who founded this location.
+~
+#EXIT
+Direction east~
+ToRoom    5806
+#ENDEXIT
+
+Reset M 0 5804 1 5877
+  Reset G 0 2678 1
+  Reset G 0 5071 1
+  Reset G 0 2011 1
+  Reset G 0 2159 1
+  Reset G 0 1652 1
+  Reset G 0 2689 1
+  Reset G 0 5620 1
+  Reset G 0 177 1
+  Reset G 0 5619 1
+#ENDROOM
+
+#ROOM
+Vnum     5878
+Name     A Small Shrine~
+Sector   field~
+Desc     This shrine has been dedicated to the agricultural goddess Amunar.
+A statue of a woman carrying an armful of fruit and vegetables has
+been established here. The statue was carved out of stone and a
+small altar to place offerings can be found at the feet of the 
+statue. The shrine has been established here before the start of a
+small agricultural field to the east where various vegetables are
+grown for consumption.
+~
+#EXIT
+Direction north~
+ToRoom    5812
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5816
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5879
+Name     A Children's Play Fort~
+Sector   forest~
+Desc     This section of the glade has three trees, which has been repurposed
+as a child's fort. Various wooden platforms have been built alongside
+the trees for someone to climb upon and play. There are various fake
+looking weapons and armor that can be found alongside the base of
+the trees along with several types of toys.
+~
+#EXIT
+Direction south~
+ToRoom    5805
+#ENDEXIT
+
+Reset M 0 5815 1 5879
+  Reset E 0 5807 1 26
+  Reset E 0 5824 1 5
+#ENDROOM
+
+#ROOM
+Vnum     5880
+Name     Ranger Daven's Fresh Produce & Bakery~
+Sector   indoors~
+Desc     This part of the store contains fresh baked goods and produce for sale.
+A large glass countertop displays the baked goods while tables and shelves
+display the produce for sale. The air here is thick with the smell of
+honey cakes and fresh corn.
+~
+#EXIT
+Direction south~
+ToRoom    5806
+#ENDEXIT
+
+Reset M 0 5805 1 5880
+  Reset G 0 1745 1
+  Reset G 0 1755 1
+  Reset G 0 2663 1
+  Reset G 0 2658 1
+  Reset G 0 2662 1
+  Reset G 0 2668 1
+  Reset G 0 3041 1
+  Reset G 0 2605 1
+  Reset G 0 3044 1
+  Reset G 0 5623 1
+#ENDROOM
+
+#ROOM
+Vnum     5881
+Name     An Events Barn~
+Sector   indoors~
+Stats    0 0 0 0 12 0
+Desc     The interior of this barn has been cleared out completely save for
+several stacks of chairs and tables alongside the eastern wall. The
+floor has been swept and kept clean despite it being a barn. A wooden
+bar where drinks could be served can be seen along the western wall
+of the barn and a large wooden platform has been built into the floor
+near the south end of the barn.
+~
+Perdesc  &OYou spot a &wsign&O near the front entrance of the barn.&w
+~
+#EXIT
+Direction north~
+ToRoom    5805
+Keywords  'barn doors'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 5881 0 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       Hello adventurers - If you wish to schedule a player event here please
+contact the admins and they can schedule it for you! Thanks!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5882
+Name     A Chicken Coop~
+Sector   indoors~
+Flags    nomob~
+Desc     This chicken coop consists of a small fenced in pen and a small house
+for the chicken to sleep at night. There is straw all over the ground
+here and food for the chicken to eat. A few baskets hang nearby for
+people to collect eggs with.
+~
+#EXIT
+Direction west~
+ToRoom    5821
+Keywords  'chicken coop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5808 1 5882
+Reset O 0 2447 1 5882
+Reset D 0 5882 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5883
+Name     A Wood Working Shop~
+Sector   indoors~
+Desc     This shop consists of several wooden tables and tools used to shape
+wood into various resources. There are only a few pieces of wood
+left in the shop since the major has been used up. There are several
+windows that allow light into the shop and towards the evening
+hours several candles are lit. 
+~
+#EXIT
+Direction east~
+ToRoom    5821
+Keywords  'barn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5822 1 5883
+Reset D 0 5883 1 0
+#ENDROOM
+
+#ROOM
+Vnum     5884
+Name     A Food Pantry~
+Sector   indoors~
+Flags    nomob tunnel~
+Stats    0 0 2 0 0 0
+Desc     This pantry consists of three walls with shelving for food to be
+stored. Each shelf contains various things from canned fruits and
+vegetables to root vegetables and dried herbs. There is no window in
+this room to help keep it cool. A doorway to the west leads back into
+the kitchen.
+~
+#EXIT
+Direction west~
+ToRoom    5811
+Key       5811
+Keywords  'pantry door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 0 5884 3 2
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   if hasqbit($n) == 5810
+if ovnumroom(5817) == 1
+mea $n You place the bucket into a cool corner for now.
+mer $n $n takes $s bucket of milk and puts it in a cool corner.
+mpqset $n 5810
+mpqset $n 5811
+else
+mea $n You need to put it on the pantry floor first.
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5885
+Name     A Small River~
+Sector   water_swim~
+Flags    nomob~
+Desc     The water here is mostly shallow with the exceptions of a few deep
+locations where fish like to hide. The river is shaded by dense
+tree cover above with the occasional sunshine peeking in. The water
+is mostly clear and there is little debris in it.
+~
+#EXIT
+Direction west~
+ToRoom    5844
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5899
+Name     &RRANGER DAVEN'S MOB HIDEAWAY&w~
+Sector   indoors~
+Flags    nomob nomagic safe nosummon noastral~
+Desc     You do not belong in here. Please use the exit to leave or contact
+one of the admin staff. Thank you! :)
+~
+#EXIT
+Direction south~
+ToRoom    5854
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

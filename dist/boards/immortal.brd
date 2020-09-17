@@ -1,0 +1,506 @@
+Sender  Beltane~
+Date    Thu Jan  5 22:03:31 2017~
+To      Seikyr~
+Subject Fog~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Idea: Set a room to be effected by fog and the percentage. It makes
+it hard for the player to see the real that percentage of the time.
+They can see exits but few things. Perception might help a bit here.
+~
+
+Sender  Seikyr~
+Date    Wed Jan 11 22:01:44 2017~
+To      Beltane~
+Subject Full Caster Table~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Full Caster Table:
+Lv1  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv4  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv6  [4, 2, 0, 0, 0, 0, 0, 0, 0]
+Lv8  [4, 3, 0, 0, 0, 0, 0, 0, 0]
+Lv10 [4, 3, 2, 0, 0, 0, 0, 0, 0]
+Lv12 [4, 3, 3, 0, 0, 0, 0, 0, 0]
+Lv14 [4, 3, 3, 1, 0, 0, 0, 0, 0]
+Lv16 [4, 3, 3, 2, 0, 0, 0, 0, 0]
+Lv18 [4, 3, 3, 3, 1, 0, 0, 0, 0]
+Lv20 [4, 3, 3, 3, 2, 0, 0, 0, 0]
+Lv22 [4, 3, 3, 3, 2, 1, 0, 0, 0]
+Lv24 [4, 3, 3, 3, 2, 1, 0, 0, 0]
+Lv26 [4, 3, 3, 3, 2, 1, 1, 0, 0]
+Lv28 [4, 3, 3, 3, 2, 1, 1, 0, 0]
+Lv30 [4, 3, 3, 3, 2, 1, 1, 1, 0]
+Lv32 [4, 3, 3, 3, 2, 1, 1, 1, 0]
+Lv34 [4, 3, 3, 3, 2, 1, 1, 1, 1]
+Lv36 [4, 3, 3, 3, 3, 1, 1, 1, 1]
+Lv38 [4, 3, 3, 3, 3, 2, 1, 1, 1]
+Lv40 [4, 3, 3, 3, 3, 2, 2, 1, 1]
+Lv42 [5, 4, 3, 3, 3, 2, 2, 1, 1]
+Lv44 [5, 4, 3, 3, 3, 2, 2, 1, 1]
+Lv46 [5, 4, 4, 3, 3, 2, 2, 2, 1]
+Lv48 [5, 4, 4, 4, 3, 3, 2, 2, 1]
+Lv50 [5, 5, 4, 4, 4, 3, 3, 3, 2]
+~
+
+Sender  Seikyr~
+Date    Wed Jan 11 22:10:22 2017~
+To      Beltane~
+Subject Half Caster Table~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Half Caster Table:
+Lv1  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv4  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv6  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv8  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv10 [4, 2, 0, 0, 0, 0, 0, 0, 0]
+Lv12 [4, 2, 0, 0, 0, 0, 0, 0, 0]
+Lv14 [4, 3, 0, 0, 0, 0, 0, 0, 0]
+Lv16 [4, 3, 0, 0, 0, 0, 0, 0, 0]
+Lv18 [4, 3, 2, 0, 0, 0, 0, 0, 0]
+Lv20 [4, 3, 2, 0, 0, 0, 0, 0, 0]
+Lv22 [4, 3, 3, 0, 0, 0, 0, 0, 0]
+Lv24 [4, 3, 3, 0, 0, 0, 0, 0, 0]
+Lv26 [4, 3, 3, 1, 0, 0, 0, 0, 0]
+Lv28 [4, 3, 3, 1, 0, 0, 0, 0, 0]
+Lv30 [4, 3, 3, 2, 0, 0, 0, 0, 0]
+Lv32 [4, 3, 3, 2, 0, 0, 0, 0, 0]
+Lv34 [4, 3, 3, 3, 1, 0, 0, 0, 0]
+Lv36 [4, 3, 3, 3, 1, 0, 0, 0, 0]
+Lv38 [4, 3, 3, 3, 2, 0, 0, 0, 0]
+Lv40 [4, 3, 3, 3, 2, 0, 0, 0, 0]
+Lv42 [5, 4, 3, 3, 3, 1, 0, 0, 0]
+Lv44 [5, 4, 3, 3, 3, 1, 0, 0, 0]
+Lv46 [5, 4, 3, 3, 3, 2, 0, 0, 0]
+Lv48 [5, 4, 4, 3, 3, 2, 0, 0, 0]
+Lv50 [5, 5, 4, 4, 3, 3, 1, 0, 0]
+~
+
+Sender  Seikyr~
+Date    Wed Jan 11 22:19:51 2017~
+To      Beltane~
+Subject 1/3 Caster Table~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Lv1  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv4  [0, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv6  [2, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv8  [3, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv10 [3, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv12 [3, 0, 0, 0, 0, 0, 0, 0, 0]
+Lv14 [4, 2, 0, 0, 0, 0, 0, 0, 0]
+Lv16 [4, 2, 0, 0, 0, 0, 0, 0, 0]
+Lv18 [4, 2, 0, 0, 0, 0, 0, 0, 0]
+Lv20 [4, 3, 0, 0, 0, 0, 0, 0, 0]
+Lv22 [4, 3, 0, 0, 0, 0, 0, 0, 0]
+Lv24 [4, 3, 0, 0, 0, 0, 0, 0, 0]
+Lv26 [4, 3, 2, 0, 0, 0, 0, 0, 0]
+Lv28 [4, 3, 2, 0, 0, 0, 0, 0, 0]
+Lv30 [4, 3, 2, 0, 0, 0, 0, 0, 0]
+Lv32 [4, 3, 3, 0, 0, 0, 0, 0, 0]
+Lv34 [4, 3, 3, 0, 0, 0, 0, 0, 0]
+Lv36 [4, 3, 3, 0, 0, 0, 0, 0, 0]
+Lv38 [4, 3, 3, 1, 0, 0, 0, 0, 0]
+Lv40 [4, 3, 3, 1, 0, 0, 0, 0, 0]
+Lv42 [4, 3, 3, 2, 0, 0, 0, 0, 0]
+Lv44 [5, 4, 3, 2, 0, 0, 0, 0, 0]
+Lv46 [5, 4, 3, 3, 0, 0, 0, 0, 0]
+Lv48 [5, 4, 4, 3, 0, 0, 0, 0, 0]
+Lv50 [5, 5, 4, 3, 1, 0, 0, 0, 0]
+~
+
+Sender  Seikyr~
+Date    Wed Jan 18 09:30:11 2017~
+To      Beltane~
+Subject Armor~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+So a brief explanation on armor class and how it works...
+The object worn on Body location provides AC/2
+Object worn on Head = AC/6
+Object worn on Arms = AC/6
+Object worn on Legs = AC/6
+ 
+So in order to have a "complete" suit of armor, you need to have the 
+Body, Arms, Legs, and Head. If you're missing the helmet, your total AC
+will suffer by 3 for the total, so 15 instead of 18 for Plate. 
+ 
+When setting AC on things, it's out of a 3-digit scale, so AC18 
+behind the scenes is actually AC180. This allows for the 
+calculation of decimal places in the code, so that we can
+divide out the total AC of the player by 10 when doing the math,
+as displayed on the score sheet. The total amount displayed
+on your score sheet is correct. Just bear in mind when you're
+making things that modify AC, that you'll need to multiply
+the D&&D amount by 10 to get the correct AC. Shields then,
+are AC 20 instead of AC 2, etc. 
+~
+
+Sender  Beltane~
+Date    Thu Jan 26 00:11:29 2017~
+To      Seikyr~
+Subject Hell~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Change vnum of "hell" command to start at 401 when possible.
+~
+
+Sender  Beltane~
+Date    Fri May 11 20:44:59 2018~
+To      Coders~
+Subject Polymorph~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Things to add to morphset:
+
+1.) Toggle if the form removes clothing or not when the polymorphing
+is complete. This is required for forms like animals that can't 
+wear pants, etc.
+ 
+2.) Toggle if the form don't not allow you to wear clothing after
+polymorphing to avoid hawks with full sets of armor.
+ 
+3.) Offer a description option where a stock temporary description
+can be written.
+ 
+4.) Add size to settable options.
+ 
+5.) Add short and long description settable options.
+ 
+6.) Make sure the gender aligns with the player's.
+ 
+7.) Add an "All" for classes allowed to avoid typing in each class
+ 
+8.) Add a # of attacks and attack options (Claws, etc)?
+~
+
+Sender  Beltane~
+Date    Fri May 11 21:03:04 2018~
+To      Coders~
+Subject Morphset~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Double check cast allow so that it stops players from casting spells
+if they are in the form if the option is set to "no." It currently
+doesn't set anything.
+ 
+Check to make sure "affected" works.
+ 
+Make sure the AC set actually adds or removes from the player's
+while in the form. Form 1000 should reduce the AC by -10 but
+nothing happens.
+~
+
+Sender  Beltane~
+Date    Fri May 11 21:21:46 2018~
+To      Coders~
+Subject Polymorphing~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+So yeah.. morphset needs to allow players to actually be able to use
+the morph in polymorphing.
+ 
+A possible idea would be to have settable stats, a dice roll option
+for hp and move (more in line with the monster manual).
+ 
+Also an option to allow speaking or not.
+ 
+Check to see if keywords work for the look command and replace
+the character's info with look with short desc of morph.
+~
+
+Sender  Beltane~
+Date    Fri May 11 21:31:55 2018~
+To      Coder~
+Subject Instar/Instaz~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Instar and Instaz is not saving room sets and actually can create
+duplicates of mobs, which is a problem..
+~
+
+Sender  Beltane~
+Date    Mon May 14 17:39:26 2018~
+To      Coders~
+Subject Drinks, Blood, and Buying~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Can we have a liquid type blood that can be set for drinkcons? It
+would be nice for vials and bottles of blood for vampires.
+ 
+Also can we add a V4 where if it's 0 you it doesn't disappear after
+drinking the last drop and a 1 if it gets junked after finishing?
+ 
+Also - there is no "buy" command for some reason... really weird.. lol
+~
+
+Sender  Beltane~
+Date    Tue May 15 01:03:30 2018~
+To      Coders~
+Subject Healer Code Snippet~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Found this:
+http://www.mudbytes.net/files/572/
+ 
+Obviously don't need mana as part of it and it should just use the
+regular hitchar/vict of the spell instead of setting its own. :)
+~
+
+Sender  Beltane~
+Date    Tue May 15 01:05:18 2018~
+To      Coders~
+Subject Donate command~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+http://www.mudbytes.net/files/590/
+ 
+Give the option to donate to their clan/order or in general, which
+send it to the New Darkhaven site.
+~
+
+Sender  Beltane~
+Date    Tue May 15 01:07:26 2018~
+To      Coders~
+Subject Wands/Staves~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+We need this! FK has yet to do this and this would be amazing if
+magic users could make their own wands/staves.
+ 
+http://www.mudbytes.net/files/587/
+http://www.mudbytes.net/files/984/
+ 
+I think a repercussion is it can be explosive if there's a failure..
+~
+
+Sender  Beltane~
+Date    Tue May 15 01:11:05 2018~
+To      Coders~
+Subject Corpse retrieval~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+I like this idea for the corpse conservatory. A priest of the goddess
+of death could cast a spell that summons the corpse for the player.
+ 
+http://www.mudbytes.net/files/582/
+~
+
+Sender  Beltane~
+Date    Tue May 15 01:11:57 2018~
+To      Coders~
+Subject Arena code~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+http://www.mudbytes.net/files/646/
+~
+
+Sender  Beltane~
+Date    Tue May 15 21:06:10 2018~
+To      Coders~
+Subject Spell flags & Sectors~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Check to see if the sectors option is working with sset.
+ 
+Also we need a flag for "Caster only" and one so that the spell
+or skill cannot be used on themselves (the caster/skill user).
+ 
+Can we also make it so that when it's set to a skill the mana
+cost is set to remove move points instead of mana?
+~
+
+Sender  Beltane~
+Date    Sat May 19 22:00:28 2018~
+To      Coders~
+Subject Brewing~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Hello!
+ 
+I would like brewing and scribing levels on the final result to be
+stable across the game. I think that whatever the material is
+is how it will be finalized. So if you use a potion bottle that
+can be brewed to create level 10 spells of whatever you brew
+that it's the materials that allow it. I was thinking that
+the power scales would be level 5, 10, 20, and rarely 30
+potion bottles/scrolls/wand/staff materials. A special quest
+could be done for level 40 or higher.
+ 
+Like in New Darkhaven I made two potion options for either
+level 5 or level 10 potion brewing. The cost of course
+increases too.
+~
+
+Sender  Seikyr~
+Date    Sat Nov 10 05:39:17 2018~
+To      Builders~
+Subject Overland Exits~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+A heads up on the Overland map, to create an exit to an area use the following:
+ 1) Move to the room (coordinates) you want to make an exit at
+ 2) Use setexit create
+ 3) Use setexit <vnum>, where vnum is the first vnum of your area
+ 
+ This will link your area to the coordinates, you can then move into the # on the map and it will t map and it will transport them to the specified vnum.
+ From there, you'll create an exit to the Overland map of your choice
+ using the following set of commands:
+ 
+ 1) From your room, redit exit <direction> <vnum, of the map (30000 for map1)>
+ 2) redit excoords <direction> <x> <y> will set the exit to go to the coordinates 3) redit exflags  3) redit exflags <direction> overland will make it so it places the PC on the ma 
+ 
+~
+
+Sender  Saeris~
+Date    Wed Nov 14 00:12:32 2018~
+To      Builders~
+Subject Mpplace~
+Voting 0
+Yesvotes ~
+Novotes ~
+Abstentions ~
+Yestally 0
+Notally 0
+Abstaintally 0
+Noremove 0
+Text
+Add to help file:
+Mpplace <vnum> <area>
+mpplace <vnum> <low vnum> <high vnum>
+~
+

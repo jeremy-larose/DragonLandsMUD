@@ -1,0 +1,1710 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Parinath Forest Kobold Camp~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 28800070
+ResetMsg     You hear the sound of an animal nearby.~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2350
+Keywords   druid young woman human~
+Short      &Ga young druid&w~
+Long       &GA young human woman is here serving as a druid and taking care of the grove.
+~
+Desc       &GThis young woman is dressed in a simple brown robe and sandals as she
+walks above the grove tending to it. She wears the symbol of Cerunon
+and walks with a quiet, dignified grace.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea pacifist~
+Affected   detect_hidden infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 10
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if class($n) == druid
+bow $n
+else
+peer $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2351
+Keywords   kobold lurking around camp~
+Short      &Oa small kobold&w~
+Long       &OA small kobold is here lurking about the camp.&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -400 1 1 0 10 0 0 0 2 0
+Stats2     2 6 2
+Stats3     1 1 1
+Stats4     1 0 1 0 0 0 10
+Attribs    8 8 7 15 9 8 9
+Saves      0 0 0 0 0 0
+Speaks     draconic~
+Speaking   draconic~
+Bodyparts  head arms legs heart brains guts hands feet fingers eye long_tongue tail~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2352
+Keywords   kobold large sitting fire~
+Short      &Ya large kobold&w~
+Long       &YA large kobold is here sitting by a fire.&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -400 1 2 0 12 0 0 0 4 0
+Stats2     2 6 6
+Stats3     1 1 1
+Stats4     2 0 1 0 0 0 10
+Attribs    8 8 7 15 9 8 9
+Saves      0 0 0 0 0 0
+Speaks     draconic~
+Speaking   draconic~
+Bodyparts  head arms legs heart brains guts hands feet fingers eye long_tongue tail~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2353
+Keywords   kobold hunting forest small~
+Short      &Oa small kobold&w~
+Long       &OA small kobold is here hunting around the forest.&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -400 1 1 0 10 0 0 0 1 0
+Stats2     2 6 2
+Stats3     1 1 1
+Stats4     1 0 1 0 0 0 10
+Attribs    8 8 7 15 9 8 9
+Saves      0 0 0 0 0 0
+Bodyparts  head arms legs heart brains guts hands feet fingers eye long_tongue tail~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2354
+Keywords   brown bear large~
+Short      &Oa brown bear&w~
+Long       &OA brown bear is here moving about the forest.&w
+~
+Desc       &OThis bear is here wandering about the forest foraging for food
+and looking around curiously.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 10 3 0 11 0 0 0 0 0
+Stats2     4 10 12
+Stats3     1 8 4
+Stats4     3 1 2 0 0 0 3
+Attribs    19 2 13 10 16 8 13
+Saves      0 0 0 0 0 0
+Speaks     mammal~
+Speaking   mammal~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if ispc($n)
+growl $n
+else
+k $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 2354
+emote stumbles through some brush and starts looking around here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote turns and runs through some brush as night falls.
+mpgoto 2399
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2355
+Keywords   small blue bird~
+Short      &Ca small blue bird&w~
+Long       &CA small blue bird is here flying around the forest.&w
+~
+Desc       &CThis small bird is a soft shade of blue that is similar to a sunny
+sky. It has a tiny beak and graceful looking wings.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   infrared flying~
+Stats1     0 1 0 0 15 0 0 0 0 0
+Stats2     1 2 1
+Stats3     1 2 0
+Stats4     0 1 1 0 0 0 6
+Attribs    3 9 10 16 8 12 12
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &CA small blue bird sings from a branch nearby.
+mpasound &CYou hear the sounds of a bird singing nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 2363
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 2399
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 2354 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       2399
+Keywords   elder druid Vonia older human woman grinding herbs table~
+Short      &GElder Druid Vonia&w~
+Long       &GAn older human woman is here grinding some herbs at a wooden table.
+~
+Desc       &GThis elderly human woman has a face that shows deep wisdom along
+with deep wrinkles. Her silvery hair has been intricately braided
+back and she wear a deep green robe.
+~
+Race       human~
+Class      druid~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 1 0 0 10 0 1 2 2 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 10
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if class($n) == druid
+smile $n
+sayto $n Welcome child. May you find rest and safety here in this druid
+sayto $n grove. I am Elder Druid Vonia and if you need anything please
+sayto $n let me know.
+else
+chuckle
+sayto $n It's been awhile since I've met a non-Druid...
+sayto $n Just be respectful while you are here, please.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     2350
+Keywords sprig golden mistletoe gold gmistle989 druidcraft druid~
+Type     treasure~
+Short    &Ya sprig of golden mistletoe&w~
+Long     &YSome golden colored mistletoe is growing wildly here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    mistletoe~
+ExDesc       &YThis sprig of mistletoe is a bright shade of shimmering gold.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p purgewall~
+Comlist   if favor($n) >= 1000
+if otypehere(naturalwall) == 1
+if class($n) == druid
+if hasqbit($n) == 2350
+if wisdom($n) >= 20
+if wearingvnum($n) == 2350
+mea $n &GYou hold the golden mistletoe and summon forth its magic!&w
+mpsleep 10
+mea $n &GYou release a burst of magic that topples the magical
+mea $n &Gwall before you! The magic sweeps through and removes all
+mea $n &Gtraces of where it once stood.
+mer $n &G$n&G releases a burst of magic that topples the wall here
+mer $n &Gand removes all traces of where it once stood!&w
+mppurge naturalwall989
+else
+mea $n You need to be holding the mistletoe first.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.&w
+endif
+else
+mea $n You do not know that form of druidcraft.
+endif
+else
+mea $n You need to be a druid in order to do that.
+endif
+else
+mea $n There is no wall of natural materials standing here.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p dispelpath~
+Comlist   if favor($n) >= 750
+if otypehere(naturalobstacle) == 1
+if class($n) == druid
+if hasqbit($n) == 2350
+if wisdom($n) >= 20
+if wearingvnum($n) == 2350
+mea $n &GYou hold the golden mistletoe and summon forth its magic!
+mpsleep 5
+mer $n &GA powerful surge of magic is released by &G$n&G suddenly!&w
+mea $n &GA powerful surge of magic is released by you and removes
+mea $n &Gany magical obstacle that is made of natural materials!&w
+mppurge naturalobstacle
+else
+mea $n You need to hold the mistletoe first.
+endif
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.&w
+endif
+else
+mea $n You do not know that form of druidcraft.
+endif
+else
+mea $n You need to be a druid in order to do that.
+endif
+else
+mea $n &GThere is no natural obstacle needing to be dispelled here.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p dowsewater~
+Comlist   if favor($n) >= 250
+if ovnumroom(2399) == 1
+if class($n) == druid
+if hasqbit($n) == 2350
+if sector($n) == 2
+if wisdom($n) >= 15
+if wearingvnum($n) == 2350
+mea $n &CYou hold out the mistletoe and use it to dowse for water here...
+mer $n &C$n holds out a golden plant and concentrates for a few moments.
+mpsleep 12
+mea $n &BYou sense that there is water running below the soil.
+else
+mea $n You need to be holding the mistletoe first.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+else
+mea $n You need to dowse for water in a nearby field or glade.
+endif
+else
+mea $n You do not know that form of druidcraft.
+endif
+else
+mea $n You must be a druid in order to do that.
+endif
+else
+mea $n &CYou hold out the mistletoe and use it to dowse for water here...
+mer $n &C$n&C holds out a golden plant and concentrates for a few moments.
+mea $n &wYou scry deeply and do not sense any water.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p makebreeze~
+Comlist   if favor($n) >= 100
+if class($n) == druid
+if hasqbit($n) == 2350
+if wearingvnum($n) == 2350
+mea $n &GYou hold the mistletoe and summon forth its magic!
+mpsleep 2
+mpecho &WA soft cool breeze blows through suddenly.
+mpasound &WA soft cool breeze blows through suddenly.
+else
+mea $n You need to be holding the mistletoe first.
+endif
+else
+mea $n You do not know that form of druidcraft.
+endif
+else
+mea $n You need to be a druid in order to do that.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p extinguish~
+Comlist   if favor($n) >= 250
+if class($n) == druid
+if hasqbit($n) == 2350
+if wisdom($n) >= 15
+if wearingvnum($n) == 2350
+if otypehere(fire) >= 1
+mea $n &GYou hold the golden mistletoe and summon forth its magic!&w
+mer $n &G$n holds out a golden plant and begins to concentrate.
+mpsleep 2
+mea $n &CYou trace sigils above your head and slowly create a cloud of
+mea $n &Crain that douses the fire and extinguishes it from sight!
+mer $n &C$n&C traces sigils above $s head and slowly creates a cloud of
+mer $n &Crain that douses the fire and extinguishes it from sight!
+mppurge fire
+else
+mea $n &RThere is no fire here to extinguish...&w
+endif
+else
+mea $n You need to be holding the mistletoe first.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+else
+mea $n You do not know that form of druidcraft.
+endif
+else
+mea $n You need to be a druid in order to do that.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p skunkodor~
+Comlist   if favor($n) >= 100
+if class($n) == druid
+if hasqbit($n) == 2350
+if wearingvnum($n) == 2350
+mea $n &GYou hold the golden mistletoe and summon forth its magic!&w
+mpsleep 2
+mpecho &zThe smell of a skunk noxiously wafts in from somewhere nearby!&w
+mpasound &zYou smell the odor of a skunk coming from somewhere nearby.
+else
+mea $n You need to be holding the mistletoe first.
+endif
+else
+mea $n You do not know how to do that form of druidcraft.
+endif
+else
+mea $n You must be a druid in order to do that.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p animalsound~
+Comlist   if favor($n) >= 100
+if class($n) == druid
+if hasqbit($n) == 2350
+if wearingvnum($n) = 2350
+mea $n &GYou hold the golden mistletoe and summon forth its magic!
+mpsleep 2
+mpecho You hear the sound of an animal nearby.
+mpasound You hear the sound of an animal nearby.
+else
+mea $n You need to hold the mistletoe first.
+endif
+else
+mea $n You do not know how to do that form of druidcraft.
+endif
+else
+mea $n You must be a druid in order to do that.
+endif
+else
+mea $n &GYou fail to summon forth the magic of the golden mistletoe.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate mistletoe~
+Comlist   if class($n) == druid
+if hasqbit($n) == 2350
+mea $n With this sprig of mistletoe you can achieve the following
+mea $n druidic effects:
+mpsleep 2
+mea $n &YDruidenter - Allows you to enter secret druidic areas.
+mea $n &GClearpath - Clears natural obstacles.
+mea $n &cDispelpath - Clears magical obstacles made of natural materials.
+mea $n &RExtinguish - Purges fire (Both magical and natural).
+mea $n &wPurgewall - Attempts to remove magical walls of natural materials.
+mea $n &CDowsewater - Search for clean drinking water.
+mea $n &OGrowseed - Grow certain druid seeds.
+mea $n &WAnimalsound - Make animal sounds that echo nearby.
+mea $n &zSkunkodor - Create a noxious skunk smell.
+mea $n &PMakebreeze - Makes a soft breeze enter the area.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2351
+Keywords druid class board magical wooden druidic sigils~
+Type     furniture~
+Short    &Oa wooden board&w~
+Long     &OA wooden board covered in druidic sigils has been hung on the wall here.&w~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    900 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2352
+Keywords small dagger~
+Type     weapon~
+Short    a small dagger~
+Long     A dagger has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 4 3 5 0
+Values2  0 1
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2353
+Keywords longsword rusty~
+Type     weapon~
+Short    &Oa rusty longsword&w~
+Long     &OA rusty longsword has been left here.&w~
+Flags    organic versatile~
+WFlags   take onehand twohand~
+Values   1 1 8 1 1 0
+Values2  0 2
+Stats    1 2 1 2 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2354
+Keywords small blue bird feather~
+Type     trash~
+Short    &Ca small blue bird feather&w~
+Long     &CA small blue bird feather has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2355
+Keywords bee nest bees attached branch large bee212~
+Type     trash~
+Short    &Ya bee's nest&w~
+Long     &YA large bee's nest is here attached to a high branch of a tree.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    nest~
+ExDesc       &YThis nest is quite large and is attached to a tree branch. Based on
+the side this nest has been established here for quite some time.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p extracthoney~
+Comlist   if acrobatics($n) >= 14
+if survival($n) >= 15
+mea $n &gYou climb up the tree and start making your way over to the nest.
+mer $n &g$n&g climbs up a tree and starts making $s way to the bee's nest.
+mpsleep 2
+mea $n &YYou manage to slip a hand inside and extract a small honeycomb.
+mer $n &Y$n&Y reaches inside the bee's nest and takes something out.
+mpsleep 2
+mea $n &gYou climb back down the tree with your small honeycomb.&w
+mer $n &g$n&g climbs back down with a small honeycomb.&w
+mpoload 2356 1
+silent mpforce $n get hcomb212
+else
+mea $n &gYou climb up the tree and start making your way over to the nest.
+mer $n &g$n&g climbs up a tree and starts making $s way to the bee's nest.
+mea $n &YYou slip a hand inside and start getting stung by bees!
+mer $n &Y$n&Y slips a hand inside the nest and gets stung by many bees!
+mpdamage $n 1 8
+mea $n &gYou quickly climb down and dodge bees that try to attack!
+endif
+else
+mea $n &gAs you try to climb the tree you fall down!
+mer $n &gAs &g$n&g tries to climb the tree $e falls down!
+mpdamage $n 1 10
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate nest~
+Comlist   if investigation($n) >= 14
+mea $n This nest is full of honey. Perhaps if you are good with your
+mea $n survival skills you can EXTRACTHONEY without getting stung.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2356
+Keywords honey honeycomb small piece sticky hcomb212~
+Type     food~
+Short    &Ya small honeycomb&w~
+Long     &YA small honeycomb full of sticky honey has been left here.&w~
+WFlags   take onehand~
+Values   2 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 10 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p fillhoney~
+Comlist   if wearingvnum($n) == 2356
+if carryingvnum($n) == 1955
+mea $n You crush the honeycomb and fill a vial with the sticky honey.
+mer $n $n crushes a honeycomb and fills a vial with the sticky honey.
+mpoload 1755 1
+silent mpforce $n get vial
+silent mpforce $n drop empty
+mppurge vialg300
+silent mpforce $n drop hcomb212
+silent mpforce $n rem hcomb212
+silent mpforce $n drop hcomb212
+mppurge hcomb212
+else
+mea $n You need an empty vial first.
+endif
+else
+mea $n You need to be holding the honeycomb first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate honeycomb~
+Comlist   if investigation($n) >= 12
+mea $n This honeycomb is very fresh and can be eaten if desired. The
+mea $n honey can also be extracted into an empty vial as well
+mea $n by simply crushing it over a vial (FILLHONEY).
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2398
+Keywords pair wooden dowsing rods~
+Type     trash~
+Short    &Oa pair of wooden dowsing rods&w~
+Long     &OA pair of wooden small wooden rods have been left here.&w~
+WFlags   take twohand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 5 2 5 0 0 0
+#EXDESC
+ExDescKey    rods~
+ExDesc       &OThese two rods have one part firm handle and then another part that
+moves about as it detects for water.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rods~
+Comlist   if investigation($n) >= 12
+if survival($n) >= 12
+mea $n You can use these rods to search for water in fields or glades.
+mea $n You just simply need to WATERDOWSE in order to try.
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p waterdowse~
+Comlist   if ovnumroom(2399) == 1
+if sector($n) == 2
+if survival($n) >= 15
+if wearingvnum($n) == 2398
+mea $n &OYou hold out the rods as you dowse for water here...
+mer $n &O$n&O holds out two rods as $e tries to dowse for water here.
+mpsleep 15
+mea $n &BThe rods slowly cross indicating fresh water beneath the soil.
+else
+mea $n You need to be holding the rods first.
+endif
+else
+mea $n &OYou fail to find any sign of water here.
+endif
+else
+mea $n You need to refine your search to a field or glade first.
+endif
+else
+mea $n &OYou fail to find any sign of water here.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     2399
+Keywords fresh spring drinking water~
+Type     fountain~
+Short    &Ca spring of fresh drinking water&w~
+Long     &CA spring of fresh drinking water has been unearthed here.&w~
+Flags    buried~
+Values   50 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2350
+Name     Deep in a Forest~
+Sector   forest~
+Flags    nomob~
+#EXIT
+Direction north~
+ToRoom    2351
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      150
+MapY      815
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2351
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2352
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2350
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2352
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2353
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2362
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2351
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2353
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2355
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2352
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2354
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2354
+Name     A Small Glade~
+Sector   field~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    2353
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p druidenter~
+Comlist   if class($n) == druid
+if hasqbit($n) == 2350
+if wearingvnum($n) == 2350
+mea $n &GYou hold up the golden spring of mistletoe and begin tracing
+mea $n &Gsigils in front of you. You feel the natural energies around you
+mea $n &Gswirl about before you realize you are no longer where you
+mea $n &Gonce were standing!
+mer $n &G$n traces something in the air with a golden plant
+mer $n &Gbefore $e disappears from sight suddenly.
+silent mptransfer $n 2397
+else
+mea $n You need to be holding the mistletoe first.
+endif
+else
+mea $n You do not know how to do that form of druidcraft.
+endif
+else
+mea $n You must be a druid in order to do that.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if class($n) == druid
+mpsleep 2
+mea $n &GYou feel a powerful energy emanating from nearby...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2355
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2356
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2353
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2356
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2357
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2355
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2357
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2358
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2356
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2358
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    2359
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2357
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2359
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2358
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2363
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2360
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2360
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2359
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2361
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2361
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2360
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2362
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2362
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2361
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2352
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2363
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2364
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2359
+#ENDEXIT
+
+Reset M 0 2355 1 2363
+#ENDROOM
+
+#ROOM
+Vnum     2364
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2366
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2363
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2365
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2379
+#ENDEXIT
+
+Reset O 0 2355 1 2365
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound &YYou hear the sound of bees buzzing about nearby.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2366
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2380
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2367
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2364
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2367
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2366
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2368
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2368
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2367
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2369
+#ENDEXIT
+
+Reset M 0 2354 1 2368
+#ENDROOM
+
+#ROOM
+Vnum     2369
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2370
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2368
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2370
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2371
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2369
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2371
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2372
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2370
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2372
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2373
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2382
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2371
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2373
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2374
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2372
+#ENDEXIT
+
+Reset M 0 2353 1 2373
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2374
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2375
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2373
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2375
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    2374
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2376
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2376
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2375
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2377
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2377
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2376
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2378
+#ENDEXIT
+
+Reset M 0 2353 2 2377
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2378
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2377
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2379
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2379
+Name     Deep in a Forest~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2378
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2365
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2380
+Name     Before a Small Pond~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    2381
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2366
+#ENDEXIT
+
+Reset O 0 3557 1 2380
+Reset O 0 982 1 2380
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   if ovnumroom(982) == 0
+mpoload 982 1
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   if ovnumroom(982) == 1
+mppurge wcluster
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     2381
+Name     A Small Pond~
+Sector   ice~
+Flags    nomob~
+#EXIT
+Direction west~
+ToRoom    2380
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2382
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2372
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2383
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2393
+#ENDEXIT
+
+Reset M 0 2351 7 2382
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2383
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2394
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2382
+#ENDEXIT
+
+Reset M 0 2351 1 2383
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2384
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2385
+#ENDEXIT
+
+Reset M 0 2352 2 2384
+  Reset E 0 2353 1 26
+Reset O 0 3206 1 2384
+#ENDROOM
+
+#ROOM
+Vnum     2385
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2386
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2384
+#ENDEXIT
+
+Reset M 0 2351 7 2385
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2386
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction south~
+ToRoom    2387
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2385
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2387
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2386
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2388
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2390
+#ENDEXIT
+
+Reset M 0 2351 3 2387
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2388
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2387
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2389
+#ENDEXIT
+
+Reset M 0 2351 7 2388
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2389
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2390
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2388
+#ENDEXIT
+
+Reset M 0 2351 4 2389
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2390
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2387
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2389
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2391
+#ENDEXIT
+
+Reset M 0 2351 8 2390
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2391
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2390
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2394
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2392
+#ENDEXIT
+
+Reset M 0 2351 2 2391
+  Reset E 0 2352 1 26
+#ENDROOM
+
+#ROOM
+Vnum     2392
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction east~
+ToRoom    2391
+#ENDEXIT
+
+Reset M 0 2352 1 2392
+  Reset E 0 2353 1 26
+Reset O 0 3206 1 2392
+#ENDROOM
+
+#ROOM
+Vnum     2393
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2382
+#ENDEXIT
+
+Reset M 0 2352 3 2393
+  Reset E 0 2353 1 26
+Reset O 0 3206 1 2393
+#ENDROOM
+
+#ROOM
+Vnum     2394
+Name     &OA Crude Looking Camp&w~
+Sector   forest~
+#EXIT
+Direction north~
+ToRoom    2391
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2383
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2395
+Name     A Druid Grove~
+Sector   forest~
+Flags    nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    2398
+Keywords  'cottage door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2397
+#ENDEXIT
+
+Reset M 0 2350 1 2395
+Reset D 0 2395 0 1
+#ENDROOM
+
+#ROOM
+Vnum     2396
+Name     A Stone Circle~
+Sector   field~
+Flags    nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    2397
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2397
+Name     A Druid Grove~
+Sector   field~
+Flags    nosummon noastral~
+#EXIT
+Direction north~
+ToRoom    2396
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2354
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2395
+Flags     closed~
+#ENDEXIT
+
+Reset O 0 2399 1 2397
+Reset O 0 2350 1 2397
+Reset D 0 2397 3 1
+#ENDROOM
+
+#ROOM
+Vnum     2398
+Name     A Druid's Cottage~
+Sector   indoors~
+Flags    nomob nosummon noastral~
+#EXIT
+Direction south~
+ToRoom    2395
+Keywords  'cottage door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 2399 1 2398
+Reset O 0 2351 1 2398
+Reset D 0 2398 2 1
+#ENDROOM
+
+#ROOM
+Vnum     2399
+Name     &RKOBOLD CAMP MOB HIDEAWAY&w~
+Sector   indoors~
+Flags    nomagic safe norecall nosummon noastral nosupplicate~
+Desc     You do not belong in here. Please take the exit south to leave this
+mob storage room. Thanks! 
+~
+#EXIT
+Direction south~
+ToRoom    2380
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

@@ -1,0 +1,63 @@
+#PLAYER
+Version      5
+Name         Tonja~
+Sex          2
+Class        3
+Multiclass 3 45
+Race         0
+Adjective    an ordinary female human~
+Age          0 16 8 679
+Languages    -1 1
+Level        59
+Played       372
+Room         2067
+HpManaMove   41 333 100 100 262 610
+ClassValues  0 0
+Gold         0
+Silver       0
+Copper       0
+Exp          355000
+Height          65
+Weight          144
+Act          570426952
+Position     113
+Style     2
+Practice     137
+SavingThrows 0 0 0 0 0 0
+Size         2
+Alignment    0
+Favor        0
+Glory        0
+MGlory       0
+Hitroll      0
+Damroll      0
+Armor        10 100
+Speechcolor  6
+Mentalstate  0
+Password     fb95fc8227825a32c750c0e4587f70e755579a0578da303cf9fd0707294fcbf9~
+Title         the Not set.~
+WizInvis     59
+Flags        32768
+PKills       0
+PDeaths      0
+MKills       0
+MDeaths      0
+IllegalPK    0
+Timezone     -1
+AttrPerm     24 15 16 13 11 11 7
+AttrMod      0 0 0 0 0 0 0
+Attacks      0
+SpellSlots    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Condition    0 47 42 10
+Background    0
+Site         75.38.141.125
+Tongue       100 'common'
+Skill        100 'fourth attack'
+Skill        100 'survivor'
+Skill        100 'third attack'
+Coordinates	-1 -1 -1 -1
+MaxColors    116
+Colors       0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 7 7 14 14 14 15 15 11 11 9 46 40 12 7 7 10 6 11 9 10 1 15 11 15 11 10 13 12 10 11 12 10 3 12 9 15 11 15 14 2 5 15 9 7 2 9 12 10 2 10 15 7 7 15 12 12 12 10 14 14 14 10 10 10 13 2 10 14 10 10 2 6 1 9 2 10 7 10 15 0 0 0 0 
+End
+
+#END

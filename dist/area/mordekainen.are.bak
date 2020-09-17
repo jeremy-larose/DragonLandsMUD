@@ -1,0 +1,6409 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Mordenkainen's Magnificent Mansion~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       40 50 0 0
+Economy      0 31250000
+ResetMsg     &pThe sound of crashing waves can be heard somewhere in the silvery sea...&W~
+Lore         >V'&PYour mind fills with miles and miles of views of a silvery
+sea. Streaks of dark purple light fire overheard as you hear
+the soft ticking of a clock somewhere in the sea...
+~
+ResetFreq    10
+#ENDAREADATA
+
+#MOBILE
+Vnum       1300
+Keywords   Butler head near transparent figure dressed~
+Short      &Cthe head butler&W~
+Long       &CA near-transparent figure is here, dressed as a butler.&W
+~
+Desc       The servant's features are hard to distinguish, but as you look
+at it more closely the appearance begins to unblur. Their appearance
+begins to look more and more like your race with features similar
+to yours. Perhaps at one time the servant had their own appearance,
+but now it is lost to the magic.
+~
+Lore       You see the Butler open the doors of the mansion to welcome a man
+and woman outside when the house begins to contort. The last thing
+you see is the Butler trying to grab the couple before they are
+shredded to bits by some powerful magic and the vision fades
+to black.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel stayarea pacifist~
+Affected   detect_hidden flying pass_door truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   bow $n
+sayto $n Welcome to the Mansion of Archmage Mordekainen. Please make
+sayto $n yourself comfortable before dinner is served. We have two
+sayto $n rules.. no littering and certainly no fighting. Please
+sayto $n enjoy the party and your stay here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p Mordekainen~
+Comlist   emote smiles at the mentioning of the Archmage.
+sayto $n The Master is planning one impressive display of magic tonight!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1301
+Keywords   garden gardener servant near transparent~
+Short      &Ga gardener&W~
+Long       &GA near-transparent figure is here, attending to the garden.&W
+~
+Desc       &CThe servant's features are hard to distinguish, but as you look
+at it more closely the appearance begins to unblur. Their appearance
+begins to look more and more like your race with features similar
+to yours. Perhaps at one time the servant had their own appearance,
+but now it is lost to the magic.
+~
+Lore       You see the gardener fall from a portal as it disappears and is
+almost swept away by an invisible gust. She is saved by a powerful
+looking wizard who magically tethers her to the ground as he struggles
+to reach the center of the garden...
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Affected   detect_invis detect_hidden flying pass_door truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   90~
+Comlist   mpechoat $n &GThe near-transparent servant smiles and waves in greeting at you.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote whistles a little song as it attends to the garden.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1302
+Keywords   maid  near transparent figure~
+Short      &Pa maid&W~
+Long       &PA near-transparent figure is here, dressed as a maid.&W
+~
+Desc       The servant's features are hard to distinguish, but as you look
+at it more closely the appearance begins to unblur. Their appearance
+begins to look more and more like your race with features similar
+to yours. Perhaps at one time the servant had their own appearance,
+but now it is lost to the magic.
+~
+Lore       You see the maid trying to outrun the portal before being lifted off
+her feet and drawn into a glowing portal that is taking the house
+some place.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Affected   detect_invis detect_hidden flying pass_door truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &PThe maid dusts some furniture and tidies up the space around it.&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mpechoat $n &PThe near-transparent maid smiles and curtsies to you.&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p mordekainen~
+Comlist   emote stops dusting and sighs.
+sayto $n I just hope he succeeds with this new potion. He needs rest..
+emote resumes her dusting.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1303
+Keywords   tea parlor servant maid near transparent figure~
+Short      &Ca parlor servant&W~
+Long       &CA near-transparent figure is here, serving refreshments.&W
+~
+Desc       The servant's features are hard to distinguish, but as you look
+at it more closely the appearance begins to unblur. Their appearance
+begins to look more and more like your race with features similar
+to yours. Perhaps at one time the servant had their own appearance,
+but now it is lost to the magic.
+~
+Lore       You see the servant walking about the parlor preparing it for something
+when the room is sucked into a portal. The servant begins screaming
+before disappearing. You hear a clock chime that it is dinner...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   detect_invis detect_hidden flying pass_door truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p tea~
+Comlist   smile
+mpechoat $n &CThe servant pulls a cup out of thin air and hands it to you.&W
+mpoload 1303 1
+give tea $n
+sayto $n Please enjoy! It is the Master's own blend.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile $n
+sayto $n If you would like some tea, please let me know.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote dusts some shelves and arranges things in the parlor.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p Mordekainen~
+Comlist   sigh
+sayto $n The master has been up in his study for the last two days
+sayto $n planning some sort of surprise for tonight's party.. Poor dear..
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1304
+Keywords   chef near transparents figure~
+Short      &Rthe head chef&W~
+Long       &RA near-transparent figure is here, cooking and barking orders.&W
+~
+Desc       The servant's features are hard to distinguish, but as you look
+at it more closely the appearance begins to unblur. Their appearance
+begins to look more and more like your race with features similar
+to yours. Perhaps at one time the servant had their own appearance,
+but now it is lost to the magic.
+~
+Lore       You see the chef and his assistants moving about the kitchen preparing
+a large meal for some party. The chef is barking orders when a portal
+rips through the ceiling and walls. The assistants barely have time
+to move before tentacles spring out and snare them. The chef watches
+in horror as they are plunged into the portal and their screams
+disappear...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel stayarea pacifist~
+Affected   detect_invis detect_hidden flying pass_door truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mpechoat $n &RThe figure waves a hand in greeting as it continues cooking.&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p mordekainen~
+Comlist   emote stirs a pot of soup and smiles.
+sayto $n He is going to love these new recipes. The party will be perfect!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1305
+Keywords   Mordekainen wizard projection image illusion near transparent figure~
+Short      &pMordekainen&W~
+Long       &pA near-transparent figure is here, dressed in ornate robes.&W
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   detect_invis detect_hidden pass_door truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       1306
+Keywords   gith githzerai zerth~
+Short      &pa githzerai zerth~
+Long       &pA bald gith is here, eyes glowing a bright purple color.&W
+~
+Desc       Dark yellow skin the color of dark gold reflects in the odd light
+of the Astral Sea. He resembles a medium sized humanoid save for
+razor sharp high cheekbones and long pointed ears. His eyes are
+black and reflect no emotion. He is bald and of a slim stature.
+~
+Race       monster~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc~
+Affected   detect_invis flying~
+Stats1     100 1 9 -190 12 0 0 0 0 0
+Stats2     13 8 26
+Stats3     2 6 4
+Stats4     2 0 2 12 0 0 6
+Attribs    13 16 17 18 15 12 13
+Saves      0 0 0 0 0 0
+Speaking   gith~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   45~
+Comlist   mea $n &PThe gith's eyes glow brightly and your mind begins to burn!&W
+mpdamage $n 3 8
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1307
+Keywords   gith githyanki warrior guard ship~
+Short      &ra githyanki warrior~
+Long       &rA yellow skinned warrior is here, guarding a floating ship.&W
+~
+Desc       Dark yellow skin the color of dark gold reflects in the odd light of
+the Astral Sea. He resembles a medium sized humanoid save for very
+razor sharp high cheekbones and long pointed ears. His eyes are
+black and reflect no emotion.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   flying~
+Stats1     0 1 6 -170 13 0 0 0 0 0
+Stats2     9 8 9
+Stats3     2 6 2
+Stats4     2 0 2 0 0 0 6
+Attribs    15 13 13 14 12 10 13
+Saves      0 0 0 0 0 0
+Speaking   gith~
+Bodyparts  head arms legs guts hands feet fingers~
+Attacks    kick~
+Defenses   parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1308
+Keywords   gith githzerai monk~
+Short      a newly created gith githzerai monk~
+Long       Some god abandoned a newly created gith githzerai monk here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       1309
+Keywords   gith githyanki knight patrol ship~
+Short      &Ra githyanki knight&W~
+Long       &RA yellow skinned knight is here, patrolling the ship's deck.&W
+~
+Desc       Dark yellow skin the color of dark gold reflects in the odd light of
+the Astral Sea. He resembles a medium sized humanoid save for very
+razor sharp high cheekbones and long pointed ears. His eyes are black
+and reflect no emotion.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive stayarea~
+Affected   flying~
+Stats1     -100 1 8 -180 14 0 0 0 0 0
+Stats2     14 8 28
+Stats3     1 4 1
+Stats4     2 0 2 9 0 0 6
+Attribs    16 14 14 14 15 15 13
+Saves      0 0 0 0 0 0
+Speaking   gith~
+Attacks    kick~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == gith
+emote raises a hand in greeting.
+else
+yell Intruder!!!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   if wearingvnum($n) == 1399
+mea $n &pYou feel a deep burning as the knight destroys your silver cord!&W
+mpdamage $n 1 4
+silent mpforce $n rem rbmlaos
+silent mpforce $n drop rbmlaos
+silent get rbmlaos
+mppurge rbmlaos
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1310
+Keywords   gith githyanki warrior guard~
+Short      &ra githaynki warrior~
+Long       &rA yellow skinned warrior is here, patrolling the deck of the ship.&W
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   flying~
+Stats1     -100 1 6 -170 10 0 0 0 0 0
+Stats2     9 8 9
+Stats3     2 6 2
+Stats4     2 0 2 0 0 0 6
+Attribs    15 13 13 14 12 10 13
+Saves      0 0 0 0 0 0
+Speaking   gith~
+Attacks    kick~
+Defenses   parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1311
+Keywords   psychic wind~
+Short      &PA Ps&pyc&Phi&pc W&Pi&pn&Pd&p~
+Long       &PA mass of psychic energy rolls here, causing chaos wherever it moves to.&W
+~
+Desc       If you can see this, then your vision is truly elevated. Before you
+is where lost psychic energy goes and collects to form sentient
+creatures with no real purpose. You can see the lost thoughts of
+others floating through it.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis pacifist~
+Affected   invisible detect_hidden infrared flying~
+Stats1     0 55 30 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Speaking   magical~
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpecho &PThere's a sudden roar that resembles crashing waves...&W
+mpasound &PYou hear the sound of loud crashing waves nearby...&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if ispc($n)
+mpecho &pYou feel the rush of invisible energy move around you suddenly!
+mpsleep 5
+mer $n &PYou see $n dragged away with the crashing, invisible wave!&W
+mea $n &PUnable to stand against it, you are dragged off by the undertow!&W
+mpscatter $n 1346 1381
+mpat $n mea $n &pWhen you open your eyes you are somewhere different...&W
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1312
+Keywords   magic broom cleaner~
+Short      &Oa magical broom&W~
+Long       &OA magical broom is here, tidying up the cellar.&W
+~
+Desc       &OThis broom is made from oak and has been enchanted to move about
+the cellar, cleaning it.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Affected   flying~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       1313
+Keywords   conductor music ballroom~
+Short      &ca music conductor&W~
+Long       &cA near-transparent figure is here, standing at a podium.&W
+~
+Desc       The conductor's features are hard to distinguish, but as you look
+at it more closely the appearance begins to unblur. Their appearance
+begins to look more and more like your race with features similar
+to yours. Perhaps at one time the servant had their own appearance,
+but now it is lost to the magic.
+~
+Lore       You see the conductor practicing with various musicians when the ceiling
+begins being sucks into a glowing portal. A bolt of magical energy
+surges and blows the conductor back. He watches as other bolts of
+energy disintegrate the musicians, leaving only their instruments.
+~
+Race       magical~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden pass_door truesight~
+Stats1     0 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   bow $n
+sayto $n Let me know if you would like a something slow or fast
+sayto $n when you are ready to enjoy some dancing. When you
+sayto $n done dancing, please let me know when you are finished.
+emote arranges some sheet music on the podium.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p slow~
+Comlist   smile
+mpjunk all
+mpoload 1324 1
+emote taps his podium as instruments float into the air ready to play.
+mpecho &RA sultry waltz begins, slow and steady...&W
+mpasound &RThe steady beat of a waltz is heard nearby.&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   if ovnumcarry(1324) == 1
+mpecho &R The steady and sultry waltz continues as the instruments play...
+mpasound &RThe sound of a steady waltz is heard nearby...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p finished~
+Comlist   emote nods his head and leads the band of instruments to the end of their song.
+mpjunk all
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p fast~
+Comlist   grin
+mpjunk all
+mpoload 1325 1
+emote begins counting off as the instruments rise and begin to play.
+mpecho &GA lively jig lights up the room, demanding everyone dance!
+mpasound &GA bright and happy jig can be heard nearby...&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   28~
+Comlist   if ovnumcarry(1325) == 1
+mpecho &GThe jig continues with variations in speed!
+mpasound &GYou hear the sounds a lively jig nearby!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p Mordekainen~
+Comlist   sayto $n I hope he loves the music I've prepared for tonight's party.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1314
+Keywords   bird garden purple colored~
+Short      &pa strange purple bird&W~
+Long       &pA purple colored bird flies about the garden here.&W
+~
+Desc       This bird is a wild purple color than its original blue color. The
+location of the mansion may have effected its coloring. This bird
+flies about the garden, pecking for food, and watch the gardener
+work on the various plants.
+~
+Lore       You see the bird in its original light blue color observe and struggle
+to stay on the new ground. Invisible gusts move through the garden,
+shredding plants and throwing other birds far away. The Wizard
+reaches the center of the garden and begins to cast a spell. The
+fountain glows and suddenly a large bubble of force erupts and
+captures the entire transported grounds. The invisible gusts move
+about the magical protection...
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   flying pass_door~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#MOBILE
+Vnum       1315
+Keywords   wizard apprentice cleaning near transparent figure~
+Short      &pa wizard's apprentice&W~
+Long       &pA near-transparent figure is here, cleaning up the destruction.&W
+~
+Desc       The apprentice's features are hard to distinguish, but as you look
+at it more closely the appearance begins to unblur. Their appearance
+begins to look more and more like your race with features similar
+to yours. Perhaps at one time the servant had their own appearance,
+but now it is lost to the magic.
+~
+Lore       You see the apprentice handing things to a busy wizard. Suddenly a portal
+erupts into the room and devours everything. In a flash the home vanishes
+and reappears in its new location. The portal reduces to a globe and
+explodes, taking the wall out. The apprentice is swept out and only
+saved by a magical rope casted by the wizard...
+~
+Race       magical~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   pass_door truesight~
+Stats1     800 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Speaking   common~
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   sigh $n
+sayto $n You really shouldn't be up here, the master wouldn't approve
+sayto $n of anyone seeing one of his big messes...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   sigh $n
+sayto $n You really shouldn't be up here, the master wouldn't approve
+sayto $n of anyone seeing one of his big messes...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p mordekainen~
+Comlist   mutter
+say How am I going to clean up this mess before the party?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1316
+Keywords   purple cat fluffy~
+Short      &pa fluffy purple cat&W~
+Long       &pA fluffy purple cat is here, sprawled out on the floor.&W
+~
+Desc       This cat was a calico cat, but somehow its fur has become purple. It
+quite fat and also quite fluffy with a lot of fur. It looks very bored
+as it paces up and down the hallways.
+~
+Lore       You see a determined Wizard running down the hall throwing some
+sort of dust in various rooms as servants run about screaming.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Stats1     -600 1 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &pThe cat scratches its left ear rapidly.
+mpasound &pYou hear the jingle of a bell nearby.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1317
+Keywords   psychic wind 2~
+Short      &pA Psy&Pchi&pc Win&Pd&W~
+Long       &PA mass of psychic energy rolls here, causing chaos wherever it moves to.&W
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis pacifist~
+Affected   detect_hidden infrared flying~
+Stats1     0 52 0 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mea $n &PYou feel a rush of invisible energy overtake you and drag you off!
+mpscatter $n 346 381
+mpat $n mea $n &pWhen you open your eyes you are somewhere different...&W
+mpecho &PThere is a crash of sound and then nothing...&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1318
+Keywords   gith raider githyanki~
+Short      &pa githyanki raider&W~
+Long       &pA medium sized humanoid is here, scouting the area for something.&W
+~
+Desc       Dark yellow skin the color of dark gold reflects in the odd light of
+the Astral Sea. He resembles a medium sized humanoid save for very
+razor sharp high cheekbones and long pointed ears. His eyes are
+black and reflect no emotion.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   detect_hidden flying~
+Stats1     -300 1 3 0 14 0 0 0 0 0
+Stats2     9 8 9
+Stats3     1 4 0
+Stats4     2 0 2 0 0 0 6
+Attribs    15 13 13 14 12 10 13
+Saves      0 0 0 0 0 0
+Defenses   parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       1396
+Keywords   scared looking halfelf male wizard apprentice flying Ryonime~
+Short      &Pa wizard's apprentice&W~
+Long       &PA scared looking halfelf male is here, flying about frantically.&W
+~
+Desc       A scared looking male half-elf with long brown hair is here, flying
+about the Astral Sea with a frantic look on his face. His dusty grey
+robes have been torn in many spots showing a sign of struggle.
+~
+Lore       You see the apprentice running from a group of individuals trying
+to get him. They corner him in an alleyway and begin to approach
+him slowly. The apprentice quickly pulls out a piece of parchment
+and recites it....
+~
+Race       half-elf~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea running~
+Affected   detect_invis flying fireshield~
+Stats1     600 20 3 -140 14 0 0 0 0 0
+Stats2     2 10 10
+Stats3     1 1 4
+Stats4     2 0 1 0 0 0 6
+Attribs    10 18 13 18 10 14 10
+Saves      0 0 0 0 0 0
+Speaking   common~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   2~
+Comlist   c 'beautiful distraction'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   c 'mind fog'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpasound &RYou hear screaming from nearby...&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   20~
+Comlist   mpoload 1310 1
+mpecho &WSomething sparkly falls from the apprentice's pocket as he dies.&W
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1397
+Keywords   marilith six armed snake woman~
+Short      &Ra marilith&W~
+Long       &RA six-armed snake woman is here, moving silently through the Astral Plane.&W
+~
+Desc       This woman has the lower half of a large snake and six menancing
+arms that bear swords. Her green hair flows wildly in the psychic
+winds of the Astral Plane. Her almond shaped eyes glow an unearthly
+red as she moves about the plane, looking for prey.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea running~
+Affected   sneak hide truesight~
+Stats1     -1000 1 19 -180 13 0 0 0 0 0
+Stats2     18 10 90
+Stats3     2 8 4
+Stats4     3 7 5 0 0 0 6
+Attribs    18 18 16 20 20 20 13
+Saves      0 0 0 0 0 0
+Resist     fire cold nonmagic~
+Immune     poison~
+Defenses   parry~
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1309 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1398
+Keywords   Cambion fiend winged demon woman~
+Short      &ra cambion&w~
+Long       &rA winged demonic looking woman is here, scouring the Astral Plane.&W
+~
+Desc       A demonic looking woman is here, with leathery bat-like wings that
+stretch out several feet when flying. She is dressed in dark armor
+and fangs jut out from her lips.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea~
+Affected   infrared flying~
+Stats1     -900 1 8 -203 15 0 0 0 0 0
+Stats2     11 8 33
+Stats3     1 6 4
+Stats4     2 7 2 0 0 0 6
+Attribs    18 14 12 18 16 16 13
+Saves      0 0 0 0 0 0
+Speaking   common~
+Resist     fire cold poison~
+Immune     sleep charm~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   mpechoat $n &RA cambion holds out her palm and hits you with a ray of fire!&W
+mpdamage $n 3 6
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1307 1
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   45~
+Comlist   if number($n) == 1396
+emote screeches angrily as the apprentice appears in her line of sight!
+k $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       1399
+Keywords   night hag sinister fey demon~
+Short      &za night &phag&W~
+Long       &zA sinister looking creature is here, dressed in flowing robes.&W
+~
+Desc       This creature, known as a Night Hag, is a fallen fey creature who
+was banished from the Fey plane for its evil nature. Her skin is
+a deep purple color that looks velvety and soft. Her face is bestial
+and there are curled horns coming from both sides of her head. Long
+fleshing shredding claws extend from her fingertips. She wears long
+deep red robes that are adorned with a belt made from skulls and
+various bones melded together by magic.
+~
+Race       monster~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive~
+Affected   detect_invis detect_hidden infrared flying~
+Stats1     -500 1 8 -170 15 0 0 0 0 0
+Stats2     15 8 45
+Stats3     2 8 4
+Stats4     3 0 1 0 0 0 6
+Attribs    18 16 14 15 16 16 13
+Saves      0 0 0 0 0 0
+Speaking   common~
+Resist     fire cold nonmagic magic~
+Immune     charm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   15~
+Comlist   c 'magic missile' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   1~
+Comlist   c 'waves of exhaustion'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   mpoload 1308 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     1300
+Keywords wizard grand fountain water ~
+Type     fountain~
+Short    &Ca grand fountain&W~
+Long     &CA grand fountain of a wizard is here, water dribbling from his hands.&W~
+Flags    glow magic~
+Values   1000 1000 6 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1301
+Keywords astral carrot plant fluttery leaves purple twisted~
+Type     herb~
+Short    &pan astral carrot&W~
+Long     &pA purple colored twisted looking plant is growing here.~
+Flags    magic~
+WFlags   take hold~
+Values   10 1 11 1 0 0
+Values2  0 0
+Stats    0 10 20 40 1 0 0
+#EXDESC
+ExDescKey    plant~
+ExDesc       &pThis plant is growing half in the ground with long fluttery
+looking leaves growing above ground. The main part of the plant
+appears to be a deep purple shade and is twisted in shape.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate plant~
+Comlist   if nature($n) >= 18
+mea $n You faintly recognize this plant as the herb, "Astral Carrot,"
+mea $n which is falsely named as it is not a carrot. It shares a
+mea $n shape similar to a carrot and is known to bestow those that
+mea $n use it the vision to see hidden things.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  get_prog~
+Arglist   100~
+Comlist   mpechoat $n &pThe strange vegetable wraps around your hand gently.&W
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1302
+Keywords bench iron ivy wrapped partially~
+Type     furniture~
+Short    &gan ivy wrapped iron bench&W~
+Long     &gAn iron bench is here, partially wrapped in ivy vines.&W~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1303
+Keywords tea cup purple glass~
+Type     drinkcon~
+Short    &pa beautiful purple class tea cup&W~
+Long     &pA beautiful tea cup made of purple glass is here.&W~
+WFlags   take hold~
+Values   2 2 2 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1304
+Keywords floating silver tray serving~
+Type     container~
+Short    &wa floating silver serving tray&W~
+Long     &wA silver tray is here, floating around the parlor.&W~
+Values   15 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1305
+Keywords finger sandwich ham~
+Type     food~
+Short    &Oa ham finger sandwich&W~
+Long     &OA petite looking sandwich has been left here.&W~
+WFlags   take onehand~
+Values   2 10 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1306
+Keywords table chairs dining magic oak growing~
+Type     container~
+Short    &Oa magical oak dining table&W~
+Long     &OA large oak table and chairs is here, magically growing to accommodate everyone.&W~
+Flags    magic~
+Values   1000 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1307
+Keywords hand cambion bloody~
+Type     trash~
+Short    &Ra severed cambion hand&W~
+Long     &RA severed hand lies here, its skin a deep reddish color.&W~
+Flags    evil~
+WFlags   take hold~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1308
+Keywords night hag horn~
+Type     trash~
+Short    &za night hag's &phorn&W~
+Long     &zThe horn of some creature has been left here.&W~
+Flags    evil magic~
+WFlags   take hold~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1309
+Keywords marilith flesh~
+Type     trash~
+Short    &Rmarilith flesh&W~
+Long     &RA piece of flesh has been dropped here.&W~
+Flags    evil~
+WFlags   take hold~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1310
+Keywords eyes charming glasses amethyst lens gold framed~
+Type     wand~
+Short    &Ygold framed glasses with &pam&Peth&pys&Pt len&ps&W~
+Long     &YA pair of gold framed glasses with purple lens lie here.&W~
+Flags    magic~
+WFlags   take face onehand~
+Values   35 3 3 -1 0 0
+Values2  0 2
+Stats    1 5000 500 0 500 0 0
+Spells   'charm person'
+#EXDESC
+ExDescKey    gold glasses amethyst lens~
+ExDesc       These glasses have been made out of solid gold into thin frames.
+The lens are a very thing amethyst, which gives a purple color
+to everything seen through them. The craftsmanship is perfection.&W
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1311
+Keywords destroyed bookcase oak~
+Type     container~
+Short    &Oa destroyed oak bookcase&W~
+Long     &OA massive oak bookcase is here, tipped over and severely burnt.&W~
+Values   100 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1312
+Keywords burnt tome book leather bound~
+Type     scroll~
+Short    &ra burnt leather book&W~
+Long     &rA burnt leather book lies here.&W~
+Flags    magic~
+WFlags   take~
+Values   20 -1 -1 -1 0 0
+Values2  0 0
+Stats    1 500 50 1 50 0 0
+Spells   'NONE' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    burnt leather book~
+ExDesc       This book has been almost completely destroyed save for page that
+details a spell. There are many sigils and one depicts a sword.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1313
+Keywords destroyed looking book burnt~
+Type     trash~
+Short    &ra destroyed book&W~
+Long     &rA book lies here, burnt and part of it destroyed by something.&W~
+WFlags   take~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    destroyed book~
+ExDesc       &OMany of the pages of this book are too destroyed to read, but one
+page outlines the upcoming attempt at mixing two powerful potions
+together to test their limits...&W
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1314
+Keywords delicious sirloin steak~
+Type     food~
+Short    &Oa delicious sirloin steak&W~
+Long     &OA delicious sirloin steak has been left here.&W~
+WFlags   take hold~
+Values   8 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1315
+Keywords bowl salad vegetable~
+Type     food~
+Short    &ga bowl of salad~
+Long     &gA bowl of salad has been left here.&W~
+WFlags   take hold~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1316
+Keywords bowl cheese soup~
+Type     trash~
+Short    &Ya bowl of cheese soup&W~
+Long     &YA bowl of cheese soup has been left here.&W~
+WFlags   take hold~
+Values   2 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1317
+Keywords plum tart powdered sugar~
+Type     food~
+Short    &pa plum tart dusted with &Wpowdered sugar&W~
+Long     &pA plum tart dusted with powdered sugar has been left here.&W~
+WFlags   take hold~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1318
+Keywords white cake piece~
+Type     food~
+Short    &Wa piece of white cake&W~
+Long     &WA piece of white cake has been left here.&W~
+WFlags   take hold~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1319
+Keywords buttery croissant pastry~
+Type     food~
+Short    &Ya buttery croissant&W~
+Long     &YA buttery croissant has been left here.&W~
+WFlags   take hold~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1320
+Keywords wine dark purple~
+Type     drinkcon~
+Short    &pa glass of dark purple wine&W~
+Long     &pA glass of dark purple wine has been left here.&W~
+WFlags   take hold~
+Values   3 3 2 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1321
+Keywords cherry tart small~
+Type     food~
+Short    &ra small cherry tart&W~
+Long     &rA small cherry tart has been left here.&W~
+WFlags   take hold~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1322
+Keywords clock grand ~
+Type     furniture~
+Short    &Ya grand clock&W~
+Long     &YA grand clock is here, carved out of the finest wood.&W~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#EXDESC
+ExDescKey    grand clock~
+ExDesc       This clock has been carved out of beautiful wood in a traditional
+long rectangle style. A crystal pendulum swings back and forth
+depicting the passage of time. However, when one looks at the clock's
+face, you notice that it is moving at a peculiar speed than normal.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &YThe clock chimes suddenly.&W
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1323
+Keywords floating stage great bard effects~
+Type     furniture~
+Short    &Oa floating stage&W~
+Long     &OA floating stage is here, suspended by powerful magic.&W~
+Flags    magic~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    stage plaque~
+ExDesc       You read the following on the plaque:
+To those gifted with the ability to act, sing, and dance.. The
+power of your imagination in combination with your words
+will bring this stage alive for your audience. You only
+need to command it with words...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1324
+Keywords sheet music waltz~
+Type     trash~
+Short    &wsheet music of a waltz&w~
+Long     &wSome sheet music has been left here, scattered on the ground.&W~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1325
+Keywords sheet music jig~
+Type     trash~
+Short    &wsheet music of a jig&W~
+Long     &wScattered papers have been left here, drawn with musical symbols.&W~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1326
+Keywords piece wood burnt small~
+Type     tinder~
+Short    &Oa small piece of &rburnt &Owood&W~
+Long     &rA small piece of burnt wood lies here.&W~
+Lore   You see a distinguished looking wizard mixing two potions into one
+large glass. There is a blinding flash as the new potion begins
+to draw everything inside it including the wizard and mansion
+itself.
+~
+WFlags   take hold~
+Values   1 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1327
+Keywords soot small pile~
+Type     scraps~
+Short    &zsome soot&w~
+Long     &zA small pile of soot is here.&W~
+Lore   &zYou see a wizard enter a circle and cast a spell. As he begins
+to disappear, he looks at you with worry in his eyes...&W
+~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1328
+Keywords silver collar bell~
+Type     trash~
+Short    &wa silver collar with a little bell&W~
+Long     &WA silver collar with a little bell has been left here.&W~
+WFlags   take neck~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1329
+Keywords githyanki greatsword silver~
+Type     weapon~
+Short    &ra githyanki &wsilver greatsword&W~
+Long     &rA silver greatsword has been left here.&W~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   10 2 6 1 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1330
+Keywords githyanki greatsword~
+Type     weapon~
+Short    &ra githyanki greatsword~
+Long     &rA greatsword lies here, abandoned by someone.&W~
+Flags    versatile~
+WFlags   take onehand twohand~
+Values   10 2 6 1 0 0
+Values2  0 2
+Stats    1 2 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     1332
+Keywords silver pool light~
+Type     treasure~
+Short    &wa gl&Wowin&wg poo&Wl of s&wilve&Wry lig&wht~
+Long     &wA gl&Wowin&wg poo&Wl of s&wilve&Wry lig&wht is he&Wre, s&wwirlin&Wg err&wati&Wcall&wy.~
+Flags    glow hum magic~
+Values   0 0 0 0 0 0
+Values2  0 0
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    glowing pool silvery light~
+ExDesc       This pool from afar glows in a myriad of rainbow colors. As you
+approach, it turns a bright silver in color and swirls wildly.
+If you are brave enough, perhaps you could enter it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     1399
+Keywords silver cord magical astral psychic rbmlaos~
+Type     treasure~
+Short    &wa s&Wilve&wr c&Wor&wd&W~
+Long     &wA silver cord is here, glowing brightly as it hovers.&W~
+Flags    glow hum~
+WFlags   take neck~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    0 0 0 0 0 0 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n &wYou feel a grounding force stabilize your body magically.&W
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#ROOM
+Vnum     1300
+Name     &POn A Large Chunk of Rock&W~
+Sector   city~
+Flags    nosummon noastral~
+Desc     &pLanding upon the rock you see a large mansion has been transported
+here from somewhere else. The entire grounds of the mansion have
+been transfered including a garden. The entire mansion and grounds
+are protected by a shimmering magical field that is only seen
+at certain angles. A warmth can be felt emanating from the field,
+showing that the original temperature was transferred along with
+the mansion.
+~
+#EXIT
+Direction north~
+ToRoom    1301
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1395
+Flags     nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if wearingvnum($n) = 1399
+mea $n &pYou feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears&W
+mea $n &PYou feel your essence being dragged from below
+mea $n &pSuddenly you are falling downward into oblivion!
+Mpscatter $n 1001 1039
+mpat $n mea $n &gYou awaken somewhere completely different..&W
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1301
+Name     Before a Magnificent Mansion~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The mansion before you is massive and of an outdated style. Several
+turrets jut from the mansion, lit with floating balls of light. 
+The mansion is made of stone and resembles a tiny version of a
+castle. The doors of the mansion are huge and designed to look
+like the scales of a dragon. To the east is a cobbled path towards
+a medium sized garden.
+~
+#EXIT
+Direction north~
+ToRoom    1312
+Flags     isdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1302
+#ENDEXIT
+
+Reset D 0 1301 0 0
+#ENDROOM
+
+#ROOM
+Vnum     1302
+Name     A Garden Path~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This garden path is made from cobbled stone and weaves alongside
+the mansion. All of the windows of the mansion are arched and look
+well maintained. Small birds fly about the path, in various colors
+of bright blue and purple.
+~
+#EXIT
+Direction east~
+ToRoom    1303
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1301
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1303
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can
+see a large fountain and benches. Large trees dot the garden, giving
+shade to those walking around. Various herbs, flowers, fruits,
+and vegetables. The colors of the garden are oddly colored for
+some reason.
+~
+#EXIT
+Direction north~
+ToRoom    1304
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1311
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1310
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1302
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1304
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can
+see a large fountain and benches. Large trees dot the garden, giving
+shade to those walking around. Various herbs, flowers, fruits,
+and vegetables. The colors of the garden are oddly colored for
+some reason. The path rounds here and heads to the east.
+~
+#EXIT
+Direction east~
+ToRoom    1305
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1303
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1305
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can
+see a large fountain and benches. Large trees dot the garden, giving
+shade to those walking around. Various herbs, flowers, fruits,
+and vegetables. The colors of the garden are oddly colored for
+some reason. The path continues to the east and west. To the south
+is the center of the garden.
+~
+#EXIT
+Direction east~
+ToRoom    1306
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1311
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1304
+#ENDEXIT
+
+Reset M 0 1314 4 1305
+#ENDROOM
+
+#ROOM
+Vnum     1306
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Stats    0 0 0 0 15 0
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can
+see a large fountain and benches. Large trees dot the garden, giving
+shade to those walking around. A large patch of oddly colored carrots
+is here, warped by the magic surrounding the mansion and the astral sea.
+The path rounds here to the south and continues back west.
+~
+Perdesc  &pYou notice the carrots below seem to reach out to anything that
+moves nearby.
+~
+#EXIT
+Direction south~
+ToRoom    1307
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1305
+#ENDEXIT
+
+Reset M 0 1314 4 1306
+Reset O 0 1301 3 1306
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   mpechoat $n &PYou notice something strange sprout from the ground...&W
+mpoload 1301 1
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1307
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can see
+a large fountain and benches. Large trees dot the garden, giving shade
+to those walking around. The garden path moves to the north and south
+while a path moves to the west leads to the fountain center.
+~
+#EXIT
+Direction north~
+ToRoom    1306
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1308
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1311
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1308
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Stats    0 0 0 0 20 0
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can see
+a large fountain and benches. A patch of large willow trees is here,
+moving softly in the breeze. The garden path moves to the north and
+the west here.
+~
+Perdesc  &OYou notice a strange patch of dirt nearby.&W
+~
+#EXIT
+Direction north~
+ToRoom    1307
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1309
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1319
+Flags     isdoor closed nopassdoor hidden nomob~
+#ENDEXIT
+
+Reset D 0 1308 5 1
+#ENDROOM
+
+#ROOM
+Vnum     1309
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Stats    0 0 0 0 15 0
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can
+see a large fountain and benches. Large trees dot the garden, giving
+shade to those walking around. A large patch of oddly colored carrots
+is here, warped by the magic surrounding the mansion and the astral sea.
+The path continues to the east and west while to the north is the
+large fountain at the center of the garden.
+~
+Perdesc  &pYou notice the carrots below seem to reach out to anything that
+moves nearby.
+~
+#EXIT
+Direction north~
+ToRoom    1311
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1308
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1310
+#ENDEXIT
+
+Reset M 0 1301 1 1309
+  Reset G 0 1301 1
+Reset M 0 1314 4 1309
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   mpechoat $n &PYou notice something strange sprout from the ground...&W
+mpoload 1301 1
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1310
+Name     A Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This garden is square shaped with a path that runs along the perimeter
+and then many paths leading to the center. At the center you can see
+a large fountain and benches. A beautiful patch of exotic flowers
+grow in this area. Some of the urns filled with flowers float about
+adding an interesting element to the garden. The path moves to the 
+east and the north from here.
+~
+#EXIT
+Direction north~
+ToRoom    1303
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1309
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1311
+Name     Center of a Magnificent Garden~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The center of the garden is a large open space where the grass
+has been trimmed short and neat. Floating urns of flowers move
+about allowing people in the center to smell different types.
+At the center of the garden is a large fountain of a wizard
+dribbling water from his palms. Every so often the water shoots
+up before returning to dribbling. 
+~
+#EXIT
+Direction north~
+ToRoom    1305
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1307
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1309
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1303
+#ENDEXIT
+
+Reset M 0 1314 4 1311
+Reset O 0 1300 1 1311
+Reset O 0 1302 1 1311
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho &CThe water from the fountain sprays directly up for a moment.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1312
+Name     A Grand Foyer~
+Sector   indoors~
+Flags    nomob safe nosummon noastral~
+Desc     This is the grand foyer of the mansion, used to receive guests as
+they enter from outside. The foyer has been decorared with beautiful
+pieces of art, suits of armor, and a floating chandelier of various
+crystals. A large rug on the floor depicts various forms of magic,
+with an emphasis on evocation. To the north of here is a large
+hallway that runs along the first floor of the mansion.
+~
+#EXIT
+Direction north~
+ToRoom    1313
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1301
+Flags     isdoor nomob~
+#ENDEXIT
+
+Reset M 0 1300 1 1312
+Reset D 0 1312 2 0
+#ENDROOM
+
+#ROOM
+Vnum     1313
+Name     A Grand Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The grand hallway of the first floor begins here after leaving
+the foyer. The walls of the hallway are painted a deep emerald
+green and display various relics from travels, paintings, and
+mounted statues. A large mirror is on the eastern wall, 
+surrounded by many floating candles. To the west is the parlor
+of the mansion, used to receive guests.
+~
+#EXIT
+Direction north~
+ToRoom    1314
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1312
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1329
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1302 4 1313
+#ENDROOM
+
+#ROOM
+Vnum     1314
+Name     A Grand Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     Several paintings line the hallway here depicting landscapes or
+portraits of people. One portrait is particularly huge depicting
+a wizard in flowing robes. His face is stern, but his eyes look
+friendly. He holds two potions in his hands, both of which look
+very volatile.
+~
+#EXIT
+Direction north~
+ToRoom    1315
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1313
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1330
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1315
+Name     End of a Grand Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The grand hallway ends here at the base of a massive marble staircase
+leading to the second floor. To the east is a large dining room and
+to the west is an impressive library. A stained glass window is
+installed at the wall along the stairs, depicting a large emerald
+dragon flying through the clouds.
+~
+#EXIT
+Direction east~
+ToRoom    1326
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1314
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1325
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1316
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1316
+Name     The Second Floor Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     As you enter the second floor there is a stillness in the air. Almost
+as if the second floor has not been occupied in a long time. There
+are several doors on each side of the hallway, leading to additional
+rooms. There is a long running rug starting at the base of the stairs
+and leading all the way to the stairs at the end of the other end
+of the hallway.
+~
+#EXIT
+Direction east~
+ToRoom    1317
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1315
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1317
+Name     The Second Floor Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This hallway is noticeably smaller than the main hallway on the first
+floor. There is a door to the south is decorated with a mythical
+dragon in mid flight. Floating candles align the walls of the hallway
+and wait to be lit at night. A beautiful rug runs along the hallway
+from the start and all the way to the stairs at the end.
+~
+#EXIT
+Direction east~
+ToRoom    1318
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1338
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1316
+#ENDEXIT
+
+Reset D 0 1317 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1318
+Name     The Second Floor Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The hallway moves both east and west, culminating in stairs at the
+far end of the hallway. There are two doors to the north and south
+of here, leading to two other bedrooms. Each door is decorated
+with a dragon in mid flight and embellished with gold.
+~
+#EXIT
+Direction north~
+ToRoom    1339
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1320
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1342
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1317
+#ENDEXIT
+
+Reset M 0 1316 2 1318
+  Reset E 0 1328 1 3
+Reset M 0 1302 4 1318
+Reset D 0 1318 0 1
+Reset D 0 1318 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1319
+Name     An Underground Tunnel~
+Sector   indoors~
+Flags    safe solitary nosummon noastral~
+Desc     This tunnel was created by a mole or some creature prior to the
+mansion being located in the astral sea. Over time the tunnels have
+gotten larger and larger from frequent traveling under the garden.
+The earth seems to have been patched lightly to the east of here.
+~
+#EXIT
+Direction east~
+ToRoom    1399
+Flags     isdoor closed secret nopassdoor hidden nomob~
+#ENDEXIT
+
+Reset D 0 1319 1 1
+#ENDROOM
+
+#ROOM
+Vnum     1320
+Name     The Second Floor Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This hallway is smaller than the first floor hallway, but has been
+decorated with various tapestries. The tapestries here depict
+various battles of some war that occurred long ago. On the floor
+is a long running rug that starts at the beginning of the hallway
+and runs to the stairs at the end.
+~
+#EXIT
+Direction north~
+ToRoom    1340
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1321
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1341
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1318
+#ENDEXIT
+
+Reset D 0 1320 0 1
+Reset D 0 1320 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1321
+Name     The Second Floor Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The second floor hallway is smaller than the first floor, but is
+heavily decorated with paintings and tapestries. Here on the walls
+are paintings of various landscapes from frozen tundras to wind
+swept fields. Several floating candles line the walls, ready to shed
+light when it becomes night.
+~
+#EXIT
+Direction north~
+ToRoom    1344
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1322
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1343
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1320
+#ENDEXIT
+
+Reset M 0 1302 4 1321
+Reset D 0 1321 0 1
+Reset D 0 1321 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1322
+Name     End of the Second Floor Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The hallway of the second floor ends here at the base of some stairs
+heading to the smaller third floor. You notice scorch marks on the
+wood of the stairs and around the walls that connect. Some explosion
+erupted from above and reached only this portion of the second floor.
+~
+#EXIT
+Direction west~
+ToRoom    1321
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1323
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1316 2 1322
+  Reset E 0 1328 1 3
+#ENDROOM
+
+#ROOM
+Vnum     1323
+Name     A Small Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This is the third floor of the mansion and has been dedicated to
+the study of magic. This is evident by what's left of the artwork,
+tools, and furniture up here. A powerful explosion has rocked this
+entire floor. Many of the paintings up here have been torched and
+statues have exploded. Pages from books lay everywhere, far from
+their original bindings. A small staircase leads up to the top
+of a turret. There are three rooms off of here with their
+original doors blasted clear off their hinges.
+~
+#EXIT
+Direction north~
+ToRoom    1333
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1334
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1324
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1322
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1335
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) < 40
+mea $n &PA powerful force pushes you down the stairs suddenly!
+mpforce $n d
+else
+mea $n &PYou feel a powerful buzz of energy move about the hallway...&W
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1324
+Name     A Destroyed Observatory~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This area was once used for scrying and observing the stars. Unfortunately
+all of the windows and scrying tools were destroyed in a large blast.
+A small altar to Crisma, the goddess of magic, is barely recognizable
+save her symbol on the stone. Whatever the explosion was, it occurred
+somewhere near this observatory and radiated all over.
+~
+#EXIT
+Direction down~
+ToRoom    1323
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if level($n) > 40
+mpecho &CSuddenly the image of an authoritative looking wizard appears!&W
+mpmload 1305 1
+mpforce image sayto $n Greetings! I am Mordekainen, Archmage of the realms.
+mpforce image sayto $n What you see is a programmed illusion set to appear
+mpforce image sayto $n when someone of great talent should find my poor
+mpforce image sayto $n home. I was experimenting with teleportation potions
+mpforce image sayto $n when I accidently transported my home to this plane.
+mpforce image sayto $n I wove a powerful abjuration upon my servants and 
+mpforce image sayto $n this mansion. Until I can get us back home, I wanted
+mpforce image sayto $n to ensure they would get back alive. Please be
+mpforce image sayto $n kind to them for time does not advance for them.
+mpforce image sigh
+mpforce image sayto $n Now, only I can lift this spell. If it
+mpforce image sayto $n has been a lot of time between then and now
+mpforce image sayto $n I ask you to come find me. The current year
+mpforce image sayto $n is 327. I have decided to go out and
+mpforce image sayto $n enter this plane to seek help. Please use
+mpforce image sayto $n this house during your search. Please. Find me.
+mppurge image
+mpecho &CThe image of the wizard disappears suddenly...&W
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1325
+Name     A Large Library~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This library is home to various books on folklore, history, and
+monsters. The library has several floors and can be reached through
+floating ladders that glide about the library. A large tapestry
+depicting a map of the lands is the southern wall, which looks
+completely outdated. Soft looking leather chairs can be found all
+over the library, waiting for people to sit and read.
+~
+#EXIT
+Direction east~
+ToRoom    1315
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1326
+Name     A Massive Dining Room~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This immaculate dining room seems to grow and adapt to the amount
+of people that are inside. The walls have been painted a beautiful
+shade of blue that gets darker towards the ceiling. Every so often
+you can see a star twinkle above or a shooting star fly by. A
+floating chandelier consisting of dancing lights is above the
+table. The table also seems to grow and adjust with the amount
+of people that come in the dining room as well.
+~
+#EXIT
+Direction south~
+ToRoom    1327
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1315
+#ENDEXIT
+
+Reset O 0 1306 1 1326
+  Reset P 0 1315 23 1306
+  Reset P 0 1316 23 1306
+  Reset P 0 1317 23 1306
+  Reset P 0 1318 23 1306
+  Reset P 0 1319 22 1306
+  Reset P 0 1320 23 1306
+  Reset P 0 1314 22 1306
+  Reset P 0 1319 1 1306
+#MUDPROG
+Progtype  leave_prog~
+Arglist   100~
+Comlist   mpat 1326 mpecho &OThe table shortens and a chair disappears suddenly.&W
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mea $n &OThe table lengthens and a chair appears as you enter.&W
+mea $n &YFresh food magically appears near the new spot at the table.&W
+mpquiet
+mpoload 1314 1
+mpoload 1315 1
+mpoload 1316 1
+mpoload 1317 1
+mpoload 1318 1
+mpoload 1319 1
+mpoload 1320 1
+mpquiet
+get all
+put steak table
+put salad table
+put cheese table
+put plum table
+put cake table
+put pastry table
+put wine table
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1327
+Name     A Magnificent Kitchen~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The kitchen is large and full of many separate islands used for the
+preparation of different types of food. Pans and pots float over
+controlled flames that work through magic. Spice cabinets and
+food storage are located along the walls. Everything is neatly
+labeled and ready for use by the chefs.
+~
+#EXIT
+Direction north~
+ToRoom    1326
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1328
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset M 0 1304 1 1327
+Reset D 0 1327 5 1
+#ENDROOM
+
+#ROOM
+Vnum     1328
+Name     A Magnificent Cellar~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This cellar has been kept dry and very tidy. Shelves of various
+vegetables and roots are displayed in jars or simply on the
+shelves. The cellar is devoid of dirt and cobwebs thanks to a
+magical broom that moves about, cleaning. Small glowing orbs of
+light keep the cellar light when people come down here.&W
+~
+#EXIT
+Direction east~
+ToRoom    1336
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1327
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset M 0 1312 4 1328
+Reset M 0 1312 4 1328
+Reset M 0 1312 4 1328
+Reset D 0 1328 4 1
+#ENDROOM
+
+#ROOM
+Vnum     1329
+Name     A Magnificent Parlor~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This parlor has been decorated to give a warm, inviting atmosphere.
+Chairs made of soft leather have pillows of real fur waiting to
+be rested on. Several bookcases line the walls depicting books
+and other objects of interest. A large tapestry of the gods can
+be seen on the north wall.
+~
+#EXIT
+Direction east~
+ToRoom    1313
+#ENDEXIT
+
+Reset M 0 1303 1 1329
+Reset O 0 1304 1 1329
+  Reset P 0 1321 5 1304
+Reset O 0 1322 1 1329
+#ENDROOM
+
+#ROOM
+Vnum     1330
+Name     A Grand Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This hallway is smaller than the main one and is move heavily
+decorated with paintings of people. Many of the paintings display
+possible royalty, family, or friends. Most of the names on the metal
+plates of the frames have disappeared over time. As you walk, you
+feel their eyes on you.
+~
+#EXIT
+Direction east~
+ToRoom    1314
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1331
+#ENDEXIT
+
+Reset M 0 1302 4 1330
+#ENDROOM
+
+#ROOM
+Vnum     1331
+Name     A Grand Hallway~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The smaller hallway ends here with two doors to the north and south.
+The doors are massive and each is decorated with various scenes
+based on seasons. The door to the north is a fall and winter scene
+of people hunting, ice skating, and walking through a forest. The
+door to the south depicts spring and summer. The scenes involve
+people swimming in a lake, campfires, and the first signs of
+spring.
+~
+#EXIT
+Direction north~
+ToRoom    1332
+Flags     isdoor nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1330
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1337
+Flags     isdoor nomob~
+#ENDEXIT
+
+Reset D 0 1331 0 0
+Reset D 0 1331 2 0
+#ENDROOM
+
+#ROOM
+Vnum     1332
+Name     An Exquisite Ballroom~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This large ballroom is like most of the rooms in the mansion as it
+grows in size to accommodate everyone who enters. The ceilings are
+incredibly high and are painted to depict angels in flight. The walls
+have been painted to show the gods in various forms interacting with
+the mortal realm. The floors are a polished mahogany and have a soft
+warm shine to them. Beautiful crystal chandeliers float above, waiting
+for a wonderful dance held at night.
+~
+#EXIT
+Direction south~
+ToRoom    1331
+Flags     isdoor nomob~
+#ENDEXIT
+
+Reset M 0 1313 1 1332
+Reset D 0 1332 2 0
+#ENDROOM
+
+#ROOM
+Vnum     1333
+Name     A Destroyed Wizard's Master Library~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This library looks like it was once home to many bookcases and books
+of magical knowledge. Now there is barely anything left from an
+apparent explosion nearby. Glass can be seen on the floor from
+potions exploding from what's left of a table. Only a few bookcases
+are left and they have been knocked over, spilling charred books.
+~
+#EXIT
+Direction east~
+ToRoom    1345
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1323
+#ENDEXIT
+
+Reset M 0 1315 1 1333
+Reset O 0 1311 1 1333
+  Reset P 0 1312 1 1311
+Reset O 0 1313 1 1333
+#ENDROOM
+
+#ROOM
+Vnum     1334
+Name     A Scorched Bedroom~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     All of the beautiful furniture and art this room once had has been
+reduced to ruin by an explosion nearby. Whatever hit this room
+instantly reduced anything not magical to ash. Magical items seem
+to have been stripped of their magic and then destroyed. Pieces
+of wands, crystals, and other magical tools can be found all over
+the room. 
+~
+#EXIT
+Direction north~
+ToRoom    1323
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     1335
+Name     &BA Destroyed Magic Circle&w~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     This location is a traditional wizard's circle where the casting of
+transportation and conjuration spells would be cast. Some symbols
+on the walls and floor help indicate the original use of this room.
+However, a massive explosion coming from somewhere nearby has destroyed
+much of the room. A circle drawn in soot seems to be the newest
+addition to this room since the explosion.
+~
+#EXIT
+Direction northwest~
+ToRoom    1323
+#ENDEXIT
+
+Reset O 0 1327 1 1335
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if arcana($n) >= 18
+mea $n &BMany of the sigils here are broken, which will make magical
+mea $n &Btravel across a great distance very difficult to achieve...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p enterpath~
+Comlist   If arcana($n) >= 20
+if class($n) == wizard
+if wearingvnum($n) == 3700
+mea $n &BYou manage to use your own arcane energies to stabilize
+Mea $n &Bthe energies of the circle here. Slowly a gateway appears
+Mea $n &Band draws you into it. When you open your eyes you are
+Mea $n &Bsomewhere new... 
+mer $n &B$n&B begins to chant while holding a stone. Slowly a magical
+Mer $n &Bgateway begins to form and &B$n&B enters it.
+Mpscatter $n 3700 3750
+mpat $n mer $n &B$n&B appears in a flash of light!&w
+else
+mea $n &BYou need to be holding the magestone first.
+endif
+else
+mea $n Nothing happens.
+Endif
+Else
+Mea $n &BYou fail to stabilize the destroyed magic circle.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1336
+Name     A Wine Cellar~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     Rows and rows of cabinets full of wine are here. They seem to fill
+when empty with fresh new bottles from somewhere. Various brands
+from around the lands can be found here from rare elven wines to
+those made in remote vineyards.
+~
+#EXIT
+Direction west~
+ToRoom    1328
+#ENDEXIT
+
+Reset M 0 1312 4 1336
+#ENDROOM
+
+#ROOM
+Vnum     1337
+Name     A Beautiful Theater~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Stats    0 0 0 0 14 0
+Desc     This theater has many rows of seats and more appear as people enter.
+A beautiful stage of rich wood floats at the front of the theater, and
+offers a wide array of props to be used for various productions. 
+The seats in the audience are a lovely purple velvet and look very
+comfortable to sit on. The walls of the theater seem reflective
+and appear like they could transform if desired. Long, well maintained
+red velvet curtains open and close when needed for performances.
+~
+Perdesc  &OYou notice a small metal plaque on the stage.
+~
+#EXIT
+Direction north~
+ToRoom    1331
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 0 1323 1 1337
+Reset D 0 1337 0 0
+#EXDESC
+ExDescKey    sign~
+ExDesc       &YDirections for the stage:&W
+&WThe stage will activate programmed illusions for those talented
+enough to summon its magic.
+ 
+&PStarters/Enders:&W Beginning, The End
+
+&RActors:&W Witch, Fairy Woman, Demonlord, Troll, Ogre, Merchant, Spider
+Princess, Unicorn, Ranger, Thief, Undead, Priest, Monster, Bard, Wizard,
+Hero, Maiden, Pirateship, Dragon, Druid, Lich, King, Queen, Jester,
+and Warrior.
+ 
+&GActions:&W Fight, Appears, Appear, Captures, Saves, Kills, Final Battle,
+Spells, Duel, Suddenly, Death, Dead, Happily Ever After, and Magical Sword.
+ 
+&BScenes:&W Bridge, Castle, Tower, Forest, Mountain, War, Cavern, Lake, and
+Long Road.
+ 
+&CWeather:&W Lightning, Thunder, Fog, Storm, Rainbow, Snowstorm, Rain,
+and Wildfire.
+ 
+To those that wield the magic of the stage, practice makes perfect
+and those with the quickest wit and gilded words will win over
+audiences here.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p wildfire~
+Comlist   if class($n) == bard
+mpecho &RA wil&rd fi&Yre &Oroars &ras i&Rt burns &Oac&Yros&Rs t&rhe &Rsta&Yge!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p rain~
+Comlist   if class($n) == bard
+mpecho &BA howling rain storm hammers the stage, drenching it...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p long road~
+Comlist   if class($n) == bard
+mpecho &OA long road rolls out from the beginning of the stage to the back.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p lake~
+Comlist   if class($n) == bard
+mpecho &CA glistening lake appears in the middle of the stage.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p cavern~
+Comlist   if class($n) == bard
+mpecho &zA large cavern envelopes the stage suddenly...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p warrior~
+Comlist   if class($n) == Bard
+mpecho &RA sword wielding warrior charges on the stage!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p jester~
+Comlist   if class($n) == Bard
+mpecho &PA goofy looking man cartwheels on the stage, laughing brightly.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p queen~
+Comlist   if class($n) == Bard
+mpecho &PA beautiful queen walks on to the stage, her gown glistening.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p king~
+Comlist   if class($n) == Bard
+mpecho &YA king walks on to the stage, dress in lavish clothing.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p dead~
+Comlist   if class($n) == Bard
+mpecho &rYou hear the death cry of someone as they fall down...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p Demonlord~
+Comlist   if class($n) == bard
+mpecho &RFlames erupt and out steps the cackling Demonlord!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p duel~
+Comlist   if class($n) == bard
+mpecho &WThe clang of metal smacking metals is heard as a sword fight begins!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p lich~
+Comlist   if class($n) == bard
+mpecho &zA wizard with a skull for a face floats on to the stage!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p spells~
+Comlist   if class($n) == bard
+mpecho &YDifferent types of spells from fireballs to bolts of lightning
+mpecho &Yexplode on the stage as a spell battle begins...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p druid~
+Comlist   if class($n) == bard
+mpecho &GA wise looking druid walks on to the stage covered in dirt.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if class($n) == bard
+mea $n &PYou feel drawn to the stage.. especially the sign towards the back...
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p storm~
+Comlist   if class($n) == bard
+mpecho &zA raging storm of rain, thunder, and lightning occurs above!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p war~
+Comlist   if class($n) == Bard
+mpecho &RA great battle occurs on the stage as warriors clash!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p dragon~
+Comlist   if class($n) == Bard
+mpecho &RA great dragon flies overhead, breathing flames upon the stage!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p pirateship~
+Comlist   if class($n) == bard
+mpecho &BA pirate ship sails along the walls, the pirates laughing loudly!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p fog~
+Comlist   if class($n) == bard
+mpecho &wA slow rolling fog begins to roll about the theater...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p mountain~
+Comlist   if class($n) == Bard
+mpecho &zA large mountain grows behind the stage, looking very treacherous.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p forest~
+Comlist   if class($n) == bard
+mpecho &gA forest sprouts from the stage, with birds flying above.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p maiden~
+Comlist   if class($n) == bard
+mpecho &PA beautiful maiden dances across the stage, looking for someone...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p hero~
+Comlist   if class($n) == bard
+mpecho &WA powerful looking hero rides onto the stage on a white horse...
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p snowstorm~
+Comlist   if class($n) == Bard
+mpecho &WA wild snow storm rages above as a frigid wind blows.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p tower~
+Comlist   if class($n) == bard
+mpecho &wA dark tower rises from the center of the stage...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p wizard~
+Comlist   if class($n) == Bard
+mpecho &PA wizard appears on the stage, robes flowing in the wind.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p bard~
+Comlist   if class($n) == bard
+mpecho &YA drunk bard stumbles onto the stage, telling off color jokes.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p thunder~
+Comlist   if class($n) == bard
+mpecho &OA loud thunderous boom erupts from the stage!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p lightning~
+Comlist   if class($n) == Bard
+mpecho &YThe stage is struck by an impressive bolt of lightning!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p monster~
+Comlist   if class($n) == Bard
+mpecho &zA dark shadowy monster emerges on stage and roars ferociously!&W
+else
+endif
+s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p priest~
+Comlist   if class($n) == Bard
+mpecho &CA priest in shining armor enters the stage, in deep prayer.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p rainbow~
+Comlist   if class($n) == Bard
+mpecho &RA glitterin&Yg rainbo&Gw so&Bars ove&Pr the st&page!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p beginning~
+Comlist   if class($n) == bard
+mpecho &RRed velvet curtains part to reveal the full stage...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p the end~
+Comlist   if class($n) == bard
+mpecho &RThe red velvet curtains slowly draw close across the stage...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p undead~
+Comlist   if class($n) == Bard
+mpecho &zAn army of undead slowly march across the stage...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p final battle~
+Comlist   if class($n) == bard
+mpecho &RMusic starts and grows to a climatic fury as the stage catches fire,
+mpecho &ra wild wind blows, and the sounds of an intense battle emanates
+mpecho &Rfrom the stage!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p thief~
+Comlist   if class($n) == Bard
+mpecho &zA sneaky figure creeps across the stage, trying to stay hidden.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ranger~
+Comlist   if class($n) == Bard
+mpecho &gA gruff looking male enters the stage, armed with a bow and arrow.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p unicorn~
+Comlist   if class($n) == Bard
+mpecho &WAn elegant unicorn prances onto the stage, mane flowing in a breeze.&W
+else
+endif
+s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p death~
+Comlist   if class($n) == Bard
+mpecho &rA blood curling scream is heard as someone dies horribly...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p kills~
+Comlist   if class($n) == Bard
+mpecho &rA blood curling scream is heard as someone dies horribly...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p princess~
+Comlist   if class($n) == bard
+mpecho &CAn elegant princess appears, calling out for someone to save her!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p castle~
+Comlist   if class($n) == Bard
+mpecho &wA massive castle appears at the back of the stage...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p bridge~
+Comlist   if class($n) == Bard
+mpecho &OA bridge appears, reaching over a murky river...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p spider~
+Comlist   if class($n) == bard
+mpecho &zA massive spider drops from the ceiling, ready to attack!!!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p saves~
+Comlist   if class($n) == bard
+mpecho &CThe princess squeals in delight at being saved!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p captures~
+Comlist   if class($n) == bard
+mpecho &CThe princess shrieks as she is carried off the stage!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p happily ever after~
+Comlist   if class($n) == Bard
+mpecho &RThe hero and the princess wed and the kingdom rejoices.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p merchant~
+Comlist   if class($n) == bard
+mpecho &YA brightly dressed merchant enters the stage with a cart.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p magical sword~
+Comlist   if class($n) == bard
+mpecho &CA light shines down on a silver blade of exquisite beauty.&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ogre~
+Comlist   if class($n) == bard
+mpecho &rA large ogre charges to the middle of the stage, swinging a club!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p troll~
+Comlist   if class($n) == bard
+mpecho &gA large, evil troll creeps on to the stage...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p fight~
+Comlist   if class($n) == bard
+mpecho &RThe sounds of battle can be heard coming from the stage!&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p fairy woman~
+Comlist   if class($n) == bard
+mpecho &PA beautiful fairy woman floats over the stage, giggling...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p witch~
+Comlist   if class($n) == bard
+mpecho &pA crone in dark purple robes slowly walks across the stage...&W
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p appear~
+Comlist   if class($n) == bard
+mpecho &WThere is a bright flash on the stage as something appears via magic!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p appears~
+Comlist   if class($n) == bard
+mpecho &WThere is a bright flash on the stage as something appears via magic!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p suddenly~
+Comlist   if class($n) == bard
+mpecho &zMusic begins to play, adding an element of suspense...&W
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1338
+Name     &RA Rai&Ynbo&Gw Be&Bdro&Po&pm&W~
+Sector   indoors~
+Flags    private safe nosummon noastral~
+Desc     &RThis bedroom is a wild collage of colors culminating into a rainbow
+&Ybedroom. Various crystals can be found throughout the room from the
+&Gchandelier above to crystals on a white dresser next to the bed.
+&BA queen size bed has all the frills and designs of another time. &PA
+&Pwindow to the south faces the garden path and is framed with 
+&pwhite velvet curtains embroidered with rainbows.&W
+~
+#EXIT
+Direction north~
+ToRoom    1317
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1302
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 1338 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1339
+Name     &pA Pu&Prp&wle &pBe&Pdr&wo&pom&W~
+Sector   indoors~
+Flags    private safe nosummon noastral~
+Desc     &pThis bedroom has been decorated in various colors of purple from dark
+plum to lightest lilac. The walls and ceiling have been decorated with
+lilac and ivy wallpaper. The queen sized bed has been decorated with
+the frills and designs of another time. A fireplace on the west wall
+has crystals placed inside for decoration. Dark plum velvet curtains
+have been draped around a window to the south, which faces the
+other side of the house.
+~
+#EXIT
+Direction north~
+ToRoom    1387
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1318
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1339 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1340
+Name     &GA Gre&ge&wn &WB&ge&Gdro&wo&Wm&W~
+Sector   indoors~
+Flags    private safe nosummon noastral~
+Desc     &gThis bedroom has been decorated in various colors of green from
+bright chartreuse to dark olive. Mint and sage striped velvet curtains
+have been drawn closed on a window on the north wall. A large queen
+size bed has all of the frills and desgins of another time. The wooden
+floors are polished and well maintained. A small fireplace on the 
+west wall has a beautiful golden screen placed in front, etched
+with a forest landscape.
+~
+#EXIT
+Direction north~
+ToRoom    1394
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1320
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1340 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1341
+Name     &RA Re&rd &wB&We&rdro&Ro&wm&W~
+Sector   indoors~
+Flags    private safe nosummon noastral~
+Desc     &RThis bedroom has been decorated in various colors of red from darkest
+ruby to a light soft red. Tapestries of dragons and fire elementals
+line the walls of this lavish bedroom. The queen sized bed has all
+the frills and designs of another time. The fireplace on the west
+wall has been made from stones of volcanoes and polished to have
+a beautiful luster.
+~
+#EXIT
+Direction north~
+ToRoom    1320
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1311
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 1341 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1342
+Name     &YA Ye&Wll&Yow Be&Wdro&Yo&Wm&W~
+Sector   indoors~
+Flags    private safe nosummon noastral~
+Desc     south window facing start of the garden
+&YThis bedroom has been decorated in various colors of yellow from
+lightest butter yellow to dark harvest yellow. Old gold colored
+velvet curtains have been draped around the window to the south
+that faces the garden. A large queen size bed has all the frills and
+designs of another time. Small yellow canary statues have been
+hung from the ceiling on thin golden threads.
+~
+#EXIT
+Direction north~
+ToRoom    1318
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1303
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset D 0 1342 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1343
+Name     &PA P&Wi&wn&Pk Be&Wd&wro&Po&Wm&W~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     &PThis room has been decorated from ceiling to floor in soft to
+shocking shades of pink. Pink velvet curtains have been draped around
+a window on the south wall. A large queen sized bed has all of
+the style and thrills of a time long ago. A subtheme of dancing
+unicorns can be seen in statues on a large white dresser, pillow
+embroideries, and a rug before a fireplace on the west wall.
+~
+#EXIT
+Direction north~
+ToRoom    1321
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1307
+Flags     hidden window can_look~
+#ENDEXIT
+
+Reset O 0 5222 1 1343
+Reset D 0 1343 0 1
+#ENDROOM
+
+#ROOM
+Vnum     1344
+Name     &wA T&Yan &OBe&Ydro&wom~
+Sector   indoors~
+Flags    private safe nosummon noastral~
+Desc     &OThis bedroom has been decorated in various colors of beige, tan,
+and brown. Cream colored velvet curtains frame the window located
+on the north wall. A large queen sized bed has all of the frills and
+designs of another time. The wooden floors are polished and well
+maintained. A small fireplace can be located on the west wall with
+a large bearskin rug before it.
+~
+#EXIT
+Direction north~
+ToRoom    1393
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1321
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 1344 2 1
+#ENDROOM
+
+#ROOM
+Vnum     1345
+Name     A Destroyed Study~
+Sector   indoors~
+Flags    safe nosummon noastral~
+Desc     The entire eastern wall has been blown out by the force of some
+explosion. There is barely anything left from whatever caused the
+devastation besides pieces of broken wood and brick. You can see
+the astral sea towards the east from here. It is evident that the
+source of the blast may have happened here.
+~
+#EXIT
+Direction east~
+ToRoom    1392
+Flags     hidden window can_look~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1333
+#ENDEXIT
+
+Reset O 0 1326 1 1345
+#ENDROOM
+
+#ROOM
+Vnum     1346
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1353
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1347
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1392
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1352
+#ENDEXIT
+
+Reset M 0 1311 3 1346
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1347
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. You can see a large piece
+of rock in the far distance, looking like it's own planet.
+~
+#EXIT
+Direction north~
+ToRoom    1346
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1352
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1348
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1353
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1351
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1348
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1347
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1351
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1349
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1370
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1397
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1352
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1350
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1349
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. The seems to be a lot of
+noise coming from this part of the Astral Sea, literally sounding
+like the ocean.
+~
+#EXIT
+Direction north~
+ToRoom    1348
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1350
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1375
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1351
+#ENDEXIT
+
+Reset M 0 1399 12 1349
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1350
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1351
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1358
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1349
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1348
+#ENDEXIT
+
+Reset M 0 1398 12 1350
+Reset O 0 1332 1 1350
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   mpecho &WThe silvery pool bubbles and swirls clockwise for a moment.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1351
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1352
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1354
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1350
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1348
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1347
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1349
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1352
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. There appears to be no
+discernable path here and everything floats strangely
+~
+#EXIT
+Direction north~
+ToRoom    1353
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1351
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1347
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1346
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1348
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1353
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1363
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1352
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1346
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1382
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1347
+#ENDEXIT
+
+Reset M 0 1398 12 1353
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1354
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1355
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1351
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1366
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1355
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. The sounds of waves
+crashing is heard even closer now than  before.
+~
+#EXIT
+Direction south~
+ToRoom    1356
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1354
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1356
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1355
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1357
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1358
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1359
+#ENDEXIT
+
+Reset M 0 1318 22 1356
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1357
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction south~
+ToRoom    1359
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1356
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1358
+#ENDEXIT
+
+Reset M 0 1318 22 1357
+Reset M 0 1399 12 1357
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1358
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1356
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1359
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1350
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1396
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1357
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1359
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1357
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1360
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1358
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1374
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1356
+#ENDEXIT
+
+Reset M 0 1398 12 1359
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1360
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. The seems to be a lot of
+noise coming from this part of the Astral Sea, literally sounding
+like the ocean.
+~
+#EXIT
+Direction west~
+ToRoom    1359
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1361
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1362
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1373
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1362
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1363
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1361
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1372
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1363
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1364
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1362
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1353
+#ENDEXIT
+
+Reset M 0 1397 4 1363
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1364
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1365
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1363
+#ENDEXIT
+
+Reset M 0 1398 12 1364
+Reset M 0 1398 12 1364
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1365
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1366
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1364
+#ENDEXIT
+
+Reset M 0 1318 22 1365
+Reset M 0 1398 12 1365
+Reset M 0 1397 4 1365
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1366
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1367
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1365
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1367
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1368
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1366
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1385
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1368
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction west~
+ToRoom    1367
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1369
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1369
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1386
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1370
+#ENDEXIT
+
+Reset M 0 1318 22 1369
+Reset M 0 1318 22 1369
+  Reset E 0 1330 1 16
+Reset M 0 1399 12 1369
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1370
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1369
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1371
+#ENDEXIT
+
+Reset M 0 1318 22 1370
+Reset M 0 1318 22 1370
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1371
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1370
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1372
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1372
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1371
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1373
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1362
+#ENDEXIT
+
+Reset M 0 1318 22 1372
+  Reset E 0 1330 1 16
+Reset M 0 1399 12 1372
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1373
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1372
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1374
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1361
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1374
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1375
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1373
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1397
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1375
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1376
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1374
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1349
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1376
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1377
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1375
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1389
+#ENDEXIT
+
+Reset M 0 1318 22 1376
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1377
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1378
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1387
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1376
+#ENDEXIT
+
+Reset M 0 1398 12 1377
+Reset M 0 1318 22 1377
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1378
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1379
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1377
+#ENDEXIT
+
+Reset M 0 1396 1 1378
+Reset M 0 1398 12 1378
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1379
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1380
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1378
+#ENDEXIT
+
+Reset M 0 1318 22 1379
+  Reset E 0 1330 1 16
+Reset M 0 1318 22 1379
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1380
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1381
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1379
+#ENDEXIT
+
+Reset M 0 1318 22 1380
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1381
+Name     &PThe Astral Sea&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. You see what appears to
+be an object resembling a ship to the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    1382
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1380
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1394
+#ENDEXIT
+
+Reset M 0 1399 12 1381
+Reset M 0 1318 22 1381
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1382
+Name     &PFloating Around a Flying Ship&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pBefore you is a large ship made from some sort of wooden material.
+It floats here in the Astral Sea and serves as a mode of transportation
+for a group of yellow skinned humanoids. There is a sail on ship, used
+to harness the power of the psychic winds. The ship is docked here
+through the use of a magical anchor. A rope ladder has been tossed over
+the side of the ship, leading to the deck.
+~
+#EXIT
+Direction south~
+ToRoom    1381
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1383
+Flags     climb hidden can_climb nomob~
+#ENDEXIT
+
+Reset M 0 1307 3 1382
+  Reset E 0 1330 1 16
+Reset M 0 1307 3 1382
+  Reset E 0 1330 1 16
+Reset M 0 1307 3 1382
+  Reset E 0 1330 1 16
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1383
+Name     &ROn A Sleek Flying Ship&W~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThis ship resembles many of the ships found on the mortal plane
+except it has been made to be very sleek. This allows the ship to
+sail through the psychic winds that can scatter travelers not on
+a ship such as this. This ship is one level and used for short
+voyages.
+~
+#EXIT
+Direction north~
+ToRoom    1388
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1382
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1309 5 1383
+  Reset E 0 1329 1 16
+Reset M 0 1309 5 1383
+  Reset E 0 1329 1 16
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   mpecho &PYou feel the ship rock against the invisible forces of the Astral Sea.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1384
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction west~
+ToRoom    1385
+#ENDEXIT
+
+Reset M 0 1397 4 1384
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1385
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. You hear the crash of waves
+in the far distance.
+~
+#EXIT
+Direction east~
+ToRoom    1384
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1386
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1367
+#ENDEXIT
+
+Reset M 0 1398 12 1385
+Reset M 0 1318 22 1385
+Reset M 0 1311 3 1385
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1386
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1385
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1369
+#ENDEXIT
+
+Reset M 0 1318 22 1386
+  Reset E 0 1330 1 16
+Reset M 0 1398 12 1386
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1387
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1394
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1377
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1388
+Name     &ROn A Sleek Flying Ship~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThis is the end of the ship and features lots of seating for the
+crew members. Several weapons lie strewn about, used by the humanoids
+who steer this ship. From here you can see much of the strange Astral
+Sea, which seems to go on forever.
+~
+#EXIT
+Direction south~
+ToRoom    1383
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 1309 5 1388
+  Reset E 0 1329 1 16
+Reset M 0 1309 5 1388
+  Reset E 0 1329 1 16
+Reset M 0 1306 1 1388
+Reset M 0 1309 5 1388
+  Reset E 0 1329 1 16
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   mpecho &PYou feel the ship rock against the invisible forces of the Astral Sea.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1389
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1390
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1376
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1390
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1391
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1389
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1395
+#ENDEXIT
+
+Reset M 0 1399 12 1390
+Reset M 0 1398 12 1390
+Reset M 0 1399 12 1390
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1391
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. You see large floating
+rocks in the far distance, looking very humanoid shaped.
+~
+#EXIT
+Direction north~
+ToRoom    1392
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1399
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1390
+#ENDEXIT
+
+Reset M 0 1318 22 1391
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1392
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction north~
+ToRoom    1393
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1391
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1346
+#ENDEXIT
+
+Reset M 0 1397 4 1392
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1393
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving. The seems to be a lot of
+noise coming from this part of the Astral Sea, literally sounding
+like the ocean.
+~
+#EXIT
+Direction south~
+ToRoom    1392
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1394
+#ENDEXIT
+
+Reset M 0 1398 12 1393
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1394
+Name     &PThe Astral Sea~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe silvery sea known as the Astral Plane or "Astral Sea" is here. Above
+and below look the exact same. Strange clouds move past you and you
+can hear the thoughts they contain. There are swirling motes of
+light in the far distance, shining out in this vast emptiness. 
+Occassionally you can see large chunks of what appears to be floating 
+rock. There is little to no noise save for the crashing of waves
+heard in the distance. Streaks of deep purple move above you like
+magical threads of a larger weaving.
+~
+#EXIT
+Direction east~
+ToRoom    1393
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1387
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1381
+#ENDEXIT
+
+Reset M 0 1318 22 1394
+Reset M 0 1318 22 1394
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1395
+Name     &PFloating Around A Large Rock~
+Sector   indoors~
+Flags    nosummon noastral~
+Stats    0 0 0 0 16 0
+Desc     &pThe floating rock seems to take almost a humanoid shape from this
+angle. It appears to have a head and torso with the lower half
+missing. The giant rock slowly turns in the Astral Sea, making
+barely a sound in the misty void. This part of the rock has been
+altered fairly recently.
+~
+Perdesc  &WYou notice a mansion below you, settled on the floating rock...&W
+~
+#EXIT
+Direction south~
+ToRoom    1396
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1390
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1300
+Flags     hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1399
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1396
+Name     &PFloating Around A Large Rock~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pFloating in the Astral Sea is this large rock that almost seems
+to be humanoid shaped. A small rock floats by with what appears
+to be smaller rock like fingers projecting from it. The surface of
+the rock looks harsh and hard to walk on.
+~
+#EXIT
+Direction north~
+ToRoom    1395
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1397
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1358
+#ENDEXIT
+
+Reset M 0 1399 12 1396
+Reset M 0 1398 12 1396
+Reset M 0 1318 22 1396
+Reset M 0 1318 22 1396
+  Reset E 0 1330 1 16
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1397
+Name     &PFloating Around A Large Rock~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pAn arched piece of rock juts out from the large floating rock here.
+It creates an almost bridge like structure that someone could walk on
+if they wanted. The texture of the rock is interesting and looks 
+almost painful to touch or attempt to walk on. 
+~
+#EXIT
+Direction north~
+ToRoom    1396
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1398
+#ENDEXIT
+
+Reset M 0 1399 12 1397
+Reset M 0 1318 22 1397
+  Reset E 0 1330 1 16
+Reset M 0 1318 22 1397
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1398
+Name     &PFloating Around A Large Rock~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe large rock appears even more humanoid than before as this part
+of it looks like it has eyes. Two deep sockets seem to be missing
+something long since removed. The large rock moves slowly in the
+Astral Sea and with barely any noise.
+~
+#EXIT
+Direction west~
+ToRoom    1397
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1399
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     1399
+Name     &PFloating Around A Large Rock~
+Sector   indoors~
+Flags    nosummon noastral~
+Desc     &pThe sound of creaking can be heard as the large rock turns over
+slightly like a small planet's rotation. There are obvious holes
+running through the rock, caused by some sort of explosion. In the
+distance you can hear the sound of waves crashing as it moves
+about the Astral Sea.
+~
+#EXIT
+Direction north~
+ToRoom    1391
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1395
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1398
+#ENDEXIT
+
+Reset M 0 1399 12 1399
+Reset M 0 1311 3 1399
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if level($n) <= 50
+if wearingvnum($n) == 1399
+mea $n You feel a magnetic pull from beneath you, but seem to resist it.
+else
+if ispc($n)
+mer $n &PYou watch as $n is suddenly dragged down and disappears
+mea $n &PYou feel your essence being dragged from below...
+mea $n &pSuddenly you are falling downward into oblivion!
+mpscatter $n 2000 2199
+mpat $n mpsleep $n 5
+mpat $n mea $n &gYou awaken somewhere completely different..
+Endif
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ENDAREA

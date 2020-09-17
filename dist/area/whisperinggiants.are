@@ -1,0 +1,2000 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Whispering Mountains Hill Giant Village~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       10 25 0 0
+Economy      0 32790070
+ResetMsg     &wThe rolling mountain fog thickens for a brief moment before thinning...&w~
+ResetFreq    10
+#ENDAREADATA
+
+#MOBILE
+Vnum       3500
+Keywords   wandering hill giant ~
+Short      &Oa hill giant&w~
+Long       &OA hill giant is here wandering around the mountains.&w
+~
+Desc       &OThis humanoid creature is very tall standing around 10 feet in height
+and weighing around 400 pounds or so. The giant is dressed in rough
+looking leather garments. 
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -900 1 8 0 14 0 0 10 0 0
+Stats2     10 12 40
+Stats3     0 0 0
+Stats4     3 8 2 0 0 0 6
+Attribs    21 5 9 8 19 6 10
+Saves      0 0 0 0 0 0
+Speaks     giant~
+Speaking   giant~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   roar
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if number($n) == 3509
+k goat
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3501
+Keywords   hill giant village male~
+Short      &Oa male hill giant&w~
+Long       &OA male hill giant is here walking around the village.&w
+~
+Desc       &OThis male hill giant stands around 12 feet in height and looks to
+weigh around 400 pounds. This giant is dressed in rough looking
+leather garments and wield s crude looking club. 
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -900 1 7 0 14 0 0 5 0 0
+Stats2     10 12 40
+Stats3     0 0 0
+Stats4     3 0 2 0 0 0 6
+Attribs    21 5 9 8 19 6 10
+Saves      0 0 0 0 0 0
+Speaks     giant~
+Speaking   giant~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   roar
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3502
+Keywords   hill giant village female ~
+Short      &ga female hill giant&w~
+Long       &gA female hill giant is here walking around the village.&w
+~
+Desc       &gThis female hill giant stands around 10 feet in height and looks to
+weigh around 300 pounds. She is dressed in leather that is patched
+together crudely to create what appears to be a dress.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -900 1 6 0 14 0 0 5 0 0
+Stats2     10 10 25
+Stats3     0 0 0
+Stats4     3 0 2 0 0 0 6
+Attribs    19 5 9 10 19 6 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   roar
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3503
+Keywords   hill giant shaman male~
+Short      &Ga hill giant shaman&w~
+Long       &GA hill giant dressed in feathers and fur is here walking around the village.&w
+~
+Desc       &GThis male hill giant stands around 12 feet in height and looks to
+weigh around 400 pounds. He is dressed in wild looking feathers,
+fur, and his face is painted with clay in wild patterns.&w
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -900 1 8 0 14 0 0 15 0 0
+Stats2     10 12 40
+Stats3     0 0 0
+Stats4     3 0 2 0 0 0 6
+Attribs    18 5 12 10 19 6 12
+Saves      0 0 0 0 0 0
+Speaks     giant~
+Speaking   giant~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   roar
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3504
+Keywords   hill giant chief male~
+Short      &ga hill giant chief&w~
+Long       &gA massive looking hill giant is here serving as the village chief.&w
+~
+Desc       &gThe male hill giant before you is massive and stands around 15 feet
+and looks to weigh around 500 pounds. He is dressed in roughly patched
+leather pieces that make a simple garment. He wears jewelry taken 
+from pillaging merchants and other people along the roads.
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   infrared~
+Stats1     -900 1 9 0 14 0 5 5 5 0
+Stats2     15 15 50
+Stats3     0 0 0
+Stats4     4 0 2 0 0 0 6
+Attribs    22 5 9 10 19 6 10
+Saves      0 0 0 0 0 0
+Speaks     giant~
+Speaking   giant~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   roar
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3505
+Keywords   xvart warrior blue skinned creature~
+Short      &ban xvart fighter&w~
+Long       &bA blue skinned tiny creature is here guarding a cave settlement.&w
+~
+Desc       &bThis creature has blue skin and receding black hair. It is very
+tiny in size and scurries around this cave settlement nervously.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -900 1 2 0 11 0 0 0 2 0
+Stats2     4 5 10
+Stats3     0 0 0
+Stats4     1 10 1 0 0 0 6
+Attribs    8 8 7 14 10 7 12
+Saves      0 0 0 0 0 0
+Speaks     goblin~
+Speaking   goblin~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3506
+Keywords   carrion crawler worm creature crawling~
+Short      &Ya carrion crawler&w~
+Long       &YA large worm like creature is here crawling around the cave.&w
+~
+Desc       &YThis creature is large and worm like with a large mouth full of sharp
+looking fangs. The worm moves around the cave nibbling on things on
+the cave's floor as it searches for food.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared~
+Stats1     -800 1 5 0 12 0 0 0 0 0
+Stats2     6 10 20
+Stats3     2 4 2
+Stats4     3 10 2 0 0 0 6
+Attribs    14 1 12 13 16 3 10
+Saves      0 0 0 0 0 0
+Speaks     insectoid~
+Speaking   insectoid~
+Attacks    bite poison~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpasound &YYou hear the chittering of some creature nearby...&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3507
+Keywords   giant spider hunter~
+Short      &Oa giant spider&w~
+Long       &OA giant spider is here hiding in a small forest while hunting for prey.&w
+~
+Desc       &OThis is a rather large spider that hides in this forest looking for
+prey to capture. It is speckled with brown and black and has long
+limbs that it uses to climb the trees here.
+~
+Race       insect~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   infrared sneak hide~
+Stats1     0 1 5 0 11 0 0 0 0 0
+Stats2     4 20 10
+Stats3     1 8 3
+Stats4     2 1 2 0 0 0 6
+Attribs    14 2 11 16 12 3 10
+Saves      0 0 0 0 0 0
+Speaks     insectoid~
+Speaking   insectoid~
+Attacks    poison~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpasound &gYou hear the soft rustling of some trees nearby...&w
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3508
+Keywords   wounded ranger Dennig human male young~
+Short      &gDennig&w~
+Long       &gA young human male is here tied up and wounded.&w
+~
+Desc       &gThis young human male has long blonde hair that has blood in it from
+an injury on his forehead. His tan leather armor has been cut deeply
+and he has been tied up with thick ropes.&w
+~
+Lore       &gYou see the young ranger with some others wandering the mountains
+before they are set upon by some hill giants...&w
+~
+Race       human~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     500 1 3 0 10 0 10 0 0 0
+Stats2     10 10 10
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    14 12 12 15 14 12 10
+Saves      0 0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 3501
+if hasqbit($n) != 3500
+sayto $n Oh thank Amunar that you are here! I've been captured and I
+sayto $n need to escape before they eat me like the others!
+mpsleep 3
+emote wrestles a bit against the ropes around his body.
+mpsleep 3
+sayto $n Could you perhaps untie these ropes for me?
+mpqset $n 3500
+else
+sayto $n Are you going to help me escape??
+endif
+else
+sayto $n Can you untie these ropes? I need to escape!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate ropes~
+Comlist   if investigation($n) > 12
+mea $n The ropes are very strong looking, but the knot looks like it
+mea $n could be untied (UNTIEROPE) by someone with quick hands.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p untierope~
+Comlist   if sleight($n) >= 15
+if hasqbit($n) == 3500
+mea $n You manage to untie the ropes around Dennig!
+mer $n $n manages to untie the ropes around the young ranger!
+mpsleep 3
+sayto $n Oh thank you! I can handle the rest.. I have to finish the
+sayto $n mission my friends and I started. I don't have much to
+sayto $n reward you with.. but hopefully this will help.
+mpqset $n 3501
+mpqset $n 3500
+mpgift 200 242
+give 5 gold $n
+silent get gem
+give gem $n
+mpadvance $n 400
+sayto $n I wish you luck on your adventures. 
+mpecho &gThe ranger looks out the door of the cage and is gone.
+mpgoto 1897
+else
+sayto $n Oh thank you! Here is something to repay you for your
+sayto $n kindness! It isn't much, but it is all I have.
+give 2 gold $n
+sayto $n Now if you will excuse me I must get out of here.
+mpecho &gThe ranger looks out the door of the cage and is gone.
+mpgoto 1897
+endif
+else
+mea $n You fail to untie the ropes around Dennig...
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3509
+Keywords   mountain goat~
+Short      &wa mountain goat&w~
+Long       &wA mountain goat is here wandering around the mountain path.&w
+~
+Desc       &wThis mountain goat has big horns and likes to be a nuisance to those
+traveling the mountain path here. He likes to follow people and yell at
+them.
+~
+Race       animal~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     1 5 2
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    9 4 10 15 14 9 10
+Saves      0 0 0 0 0 0
+Speaks     mammal~
+Speaking   mammal~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   emote bleats loudly and stomps on the ground
+mpasound You hear the sound of a goat coming from nearby...&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   mpsleep 3
+mea $n &wA mountain goat bumps you with his head and bleats loudly.
+follow $n
+mer $n &wA mountain goat bleats loudly after bumping $n with his head.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3549
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3500
+Keywords giant greatclub~
+Type     weapon~
+Short    &Oa giant greatclub&w~
+Long     A greatclub has been left here.~
+Flags    inventory heavy~
+WFlags   take twohand~
+Values   12 3 8 2 19 0
+Values2  0 3
+Stats    10 2 0 1 0 1 0
+Affect       -1 -1 5 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3501
+Keywords great greatclub club rough looking~
+Type     weapon~
+Short    &Oa rough looking greatclub&w~
+Long     &OA rough looking large club has been left here.&w~
+Flags    heavy~
+WFlags   take twohand~
+Values   12 1 8 2 19 0
+Values2  0 2
+Stats    10 2 0 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3502
+Keywords rusty shortsword~
+Type     weapon~
+Short    a rusty shortsword~
+Long     A rusty shortsword has been left here.~
+Flags    finesse lightweight~
+WFlags   take onehand~
+Values   12 1 6 3 2 0
+Values2  0 2
+Stats    2 2 1 1 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3503
+Keywords campfire fire cave small~
+Type     fire~
+Short    &Ra small fire&w~
+Long     &RA small fire has been set up here to provide warmth and light.&w~
+Values   50 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3504
+Keywords large cooking fire~
+Type     container~
+Short    &Ra large fire&w~
+Long     &RA large cooking fire is here with racks of meat cooking in it.&w~
+Values   50 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3505
+Keywords fresh cooked meat~
+Type     food~
+Short    &Rfreshly cooked meat&w~
+Long     &RSome freshly cooked meat has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    3 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3506
+Keywords rusty looking key~
+Type     key~
+Short    a rusty looking key~
+Long     A rusty looking key has been left here.&w~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    2 0 0 0 0 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3549
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3500
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Flags    nomob~
+Stats    0 0 0 0 16 0
+Desc     This is a steep and rocky path that cuts across a portion of the 
+Whispering Mountains, which is known for its dense fog that blankets
+over its snow capped heights. The path here has been created by frequent
+travelers and continues on to the north from here.
+~
+Perdesc  &OYou spot some &wwriting&O painted on a nearby boulder next to the trail...&w
+~
+#EXIT
+Direction north~
+ToRoom    3501
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      488
+MapY      707
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate writing~
+Comlist   if investigation($n) > 5
+mea $n You see that written on the boulder in many languages are the
+mea $n words: "Beware of Hill Giants."
+mer $n $n inspects a boulder near the trail here.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3501
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     This is a steep and rocky path that cuts across a portion of the 
+Whispering Mountains, which is known for its dense fog that blankets
+over its snow capped heights. The path here has been created by frequent
+travelers and continues on to the south from here. The path narrows here
+as it passes towards the northeast between two large boulders.
+~
+#EXIT
+Direction south~
+ToRoom    3500
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3502
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3509 1 3501
+#ENDROOM
+
+#ROOM
+Vnum     3502
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     This is a steep and rocky path that cuts across a portion of the 
+Whispering Mountains, which is known for its dense fog that blankets
+over its snow capped heights. The path here has been created by frequent
+travelers and continues on to the southwest in between two boulders and
+to the north up a steep rocky hill.
+~
+#EXIT
+Direction north~
+ToRoom    3503
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3501
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3503
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     This is a steep and rocky path that cuts across a portion of the 
+Whispering Mountains, which is known for its dense fog that blankets
+over its snow capped heights. This part of the path cuts through a rocky
+hillside that provides stunning views of the forests and valley below.
+The path continues to the northeast and south from here, which continues
+to climb in elevation. The higher the path goes the more the legendary fog
+of the mountains can be seen.
+~
+#EXIT
+Direction south~
+ToRoom    3502
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3504
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3504
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     This is a steep and rocky path that cuts across a portion of the 
+Whispering Mountains, which is known for its dense fog that blankets
+over its snow capped heights. This part of the path cuts through a rocky
+hillside that provides stunning views of the forests and valley below.
+The path continues to the east and southwest from here, which continues
+to climb in elevation. The higher the path goes the more the legendary fog
+of the mountains can be seen.
+~
+#EXIT
+Direction east~
+ToRoom    3505
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3503
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3505
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     This is a steep and rocky path that cuts across a portion of the 
+Whispering Mountains, which is known for its dense fog that blankets
+over its snow capped heights. This part of the path cuts through a rocky
+hillside that provides stunning views of the forests and valley below.
+The path continues to the north and west from here, which continues
+to climb in elevation. The higher the path goes the more the legendary fog
+of the mountains can be seen.
+~
+#EXIT
+Direction north~
+ToRoom    3506
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3504
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3506
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The rocky path here begins to level off and is less of a steep climb than
+the part of the path that leads to the south from here. This rocky path
+cuts across a portion of the Whispering Mountains, which is known for its
+dense fog that blankets over its snow capped heights. The path here has
+been created by frequent travelers and continues towards the north.
+~
+#EXIT
+Direction north~
+ToRoom    3507
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3505
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3507
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The rocky path here begins to level off and is less of a steep climb than
+the part of the path that leads to the south from here. This rocky path
+cuts across a portion of the Whispering Mountains, which is known for its
+dense fog that blankets over its snow capped heights. The path here has
+been created by frequent travelers and continues towards the north.
+~
+#EXIT
+Direction north~
+ToRoom    3508
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3506
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3508
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The rocky path arrives at a crossroads where two faint trails lead to
+the east and west from here. The main portion of the path continues
+to the north and south as it cuts across a portion of the Whispering
+Mountains. The fog has grown increasingly thick at this elevation and
+the stunning views of the valley and forest below have been completely
+obscured from sight. It can be increasingly easy to get lost while climbing
+higher.
+~
+#EXIT
+Direction north~
+ToRoom    3511
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3510
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3507
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3509
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) < 14
+mea $n &wThe fog grows increasingly thick and you lose sight of the trail...
+mpscatter $n 3508 3512
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3509
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     Toward the small rocky forest
+The rocky path here ends at the base of a small forest that grows to
+the north on a rocky ledge. The forest has grown quite thick and it
+borders along a mountainous wall that cannot be climbed. The fog curls
+its way through the forest adding an ominous aesthetic to it. The rocky
+path continues back to the east at a crossroads.
+~
+#EXIT
+Direction north~
+ToRoom    3543
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3508
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) < 14
+mea $n The fog grows increasingly thick and you lose sight of the trail...
+mpscatter $n 3508 3512
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3510
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The path here is narrow and drops off sharply at the southern end of
+the path. The path is nestled against a sheer rocky wall that seems
+quite impossible to climb. The path has been carved out over time and 
+leads to the east from here or back west towards a crossroads. The fog
+that covers much of these mountains is thick here and one should be
+careful not to get lost in it or fall off the trail.
+~
+#EXIT
+Direction east~
+ToRoom    3544
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3508
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) < 14
+mea $n The fog grows increasingly thick and you lose sight of the trail...
+mpscatter $n 3508 3512
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3511
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The rocky path here cuts up a large rocky hill that is part of the
+foggy Whispering Mountains. A few trees can be seen growing along this
+part of the hill along with long grassy that grow along rocks and
+boulders. The path continues towards the north and back south where
+a crossroads can be seen. The fog is thick here and makes it easy
+for one to get lost while traveling along the mountains.
+~
+#EXIT
+Direction north~
+ToRoom    3512
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3508
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) < 14
+mea $n The fog grows increasingly thick and you lose sight of the trail...
+mpscatter $n 3508 3512
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3512
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The rocky path here cuts up a large rocky hill that is part of the
+foggy Whispering Mountains. A few trees can be seen growing along this
+part of the hill along with long grassy that grow along rocks and
+boulders. The path continues towards the northeast and back south.
+The fog is thick here and makes it easy for one to get lost while
+traveling along the mountains.
+~
+#EXIT
+Direction south~
+ToRoom    3511
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3513
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) < 14
+mea $n The fog grows increasingly thick and you lose sight of the trail...
+mpscatter $n 3508 3512
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3513
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The rocky path here cuts up a large rocky hill that is part of the
+foggy Whispering Mountains. A few trees can be seen growing along this
+part of the hill along with long grassy that grow along rocks and
+boulders. The path continues towards the north and back southwest.
+The fog is thick here and makes it easy for one to get lost while
+traveling along the mountains.
+~
+#EXIT
+Direction north~
+ToRoom    3514
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3512
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) < 14
+mea $n The fog grows increasingly thick and you lose sight of the trail...
+mpscatter $n 3508 3512
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3514
+Name     &OOverlooking a Small Village&w~
+Sector   mountain~
+Desc     The rocky path ends here at the top of the rocky hill that is part of the
+foggy Whispering Mountains. The hill overlooks a small village of huts
+and bonfires, which appears to be currently occupied. The fog that rolls
+through much of the mountains seems to avoid this village and swirls
+high above it, which hiddens it from view from above. A small path leads
+down the hill towards the village from here while the main rocky path
+heads back towards the southwest.
+~
+#EXIT
+Direction south~
+ToRoom    3513
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3515
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3515
+Name     &OBefore a Small Village&w~
+Sector   field~
+Flags    nomob~
+Desc     This is small field that has been occupied by a makeshift looking village
+for some time. There are few trees in this area as much of them have 
+been used to construct the homes here. The path here leads to the north
+directly into the village while a small trail leads up a rocky hillside.
+The fog that permeates much of the mountains that surround this village
+seems to be satisfied swirling high above, which hides the village from
+view from above.
+~
+#EXIT
+Direction north~
+ToRoom    3516
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3514
+#ENDEXIT
+
+Reset M 0 3500 2 3515
+  Reset E 0 3500 1 28
+Reset M 0 3500 2 3515
+  Reset E 0 3500 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3516
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction east~
+ToRoom    3525
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3515
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3517
+#ENDEXIT
+
+Reset M 0 3502 3 3516
+  Reset E 0 3500 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3517
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction north~
+ToRoom    3526
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3516
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3518
+#ENDEXIT
+
+Reset M 0 3501 3 3517
+  Reset E 0 3500 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3518
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction north~
+ToRoom    3519
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3517
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3519
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction north~
+ToRoom    3520
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3526
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3518
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3520
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction east~
+ToRoom    3521
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3519
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3521
+Name     &OA Small Village&w~
+Sector   field~
+#EXIT
+Direction east~
+ToRoom    3522
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3520
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3522
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction east~
+ToRoom    3523
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3526
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3521
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3523
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions. A defined path can be seen towards
+the east leading deeper into the village.
+~
+#EXIT
+Direction east~
+ToRoom    3527
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3524
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3522
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3524
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction north~
+ToRoom    3523
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3525
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3526
+#ENDEXIT
+
+Reset M 0 3501 2 3524
+  Reset E 0 3500 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3525
+Name     &OA Small Village&w~
+Sector   field~
+#EXIT
+Direction north~
+ToRoom    3524
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3516
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3526
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. A large bonfire is here with fresh meat
+being cooked on it.
+~
+#EXIT
+Direction north~
+ToRoom    3522
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3524
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3517
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3519
+#ENDEXIT
+
+Reset M 0 3502 4 3526
+  Reset E 0 3500 1 28
+Reset M 0 3502 4 3526
+  Reset E 0 3500 1 28
+Reset O 0 3504 1 3526
+  Reset P 0 3505 4 3504
+#ENDROOM
+
+#ROOM
+Vnum     3527
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction north~
+ToRoom    3528
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3523
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3528
+Name     &OA Small Village&w~
+Sector   field~
+Stats    0 0 0 0 12 0
+Desc     Cage to the north
+This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions. A wooden structure can be seen
+towards the north, which is made from poorly assembled wooden logs.
+~
+Perdesc  &OYou spot a large wooden &gcage&O to the north of here...&w
+~
+#EXIT
+Direction north~
+ToRoom    3533
+Key       3506
+Keywords  'large wooden cage door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3527
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3529
+#ENDEXIT
+
+Reset M 0 3501 5 3528
+  Reset E 0 3500 1 28
+Reset M 0 3502 2 3528
+  Reset E 0 3500 1 28
+Reset D 0 3528 0 2
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate cage~
+Comlist   if investigation($n) >= 14
+mea $n You see that the cage has been crudely made from large pieces
+mea $n of timber to hold captured people or creatures. There is a
+mea $n rusty old lock keeping the cage closed when desired.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3529
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction north~
+ToRoom    3530
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3528
+#ENDEXIT
+
+Reset M 0 3503 1 3529
+  Reset E 0 3501 1 28
+Reset M 0 3501 4 3529
+  Reset E 0 3500 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3530
+Name     &OA Small Village &w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction north~
+ToRoom    3531
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3529
+#ENDEXIT
+
+Reset M 0 3501 5 3530
+  Reset E 0 3500 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3531
+Name     &OA Small Village&w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions.
+~
+#EXIT
+Direction east~
+ToRoom    3532
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3530
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3532
+Name     &OA Small Village &w~
+Sector   field~
+Desc     This village is made up from a collection of huts that are made from
+wood, rocks, and mud. The construction of the huts is primitive at
+best, but seem to provide ample protection from the elements. There
+are various paths that cut through the village and there is not an
+established street system here. The smell of fire and cooking meat
+can be smelled from many directions. The largest of the huts can be
+seen towards the north. It has been decorated with the bones of many
+animals and some of them appear to be humanoid.
+~
+#EXIT
+Direction north~
+ToRoom    3534
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3531
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3533
+Name     &OInside a Large Wooden Cage&w~
+Sector   indoors~
+Desc     This wooden structure has been constructed with wooden logs and appears
+to serve as a cage. The inside of this structure is quite bare as whoever
+is held here is not held with much regard. The floor of the cage is dirt
+and a large wooden door leads out of the cage to the south. 
+~
+#EXIT
+Direction south~
+ToRoom    3528
+Key       3506
+Keywords  'large wooden cage door'~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 0 3508 1 3533
+Reset D 0 3533 2 2
+#ENDROOM
+
+#ROOM
+Vnum     3534
+Name     &OInside a Large Hut &w~
+Sector   indoors~
+Desc     The inside of this hut has been decorated with primitive looking furniture
+and some of it appears to have been stolen from travelers. A fireplace has
+been decorated with the skulls of many humanoids as if they were trophies.
+A makeshift altar can be seen against the wall of the hut and is covered
+in various objects dedicated to some deity. A bear skin has been draped
+on the floor acting as a makeshift rug or possibly a place to sleep.
+~
+#EXIT
+Direction south~
+ToRoom    3532
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3504 1 3534
+  Reset E 0 3500 1 28
+  Reset G 0 3506 1
+Reset M 0 3503 2 3534
+  Reset E 0 3501 1 28
+#ENDROOM
+
+#ROOM
+Vnum     3535
+Name     &zA Hidden Cave&w~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 16 0
+Desc     This cave appears to have been carved out of the side of the mountains
+by some person or creature over an extended amount of time. The ceiling
+is not very high, which allows most creatures under seven feet in height
+room to move without scraping against the rough rocks. The cave continues
+to the west from here or south back into the forest.
+~
+Perdesc  &OYou notice a thin layer of &Yslime&O on some of the rocks in this cave.&w
+~
+#EXIT
+Direction south~
+ToRoom    3540
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3536
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate slime~
+Comlist   if investigation($n) > 16
+mea $n You notice that the slime is fresh and seems to have been created
+mea $n by some sort of creature...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3536
+Name     &zA Hidden Cave&w~
+Sector   indoors~
+Desc     The cave angles here as it heads towards a dead end to the north or
+back towards the entrance at the east. Large rocks form rough looking
+pillars from the floor to the ceiling here. The cave has a very dusty
+odor as if it is not visited very often. The sound of wind can be heard
+echoing throughout the cave as it enters the cave from the southeast
+entrance and whips about the ceiling above.
+~
+#EXIT
+Direction north~
+ToRoom    3537
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3535
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3537
+Name     &zA Hidden Cave&w~
+Sector   indoors~
+Desc     The cave ends here at a wall of smooth looking black rock. The odd looking
+black rock has veins of deep purple running through it. The black
+rock is seemingly framed by normal rock in a distinct circular pattern. The
+sound of wind dancing along the ceiling can be heard all around the
+cave. Some moss grows along the edges of the black rock helping to
+frame it even better.
+~
+#EXIT
+Direction south~
+ToRoom    3536
+#ENDEXIT
+
+Reset M 0 3506 2 3537
+Reset M 0 3506 2 3537
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate markings~
+Comlist   if arcana($n) >= 19
+if isaffected($n) == detect_magic
+mea $n &BYou are able to decipher that the markings are ancient runes
+mea $n &Bthat allow for magical transportation to another plane of
+mea $n &Bexistence...&w
+else
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if isaffected($n) == detect_magic
+mpsleep 3
+mea $n &BAs you enter this portion of the cave the sheer wall of rock
+mea $n &Bglows as your magical sight reveals &Wmarkings&B on the surface
+mea $n &Bof the wall...
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3538
+Name     &zA Small Cave Settlement&w~
+Sector   indoors~
+Desc     This cave has been decorated and designed by a primitive race to look
+like a small village. Several stones have been stacked to create make
+shift homes for whoever lives here. Rough looking weapons rest against
+some of the homes and a fire pit can be found here to provide warmth,
+light, and a way to cook food.
+~
+#EXIT
+Direction east~
+ToRoom    3539
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3549
+#ENDEXIT
+
+Reset M 0 3505 10 3538
+  Reset E 0 3502 1 26
+Reset M 0 3505 10 3538
+  Reset E 0 3502 1 26
+Reset M 0 3505 10 3538
+  Reset E 0 3502 1 26
+Reset O 0 3503 1 3538
+#ENDROOM
+
+#ROOM
+Vnum     3539
+Name     &zA Small Cave Settlement&w~
+Sector   indoors~
+Desc     This cave has been decorated and designed by a primitive race to look
+like a small village. Several stones have been stacked to create make
+shift homes for whoever lives here. Rough looking weapons rest against
+some of the homes and a fire pit can be found here to provide warmth,
+light, and a way to cook food.
+~
+#EXIT
+Direction south~
+ToRoom    3548
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3538
+#ENDEXIT
+
+Reset M 0 3505 10 3539
+  Reset E 0 3502 1 26
+Reset M 0 3505 10 3539
+  Reset E 0 3502 1 26
+Reset M 0 3505 10 3539
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3540
+Name     &gA Small Forest&w~
+Sector   forest~
+Stats    0 0 0 0 20 0
+Desc     This part of the small forest grow along a rocky cliff and against the
+side of the mountain. Large boulders that fell from above lay scattered
+here. Some of the fallen rocks have destroyed some of the trees and 
+decaying limbs lay scattered everywhere. A large, ancient looking
+oak tree stands in the middle of the forest here. It appears to have
+survived a very long time despite the falling boulders.
+~
+Perdesc  &zYou spot a partially hidden small cave opening to the north from here...
+~
+#EXIT
+Direction north~
+ToRoom    3535
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3541
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3541
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     The ground here is covered in a thick layer of moss that is a lush
+looking olive green. Large trees grow here with several of their lower
+limbs broken off over time. The forest grows right up against a sheer
+rock wall of the mountains. Above the forest wafts thick fog that rolls
+over the forest in rhythmic patterns.
+~
+#EXIT
+Direction east~
+ToRoom    3542
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3543
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3540
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3542
+Name     &gA Small Forest&w~
+Sector   forest~
+Desc     This part of the small forest grows on a rocky cliff that overlooks 
+much of the forests and valleys below. The fog of the Whispering
+Mountains rolls particularly thick at this part of the forest. A large
+boulder has split a tree into two after falling from high above. Much
+of the ground here is covered in dense green moss.
+~
+#EXIT
+Direction west~
+ToRoom    3541
+#ENDEXIT
+
+Reset M 0 3507 1 3542
+#ENDROOM
+
+#ROOM
+Vnum     3543
+Name     &gA Small Forest&w~
+Sector   forest~
+Stats    0 0 0 0 16 0
+Desc     A rocky path ends here at a small open piece of land nearby where a small
+forest has taken root. The forest consists of various tree such as pine
+and oak. The forest appears to be very ancient as the many of the trees
+have grown to impressive heights. Several of the limbs have fallen off
+and lie scattered along the base of the forest. The forest grows right
+up against the side of the mountain and is occasionally covered with a 
+blanket of fog.
+~
+Perdesc  &wYou notice spider webs on some of the trees to the north from here...&w
+~
+#EXIT
+Direction north~
+ToRoom    3541
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3509
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3544
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The path here is narrow and drops off sharply at the southern end of
+the path. The path is nestled against a sheer rocky wall that seems
+quite impossible to climb. The path has been carved out over time and 
+leads to the east from here or back west. The thick white fog that 
+covers much of these mountains is thick here and one should be
+careful not to get lost in it or fall off the trail.
+~
+#EXIT
+Direction east~
+ToRoom    3545
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3510
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if nature($n) < 14
+mea $n The fog grows increasingly thick and you lose sight of the trail...
+mpscatter $n 3508 3512
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3545
+Name     &OA Rocky Path&w~
+Sector   mountain~
+Desc     The path here is narrow and drops off sharply at the southern end of
+the path. The path is nestled against a sheer rocky wall that seems
+quite impossible to climb. The path has been carved out over time and 
+leads to the east from here or back west. The thick white fog that 
+covers much of these mountains is thick here and one should be
+careful not to get lost in it or fall off the trail.
+~
+#EXIT
+Direction east~
+ToRoom    3546
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3544
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3546
+Name     &OOverlooking a Cliff&w~
+Sector   mountain~
+Stats    0 0 0 0 16 0
+Desc     cave entrance
+The path here ends abruptly at the ledge of a cliff that overlooks the
+valley and forests below. The view is often obscured by the thick white
+fog that blankets these mountains. The rock wall that the path is nestled
+against is not as steep here and there are spots for climbing. The path
+continues back towards the west through the foggy trail.
+~
+Perdesc  &OYou notice a small &zcave&O located above you...&w
+~
+#EXIT
+Direction west~
+ToRoom    3545
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3547
+Flags     secret climb hidden nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate cave~
+Comlist   if investigation($n) > 15
+mea $n There appears to be carved holes that act as a ladder that
+mea $n lead up to a cave located in the side of the mountain.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3547
+Name     &zA Cave&w~
+Sector   indoors~
+Flags    nomob~
+Desc     This cave was created many centuries ago by something that carved and
+dug out this space. The bones of little animals have been left here
+with some of the carcasses still fresh with a little meat left on the
+bones. The smell of fire and the sounds of something moving nearby
+echo throughout this cave. 
+~
+#EXIT
+Direction north~
+ToRoom    3548
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3546
+Flags     climb nomob~
+#ENDEXIT
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate cave~
+Comlist   if nature($n) > 12
+mea $n You smell a campfire nearby...
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3548
+Name     &zA Small Cave Settlement&w~
+Sector   indoors~
+Desc     This cave has been decorated and designed by a primitive race to look
+like a small village. Several stones have been stacked to create make
+shift homes for whoever lives here. Rough looking weapons rest against
+some of the homes and a fire pit can be found here to provide warmth,
+light, and a way to cook food.
+~
+#EXIT
+Direction north~
+ToRoom    3539
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3547
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3549
+#ENDEXIT
+
+Reset M 0 3505 7 3548
+  Reset E 0 3502 1 26
+Reset M 0 3505 7 3548
+  Reset E 0 3502 1 26
+Reset M 0 3505 7 3548
+  Reset E 0 3502 1 26
+Reset M 0 3505 7 3548
+  Reset E 0 3502 1 26
+#ENDROOM
+
+#ROOM
+Vnum     3549
+Name     &zA Small Cave Settlement&w~
+Sector   indoors~
+Desc     This cave has been decorated and designed by a primitive race to look
+like a small village. Several stones have been stacked to create make
+shift homes for whoever lives here. Rough looking weapons rest against
+some of the homes and a fire pit can be found here to provide warmth,
+light, and a way to cook food.
+~
+#EXIT
+Direction north~
+ToRoom    3538
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3548
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

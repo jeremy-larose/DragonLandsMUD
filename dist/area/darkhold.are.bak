@@ -1,0 +1,5764 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         The Village of Darkhold~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       1 50 0 0
+Economy      0 42816360
+ResetMsg     &OYou feel a cool breeze brush past you.&w~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       5600
+Keywords   darkhold recruitment officer watch human man older male~
+Short      &Oa recruitment officer&w~
+Long       &OAn older looking human man is seated at a desk here doing paperwork.&w
+~
+Desc       &OThis older human man is dressed in light armor as he sits at a desk
+doing paperpwork. He is starting to grey at his temples and he has
+his facial hair trimmed very short.
+~
+Race       human~
+Class      paladin~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     900 1 0 0 10 0 1 10 20 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 15
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5600
+emote looks up from his paperwork and smiles.
+sayto $n Greetings! Are you looking for work? I may have a duty
+sayto $n that will earn you some coin and recognition. Let me know
+sayto $n you wish to learn more about my &woffer&W.
+else
+emote bows his head in greeting.
+sayto $n Welcome back. I hope you are enjoying your new duties.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p offer~
+Comlist   if hasqbit($n) != 5600
+nod $n
+sayto $n Those that serve as part of the Darkhold Watch help protect
+sayto $n our realm from the creatures of the Demonlord. The wall was
+sayto $n enacted to stop those creatures that manage to free themselves
+sayto $n from the druidic cage of a forest just north of the wall.
+mpsleep 2
+sayto $n The Watch maintains the wall and also goes out to remove
+sayto $n any creatures that begin to attack it or try to escape.
+sayto $n The work can be dangerous, but those that serve are well
+sayto $n taken care of.
+mpsleep 2
+sayto $n What do you say? Will you &wserve&W with the watch and
+sayto $n help keep our lands free of evil?
+else
+sayto $n You are already a member of the Watch.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p serve~
+Comlist   if level($n) >= 15
+if hasqbit($n) != 5600
+bow $n
+sayto $n To serve the Watch is a truly noble thing. Once a member of
+sayto $n the watch.. always a member of the watch. Do well to serve
+sayto $n your fellow brothers and sisters.
+mpsleep 2
+mea $n &OThe officer gets up and hands you a small copper pin.&w
+mer $n &OThe officer gets up and hands &O$n&O a small object.&w
+mpoload 5626 1
+silent give pin $n
+mpsleep 2
+sayto $n This pin will help show that you are a junior member of the
+sayto $n watch. You are report for your first task under General
+sayto $n Snowhaven. He will give you your orientation as well as
+sayto $n your first few tasks. Travel north and you will find the wall,
+sayto $n which will be your new home.
+mpqset $n 5600
+mpqset $n 5601
+mpqset $n 5610
+mpsleep 2
+sayto $n Welcome to the Watch. May your duties be fulfilling and may
+sayto $n the gods watch over you.
+mpecho &OThe officer sits back at his desk and continues with his work.
+else
+sayto $n You are already a member of the Watch.
+endif
+else
+shake $n
+sayto $n I will need you to come back when you are a bit stronger. Our
+sayto $n members need to be completely ready for the tasks ahead.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5648
+emote arrives and resumes his work for the day ahead.
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote finishes up his work for the evening and heads home.
+close s
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5601
+Keywords   Krin halforc half-orc half orc crossbow~
+Short      &gKrin&w~
+Long       &gA half-orc man is here shaping a new crossbow from some wood.&w
+~
+Desc       &gThis half-orc man stands around six feet, five inches, and is thick
+with muscle. His skin has a slight greenish tone and a few of his teeth
+push against his lips and look sharp to the point.
+~
+Race       half-orc~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     600 50 0 0 10 0 10 10 10 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 3
+Attribs    30 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+sayto $n How can I help you?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 5662
+emote arrives and begins setting up for the day.
+open e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote closes up his shop and heads home for the evening.
+close e
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5602
+Keywords   marty old man greying long hair human male~
+Short      &RMarty&w~
+Long       &RAn old human man with long greying hair is here sharpening a sword.&w
+~
+Desc       &RThis human man has long greying hair that is tied back with a piece
+of leather. He wears a simple tunic and pants as he works in his
+shop here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     450 50 0 0 10 0 20 10 10 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 9
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   5 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+sayto $n Hello. Let me know if you find something you like.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 5630
+emote arrives and begins opening his store for the day.
+open n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote cleans up and closes his store for the evening.
+close n
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5603
+Keywords   taloh halfling seedling male man tan~
+Short      &YTaloh&w~
+Long       &YA halfling man is here making a sling with some leather.&w
+~
+Desc       &YThe halfling man here has very tanned skin and is dressed in simple
+clothing.
+~
+Race       lightfoot-halfing~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     600 50 0 0 10 0 10 10 10 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 11
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+smile $n
+sayto $n How can I help you?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5663
+emote arrives and begins setting up his shop for the day.
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote closes up his shop and heads home for the evening.
+close w
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5604
+Keywords   bronwen female human ranger blonde hair arrow woman~
+Short      &WBronwen&w~
+Long       &WA female human with long blonde hair is here fletching an arrow.&w
+~
+Desc       &WThis young woman appears to be of the ranger profession as she skillfully
+fletches arrows here. She has long blonde hair that she lets roam free
+and inquisitive looking green eyes.
+~
+Race       human~
+Class      ranger~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 10 10 10 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 15
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   5 57 58 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+emote nods her head as she stops working on an arrow.
+sayto $n Aye.. how can I help you today?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5664
+emote arrives and begins opening the shop for the day.
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   emote closes up the shop and heads home for the evening.
+close s
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5605
+Keywords   varbig halforc half orc large man male bar bartender~
+Short      &GVarbig&w~
+Long       &GA half-orc man is here serving drinks at a wooden bar.&w
+~
+Desc       &GThis half-orc man here is dressed in simple black colored clothing
+as he slings drinks here for his customers. He is quite tall and
+has very distinguishable orc features.
+~
+Race       half-orc~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     200 50 0 0 10 0 10 10 10 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 10
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+sayto $n Greetings. What can I get you?
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5606
+Keywords   stable worker owner human man feeding horses~
+Short      &Oa stable worker&w~
+Long       &OA stable worker is feeding some horses that are stabled here.
+~
+Desc       &OThis young man is dressed in dirty clothing as he works around
+the stables here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     600 1 0 0 10 0 10 10 10 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 3
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+sayto $n Let me know if you wish to stable your horse here.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5607
+Keywords   dwarven woman female dwarf inn innkeeper brunette~
+Short      &Oan innkeeper&w~
+Long       &OA dwarven woman is seated by a fireplace here waiting for a customer.&w
+~
+Desc       &OThis dwarven woman has dark brunette hair and fair skin. She is
+dressed in a dark blue dress as she waits for a customer here.
+~
+Race       mountain-dwarf~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     600 1 0 0 10 0 0 10 20 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 3
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   close s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if ispc($n)
+smile $n
+sayto $n Hallo! Urr ye lookin' fur a room ta rent?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   smile $n
+sayto $n Ah hawp ye enjoyed yer stay.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5608
+Keywords   general store clerk shop female human~
+Short      &Oa store clerk&w~
+Long       &OA female human is here working as a store clerk in the general store.&w
+~
+Desc       &OThis woman is dressed in simple cotton garments and has her hair
+tied back to allow her to work.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 20 0 0 0
+Stats2     1 20 10
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 3
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+smile $n
+sayto $n Hello there - how can I help you today?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5638
+emote arrives and begins opening up the store for the day.
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote begins closing up the store and heads home for the evening.
+close s
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5609
+Keywords   briella wizard beautiful woman silk wizard robe human woman female~
+Short      &BBriella&w~
+Long       &BA beautiful human woman in a silk wizard robe is here.&w
+~
+Desc       &BThis human woman is dressed in a luxurious looking silk robe that
+is a soft rose color. Her peachy skin is clear of any blemishes
+and her strawberry blonde hair is brushed and soft looking.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     800 50 0 0 10 0 10 30 10 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 12
+Attribs    30 30 13 13 13 30 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   if ispc($n)
+smile $n
+sayto $n Why hello there.. how can I help you?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5639
+emote arrives and begins opening up her store for the day.
+open w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote begins closing up for the night before heading home.
+close w
+mpgoto 5699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from below.~
+Comlist   smile $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5610
+Keywords   cobbler male human repairing shoes man~
+Short      &Oa cobbler&w~
+Long       &OA cobbler is here working on a pair of shoes.&w
+~
+Desc       &OThis human man is dressed in simple clothing as he works on a
+pair of shoes. He has a pair of spectacles on, which helps him
+observe fine details.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 10 10 10 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 3
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+emote stops working on a pair of shoes and bows his head.
+sayto $n Welcome. Let me know if you need anything.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   mpgoto 5641
+emote arrives and opens up the shop for the day.
+close s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote closes up the shop and heads home for the evening.
+close s
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5611
+Keywords   apprentice wizard young male human man~
+Short      &Ban apprentice&w~
+Long       &BAn apprentice is here offering services to customers.&w
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     400 35 0 0 10 0 5 10 20 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 12
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 20 gold coins.~
+Comlist   mpoload 1546 1
+bow $n
+c 'mage armor' $n
+mpjunk hide
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 60 gold coins.~
+Comlist   mpoload 1901 1
+bow $n
+c 'stoneskin' $n
+mpjunk earthstone
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 10 gold coins.~
+Comlist   mpoload 1862 1
+bow $n
+c 'water breathing' $n
+mpjunk reed
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 30 gold coins.~
+Comlist   mpoload 1761 1
+bow $n
+c 'bulls strength' $n
+mpjunk manure
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 35 gold coins.~
+Comlist   bow $n
+mpoload 1757 1
+c 'cats grace' $n
+mpjunk bag
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 40 gold coins.~
+Comlist   bow $n
+mpoload 1743 1
+c 'bears endurance' $n
+mpjunk fat
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   mpgoto 5665
+emote arrives for the day and begins studying his spellbook.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote closes his spellbook and heads home for the evening.
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5612
+Keywords   cleric tending sick wounded hycran hycra female human woman~
+Short      &Wa cleric&w~
+Long       &WA cleric of Hycra is here tending to the sick and wounded.&w
+~
+Desc       &WThis human cleric is dressed in white garments that cover much of
+her body. She does her best to keep her clothing clean as she tends
+to various people who are injured and sick.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Affected   truesight~
+Stats1     1000 35 0 0 14 0 0 10 10 0
+Stats2     5 12 15
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 15
+Attribs    10 13 20 14 13 20 12
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if deity($n) == hycra
+bow $n
+sayto $n Greetings. How may I help you?
+else
+nod $n
+sayto $n How may I help you?
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   close s
+emote prepares the missionary for the evening and checks on her patients.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 10 silver coins.~
+Comlist   c 'cure light wounds' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 35 silver coins.~
+Comlist   c 'cure moderate wounds' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 70 silver coins.~
+Comlist   c 'cure serious wounds' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 90 silver coins.~
+Comlist   c 'cure critical wounds' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 15 gold coins.~
+Comlist   c heal $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5613
+Keywords   qylain cleric~
+Short      &wa qylain cleric&w~
+Long       &wA cleric is here lighting incense and performing rites of passage for the dead.&w
+~
+Desc       &wThis stern looking male half-elf is quite pale with skin the
+fairest of porcelain. His hair is also silvery and matches with
+his light grey eyes. He wears white robes as he works here
+day and night.
+~
+Race       half-elf~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     0 50 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 7
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5653
+if hasqbit($n) != 5652
+if ispc($n)
+if deity($n) == qylaith
+bow $n
+sayto $n Greetings. How may I help you today?
+else
+nod $n
+sayto $n The Pale Queen welcomes all. How can I help you?
+endif
+endif
+else
+bow $n
+sayto $n If you have anything else to report or perhaps to give as evidence
+sayto $n please let me know. Evidence always helps in cases like this. Thank
+sayto $n you again for your help - May Qylaith bless you!
+endif
+else
+sayto $n Thank you again for providing some evidence. May Qylaith bless you.
+oendif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   open w
+emote lights some incense around the temple.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   close w
+emote lights some incense around the temple.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) != 5653
+if hasqbit($n) == 5652
+if ovnuminv(5703) == 1
+emote frowns as he looks over the symbol.
+say It is exactly who we thought it was.. we knew this would happen
+say should they catch wind about that horrible temple.
+mpsleep 2
+sayto $n You have down well. This symbol belongs to the Laughing Skull
+sayto $n cult... a group of fools dedicated to raising a dead "god"
+sayto $n back to life. They are seeking many ways to do such and using
+sayto $n that temple is one way. I know they are trying in other places
+sayto $n and perhaps you can help stop them there as well. I have heard
+sayto $n they are hiding a base of operations in Drostar.
+mpsleep 2
+sayto $n I shall take this symbol to my elders to help my brother with
+sayto $n his claims. You have do us and the realms a great service today.
+mpadvance $n 5000
+mpqset $n 5653
+mpsleep 2
+bow $n
+mpjunk amulet
+else
+eye
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5614
+Keywords   qylain cleric worried mausoleum~
+Short      &wa qylain cleric&w~
+Long       &wA worried looking cleric is here pacing around the cemetary.&w
+~
+Desc       &wThis female half-elf is dressed in a pale grey robe as she walks
+around the cemetary with a worried expression on her face.
+~
+Race       half-elf~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea pacifist~
+Affected   infrared~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 7
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 5653
+if hasqbit($n) != 5652
+if hasqbit($n) != 5651
+if hasqbit($n) != 5650
+emote holds up a hand in greeting with a worried look on her face.
+sayto $n Greetings adventurer.. I seek the help of someone brave and
+sayto $n strong to help me with an urgent task! Would you like to
+sayto $n &Whear&w what I propose?
+else
+sayto $n Have you discovered the cause of the disturbance yet?
+endif
+else
+sayto $n Did you find out the cause of the undead?
+endif
+else
+bow $n
+sayto $n Thank you again for your help.
+endif
+else
+sayto $n I heard you turned in some evidence. Thank you again!
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p hear~
+Comlist   if hasqbit($n) != 5652
+if hasqbit($n) != 5651
+if hasqbit($n) != 5650
+nod $n
+sayto $n Recently we began to hear noises from this mausoleum and we
+sayto $n sent a small group of local adventurers to determine what was
+sayto $n happening. Only one of the original five returned to us and
+sayto $n said that the undead move deep below us.
+mpsleep 2
+sayto $n Their very nature is an affront to my goddess and we need
+sayto $n to stop whatever is causing it. Are you willing to enter
+sayto $n this mausoleum and travel down into the crypts in order
+sayto $n to stop the threat?
+else
+sayto $n You have already agreed to help. Did you stop the undead?
+endif
+else
+sayto $n Have you stopped the disturbance?
+endif
+else
+sayto $n Thank you again for your service.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 5646
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   mpgoto 5699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) !=5652
+if hasqbit($n) !=5651
+if hasqbit($n) !=5650
+smile
+sayto $n I thank you for your bravery! The mausoleum and crypt are
+sayto $n always open. Be careful as you go deeper as I have heard
+sayto $n the undead grow thicker than the moss that grows upon
+sayto $n the mausoleum itself. Once you have found the source
+sayto $n and dealt with it.. please come see me. May Qylaith
+sayto $n watch over you.
+mpqset $n 5650
+else
+sayto $n You have already agreed to help.
+endif
+else
+sayto $n Have you found the source of the evil? What was it?
+endif
+else
+sayto $n Thank you again for your assistance.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p cultists~
+Comlist   if hasqbit($n) != 5653
+if hasqbit($n) != 5652
+if hasqbit($n) == 5651
+gasp
+sayto $n They found the location of that dreadful temple? I wonder
+sayto $n how! I must report this to the clergy at once! If you have anything
+sayto $n else to report or to show please take it to the cleric in our temple
+sayto $n nearby! I must be going now - Thank you again!!
+mpadvance $n 5000
+mpqset $n 5651
+mpqset $n 5652
+emote turns and hurries off to talk to his elders.
+mpgoto 5699
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p cult~
+Comlist   if hasqbit($n) != 5653
+if hasqbit($n) != 5652
+if hasqbit($n) == 5651
+gasp
+sayto $n They found the location of that dreadful temple? I wonder
+sayto $n how! I must report this to the clergy at once! If you have anything
+sayto $n else to report or to show please take it to the cleric in our temple
+sayto $n nearby! I must be going now - Thank you again!!
+mpadvance $n 5000
+mpqset $n 5651
+mpqset $n 5652
+emote turns and hurries off to talk to his elders.
+mpgoto 5699
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5615
+Keywords   female mourner woman human grave~
+Short      &Oa mourner&w~
+Long       &OA female human is here seated before a fresh grave.&w
+~
+Desc       &OThis female human is dressed completely in black as she mourns
+the recent death of someone close to her.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel~
+Stats1     500 1 0 0 10 0 0 1 5 0
+Stats2     1 10 5
+Stats3     1 4 0
+Stats4     2 0 1 0 0 0 3
+Attribs    10 10 10 10 10 10 10
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote sobs softly to herself as she looks at a fresh grave.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   mpgoto 5645
+emote walks in from the village and takes a seat by a fresh grave.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   17~
+Comlist   emote stands up and heads back into the village nearby.
+mpgoto 5699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p andran~
+Comlist   emote sobs a bit and shakes her head.
+say My p-poor husband.. to serve the watch and to die b-b-by one of
+say those creatures.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p creatures~
+Comlist   frown
+sayto $n The monsters that the wall holds back. Not even human.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5616
+Keywords   priestess honeth praying altar~
+Short      &wa honem priestess&w~
+Long       &wA priestess of honeth is here praying before an altar.&w
+~
+Desc       &wThis priestess has a very serious look about her as she takes her
+work very seriously. She has cut her hair very short to avoid taking
+too much time on it. She wears the required uniform of all clergy
+representing their deities here proudly.
+~
+Race       human~
+Class      cleric~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_hidden truesight~
+Stats1     1000 50 0 0 0 1000 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 15
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if deity($n) == honeth
+bow $n
+sayto $n Welcome to the temple, believer.
+else
+nod $n
+sayto $n May you always fulfill your duties and protect others.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5617
+Keywords   mayor guard house village male human man~
+Short      &Oa village guard&w~
+Long       &OA male human is here serving as a village guard for the mayor.&w
+~
+Desc       &OThis guard is dressed in simple leather armor and stands here as
+he watches over the mayor's home.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     0 20 3 0 15 20 0 0 2 0
+Stats2     9 8 18
+Stats3     1 10 3
+Stats4     2 0 2 0 0 0 3
+Attribs    16 10 11 13 14 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+shake $n
+sayto $n The mayor is currently not taking guests. Please leave.
+mpsleep 2
+open e
+mea $n &OThe guard sends you away from the mayor's home.
+mer $n &OThe guard sends &O$n&O away from the mayor's home.
+silent mpforce $n e
+close e
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5618
+Keywords   tavern ooc Brunad human man male bar bartender~
+Short      &OBrunad&w~
+Long       &OA male human is here serving drinks to his patrons.&w
+~
+Desc       &OThis human man is quite tall and muscular. He has brown eyes and
+hair that work with his tan complexion.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   truesight~
+Stats1     0 50 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 3
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+grin $n
+sayto $n What can I get ye?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   open n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   close n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5619
+Keywords   shop clerk apothecary human woman female~
+Short      &Oa shop clerk&w~
+Long       &OA female shop clerk is here restocking some shelves.&w
+~
+Desc       &OThis young female human is dressed in a simple grey dress as she
+works here. She spends most of her time restocking and talking to
+customers who come to purchase goods.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     700 50 0 0 10 0 1 10 5 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 3
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+smile $n
+sayto $n Is there something I can help you find?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5661
+emote arrives and begins opening the store for the day.
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote closes up the store and heads home for the evening.
+close s
+mpgoto 5699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote heads home for the evening.
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5620
+Keywords   bank clerk man male human~
+Short      &Oa bank clerk&w~
+Long       &OA male human is here counting coins and registering the amount.&w
+~
+Desc       &OThis male human is very stern looking as he counts coins. He is dressed
+in dark clothing and has his short brown hair slicked back.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 3
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+sayto $n Yes? How can I help you?
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   open n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   close n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5621
+Keywords   village guard darkhold leather armor human man male~
+Short      &Oa village guard&w~
+Long       &OA village guard in leather armor is here patrolling.&w
+~
+Desc       &OThis human man is dressed in leather armor as he walks around the
+village. He has a stern looking face as he searches for any signs
+of trouble.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 25 0 0 15 0 0 1 5 0
+Stats2     3 8 9
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 6
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+nod $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   yell Help! I need assistance quickly!!!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5622
+Keywords   village gate guard darkhold leather armor human man male~
+Short      &Oa village gate guard&w~
+Long       &OA leather clad guard is here watching over the gates of a village.
+~
+Desc       &OThis human man is dressed in leather armor as he walks around the
+village. He has a stern looking face as he searches for any signs
+of trouble.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Stats1     0 25 0 0 15 0 0 1 5 0
+Stats2     3 8 9
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 3
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if ispc($n)
+nod $n
+sayto $n Welcome to Darkhold. Please stow away all weapons.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   if ispc($n)
+nod $n
+sayto $n Safe travels.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   yell Help! I need assistance at the south gates!!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5623
+Keywords   village gate guard darkhold leather armor human man male~
+Short      &Oa village gate guard&w~
+Long       &OA leather clad guard is here watching over the gates of a village.
+~
+Desc       &OThis human man is dressed in leather armor as he walks around the
+village. He has a stern looking face as he searches for any signs
+of trouble.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel~
+Stats1     0 25 0 0 15 0 0 1 5 0
+Stats2     3 8 9
+Stats3     1 4 1
+Stats4     2 0 1 0 0 0 3
+Attribs    13 10 11 12 12 10 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   yell Help! I need assistance at the north gates!!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the east.~
+Comlist   if ispc($n)
+nod $n
+sayto $n Welcome to Darkhold. Please stow away all weapons.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if ispc($n)
+nod $n
+sayto $n Safe travels.
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5624
+Keywords   male villager human man~
+Short      &Oa male citizen&w~
+Long       &OA male human is here wandering around the village.&w
+~
+Desc       &OThis man is dressed in mud stained cotton and wool clothing as
+he walks around the village.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 5620
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5625
+Keywords   female villager human female woman~
+Short      &Oa female citizen&w~
+Long       &OA female citizen is here wandering around the village.&w
+~
+Desc       &OThis woman is dressed in slightly mud stained cotton and wool clothing as
+she walks around the village.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   mpgoto 5609
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   21~
+Comlist   mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5626
+Keywords   young child boy male human villager~
+Short      &Oa young child&w~
+Long       &OA young child covered in mud is here playing around the village.&w
+~
+Desc       &OThis young child is dressed in mud stained cotton and wool clothing
+as he plays around the village.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     -200 1 0 0 10 0 0 0 1 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 5603
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5627
+Keywords   recruitment darkhold watch human man male~
+Short      &Oa recruiter&w~
+Long       &OA human man is here talking to people about recruitment.&w
+~
+Desc       &OThis man is dressed in a dark wool cloak with a fur trimmed hood. His
+boots are stained with mud as he walks around the city.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     0 1 0 0 10 0 0 0 2 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 3
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if hasqbit($n) != 5604
+if hasqbit($n) != 5603
+if hasqbit($n) != 5602
+if hasqbit($n) != 5601
+if hasqbit($n) != 5600
+if level($n) >= 15
+emote holds up a hand in greeting.
+sayto $n Greetings! Are you looking for respectable work and purpose?
+else
+endif
+else
+bow $n
+sayto $n Well met fellow Watcher.
+endif
+else
+bow $n
+sayto $n Well met fellow Watcher.
+endif
+else
+bow $n
+sayto $n Well met fellow Watcher.
+endif
+else
+salute $n
+sayto $n Well met fellow Watcher.
+endif
+else
+salute $n
+sayto $n Well met fellow Watcher.
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5619
+emote arrives from the building to the north.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if hasqbit($n) != 5600
+if level($n) >= 15
+grin $n
+sayto $n That's the spirit! The Darkhold Watch is looking for new
+sayto $n recruits! You get pay and lodging for working at the wall
+sayto $n and many advance in rank as well! Please see the Watch Office
+sayto $n here in town to sign up.
+else
+sayto $n You need a little more experience under your belt first. Find me
+sayto $n or the recruitment office when you are truly ready.
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5628
+Keywords   wandering merchant food cooked meat man male human~
+Short      &Oa food merchant&w~
+Long       &OA human man peddling cooked meat is here wandering around the village.&w
+~
+Desc       &OThis man is dressed in mud stained cotton and wool clothing as
+he walks around the village.&w
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea pacifist~
+Stats1     0 50 0 0 10 0 1 20 20 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 3
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if sex($n) == 1
+grin $n
+sayto $n Aye sir! Hungry? I have a cooked selection of meat for sale!
+else
+wink $n
+sayto $n Allo Madam! Hungry! I have some tasty meat fer ya if interested!
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 5605
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5629
+Keywords   lovor man male human patching metal armor shop clerk~
+Short      &cLovor&w~
+Long       &cA male human is here patching some metal armor.&w
+~
+Desc       &cThis human man is quite tall and muscular as he works on a set
+of armor here. He has dark hair and wears an eye patch over his
+left eye.
+~
+Lore       &cYou see a young man battling a demonic looking creature, which
+gouges his left eye before the man slays it...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 5 10 10 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 0
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5631 
+emote arrives for the day and sets up the shop
+open s
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote closes up the shop for the evening and heads home.
+close s
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5630
+Keywords   hooded figure walking human man male cloak~
+Short      &za hooded figure&w~
+Long       &zA hooded figure is here wandering around the village.&w
+~
+Desc       &zThis figure is not very tall and has a draped hood over its head.
+He has a long cloak that covers up the rest of their details as they
+walks silently around the village.
+~
+Race       human~
+Class      rogue~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc stayarea pacifist~
+Affected   sneak hide~
+Stats1     -800 1 0 0 10 0 0 10 2 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 0
+Attribs    13 13 13 30 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpgoto 5625
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   5~
+Comlist   mpgoto 5699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if class($n) == rogue
+nod $n
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5697
+Keywords   Baxim lab assistant young human man male wizard~
+Short      &YBaxim&w~
+Long       &YAn young human male apprentice is here arranging some books.&w
+~
+Desc       &YThis young human man is here dressed in a simple robe and cloak
+as he arranges books and materials here. He has a kind face and very
+short blonde hair with green eyes.
+~
+Race       human~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     0 50 0 0 10 0 5 10 10 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 11
+Attribs    30 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5695
+if hasqbit($n) != 5694
+smile $n
+sayto $n Hello! Is there something I can help you with?
+else
+smile $n
+sayto $n When you have the earth crystal shard please hand it to me.
+endif
+else
+sayto $n When you have both positive and negative crystal shards just
+sayto $n tell me when you are ready to &Rcontinue&Y.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5657 
+emote arrives and begins setting up for the day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   20~
+Comlist   emote cleans up and heads upstairs to get some rest.
+mpgoto 5699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 5694
+if ovnuminv(993) == 1
+Grin $n
+Sayto $n I truly love how these crystal shards look like plants! With
+Sayto $n their faux looking roots.. and yet when you look inside its
+Sayto $n like you can see the very essence of the land growing deep
+Sayto $n within these crystals.
+Mpsleep
+laugh
+give eshard $n
+Sayto $n Well enough about my love for these crystals. They have
+Sayto $n powerful usage as the support for more complex recipes
+Sayto $n and magics. That supportive energy keeps these recipes from
+Sayto $n becoming unstable and very dangerous!
+mpsleep 2
+sayto $n Now for your last crystal hunt you will need to find a positive and
+Sayto $n negative crystal shard. These crystals can be quite hard to find as
+Sayto $n they grow in divinely touched places or planes, and places of great
+Sayto $n positivity or negativity. These crystals are rather quirky and grow in
+Sayto $n the most unexpected places... their locations can also be very
+Sayto $n dangerous so it is suggested that you do not go to these places alone.
+mpsleep 2
+sayto $n When you have the crystal shards please return back here and tell
+Sayto $n me to &Rcontinue&Y with your last lesson on crystals. Do not hand
+Sayto $n them over to me. Good luck!
+mpqset $n 5694
+mpqset $n 5695
+else
+sayto $n This is not an earth elemental crystal shard.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p continue~
+Comlist   if hasqbit($n) == 5695
+if carryingvnum($n) == 989
+If carryingvnum($n) == 988
+Smile $n
+Sayto $n Well done! It is not easy to find these crystals and it can
+Sayto $n be rather dangerous. Those crystals in your possession
+Sayto $n represent polarities of good and evil. While the crystals
+Sayto $n themselves are not inherently aligned they are indeed forged
+Sayto $n from those energies. These crystals lend their energies to
+Sayto $n whatever the recipe is.. whether it is helpful or baleful.  
+Mpsleep 2
+Sayto $n When the two crystals are used together they form a powerful
+Sayto $n stabilizing effect that energizes the recipe as well. Few recipes
+Sayto $n require both crystals, but if they do require both rest assured
+Sayto $n that the level of danger in creating the recipe is high.
+mpsleep 2
+sayto $n Now you are ready for your final lesson on alchemy with Mistress
+Sayto $n Voria. Good luck and stay safe when using alchemy!
+mpqset $n 5695
+mpqset $n 5696
+else
+sayto $n You will need a negative crystal shard first.
+Endif
+Else
+Sayto $n You will need a positive crystal shard first.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote blows some dust off a book before putting it on a shelf.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5698
+Keywords   voria female gnome woman test tubes gnomish~
+Short      &YVoria&w~
+Long       &YA gnomish woman is here examining some test tubes.&w
+~
+Desc       &YThis gnomish woman is dressed in a white robe with a matching coat
+as she walks around up here mixing components. She has a rosy complexion
+with deep red hair that seems rather unnatural. Her eyes are a bright
+blue that contrasts with all reddish tones.
+~
+Race       forest-gnome~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Stats1     700 1 0 0 10 0 5 10 10 0
+Stats2     1 10 10
+Stats3     1 4 2
+Stats4     2 0 1 0 0 0 7
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     sleep charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hasqbit($n) != 5699
+if hasqbit($n) != 5696
+if hasqbit($n) != 5695
+if hasqbit($n) != 5694
+if hasqbit($n) != 5693
+if hasqbit($n) != 5692
+if hasqbit($n) != 5691
+if hasqbit($n) != 5690
+if level($n) >= 20
+smile $n
+sayto $n Would you like to learn the art of alchemy? The fee to learn
+sayto $n is 100 gold. Please hand me the fee when you are ready to start.
+else
+nod $n
+endif
+else
+sayto $n Are you ready to start your first lesson?
+endif
+else
+sayto $n Please hand me the fire shard if you have found one.
+endif
+else
+sayto $n When you are carrying the water shard just tell me you are READY.
+endif
+else
+sayto $n When you have the air shard just tell me to CONTINUE with your lesson.
+endif
+else
+sayto $n When you have the earth shard go to Baxim and hand it to him.
+endif
+else
+sayto $n When you have the positive and negative shards take them to Baxim.
+endif
+else
+sayto $n Baxim has told me you are ready. Please let me know when you
+sayto $n are ready to &Rfinish&w your alchemy lessons with a final
+sayto $n lecture.
+endif
+else
+smile $n
+sayto $n I hope you are enjoying the art of alchemy!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   mpgoto 5654
+emote arrives from upstairs and begins checking her test tubes.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   emote finishes up for the evening and heads upstairs to rest.
+mpgoto 5699
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you 100 gold coins.~
+Comlist   if hasqbit($n) != 5699
+if hasqbit($n) != 5690
+smile $n
+sayto $n Wonderful! Alchemy is a powerful skill that allows you to
+sayto $n change one material into another. Alchemists these days
+sayto $n stick to making starstones, which are used for powerful
+sayto $n magical spells and rituals. Other components can be
+sayto $n made from alchemy such as magestones or brightstones.
+mpsleep 2
+sayto $n Your first task is to find a fire elemental shard. Shards
+sayto $n exist in places of great elemental power. Fire shards
+sayto $n for example live in very hot places. Shard clusters are
+sayto $n invisible to the naked eye so you will need the spell
+sayto $n detect invisible or true seeing cast upon you.
+mpsleep 2
+sayto $n You will also need an elemental mining pick, which my
+sayto $n my apprentice can help you with. You will also need to
+sayto $n purchase an alchemy kit and six test tubes.
+mpsleep 2
+sayto $n A pair of dowsing rods will help if you need to conserve spells.
+mpsleep 3
+sayto $n Good luck and make sure to make yourself resistant to heat.
+sayto $n Places where elemental shard clusters grow are often
+sayto $n very dangerous.. or sometimes it is an oddly simple place
+sayto $n like where campfires are constantly placed. You never know
+sayto $n with elemental crystal clusters! Odd ducks they are!
+mpsleep 2
+sayto $n When you find it bring it here and hand it to me.
+mpqset $n 5690
+mpqset $n 5691
+else
+sayto $n You have already signed up.
+give 100 gold $n
+endif
+else
+sayto $n You have already learned how to do alchemy.
+give 100 gold $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you~
+Comlist   if hasqbit($n) == 5691
+if ovnuminv(990) == 1
+smile $n
+sayto $n Well done! Fire elemental crystal shards are soft warm to
+sayto $n the touch! With alchemy these shards can be used for a variety
+sayto $n of purposes. Alchemy is all about experimentation and you
+sayto $n will find yourself making all sorts of things.
+give fshard $n
+mpsleep 2
+sayto $n Now I want you to bring to me a water elemental crystal
+sayto $n shard! These crystal clusters grow where water can be
+sayto $n be found such as ponds, lakes, waterfalls, or even places
+sayto $n under the ocean known as the Undersea.
+mpsleep 2
+sayto $n Some locations of water crystal clusters can be found growing
+sayto $n near these watery locations or some may require swimming or
+sayto $n going deep underwater so be careful.
+mpsleep 2
+sayto $n When you have the crystal shard come back here and tell me
+sayto $n you are &Bready&w to continue with your lesson.
+mpqset $n 5691
+mpqset $n 5692
+else
+sayto $n This is not a fire crystal shard.
+drop all
+endif
+else
+drop all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p ready~
+Comlist   if hasqbit($n) == 5692
+if carryingvnum($n) == 992
+smile $n
+Sayto $n I see you carry with you a water elemental crystal shard!
+Sayto $n Well done! These shards are known for looking wet even
+Sayto $n though they are dry to the touch. Many of these shards are
+Sayto $n used in healing ingredients or spells that involve the cold.
+mpsleep 2
+sayto $n Now I want you to bring to me an air elemental crystal
+sayto $n shard! These crystal clusters grow where powerful wind
+sayto $n gusts can be found such as mountain tops, deserts, and hills.
+mpsleep 2
+sayto $n Other locations of air crystal clusters are places touched by
+Sayto $n disastrous weather such as tornadoes. These crystal clusters
+Sayto $n prefer dryer locations so you will not find them in humid or
+Sayto $n moist places.
+mpsleep 2
+sayto $n When you have the crystal shard come back here and tell me
+sayto $n you are ready to &Ccontinue&w your lesson.
+mpqset $n 5692
+mpqset $n 5693
+else
+sayto $n You need to find a water elemental crystal shard first.
+endif
+else
+drop all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p continue~
+Comlist   if hasqbit($n) == 5693
+if carryingvnum($n) == 991
+smile $n
+Sayto $n I see you carry with you an air elemental crystal shard!
+Sayto $n Well done! These crystals contain the very essence of
+sayto $n the wind and are a personal favorite of mine! These
+Sayto $n crystals are useful in transportation spells due to their
+Sayto $n affinity with movement. They are also aligned with the
+Sayto $n power of the mind and intellect as well. 
+mpsleep 2
+sayto $n Now I want you to bring to Baxim, my apprentice down stairs,
+Sayto $n an earth elemental crystal shard! He is an expert on such
+Sayto $n and he will guide you. These crystal clusters grow in powerful
+Sayto $n earth locations such as mountains, hills, caves, and the Underdark.
+sayto $n I suggest avoiding the Underdark due to the dangers there.
+mpsleep 2
+sayto $n When you have the crystal shard report to Baxim and hand it
+sayto $n over to him to inspect it.
+mpqset $n 5693
+mpqset $n 5694
+else
+drop all
+endif
+else
+drop all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p finish~
+Comlist   if hasqbit($n) == 5690
+If hasqbit($n) == 5696
+Smile $n
+Sayto $n Well done my child! Alchemy is a fine art, but there are also
+Sayto $n dangers! One must be in full control, be at their peak levels
+Sayto $n of knowledge in arcana, and be very flexible with results.
+Mpsleep 2
+Sayto $n Most of the knowledge you will need can be found in the book
+Sayto $n located in your alchemy kit. It can get lost in there so you may
+Sayto $n need to look for it. The book contains recipes and how to melt
+Sayto $n the crystals.
+Mpsleep 2
+Sayto $n Now.. the first step is to melt each crystal and catch the essence
+Sayto $n in an empty glass test tube. Many recipes require a vehicle for
+Sayto $n for the recipe to work.. such as a specific stone such as an
+Sayto $n earthstone. The driver for most alchemy is fire and you will need
+Sayto $n have a fire prepared prior to working. You will also place your kit
+Sayto $n on the ground so you can grab at tools easily.
+Mpsleep 2
+Sayto $n If you should fail at the melting stage you more than likely will
+Sayto $n just burn yourself. When you get to recipes you may cause an
+Sayto $n explosion that hurts everyone around you. You may want to find
+Sayto $n a safe place to work alone at that stage. Explosions tend to destroy
+Sayto $n all of ones work so try to ensure your arcanic skill is at its highest
+Sayto $n level of performance before attempting the recipe stage.
+Mpsleep 2
+Sayto $n The recipes for three basic items can be found in the book in
+Sayto $n your kit. Please be careful, but do not lose your experimental
+Sayto $n spirit either! Who knows what you will create with alchemy!
+Sayto $n Good luck and happy mixing!
+mpqset $n 5690
+mpqset $n 5696
+mpqset $n 5699
+Mpsleep 2
+Mea $n &zYou now know the art of Alchemy and can start creating with it.&w
+Else
+Endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote looks at a test tube before shaking it.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5699
+Keywords   mayor hyanim darkhold noble looking human man male~
+Short      &OMayor Hyanim Darkhold&w~
+Long       &OA noble looking human man is here looking over some paperwork.&w
+~
+Desc       &OThis noble looking human is dressed in fine looking clothing with a
+long cloak and dark features. He has black hair and deep dark eyes.
+~
+Lore       &OYou see a young man becoming the leader of a village upon the death
+of his father...
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Stats1     600 1 0 0 10 0 10 10 100 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 3
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+Immune     charm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   eye $n
+sayto $n Hello.. how can I help you?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpgoto 5650
+emote comes downstairs and begins his tasks for the day.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   emote finishes up some work and heads upstairs to rest.
+mpgoto 5699
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     5600
+Keywords metal bolt crossbow~
+Type     projectile~
+Short    &wa metal crossbow bolt&w~
+Long     &wA metal crossbow bolt has been left here.&w~
+WFlags   take onehand~
+Values   0 1 8 7 0 12
+Values2  0 2
+Stats    1 0 0 45 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5601
+Keywords black leather crossbow quiver~
+Type     quiver~
+Short    &za black leather crossbow quiver&w~
+Long     &zA black leather crossbow quiver used for bolts has been left here.&w~
+WFlags   take about back belt onehand~
+Values   100 0 0 12 0 0
+Values2  0 2
+Stats    1 10 85 40 1 1 2
+#ENDOBJECT
+
+#OBJECT
+Vnum     5602
+Keywords white leather crossbow quiver~
+Type     quiver~
+Short    &Wa white leather crossbow quiver&w~
+Long     &WA white leather crossbow quiver used for bolts has been left here.&w~
+WFlags   take about back belt onehand~
+Values   100 0 0 12 0 0
+Values2  0 2
+Stats    1 10 90 45 1 1 2
+#ENDOBJECT
+
+#OBJECT
+Vnum     5603
+Keywords grey leather crossbow quiver~
+Type     quiver~
+Short    &wa grey leather crossbow quiver&w~
+Long     &wA grey leather crossbow quiver used for bolts has been left here.&w~
+WFlags   take about back belt onehand~
+Values   100 0 0 12 0 0
+Values2  0 2
+Stats    1 10 50 60 1 1 2
+#ENDOBJECT
+
+#OBJECT
+Vnum     5604
+Keywords brown leather crossbow quiver~
+Type     quiver~
+Short    &Oa brown leather crossbow quiver&w~
+Long     &OA brown leather crossbow quiver used for bolts has been left here.&w~
+WFlags   take about back belt onehand~
+Values   100 0 0 12 0 0
+Values2  0 2
+Stats    1 9 75 90 0 1 2
+#ENDOBJECT
+
+#OBJECT
+Vnum     5605
+Keywords sling magical black leather~
+Type     missileweapon~
+Short    &za black leather sling&w~
+Long     &zA sling made of black leather has been left here.&w~
+Lore   &zYour vision reveals that this is a "Sling +1," and has been created
+with magic to improve one's striking ability.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   12 1 4 2 12 3
+Values2  0 2
+Stats    1 250 100 95 25 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5606
+Keywords blowgun dart small sharp martial melee~
+Type     projectile~
+Short    &wa small blowgun dart&w~
+Long     &wA small blowgun dart has been left here.&w~
+WFlags   take onehand~
+Values   0 1 1 3 2 0
+Values2  0 1
+Stats    1 0 0 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5607
+Keywords blowgun dart bronze magic small~
+Type     projectile~
+Short    &Oa bronze blowgun dart&w~
+Long     &OA blowgun dart made of bronze has been left here.&w~
+Lore   &WYour vision reveals this dart to be a "Blowgun Dart +1," which
+has been magically improved for striking and damage.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 1 1 3 2 0
+Values2  0 1
+Stats    1 15 10 10 1 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5608
+Keywords blowgun dart silver magic small~
+Type     projectile~
+Short    &Wa silver blowgun dart&w~
+Long     &WA blowgun dart made of silver has been left here.&w~
+Lore   &WYour vision reveals this dart to be a "Blowgun Dart +2," which
+has been magically improved for striking and damage.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 1 1 3 2 0
+Values2  0 1
+Stats    1 35 10 10 3 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5609
+Keywords sling bullet metallic red~
+Type     projectile~
+Short    &Ra metallic red bullet&w~
+Long     &RA small metallic stone used as a projectile for a sling has been left here.&w~
+Lore   &RYour vision reveals that this bullet is a "Sling Bullet +1," which
+has been magically enhanced for striking and damage.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   12 1 4 2 3 0
+Values2  0 2
+Stats    0 25 10 3 2 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5610
+Keywords sling bullet metallic blue~
+Type     projectile~
+Short    &Ba metallic blue bullet&w~
+Long     &BA small metallic stone used as a projectile for a sling has been left here.&w~
+Lore   &BYour vision reveals that this bullet is a "Sling Bullet +2," which
+has been magically enhanced for striking and damage.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   12 1 4 2 3 0
+Values2  0 2
+Stats    0 60 10 3 6 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5611
+Keywords dart emerald colored~
+Type     weapon~
+Short    &gan emerald dart&w~
+Long     &gAn emerald colored dart has been left here.&w~
+Lore   &GYour vision reveals that this bullet is a "Dart +1," which
+has been magically enhanced for striking and damage.&w
+~
+Flags    magic finesse~
+WFlags   take onehand~
+Values   12 1 4 3 23 0
+Values2  0 2
+Stats    1 30 0 1 3 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5612
+Keywords crimson dart colored~
+Type     weapon~
+Short    &ra crimson dart&w~
+Long     &rA crimson colored dart has been left here.&w~
+Lore   &rYour vision reveals that this bullet is a "Dart +2," which
+has been magically enhanced for striking and damage.&w
+~
+Flags    magic finesse~
+WFlags   take onehand~
+Values   12 1 4 3 23 0
+Values2  0 2
+Stats    1 55 10 1 5 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5613
+Keywords green crossbow bolt~
+Type     projectile~
+Short    &Ga green crossbow bolt&w~
+Long     &GA green crossbow bolt has been left here.&w~
+Lore   &GYour vision reveals this bolt to be a "Crossbow Bolt +1," which
+has been magically enhanced for striking and damage.&w
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 1 8 7 0 12
+Values2  0 2
+Stats    1 45 10 45 4 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5614
+Keywords purple crossbow bolt~
+Type     projectile~
+Short    &pa purple crossbow bolt&w~
+Long     &pA purple crossbow bolt has been left here.&w~
+Lore   &pYour vision reveals this bolt to be a "Crossbow Bolt +2," which
+has been magically enhanced for striking and damage.&w
+~
+Flags    magic~
+WFlags   take onehand~
+Values   0 1 8 7 0 12
+Values2  0 2
+Stats    1 75 10 45 7 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5615
+Keywords brown leather sling bullet pouch~
+Type     quiver~
+Short    &Oa brown leather bullet pouch&w~
+Long     &OA brown leather pouch used for sling bullets has been left here.&w~
+WFlags   take belt onehand~
+Values   100 0 0 12 0 0
+Values2  0 2
+Stats    1 5 85 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5616
+Keywords brown leather dart quiver~
+Type     quiver~
+Short    &Oa brown leather dart quiver&w~
+Long     &OA brown leather quiver used for darts has been left here.&w~
+WFlags   take belt onehand~
+Values   100 0 0 12 0 0
+Values2  0 2
+Stats    1 8 85 20 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5617
+Keywords yellow colored arrow~
+Type     projectile~
+Short    &Ya yellow colored arrow&w~
+Long     &YA yellow colored arrow has been left here.&w~
+Lore   &YYour vision reveals this arrow to be an "Arrow +1," which has
+been magically enhanced for striking and damage.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   1 1 4 3 1 0
+Values2  0 2
+Stats    1 50 5 10 5 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5618
+Keywords white colored arrow~
+Type     projectile~
+Short    &Wa white colored arrow&w~
+Long     &WA white colored arrow has been left here.&w~
+Lore   &WYour vision reveals this arrow to be an "Arrow +2," which has
+been magically enhanced for striking and damage.
+~
+Flags    magic~
+WFlags   take onehand~
+Values   1 1 4 3 1 0
+Values2  0 2
+Stats    1 79 5 10 7 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5619
+Keywords flint small sharp piece~
+Type     gem~
+Short    &wa sharp piece of flint&w~
+Long     &wA sharp piece of flint has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 1
+Stats    1 0 0 12 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5620
+Keywords archery shaft wooden spine~
+Type     trash~
+Short    &Oa wooden archery shaft&w~
+Long     &OThe spine of an unfinished arrow has been left here.&w~
+WFlags   take onehand~
+Values   1 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5621
+Keywords flint tipped arrow wooden~
+Type     projectile~
+Short    &wa flint tipped &Oarrow&w~
+Long     &wA wooden arrow with a flint tip has been left here.&w~
+WFlags   take onehand~
+Values   1 1 6 3 1 12
+Values2  0 2
+Stats    1 0 1 10 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5622
+Keywords statue tormug darkhold ranger wise looking human man male~
+Type     treasure~
+Short    &wa statue&w~
+Long     &wA statue of a wise looking human man has been erected here.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    200 0 0 0 0 0 0
+#EXDESC
+ExDescKey    statue~
+ExDesc       &wThe wooden statue here depicts a human man dressed in leather armor. He
+carries with him a wide assortment of missile weapons and his face
+seems very wise. A plaque can be found at the base of the statue.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plaque~
+ExDesc       &wThe plaque at the base of the statue reads:
+ 
+&WThis statue has been established here in honor of the village
+founder, Tormug Darkhold, a famous ranger known for his love of
+all missile weapons. Tormug was influential in the battle against
+the Demonlord.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5623
+Keywords bowl root vegetable stew thick~
+Type     food~
+Short    &ga thick root vegetable stew&w~
+Long     &gA bowl of thick root vegetable stew has been left here.&w~
+WFlags   take onehand~
+Values   10 9 0 0 0 0
+Values2  0 2
+Stats    1 0 2 90 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5624
+Keywords leather slippers pair~
+Type     armor~
+Short    &Oa pair of leather slippers&w~
+Long     &OA pair of leather slippers have been left here.&w~
+WFlags   take feet~
+Values   0 0 0 0 0 0
+Values2  3 2
+Stats    1 12 10 0 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5625
+Keywords fresh grave site disturbed earth~
+Type     trash~
+Short    &Oa fresh grave&w~
+Long     &OA fresh grave with a stone marker has been completed here recently.&w~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5626
+Keywords copper pin darkhold watch small~
+Type     treasure~
+Short    &Oa copper &zDarkhold Watch&O pin&w~
+Long     &OA copper pin of a Darkhold Watch member has been left here.&w~
+WFlags   take neck belt onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 8
+#EXDESC
+ExDescKey    pin~
+ExDesc       &OThis copper pin depicts a large wall with the words "To Serve and
+Protect" etched under the wall.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5627
+Keywords village stone small fresh water fountain~
+Type     fountain~
+Short    &wa stone fountain&w~
+Long     &wA stone fountain with fresh drinking water is here.&w~
+Values   1000 1000 6 0 0 0
+Values2  0 3
+Stats    9000 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5628
+Keywords wiener savory foot long food sausage~
+Type     food~
+Short    &Oa savory foot long wiener&w~
+Long     &OA savory looking foot long wiener has been left here.&w~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 0 1 40 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5629
+Keywords test tube glass small testtube~
+Type     trash~
+Short    &Wa small glass test tube&w~
+Long     &WA small glass test tube has been left here.&w~
+Flags    inventory~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 3 10 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p negativemelt~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 18
+If otypehere(fire) == 1
+If ovnumroom(5631) == 1
+if ovnumroom(988) == 1
+If carryingvnum($n) == 5629
+Mea $n &zYou take some forceps from your kit and grasp the shard.
+Mea $n &zAfter grasping the shard you sprinkle some powdered silver
+Mea $n &zon top of it before holding it over the fire. It slowly begins
+Mea $n &zto dissolve and you catch the liquid in your empty glass test
+Mea $n &ztube. Upon melting all of the shard you cap the tube shut
+Mea $n &zand finish your alchemical process.
+Mer $n &z$n&z melts down a shard into a test tube.
+Silent mpforce $n drop tube
+mpoload 5637 1
+Silent mpforce $n get ntube
+Mppurge nshard
+Mppurge testtube
+Else
+Mea $n You need to be holding a test tube first.
+Endif
+Else 
+Mea $n You need to put a negative shard by the fire first.
+Endif
+Else
+Mea $n You need to put your kit on the ground and set it up.
+Endif
+Else 
+Mea $n You need to have a fire ready.
+Endif
+Else
+Mea $n &RYou fail to melt the shard and burn yourself!
+Mer $n &R$n&R burns $mself while trying to melt a shard.
+Mpdamage $n 1 20
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p positivemelt~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 18
+If otypehere(fire) == 1
+If ovnumroom(5631) == 1
+If ovnumroom(989) == 1
+If carryingvnum($n) == 5629
+Mea $n &WYou take some forceps from your kit and grasp the shard.
+Mea $n &WAfter grasping the shard you sprinkle some powdered iron
+Mea $n &Won top of it before holding it over the fire. It slowly begins
+Mea $n &Wto dissolve and you catch the liquid in your empty glass test
+Mea $n &Wtube. Upon melting all of the shard you cap the tube shut
+Mea $n &Wand finish your alchemical process.
+Mer $n &W$n&W melts down a shard into a test tube.
+Silent mpforce $n drop tube
+Mpoload 5636 1
+Silent mpforce $n get ptube
+Mppurge pshard
+Mppurge testtube
+Else
+Mea $n You need to be holding a test tube first.
+Endif
+Else 
+Mea $n You need to put a positive shard by the fire first.
+Endif
+Else
+Mea $n You need to put your kit on the ground and set it up.
+Endif
+Else 
+Mea $n You need to have a fire ready.
+Endif
+Else
+Mea $n &RYou fail to melt the shard and burn yourself!
+Mer $n &R$n&R burns $mself while trying to melt a shard.
+Mpdamage $n 1 20
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p earthmelt~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 18
+If otypehere(fire) == 1
+If ovnumroom(5631) == 1
+If ovnumroom(993) == 1
+If carryingvnum($n) == 5629
+Mea $n &GYou take some forceps from your kit and grasp the shard.
+Mea $n &GAfter grasping the shard you sprinkle some bitter acid
+Mea $n &Gon top of it before holding it over the fire. It slowly begins
+Mea $n &Gto dissolve and you catch the liquid in your empty glass test
+Mea $n &Gtube. Upon melting all of the shard you cap the tube shut
+Mea $n &Gand finish your alchemical process.
+Mer $n &G$n&G melts down a shard into a test tube.
+Silent mpforce $n drop tube
+mpoload 5635 1
+Silent mpforce $n get etube
+Mppurge eshard
+Mppurge testtube
+Else
+Mea $n You need to be holding a test tube first.
+Endif
+Else 
+mea $n You need to put an earth shard by the fire first.
+Endif
+Else
+Mea $n You need to put your kit on the ground and set it up.
+Endif
+Else 
+Mea $n You need to have a fire ready.
+Endif
+Else
+Mea $n &RYou fail to melt the shard and burn yourself!
+Mer $n &R$n&R burns $mself while trying to melt a shard.
+Mpdamage $n 1 20
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p watermelt~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 18
+If otypehere(fire) == 1
+If ovnumroom(5631) == 1
+If ovnumroom(992) == 1
+If carryingvnum($n) == 5629
+Mea $n &BYou take some forceps from your kit and grasp the shard.
+Mea $n &BAfter grasping the shard you sprinkle some phosporous
+Mea $n &Bon top of it before holding it over the fire. It slowly begins
+Mea $n &Bto dissolve and you catch the liquid in your empty glass test
+Mea $n &Btube. Upon melting all of the shard you cap the tube shut
+Mea $n &Band finish your alchemical process.
+Mer $n &B$n&B melts down a shard into a test tube.
+Silent mpforce $n drop tube
+Mpoload 5633 1
+Silent mpforce $n get wtube
+Mppurge wshard
+Mppurge testtube
+Else
+Mea $n You need to be holding a test tube first.
+Endif
+Else 
+Mea $n You need to put a water shard by the fire first.
+Endif
+Else
+Mea $n You need to put your kit on the ground and set it up.
+Endif
+Else 
+Mea $n You need to have a fire ready.
+Endif
+Else
+Mea $n &RYou fail to melt the shard and burn yourself!
+Mer $n &R$n&R burns $mself while trying to melt a shard.
+Mpdamage $n 1 20
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p firemelt~
+Comlist   If hasqbit($n) == 5699
+if arcana($n) >= 18
+If otypehere(fire) == 1
+If ovnumroom(5631) == 1
+If ovnumroom(990) == 1
+if carryingvnum($n) == 5629
+Mea $n &RYou take some forceps from your kit and grasp the shard.
+Mea $n &RAfter grasping the shard you sprinkle some salt on top of
+Mea $n &Rit before holding it over the fire. It slowly begins to
+Mea $n &Rdissolve and you catch the liquid in your empty glass test
+Mea $n &Rtube. Upon melting all of the shard you cap the tube shut
+Mea $n &Rand finish your alchemical process.
+Mer $n &R$n&R melts down a fiery shard into a test tube.
+Silent mpforce $n drop tube
+Mpoload 5632 1
+Silent mpforce $n get ftube
+Mppurge fshard
+Mppurge testtube
+Else
+Mea $n You need to be holding a test tube first.
+Endif
+Else 
+Mea $n You need to put a fire shard by the fire first.
+Endif
+Else
+Mea $n You need to put your kit on the ground and set it up.
+Endif
+Else 
+Mea $n You need to have a fire ready.
+Endif
+Else
+Mea $n &RYou fail to melt the shard and burn yourself!
+Mer $n &R$n&R burns $mself while trying to melt a shard.
+Mpdamage $n 1 20
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p airmelt~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 18
+If otypehere(fire) == 1
+If ovnumroom(5631) == 1
+If ovnumroom(991) == 1
+if carryingvnum($n) == 5629
+Mea $n &YYou take some forceps from your kit and grasp the shard.
+Mea $n &YAfter grasping the shard you sprinkle some mercury on top
+Mea $n &Yof it before holding it over the fire. It slowly begins to
+Mea $n &Ydissolve and you catch the gas in your empty glass test
+Mea $n &Ytube. Upon melting all of the shard you cap the tube shut
+Mea $n &Yand finish your alchemical process.
+mer $n &Y$n&Y melts down a shard into a test tube.&w
+Silent mpforce $n drop tube
+Mpoload 5634 1
+Silent mpforce $n get atube
+Mppurge ashard
+Mppurge testtube
+Else
+Mea $n You need to be holding a test tube first.
+Endif
+Else 
+Mea $n You need to put an air shard by the fire first.
+Endif
+Else
+Mea $n You need to put your kit on the ground and set it up.
+Endif
+Else 
+Mea $n You need to have a fire ready.
+Endif
+Else
+Mea $n &RYou fail to melt the shard and burn yourself!
+Mer $n &R$n&R burns $mself while trying to melt a shard.
+Mpdamage $n 1 20
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5630
+Keywords test tube case wooden small~
+Type     container~
+Short    &Oa wooden test tube case&w~
+Long     &OA wooden test tube case has been left here.&w~
+WFlags   take onehand~
+Values   20 0 0 0 0 0
+Values2  0 2
+Stats    1 10 10 45 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5631
+Keywords alchemy kit small leather case tool~
+Type     trash~
+Short    &zan alchemy kit&w~
+Long     &zA small leather case full of tools has been left here.&w~
+Flags    prototype~
+WFlags   take onehand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 20 20 75 2 0 0
+#EXDESC
+ExDescKey    kit~
+ExDesc       &zThis kit includes some glass beakers, a metal frame to hold a beaker
+over a fire, glass stirring rods, a small mortar and pestle, and
+a small pouch of ingredients such as salt, powdered iron, and purified
+water. A small leather book can be found at the bottom of the kit.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    alchemy~
+ExDesc       &zThis kit includes some glass beakers, a metal frame to hold a beaker
+over a fire, glass stirring rods, a small mortar and pestle, and
+a small pouch of ingredients such as salt, powdered iron, and purified
+water.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    alchemybook~
+ExDesc       &OYou open a book on alchemy and find the following chapters:
+ 
+&YChapter One&W - &YAlchemy Steps
+&YChapter Two&w - &YAlchemy Recipes
+ 
+&OIn order to read a chapter you simply LOOK CHAPTERONE, etc.
+ 
+&OCurrent Volume: 2
+ 
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    chapterone~
+ExDesc       &OIn order to melt a shard and prepare it for recipes you must
+do the following:
+ 
+&Y1.)&w Find the shard and mine it with an elemental pick.
+&Y2.)&w Light a fire.
+&Y3.)&w Place your kit on the ground to set it up.
+&Y4.)&w Place your shard next to the fire on the ground.
+&Y5.)&w Carry an empty test tube and <element>melt such as &YAIRMELT&w.
+ 
+&OWarning! Those that are not proficient with the skill of arcana
+risk accidents during the process. One should bolster their
+intellect in order to prepare for the grueling alchemical tasks.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    chaptertwo~
+ExDesc       &OThe following are common recipes done using alchemy:&w
+
+&OBRIGHTSTONES&w
+&YNeeded:&w 1 negative tube, 1 positive tube, 1 earthstone
+&YSteps Required:&w
+&Y1.)&w Prepare the standard alchemical practice, but instead carry
+    &wthe earthstone and place the tubes next to the fire.
+&Y2.)&w Once ready simply &YBRIGHTSTONECREATE&w to create one.
+ 
+&OMAGESTONES&w
+&YNeeded:&w 1 air tube, 1 water tube, 1 positive tube, 1 negative
+        &wtube, 1 blue spinel gem&w
+&YSteps Required:&w
+&Y1.)&w Prepare the standard alchemical practice, but instead carry
+&w    the blue spinel and place the tubes next to the fire.
+&Y2.)&w Once ready simply &YMAGESTONECREATE&w to create one.
+ 
+&OSTARSTONES&w
+&YNeeded:&w 1 earth tube, 1 air tube, 1 fire tube, 1 water tube, 1
+        &wpositive tube, 1 negative tube, and 1 moonstone gem
+&YSteps Required:&w
+&Y1.) &wPrepare the standard alchemical practice. You will need
+    &wto mix the water and fire tubes (MIXWATERFIRE). This
+    &wwill stabilize the elements. Next you will need to mix the
+    &wair and earth tubes (MIXAIREARTH) to also stabilize.
+&Y2.) &wOnce you have the two tubes you will need to carefully
+    &wmix them together (MIXELEMENTALTUBE).
+&Y3.) &wOnce ready you will need to be carrying both the moonstone
+    &wand final mixture. You will simply &YSTARSTONECREATE&w to create one.
+
+&OWarning! This last step requires a high degree of knowledge
+and proficiency with the arcana skill. Failure can ruin prepared
+components and cause an accident.
+ 
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate kit~
+Comlist   if hasqbit($n) == 5699
+mea $n You find an assortment of glass beakers, metal tools, several
+mea $n pouches containing various powdered components, and a small
+mea $n ALCHEMYBOOK (LOOK ALCHEMYBOOK).
+else
+mea $n You find various things inside the kit.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5632
+Keywords glass tube fiery red liquid ftube~
+Type     trash~
+Short    &Ra glass tube of fiery liquid&w~
+Long     &RA glass tube filled with a fiery looking liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5633
+Keywords glass tube swirling liquid wtube~
+Type     trash~
+Short    &Ba glass tube of swirling liquid&w~
+Long     &BA glass tube filled with swirling liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p mixwaterfire~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 20
+If ovnumroom(5631) == 1
+If carryingvnum($n) == 5632
+If carryingvnum($n) == 5633
+Mea $n &pYou carefully open both test tubes and you mix them
+Mea $n &pinto one of the tubes. The contents swirl and pop for
+Mea $n &pa few moments before turning a soft looking purple.
+Mer $n &p$n&p safely creates a purple mixture from two tubes.
+Silent mpforce $n drop wtube
+Silent mpforce $n drop ftube
+Mpoload 5638 1
+Silent mpforce $n get fwtube
+Mppurge wtube
+Mppurge ftube
+Else
+Mea $n You need a water element liquid tube.
+endif
+Else
+Mea $n You need a fire element liquid tube.
+Endif
+Else
+Mea $n You need your kit on the ground and ready to go.
+Endif
+else
+Mea $n &RYou fail the alchemical process and something goes wrong... 
+Mpecho &RThe entire area is hit with a fiery, magical blast!!!&w
+silent mpforce $n drop ftube
+silent mpforce $n drop wtube
+Mppurge ftube
+Mpdamage all 1 20
+mppurge wtube
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5634
+Keywords glass tube swirling smoke atube~
+Type     trash~
+Short    &Ya glass tube of swirling smoke&w~
+Long     &YA glass tube filled with swirling smoke has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5635
+Keywords glass tube murky liquid etube~
+Type     trash~
+Short    &ga glass tube of murky liquid&w~
+Long     &gA glass tube filled with a murky liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p mixairearth~
+Comlist   If hasqbit($n) == 5699
+If arcana($n) >= 20
+If ovnumroom(5631) == 1
+If carryingvnum($n) == 5634
+If carryingvnum($n) == 5635
+Mea $n &cYou carefully open both test tubes and you mix them
+Mea $n &cinto one of the tubes. The contents swirl and pop for
+Mea $n &ca few moments before turning a dark teal color.
+Mer $n &c$n&c safely creates a teal mixture from two tubes.
+Silent mpforce $n drop etube
+Silent mpforce $n drop atube
+Mpoload 5639 1
+Silent mpforce $n get aetube
+Mppurge etube
+Mppurge atube
+Else
+Mea $n You need a earth element liquid tube.
+endif
+Else
+Mea $n You need a air element liquid tube.
+Endif
+Else
+Mea $n You need your kit on the ground and ready to go.
+Endif
+else
+Mea $n &RYou fail the alchemical process and something goes wrong... 
+Mpecho &RThe entire area is hit with a fiery, magical blast!!!&w
+Silent mpforce $n drop atube
+Silent mpforce $n drop etube
+Mppurge atube
+Mpdamage all 1 20
+Mppurge etube
+endif
+Else
+Mea $n You do not know how to do alchemy.
+Endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5636
+Keywords glass tube glowing liquid ptube~
+Type     trash~
+Short    &Wa glass tube of glowing liquid&w~
+Long     &WA glass tube filled with a glowing liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5637
+Keywords glass tube dark liquid ntube~
+Type     trash~
+Short    &za glass tube of dark liquid&w~
+Long     &zA glass tube filled with some dark liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5638
+Keywords glass tube purple liquid swirling fwtube~
+Type     trash~
+Short    &pa glass tube of swirling purple liquid&w~
+Long     &pA glass tube of swirling purple liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5639
+Keywords glass tube teal liquid swirling aetube~
+Type     trash~
+Short    &ca glass tube of swirling teal liquid&w~
+Long     &cA glass tube of swirling teal liquid has been left here.&w~
+Flags    magic~
+WFlags   take onehand~
+Values   5 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5640
+Keywords elemental dowsing rods silver pair~
+Type     trash~
+Short    &wa pair of silver dowsing rods&w~
+Long     &wA pair of silver dowsing rods used to detect elemental crystals has been left here.&w~
+Flags    magic~
+WFlags   take twohand~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 25 10 10 2 0 0
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p dowsecrystal~
+Comlist   if wearingvnum($n) == 5640
+if ovnumroom(978) == 0
+if ovnumroom(979) == 0
+if ovnumroom(980) == 0
+if ovnumroom(981) == 0
+if ovnumroom(982) == 0
+if ovnumroom(983) == 1
+mea $n &RThe rods turn inward and they feel warm suddenly.
+else
+mea $n &OThe rods do not move as you try to dowse here.&w
+endif
+else
+mea $n &BThe rods turn inward and they feel cool suddenly.
+endif
+else
+mea $n &wThe rods turn inward and you feel a breeze suddenly.
+endif
+else
+mea $n &gThe rods turn inward and you feel the ground shift slightly.
+endif
+else
+mea $n &WThe rods turn inward and suddenly begin to glow momentarily.
+endif
+else
+mea $n &zThe rods turn inward and suddenly begin to darken momentarily.
+endif
+else
+mea $n &OYou need to be holding the dowsing rods first.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate rods~
+Comlist   if investigation($n) >= 15
+mea $n You can use these rods to detect for elemental crystal clusters.
+mea $n You simply just DOWSECRYSTAL to see if there is a cluster nearby.
+else
+mea $n You fail to find anything else.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5699
+Keywords starstone star stone glowing opalescent gem shimmers sstone1~
+Type     gem~
+Short    &Ga st&Yar&Rst&Bone&w~
+Long     &GAn opalescent ge&Ym that shimmers brigh&Rtly in the light ha&Bs been left here.&w~
+Flags    glow magic~
+WFlags   take onehand~
+Values   10 0 0 0 0 0
+Values2  0 2
+Stats    1 25 0 0 2 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     5600
+Name     &OA Muddy Path&w~
+Sector   city~
+Desc     The path here turns rather muddy as it travels to the north where a
+village surrounded by a wooden wall can be found. The landscape is dreary
+and this area is known for having constant bouts of rain - from light
+drizzle to heavy downpours. The village itself matches the grey skyscape
+as much of the buildings are not painted and the wood has been tinged
+with greyness. A gatehouse lies to the north where visitors are
+greeted before entering.
+~
+#EXIT
+Direction north~
+ToRoom    5601
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30000
+Flags     nomob overland~
+MapX      500
+MapY      612
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5601
+Name     &OA Village Gatehouse&w~
+Sector   city~
+Desc     The gatehouse here is more of an open portal through the thick wooden
+walls of the village. Some stones have been used here as support for
+the gates and two large wooden doors are currently held back to allow
+travelers to enter. In times of need these thick gates can be closed
+to protect the village. To the north one can see the dreary looking
+village and muddy roads inside.
+~
+#EXIT
+Direction north~
+ToRoom    5602
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5600
+#ENDEXIT
+
+Reset M 0 5622 1 5601
+  Reset E 0 121 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5602
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     This village is devoid of much color and many of the buildings are
+tinged with grey from being worn away by the elements. Many of the 
+home are made of carefully laid shingles and a few have thatched roofs.
+The streets here are made of poorly laid cobblestone and there are
+mud puddles everywhere from all of the rain this region gets throughout
+the year. A large gatehouse leading out of the village can be seen
+to the south of here.
+~
+#EXIT
+Direction north~
+ToRoom    5619
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5618
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5601
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5603
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   25~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5603
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here is made of poorly laid cobblestones that now lie uneven
+on the ground here. Large mud puddles can be found along the edges
+of the street as well as cutting across several points. There is no lack
+of moisture in this region as it rains constantly. The buildings here are
+tinged grey from being worn away at by the elements. The street continues
+to the east and west from here with several homes and buildings being
+found right up against the sides of the street.
+~
+#EXIT
+Direction north~
+ToRoom    5641
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5602
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5604
+#ENDEXIT
+
+Reset M 0 5626 1 5603
+Reset D 0 5603 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5604
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here is made of poorly laid cobblestones that now lie uneven
+on the ground here. Large mud puddles can be found along the edges
+of the street as well as cutting across several points. There is no lack
+of moisture in this region as it rains constantly. The buildings here are
+tinged grey from being worn away at by the elements. The street continues
+to the east and north from here with several homes and buildings being
+found right up against the sides of the street. 
+~
+#EXIT
+Direction north~
+ToRoom    5605
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5603
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5605
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The village here is more cluttered with buildings and homes seeming
+to be almost on top of one another. The street here is the worst in
+terms of repair and mud puddles ran rampant. A clean looking manor
+can be seen behind a metal gate to the west of here. This is the
+home of the villages mayor and the grounds around it have been well
+groomed. The poorly maintained street continues to the north and 
+south from here.
+~
+#EXIT
+Direction north~
+ToRoom    5606
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5604
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5649
+Keywords  'metal gate'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 5605 3 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5606
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The village here is more cluttered with buildings and homes seeming
+to be almost on top of one another. The street here is the worst in
+terms of repair and mud puddles ran rampant. A small stone tower
+made of grey stones and boulders has been erected to the east
+from here. The grounds around it has been well maintained and
+there is some soft looking moss growing along the sides of the tower.
+The poorly maintained street continues to the north and south from here.
+~
+#EXIT
+Direction north~
+ToRoom    5607
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5652
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5605
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5607
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     This village is devoid of much color and many of the buildings are
+tinged with grey from being worn away by the elements. Many of the
+homes are made of carefully laid shingles and a few have thatched roofs.
+The streets here are made of poorly laid cobblestone and there are
+mud puddles everywhere from all of the rain this region gets throughout
+the year. The street continues to the east and south of here.
+~
+#EXIT
+Direction east~
+ToRoom    5608
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5606
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5608
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     This village is devoid of much color and many of the buildings are
+tinged with grey from being worn away by the elements. Many of the
+homes are made of carefully laid shingles and a few have thatched roofs.
+The streets here are made of poorly laid cobblestone and there are
+mud puddles everywhere from all of the rain this region gets throughout
+the year. A small shop dedicated to armor has been established to the
+North of here, which has several chimneys attached to it. These help with
+blacksmithing and creating new armor for sale.
+~
+#EXIT
+Direction north~
+ToRoom    5631
+Keywords  'shop door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5609
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5607
+#ENDEXIT
+
+Reset D 0 5608 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5609
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     This village is devoid of much color and many of the buildings are
+tinged with grey from being worn away by the elements. Many of the
+homes are made of carefully laid shingles and a few have thatched roofs.
+The streets here are made of poorly laid cobblestone and there are
+mud puddles everywhere from all of the rain this region gets throughout
+the year. A large white stone building can be seen to the north of here,
+which serves as a temple for the goddess Honeth. The goddess is well
+revered here by those that work for the Watch.
+~
+#EXIT
+Direction north~
+ToRoom    5647
+Keywords  'temple door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5610
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5608
+#ENDEXIT
+
+Reset M 0 5625 1 5609
+Reset D 0 5609 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5610
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     This village is devoid of much color and many of the buildings are
+tinged with grey from being worn away by the elements. Many of the
+homes are made of carefully laid shingles and a few have thatched roofs.
+The streets here are made of poorly laid cobblestone and there are
+mud puddles everywhere from all of the rain this region gets throughout
+the year. A building that has been patched up many times over the years
+can be found to the south serving as a local tavern.
+~
+#EXIT
+Direction east~
+ToRoom    5611
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5658
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5609
+#ENDEXIT
+
+Reset D 0 5610 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5611
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     This village is devoid of much color and many of the buildings are
+tinged with grey from being worn away by the elements. Many of the
+homes are made of carefully laid shingles and a few have thatched roofs.
+The streets here are made of poorly laid cobblestone and there are
+mud puddles everywhere from all of the rain this region gets throughout
+the year. A large side street starts here and heads to the south through
+the middle of the village. An impressive stone and wooden building to
+the north is used as the recruitment office for the Darkhold Watch.
+~
+#EXIT
+Direction north~
+ToRoom    5648
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5612
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5623
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5610
+#ENDEXIT
+
+Reset D 0 5611 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5612
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     This village is devoid of much color and many of the buildings are
+tinged with grey from being worn away by the elements. Many of the 
+homes are made of carefully laid shingles and a few have thatched roofs.
+The streets here are made of poorly laid cobblestone and there are
+mud puddles everywhere from all of the rain this region gets throughout
+the year. A large gatehouse leading out of the village can be seen
+to the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    5628
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5613
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5611
+#ENDEXIT
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpecho &WThe bell above the Qylain temple heralds the coming of morning.
+mpasound &WThe bell above the Qylain temple heralds the coming of morning.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpecho &zThe bell above the Qylain temple heralds the coming of night.&w
+mpasound &zThe bell above the Qylain temple heralds the coming of night.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5613
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The village here is more sparse in terms buildings and a bit more
+Greenery can be found from moss covered stones to a few solemn
+looking trees. Many of the shingled homes here have small gardens
+that help supply produce for the village. The homes and buildings found
+here still lack in color and are grey tinged from years of being worn on
+by the weather. One of the very few painted buildings can be seen to
+the east of here. The building was once painted a bright blue, but now
+the paint is slowly flaking off revealing the grey tinged wood beneath
+it. The village guard post is located along a short alleyway to the
+southwest of here.
+~
+#EXIT
+Direction north~
+ToRoom    5612
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5639
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5614
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5666
+#ENDEXIT
+
+Reset D 0 5613 1 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5614
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The village here is more sparse in terms buildings and a bit more
+Greenery can be found from moss covered stones to a few solemn
+looking trees. Many of the shingled homes here have small gardens
+that help supply produce for the village. The homes and buildings found
+here still lack in color and are grey tinged from years of being worn on
+by the weather. A small dirt path to the southeast leads into a small
+village cemetary. A Qylain church can be seen to the east of here,
+which is constructed of various stones that are mortared together.
+~
+#EXIT
+Direction north~
+ToRoom    5613
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5643
+Keywords  'temple door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5615
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5644
+Flags     nomob~
+#ENDEXIT
+
+Reset D 0 5614 1 1
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpecho &WThe bell above the Qylain temple heralds the coming of morning.
+mpasound &WThe bell above the Qylain temple heralds the coming of morning.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpecho &zThe bell above the Qylain temple heralds the coming of night.&w
+mpasound &zThe bell above the Qylain temple heralds the coming of night.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5615
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here is made of poorly laid cobblestones that now lie uneven
+on the ground here. Large mud puddles can be found along the edges
+of the street as well as cutting across several points. There is no lack
+of moisture in this region as it rains constantly. The buildings here are
+tinged grey from being worn away at by the elements. The street continues
+to the west and north from here with several homes and buildings being
+found right up against the sides of the street. 
+~
+#EXIT
+Direction north~
+ToRoom    5614
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5616
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5616
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here is made of poorly laid cobblestones that now lie uneven
+on the ground here. Large mud puddles can be found along the edges
+of the street as well as cutting across several points. There is no lack
+of moisture in this region as it rains constantly. The buildings here are
+tinged grey from being worn away at by the elements. The street continues
+to the east and west from here with several homes and buildings being
+found right up against the sides of the street. A large wooden home that
+has been added on to over the years can be found to the north. It serves
+the village as one of the few inns.
+~
+#EXIT
+Direction north~
+ToRoom    5635
+Keywords  'inn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5615
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5617
+#ENDEXIT
+
+Reset D 0 5616 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5617
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here is made of poorly laid cobblestones that now lie uneven
+on the ground here. Large mud puddles can be found along the edges
+of the street as well as cutting across several points. There is no lack
+of moisture in this region as it rains constantly. The buildings here are
+tinged grey from being worn away at by the elements. The street continues
+to the east and west from here with several homes and buildings being
+found right up against the sides of the street. A large stone building to
+the south of here is used as the location for the villages bank.
+~
+#EXIT
+Direction east~
+ToRoom    5616
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5667
+Keywords  'bank door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5618
+#ENDEXIT
+
+Reset D 0 5617 2 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5618
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here is made of poorly laid cobblestones that now lie uneven
+on the ground here. Large mud puddles can be found along the edges
+of the street as well as cutting across several points. There is no lack
+of moisture in this region as it rains constantly. The buildings here are
+tinged grey from being worn away at by the elements. The street continues
+to the east and west from here with several homes and buildings being
+found right up against the sides of the street. A public stable house
+can be seen to the north where visitors often stable their mounts.
+~
+#EXIT
+Direction north~
+ToRoom    5633
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5617
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5602
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5619
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here cuts through the middle of the dreary village. The
+cobblestones used for the street are bit more even through here, but
+deep mud puddles still cut into it from time to time. There are many
+grey tinged homes and buildings that can be found along this street.
+most the buildings and homes are a mix of stone and greyish wood
+that are devoid of much color. The street continues to the east
+and west here while an additional street heads south towards the
+village gates. A neat looking shingled building that is well maintained
+serves as the villages general store, which can be found to the 
+north of here.
+~
+#EXIT
+Direction north~
+ToRoom    5638
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5620
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5602
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5626
+#ENDEXIT
+
+Reset M 0 5627 1 5619
+Reset O 0 5627 1 5619
+Reset D 0 5619 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5620
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here cuts through the middle of the dreary village. The
+cobblestones used for the street are bit more even through here, but
+deep mud puddles still cut into it from time to time. There are many
+grey tinged homes and buildings that can be found along this street.
+most the buildings and homes are a mix of stone and greyish wood
+that are devoid of much color. The street continues to the east
+and west here as it moves through the village. A small wooden shop
+is located to the north, which sells various salves and tinctures.
+~
+#EXIT
+Direction north~
+ToRoom    5661
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5621
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5619
+#ENDEXIT
+
+Reset M 0 5624 1 5620
+Reset D 0 5620 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5621
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here cuts through the middle of the dreary village. The
+cobblestones used for the street are bit more even through here, but
+deep mud puddles still cut into it from time to time. There are many
+grey tinged homes and buildings that can be found along this street.
+most the buildings and homes are a mix of stone and greyish wood
+that are devoid of much color. The street continues to the east
+and west here as it moves through the village. A large stone building
+can be found to the south, which is the villages weapon shop.
+~
+#EXIT
+Direction east~
+ToRoom    5622
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5630
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5620
+#ENDEXIT
+
+Reset D 0 5621 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5622
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here cuts through the middle of the dreary village. The
+cobblestones used for the street are bit more even through here, but
+deep mud puddles still cut into it from time to time. There are many
+grey tinged homes and buildings that can be found along this street.
+most the buildings and homes are a mix of stone and greyish wood
+that are devoid of much color. The street continues to the north
+and west here as it moves through the village. 
+~
+#EXIT
+Direction north~
+ToRoom    5623
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5621
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5623
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here cuts through the middle of the dreary village. The
+cobblestones used for the street are bit more even through here, but
+deep mud puddles still cut into it from time to time. There are many
+grey tinged homes and buildings that can be found along this street.
+most the buildings and homes are a mix of stone and greyish wood
+that are devoid of much color. The street continues to the north
+and south here as it moves through the village. A small side street
+can be seen leading to the west from here as well.
+~
+#EXIT
+Direction north~
+ToRoom    5611
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5622
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5624
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5624
+Name     &OA Muddy Side Street&w~
+Sector   city~
+Desc     This muddy side street cuts through almost the direct center of the
+dreary village. Many of the buildings here are in disrepair and many
+of the villagers here are impoverished. Most of the homes are patched
+with fresh pieces of wood, which are slowly turning grey due to the
+Elements. The street here is extremely muddy from water trickling
+down from the roofs of all the buildings here. A small building that
+has been painted with a fresh coat of white paint can be found
+to the north of here. This serves as a Hycrian missionary and people
+come here to be healed.
+~
+#EXIT
+Direction north~
+ToRoom    5642
+Keywords  'missionary door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5623
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5625
+#ENDEXIT
+
+Reset D 0 5624 0 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5625
+Name     &OA Muddy Side Street&w~
+Sector   city~
+Stats    0 0 0 0 18 0
+Desc     This muddy side street cuts through almost the direct center of the
+dreary village. Many of the buildings here are in disrepair and many
+of the villagers here are impoverished. Most of the homes are patched
+with fresh pieces of wood, which are slowly turning grey due to the
+Elements. The street here is extremely muddy from water trickling
+down from the roofs of all the buildings here. A large building that
+has been patched several times, survived a few fires, and has been
+added on to over the years lies to the west. It is one of the most
+popular taverns in the entire village and many flock to it for ale,
+food, and conversation.
+~
+Perdesc  &zYou see a dark alleyway leading to the south from here.&w
+~
+#EXIT
+Direction east~
+ToRoom    5624
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5659
+Flags     secret hidden nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5632
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   If acrobatics($n) < 14
+Mea $n &OYou fail to avoid a mud puddle and soak your feet briefly.
+Mer $n &O$n&O fails to avoid a mud puddle and walks through it.
+Mpasound &OYou hear someone walk through a mud puddle nearby.
+Else
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5626
+Name     &OA Muddy Village Street&w~
+Sector   city~
+Desc     The street here cuts through the middle of the dreary village. The
+cobblestones used for the street are bit more even through here, but
+deep mud puddles still cut into it from time to time. There are many
+grey tinged homes and buildings that can be found along this street.
+most the buildings and homes are a mix of stone and greyish wood
+that are devoid of much color. The street continues back to the east
+while a stone courtyard can be seen to the north.
+~
+#EXIT
+Direction north~
+ToRoom    5627
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5619
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5627
+Name     &OA Small Courtyard&w~
+Sector   city~
+Desc     This small courtyard has a statue of a historical figure erected in the
+Center. Various buildings dedicated to long range weaponry can be
+seen to the north, east, and west of here. To the south lies a cobblestone
+street that leads back into the main part of the village. This part of the
+village is well maintained and there are few mud puddles to be found.
+~
+#EXIT
+Direction north~
+ToRoom    5664
+Keywords  'shop door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5663
+Keywords  'shop door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5626
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5662
+Keywords  'shop door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset O 0 5622 1 5627
+Reset D 0 5627 0 1
+Reset D 0 5627 1 1
+Reset D 0 5627 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5628
+Name     &OA Village Gatehouse&w~
+Sector   city~
+Desc     The gatehouse here is more of an open portal through the thick wooden
+walls of the village. Some stones have been used here as support for
+the gates and two large wooden doors are currently held back to allow
+travelers to enter. In times of need these thick gates can be closed
+to protect the village. To the south one can see the dreary looking
+village and muddy roads inside.
+~
+#EXIT
+Direction east~
+ToRoom    5629
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5612
+#ENDEXIT
+
+Reset M 0 5623 1 5628
+  Reset E 0 121 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5629
+Name     &OA Muddy Path&w~
+Sector   city~
+Desc     The path here turns rather muddy as it travels to the west where a
+village surrounded by a wooden wall can be found. The landscape is dreary
+and this area is known for having constant bouts of rain - from light
+drizzle to heavy downpours. The village itself matches the grey skyscape
+as much of the buildings are not painted and the wood has been tinged
+with greyness. A gatehouse lies to the west where visitors are
+greeted before entering.
+~
+#EXIT
+Direction north~
+ToRoom    30000
+Flags     nomob overland~
+MapX      501
+MapY      609
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5628
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5630
+Name     &OMarty's Weaponry&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The walls of this shop are covered in various weapons for sale such
+as greatswords and axes. There are a few tables where weapons are
+crafted and finished. A few fireplaces are used to melt the metals
+needed for weapon making and forging. The whole shop smells of burning
+wood and hot metals.
+~
+#EXIT
+Direction north~
+ToRoom    5621
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5602 1 5630
+  Reset G 0 114 1
+  Reset G 0 101 1
+  Reset G 0 115 1
+  Reset G 0 117 1
+  Reset G 0 102 1
+  Reset G 0 118 1
+  Reset G 0 119 1
+  Reset G 0 103 1
+  Reset G 0 121 1
+  Reset G 0 123 1
+  Reset G 0 107 1
+  Reset G 0 125 1
+  Reset G 0 130 1
+Reset D 0 5630 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5631
+Name     &OLovor's Armory&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The walls and several tables are covered in various armor that are
+for sale. A few mannequins are dressed in leather or padded armor to
+help display the merchandise. There are several fireplaces being used
+here for melting the metal needed for armor making. The whole shop
+smells of burning wood and hot metals.
+~
+#EXIT
+Direction south~
+ToRoom    5608
+Keywords  'shop door'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset M 0 5629 1 5631
+  Reset G 0 2413 1
+  Reset G 0 1581 1
+  Reset G 0 150 1
+  Reset G 0 144 1
+  Reset G 0 147 1
+  Reset G 0 145 1
+  Reset G 0 141 1
+  Reset G 0 139 1
+  Reset G 0 138 1
+  Reset G 0 149 1
+  Reset G 0 146 1
+  Reset G 0 148 1
+  Reset G 0 140 1
+Reset D 0 5631 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5632
+Name     &zThe Dark Night Tavern&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The walls of this tavern are decorated with mix matched pieces of faded
+art, the heads of trophy hunts such as elk or bear, and a few weapons
+that are known to locals as weapons used in service against the
+Demonlord many centuries ago. A large communal fireplace provides
+much of the light in this dark tavern and is often the location of
+storytellers or bards entertaining the villagers. A long wooden bar
+can be found at the western end of the tavern, which is where drinks
+and such are served. Lots of wooden tables and chairs can be found here
+for people to sit and enjoy themselves.
+~
+#EXIT
+Direction north~
+ToRoom    5637
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5625
+#ENDEXIT
+
+Reset M 0 5605 1 5632
+  Reset G 0 4027 1
+  Reset G 0 1569 1
+  Reset G 0 2658 1
+  Reset G 0 1939 1
+  Reset G 0 2609 1
+  Reset G 0 1777 1
+  Reset G 0 5623 1
+#ENDROOM
+
+#ROOM
+Vnum     5633
+Name     &OA Stable House&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The stables here are not as dry as one would hope as one can smell
+mold and moisture in the air. Much of the hay and straw has been taken
+off the ground and placed on wooden pallets to help keep them as dry
+as possible despite the weather conditions in this region. There are
+many stalls for one to board their horse at and the stablehands do their
+best to ensure the stalls are cleaned and horses fed and watered.
+~
+#EXIT
+Direction south~
+ToRoom    5618
+#ENDEXIT
+
+Reset M 0 5606 1 5633
+#ENDROOM
+
+#ROOM
+Vnum     5634
+Name     &RDARKHOLD STABLE STORAGE&w~
+Sector   city~
+Flags    nomob nomagic safe nosummon noastral~
+Desc     You should not be in here. Please use the down exit to leave or
+contact a member of the admin team. Thank you! :)
+~
+#EXIT
+Direction down~
+ToRoom    5633
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5635
+Name     &zThe Darkhold Village Inn&w~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a cozy inn that offers a weary traveler a place to stay
+and rest. The interior is clean and well maintained as well as dry
+despite the weather conditions outside. There are several rugs that
+have been placed on the wooden floors to help absorb excess water. A
+small counter has been established at the northern end of the inn,
+which is where guests are greated. A staircase leads up to where all
+of the bedrooms are located.
+~
+#EXIT
+Direction south~
+ToRoom    5616
+Keywords  'inn door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5607 1 5635
+Reset D 0 5635 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5636
+Name     &wA Small Bedroom&w~
+Sector   city~
+Desc     This is a cozy and dry bedroom that is large enough to have a small
+bed, dresser, and a bath tub. A small fireplace can be found on the
+northern wall with a pot to heat water hanging inside it. A small,
+threadbare rug can be found on the floor here as well. A door leads
+back down into the main part of the inn here.
+~
+#EXIT
+Direction down~
+ToRoom    5635
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 5636 5 1
+#ENDROOM
+
+#ROOM
+Vnum     5637
+Name     &zA Private Booth&w~
+Sector   indoors~
+Flags    nomob tunnel~
+Stats    0 0 4 0 10 0
+Desc     This is a private booth, which is used for meetings, parties, or even
+a date. The booth has enough room for about four people and is
+sequestered at the northern end of the tavern. A few candles have
+been placed on the table to provide enough light.
+~
+Perdesc  &zThis booth has enough room for four people to sit here.&w
+~
+#EXIT
+Direction south~
+ToRoom    5632
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5638
+Name     &OThe Darkhold Village General Store&w~
+Sector   indoors~
+Flags    nomob~
+Desc     This is a very clean shop with all of the items one may need sold here.
+The shelves are well organized and all items are pulled forward to
+help the shop look full. There are various home goods for sale here
+such as candles, food, and other goods. The main bulk of the shop
+however is dedicated to the sale of adventuring items.
+~
+#EXIT
+Direction south~
+ToRoom    5619
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5608 1 5638
+  Reset G 0 2678 1
+  Reset G 0 5071 1
+  Reset G 0 1648 1
+  Reset G 0 2011 1
+  Reset G 0 1649 1
+  Reset G 0 1660 1
+  Reset G 0 1652 1
+  Reset G 0 3467 1
+  Reset G 0 1657 1
+  Reset G 0 1651 1
+  Reset G 0 2689 1
+  Reset G 0 5067 1
+  Reset G 0 177 1
+Reset D 0 5638 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5639
+Name     &BBriella's Magic Supply&w~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 14 0
+Desc     &CThe interior of this store has been painted a fresh coat of blue
+so that the walls look like sky. The ceiling has been painted a darker
+shade of blue so that it looks like the night sky. At various times
+one can swear they saw a shooting star move across the ceiling. Various
+shelves and tables can be found throughout this shop with items
+dedicated to the art of magic.
+~
+Perdesc  &OYou spot a wooden door leading downstairs here.&w
+~
+#EXIT
+Direction north~
+ToRoom    5665
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5613
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5640
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5609 1 5639
+  Reset G 0 1756 1
+  Reset G 0 1933 1
+  Reset G 0 1748 1
+  Reset G 0 1546 1
+  Reset G 0 1781 1
+  Reset G 0 1759 1
+  Reset G 0 2987 1
+  Reset G 0 1955 1
+  Reset G 0 1681 1
+  Reset G 0 1747 1
+  Reset G 0 1751 1
+  Reset G 0 1754 1
+  Reset G 0 1764 1
+Reset D 0 5639 3 1
+Reset D 0 5639 5 1
+#ENDROOM
+
+#ROOM
+Vnum     5640
+Name     &BA Shrine to Crisma&w~
+Sector   indoors~
+Flags    nomob~
+Desc     &CThe shrine here is set up to pay homage to the goddess of magic, Crisma.
+There is a large altar decorated in objects that symbolize both magic
+and the goddess. A tapestry of her symbol has been hung behind the altar
+along with a small stone statue of the goddess. The shrine is kept clean
+and incense seems to always be lit here. A wooden door with arcane symbols
+can be seen to the north leading into an unknown room.
+~
+#EXIT
+Direction north~
+ToRoom    5668
+Key       3700
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5639
+Keywords  'wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 5640 0 2
+Reset D 0 5640 4 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if deity($n) == crisma
+mpsleep 2
+mea $n &BYou feel the shrine here pulse with divine energy.
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5641
+Name     &OThe Darkhold Cobbler Shop&w~
+Sector   indoors~
+Flags    nomob~
+Desc     This shop is dedicated to the sale of shoes, which many of the villagers
+wear out here. The weather conditions here make shoe sales always popular
+and this store is stocked with the most functional shoes from leather
+boots to small padded shoes. Tables are aligned in a circular pattern
+to help shoppers move about and observe the merchandise. The store smells
+very strong of leather and one notices it immediately upon entering.
+~
+#EXIT
+Direction south~
+ToRoom    5603
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5610 1 5641
+  Reset G 0 1562 1
+  Reset G 0 1539 1
+  Reset G 0 5624 1
+Reset D 0 5641 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5642
+Name     &WA Hycrian Missionary&w~
+Sector   indoors~
+Flags    nomob~
+Stats    0 0 0 0 12 0
+Desc     This missionary has been painted a bright, clean shade of white all
+throughout the building. There is an altar space for those who follow
+the goddess to come and pray as well as a place for the clerics to
+take care of the sick and wounded. A small infirmary is separated by
+thick white sheets so that the patients have complete privacy.
+~
+Perdesc  &WA small &wsign&W has been posted near the entrance of the missionary.&w
+~
+#EXIT
+Direction south~
+ToRoom    5624
+Keywords  'missionary door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5612 1 5642
+Reset D 0 5642 2 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &YThis temple offers the following services:
+ 
+&WCure Light Wounds&Y...............................&W10 silver coins
+&WCure Moderate Wounds&Y............................&W35 silver coins
+&WCure Serious Wounds&Y.............................&W70 silver coins
+&WCure Critical Wounds&Y............................&W90 silver coins
+&WHeal&Y............................................&W15 gold coins
+ 
+&YTo receive any of the above please give the Priestess the amount
+requested and she will perform the service for you.
+ 
+Additional services or changes to this menu may occur so check
+this sign before giving your money.
+ 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5643
+Name     &WA Qylain Temple&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The interior of this temple is made of various grey and white stones
+that have been mortared together. Above one can see a bell that is
+pulled at morning and night to help the villagers observe the time
+of the day. Many rows of pews can be found here leading up to an
+ornate altar of the goddess Qylaith. A large stone statue can be found
+behind the altar with the hooded goddess looking down upon the
+pews.
+~
+#EXIT
+Direction west~
+ToRoom    5614
+Keywords  'temple door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5613 1 5643
+Reset D 0 5643 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5644
+Name     &gA Small Village Cemetary&w~
+Sector   field~
+Flags    nomob~
+Desc     This is a small path that cuts through much of the cemetary here. Rows
+upon rows of headstones mark where the dead have been laid to rest. This
+seems to be a very solemn place with not many visitors. The grounds have
+been meticulously maintained by the groundskeepers who also serve the
+local Qylain church, which can be seen to the north of there.
+~
+#EXIT
+Direction east~
+ToRoom    5645
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5614
+Flags     nomob~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5645
+Name     &gA Small Village Cemetary&w~
+Sector   field~
+Desc     This is a small path that cuts through much of the cemetary here. Rows
+upon rows of headstones mark where the dead have been laid to rest. This
+seems to be a very solemn place with not many visitors. The grounds have
+been meticulously maintained by the groundskeepers who also serve the
+local Qylain church, which can be seen to the northwest of there.
+~
+#EXIT
+Direction south~
+ToRoom    5646
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5644
+#ENDEXIT
+
+Reset M 0 5615 1 5645
+Reset O 0 5625 1 5645
+#EXDESC
+ExDescKey    grave~
+ExDesc       &OThe grave here has been recently completed with a new stone marker
+with the name "Andran Stonemorn" on it. Some flowers have been placed
+by the marker.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5646
+Name     &gA Small Village Cemetary&w~
+Sector   field~
+Desc     This is a small path that cuts through much of the cemetary here. Rows
+upon rows of headstones mark where the dead have been laid to rest. This
+seems to be a very solemn place with not many visitors. The grounds have
+been meticulously maintained by the groundskeepers who also serve the
+local Qylain church, which can be seen to the far northwest of there.
+A large stone mausoleum that also leads into the crypts of the Qylain
+church can be seen to the east of here.
+~
+#EXIT
+Direction north~
+ToRoom    5645
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5651
+#ENDEXIT
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpecho &WThe bell above the Qylain temple heralds the coming of morning.
+mpasound &WThe bell above the Qylain temple heralds the coming of morning.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   mpecho &zThe bell above the Qylain temple heralds the coming of night.&w
+mpasound &zThe bell above the Qylain temple heralds the coming of night.&w
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5647
+Name     &WA Honem Temple&w~
+Sector   indoors~
+Flags    nomob~
+#EXIT
+Direction south~
+ToRoom    5609
+Keywords  'temple door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5616 1 5647
+Reset D 0 5647 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5648
+Name     &OThe Darkhold Watch Recruitment Office&w~
+Sector   indoors~
+Flags    nomob~
+#EXIT
+Direction south~
+ToRoom    5611
+Keywords  'large wooden door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5600 1 5648
+Reset D 0 5648 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5649
+Name     &OBefore the Mayor's Home&w~
+Sector   city~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    5605
+Keywords  'metal gate'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5650
+Keywords  'wooden door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+Reset M 0 5617 1 5649
+  Reset E 0 121 1 26
+Reset D 0 5649 3 2
+#ENDROOM
+
+#ROOM
+Vnum     5650
+Name     &OInside the Mayor's Home&w~
+Sector   indoors~
+Flags    nomob~
+#EXIT
+Direction east~
+ToRoom    5649
+Keywords  'wooden door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+Reset M 0 5699 1 5650
+Reset D 0 5650 1 2
+#ENDROOM
+
+#ROOM
+Vnum     5651
+Name     &gBefore a Large Mausoleum&w~
+Sector   field~
+Desc     Ahead is a large stone mausoleum that can be found to the east of
+here. The mausoleum is the largest structure in the cemetary and is
+made of mortared stone. Moss grows in patches along the exterior walls
+of the mausoleum and covers much of the base level. An intricate stone
+entrance of two spectral looking woman seeming to hold the doorway
+can be found on the eastern end of the building. The doors of the
+mausoleum are made from thick wood that has been painted a rich
+shade of mahogany red.
+~
+#EXIT
+Direction east~
+ToRoom    5700
+Keywords  'mausoleum doors'~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5646
+#ENDEXIT
+
+Reset D 0 5651 1 1
+#ENDROOM
+
+#ROOM
+Vnum     5652
+Name     &zBefore a Small Tower&w~
+Sector   city~
+Flags    nomob~
+Stats    0 0 0 0 12 0
+Desc     A small tower made of grey stones and boulders can be found ahead to
+the east of here. At the base of the tower is a large circular wooden
+door that leads inside. The grounds around the tower are well groomed
+and there are several circular bushes growing on each side of the
+entrance. There are a few windows installed on the tower, but it is
+hard to see inside it.
+~
+Perdesc  &zA &wsign&z near the front entrance of the tower can be seen here.&w
+~
+#EXIT
+Direction east~
+ToRoom    5653
+Keywords  'tower door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5606
+#ENDEXIT
+
+Reset D 0 5652 1 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &zVoria's Tower of Alchemical Studies&w
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5653
+Name     &zInside the Tower&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The interior of this tower is very quirky with lots of interesting
+arcane implements hanging from the walls along odd artwork. A statue
+of the goddess Crisma can be found in the direct center of the tower
+with her hands holding two vials. The floor here is made of smooth
+stone laid in a circular pattern. To the south is a small library
+full of bookshelves while an odd smelling kitchen can be seen to
+the east. A small staircase leads up and down to two different
+levels of the tower.
+~
+#EXIT
+Direction east~
+ToRoom    5656
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5657
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5652
+Keywords  'tower door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5654
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5655
+#ENDEXIT
+
+Reset D 0 5653 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5654
+Name     &zA Strange Laboratory&w~
+Sector   indoors~
+Desc     This is the largest room in the entire tower and it has been dedicated
+as a laboratory of sorts. There are many wooden tables with experiments
+on them waiting to be finished. A fireplace at the northern end of
+the lab is constantly maintained with a roaring fire. An odd looking
+cauldron has been hung in the fireplace and an odd smell wafts from
+it. A large window provides much of the light in this room and it is
+often opened to allow fumes to escape.
+~
+#EXIT
+Direction down~
+ToRoom    5653
+#ENDEXIT
+
+Reset M 0 5698 1 5654
+#ENDROOM
+
+#ROOM
+Vnum     5655
+Name     &zA Study Space&w~
+Sector   indoors~
+Desc     This is a very quiet area in what was originally a food cellar. There
+are various tables and chairs here for people to sit and study. Floating
+orbs of light can be seen above at the ceiling providing enough reading
+light. 
+~
+#EXIT
+Direction up~
+ToRoom    5653
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5656
+Name     &zA Strange Kitchen&w~
+Sector   indoors~
+Desc     The first thing one notices about this kitchen is the odd smell coming
+from a cauldron set in a fireplace. The smell permeates through much
+of this kitchen, which is not used for preparing food to eat. The
+countertops are full of test tubes that are full of weird looking
+fluids or have been washed clean here.
+~
+#EXIT
+Direction west~
+ToRoom    5653
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5657
+Name     &zA Small Library&w~
+Sector   indoors~
+Desc     This is a very small, but adequate sized library with at least two
+levels of bookshelves. The smell of musty old books is quite strong
+here and every effort is made to ensure the wet conditions from outside
+stay away from the ancient looking books here. A movable ladder helps
+people reach the various levels and obtain the books they are searching
+for. 
+~
+#EXIT
+Direction north~
+ToRoom    5653
+#ENDEXIT
+
+Reset M 0 5697 1 5657
+  Reset G 0 5630 1
+  Reset G 0 5629 1
+  Reset G 0 5640 1
+  Reset G 0 996 1
+  Reset G 0 5631 1
+#ENDROOM
+
+#ROOM
+Vnum     5658
+Name     &zThe Watchful Eye Tavern &R-{(OOC)}-&w~
+Sector   indoors~
+Flags    nomob nomagic nosummon noastral~
+Stats    0 0 0 0 10 0
+Desc     This is a small and rather quaint tavern. Two fireplaces can be found
+on the east and west sides of the tavern, which provides heat and
+light. There are many wooden tables and chairs for people to sit and
+enjoy themselves. A long wooden bar can be found at the southern
+end of the tavern, which is wear drinks are served.
+~
+Perdesc  &zYou spot a &wsign&z above the bar located at the southern end of the tavern.
+~
+#EXIT
+Direction north~
+ToRoom    5610
+Keywords  'tavern door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5618 1 5658
+  Reset G 0 4027 1
+  Reset G 0 2606 1
+  Reset G 0 1569 1
+  Reset G 0 1939 1
+  Reset G 0 2605 1
+  Reset G 0 2934 1
+  Reset G 0 2609 1
+Reset D 0 5658 0 1
+#EXDESC
+ExDescKey    sign~
+ExDesc       &RHello!&w
+
+&wThis location is one of many &R-{(OOC)}-&w locations across the lands.
+Each major civilization and some minor villages have such locations
+where you will be able to see/use the global &RChat&w command along with
+the &ROOC&w channel &ROsay&w. While at these locations you can enjoy 
+the company of other characters taking a break from RP and talk OOCily.
+
+Please remember all rules during conversation and do not use
+these locations as a spot to reveal game elements. There is no time
+limit here since we know some days you just want to "chat" with your
+friends. Please review &RHELP OOC&w and &RHELP OOCTAVERNS&w for more 
+information on the rules.
+
+And when anyone last saw you.. you were "headed off to some
+tavern or inn in town."
+ 
+&RThanks,
+&RThe DLoC Admin Team
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5659
+Name     &zA Dark Alleyway&w~
+Sector   city~
+Flags    nomob~
+Desc     This alleyway cuts through a small space between a few buildings
+as it snakes around. There are empty crates and garbage lying
+about here as well as thick mud puddles. It is not very well lit
+and gets dark here much sooner than the rest of the village.
+~
+#EXIT
+Direction north~
+ToRoom    5625
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5660
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5660
+Name     &zA Dark Alleyway&w~
+Sector   city~
+Desc     This alleyway cuts through a small space between a few buildings
+as it snakes around. There are empty crates and garbage lying
+about here as well as thick mud puddles. It is not very well lit
+and gets dark here much sooner than the rest of the village.
+~
+#EXIT
+Direction east~
+ToRoom    5659
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5661
+Name     &OThe Darkhold Apothecary&w~
+Sector   indoors~
+Flags    nomob~
+Desc     This is an odd looking shop with various herbs and roots openly
+displayed on shelves here. There are several fireplaces where cauldrons
+are cooking various ingredients. A large center table is used to prepare
+the ingredients and to make the products for sale here. A few shelves
+display various salves, tinctures, and potions that have been made in
+this very store.
+~
+#EXIT
+Direction south~
+ToRoom    5620
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5619 1 5661
+  Reset G 0 5040 1
+  Reset G 0 4063 1
+  Reset G 0 4062 1
+  Reset G 0 4060 1
+  Reset G 0 5041 1
+  Reset G 0 4061 1
+  Reset G 0 5043 1
+  Reset G 0 3451 1
+Reset D 0 5661 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5662
+Name     &OKrin's Crossbows&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The entirety of this store is dedicated to the usage of crossbows. The
+shelves and walls display various types of crossbows and bolts. A few
+tables are used to make the crossbows and missiles sold here. A fireplace
+nearby is used to melt metals and shape them into the various pieces
+needed to construct a good crossbow as well as metal tips for bolts.
+~
+#EXIT
+Direction east~
+ToRoom    5627
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5601 1 5662
+  Reset G 0 133 1
+  Reset G 0 134 1
+  Reset G 0 110 1
+  Reset G 0 5604 1
+  Reset G 0 5602 1
+  Reset G 0 5603 1
+  Reset G 0 5601 1
+  Reset G 0 5613 1
+  Reset G 0 5614 1
+  Reset G 0 5600 1
+Reset D 0 5662 1 1
+#ENDROOM
+
+#ROOM
+Vnum     5663
+Name     &OTaloh's Slings & Darts&w~
+Sector   indoors~
+Flags    nomob~
+Desc     This store is dedicated to selling various missile weapons from darts,
+slings, and blowguns. The three main walls of the store are split to
+display each catergory sold here with the northern wall displaying
+slings, the eastern wall displaying darts, and the southern wall
+featuring blowguns. A few tables display other merchandise such as
+quivers or pouches for sale.
+~
+#EXIT
+Direction west~
+ToRoom    5627
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5603 1 5663
+  Reset G 0 1941 1
+  Reset G 0 132 1
+  Reset G 0 111 1
+  Reset G 0 113 1
+  Reset G 0 5610 1
+  Reset G 0 5607 1
+  Reset G 0 5615 1
+  Reset G 0 5616 1
+  Reset G 0 5609 1
+  Reset G 0 5608 1
+  Reset G 0 5611 1
+  Reset G 0 5612 1
+  Reset G 0 5606 1
+Reset D 0 5663 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5664
+Name     &OBronwen's Archery Supply&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The shop here is stocked with merchandise useful for those that use
+bows and arrows. Many types of bows can be seen hung from the walls
+here along with tables stocked with arrows and tools to make arrows.
+A fireplace on the northern end of the shop is used to melt metals to
+make arrow tips and other implements.
+~
+#EXIT
+Direction south~
+ToRoom    5627
+Keywords  'shop door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5604 1 5664
+  Reset G 0 1627 1
+  Reset G 0 2645 1
+  Reset G 0 2159 1
+  Reset G 0 135 1
+  Reset G 0 112 1
+  Reset G 0 4010 1
+  Reset G 0 5620 1
+  Reset G 0 5618 1
+  Reset G 0 5617 1
+  Reset G 0 5619 1
+Reset D 0 5664 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5665
+Name     &BA Ritual Space&w~
+Sector   indoors~
+Stats    0 0 0 0 12 0
+Desc     &CThis is a small ritual space where the apprentice to the shop owner
+gets to practice his magic and earn the shop money. The floor has a
+magic circle painted upon it and is outlined in simple white candles.
+Incense in metal holders hang from the ceiling here and add to the
+mystery of this space.
+~
+Perdesc  &OYou see a &wsign&O posted near the entrance of this space.&w
+~
+#EXIT
+Direction south~
+ToRoom    5639
+#ENDEXIT
+
+Reset M 0 5611 1 5665
+#EXDESC
+ExDescKey    sign~
+ExDesc       &WThis store offers the following services:
+ 
+&CMage Armor&W...............................&Y20 gold coins
+&CStoneskin&W................................&Y60 gold coins
+&CWater Breathing&W..........................&Y10 gold coins
+&CBulls Strength&W...........................&Y30 gold coins
+&CCats Grace&W...............................&Y35 gold coins
+&CBears Endurance&W..........................&Y40 gold coins
+ 
+&WTo receive any of the above please give the Apprentice the 
+amount requested and he will perform the service for you.
+ 
+Additional services or changes to this menu may occur so check
+this sign before giving your money.
+ 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5666
+Name     &OThe Darkhold Village Guard Post&w~
+Sector   indoors~
+Desc     This is the central location of the village guard, which is where they
+sleep in between shifts and stay most of the time. The post has several
+beds on a second level while the first level contains a kitchen area
+and a main table. The post is lacking in major decor and furniture
+and is clearly used for its functional purposes.
+~
+#EXIT
+Direction northeast~
+ToRoom    5613
+#ENDEXIT
+
+Reset M 0 5621 3 5666
+  Reset E 0 121 1 26
+Reset M 0 5621 3 5666
+  Reset E 0 109 1 28
+Reset M 0 5621 3 5666
+  Reset E 0 114 1 26
+#ENDROOM
+
+#ROOM
+Vnum     5667
+Name     &OThe Darkhold Village Bank&w~
+Sector   indoors~
+Flags    nomob~
+Desc     The interior of this bank is very clean and it appears that this
+is a relatively new building in the village. A long counter is used
+for transactions between customers and bank clerks. A large glowing orb
+of light floats above providing much light to the bank. A small shrine
+of Phywa Manypurse can be seen behind the main counter.
+~
+#EXIT
+Direction north~
+ToRoom    5617
+Keywords  'bank door'~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5620 1 5667
+Reset D 0 5667 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5668
+Name     &BA Magic Circle&w~
+Sector   indoors~
+Desc     This room is dedicated to the usage of magic and has been cleared of
+all furnishings. The walls have magical glyphs painted on them and on
+the floor is a large circle drawn in chalk. Sigils can be found on the
+interior the circle, which helps the magic user channel their energies
+for a desired purpose. A wooden door can be seen on the south wall leading
+out of this room.
+~
+#EXIT
+Direction south~
+ToRoom    5640
+Key       3700
+Keywords  'wooden door'~
+Flags     isdoor closed locked pickproof nopassdoor bashproof nomob~
+#ENDEXIT
+
+Reset D 0 5668 2 2
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if arcana($n) >= 18
+mea $n &CYou decipher the sigils here as ones used for magical travel across
+mea $n &Cgreat distances both to and from here...&w
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p enterpath~
+Comlist   if class($n) == wizard
+if wearingvnum($n) == 3700
+mea $n &BYou feel the energy of the room swirl around you as a large
+mea $n &Bgateway appears before you. You are drawn inside the gateway
+mea $n &Band arrive in a new destination far from the magic circle...
+mer $n &B$n&B holds up a glowing stone before disappearing through a gateway.
+silent mptransfer $n 3710
+mpat 3710 mer $n &B$n&B appears in a flash of light!&w
+else
+mea $n &BYou need to be holding the magestone first.
+endif
+else
+mea $n Nothing happens.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5699
+Name     &RTHE DARKHOLD VILLAGE MOB HIDEAWAY&w~
+Sector   city~
+Flags    nomob nomagic safe nosummon noastral~
+Desc     You do not belong in here. Please use the exit provided to leave
+or please contact a member of the admin team. Thanks! :)
+~
+#EXIT
+Direction south~
+ToRoom    5622
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 5630 1 5699
+#ENDROOM
+
+#ENDAREA

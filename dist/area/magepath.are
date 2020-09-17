@@ -1,0 +1,3311 @@
+#FUSSAREA
+#AREADATA
+Version      2
+Name         Quasi-Plane: The Mage Path~
+Author       Saeris~
+WeatherX     0
+WeatherY     0
+Ranges       25 50 0 0
+Economy      0 7200000
+ResetMsg     &BYou hear the clap of thunder somewhere in the distance.&w~
+Lore         &BYou see a collective group of wizards as they enact a spell. The
+energies pull from the astral plane and funnel to create a series
+of paths around the vortex...
+~
+ResetFreq    20
+#ENDAREADATA
+
+#MOBILE
+Vnum       3700
+Keywords   gith githyanki raider lost seems humanoid~
+Short      &pa githyanki raider&W~
+Long       &pA medium sized humanoid with dark golden skin seems to be lost here.&w
+~
+Desc       &ODark yellow skin the color of dark gold and seems to shimmer. He
+resembles a medium sized humanoid save for very razor sharp high
+cheekbones and long pointed ears. His eyes are black and reflect
+no emotion.
+~
+Lore       &pYou see this humanoid approach a shimmering portal befoe it draws
+it in. It screams as it torn into pieces and appears here...
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   detect_hidden flying~
+Stats1     -300 1 3 0 14 0 0 0 0 0
+Stats2     9 8 20
+Stats3     1 4 0
+Stats4     2 0 2 0 0 0 6
+Attribs    15 13 13 14 12 10 13
+Saves      0 0 0 0 0 0
+Resist     nonmagic magic~
+Immune     sleep charm psychic~
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   mpgoto 3708
+mpecho &BA flash of light occurs and a humanoid appears here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   mpecho &BThe humanoid opens a gateway and disappears from sight.
+mpgoto 3799
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3701
+Keywords   cambion fiend winged demon woman lost here~
+Short      &ra cambion&w~
+Long       &rA winged demonic looking woman is here flying around lost.
+~
+Desc       A demonic looking woman is here, with leathery bat-like wings that
+stretch out several feet when flying. She is dressed in dark armor
+and fangs jut out from her lips.
+~
+Lore       &RYou see this cambion flying through a nebulous looking place before
+a gateway appears and draws the cambion into it...
+~
+Race       monster~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive stayarea~
+Affected   detect_invis detect_hidden infrared flying~
+Stats1     -900 1 8 -203 15 0 0 0 0 0
+Stats2     11 8 33
+Stats3     1 6 4
+Stats4     2 0 2 0 0 0 6
+Attribs    18 14 12 18 16 16 13
+Saves      0 0 0 0 0 0
+Resist     fire cold poison magic~
+Immune     nonmagic~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   35~
+Comlist   mea $n &RA cambion holds out her palm and hits you with a ray of fire!&w
+mer $n &RA cambion blasts &R$n&R with a blast of fire from her hand!7w
+mpdamage $n 3 6
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   13~
+Comlist   mpgoto 3719
+mpecho &BA gateway appears and a winged woman appears through it.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpecho &BA winged demonic woman enters a gateway and vanishes.
+mpgoto 3799
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3702
+Keywords   night hag fey woman lost flying~
+Short      &za night &phag&W~
+Long       &zA sinister looking creature is here flying around lost.&w
+~
+Desc       This creature, known as a Night Hag, is a fallen fey creature who
+was banished from the Fey plane for its evil nature. Her skin is
+a deep purple color that looks velvety and soft. Her face is bestial
+and there are curled horns coming from both sides of her head. Long
+fleshing shredding claws extend from her fingertips. She wears long
+deep red robes that are adorned with a belt made from skulls and
+various bones melded together by magic.
+~
+Race       monster~
+Class      wizard~
+Position   mounted~
+DefPos     mounted~
+Gender     female~
+Actflags   npc aggressive running~
+Affected   invisible detect_invis detect_hidden infrared flying~
+Stats1     -500 25 8 -170 15 0 0 0 0 0
+Stats2     15 8 45
+Stats3     2 8 4
+Stats4     3 0 1 0 0 0 1
+Attribs    18 16 14 15 16 16 13
+Saves      0 0 0 0 0 0
+Resist     fire cold nonmagic magic~
+Immune     sleep charm psychic~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   mpoload 1935
+mpoload 1781
+c 'lightning bolt'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   mpoload 1909
+c 'feeblemind' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   mpgoto 3736
+mpecho &BA gateway appears and a sinister looking creature appears.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   mpecho &BA gateway appears and the sinister looking creature disappears.
+mpgoto 3799
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   48~
+Comlist   c 'dispel magic'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3703
+Keywords   psychic wind stray~
+Short      &PA Ps&pyc&Phi&pc W&Pi&pn&Pd&p~
+Long       &PA mass of stray psychic energy is blowing through here.&w
+~
+Desc       If you can see this, then your vision is truly elevated. Before you
+is where lost psychic energy goes and collects to form sentient
+creatures with no real purpose. You can see the lost thoughts of
+others floating through it.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc stayarea running secretive mobinvis pacifist~
+Affected   detect_hidden infrared flying~
+Stats1     0 55 30 0 0 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpecho &BThere's a sudden roar that resembles crashing waves...&w
+mpasound &BYou hear the sound of loud crashing waves nearby...&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if intelligence($n) >= 18
+mea $n &BYou manage to stand your ground as a mysterious force blows by!
+else
+mea $n &BYou are swept away by a mysterious force as it blows through!&w
+mer $n &BYou see &B$n&B dragged away with a mysterious force!&w
+mpscatter $n 3700 3750
+mpat $n mea $n &BYou open your eyes and see that you are somewhere different.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpasound &BYou hear the clap of thunder somewhere in the distance.&w
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   mpgoto 3702
+mpecho &BYou hear the crash of a wave and the clap of thunder nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   mpecho &BYou hear the clap of thunder as something moves far away.
+mpgoto 3799
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3799
+Keywords   last mob~
+Short      a newly created last mob~
+Long       Some god abandoned a newly created last mob here.
+~
+Race       human~
+Class      fighter~
+Position   mounted~
+DefPos     mounted~
+Gender     neuter~
+Actflags   npc~
+Stats1     0 1 0 0 10 0 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     2 0 1 0 0 0 6
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0 0
+#ENDMOBILE
+
+#OBJECT
+Vnum     3700
+Keywords shimmering blue stone magestone~
+Type     treasure~
+Short    &Ba magestone&w~
+Long     &BA shimmering blue stone has been left here.&w~
+Lore   &BYou see a wizard working tirelessly to craft this stone from
+various materials using alchemy. The final product is this stone
+that is also called a "Magestone."
+~
+Flags    magic~
+WFlags   take onehand~
+Values   100 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    stone~
+ExDesc       &BThis stone shimmers with magical light and one can see particles
+that seem to move inside it.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    magestone~
+ExDesc       &BThis stone shimmers with magical light and one can see particles
+that seem to move inside it.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate magestone~
+Comlist   if arcana($n) >= 15
+if class($n) == Wizard
+mea $n &BYou recognize this stone as a magestone and that it is used
+mea $n &Bto activate areas dedicated to the MAGEPATH...&w
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate stone~
+Comlist   if arcana($n) >= 15
+if class($n) == wizard
+mea $n &BYou recognize this stone as a magestone and that it is used
+mea $n &Bto activate areas dedicated to the MAGEPATH...
+else
+mea $n You fail to find anything.
+endif
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if class($n) == wizard
+mea $n &BYou feel the stone hum in your hand as you hold it.
+else
+mea $n &BThe stone jumps out of your hand as you try to hold it!
+silent mpforce $n rem magestone
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3701
+Keywords swirling gateway unknown large~
+Type     treasure~
+Short    &Ba swirling gateway&w~
+Long     &BA large swirling gateway to the unknown is here.&w~
+Flags    glow magic~
+Values   0 0 0 0 0 0
+Values2  0 3
+Stats    1 0 0 0 0 0 0
+#EXDESC
+ExDescKey    gateway~
+ExDesc       &BThe gateway is made of swirling blue energy and it is outlined with
+glowing arcane runes. The middle of the portal is hard to see through
+and the destination appears to be unknown...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p investigate gateway~
+Comlist   if arcana($n) >= 15
+mea $n You know this gateway to be part of the Magepath. If you are
+mea $n holding a magestone you can simply use this gateway to travel
+mea $n to another location by EXITPATH.
+else
+mea $n You fail to find anything.
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3702
+Keywords gith silver greatsword~
+Type     weapon~
+Short    &ra githyanki &wsilver greatsword&W~
+Long     &rA silver greatsword has been left here.&W~
+Flags    inventory versatile~
+WFlags   take onehand twohand~
+Values   10 2 6 1 0 0
+Values2  0 2
+Stats    1 0 0 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3799
+Keywords last obj~
+Type     trash~
+Short    a newly created last obj~
+Long     Some god dropped a newly created last obj here.~
+Values   0 0 0 0 0 0
+Values2  0 2
+Stats    1 0 0 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3700
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north from here. The
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3701
+#ENDEXIT
+
+Reset O 0 3701 1 3700
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   1~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 5099
+mpat 5099 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3701
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3702
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3700
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3702
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3703
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3701
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3703
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3704
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3702
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3704
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3705
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3703
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3705
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3706
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3704
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3706
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3707
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3705
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3707
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3708
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3706
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3708
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3709
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3707
+#ENDEXIT
+
+Reset O 0 3701 1 3708
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 1730
+mpat 1730 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   4~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3709
+Name     &BA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &CAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the south from here. The 
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+Ahead is the center of the swirling energies, which creates open
+tunnels that go both up and down. Various arcane paths move
+About the swirling center.
+~
+#EXIT
+Direction north~
+ToRoom    3710
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3708
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3721
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3731
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3710
+Name     &BThe S&Cwir&zlin&wg C&Went&wer o&zf a V&Cort&Bex&w~
+Sector   indoors~
+Flags    nomob norecall nosummon noastral nofloor nomissile~
+Desc     &CThis is the direct center of a swirling arcane vortex. This vortex
+funnels in energies from a sourc&Be somewhere nearby, which
+helps sustain the path&ws the radiate to the north, south, east, west,
+and even up or down from here. Small solid platfor&Wms allow travelers
+to walk about the center of the vortex, which swirls about wildly. The
+clap of thunder can be he&zard at varying times throughout the vortex
+as energy moves ab&Wout quickly here before it is expended. Those who
+are not weig&whtless around the center here risk being drawn downw&Bard
+as the&Cre is an intense pressure felt here.
+~
+#EXIT
+Direction north~
+ToRoom    3711
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3721
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3709
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3731
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3741
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3746
+#ENDEXIT
+
+Reset O 0 3701 1 3710
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   6~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   18~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!&w
+mpasound &BYou hear a thunderous sound come from somewhere nearby.&w
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 2826
+mpat 2826 mer $n &B$n&B appears in a flash of light!&w
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3711
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north from here. The 
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+Ahead is the center of the swirling energies, which creates open
+tunnels that go both up and down. Various arcane paths move
+About the swirling center.
+~
+#EXIT
+Direction north~
+ToRoom    3712
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3710
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3721
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3731
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3712
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3713
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3711
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3713
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3714
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3712
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3714
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3715
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3713
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3715
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3716
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3714
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3716
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3717
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3715
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3717
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3718
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3716
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3718
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3719
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3717
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3719
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the north and south from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction north~
+ToRoom    3720
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3718
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3720
+Name     &WA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &zAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the south from here. The 
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction south~
+ToRoom    3719
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3721
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east from here. The 
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+Ahead is the center of the swirling energies, which creates open
+tunnels that go both up and down. Various arcane paths move
+About the swirling center.
+~
+#EXIT
+Direction east~
+ToRoom    3722
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3710
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3711
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3709
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3722
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3723
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3721
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3723
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3724
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3722
+#ENDEXIT
+
+Reset O 0 3701 1 3723
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   16~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   19~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 2678
+mpat 4344 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3724
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3725
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3723
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3725
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3726
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3724
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3726
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3727
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3725
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3727
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3728
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3726
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3728
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3729
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3727
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3729
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3730
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3728
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3730
+Name     &CA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &BAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the west from here. The 
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction west~
+ToRoom    3729
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3731
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the west from here. The 
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+Ahead is the center of the swirling energies, which creates open
+tunnels that go both up and down. Various arcane paths move
+About the swirling center.
+~
+#EXIT
+Direction east~
+ToRoom    3710
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3732
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3711
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3709
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3732
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3731
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3733
+#ENDEXIT
+
+Reset O 0 3701 1 3732
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 5668
+mpat 1335 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   11~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3733
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3732
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3734
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3734
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3733
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3735
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3735
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3734
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3736
+#ENDEXIT
+
+Reset O 0 3701 1 3735
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   10~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.&w
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   15~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 4344
+mpat 4344 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3736
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3735
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3737
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3737
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3736
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3738
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3738
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3737
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3739
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3739
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east and west from here. 
+The path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3738
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3740
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3740
+Name     &wA Swirling Path&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &WAll around is swirling energies that dance about wildly along
+a semi-solid looking path that cuts to the east from here. The 
+path seems to be made from solid arcane energy and it glows
+whenever weight is put upon it. The sound of thunder can be
+heard randomly at times and from far away. There is no sky here
+as the energies above swirl in from somewhere else. The air has
+a distinct staleness to it and there is no fresh breeze to be found.
+~
+#EXIT
+Direction east~
+ToRoom    3739
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3741
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3742
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3710
+#ENDEXIT
+
+Reset O 0 3701 1 3741
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 1922
+mpat 1922 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   14~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   9~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3742
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3743
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3741
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3743
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3744
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3742
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3744
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3745
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3743
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3745
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar back
+downward through the vortex. The dancing energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction down~
+ToRoom    3744
+#ENDEXIT
+
+Reset O 0 3701 1 3745
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   7~
+Comlist   if ovnumroom(3701) == 0
+mpecho &BA swirling gateway suddenly appears here with a thunderous clap!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   8~
+Comlist   if ovnumroom(3701) == 1
+mpecho &BA swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound &BYou hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 1335
+mpat 1335 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3746
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3710
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3747
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3747
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3746
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3748
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3748
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3747
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3749
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3749
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar upward
+or downward through the vortex. The energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3748
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3750
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3750
+Name     &zA Swirling Vortex&w~
+Sector   indoors~
+Flags    norecall nosummon noastral nofloor nomissile~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar back
+upward through the vortex. The dancing energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3749
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3751
+Flags     secret hidden nomob~
+#ENDEXIT
+
+Reset O 0 3701 1 3750
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   If ispc($n)
+if wearingvnum($n) == 3700
+mpsleep 2
+mea $n &BThe magestone hums with arcane energy for a brief moment.
+else
+mea $n &BYou suddenly feel the energies nearby crackle and swirl
+mea $n &Baround you wildly! The particles of the energy seem to
+mea $n &Bpull at your body and you begin to feel like you are
+mea $n &Bbeing split into two pieces before your vision blurs...
+mer $n &B$n&B seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+Endif
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  cmd_prog~
+Arglist   p exitpath~
+Comlist   If hasqbit($n) == 4600
+if ovnumroom(3701) == 1
+mea $n &BYou hold out the stone and use it to unlock the gateway. It
+mea $n &Bopens to you and allows you to enter it. Magic swirls all
+mea $n &Baround you as you travel to a new destination...
+mer $n &B$n&B uses a glowing stone to enter the gateway here.
+silent mptransfer $n 4786
+mpat 4786 mer $n &B$n&B appears in a flash of light!
+else
+mea $n &BThere is no gateway here to use.
+Endif
+Else
+Mea $n &BSomething blocks your attempt to use the gateway.
+Endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   2~
+Comlist   if ovnumroom(3701) == 0
+mpecho A swirling gateway suddenly appears here with a thunderous clap!
+mpasound You hear a thunderous sound come from somewhere nearby.
+mpoload 3701
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   3~
+Comlist   mpecho A swirling gateway here suddenly vanishes with a clap of thunder!
+mpasound You hear a thunderous sound come from somewhere nearby.
+mppurge gateway
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3751
+Name     &zA Swirling Vortex&w~
+Sector   city~
+Desc     &wThe swirling energies of a vortex create a funnel of arcane
+energy here that allows one who is weightless to soar back
+upward through the vortex. The dancing energies of the vortex
+crackle and pop from time to time as the energy transferred
+here helps form the paths used for traveling. There is no way
+to see past the walls of the vortex as the energies are bright
+and very densely woven. Those who are not weightless risk
+being drawn downward as there is an intense pressure felt
+inside this vortex.
+~
+#EXIT
+Direction up~
+ToRoom    3750
+#ENDEXIT
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from above.~
+Comlist   mpsleep 2
+mea $n &zYou feel the energies of the vortex crackle around you
+mea $n &zsuddenly! The particles of the energy seem to pull at
+mea $n &zyour body and you begin to feel like you are being split
+mea $n &zinto two pieces before your vision blurs...
+mer $n &z$n&z seems to be torn apart by the vortex before vanishing!
+mpsleep 2
+mpscatter $n 1400 3698
+mpat $n mer $n &WA flash of light occurs here suddenly!
+mpat $n mpasound &WYou see a flash of light briefly nearby.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3799
+Name     &RMAGE PATH MOB HIDEAWAY&w~
+Sector   city~
+Flags    nomob nomagic safe norecall nosummon noastral nosupplicate~
+Desc     You do not belong in here. Please use the down exit to leave or
+contact an admin. Thank you! :)
+~
+#EXIT
+Direction down~
+ToRoom    3710
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 3700 1 3799
+  Reset E 0 3702 1 26
+Reset M 0 3701 1 3799
+Reset M 0 3702 1 3799
+Reset M 0 3703 1 3799
+#ENDROOM
+
+#ENDAREA

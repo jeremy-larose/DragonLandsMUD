@@ -1,0 +1,434 @@
+Name          Wizard~
+Class         0
+SavingStatOne 3
+SavingStatTwo 4
+SpellModStat  3
+Weapon        0
+Guild         0
+Skilladept    0
+Thac0         0
+Thac32        0
+Hpmin         1
+Hpmax         6
+Mana          0
+Expbase       1000
+Affected      0
+Resist	       0
+Suscept	    0
+CasterType    0
+Subclasses    0
+Skill 'absorb mind' 18 95 5
+Skill 'absorb vitality' 18 95 5
+Skill 'abyssal' 1 95 0
+Skill 'acid arrow' 6 95 2
+Skill 'acid splash' 1 95 0
+Skill 'acrobatics' 1 95 0
+Skill 'aganazzars scorcher' 6 95 2
+Skill 'alertness' 10 95 3
+Skill 'animal handling' 1 95 0
+Skill 'animate dead' 14 95 4
+Skill 'aquan' 1 95 0
+Skill 'arcana' 1 95 0
+Skill 'arcane mark' 1 95 0
+Skill 'astral walk' 30 95 8
+Skill 'athletics' 1 95 0
+Skill 'auran' 1 95 0
+Skill 'bears endurance' 6 95 2
+Skill 'beautiful distraction' 1 95 1
+Skill 'bestow curse' 10 95 3
+Skill 'bestow greater curse' 34 95 8
+Skill 'bigbys crushing hand' 34 95 9
+Skill 'blade ward' 1 95 0
+Skill 'blindness' 6 95 2
+Skill 'blowguns' 1 95 0
+Skill 'brew' 1 95 0
+Skill 'bulls strength' 6 95 2
+Skill 'catnap' 10 95 3
+Skill 'cats grace' 6 95 2
+Skill 'celestial' 1 95 0
+Skill 'chain lightning' 22 95 6
+Skill 'change sex' 6 95 2
+Skill 'charm person' 6 95 2
+Skill 'chill touch' 1 95 0
+Skill 'climb' 1 95 0
+Skill 'cloud of daggers' 6 95 2
+Skill 'comet' 34 95 9
+Skill 'common' 1 95 0
+Skill 'control weather' 26 95 7
+Skill 'cook' 1 95 0
+Skill 'create bonfire' 1 95 0
+Skill 'crossbows' 1 95 0
+Skill 'crushing despair' 14 95 4
+Skill 'crystal body' 34 95 9
+Skill 'daggers' 1 95 0
+Skill 'dancing lights' 1 95 0
+Skill 'darkvision' 6 95 2
+Skill 'darts' 1 95 0
+Skill 'dash' 1 95 0
+Skill 'death ward' 14 95 4
+Skill 'deception' 1 95 0
+Skill 'deep speech' 1 95 0
+Skill 'delayed blast fireball' 30 95 7
+Skill 'detect hidden' 1 95 1
+Skill 'detect magic' 0 95 0
+Skill 'detect poison' 1 95 0
+Skill 'dig' 1 95 0
+Skill 'disenchant weapon' 1 95 0
+Skill 'dispel magic' 10 95 3
+Skill 'draconic' 1 95 0
+Skill 'dragonskin' 30 95 8
+Skill 'dream' 18 95 5
+Skill 'dwarven' 1 95 0
+Skill 'eagles splendor' 6 95 2
+Skill 'elvish' 1 95 0
+Skill 'enchant weapon' 1 95 1
+Skill 'energy drain' 34 95 9
+Skill 'enhanced rage' 10 95 3
+Skill 'fear' 10 95 3
+Skill 'finger of death' 26 95 7
+Skill 'fire shield' 14 95 4
+Skill 'fireball' 10 95 3
+Skill 'firebolt' 1 95 0
+Skill 'fly' 10 95 3
+Skill 'forage' 1 95 0
+Skill 'forcefield' 30 95 8
+Skill 'foxs cunning' 6 95 2
+Skill 'freezing sphere' 22 95 6
+Skill 'friends' 1 95 0
+Skill 'ghost sound' 1 95 0
+Skill 'ghostwalk' 18 95 5
+Skill 'giant' 1 95 26
+Skill 'glyph of warding' 10 95 3
+Skill 'gnomish' 1 95 0
+Skill 'goblin' 1 95 0
+Skill 'grapple' 1 95 0
+Skill 'grease' 1 95 1
+Skill 'greater heroism' 22 95 6
+Skill 'greater shout' 30 95 8
+Skill 'halfling' 1 95 0
+Skill 'heroism' 10 95 3
+Skill 'hide' 1 95 0
+Skill 'history' 1 95 0
+Skill 'holdbreath' 1 95 0
+Skill 'horrid wilting' 30 95 8
+Skill 'identify' 1 95 1
+Skill 'ignan' 1 95 0
+Skill 'infernal' 1 95 0
+Skill 'infernal calling' 18 95 5
+Skill 'insight' 1 95 0
+Skill 'intimidation' 1 95 0
+Skill 'investigation' 1 95 0
+Skill 'investiture of flame' 22 95 6
+Skill 'investiture of ice' 22 95 6
+Skill 'investiture of stone' 22 95 6
+Skill 'investiture of wind' 22 95 6
+Skill 'invisibility' 6 95 2
+Skill 'iron body' 30 95 8
+Skill 'ironguts' 1 95 1
+Skill 'kick' 1 95 0
+Skill 'knock' 6 95 2
+Skill 'kobold keen' 18 95 5
+Skill 'legend lore' 22 95 6
+Skill 'life transference' 10 95 3
+Skill 'lightning bolt' 10 95 3
+Skill 'lightning lure' 1 95 0
+Skill 'locate object' 6 95 2
+Skill 'mage armor' 1 95 1
+Skill 'magic alarm' 1 95 1
+Skill 'magic jar' 26 95 6
+Skill 'magic missile' 1 95 1
+Skill 'magical' 1 95 0
+Skill 'magnetic thrust' 30 95 8
+Skill 'mass bears endurance' 22 95 6
+Skill 'mass bulls strength' 22 95 6
+Skill 'mass cats grace' 22 95 6
+Skill 'mass eagles splendor' 22 95 6
+Skill 'mass fly' 18 95 5
+Skill 'mass foxs cunning' 22 95 6
+Skill 'mass hold person' 26 95 7
+Skill 'mass invis' 26 95 7
+Skill 'mass owls wisdom' 22 95 6
+Skill 'mass true seeing' 34 95 9
+Skill 'medicine' 1 95 0
+Skill 'meteor swarm' 34 95 9
+Skill 'mind blank' 30 95 8
+Skill 'mind fog' 18 95 5
+Skill 'mordenkainens sword' 26 95 7
+Skill 'mount' 1 95 0
+Skill 'nature' 1 95 0
+Skill 'orc' 1 95 0
+Skill 'owls wisdom' 6 95 2
+Skill 'perception' 1 95 0
+Skill 'performance' 1 95 0
+Skill 'persuasion' 1 95 0
+Skill 'pixie dust' 18 95 5
+Skill 'poison spray' 1 95 0
+Skill 'polar ray' 30 95 8
+Skill 'polymorph' 14 95 4
+Skill 'power word stun' 30 95 8
+Skill 'primordial' 1 95 0
+Skill 'produce flame' 1 95 0
+Skill 'psychic scream' 34 95 9
+Skill 'punch' 1 95 0
+Skill 'ray of enfeeblement' 6 95 2
+Skill 'ray of frost' 1 95 0
+Skill 'ray of sickness' 1 95 1
+Skill 'recharge' 1 95 9
+Skill 'religion' 1 95 0
+Skill 'remove curse' 14 95 4
+Skill 'rescue' 1 95 0
+Skill 'resist acid' 6 95 2
+Skill 'resist cold' 6 95 2
+Skill 'resist electricity' 6 95 2
+Skill 'resist fire' 6 95 2
+Skill 'resist force' 6 95 2
+Skill 'resist poison' 6 95 2
+Skill 'resist psychic' 18 95 5
+Skill 'resist radiant' 14 95 4
+Skill 'resist thunder' 6 95 2
+Skill 'scan' 1 95 0
+Skill 'scribe' 1 95 0
+Skill 'scry' 18 95 5
+Skill 'search' 1 95 0
+Skill 'see invisibility' 6 95 2
+Skill 'shield' 1 95 1
+Skill 'shocking grasp' 1 95 0
+Skill 'shout' 14 95 4
+Skill 'shove' 1 95 0
+Skill 'sickening radiance' 14 95 4
+Skill 'sleep' 1 95 1
+Skill 'sleight of hand' 1 95 0
+Skill 'slice' 1 95 0
+Skill 'slings' 1 95 0
+Skill 'sneak' 1 95 0
+Skill 'snowball swarm' 6 95 2
+Skill 'stabilize' 1 95 0
+Skill 'staves' 1 95 0
+Skill 'stealth' 1 95 0
+Skill 'stone body' 22 95 6
+Skill 'stoneskin' 14 95 4
+Skill 'summon demon' 22 95 6
+Skill 'summon greater demon' 34 95 9
+Skill 'summon lesser demon' 10 95 3
+Skill 'survival' 1 95 0
+Skill 'sword burst' 1 95 0
+Skill 'sylvan' 1 95 0
+Skill 'synaptic static' 18 95 5
+Skill 'teleport' 30 95 7
+Skill 'teleport object' 26 95 7
+Skill 'teleportation circle' 30 95 7
+Skill 'tensers floating disk' 1 95 1
+Skill 'terran' 1 95 0
+Skill 'thunderclap' 1 95 0
+Skill 'thunderstrike' 18 95 5
+Skill 'thunderwave' 1 95 1
+Skill 'toll the dead' 1 95 0
+Skill 'touch of idiocy' 6 95 0
+Skill 'troll' 1 95 0
+Skill 'trollish visage' 18 95 5
+Skill 'true seeing' 22 95 6
+Skill 'true strike' 1 95 0
+Skill 'undercommon' 1 95 0
+Skill 'vampiric touch' 14 95 4
+Skill 'ventriloquism' 1 95 1
+Skill 'water breathing' 10 95 3
+Skill 'waves of exhaustion' 10 95 3
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+Not set.~
+Not set.~
+Title
+(null)~
+(null)~
+End
